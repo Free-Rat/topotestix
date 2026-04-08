@@ -1,0 +1,77 @@
+==========================================
+nr8-mvp Verification Script
+==========================================
+
+[INFO] Test 1: Checking prerequisites...
+[0;32m[PASS][0m Nix is installed
+[INFO] Nix version: nix (Nix) 2.31.3
+[0;32m[PASS][0m jq is installed
+
+[INFO] Test 2: Validating Nix flake structure...
+[0;32m[PASS][0m Flake files exist (flake.nix, flake.lock)
+Checking flake outputs...
+[0;31m[FAIL][0m Flake missing nixosTests output
+[INFO] Available outputs: [ "description" "inputs" "outputs" ]
+[0;31m[FAIL][0m Flake missing packages output
+
+[INFO] Test 3: Validating Nix expressions...
+Checking fuzzer.nix...
+[0;32m[PASS][0m fuzzer.nix parses correctly
+Checking kafka-test.nix...
+[0;32m[PASS][0m kafka-test.nix parses correctly
+Checking fuzzed_nodes.nix...
+[0;32m[PASS][0m fuzzed_nodes.nix parses correctly
+Checking fuzzed_options.nix...
+[0;32m[PASS][0m fuzzed_options.nix parses correctly
+
+[INFO] Test 4: Testing fuzzer logic...
+[INFO] Testing fuzzer with seed=1...
+[0;31m[FAIL][0m Fuzzer failed for seed=1
+[INFO] Output: warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+error: attempt to call something which is not a function but a set: { config = «thunk»; }
+[INFO] Testing fuzzer with seed=2 (should produce different config)...
+[1;33m[WARN][0m Same seeds produce same configs (expected if options are same)
+[INFO] Testing fuzzer determinism (seed=1 twice)...
+[0;32m[PASS][0m Fuzzer is deterministic (same seed = same config)
+
+[INFO] Test 5: Testing fuzzer-module.nix (with pkgs support)...
+[INFO] Testing fuzzer-module.nix with fuzzed_options...
+[0;31m[FAIL][0m fuzzer-module.nix failed with fuzzed_options
+[INFO] Output: warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+error:
+       … from call site
+
+       error: function 'anonymous lambda' called without required argument 'pkgs'
+       at /home/freerat/projects/topotestix/experiments/nr8-mvp/fuzzer-module.nix:6:1:
+            5|
+            6| { config, pkgs, ... }:
+             | ^
+            7|
+
+[INFO] Test 6: Building Kafka package...
+[1;33m[WARN][0m Kafka package build check failed, attempting actual build...
+warning: Git tree '/home/freerat/projects/topotestix' is dirty
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+[0;32m[PASS][0m Kafka package built successfully
+
+[INFO] Test 7: Checking NixOS test definitions...
+[INFO] Checking nixosTests.kafka-test-1 exists...
+[0;31m[FAIL][0m nixosTests.kafka-test-1 not found
+[INFO] Checking nixosTests.kafka-test-2 exists...
+[0;31m[FAIL][0m nixosTests.kafka-test-2 not found
+[INFO] Checking nixosTests.kafka-test-3 exists...
+[0;31m[FAIL][0m nixosTests.kafka-test-3 not found
+
+[INFO] Test 8: Dry-running NixOS tests (checking config validity)...
+[INFO] Dry-running kafka-test-1...
+[0;31m[FAIL][0m kafka-test-1 has errors
+[INFO] Error: error: flake 'git+file:///home/freerat/projects/topotestix?dir=experiments/nr8-mvp' does not provide attribute 'packages.x86_64-linux.nixosTests.kafka-test-1', 'legacyPackages.x86_64-linux.nixosTests.kafka-test-1' or 'nixosTests.kafka-test-1'

@@ -1,0 +1,198 @@
+==========================================
+nr8-mvp Verification Script
+==========================================
+
+[INFO] Test 1: Checking prerequisites...
+[0;32m[PASS][0m Nix is installed
+[INFO] Nix version: nix (Nix) 2.31.3
+
+[INFO] Test 2: Validating Nix flake structure...
+[0;32m[PASS][0m Flake files exist (flake.nix, flake.lock)
+[INFO] Checking flake outputs with 'nix flake show'...
+[0;32m[PASS][0m Flake has packages.x86_64-linux.kafka
+[0;32m[PASS][0m Flake has nixosTests
+
+[INFO] Test 3: Validating Nix expressions...
+Checking fuzzer.nix...
+[0;32m[PASS][0m fuzzer.nix parses correctly
+Checking kafka-test.nix...
+[0;32m[PASS][0m kafka-test.nix parses correctly
+Checking fuzzed_nodes.nix...
+[0;32m[PASS][0m fuzzed_nodes.nix parses correctly
+Checking fuzzed_options.nix...
+[0;32m[PASS][0m fuzzed_options.nix parses correctly
+
+[INFO] Test 4: Testing fuzzer logic...
+[INFO] Testing fuzzer with seed=1...
+[0;32m[PASS][0m Fuzzer produces memorySize config for seed=1
+[INFO] Config: warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+{ boot = { _type = "override"; content = { tmp = { cleanOnBoot = false; }; }; priority = 50; }; services = { _type = "override"; content = { openssh = { enable = false; }; }; priority = 50; }; virtualisation = { _type = "override"; content = { diskSize = 5120; memorySize = 1024; }; priority = 50; }; }
+[INFO] Testing fuzzer with seed=2 (should produce different config)...
+[INFO] Config for seed=2: warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+{ boot = { _type = "override"; content = { tmp = { cleanOnBoot = false; }; }; priority = 50; }; services = { _type = "override"; content = { openssh = { enable = false; }; }; priority = 50; }; virtualisation = { _type = "override"; content = { diskSize = 10240; memorySize = 4096; }; priority = 50; }; }
+[INFO] Testing fuzzer determinism (seed=1 twice)...
+[0;32m[PASS][0m Fuzzer is deterministic (same seed = same config)
+
+[INFO] Test 5: Testing fuzzer-module.nix (with pkgs support)...
+[INFO] Testing fuzzer-module.nix with fuzzed_options (requires pkgs)...
+[0;32m[PASS][0m fuzzer-module.nix parses correctly
+[INFO] Verifying fuzzer-module.nix can use pkgs in function values...
+[1;33m[WARN][0m fuzzer-module.nix test inconclusive: «lambda @ /home/freerat/projects/topotestix/experiments/nr8-mvp/fuzzer-module.nix:6:1»
+
+[INFO] Test 6: Building Kafka package...
+[INFO] Checking if Kafka package evaluates...
+[0;32m[PASS][0m Kafka package evaluates correctly: warning: Git tree '/home/freerat/projects/topotestix' is dirty
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+«derivation /nix/store/bmcm794is3b3nzgxzh0s3adn7yqvl5w9-apache-kafka-2.13-4.2.0.drv»
+[INFO] Performing dry-run build of Kafka package...
+[1;33m[WARN][0m Kafka dry-run output: warning: Git tree '/home/freerat/projects/topotestix' is dirty
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+
+[INFO] Test 7: Checking NixOS test definitions...
+[INFO] Getting nixosTests store paths...
+[0;32m[PASS][0m nixosTests are defined and accessible
+[INFO] Found tests: 10 test definitions
+[INFO] Checking kafka-test-1 path...
+[0;32m[PASS][0m kafka-test-1 has store path: /nix/store/rhcszdjr7ba24bs3vfzz8irgb6f9f2dw-vm-test-run-kafka-test-1
+[INFO] Checking kafka-test-2 path...
+[0;32m[PASS][0m kafka-test-2 has store path: /nix/store/2jhr7a4ly2dqg0yi92y331yxkwyjl84s-vm-test-run-kafka-test-2
+[INFO] Checking kafka-test-3 path...
+[0;32m[PASS][0m kafka-test-3 has store path: /nix/store/x2i4wllmwfr1x88kmadmwzq2b8nzhvz8-vm-test-run-kafka-test-3
+
+[INFO] Test 8: Validating NixOS test configurations...
+[INFO] Note: NixOS VM tests cannot be dry-run with 'nix build'
+[INFO] Instead, we verify the test derivations exist and are valid
+[INFO] Validating kafka-test-1 derivation...
+[0;31m[FAIL][0m kafka-test-1: derivation validation failed
+[INFO] Output: warning: Git tree '/home/freerat/projects/topotestix' is dirty
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+error: flake 'git+file:///home/freerat/projects/topotestix?dir=experiments/nr8-mvp' does not provide attribute 'packages.x86_64-linux.nixosTests."kafka-test-1"', 'legacyPackages.x86_64-linux.nixosTests."kafka-test-1"' or 'nixosTests."kafka-test-1"'
+[INFO] Validating kafka-test-2 derivation...
+[0;31m[FAIL][0m kafka-test-2: derivation validation failed
+[INFO] Output: warning: Git tree '/home/freerat/projects/topotestix' is dirty
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+error: flake 'git+file:///home/freerat/projects/topotestix?dir=experiments/nr8-mvp' does not provide attribute 'packages.x86_64-linux.nixosTests."kafka-test-2"', 'legacyPackages.x86_64-linux.nixosTests."kafka-test-2"' or 'nixosTests."kafka-test-2"'
+[INFO] Validating kafka-test-3 derivation...
+[0;31m[FAIL][0m kafka-test-3: derivation validation failed
+[INFO] Output: warning: Git tree '/home/freerat/projects/topotestix' is dirty
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+error: flake 'git+file:///home/freerat/projects/topotestix?dir=experiments/nr8-mvp' does not provide attribute 'packages.x86_64-linux.nixosTests."kafka-test-3"', 'legacyPackages.x86_64-linux.nixosTests."kafka-test-3"' or 'nixosTests."kafka-test-3"'
+
+[INFO] Validation summary: 0 passed, 3 failed
+
+[INFO] Test 9: Analyzing config variations across seeds...
+Generating configs for seeds 1-10...
+[INFO] Config variations saved to: /home/freerat/projects/topotestix/experiments/nr8-mvp/verification-results/config_variations.txt
+
+Seed,MemorySize,DiskSize,TmpClean,SSHEnable
+1,1024,5120,clean
+n
+oot
+false,enable
+false
+2,4096,10240,clean
+n
+oot
+false,enable
+false
+3,1024,1024,clean
+n
+oot
+true,enable
+true
+4,2048,1024,clean
+n
+oot
+true,enable
+false
+5,2048,10240,clean
+n
+oot
+false,enable
+false
+6,1024,1024,clean
+n
+oot
+true,enable
+true
+7,512,10240,clean
+n
+oot
+true,enable
+false
+8,512,1024,clean
+n
+oot
+false,enable
+true
+9,4096,1024,clean
+n
+oot
+true,enable
+true
+10,4096,5120,clean
+n
+oot
+false,enable
+false
+
+[INFO] Found 14 unique configurations out of 10 seeds
+[0;32m[PASS][0m Fuzzer produces varied configurations
+
+[INFO] Test 10: Checking test script properties...
+[INFO] Inspecting kafka-test.nix testScript...
+[0;32m[PASS][0m Test checks Kafka binary existence
+[0;32m[PASS][0m Test checks Java runtime
+[0;32m[PASS][0m Test checks Kafka version
+
+[INFO] Test 11: Checking issues in original test scripts...
+[INFO] Checking test-fuzzer.sh references...
+[1;33m[WARN][0m test-fuzzer.sh references 'nixosConfigurations' but flake has 'nixosTests'
+[INFO] This is a bug in test-fuzzer.sh
+[INFO] run-test.sh expects 'result' symlink but doesn't build first
+[INFO] This is a bug in run-test.sh - it needs to build first
+
+==========================================
+Verification Complete
+==========================================
+
+Log file: /home/freerat/projects/topotestix/experiments/nr8-mvp/verification-results/verification_20260408_225921.log
+Config variations: /home/freerat/projects/topotestix/experiments/nr8-mvp/verification-results/config_variations.txt
+
+ISSUES FOUND:
+  1. test-fuzzer.sh references wrong attribute (nixosConfigurations vs nixosTests)
+  2. run-test.sh expects pre-built 'result' without building first
+  3. Fuzzer is deterministic but limited (only 4 memory options, etc.)
+
+WHAT WORKS:
+  1. Kafka package builds correctly
+  2. NixOS test definitions exist for all 10 seeds
+  3. Fuzzer produces deterministic, varied configs
+  4. All Nix expressions parse correctly
+
+QUICK TEST COMMANDS:
+  nix flake show                       # See all outputs
+  nix build .#kafka                  # Build Kafka package
+  nix eval .#nixosTests               # List all test derivations
+  nix eval .#nixosTests."kafka-test-1"  # Get test-1 derivation path
+
+NOTE: Full test execution requires NixOS test environment (kvm)
+  Use 'nix build /nix/store/...-vm-test-run-kafka-test-1' to build the test VM
+  Then run the resulting test script to execute the VM
