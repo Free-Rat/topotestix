@@ -14,5 +14,6 @@ All design and planning documents live in [`docs/`](docs/):
 |---|---|
 | [`docs/idea.md`](docs/idea.md) | Project motivation, core concepts (PBT, environment-aware testing, Nix as test generator), example property categories, and limitations |
 | [`docs/architecture.md`](docs/architecture.md) | Module overview (fuzzer, expandTopology, runner, orchestrator), three-layer config composition, data flow, directory structure, and design principles |
+| [`docs/target-authoring.md`](docs/target-authoring.md) | Practical cheat sheet for creating new targets: file roles, naming conventions, CLI workflow, result interpretation, and common failure modes |
 | [`docs/plan.md`](docs/plan.md) | Phased implementation plan from foundation through shrinking and scale |
 | [`docs/testing.md`](docs/testing.md) | How to run tests with nix-unit, test file conventions, and how to verify expected values |
