@@ -66,7 +66,7 @@
         ];
 
         shellHook = ''
-          alias runtest='nix-unit --expr "import ./tests { lib = (import <nixpkgs> {}).lib; }"'
+          alias runtest='nix-unit --expr "import ./tests { lib = (import <nixpkgs> {}).lib; }" && python3 -m unittest discover -s tests -p "test_*.py"'
         '';
       };
     };
