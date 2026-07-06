@@ -170,16 +170,6 @@ in
 }}"""
 
 
-def inspect_seed(project_root: str, target: Target, seed: int) -> dict:
-    return eval_json(
-        generate_inspect_expr(seed, target.topology_target, target.config_target, project_root)
-    )
-
-
-def target_name(args) -> str:
-    return getattr(args, "target", None) or getattr(args, "name", "test")
-
-
 def apply_overrides(args, target: Target) -> Target:
     return Target(
         name=target.name,
@@ -255,41 +245,6 @@ def run_once(
     }
     store.write_json(run_dir, "run.json", meta)
     return passed, report, run_dir, result
-
-
-def run_once_events(
-    project_root: str,
-    target: Target,
-    seed: int,
-    name: str,
-    runs_dir: Optional[str] = None,
-) -> Iterator[Event]:
-    """Yield events for a single `run_once` call.
-
-    Signature mirrors the first five (required + one optional) parameters of
-    `run_once`.  Extra per-run overrides (`topology_choices`, `config_choices`)
-    are not needed here because `cmd_sweep` is the only caller and it does not
-    override choices at the individual-seed level.
-    """
-    yield event("run_started", f"Running {target.name} seed={seed}", target=target.name, seed=seed)
-    passed, report, run_dir, result = run_once(
-        project_root, target, seed, name, runs_dir
-    )
-    yield event(
-        "build_finished", "Nix build finished", returncode=result.returncode, runDir=run_dir
-    )
-    for entry in report:
-        status = entry.get("status", "unknown")
-        data = dict(entry)
-        data.pop("message", None)
-        yield event(
-            f"property_{status}", entry.get("message") or entry.get("name", "unnamed"), **data
-        )
-    yield event(
-        "run_passed" if passed else "run_failed",
-        f"Run {'passed' if passed else 'failed'}",
-        runDir=run_dir,
-    )
 
 
 def find_existing_seeds(store: RunStore, target: Target, seeds: list[int]) -> set[int]:

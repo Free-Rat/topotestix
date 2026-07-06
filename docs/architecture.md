@@ -6,17 +6,17 @@ Current layout: a Python `topotestix` package drives the CLI, while Nix keeps th
 
 ```
  ┌──────────────────────────────────────────────────────────────┐
-  │                topotestix (Python CLI package)               │
+ │                topotestix (Python CLI package)               │
  │                                                              │
  │  - Derives topology and per-role seeds from master_seed      │
  │  - Calls fuzzer once for topology and once per role          │
  │  - Calls expandTopology (topology-map → per-node VLANs)      │
  │  - Three-layer merge: base ⊕ config ⊕ topology               │
-  │  - Calls runner, parses report.json, stores run metadata     │
-  │  - On failure: shrink choice indices, iterate                │
-   │  - Exposes targets/runs/orchestrator/runner commands         │
-  │  - Parallel seed execution via `sweep --jobs N`              │
-  └────────┬────────────────────────────┬────────────────────────┘
+ │  - Calls runner, parses report.json, stores run metadata     │
+ │  - On failure: shrink choice indices, iterate                │
+ │  - Exposes targets/runs/orchestrator/runner commands         │
+ │  - Parallel seed execution via `sweep --jobs N`              │
+ └────────┬────────────────────────────┬────────────────────────┘
           │                            │
           ▼                            ▼
  ┌─────────────────┐          ┌─────────────────┐
@@ -143,9 +143,6 @@ topotestix/
  │       ├── module.nix            # Nginx NixOS module + base config
  │       ├── properties.nix        # Nginx-specific properties
  │       └── test-script.py        # Nginx test procedure
-│
- ├── orchestrator/                 # Compatibility wrapper for legacy entrypoint
- │   └── orchestrator.py           # Thin wrapper around topotestix CLI
 │
  ├── flake.nix                     # Nix entry point — package, checks, dev shell
 └── README.md

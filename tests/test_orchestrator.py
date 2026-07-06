@@ -2,11 +2,10 @@ import argparse
 import os
 import unittest
 
-from orchestrator.orchestrator import (
+from topotestix.nix import nix_path, nix_string
+from topotestix.orchestrator import (
     generate_fuzz_expr,
     generate_nix_expr,
-    nix_path,
-    nix_string,
     parse_json_object,
 )
 

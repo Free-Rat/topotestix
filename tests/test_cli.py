@@ -6,7 +6,6 @@ from topotestix.orchestrator import (
     generate_inspect_expr,
     parse_seed_range,
     reproduce_command,
-    run_once_events,
     sweep_events,
 )
 from topotestix.targets import Target
@@ -95,30 +94,6 @@ class CliTests(unittest.TestCase):
         self.assertEqual(events[0].type, "sweep_started")
         self.assertEqual(events[2].type, "run_failed")
         self.assertEqual(events[-1].data["failures"], 1)
-
-    def test_run_once_events_accepts_positional_args_and_failed_messages(self):
-        target = Target(
-            name="nginx",
-            description="",
-            topology_target="targets/nginx/topology.nix",
-            config_target="targets/nginx/config.nix",
-            base_module="targets/nginx/module.nix",
-            test_script="targets/nginx/test-script.py",
-            properties="targets/nginx/properties.nix",
-            report_node="machine1",
-        )
-        fake_result = type("Result", (), {"returncode": 1})()
-        report = [{"name": "prop", "status": "failed", "message": "boom"}]
-
-        with patch(
-            "topotestix.orchestrator.run_once",
-            return_value=(False, report, "/tmp/run", fake_result),
-        ):
-            events = list(run_once_events("/repo", target, 4, "nginx"))
-
-        self.assertEqual(events[0].type, "run_started")
-        self.assertEqual(events[2].type, "property_failed")
-        self.assertEqual(events[2].message, "boom")
 
 
 if __name__ == "__main__":
