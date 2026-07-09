@@ -39,6 +39,16 @@
     reportNode = "etcd1";
   };
 
+  rabbitmq-cluster = {
+    description = "Three-node RabbitMQ quorum queue baseline target";
+    topologyTarget = ./rabbitmq-cluster/topology.nix;
+    configTarget = ./rabbitmq-cluster/config.nix;
+    baseModule = ./rabbitmq-cluster/module.nix;
+    testScript = ./rabbitmq-cluster/test-script.py;
+    properties = ./rabbitmq-cluster/properties.nix;
+    reportNode = "rabbit1";
+  };
+
   postgresql = {
     description = "Two-node PostgreSQL primary/standby streaming replication target";
     topologyTarget = ./postgresql/topology.nix;
