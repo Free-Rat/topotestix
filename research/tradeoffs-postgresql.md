@@ -65,7 +65,7 @@ For a first thesis-grade PostgreSQL target, the best default is **1 primary + 1 
    - **Archive helpers run as the postgres user in a hardened systemd sandbox.** PATH/syscall-filter issues can break `archive_command` even when the command itself is fine. [NixOS issue class](https://github.com/NixOS/nixpkgs/issues/385603) [Discourse](https://discourse.nixos.org/t/grant-postgres-user-access-to-path/48301)
 
 6. **Time and complexity estimate: v1 should be a small multi-day task, not a refactor project.**
-   The current `topotestix` plan already treats PostgreSQL as the next new SUT and expects the eventual sweep to be about 1 working day of background runs once the target is green; the code itself should be much less invasive than Kafka because PostgreSQL already has a first-class NixOS module and standard streaming-replication commands. [Plan](../plan.md)
+   The PostgreSQL target has since been implemented and swept; see [`experiments/postgresql/`](../experiments/postgresql/) for the empirical results. The code itself was much less invasive than Kafka because PostgreSQL already has a first-class NixOS module and standard streaming-replication commands.
 
    **Practical v1 estimate:**
    - skeleton topology + module + bootstrap: **0.5–1 day**
@@ -85,6 +85,6 @@ For a first thesis-grade PostgreSQL target, the best default is **1 primary + 1 
 - Dropped: SEO-style PostgreSQL overview pages — redundant with upstream docs.
 
 ## Gaps
-- I could not inspect the exact git history/commit timings from this environment, so the time estimate is inferred from `plan.md` status and the current artifact state rather than precise log chronology.
+- I could not inspect the exact git history/commit timings from this environment, so the time estimate was inferred from the work plan and current artifact state at time of writing rather than precise log chronology. The plan has since been completed and the estimates were broadly validated by the actual PostgreSQL sweep.
 - I did not validate a concrete NixOS test harness for `archive_mode`/`restore_command` end-to-end; that should be prototyped only after the 1+1 streaming-only smoke path is stable.
 - I did not benchmark actual QEMU boot/runtime for your host; the pass-rate and flakiness estimates are qualitative, not measured.
