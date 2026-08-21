@@ -25,3 +25,5 @@ in
 (import ./orchestrate-test.nix { inherit lib; fuzzer = fuzzer; expand-topology = expandTopology; merge = merge; })
 //
 (import ./shrinker-test.nix { inherit lib; fuzzer = fuzzer; shrinker = shrinker; expand-topology = expandTopology; })
+//
+(import ./targets-test.nix { inherit lib; })

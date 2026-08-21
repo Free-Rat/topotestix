@@ -49,6 +49,96 @@
     reportNode = "rabbit1";
   };
 
+  rabbitmq-partition = {
+    description = "[prototype] RabbitMQ network-cut exploration";
+    topologyTarget = ./rabbitmq-partition/topology.nix;
+    configTarget = ./rabbitmq-partition/config.nix;
+    baseModule = ./rabbitmq-partition/module.nix;
+    testScript = ./rabbitmq-partition/test-script.py;
+    properties = ./rabbitmq-partition/properties.nix;
+    reportNode = "rabbit1";
+  };
+
+  rabbitmq-memory = {
+    description = "[prototype] RabbitMQ memory-pressure smoke target";
+    topologyTarget = ./rabbitmq-memory/topology.nix;
+    configTarget = ./rabbitmq-memory/config.nix;
+    baseModule = ./rabbitmq-memory/module.nix;
+    testScript = ./rabbitmq-memory/test-script.py;
+    properties = ./rabbitmq-memory/properties.nix;
+    reportNode = "rabbit1";
+  };
+
+  rabbitmq-disk = {
+    description = "[thesis] RabbitMQ disk-capacity and confirmation contract";
+    topologyTarget = ./rabbitmq-disk/topology.nix;
+    configTarget = ./rabbitmq-disk/config.nix;
+    baseModule = ./rabbitmq-disk/module.nix;
+    testScript = ./rabbitmq-disk/test-script.py;
+    properties = ./rabbitmq-disk/properties.nix;
+    reportNode = "rabbit1";
+  };
+
+  rabbitmq-crash = {
+    description = "[thesis candidate] RabbitMQ abrupt broker durability contract";
+    topologyTarget = ./rabbitmq-crash/topology.nix;
+    configTarget = ./rabbitmq-crash/config.nix;
+    baseModule = ./rabbitmq-crash/module.nix;
+    testScript = ./rabbitmq-crash/test-script.py;
+    properties = ./rabbitmq-crash/properties.nix;
+    reportNode = "rabbit1";
+  };
+
+  rabbitmq-dns = {
+    description = "[prototype] RabbitMQ static host-identity sensitivity target";
+    topologyTarget = ./rabbitmq-dns/topology.nix;
+    configTarget = ./rabbitmq-dns/config.nix;
+    baseModule = ./rabbitmq-dns/module.nix;
+    testScript = ./rabbitmq-dns/test-script.py;
+    properties = ./rabbitmq-dns/properties.nix;
+    reportNode = "rabbit1";
+  };
+
+  rabbitmq-dns-contract = {
+    description = "RabbitMQ DNS strict formation contract negative control";
+    topologyTarget = ./rabbitmq-dns/topology.nix;
+    configTarget = ./rabbitmq-dns/config.nix;
+    baseModule = ./rabbitmq-dns/module.nix;
+    testScript = ./rabbitmq-dns/test-script.py;
+    properties = ./rabbitmq-dns-contract/properties.nix;
+    reportNode = "rabbit1";
+  };
+
+  rabbitmq-disk-availability = {
+    description = "RabbitMQ disk-pressure availability boundary negative control";
+    topologyTarget = ./rabbitmq-disk/topology.nix;
+    configTarget = ./rabbitmq-disk/config.nix;
+    baseModule = ./rabbitmq-disk/module.nix;
+    testScript = ./rabbitmq-disk/test-script.py;
+    properties = ./rabbitmq-disk-availability/properties.nix;
+    reportNode = "rabbit1";
+  };
+
+  rabbitmq-partition-availability = {
+    description = "RabbitMQ quorum partition availability boundary negative control";
+    topologyTarget = ./rabbitmq-partition/topology.nix;
+    configTarget = ./rabbitmq-partition/config.nix;
+    baseModule = ./rabbitmq-partition/module.nix;
+    testScript = ./rabbitmq-partition/test-script.py;
+    properties = ./rabbitmq-partition-availability/properties.nix;
+    reportNode = "rabbit1";
+  };
+
+  rabbitmq-failure-domain = {
+    description = "[thesis] RabbitMQ replica failure-domain placement contract";
+    topologyTarget = ./rabbitmq-failure-domain/topology.nix;
+    configTarget = ./rabbitmq-failure-domain/config.nix;
+    baseModule = ./rabbitmq-failure-domain/module.nix;
+    testScript = ./rabbitmq-failure-domain/test-script.py;
+    properties = ./rabbitmq-failure-domain/properties.nix;
+    reportNode = "rabbit1";
+  };
+
   postgresql = {
     description = "Two-node PostgreSQL primary/standby streaming replication target";
     topologyTarget = ./postgresql/topology.nix;
