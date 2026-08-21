@@ -124,7 +124,12 @@ fuzzer {{
 
 
 def generate_inspect_expr(
-    seed: int, topology_target_path: str, config_target_path: str, project_root: str
+    seed: int,
+    topology_target_path: str,
+    config_target_path: str,
+    project_root: str,
+    topology_choices: Optional[dict] = None,
+    config_choices: Optional[dict] = None,
 ) -> str:
     abs_topology_target = resolve_path(topology_target_path, project_root)
     abs_config_target = resolve_path(config_target_path, project_root)
@@ -144,7 +149,9 @@ def generate_inspect_expr(
   configTarget = import {nix_path(abs_config_target)} {{ inherit lib; }};
 
   fuzzedTopology = fuzzer {{ seed = {nix_string(str(seed))}; target = topologyTarget; }};
-  topology = shrinker.apply topologyTarget fuzzedTopology.result {{}};
+  topologyOverrides = {nix_json(topology_choices or {})};
+  configOverrides = {nix_json(config_choices or {})};
+  topology = shrinker.apply topologyTarget fuzzedTopology.result topologyOverrides;
   expansion = expandTopology {{ topology-map = topology; }};
   roleNames = builtins.sort (a: b: a < b) (builtins.attrNames topology.roles);
   roleFuzz = builtins.listToAttrs (lib.imap0 (idx: roleName:
@@ -156,7 +163,7 @@ def generate_inspect_expr(
       name = roleName;
       value = {{
         seed = roleSeed;
-        result = fuzzedRole.result;
+        result = shrinker.apply configTarget fuzzedRole.result (configOverrides.${{roleName}} or {{}});
         choices = fuzzedRole.choices;
       }};
     }}
@@ -219,6 +226,17 @@ def run_once(
         "choices.json",
         {"topologyChoices": topology_choices or {}, "configChoices": config_choices or {}},
     )
+    resolved = eval_json(
+        generate_inspect_expr(
+            seed,
+            target.topology_target,
+            target.config_target,
+            project_root,
+            topology_choices,
+            config_choices,
+        )
+    )
+    store.write_json(run_dir, "resolved.json", resolved)
     result = build_test(nix_expr, result_link, expr_path=expr_path)
     store.write_text(run_dir, "stdout.log", result.stdout)
     store.write_text(run_dir, "stderr.log", result.stderr)
