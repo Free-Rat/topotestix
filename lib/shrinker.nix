@@ -20,15 +20,9 @@
 { lib }:
 
 let
-  # getValueByPath : attrset -> string -> value
+  # normalizePath : string -> string
   #
-  # Navigate a nested attrset using a dot-separated path string.
-  # Example: getValueByPath { a = { b = 42; }; } ".a.b" => 42
-  #
-  # The path format uses dot-separated keys starting with a dot,
-  # matching the format produced by combinators.resolve's choices map.
-  # For example, ".virtualisation.memorySize" navigates to
-  # attrset.virtualisation.memorySize.
+  # Strip the leading dot from a path string.
   #
   normalizePath = path:
     if !(builtins.isString path) || path == "" || builtins.substring 0 1 path != "." then
@@ -36,38 +30,102 @@ let
     else
       builtins.substring 1 (builtins.stringLength path - 1) path;
 
+  # tryKeyAtLen : attrset -> [string] -> int -> { value, remainder } or null
+  #
+  # Try to find a key formed by joining the first `len` parts with dots.
+  # If found, returns { value = <found-value>; remainder = <remaining-parts> }.
+  # Returns null if no matching key is found at this length.
+  tryKeyAtLen = attrs: parts: len:
+    let
+      candidate = builtins.concatStringsSep "." (lib.take len parts);
+      rest = lib.drop len parts;
+    in
+    if attrs ? ${candidate} then { value = attrs.${candidate}; remainder = rest; }
+    else null;
+
+  # findBestMatch : attrset -> [string] -> { value, remainder } or null
+  #
+  # Try to navigate into `attrs` starting from the given path parts.
+  # Tries progressively longer keys to handle attribute names that
+  # contain dots (e.g. "disk_free_limit.absolute" in RabbitMQ configItems).
+  # Starts with len=1 (standard dot-split key) and increases until a match is found.
+  findBestMatch = attrs: parts:
+    let
+      maxLen = builtins.length parts;
+      matches = builtins.filter (match: match != null)
+        (map (idx: tryKeyAtLen attrs parts idx) (lib.range 1 maxLen));
+    in
+    if builtins.length matches > 1 then
+      builtins.throw "shrinker: ambiguous path matches both nested and dotted attribute names"
+    else if matches == [] then null
+    else builtins.head matches;
+
+  # navigateDottedKeys handles attribute names that contain dots.
+  # When a naive dot-split would land on a non-existent key, it tries
+  # progressively longer candidates by combining parts with dots.
+  # Returns { value, remainder } where remainder is the unconsumed suffix.
+  navigateDottedKeys = attrs: parts:
+    if parts == [] then
+      { value = attrs; remainder = []; }
+    else
+      let r = findBestMatch attrs parts; in
+      if r != null then r
+      else builtins.throw "shrinker: path does not exist in target";
+
+  # getValueByPath : attrset -> string -> value
+  #
+  # Navigate a nested attrset using a dot-separated path string.
+  # Handles attribute names that contain embedded dots by trying progressively
+  # longer key candidates at each level.
+  #
   getValueByPath = attrs: path:
     let
       pathStr = normalizePath path;
       parts = lib.splitString "." pathStr;
+      consumeAll = currentPos: remainingParts:
+        if remainingParts == [] then currentPos
+        else
+          let r = navigateDottedKeys currentPos remainingParts; in
+          if r.remainder != [] then consumeAll r.value r.remainder
+          else r.value;
     in
-    lib.foldl' (acc: part:
-      if builtins.isAttrs acc && acc ? ${part} then
-        acc.${part}
-      else
-        builtins.throw "shrinker: path ${path} does not exist in target"
-    ) attrs parts;
+    consumeAll attrs parts;
 
   # setValueByPath : attrset -> string -> value -> attrset
   #
-  # Set a value at a nested path in an attrset, creating intermediate attrsets as needed.
+  # Set a value at an existing nested path in an attrset.
   # Returns a new attrset with the value set at the specified path.
+  #
+  # Handles attribute names that contain dots by trying progressively longer
+  # key candidates when a short split would miss the actual identifier.
   #
   setValueByPath = attrs: path: value:
     let
       pathStr = normalizePath path;
       parts = lib.splitString "." pathStr;
+      match = findBestMatch attrs parts;
     in
-    if builtins.length parts == 1 then
-      attrs // { ${builtins.head parts} = value; }
-    else
+    if builtins.length parts == 0 then
+      attrs
+    else if match == null then
+      # A single leaf key can be added, but nested traversal must already exist.
+      if builtins.length parts == 1 then
+        attrs // { ${builtins.head parts} = value; }
+      else
+        builtins.throw "shrinker: cannot set path ${path} — no matching key found"
+    else if match.remainder != [] then
+      # Recurse into the matched sub-attrset.
       let
-        head = builtins.head parts;
-        tail = builtins.tail parts;
-        existing = if attrs ? ${head} then attrs.${head} else {};
-        pathForTail = "." + builtins.concatStringsSep "." tail;
+        keyName = builtins.concatStringsSep "." (lib.take (builtins.length parts - builtins.length match.remainder) parts);
+        pathForRest = "." + builtins.concatStringsSep "." match.remainder;
       in
-      attrs // { ${head} = setValueByPath existing pathForTail value; };
+      attrs // { ${keyName} = setValueByPath match.value pathForRest value; }
+    else
+      # Final key — set the value.
+      let
+        keyName = builtins.concatStringsSep "." parts;
+      in
+      attrs // { ${keyName} = value; };
 
   # applyOverrides : target -> fuzzed -> choices_override -> attrset
   #
@@ -85,9 +143,9 @@ let
       lib.foldl' (acc: path:
         let
           idx = choices_override.${path};
-          value = valueAtChecked target path idx;
+          val = valueAtChecked target path idx;
         in
-        setValueByPath acc path value
+        setValueByPath acc path val
       ) fuzzed paths;
 
   # collectChoicePaths : string -> value -> [string]
@@ -160,7 +218,13 @@ in
   # Returned in alphabetical order for deterministic iteration.
   #
   choicePaths = target:
-    lib.naturalSort (collectChoicePaths "" target);
+    let
+      paths = lib.naturalSort (collectChoicePaths "" target);
+    in
+    if builtins.length paths != builtins.length (lib.unique paths) then
+      builtins.throw "shrinker.choicePaths: nested and dotted attribute names produce an ambiguous path"
+    else
+      paths;
 
   # valueAt : target -> path -> index -> value
   #

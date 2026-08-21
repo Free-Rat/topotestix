@@ -227,6 +227,7 @@ class CmdSweepJsonTests(unittest.TestCase):
                 sorted(payload.keys()),
                 [
                     "avgRunTime",
+                    "classifications",
                     "completed",
                     "failed",
                     "failures",

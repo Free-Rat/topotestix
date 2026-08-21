@@ -287,10 +287,16 @@ def sweep_events(
     """
     sweep_t0 = time.monotonic()
     failures = 0
+    classification_counts: dict[str, int] = {}
     skipped = 0
     sum_elapsed = 0.0
     completed = 0
     total = len(seeds)
+
+    def record_classifications(report: list[dict]) -> None:
+        for entry in report:
+            status = entry.get("status", "unknown")
+            classification_counts[status] = classification_counts.get(status, 0) + 1
 
     store = None
     existing: set[int] = set()
@@ -339,6 +345,7 @@ def sweep_events(
             completed += 1
             if not passed:
                 failures += 1
+            record_classifications(report)
             yield event(
                 "run_passed" if passed else "run_failed",
                 f"{'PASS' if passed else 'FAIL'} [{index}/{total} (seed={seed})] ({elapsed:.1f}s)",
@@ -419,6 +426,7 @@ def sweep_events(
                         sum_elapsed += elapsed
                         if not passed:
                             failures += 1
+                        record_classifications(report)
                         done_idx = completed
                         cur_failures = failures
                     status_label = "PASS" if passed else "FAIL"
@@ -470,6 +478,7 @@ def sweep_events(
         skipped=skipped,
         failures=failures,
         completed=completed,
+        classifications=classification_counts,
         totalTime=sweep_total,
         avgRunTime=avg_run_time,
     )
@@ -537,6 +546,10 @@ def print_summary(seed: int, name: str, report: list[dict], build_ok: bool, run_
         name_str = entry.get("name", "unnamed")
         if status == "passed":
             print(f"  PASS  {name_str}")
+        elif status == "expected_failure":
+            print(f"  EXPECTED FAILURE  {name_str}: {entry.get('message', '')}")
+        elif status == "unexpected_pass":
+            print(f"  UNEXPECTED PASS  {name_str}: {entry.get('message', '')}")
         else:
             print(f"  FAIL  {name_str}: {entry.get('message', '')}")
     print()
@@ -728,6 +741,7 @@ def cmd_sweep(args, project_root: str) -> int:
     completed = 0
     skipped = 0
     failed_runs: list[dict] = []
+    classification_counts: dict[str, int] = {}
     total_time = 0.0
     avg_run_time = 0.0
     for item in sweep_events(
@@ -765,6 +779,7 @@ def cmd_sweep(args, project_root: str) -> int:
             total = item.data["total"]
             total_time = float(item.data.get("totalTime", 0.0))
             avg_run_time = float(item.data.get("avgRunTime", 0.0))
+            classification_counts = item.data.get("classifications", {})
             if json_mode:
                 summary = {
                     "target": target.name,
@@ -773,6 +788,7 @@ def cmd_sweep(args, project_root: str) -> int:
                     "skipped": skipped,
                     "failed": failures,
                     "failures": failed_runs,
+                    "classifications": classification_counts,
                     "totalTime": round(total_time, 3),
                     "avgRunTime": round(avg_run_time, 3),
                     "jobs": jobs,
@@ -782,6 +798,7 @@ def cmd_sweep(args, project_root: str) -> int:
                 print(
                     f"Completed {total} planned runs; "
                     f"completed={completed} skipped={skipped} failures={failures} "
+                    f"| classifications={classification_counts} "
                     f"| total {total_time:.1f}s avg {avg_run_time:.1f}s"
                 )
     return 1 if failures else 0

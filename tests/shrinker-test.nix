@@ -227,4 +227,28 @@ in
     expr = shrinker.optionsFor { virtualisation = { memorySize = [ 512 1024 2048 ]; }; } ".virtualisation.memorySize";
     expected = [ 512 1024 2048 ];
   };
+
+  testDottedAttributePath = {
+    expr = shrinker.apply
+      { services.rabbitmq.configItems."disk_free_limit.absolute" = [ 50 100 200 ]; }
+      { services.rabbitmq.configItems."disk_free_limit.absolute" = 200; }
+      { ".services.rabbitmq.configItems.disk_free_limit.absolute" = 0; };
+    expected = { services.rabbitmq.configItems."disk_free_limit.absolute" = 50; };
+  };
+
+  testDottedAttributeValueAt = {
+    expr = shrinker.valueAt
+      { services.rabbitmq.configItems."disk_free_limit.absolute" = [ 50 100 200 ]; }
+      ".services.rabbitmq.configItems.disk_free_limit.absolute"
+      1;
+    expected = 100;
+  };
+
+  testRejectsAmbiguousNestedAndDottedPaths = {
+    expr = (builtins.tryEval (builtins.deepSeq (shrinker.choicePaths {
+      a.b = [ 1 2 ];
+      "a.b" = [ 3 4 ];
+    }) true)).success;
+    expected = false;
+  };
 }
