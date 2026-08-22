@@ -73,7 +73,11 @@ def check_crash_queue_and_cluster_recover():
     if members and members != expected:
         raise AssertionError("unexpected queue members after recovery: " + str(state))
     if online and online != expected:
-        raise AssertionError("not all queue members online after recovery: " + str(state))
+        raise AssertionError(
+            "not all queue members online after recovery: " + str(state)
+            + "; cluster_status_from_rabbit1: "
+            + str(results.get("cluster_status_after_recovery"))
+        )
     for machine in [rabbit1, rabbit2, rabbit3]:
         machine.succeed("systemctl is-active rabbitmq.service")
         machine.succeed("su -s /bin/sh rabbitmq -c 'rabbitmq-diagnostics -q ping'")

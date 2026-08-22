@@ -7,6 +7,7 @@ start_all()
 
 NODES = {"rabbit1": rabbit1, "rabbit2": rabbit2, "rabbit3": rabbit3}
 QUEUE = "topotestix_crash_durability"
+BOOTSTRAP_NODE = "rabbit1"
 
 
 def rabbitmqctl(machine, args):
@@ -65,13 +66,93 @@ def crash_service(machine):
     return before
 
 
+def machine_name(machine):
+    return next(name for name, host in NODES.items() if host is machine)
+
+
+def cluster_members(machine):
+    """Node names this node reports in its cluster_status output.
+
+    Uses the same per-name grep over `rabbitmqctl cluster_status` that
+    the rest of the harness relies on; `rabbitmqctl cluster_nodes` does
+    not exist in RabbitMQ 4.x."""
+    return sorted(
+        name for name in NODES
+        if "rabbit@" + name in cluster_status(machine)
+    )
+
+
+def cluster_status(machine):
+    return machine.succeed(
+        "su -s /bin/sh rabbitmq -c 'rabbitmqctl cluster_status'"
+    )
+
+
+def mnesia_dir_listing(machine):
+    return machine.succeed(
+        "ls -laR /var/lib/rabbitmq/mnesia 2>/dev/null | head -n 200"
+        " || echo 'mnesia directory missing'"
+    )
+
+
+def restart_diagnostics(machine):
+    status_head = machine.succeed(
+        "su -s /bin/sh rabbitmq -c 'rabbitmq-diagnostics status 2>&1' | head -n 40"
+    )
+    try:
+        start_type = machine.succeed(
+            "su -s /bin/sh rabbitmq -c 'rabbitmq-diagnostics start_type 2>&1'"
+        )
+    except Exception as exc:
+        start_type = "start_type unavailable: " + str(exc)
+    return {"status_head": status_head, "start_type": start_type}
+
+
+def ensure_cluster_membership(machine):
+    # wait_for_rabbit is satisfied by a healthy singleton, so cluster
+    # membership must be verified explicitly. A node that booted outside
+    # the cluster (virgin boot) rejoins the same way the pre-crash setup
+    # joined: stop_app, reset, join the bootstrap node, start_app.
+    members = cluster_members(machine)
+    if members == sorted(NODES):
+        return members
+    self_name = machine_name(machine)
+    bootstrap = next(name for name in sorted(NODES) if name != self_name)
+    rabbitmqctl(machine, "stop_app")
+    rabbitmqctl(machine, "reset")
+    rabbitmqctl(machine, "join_cluster rabbit@" + bootstrap)
+    rabbitmqctl(machine, "start_app")
+    deadline = time.time() + 120
+    while time.time() < deadline:
+        members = cluster_members(machine)
+        if members == sorted(NODES):
+            return members
+        time.sleep(3)
+    raise RuntimeError(
+        "cluster membership not restored for "
+        + self_name
+        + " (cluster_status reported "
+        + str(members)
+        + " after rejoin via rabbit@"
+        + bootstrap
+        + "): "
+        + cluster_status(machine)
+    )
+
+
+restart_evidence = {}
+
+
 def restart_service(machine, old_pid):
+    restart_evidence["mnesia_before_restart"] = mnesia_dir_listing(machine)
     machine.succeed("systemctl reset-failed rabbitmq.service")
     machine.succeed("systemctl start rabbitmq.service")
     wait_for_rabbit(machine)
     after = service_state(machine)
     if after.get("MainPID") in {None, "0", old_pid}:
         raise RuntimeError("RabbitMQ did not restart with a new process: " + str(after))
+    restart_evidence["rejoined_cluster"] = ensure_cluster_membership(machine)
+    restart_evidence["diagnostics_after_start"] = restart_diagnostics(machine)
     return after
 
 
@@ -81,7 +162,7 @@ for machine in NODES.values():
 for machine in [rabbit2, rabbit3]:
     rabbitmqctl(machine, "stop_app")
     rabbitmqctl(machine, "reset")
-    rabbitmqctl(machine, "join_cluster rabbit@rabbit1")
+    rabbitmqctl(machine, "join_cluster rabbit@" + BOOTSTRAP_NODE)
     rabbitmqctl(machine, "start_app")
 
 rabbit1.succeed(
@@ -232,6 +313,7 @@ while time.time() < deadline:
         break
     time.sleep(3)
     state_after = queue_state()
+cluster_status_after_recovery = cluster_status(rabbit1)
 
 drain_out = rabbit1.succeed(
     f"""
@@ -272,6 +354,10 @@ results = {
     "queue_after": state_after,
     "service_before": service_before,
     "service_after": service_after,
+    "rejoined_cluster": restart_evidence.get("rejoined_cluster"),
+    "mnesia_before_restart": restart_evidence.get("mnesia_before_restart"),
+    "diagnostics_after_start": restart_evidence.get("diagnostics_after_start"),
+    "cluster_status_after_recovery": cluster_status_after_recovery,
     "operations": publisher_results["operations"],
     "recovered": json.loads(drain_out.strip().splitlines()[-1]),
 }
