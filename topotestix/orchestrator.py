@@ -12,7 +12,13 @@ from typing import Iterator, Optional
 from .events import Event, event
 from .nix import build_test, eval_json, nix_json, nix_path, nix_string, resolve_path
 from .reports import parse_report, report_passed, report_summary
-from .run_store import RunStore, default_runs_dir, utc_now
+from .run_store import (
+    RunStore,
+    default_runs_dir,
+    git_head,
+    materialize_result_artifacts,
+    utc_now,
+)
 from .targets import Target, get_target
 
 
@@ -244,6 +250,12 @@ def run_once(
     build_ok = result.returncode == 0
     report = parse_report(result_link)
     store.write_json(run_dir, "report.json", report)
+
+    # Materialize evidence artifacts (target results payload, report.json) out
+    # of the `result` store path so the run dir keeps them independently of the
+    # nix store (the store path is not a GC root). Written after the canonical
+    # report.json so the canonical copy wins over the read-only 444 store copy.
+    artifacts = materialize_result_artifacts(result_link, run_dir)
     passed = build_ok and report_passed(report)
     status = "passed" if passed else "failed"
     meta = {
@@ -256,6 +268,8 @@ def run_once(
         "finishedAt": utc_now(),
         "runDir": run_dir,
         "resultPath": result_link,
+        "gitHead": git_head(project_root),
+        "artifacts": artifacts,
         "summary": report_summary(report),
         "reproduceCommand": reproduce_command(
             project_root, target, seed, name, topology_choices or {}, config_choices or {}

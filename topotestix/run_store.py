@@ -1,6 +1,8 @@
 import json
 import os
 import re
+import shutil
+import subprocess
 from datetime import datetime, timezone
 from typing import Any
 
@@ -15,6 +17,62 @@ def safe_name(value: str) -> str:
 
 def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat()
+
+
+def git_head(cwd: str) -> str:
+    """Return the full Git revision (HEAD) of the repository at `cwd`, or "".
+
+    Used to stamp run metadata with provenance. Fails soft so that runs
+    started outside a repository (or with git unavailable) are still recorded,
+    just with an empty revision.
+    """
+    try:
+        proc = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=cwd,
+            capture_output=True,
+            text=True,
+            timeout=10,
+        )
+    except (OSError, subprocess.SubprocessError):
+        return ""
+    if proc.returncode != 0:
+        return ""
+    return proc.stdout.strip()
+
+
+def materialize_result_artifacts(result_path: str, run_dir: str) -> list[str]:
+    """Copy evidence artifacts out of the test's $out store path into the run dir.
+
+    The NixOS test driver writes files copied from guests (the target's
+    results payload plus report.json) into the test derivation's output
+    directory, which is only reachable through the run dir's `result` symlink.
+    That store path is not a GC root, so the artifacts are materialized into
+    the run directory to make retention explicit and immune to `nix-store --gc`.
+
+    Returns the sorted list of copied entry names. A missing `result` store
+    path (build failure) yields an empty list. Entries already present in the
+    run dir (e.g. the canonically written report.json) are skipped, never
+    overwritten: store copies are read-only 444 and the canonical run-dir
+    files must win.
+    """
+    src_dir = os.path.realpath(result_path)
+    if not os.path.isdir(src_dir):
+        return []
+    copied = []
+    for entry in sorted(os.listdir(src_dir)):
+        src = os.path.join(src_dir, entry)
+        dst = os.path.join(run_dir, entry)
+        if os.path.exists(dst):
+            continue
+        if os.path.isfile(src):
+            shutil.copy2(src, dst)
+        elif os.path.isdir(src):
+            shutil.copytree(src, dst, dirs_exist_ok=True)
+        else:
+            continue
+        copied.append(entry)
+    return copied
 
 
 class RunStore:
