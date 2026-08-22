@@ -244,3 +244,57 @@ At minimum, each final experiment should include:
 Python unit tests and Nix unit tests pass after these changes. RabbitMQ VM tests
 were not rerun during the audit, so the changed disk and negative-control oracles
 have no fresh empirical result yet.
+
+## Closure (2026-08-22)
+
+The gap items in the evidence policy above were closed on git revision
+`998cae1` ("Orchestrator: retain evidence payloads and record git
+provenance"), with evidence under `.topotestix/runs-thesis-redesign/`:
+
+- **Exact repository revision**: every retained run dir carries `run.json`
+  with `gitHead`, `artifacts`, and `reproduceCommand`; eleven thesis runs
+  exist on `998cae1`, plus the whitelisted `phase1-crash-follower-smoke-2`
+  on `118a5ab` (backfilled `run.json`, provenance caveat documented in
+  `docs/rabbitmq/thesis-targets.md`).
+- **Complete forced choices and resolved configuration**: every run dir
+  carries `choices.json` and `resolved.json` (and `expr.nix`, `target.json`,
+  `stdout/stderr.log`, `result`).
+- **Cache hit vs. actual execution**: Phase-2 cells were run as fresh
+  orchestrator invocations against a clean committed tree; the materialized
+  run dirs (one per execution, unique name and timestamp) are the cited
+  evidence rather than aggregated cache statistics.
+- **Three independent reproductions of every failure**: the colocated
+  failure-domain counterexample has two `998cae1` reproductions
+  (`20260822-190921-…-phase2-faildom-colocA`,
+  `20260822-191139-…-phase2-faildom-colocB`) plus the pre-HEAD
+  `20260821-125835-…-thesis-domain-colocated-counterexample-2`; the crash
+  contract has four `998cae1` reproductions (repA, repB, leader, during)
+  and the during cell was additionally retuned twice
+  (delay 10 s, 50 ops, follower and leader) — all 3/3 PASS with 0 ambiguous
+  operations.
+- **Exact client-operation history and broker telemetry**: payloads
+  `crash-results.json`, `disk-results.json`,
+  `failure-domain-results.json` record per-operation outcome
+  (`confirmed`/`rejected`/`timed_out`/`ambiguous`), per-node disk telemetry
+  phases, and exact recovered message identities.
+- **Positive and negative controls**: failure-domain (spread vs. colocated),
+  crash (follower, leader, during), and disk positive control (5/5 PASS,
+  50/50 confirmed, 0 alarms). The disk counterexample cell is pending the
+  T1 design decision in `HANDOFF-thesis-evaluation.md` (Option A: add a
+  naive-capacity sufficiency field and let the contract fire on it; Option
+  B: document the vacuity). Until then the disk target carries a positive
+  control only, and the old strict sufficiency model makes the disk
+  contract un-failable by construction — a finding, not a gap in
+  execution.
+- **Minimized failing configuration**: the colocated cell is minimal by
+  construction (it differs from the passing spread control in exactly one
+  configuration dimension, replica placement, per the two cells'
+  `choices.json`); the crash during cell varies a single timing dimension.
+  Disk minimization follows the T1 outcome (see execution plan for the
+  all-minimum verification cell).
+- **What the oracle does and does not prove**: stated per contract in the
+  cell matrix and the thesis chapter evaluation section; in particular
+  `rabbitmq-failure-domain` models a declared zone outage, not a shared
+  block device, and the disk oracle bounds only the confirmation SLO for
+  the declared backlog (it does not model I/O saturation beyond the
+  alarm).

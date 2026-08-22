@@ -49,8 +49,14 @@ broker-process failure when quorum remains available.
 The target observes the quorum queue leader, selects a leader or follower from
 that state, kills the RabbitMQ service cgroup with `SIGKILL`, and restarts the
 same service against its unchanged data directory. It records unique publish
-operations and verifies confirmed IDs exactly once after recovery. This remains
-a thesis candidate until both leader and follower cases run reproducibly.
+operations and verifies confirmed IDs exactly once after recovery.
+
+Status: **thesis target** (promoted from thesis candidate on 2026-08-22).
+Evidence: follower reproductions (3), leader, during-publish (2), and
+during-publish retunes (2) under
+`.topotestix/runs-thesis-redesign/`, all 3/3 PASS with 50/50 confirmed
+operations recovered exactly once; plus the durable cluster-rejoin finding
+(section *Final cell matrix* below).
 
 ## Controls and prototypes
 
@@ -72,19 +78,41 @@ a thesis candidate until both leader and follower cases run reproducibly.
 The historical `docs/empirical-rabbitmq-*.md` reports do not validate these
 redesigned targets.
 
-## Initial smoke observations
+## Final cell matrix (2026-08-22, evidence in `.topotestix/runs-thesis-redesign/`)
 
-These are implementation checks, not repeated thesis measurements:
+Every run below carries `report.json`, `run.json` (gitHead, artifacts,
+reproduceCommand), `choices.json`, `resolved.json`, `expr.nix`, logs, and the
+materialized evidence payload. Git revision per run is in its `run.json`.
 
-- Disk seed 1 passed all five exact-history, capacity, and recovery properties.
-- Spread failure-domain placement passed availability and exact recovery.
-- Colocating `rabbit1` and `rabbit2` in the failed domain produced the intended
-  counterexample: the sole survivor did not complete the confirmed publish
-  within the test-driver budget, while exact recovery still passed.
-- Abrupt follower crash preserved every confirmed message exactly once and
-  replaced the broker PID, but the restarted follower did not return to the
-  queue's `online` member set within 120 seconds. This is an unresolved recovery
-  result, not a passing durability case.
+| Target | Cell | Run dir | Verdict |
+|---|---|---|---|
+| rabbitmq-crash | follower / before_publish (reproduction 1) | `20260822-173148-rabbitmq-crash-seed-1-phase1-crash-follower-smoke-2` | 3/3 PASS (gitHead `118a5ab`; `run.json` is backfilled, see note below) |
+| rabbitmq-crash | follower / before_publish (reproduction 2) | `20260822-175757-rabbitmq-crash-seed-1-phase2-crash-follower-repA` | 3/3 PASS |
+| rabbitmq-crash | follower / before_publish (reproduction 3) | `20260822-180022-rabbitmq-crash-seed-1-phase2-crash-follower-repB` | 3/3 PASS |
+| rabbitmq-crash | leader / before_publish | `20260822-185806-rabbitmq-crash-seed-1-phase2-crash-leader` | 3/3 PASS (leader transferred rabbit1 → rabbit2) |
+| rabbitmq-crash | during_publish / follower (kill after batch) | `20260822-190037-rabbitmq-crash-seed-1-phase2-crash-during` | 3/3 PASS, 0 ambiguous ops |
+| rabbitmq-crash | during_publish / follower, delay 10 s, 50 ops | `20260822-202330-rabbitmq-crash-seed-1-phase3-crash-during-retune` | 3/3 PASS, 0 ambiguous ops |
+| rabbitmq-crash | during_publish / leader, delay 10 s, 50 ops | `20260822-202536-rabbitmq-crash-seed-1-phase3-crash-during-retune-2` | 3/3 PASS, 0 ambiguous ops |
+| rabbitmq-disk | positive control (seed-1 cell, 500 MB free) | `20260822-183835-rabbitmq-disk-seed-1-phase2-disk-positive` | 5/5 PASS (50/50 confirmed, 0 alarms) |
+| rabbitmq-failure-domain | spread placement (positive) | `20260822-190647-rabbitmq-failure-domain-seed-1-phase2-faildom-spread` | 2/2 PASS (probe confirmed, 11/11 recovered) |
+| rabbitmq-failure-domain | colocated placement (counterexample 1) | `20260822-190921-rabbitmq-failure-domain-seed-1-phase2-faildom-colocA` | `retains-quorum-availability` FAILS (intended), `exact-recovery` PASSES |
+| rabbitmq-failure-domain | colocated placement (counterexample 2) | `20260822-191139-rabbitmq-failure-domain-seed-1-phase2-faildom-colocB` | same (intended) |
 
-The local evidence is under `.topotestix/runs-thesis-redesign/`. These runs must
-be repeated with fresh builds and repository provenance before citation.
+The disk counterexample cell (naive-capacity "sufficient but SLO-breaking") is
+recorded in this matrix once the T1 design decision in
+`HANDOFF-thesis-evaluation.md` is resolved and its runs exist.
+
+Notes:
+
+- All runs except `phase1-crash-follower-smoke-2` are on git revision
+  `998cae1` ("Orchestrator: retain evidence payloads and record git
+  provenance").
+- `phase1-crash-follower-smoke-2` is on `118a5ab`: a Phase-1 orchestrator
+  regression (PermissionError on the store-copied `report.json`) left
+  `run.json` unwritten, and it was backfilled later; its `crash-results.json`
+  carries the same evidence fields and its verdict is 3/3 PASS. Thesis
+  citations prefer the four `998cae1` crash reproductions (repA, repB, leader,
+  during); the smoke-2 run is cited with its provenance caveat where used.
+
+This matrix supersedes the historical "Initial smoke observations" section,
+which has been removed.

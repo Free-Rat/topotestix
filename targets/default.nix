@@ -80,7 +80,7 @@
   };
 
   rabbitmq-crash = {
-    description = "[thesis candidate] RabbitMQ abrupt broker durability contract";
+    description = "[thesis] RabbitMQ abrupt broker durability contract";
     topologyTarget = ./rabbitmq-crash/topology.nix;
     configTarget = ./rabbitmq-crash/config.nix;
     baseModule = ./rabbitmq-crash/module.nix;
