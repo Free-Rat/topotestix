@@ -73,7 +73,17 @@ _check("rabbitmq-disk-no-unexplained-messages", check_disk_no_unexplained_messag
     setup = ''
 def check_disk_capacity_confirmation_contract():
     results = load_disk_results()
-    if not results["contract"]["capacity_sufficient"]:
+    contract = results["contract"]
+    # Fire when either planning model is "sufficient": the strict model
+    # (alarm margin + backlog) or the weaker naive model (backlog only).
+    # The strict model subsumes the naive one, so strict-sufficient cells
+    # keep identical behavior; newly covered is the naive-sufficient /
+    # strict-insufficient region, where the disk_free alarm can still break
+    # the confirmation SLO.
+    sufficient = contract["capacity_sufficient"] or contract[
+        "naive_capacity_sufficient"
+    ]
+    if not sufficient:
         return
     non_confirmed = [
         op for op in results["operations"] if op["outcome"] != "confirmed"

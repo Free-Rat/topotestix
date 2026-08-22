@@ -228,6 +228,12 @@ planned_payload_bytes = planned_messages * message_size
 required_free_bytes = limit_bytes + (
     planned_payload_bytes * safety_factor_milli // 1000
 )
+# Naive planning model: budgets only the payload backlog and ignores the
+# alarm margin. Strictly weaker (required_free_bytes >= naive, since limit >
+# 0); exposed so the capacity contract can also fire on configurations where
+# a naive capacity planner is "sufficient" but the disk_free alarm still
+# breaks the confirmation SLO.
+naive_required_free_bytes = planned_payload_bytes * safety_factor_milli // 1000
 
 results = {
     "schema_version": 1,
@@ -243,8 +249,13 @@ results = {
         "confirm_timeout_ms": confirm_timeout_ms,
         "capacity_safety_factor_milli": safety_factor_milli,
         "required_free_bytes": required_free_bytes,
+        "naive_required_free_bytes": naive_required_free_bytes,
         "capacity_sufficient": all(
             sample["fs_available_bytes"] >= required_free_bytes for sample in after_fill
+        ),
+        "naive_capacity_sufficient": all(
+            sample["fs_available_bytes"] >= naive_required_free_bytes
+            for sample in after_fill
         ),
     },
     "operations": operations,
