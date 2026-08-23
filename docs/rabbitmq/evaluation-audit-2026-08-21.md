@@ -247,13 +247,17 @@ have no fresh empirical result yet.
 
 ## Closure (2026-08-22)
 
-The gap items in the evidence policy above were closed on git revision
+The gap items in the evidence policy above were closed on git revisions
 `998cae1` ("Orchestrator: retain evidence payloads and record git
-provenance"), with evidence under `.topotestix/runs-thesis-redesign/`:
+provenance") and `761b053` ("Disk target: expose the naive-capacity
+counterexample contract"), with evidence under
+`.topotestix/runs-thesis-redesign/`:
 
 - **Exact repository revision**: every retained run dir carries `run.json`
   with `gitHead`, `artifacts`, and `reproduceCommand`; eleven thesis runs
-  exist on `998cae1`, plus the whitelisted `phase1-crash-follower-smoke-2`
+  exist on `998cae1`, the four `phase3-disk-*` run dirs (positive-v2,
+  counterexample, counterexample-min ×2) are on `761b053`, plus
+  the whitelisted `phase1-crash-follower-smoke-2`
   on `118a5ab` (backfilled `run.json`, provenance caveat documented in
   `docs/rabbitmq/thesis-targets.md`).
 - **Complete forced choices and resolved configuration**: every run dir
@@ -279,19 +283,28 @@ provenance"), with evidence under `.topotestix/runs-thesis-redesign/`:
   phases, and exact recovered message identities.
 - **Positive and negative controls**: failure-domain (spread vs. colocated),
   crash (follower, leader, during), and disk positive control (5/5 PASS,
-  50/50 confirmed, 0 alarms). The disk counterexample cell is pending the
-  T1 design decision in `HANDOFF-thesis-evaluation.md` (Option A: add a
-  naive-capacity sufficiency field and let the contract fire on it; Option
-  B: document the vacuity). Until then the disk target carries a positive
-  control only, and the old strict sufficiency model makes the disk
-  contract un-failable by construction — a finding, not a gap in
-  execution.
+  50/50 confirmed, 0 alarms, re-verified on `761b053` as
+  `20260822-224837-…-phase3-disk-positive-v2`). The disk counterexample was
+  achieved by Option A of the T1 design decision: commit `761b053` exposed
+  the naive (backlog-only) capacity model alongside the strict model and let
+  the contract fire when either declares capacity sufficient; a
+  naive-sufficient / strict-insufficient cell then fails exactly the capacity
+  contract (`.topotestix/runs-thesis-redesign/20260822-225112-…-phase3-disk-
+counterexample`: 200/200 `ambiguous` `ConnectionBlockedTimeout` operations,
+  14 alarm samples, 4 other properties PASS).
 - **Minimized failing configuration**: the colocated cell is minimal by
   construction (it differs from the passing spread control in exactly one
   configuration dimension, replica placement, per the two cells'
   `choices.json`); the crash during cell varies a single timing dimension.
-  Disk minimization follows the T1 outcome (see execution plan for the
-  all-minimum verification cell).
+  Disk: an all-minimum cell — every dimension at its smallest value with the
+  alarm threshold at the lowest option above the observed ≈104.5 MB fill
+  floor — reproduces the same single-contract failure at a 20 × 1 KiB
+  payload (`.topotestix/runs-thesis-redesign/20260823-001413-…-phase3-disk-
+counterexample-min`), with an accidental duplicate reproduction
+  (`20260822-231356-…-phase3-disk-counterexample-min`) showing the identical
+  verdict. The threshold dimension cannot shrink further because the
+  available free-space floor sits above the 100 MB option; that bound is
+  part of the result, not a residual gap.
 - **What the oracle does and does not prove**: stated per contract in the
   cell matrix and the thesis chapter evaluation section; in particular
   `rabbitmq-failure-domain` models a declared zone outage, not a shared

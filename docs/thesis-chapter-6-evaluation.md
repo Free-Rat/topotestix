@@ -1,6 +1,6 @@
 # 6 Evaluation
 
-This chapter presents the empirical evaluation of TopoTestix on two real-world distributed systems: a three-node Apache Kafka cluster and a three-node etcd cluster. Both targets are deployed as NixOS test drivers and exposed to the property-based fuzzing pipeline described in Chapter 5. The chapter is deliberately self-contained: for every reported result it states the target, the fuzzed configuration space, the property suite, the sweep outcome, the failure class, and (where available) a minimized reproduction. PostgreSQL is not part of this evaluation and is discussed separately in the related-work chapter.
+This chapter presents the empirical evaluation of TopoTestix on three real-world distributed systems: a three-node Apache Kafka cluster, a three-node etcd cluster, and a three-broker RabbitMQ cluster. The Kafka and etcd targets are evaluated as uniform 50-seed sweeps; the RabbitMQ targets are evaluated on designed counterexample cells. All targets are deployed as NixOS test drivers and exposed to the property-based fuzzing pipeline described in Chapter 5. The chapter is deliberately self-contained: for every reported result it states the target, the fuzzed configuration space, the property suite, the sweep outcome, the failure class, and (where available) a minimized reproduction. PostgreSQL is not part of this evaluation and is discussed separately in the related-work chapter.
 
 The evaluation is guided by three research questions, all of which are answered in the summary at the end of this chapter:
 
@@ -10,13 +10,13 @@ The evaluation is guided by three research questions, all of which are answered 
 >
 > **RQ3.** Can TopoTestix localize the surfaced violations by shrinking the failing configuration to a small, reproducible repro, suitable for inclusion in a regression test or bug report?
 
-The chapter is organized as follows. Section 6.1 describes the common evaluation setup. Section 6.2 presents the Kafka case study. Section 6.3 presents the etcd case study, including a first-iteration sweep, a refined second-iteration sweep, and shrinking results. Section 6.4 discusses cross-cutting observations that emerged from both studies, including framework fixes motivated by the evaluation and known limitations of the generic shrinker. Section 6.5 lists the threats to validity. Section 6.6 summarizes the answers to the three research questions.
+The chapter is organized as follows. Section 6.1 describes the common evaluation setup. Section 6.2 presents the Kafka case study. Section 6.3 presents the etcd case study, including a first-iteration sweep, a refined second-iteration sweep, and shrinking results. Section 6.4 presents the RabbitMQ case study: a capacity/confirmation SLO with a falsifiability-boundary discussion, a correlated-failure contract, and an abrupt-crash contract, each on designed positive/negative cells. Section 6.5 discusses the cross-cutting observations that emerged from all three studies, including framework fixes motivated by the evaluation and known limitations of the generic shrinker. Section 6.6 lists the threats to validity. Section 6.7 summarizes the answers to the three research questions.
 
 ## 6.1 Evaluation Setup
 
 Both case studies follow the same evaluation protocol. For each target, TopoTestix is invoked with a deterministic random seed and a fixed seed range (1..50). Each seed instantiates a complete NixOS test derivation, builds it, starts the virtual cluster, runs the full property suite, and persists the structured per-run report under `.topotestix/runs/`. The runs are grouped by the orchestrator's sweep command and aggregated into a CSV/JSON summary.
 
-The two targets are deliberately different in character. Kafka is a partitioned log/stream system with broker-side configuration that strongly affects data-plane behaviour, and the case study focuses on size-limit interactions under a large-payload workload. etcd is a Raft-based key-value store with a small cluster size and a quota-bounded backend, and the case study focuses on the interaction between a write-burst workload and the configured backend quota.
+The two sweep targets are deliberately different in character. Kafka is a partitioned log/stream system with broker-side configuration that strongly affects data-plane behaviour, and the case study focuses on size-limit interactions under a large-payload workload. etcd is a Raft-based key-value store with a small cluster size and a quota-bounded backend, and the case study focuses on the interaction between a write-burst workload and the configured backend quota. The RabbitMQ targets (Section 6.4) add a message-broker perspective: capacity/confirmation under disk pressure, correlated failure domains, and abrupt broker crashes.
 
 For every run the property suite returns one of two outcomes:
 
@@ -33,6 +33,7 @@ The fuzzable configuration dimensions for both targets are summarized in Table 6
 |---|---|---:|---:|---:|
 | `kafka-cluster` | 3 brokers | 16 | 746,496 | 11 |
 | `etcd-cluster` (v2) | 3 nodes, 1 vlan | 6 | 1,152 | 12 |
+| `rabbitmq` (disk / failure-domain / crash) | 3 brokers | 8 / 3 / 4 | 864 / 4 / 24 | 5 / 2 / 3 |
 
 The two targets share the same sweep size (50 seeds) and the same per-seed protocol. This makes the per-seed pass/fail counts directly comparable and prevents any one target from being favoured by sample size. Detailed per-seed reproduction commands are given in the case-study sections; the aggregated run directories are stored under `.topotestix/runs/` and listed in the per-target sweep summaries in `experiments/`.
 
@@ -70,7 +71,7 @@ The original Kafka target had only four fuzzable options and one property, and o
 - `num.network.threads` — 1 / 2 / 4.
 - `num.io.threads` — 1 / 2 / 4.
 
-The product of the per-dimension value counts is 746,496 distinct configurations. Of these, only 50 are sampled in the sweep, which is sufficient to expose both large failure classes multiple times (Section 6.2.4). The heap-size and memory-size ranges were chosen to keep startup failures rare while still exercising realistic small-footprint configurations; the very low values (e.g. 64 MiB) that produced `OutOfMemoryError` during target development were removed because they only yielded startup failures, which are less informative than post-start workload failures (Section 6.4.1).
+The product of the per-dimension value counts is 746,496 distinct configurations. Of these, only 50 are sampled in the sweep, which is sufficient to expose both large failure classes multiple times (Section 6.2.4). The heap-size and memory-size ranges were chosen to keep startup failures rare while still exercising realistic small-footprint configurations; the very low values (e.g. 64 MiB) that produced `OutOfMemoryError` during target development were removed because they only yielded startup failures, which are less informative than post-start workload failures (Section 6.5.1).
 
 ### 6.2.3 Properties
 
@@ -240,7 +241,7 @@ Third, the failure classes are configuration interactions, not single-setting mi
 
 Fourth, the failures are reproducible as NixOS test runs and are accompanied by class-isolating minimized configurations. The two minimized repros are small enough to fit on a single screen and can be added to a regression suite.
 
-The Kafka case study is therefore a positive answer to **RQ1** and **RQ2**, and a partial answer to **RQ3**: the failures are localized, but the localization is done by class-isolating minimized configurations rather than by the generic shrinker (Section 6.4.2).
+The Kafka case study is therefore a positive answer to **RQ1** and **RQ2**, and a partial answer to **RQ3**: the failures are localized, but the localization is done by class-isolating minimized configurations rather than by the generic shrinker (Section 6.5.2).
 
 ## 6.3 Case Study: etcd
 
@@ -402,11 +403,109 @@ For **RQ3**, the generic shrinker localizes both representative failures to the 
 
 The v1 result is included in the chapter for two reasons. First, it shows that the framework can detect real configuration-validation errors in a real distributed system, even before any property is reached. Second, it motivates the v2 redesign: the v1 result is informative, but the v2 result is more useful for the thesis claim, because the v2 result is a post-start workload/configuration incompatibility.
 
-## 6.4 Cross-cutting Observations
+## 6.4 Case Study: RabbitMQ
+
+### 6.4.1 Target Setup
+
+The RabbitMQ case study uses a three-broker RabbitMQ 4.2.5 cluster (`rabbit1`, `rabbit2`, `rabbit3` on a single private network) with quorum queues for replicated, acknowledged delivery. As with the other case studies, each contract is a NixOS test driver with four components: a topology description (`targets/rabbitmq-<target>/topology.nix`), NixOS modules (`module.nix`, `config.nix`) declaring the per-contract fuzzable options, a property suite (`properties.nix`) of high-level properties expanded into per-run checks, and a test driver (`test-script.py`) that composes workload, fault injection, and evidence collection and emits a structured per-run evidence payload (`disk-results.json`, `failure-domain-results.json`, or `crash-results.json`).
+
+Three contracts are evaluated, each with the property set listed next to it:
+
+- **`rabbitmq-disk` — capacity/confirmation SLO.** Five properties: `rabbitmq-disk-recovers-healthy`, `rabbitmq-disk-capacity-confirmation-contract` (the SLO), `rabbitmq-disk-confirmed-recovered-exactly-once`, `rabbitmq-disk-exact-operation-history`, and `rabbitmq-disk-no-unexplained-messages`.
+- **`rabbitmq-failure-domain` — correlated-domain failure.** Two properties: `rabbitmq-failure-domain-exact-recovery` and `rabbitmq-failure-domain-retains-quorum-availability`.
+- **`rabbitmq-crash` — abrupt broker failure.** Three properties: `rabbitmq-crash-confirmed-recovered-exactly-once`, `rabbitmq-crash-fault-was-abrupt-and-role-accurate` (evidence that the kill was abrupt and hit the requested role), and `rabbitmq-crash-queue-and-cluster-recover`.
+
+Unlike the Kafka and etcd sweeps, the RabbitMQ case study is not a uniform sweep of the fuzzable space. Each contract is evaluated on a small set of *designed cells* — a positive control plus the smallest configurations expected to violate it — where each cell targets a specific hypothesis about fault semantics and oracle coverage. This is the intended use profile of the harness for a *known* failure-mode family; the Kafka and etcd sweeps demonstrate the same harness on an *unknown* one.
+
+### 6.4.2 Configuration Spaces
+
+- **Disk:** eight dimensions — VM volume (2048/4096 MB), `disk_free_limit` (50/100/200 MB), initial free-space target (500/250/100 MB), backlog rate (10/25 msg/s), consumer outage (2/8 s), message size (1/4/16 KiB), confirm timeout (1/3 s), capacity safety factor (1.0×/1.5×) — a product of 864 cells.
+- **Failure domain:** three dimensions — replica placement (spread vs. colocated), failed domain (`zone-a`), confirm timeout (2/5 s) — four cells.
+- **Crash:** four dimensions — kill timing (`before_publish`/`during_publish`/`after_publish`), target role (leader/follower, resolved from the observed quorum-queue leader, not from a hostname), kill delay (2/10 s), publish batch (20/50) — 24 cells.
+
+The oracle boundaries matter for reading the results. The disk contract treats a publish as `ambiguous` when the client receives no confirmation within the timeout while the broker may in fact have applied it; the failure-domain contract models a *declared* correlated failure of one zone (not a shared physical block device) and probes availability through the queue; the crash contract observes the queue leader, kills the selected role with SIGKILL (`Restart=no`, so PID replacement is the abruptness evidence), and restarts the service against the same data directory.
+
+### 6.4.3 Disk Capacity: the Falsifiability Boundary
+
+This contract initially had a defect that the evaluation itself exposed: the strict capacity model in the target's oracle — required free space equals the broker's disk-alarm threshold plus the backlog accumulated during the consumer outage, scaled by the safety factor — *entails* the SLO. If declared capacity is sufficient, the `disk_free` alarm cannot activate during the workload, and every confirmed publish succeeds; a contract that fires only when declared capacity is sufficient *and* the run still misbehaves is vacuously true. The positive control behaved exactly as the model predicted (5/5 properties pass, 50/50 publishes confirmed, zero alarm samples across all telemetry phases: ".topotestix/runs-thesis-redesign/20260822-183835-rabbitmq-disk-seed-1-phase2-disk-positive", gitHead `998cae1`), but the contract could never produce the counterexample it was designed to catch.
+
+The fix (commit `761b053`) exposes a weaker *naive* planning model — one that budgets only the backlog payload and ignores the alarm threshold — alongside the strict model in the contract's evidence, and lets the contract fire when *either* model declares capacity sufficient. Because strict sufficiency implies naive sufficiency, every strictly-sufficient cell keeps exactly the old behaviour; the newly covered band is the one where a backlog-only planner passes yet the broker's alarm breaks the confirmation SLO.
+
+The designed counterexample cell ("Cell X") sits in that band: free-space target 100 MB (the driver's fill lands at ≈104.5 MB free), alarm threshold 200 MB, 200 messages × 16 KiB, 1 s confirm timeout, 1.5× safety factor. The run (".topotestix/runs-thesis-redesign/20260822-225112-rabbitmq-disk-seed-1-phase3-disk-counterexample", gitHead `761b053`) produces exactly the designed outcome:
+
+- `naive_capacity_sufficient = true` (≈104.5 MB free ≥ 4.69 MiB backlog) and `capacity_sufficient = false` (104.5 MB < 200 MB + backlog) — the two capacity models disagree, and the contract fires;
+- the broker's `disk_free` alarm activates during the publish phase (14 alarm samples; RabbitMQ evaluates the alarm on a timer, so the `after_fill` checkpoint still reads it as inactive), the broker then blocks connections, and **all 200 publish attempts end as `ambiguous` operations** with `ConnectionBlockedTimeout`;
+- 22 of the unconfirmed messages were nevertheless durably applied by the broker — exactly the ambiguity boundary this thesis's property language is built to express;
+- precisely one property fails (`rabbitmq-disk-capacity-confirmation-contract`), while the other four — including both recovery and consistency properties — pass.
+
+That signature — one contract firing with an actionable message while the rest of the suite stays consistent — is the intended counterexample behaviour.
+
+| Cell | strict-suff. | naive-suff. | operations | alarm samples | verdict | run (gitHead) |
+|---|---|---|---|---|---|---|
+| positive, 500 MB free | true | true | 50/50 confirmed | 0 | pass 5/5 | `…/20260822-183835-…-phase2-disk-positive` (`998cae1`) |
+| positive, 500 MB free (re-run post-fix) | true | true | 50/50 confirmed | 0 | pass 5/5 | `…/20260822-224837-…-phase3-disk-positive-v2` (`761b053`) |
+| Cell X: 100 MB free / 200 MB limit / 200 × 16 KiB | **false** | true | 200/200 ambiguous (`ConnectionBlockedTimeout`) | 14 | **fails** capacity contract only | `…/20260822-225112-…-phase3-disk-counterexample` (`761b053`) |
+| minimal: 100 MB free / 200 MB limit / 20 × 1 KiB, all other dimensions minimum | **false** | true | 20/20 ambiguous | 16 | **fails** capacity contract only | `…/20260823-001413-…-phase3-disk-counterexample-min` (`761b053`) |
+
+*Table 6.9 — RabbitMQ disk cells.*
+
+### 6.4.4 Failure Domain: the Correlated-Failure Counterexample
+
+The spread placement (one replica per zone) is the positive control: failing `zone-a` removes one of three replicas, majority survives, the probe publishes and confirms within budget, and all 11 tracked operations recover exactly once (pass 2/2; ".topotestix/runs-thesis-redesign/20260822-190647-rabbitmq-failure-domain-seed-1-phase2-faildom-spread", gitHead `998cae1`).
+
+The colocated placement puts two of the three replicas in `zone-a`. Failing that zone removes a quorum majority, so the queue cannot commit any confirmation write. Both counterexample runs (".topotestix/runs-thesis-redesign/20260822-190921-…-phase2-faildom-colocA" and "…/20260822-191139-…-phase2-faildom-colocB", both gitHead `998cae1`) produce the designed result: `rabbitmq-failure-domain-exact-recovery` **passes** (all 11 operations recover exactly once, including the probe's message, which the oracle records as `ambiguous`), while `rabbitmq-failure-domain-retains-quorum-availability` **fails** with the structured message identifying the surviving single replica and the `OuterCommandTimeout` evidence. The two runs are independent reproductions (distinct `op_id`s, identical failure shape), plus an earlier pair from before the thesis-evidence baseline ("…/20260821-125706-…-colocated-counterexample" and "…/20260821-125835-…-colocated-counterexample-2").
+
+| Cell | failed domain | surviving replicas | probe | recovery | verdict | run (gitHead) |
+|---|---|---|---|---|---|---|
+| spread | `zone-a` | 2 of 3 | confirmed | 11/11 exactly once | pass 2/2 | `…/20260822-190647-…-phase2-faildom-spread` (`998cae1`) |
+| colocated | `zone-a` | **1 of 3** | `ambiguous` (`OuterCommandTimeout`) | 11/11 exactly once | **fails** availability contract; recovery passes | `…/20260822-190921-…-phase2-faildom-colocA` (`998cae1`) |
+| colocated, repro 2 | `zone-a` | 1 of 3 | `ambiguous` | 11/11 exactly once | same | `…/20260822-191139-…-phase2-faildom-colocB` (`998cae1`) |
+
+*Table 6.10 — RabbitMQ failure-domain cells.*
+
+### 6.4.5 Abrupt Crash: durability and the ambiguous-operation boundary
+
+The crash contract states that every confirmed publish survives one abrupt broker failure of the requested role, followed by exact-once recovery. Across the evaluated cells — follower reproductions, leader, and during-publish variants (Table 6.11) — the outcome is uniformly pass 3/3 with 50/50 operations confirmed and **zero ambiguous operations**, including:
+
+- **leader kill:** the queue leader migrates `rabbit1` → `rabbit2` across the kill, and the cluster and queue fully recover ("…/20260822-185806-…-phase2-crash-leader");
+- **during-publish retune** (10 s kill delay with a 50-operation batch, repeated for both roles): still zero ambiguous operations ("…/20260822-202330-…-phase3-crash-during-retune" and "…/20260822-202536-…-phase3-crash-during-retune-2").
+
+Two findings are worth recording. First, the Phase-1 smoke run exposed a real driver defect — a naively restarted broker returned to service as a healthy singleton outside the queue's online member set — which was fixed with a cluster-aware restart plus rejoin forensics (commit `cd06a3c`) and is visible as recovered state in every subsequent run (`rejoined_cluster` and online member sets equal the full three-node cluster). That is the evaluation-harness finding loop in action: smoke run → oracle exposes the gap → driver fixed → re-run confirms. Second, the *ambiguous-operation* boundary was **not** exercised by any crash cell on this stack (RabbitMQ 4.2.5, quorum queues, Pika confirmed channel): in-flight confirms either complete before the kill or re-commit durably. This is reported as an honest negative observation with its cell parameters, not as a pass claim about ambiguity handling; the ambiguous path of the property language is instead exercised by the disk counterexample (`ConnectionBlockedTimeout`) and the failure-domain probe (`OuterCommandTimeout`).
+
+| Cell | role killed | operations | ambiguous | leader before → after | verdict | run (gitHead) |
+|---|---|---|---|---|---|---|
+| follower, repro A | `rabbit2` | 50/50 confirmed | 0 | `rabbit1` → `rabbit1` | pass 3/3 | `…/20260822-175757-…-phase2-crash-follower-repA` (`998cae1`) |
+| follower, repro B | `rabbit2` | 50/50 confirmed | 0 | `rabbit1` → `rabbit1` | pass 3/3 | `…/20260822-180022-…-phase2-crash-follower-repB` (`998cae1`) |
+| leader | `rabbit1` | 50/50 confirmed | 0 | `rabbit1` → `rabbit2` | pass 3/3 | `…/20260822-185806-…-phase2-crash-leader` (`998cae1`) |
+| during-publish, follower | `rabbit2` | 50/50 confirmed | 0 | `rabbit1` → `rabbit1` | pass 3/3 | `…/20260822-190037-…-phase2-crash-during` (`998cae1`) |
+| during retune, follower, 10 s delay | `rabbit2` | 50/50 confirmed | 0 | `rabbit1` → `rabbit1` | pass 3/3 | `…/20260822-202330-…-phase3-crash-during-retune` (`998cae1`) |
+| during retune, leader, 10 s delay | `rabbit1` | 50/50 confirmed | 0 | `rabbit1` → `rabbit2` | pass 3/3 | `…/20260822-202536-…-phase3-crash-during-retune-2` (`998cae1`) |
+
+*Table 6.11 — RabbitMQ crash cells.*
+
+### 6.4.6 Shrinking and Minimality for the RabbitMQ Cells
+
+Three observations, in decreasing order of generality.
+
+- **Failure domain is minimal by construction.** The passing and failing cells differ in exactly one configuration dimension — replica placement — as verified from the two runs' `choices.json` files. No shrink run is needed: the failing cell already sits on the minimal face of the failure region with respect to every dimension.
+- **Disk minimality has a binding constraint, and the evidence shows why.** Cell X fails (Table 6.9). Holding the alarm threshold at 200 MB — the smallest offered value above the observed fill floor (≈104.5 MB free, below which the 100 MB threshold cannot be crossed) — and setting *every other dimension to its minimum* (2048 MB volume, 10 msg/s × 2 s = 20 × 1 KiB, 1 s timeout, 1.0× factor) reproduces the identical single-contract failure with a ≈160× smaller payload (20/20 ambiguous, 16 alarm samples: ".topotestix/runs-thesis-redesign/20260823-001413-…-phase3-disk-counterexample-min", gitHead `761b053`). A duplicate of this run ("…/20260822-231356-…-phase3-disk-counterexample-min"), started inadvertently, yields the same verdict and independently confirms the result. Thus the violation is minimal with respect to every non-threshold dimension, and the run evidence explains — and bounds — the one dimension that cannot shrink: the available free-space floor sits above the 100 MB threshold.
+- **Methodological note.** The generic seed-based shrinker (Section 6.5.2) cannot be applied to these counterexamples: it shrinks around a seed, while the RabbitMQ counterexample cells are designed cells with *forced* choices. Minimality was therefore established (a) by construction (failure domain) and (b) by a designed all-minimum verification run at the shrinking limit (disk) — the same *class* of result the shrinker produces for the etcd counterexample, obtained by a different procedure.
+
+### 6.4.7 Discussion
+
+**RQ1 (well-engineered property suites expose violations on demand).** Affirmed on a third system. The disk counterexample fires exactly one property with an actionable, structured message (`naive_capacity_sufficient=true`, `capacity_sufficient=false`, per-operation `ambiguous`/`ConnectionBlockedTimeout`, alarm telemetry), while recovery and consistency properties stay green; the failure-domain counterexample likewise isolates the availability contract and names the surviving replica. Failure classification is crisp, and the evidence payloads (per-operation outcome + exception type + alarm samples) are what make each counterexample citable.
+
+**RQ2 (healthy-under-smoke, failing-under-contract).** Affirmed as the general shape: every failing RabbitMQ run has a healthy baseline (the other properties pass; both recovery properties pass even while the SLO is violated), and the Phase-1 → fixed → re-verified loop for the crash driver shows the harness catching a real oracle gap.
+
+**RQ3 (shrinkability).** Partial on RabbitMQ: failure-domain minimality holds by construction and disk minimality holds up to the demonstrated fill-floor binding constraint, but the generic shrinker still cannot consume forced-choice cells (Section 6.5.2) — the remaining framework gap.
+
+Two cross-cutting lessons. First, oracles and contracts must be *co-designed*: an oracle so strong that it entails the SLO vacates the contract (the falsifiability boundary of Section 6.4.3). Second, `ambiguous` must remain a first-class operation outcome in the property language, otherwise broker-side blocking silently degenerates into "the client gave up", and the disk counterexample — broker applied 22 messages the client never saw confirmed — would be unrepresentable.
+
+## 6.5 Cross-cutting Observations
 
 This section discusses observations that emerged from both case studies and that are independent of the individual targets.
 
-### 6.4.1 Framework Fixes Motivated by the Evaluation
+### 6.5.1 Framework Fixes Motivated by the Evaluation
 
 The evaluation surfaced a real defect in the runner, which was fixed before the final sweep was executed. The defect and the fix are worth reporting here because they show that the evaluation was performed against a tool that was being actively exercised against real systems.
 
@@ -416,9 +515,9 @@ The fix was to remove the `raise` from the per-property failure path in `lib/run
 
 This observation is also relevant to the methodology: the final sweeps reported in this chapter are the post-fix sweeps. The pre-fix sweeps are explicitly excluded from the thesis results.
 
-### 6.4.2 Shrinker Behaviour
+### 6.5.2 Shrinker Behaviour
 
-The two case studies show two different shrinker behaviours, and both are worth reporting.
+The two sweep case studies show two different shrinker behaviours, and both are worth reporting.
 
 For etcd v2, the generic shrinker worked cleanly. Both representative failures (seed 3, seed 40) shrink to the same minimal configuration (Table 6.8), and the minimized failures are still post-start property failures. The shrinker therefore gives a positive answer to **RQ3** for etcd.
 
@@ -429,35 +528,35 @@ For Kafka, the generic shrinker encountered two issues:
 
 The Kafka case study therefore uses validated class-isolating minimized configurations rather than claiming automatic shrinker minimality. The etcd v2 result demonstrates that the generic shrinker can produce trustworthy minimal repros when the configuration space does not contain the two Kafka-specific issues, and the Kafka result motivates a future framework improvement: a class-aware shrinker and an escaping convention for choice paths that contain dots.
 
-### 6.4.3 Reproducibility
+### 6.5.3 Reproducibility
 
 Both case-study sweeps are reproducible end-to-end with the orchestrator commands listed in Sections 6.2 and 6.3. Every per-seed run is stored in `.topotestix/runs/<timestamp>-<target>-seed-<n>-<name>`, and the aggregated summary is stored under `experiments/`. The class-isolating minimized configurations are stored as standalone Nix files (`experiments/kafka-cluster-min-message-max.nix`, `experiments/kafka-cluster-min-log-segment.nix`) and are reproducible with the same orchestrator command and a different `--config-target`. The etcd minimized configurations are reproducible with the same orchestrator command and explicit `--topology-choices` and `--config-choices` flags.
 
 A single re-execution of the sweeps therefore reproduces the thesis results bit-for-bit, given the same Nix store. The use of Nix-based test derivations is the key enabler of this reproducibility: the cluster configuration is captured in Nix expressions, the test script is captured in Python source, and the per-run outputs are captured as Nix build outputs.
 
-### 6.4.4 Comparison Between the Two Case Studies
+### 6.5.4 Comparison Between the Three Case Studies
 
-The two case studies are deliberately complementary. Kafka is a partitioned log system with rich broker-side configuration; the failures it surfaces are configuration interactions between related size limits. etcd is a Raft-based key-value store with a quota-bounded backend; the failures it surfaces are workload/configuration incompatibilities between the configured backend quota and a multi-MiB write burst. Together, the two case studies exercise both the "configuration interaction" and the "workload/configuration incompatibility" failure modes that motivated this thesis.
+The three case studies are deliberately complementary. Kafka is a partitioned log system with rich broker-side configuration; the failures it surfaces are configuration interactions between related size limits. etcd is a Raft-based key-value store with a quota-bounded backend; the failures it surfaces are workload/configuration incompatibilities between the configured backend quota and a multi-MiB write burst. RabbitMQ is a message broker whose quorum-queue replication supports the capacity/confirmation, correlated-failure, and abrupt-crash contracts; its designed counterexample cells surface single-contract violations with crisp structured evidence (Section 6.4). Together, the three case studies exercise the "configuration interaction", "workload/configuration incompatibility", and "fault-semantics contract" failure modes that motivated this thesis.
 
-Both case studies produce pass/fail splits in the 26%–37% pass / 63%–74% fail range (Tables 6.2 and 6.6), which is a useful operating point for a property-based fuzzer: most configurations are still healthy, but a substantial minority exposes a violation. Both case studies also produce failures that are concentrated in a single property and that are accompanied by a clear, repeatable error class. This is the empirical signature of a well-designed property-based fuzzing target, and it is what distinguishes these results from a random crash hunt.
+The two sweep case studies produce pass/fail splits in the 26%–37% pass / 63%–74% fail range (Tables 6.2 and 6.6), which is a useful operating point for a property-based fuzzer: most configurations are still healthy, but a substantial minority exposes a violation. The RabbitMQ cells are not a sweep, but they show the same design intent in concentrated form: every counterexample cell fails exactly one contract while the recovery and consistency properties stay green. All three case studies also produce failures that are concentrated in a single property and that are accompanied by a clear, repeatable error class. This is the empirical signature of a well-designed property-based fuzzing target, and it is what distinguishes these results from a random crash hunt.
 
-## 6.5 Threats to Validity
+## 6.6 Threats to Validity
 
 Several threats to the validity of the evaluation are worth discussing.
 
-**Construct validity.** The two targets are not representative of all distributed systems. Kafka is a partitioned log/stream system and etcd is a Raft-based key-value store; both are mature, single-tenant systems, and neither exercises multi-tenant scheduling, network partitions, or clock skew. The properties that are checked are deliberately simple (e.g. "produce and consume one record", "write 80 values and read one back"). The evaluation therefore does not claim that TopoTestix can find violations of arbitrary, complex properties; it claims that TopoTestix can find violations of well-engineered property suites written in the style described in Chapter 4.
+**Construct validity.** The three targets are not representative of all distributed systems. Kafka is a partitioned log/stream system, etcd is a Raft-based key-value store, and RabbitMQ is a message broker; all are mature, single-tenant systems, and none exercises multi-tenant scheduling, network partitions, or clock skew. The properties that are checked are deliberately simple (e.g. "produce and consume one record", "write 80 values and read one back"). The evaluation therefore does not claim that TopoTestix can find violations of arbitrary, complex properties; it claims that TopoTestix can find violations of well-engineered property suites written in the style described in Chapter 4.
 
 **Internal validity.** The sweeps are run sequentially on a single Nix store, and the per-seed run time is non-trivial (multiple minutes for Kafka, slightly less for etcd). The sweep is therefore not a true random sample of the 746,496 (Kafka) or 1,152 (etcd v2) configurations, but a deterministic pseudo-random sample driven by the seed. The clean cross-tabulation in Table 6.4 and the deterministic 0/13/0 split in Table 6.7 suggest that the sample size is large enough to characterize the failure-class structure, but a larger sample (e.g. 200 or 500 seeds) would be needed to claim coverage of the full configuration space.
 
-**External validity.** The failure classes that TopoTestix surfaced for Kafka and etcd are not Kafka or etcd implementation bugs; they are configuration-dependent workload incompatibilities. This is the most defensible claim that can be made on the basis of two case studies, but it is also a narrower claim than "TopoTestix finds bugs in distributed systems". Additional targets would be needed to test the generality of the claim, and the choice of additional targets (e.g. PostgreSQL, Redis, ZooKeeper) is left to future work.
+**External validity.** The failure classes that TopoTestix surfaced for Kafka and etcd are not Kafka or etcd implementation bugs; they are configuration-dependent workload incompatibilities. This is the most defensible claim that can be made on the basis of three case studies, but it is also a narrower claim than "TopoTestix finds bugs in distributed systems". Additional targets would be needed to test the generality of the claim, and the choice of additional targets (e.g. PostgreSQL, Redis, ZooKeeper) is left to future work.
 
-**Reliability.** The two sweeps, the two class-isolating minimized configurations, and the two etcd shrink runs are all reproducible from the same orchestrator commands. The unit-test suite (`34/34`) and `nix flake check` both pass. The reproducibility is therefore a strength, not a weakness, of the evaluation. The shrinker limitations described in Section 6.4.2 are a reliability caveat for the Kafka case study specifically.
+**Reliability.** The two sweeps, the two class-isolating minimized configurations, the two etcd shrink runs, and the RabbitMQ case-study cells (Section 6.4) are all reproducible from the same orchestrator commands. The project test suites (57/57 Python unit tests and 114/114 Nix `nix-unit` tests) pass as of the commit cited in Section 6.4. The reproducibility is therefore a strength, not a weakness, of the evaluation. The shrinker limitations described in Section 6.5.2 are a reliability caveat for the Kafka case study specifically.
 
 **Conclusion validity.** The pass/fail splits and the per-class failure counts are obtained by aggregating the structured per-seed reports, not by visual inspection. The aggregated summaries are stored in machine-readable form (`-summary.json` and `-summary.txt`) and are reproducible from the raw run directories. The numerical claims in Sections 6.2.4 and 6.3.4 are therefore exact for the executed sweeps, not estimated.
 
-## 6.6 Summary
+## 6.7 Summary
 
-This chapter presented the empirical evaluation of TopoTestix on two real-world distributed systems: a three-broker Apache Kafka cluster and a three-node etcd cluster. The Kafka sweep produced 13 passes and 37 failures out of 50 seeds, with the failures concentrated in a single property (`kafka-large-message-on-kafka1`) and split into two configuration classes (`RecordTooLargeException` from a 1 MiB `message.max.bytes`, and `RecordBatchTooLargeException` from a 1 MiB `log.segment.bytes`). The etcd v2 sweep produced 37 passes and 13 failures out of 50 seeds, with the failures concentrated in a single property (`etcd-quota-write-burst-etcd1`) and split by the configured backend quota (every 2 MiB run fails, every 8 MiB or 64 MiB run passes). Two representative etcd failures shrink to the same minimal configuration, and two class-isolating minimized Kafka configurations reproduce each Kafka failure class on demand.
+This chapter presented the empirical evaluation of TopoTestix on three real-world distributed systems: a three-broker Apache Kafka cluster, a three-node etcd cluster, and a three-broker RabbitMQ cluster. The Kafka sweep produced 13 passes and 37 failures out of 50 seeds, with the failures concentrated in a single property (`kafka-large-message-on-kafka1`) and split into two configuration classes (`RecordTooLargeException` from a 1 MiB `message.max.bytes`, and `RecordBatchTooLargeException` from a 1 MiB `log.segment.bytes`). The etcd v2 sweep produced 37 passes and 13 failures out of 50 seeds, with the failures concentrated in a single property (`etcd-quota-write-burst-etcd1`) and split by the configured backend quota (every 2 MiB run fails, every 8 MiB or 64 MiB run passes). Two representative etcd failures shrink to the same minimal configuration, and two class-isolating minimized Kafka configurations reproduce each Kafka failure class on demand. The RabbitMQ case study (Section 6.4) extends the evidence to a message broker and a correlated-failure mode: each designed counterexample fires exactly one contract with crisp structured evidence — the capacity contract minimized to a 20 × 1 KiB payload — while recovery and consistency properties stay green in every run.
 
 The three research questions posed at the start of this chapter can be answered as follows.
 
