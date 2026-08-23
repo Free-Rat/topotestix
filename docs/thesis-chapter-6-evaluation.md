@@ -32,7 +32,7 @@ The fuzzable configuration dimensions for both targets are summarized in Table 6
 | Target | Topology | Fuzzable options | Total combinations | Properties (per-run checks) |
 |---|---|---:|---:|---:|
 | `kafka-cluster` | 3 brokers | 16 | 746,496 | 11 |
-| `etcd-cluster` (v2) | 3 nodes, 1 vlan | 6 | 1,152 | 12 |
+| `etcd-cluster` (v2) | 3 nodes, 1 vlan | 6 | 96 | 12 |
 | `rabbitmq` (disk / failure-domain / crash) | 3 brokers | 8 / 3 / 4 | 864 / 4 / 24 | 5 / 2 / 3 |
 
 The two targets share the same sweep size (50 seeds) and the same per-seed protocol. This makes the per-seed pass/fail counts directly comparable and prevents any one target from being favoured by sample size. Detailed per-seed reproduction commands are given in the case-study sections; the aggregated run directories are stored under `.topotestix/runs/` and listed in the per-target sweep summaries in `experiments/`.
@@ -55,21 +55,21 @@ Each broker is configured with its own advertised listener `kafka<i>:9092`, and 
 The original Kafka target had only four fuzzable options and one property, and only a small subset of failure modes was reachable. The target was therefore expanded before the 50-seed sweep reported in this chapter. The fuzzed configuration space is:
 
 - `virtualisation.memorySize` — VM RAM in MiB (2048 / 3072 / 4096).
-- `virtualisation.diskSize` — VM disk in MiB (2048 / 3072 / 4096).
+- `virtualisation.diskSize` — VM disk in MiB (2048 / 4096 / 8192).
 - `services.apache-kafka.jvmOptions` — JVM heap family (`-Xms256m/-Xmx512m`, `-Xms512m/-Xmx1024m`, `-Xms1024m/-Xmx1536m`).
-- `offsets.topic.replication.factor` — 1 / 2 / 3.
-- `transaction.state.log.replication.factor` — 1 / 2 / 3.
+- `offsets.topic.replication.factor` — 1 / 3.
+- `transaction.state.log.replication.factor` — 1 / 3.
 - `transaction.state.log.min.isr` — 1 / 2.
 - `min.insync.replicas` — 1 / 2.
-- `default.replication.factor` — 1 / 2 / 3.
+- `default.replication.factor` — 1 / 3.
 - `unclean.leader.election.enable` — `true` / `false`.
 - `auto.create.topics.enable` — `true` / `false`.
-- `log.retention.hours` — 24 / 168 / 720.
-- `log.segment.bytes` — 1 MiB / 2 MiB / 16 MiB.
+- `log.retention.hours` — 1 / 24 / 168.
+- `log.segment.bytes` — 1 MiB / 16 MiB.
 - `message.max.bytes` — 1 MiB / 2 MiB / 4 MiB.
 - `replica.fetch.max.bytes` — 1 MiB / 2 MiB / 4 MiB.
-- `num.network.threads` — 1 / 2 / 4.
-- `num.io.threads` — 1 / 2 / 4.
+- `num.network.threads` — 2 / 3.
+- `num.io.threads` — 4 / 6.
 
 The product of the per-dimension value counts is 746,496 distinct configurations. Of these, only 50 are sampled in the sweep, which is sufficient to expose both large failure classes multiple times (Section 6.2.4). The heap-size and memory-size ranges were chosen to keep startup failures rare while still exercising realistic small-footprint configurations; the very low values (e.g. 64 MiB) that produced `OutOfMemoryError` during target development were removed because they only yielded startup failures, which are less informative than post-start workload failures (Section 6.5.1).
 
@@ -258,18 +258,16 @@ The cluster forms a Raft group of three members and exposes the standard etcd v3
 
 ### 6.3.2 Configuration Space and Properties
 
-The v2 etcd target fuzzes six options:
+The v2 etcd target fuzzes six options on a fixed three-member topology (`etcdVlans = [1]`, `roles.etcd = 3`):
 
-- `etcdVlans` — 1 (fixed in v2; v1 also used 1).
-- `roles.etcd` — 3.
-- `virtualisation.memorySize` — 1024 / 2048 / 4096 MiB.
-- `virtualisation.diskSize` — 2048 / 4096 / 8192 MiB.
+- `virtualisation.memorySize` — 1024 / 2048 MiB.
+- `virtualisation.diskSize` — 2048 / 4096 MiB.
 - `services.etcd.extraConf.HEARTBEAT_INTERVAL` — 100 / 250 ms.
 - `services.etcd.extraConf.ELECTION_TIMEOUT` — 1250 / 2500 ms.
-- `services.etcd.extraConf.SNAPSHOT_COUNT` — 1000 / 10000 / 100000.
+- `services.etcd.extraConf.SNAPSHOT_COUNT` — 10000 / 100000.
 - `services.etcd.extraConf.QUOTA_BACKEND_BYTES` — 2 MiB / 8 MiB / 64 MiB.
 
-The product of the per-dimension value counts is 1,152 distinct configurations. Of these, 50 are sampled in the sweep.
+The product of the per-dimension value counts is 96 distinct configurations; the sweep samples 50 of them, just over half the space.
 
 The v2 property suite consists of six high-level properties:
 
@@ -443,7 +441,7 @@ That signature — one contract firing with an actionable message while the rest
 
 | Cell | strict-suff. | naive-suff. | operations | alarm samples | verdict | run (gitHead) |
 |---|---|---|---|---|---|---|
-| positive, 500 MB free | true | true | 50/50 confirmed | 0 | pass 5/5 | `…/20260822-183835-…-phase2-disk-positive` (`998cae1`) |
+| positive, 500 MB free | true | true† | 50/50 confirmed | 0 | pass 5/5 | `…/20260822-183835-…-phase2-disk-positive` (`998cae1`) |
 | positive, 500 MB free (re-run post-fix) | true | true | 50/50 confirmed | 0 | pass 5/5 | `…/20260822-224837-…-phase3-disk-positive-v2` (`761b053`) |
 | Cell X: 100 MB free / 200 MB limit / 200 × 16 KiB | **false** | true | 200/200 ambiguous (`ConnectionBlockedTimeout`) | 14 | **fails** capacity contract only | `…/20260822-225112-…-phase3-disk-counterexample` (`761b053`) |
 | Cell X, reproduction 1 (identical cell) | **false** | true | 200/200 ambiguous (`ConnectionBlockedTimeout`) | 14 | **fails** capacity contract only (22 recovered) | `…/20260823-104643-…-phase3-disk-counterexample-repA` (`70a59ad`) |
@@ -451,6 +449,8 @@ That signature — one contract firing with an actionable message while the rest
 | minimal: 100 MB free / 200 MB limit / 20 × 1 KiB, all other dimensions minimum | **false** | true | 20/20 ambiguous | 16 | **fails** capacity contract only | `…/20260823-001413-…-phase3-disk-counterexample-min` (`761b053`) |
 
 *Table 6.9 — RabbitMQ disk cells.*
+
+† `naive_capacity_sufficient` was recorded only from commit `761b053` onward; for the `998cae1` positive-control row the value is implied (500 MB free ≫ ≈50 KiB backlog), not read from the payload.
 
 ### 6.4.4 Failure Domain: the Correlated-Failure Counterexample
 
@@ -549,7 +549,7 @@ Several threats to the validity of the evaluation are worth discussing.
 
 **Construct validity.** The three targets are not representative of all distributed systems. Kafka is a partitioned log/stream system, etcd is a Raft-based key-value store, and RabbitMQ is a message broker; all are mature, single-tenant systems, and none exercises multi-tenant scheduling, network partitions, or clock skew. The properties that are checked are deliberately simple (e.g. "produce and consume one record", "write 80 values and read one back"). The evaluation therefore does not claim that TopoTestix can find violations of arbitrary, complex properties; it claims that TopoTestix can find violations of well-engineered property suites written in the style described in Chapter 4.
 
-**Internal validity.** The sweeps are run sequentially on a single Nix store, and the per-seed run time is non-trivial (multiple minutes for Kafka, slightly less for etcd). The sweep is therefore not a true random sample of the 746,496 (Kafka) or 1,152 (etcd v2) configurations, but a deterministic pseudo-random sample driven by the seed. The clean cross-tabulation in Table 6.4 and the deterministic 0/13/0 split in Table 6.7 suggest that the sample size is large enough to characterize the failure-class structure, but a larger sample (e.g. 200 or 500 seeds) would be needed to claim coverage of the full configuration space.
+**Internal validity.** The sweeps are run sequentially on a single Nix store, and the per-seed run time is non-trivial (multiple minutes for Kafka, slightly less for etcd). The sweep is therefore not a true random sample of the 746,496 (Kafka) or 96 (etcd v2) configurations, but a deterministic pseudo-random sample driven by the seed. The clean cross-tabulation in Table 6.4 and the deterministic 0/13/0 split in Table 6.7 suggest that the sample size is large enough to characterize the failure-class structure, but a larger sample (e.g. 200 or 500 seeds) would be needed to claim coverage of the full configuration space.
 
 **External validity.** The failure classes that TopoTestix surfaced for Kafka and etcd are not Kafka or etcd implementation bugs; they are configuration-dependent workload incompatibilities. This is the most defensible claim that can be made on the basis of three case studies, but it is also a narrower claim than "TopoTestix finds bugs in distributed systems". Additional targets would be needed to test the generality of the claim, and the choice of additional targets (e.g. PostgreSQL, Redis, ZooKeeper) is left to future work.
 
