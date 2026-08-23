@@ -109,6 +109,8 @@ materialized evidence payload. Git revision per run is in its `run.json`.
 | rabbitmq-disk | positive control (seed-1 cell, 500 MB free) | `20260822-183835-rabbitmq-disk-seed-1-phase2-disk-positive` | 5/5 PASS (50/50 confirmed, 0 alarms) |
 | rabbitmq-disk | positive control re-run post-`761b053` | `20260822-224837-rabbitmq-disk-seed-1-phase3-disk-positive-v2` | 5/5 PASS (50/50 confirmed, 0 alarms; both sufficiency flags true) |
 | rabbitmq-disk | counterexample: 100 MB free / 200 MB alarm threshold / 200 × 16 KiB (naive-sufficient, strict-insufficient) | `20260822-225112-rabbitmq-disk-seed-1-phase3-disk-counterexample` | `capacity-confirmation-contract` FAILS (intended; `naive_capacity_sufficient=true`, `capacity_sufficient=false`, 200/200 `ambiguous` `ConnectionBlockedTimeout`, 14 alarm samples); 4 other properties PASS |
+| rabbitmq-disk | counterexample, reproduction 1 (identical cell) | `20260823-104643-rabbitmq-disk-seed-1-phase3-disk-counterexample-repA` | identical signature (200/200 `ambiguous` `ConnectionBlockedTimeout`, 14 alarm samples, 22 recovered); same single-contract FAILURE |
+| rabbitmq-disk | counterexample, reproduction 2 (identical cell) | `20260823-105452-rabbitmq-disk-seed-1-phase3-disk-counterexample-repB` | identical signature (23 recovered); same single-contract FAILURE |
 | rabbitmq-disk | minimal cell: all dimensions at their minimum, threshold 200 MB (lowest value above the ≈104.5 MB fill floor) | `20260823-001413-rabbitmq-disk-seed-1-phase3-disk-counterexample-min` | same single-contract failure, 20/20 `ambiguous`, 16 alarm samples, 20 × 1 KiB payload (incidental duplicate repro: `20260822-231356-…-phase3-disk-counterexample-min`, identical verdict) |
 | rabbitmq-failure-domain | spread placement (positive) | `20260822-190647-rabbitmq-failure-domain-seed-1-phase2-faildom-spread` | 2/2 PASS (probe confirmed, 11/11 recovered) |
 | rabbitmq-failure-domain | colocated placement (counterexample 1) | `20260822-190921-rabbitmq-failure-domain-seed-1-phase2-faildom-colocA` | `retains-quorum-availability` FAILS (intended), `exact-recovery` PASSES |
@@ -116,15 +118,18 @@ materialized evidence payload. Git revision per run is in its `run.json`.
 
 Notes:
 
-- All runs except `phase1-crash-follower-smoke-2` and the three `phase3-disk-*`
+- All runs except `phase1-crash-follower-smoke-2` and the `phase3-disk-*`
   runs are on git revision
   `998cae1` ("Orchestrator: retain evidence payloads and record git
   provenance") (see the next two bullets for those exceptions).
 - The four `phase3-disk-*` run dirs (positive-v2, counterexample,
   counterexample-min ×2) are on `761b053`
   ("Disk target: expose the naive-capacity counterexample
-  contract"), which amends the contract after the Phase-2 runs; the disk
-  positive control was re-run on that revision (positive-v2) so every cited
+  contract"), which amends the contract after the Phase-2 runs; the two
+  identical-cell counterexample reproductions (repA, repB) are on
+  `70a59ad` ("Document the complete RabbitMQ thesis case study"), a
+  documentation-only commit whose target code is identical to `761b053`. The
+  disk positive control was re-run on `761b053` (positive-v2) so every cited
 disk verdict has a post-amendment provenance.
 - `phase1-crash-follower-smoke-2` is on `118a5ab`: a Phase-1 orchestrator
   regression (PermissionError on the store-copied `report.json`) left

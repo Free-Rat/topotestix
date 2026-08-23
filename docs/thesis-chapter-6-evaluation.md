@@ -436,7 +436,8 @@ The designed counterexample cell ("Cell X") sits in that band: free-space target
 - `naive_capacity_sufficient = true` (≈104.5 MB free ≥ 4.69 MiB backlog) and `capacity_sufficient = false` (104.5 MB < 200 MB + backlog) — the two capacity models disagree, and the contract fires;
 - the broker's `disk_free` alarm activates during the publish phase (14 alarm samples; RabbitMQ evaluates the alarm on a timer, so the `after_fill` checkpoint still reads it as inactive), the broker then blocks connections, and **all 200 publish attempts end as `ambiguous` operations** with `ConnectionBlockedTimeout`;
 - 22 of the unconfirmed messages were nevertheless durably applied by the broker — exactly the ambiguity boundary this thesis's property language is built to express;
-- precisely one property fails (`rabbitmq-disk-capacity-confirmation-contract`), while the other four — including both recovery and consistency properties — pass.
+- precisely one property fails (`rabbitmq-disk-capacity-confirmation-contract`), while the other four — including both recovery and consistency properties — pass;
+- independent reproductions: two further runs of the *identical* cell (".topotestix/runs-thesis-redesign/20260823-104643-…-phase3-disk-counterexample-repA" and "…/20260823-105452-…-phase3-disk-counterexample-repB", gitHead `70a59ad`, a documentation-only commit over the identical target code) reproduce the same signature — 200/200 `ambiguous`, 14 alarm samples, 22 and 23 recovered — so the counterexample is not a one-off.
 
 That signature — one contract firing with an actionable message while the rest of the suite stays consistent — is the intended counterexample behaviour.
 
@@ -445,6 +446,8 @@ That signature — one contract firing with an actionable message while the rest
 | positive, 500 MB free | true | true | 50/50 confirmed | 0 | pass 5/5 | `…/20260822-183835-…-phase2-disk-positive` (`998cae1`) |
 | positive, 500 MB free (re-run post-fix) | true | true | 50/50 confirmed | 0 | pass 5/5 | `…/20260822-224837-…-phase3-disk-positive-v2` (`761b053`) |
 | Cell X: 100 MB free / 200 MB limit / 200 × 16 KiB | **false** | true | 200/200 ambiguous (`ConnectionBlockedTimeout`) | 14 | **fails** capacity contract only | `…/20260822-225112-…-phase3-disk-counterexample` (`761b053`) |
+| Cell X, reproduction 1 (identical cell) | **false** | true | 200/200 ambiguous (`ConnectionBlockedTimeout`) | 14 | **fails** capacity contract only (22 recovered) | `…/20260823-104643-…-phase3-disk-counterexample-repA` (`70a59ad`) |
+| Cell X, reproduction 2 (identical cell) | **false** | true | 200/200 ambiguous (`ConnectionBlockedTimeout`) | 14 | **fails** capacity contract only (23 recovered) | `…/20260823-105452-…-phase3-disk-counterexample-repB` (`70a59ad`) |
 | minimal: 100 MB free / 200 MB limit / 20 × 1 KiB, all other dimensions minimum | **false** | true | 20/20 ambiguous | 16 | **fails** capacity contract only | `…/20260823-001413-…-phase3-disk-counterexample-min` (`761b053`) |
 
 *Table 6.9 — RabbitMQ disk cells.*

@@ -256,8 +256,10 @@ counterexample contract"), with evidence under
 - **Exact repository revision**: every retained run dir carries `run.json`
   with `gitHead`, `artifacts`, and `reproduceCommand`; eleven thesis runs
   exist on `998cae1`, the four `phase3-disk-*` run dirs (positive-v2,
-  counterexample, counterexample-min ×2) are on `761b053`, plus
-  the whitelisted `phase1-crash-follower-smoke-2`
+  counterexample, counterexample-min ×2) are on `761b053`, the two
+  identical-cell counterexample reproductions (repA, repB) are on `70a59ad`
+  (a documentation-only commit over the identical `761b053` target code),
+  plus the whitelisted `phase1-crash-follower-smoke-2`
   on `118a5ab` (backfilled `run.json`, provenance caveat documented in
   `docs/rabbitmq/thesis-targets.md`).
 - **Complete forced choices and resolved configuration**: every run dir
@@ -275,7 +277,12 @@ counterexample contract"), with evidence under
   contract has four `998cae1` reproductions (repA, repB, leader, during)
   and the during cell was additionally retuned twice
   (delay 10 s, 50 ops, follower and leader) — all 3/3 PASS with 0 ambiguous
-  operations.
+  operations; the disk counterexample has three runs of exactly the same
+  cell — the original (`20260822-225112-…-phase3-disk-counterexample`)
+  plus reproductions (`20260823-104643-…-phase3-disk-counterexample-repA`,
+  `20260823-105452-…-phase3-disk-counterexample-repB`) — each carrying the
+  identical signature (200/200 `ambiguous` `ConnectionBlockedTimeout`,
+  14 alarm samples, 22/23 recovered, the same single-contract failure).
 - **Exact client-operation history and broker telemetry**: payloads
   `crash-results.json`, `disk-results.json`,
   `failure-domain-results.json` record per-operation outcome
