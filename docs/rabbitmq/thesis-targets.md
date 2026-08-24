@@ -65,7 +65,7 @@ same service against its unchanged data directory. It records unique publish
 operations and verifies confirmed IDs exactly once after recovery.
 
 Status: **thesis target** (promoted from thesis candidate on 2026-08-22).
-Evidence: follower reproductions (3), leader, during-publish (2), and
+Evidence: follower reproductions (3), leader, during-publish (1), and
 during-publish retunes (2) under
 `.topotestix/runs-thesis-redesign/`, all 3/3 PASS with 50/50 confirmed
 operations recovered exactly once; plus the durable cluster-rejoin finding
@@ -118,10 +118,12 @@ materialized evidence payload. Git revision per run is in its `run.json`.
 
 Notes:
 
-- All runs except `phase1-crash-follower-smoke-2` and the `phase3-disk-*`
+- All cited matrix runs except `phase1-crash-follower-smoke-2` and the
+  `phase3-disk-*`
   runs are on git revision
   `998cae1` ("Orchestrator: retain evidence payloads and record git
-  provenance") (see the next two bullets for those exceptions).
+  provenance") (see the next two bullets for those exceptions; the uncited
+  debug run `phase1-crash-follower-smoke` is on `118a5ab`).
 - The four `phase3-disk-*` run dirs (positive-v2, counterexample,
   counterexample-min ×2) are on `761b053`
   ("Disk target: expose the naive-capacity counterexample

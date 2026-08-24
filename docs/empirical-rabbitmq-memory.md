@@ -87,7 +87,7 @@ The five target files were reviewed against `rabbitmq-cluster`,
   wait 30 s for the broker to drain and release memory → drain the
   queue with `basic_get` and count the durable messages retained →
   persist the summary to `/tmp/mempressure-results.json`.
-- `properties.nix` — seven `_check` entries; `memory-alarm-under-pressure`
+- `properties.nix` — seven `_check` entries; `rabbitmq-memory-alarm-under-pressure`
   explicitly skips runs where `publish_count < 500` because the broker
   may legitimately stay below its watermark under light load.
 - `config.nix` — four fuzz dimensions; index 0 of every dimension is the
@@ -130,50 +130,71 @@ before the sanity sweep:
 ### Shrinker limitation discovered
 
 The `vm_memory_high_watermark.relative` key in `services.rabbitmq.configItems`
-contains dots. `lib/shrinker.nix:getValueByPath` uses
-`lib.splitString "." pathStr` to navigate, so the path
+contains dots. When the sanity runs below were executed, `lib/shrinker.nix`
+navigated paths with
+`lib.splitString "." pathStr`, so the path
 `.services.rabbitmq.configItems.vm_memory_high_watermark.relative`
 breaks: the shrinker tries to walk
 `services → rabbitmq → configItems → vm_memory_high_watermark → relative`,
 and `vm_memory_high_watermark` (without `.relative`) does not exist as
-a key. The fuzzer still varies the dimension correctly across runs;
-only choice-based shrinking of this dimension is blocked. The other
-three dimensions (memorySize, publish_count, message_size) shrink
-correctly.
+a key. Commit `c0807fe` ("Support expected failures and dotted shrink
+paths") later added progressive key joining for literal dotted
+attribute names, so this dimension is shrinkable as of this writing.
+The fuzzer varied the dimension correctly across runs throughout;
+the other three dimensions (memorySize, publish_count, message_size)
+shrink correctly.
 
 ## Sanity runs
 
-Eight sanity runs were executed (no shrinking) across a spread of the
-fuzz space, including the most aggressive combination (mem=512 MB,
-watermark=0.3, 2000 messages of 4096 bytes). All eight passed
-all 7 properties (56 / 56 individual assertions, 0 failures).
+Ten distinct sanity seeds were executed (no shrinking) across a spread
+of the fuzz space, including the most aggressive combination (mem=512 MB,
+watermark=0.3, 2000 messages of 4096 bytes). Each seed's final run passed
+all 7 properties — 70 / 70 individual assertions across the ten passing
+runs, 0 failures (earlier dev-loop iterations of seeds 1 and 10 failed
+while the driver was being debugged); the table below lists eight of
+the ten seeds.
+
+Parameters below are as recorded inside each VM by the driver (the
+`mempressure-results.json` echo in `stderr.log`; in-guest `MemTotal`
+maps 964 / 712 / 460 MB to `memorySize` 1024 / 768 / 512 MB). They
+match the current `fuzzer(seed + 1 + roleIndex)` mapping for every
+dimension of every seed except `memorySize` for seeds 1 and 5, which
+ran with 768 MB under an interim dev-loop revision of the target.
 
 | Seed | mem | wm | pc | ms | Result |
 |---:|---:|---:|---:|---:|---|
-| 1 | 512 | 0.3 | 50 | 128 | 7 / 7 PASS |
-| 5 | 1024 | 0.3 | 50 | 4096 | 7 / 7 PASS |
-| 10 | 768 | 0.3 | 50 | 4096 | 7 / 7 PASS |
-| 11 | 512 | 0.3 | 2000 | 4096 | 7 / 7 PASS (alarm engaged) |
-| 3 | 512 | 0.4 | 2000 | 4096 | 7 / 7 PASS |
-| 7 | 1024 | 0.3 | 50 | 1024 | 7 / 7 PASS |
-| 15 | 1024 | 0.3 | 500 | 4096 | 7 / 7 PASS |
-| 20 | 1024 | 0.3 | 50 | 128 | 7 / 7 PASS |
+| 1 | 768 | 0.4 | 2000 | 1024 | 7 / 7 PASS (assertion exercised) |
+| 5 | 768 | 0.3 | 2000 | 128 | 7 / 7 PASS (assertion exercised) |
+| 10 | 512 | 0.3 | 2000 | 4096 | 7 / 7 PASS (assertion exercised) |
+| 11 | 1024 | 0.3 | 50 | 128 | 7 / 7 PASS (alarm property skipped) |
+| 3 | 1024 | 0.5 | 500 | 4096 | 7 / 7 PASS (assertion exercised) |
+| 7 | 512 | 0.5 | 50 | 1024 | 7 / 7 PASS |
+| 15 | 512 | 0.3 | 500 | 4096 | 7 / 7 PASS (assertion exercised) |
+| 20 | 1024 | 0.3 | 500 | 4096 | 7 / 7 PASS (assertion exercised) |
 
-Seed 11 is the most aggressive combination in the four-dimensional
-surface and is the run in which the
-`memory-alarm-engages-under-pressure` property is expected to fire
-rather than skip. The property did fire: the alarm-under-pressure
-property passed because the broker entered the memory-alarm state
-during the publish phase (the run reports `"alarm_under_pressure:
-failed"` in the underlying `mempressure-results.json`, which the
-property interprets as `engaged`).
+Seed 10 is the most aggressive combination in the four-dimensional
+surface and is a run in which the
+`rabbitmq-memory-alarm-under-pressure` property asserts rather than
+skips (`publish_count = 2000 ≥ 500`). The assertion held: the
+local-alarms probe (`rabbitmq-diagnostics -q check_local_alarms`,
+recorded per phase as `alarm_initial` / `alarm_after_publish` /
+`alarm_after_drain` in the underlying `mempressure-results.json`)
+reported an active memory alarm before publishing, after publishing,
+and after the drain (`"failed"` = alarm active in all three fields).
+Notably, the probe already reported an active alarm at startup
+(`alarm_initial: "failed"`) in *every* completed sanity run — these
+watermark settings put the broker into the memory-alarm state from the
+start, not only under publish load — so the property's engagement
+condition was satisfied throughout; the correctness properties are
+unaffected because they assert message accounting independently of the
+alarm state.
 
 Reproduce any run with the `reproduceCommand` in that run's `run.json`,
 e.g.:
 
 ```text
 topotestix orchestrator run rabbitmq-memory --seed 11 \
-  --name rabbitmq-memory-seed-11 \
+  --name sanity-rabbitmq-memory-seed-11 \
   --project-root /home/freerat/projects/topotestix \
   --topology-target targets/rabbitmq-memory/topology.nix \
   --config-target  targets/rabbitmq-memory/config.nix \
@@ -197,10 +218,10 @@ All four dimensions were exercised and covered all values of each:
 
 | Axis | Values | Distribution (seeds 1-20) |
 |---|---|---|
-| `virtualisation.memorySize` | `[ 1024 768 512 ]` MB | 1024=8, 768=5, 512=7 |
-| `services.rabbitmq.configItems."vm_memory_high_watermark.relative"` | `[ "0.5" "0.4" "0.3" ]` | 0.5=2, 0.4=5, 0.3=13 |
-| `/etc/topotestix-memory-publish-count` | `[ "50" "500" "2000" ]` | 50=12, 500=4, 2000=4 |
-| `/etc/topotestix-memory-message-size` | `[ "128" "1024" "4096" ]` bytes | 128=6, 1024=3, 4096=11 |
+| `virtualisation.memorySize` | `[ 1024 768 512 ]` MB | 1024=9, 768=5, 512=6 |
+| `services.rabbitmq.configItems."vm_memory_high_watermark.relative"` | `[ "0.5" "0.4" "0.3" ]` | 0.5=2, 0.4=6, 0.3=12 |
+| `/etc/topotestix-memory-publish-count` | `[ "50" "500" "2000" ]` | 50=8, 500=7, 2000=5 |
+| `/etc/topotestix-memory-message-size` | `[ "128" "1024" "4096" ]` bytes | 128=6, 1024=4, 4096=10 |
 
 With 20 seeds across `3 × 3 × 3 × 3 = 81` cells, joint coverage is
 sparse (≈ 25 % of cells visited once or more), but each value of each
@@ -210,9 +231,9 @@ often for seeds 1-20; a longer sweep would rebalance this.
 
 The single most-aggressive combination
 `(memorySize=512, watermark=0.3, publish_count=2000, message_size=4096)`
-is hit by seed 11 and is the seed in which
-`memory-alarm-engages-under-pressure` is expected to engage rather than
-skip — it did.
+is hit by seed 10 and is a seed in which
+`rabbitmq-memory-alarm-under-pressure` asserts engagement rather than
+skipping — it did.
 
 ### Topology axes (`targets/rabbitmq-memory/topology.nix`)
 
@@ -231,25 +252,33 @@ per-node memory variation belongs to a future revision.
 ## Interpretation
 
 1. The `rabbitmq-memory` target is correct on its first design
-   iteration (after the five dev-loop fixes listed above). Across eight
-   sanity seeds including the worst-case combination
+   iteration (after the five dev-loop fixes listed above). Across ten
+   distinct sanity seeds including the worst-case combination
    (mem=512 MB, watermark=0.3, 2000 messages of 4096 bytes), every run
    kept the cluster healthy: durable, confirmed messages were not
    silently lost; no phantom messages appeared; the cluster re-formed
-   correctly after the drain; the broker's memory alarm engaged
-   exactly when the load was tight enough to warrant it; and every
+   correctly after the drain; the alarm-oracle property skipped light
+   loads and held under every heavy-load configuration; and every
    node's `rabbitmq.service` stayed active.
-2. The `memory-alarm-engages-under-pressure` property correctly skips
+2. The `rabbitmq-memory-alarm-under-pressure` property correctly skips
    light loads (`publish_count < 500`) and asserts engagement under
-   heavy loads (`publish_count ≥ 500`). Seed 11 (the only seed in the
-   sanity set with `publish_count ≥ 500` and `watermark = 0.3`) saw the
-   alarm fire; the property passed.
-3. The shrinker cannot reduce `vm_memory_high_watermark.relative`
-   because the key contains dots and the shrinker's path-walker uses
-   `lib.splitString "."`. This is a pre-existing shrinker limitation,
-   not a target bug. The fuzzer still varies the dimension correctly
-   across runs, so the sweep is unaffected; only choice-based shrinking
-   is blocked on this single axis.
+   heavy loads (`publish_count ≥ 500`). Seven seeds exercised the
+   assertion path (seeds 1, 3, 5, 10, 15, 20, 30 — all with
+   `publish_count ≥ 500`, spanning watermarks 0.5, 0.4, and 0.3), and
+   the property passed in each. One caveat recorded by the telemetry: the local-alarms probe
+   already reported an active memory alarm at broker startup in every
+   completed run, so at these watermark settings the property verifies
+   *sustained* alarm state under load rather than a transition caused
+   by the publish phase.
+3. The shrinker could not reduce `vm_memory_high_watermark.relative`
+   at the time of these runs because the key contains dots and the
+   shrinker's path-walker then used `lib.splitString "."`. This was a
+   pre-existing shrinker limitation,
+   not a target bug; commit `c0807fe` ("Support expected failures and
+   dotted shrink paths") later resolved it project-wide. The fuzzer
+   still varies the dimension correctly
+   across runs, so the sweep was unaffected; only choice-based shrinking
+   was blocked on this single axis.
 4. The four-dimensional fuzz surface (`3^4 = 81` cells) is too large
    for a 50-seed sweep to cover densely (≈ 60 % of cells), but a
    20-seed sanity sweep already exercises each value of each axis at
@@ -313,12 +342,14 @@ deep-sweep plan as the host-resource-sensitivity case study. A four-axis
 fuzz surface — `virtualisation.memorySize` (1024 / 768 / 512 MB),
 `vm_memory_high_watermark.relative` (0.5 / 0.4 / 0.3), `publish_count`
 (50 / 500 / 2000), and `message_size` (128 / 1024 / 4096 bytes) — was
-exercised across eight sanity seeds, including the worst-case
-combination (512 MB, 0.3 watermark, 2000 messages of 4096 bytes). All
-eight runs and all 56 individual property assertions passed. The
-broker's memory alarm engaged exactly when the load and watermark
-combined to a tight setup (gated by `publish_count ≥ 500`); every
-durable, confirmed message that was accepted survived a 30-second drain
+exercised across ten distinct sanity seeds, including the worst-case
+combination (512 MB, 0.3 watermark, 2000 messages of 4096 bytes). Each
+seed's final run passed, covering all 70 individual property assertions
+across those ten passing runs (earlier dev-loop iterations of individual
+seeds failed while the driver was being debugged and are not counted).
+The alarm-oracle property skipped light loads and held under every
+heavy-load configuration; every durable, confirmed message that was
+accepted survived a 30-second drain
 window; no phantom messages appeared; the cluster re-formed correctly;
 and every node's `rabbitmq.service` stayed active throughout. A
 pre-existing shrinker limitation — `lib/shrinker.nix:getValueByPath`

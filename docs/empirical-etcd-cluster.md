@@ -149,14 +149,14 @@ Unlike the Kafka shrinking case, the generic shrinker worked cleanly for etcd v2
 Detailed experiment files:
 
 ```text
-experiments/etcd-cluster-findings.md
-experiments/etcd-cluster-notes.md
-experiments/etcd-cluster-v2-shrinking.md
-experiments/etcd-cluster-v2-sweep-1-50-20260616.md
-experiments/etcd-cluster-v2-sweep-1-50-20260616-summary.json
-experiments/etcd-cluster-v2-sweep-1-50-20260616-summary.txt
-experiments/etcd-cluster-v2-shrink-seed-3.log
-experiments/etcd-cluster-v2-shrink-seed-40.log
+experiments/etcd-cluster/etcd-cluster-findings.md
+experiments/etcd-cluster/etcd-cluster-notes.md
+experiments/etcd-cluster/etcd-cluster-v2-shrinking.md
+experiments/etcd-cluster/etcd-cluster-v2-sweep-1-50-20260616.md
+experiments/etcd-cluster/etcd-cluster-v2-sweep-1-50-20260616-summary.json
+experiments/etcd-cluster/etcd-cluster-v2-sweep-1-50-20260616-summary.txt
+experiments/etcd-cluster/etcd-cluster-v2-shrink-seed-3.log
+experiments/etcd-cluster/etcd-cluster-v2-shrink-seed-40.log
 ```
 
 Representative minimized run directories:

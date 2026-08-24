@@ -98,11 +98,12 @@ environment.etc."topotestix-partition-shape".text = (
 
 The fuzzer (`lib/fuzzer.nix` → `lib/combinators.nix:resolveWithKeyPrefix`)
 handles functions by calling them with `{ inherit lib; }` and recursing on
-the returned list, so 5 pre-fix seeds ran fine. But
-`lib/shrinker.nix:115-130` (`valueAtChecked`) calls `getValueByPath`
-directly, which has no `isFunction` branch, and throws
+the returned list, so 5 pre-fix seeds ran fine. But at the time,
+`lib/shrinker.nix` (`valueAtChecked`, lines 173-178 after `c0807fe`;
+`getValueByPath` at line 81) called `getValueByPath`
+directly without an `isFunction` branch, and threw
 `"shrinker: path ... is not a choice list"` whenever a shrinker override
-is applied to one of the four partition dimensions.
+was applied to one of the four partition dimensions.
 
 The wrapping therefore **broke choice-based shrinking** for this target
 even though the fuzzer produced identical choices. The header comment in

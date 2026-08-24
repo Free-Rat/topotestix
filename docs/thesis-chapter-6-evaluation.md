@@ -140,7 +140,7 @@ A cross-tabulation of the three size-related options (`message.max.bytes`, `repl
 
 Two observations follow directly from this cross-tabulation. First, the broker-max class is triggered exactly when `message.max.bytes` is the smallest value (1 MiB) and the test payload (1.5 MiB) exceeds it, independently of the other size options. Second, the log-segment class is triggered exactly when `log.segment.bytes` is the smallest value (1 MiB), even if `message.max.bytes` is large enough to allow the record. The latter observation is the more interesting one, because it shows that the obvious "raise `message.max.bytes`" fix would not have made the failing configurations pass.
 
-The per-seed CSV for this sweep is available as `experiments/kafka-cluster-sweep-1-50-fixed-20260613-summary.csv` (see Section 6.2.7).
+The per-seed outcomes for this sweep are available in `experiments/kafka-cluster/kafka-cluster-sweep-1-50-fixed-20260613-summary.txt` and `-summary.json` (see Section 6.2.7).
 
 ### 6.2.5 Failure Class 1: `message.max.bytes` Too Small
 
@@ -175,17 +175,17 @@ PASS kafka-topic-visible-from-kafka2
 PASS kafka-topic-visible-from-kafka3
 ```
 
-A class-isolating minimized configuration that isolates only this failure class, while keeping all other options at a simple baseline, is provided in `experiments/kafka-cluster-min-message-max.nix`. The corresponding validation run is reproducible with:
+A class-isolating minimized configuration that isolates only this failure class, while keeping all other options at a simple baseline, is provided in `experiments/kafka-cluster/kafka-cluster-min-message-max.nix`. The corresponding validation run is reproducible with:
 
 ```bash
 python3 -m topotestix.cli orchestrator run kafka-cluster \
   --seed 1 \
   --name kafka-cluster-min-message-max \
   --project-root . \
-  --config-target experiments/kafka-cluster-min-message-max.nix
+  --config-target experiments/kafka-cluster/kafka-cluster-min-message-max.nix
 ```
 
-The run is stored in `.topotestix/runs/20260615-172715-kafka-cluster-seed-1-kafka-cluster-min-message-max` and confirms 10/11 passing checks and a single failure of `kafka-large-message-on-kafka1` with `RecordTooLargeException`.
+The run was stored in `.topotestix/runs/20260615-172715-kafka-cluster-seed-1-kafka-cluster-min-message-max` and confirmed 10/11 passing checks and a single failure of `kafka-large-message-on-kafka1` with `RecordTooLargeException`.
 
 ### 6.2.6 Failure Class 2: `log.segment.bytes` Too Small
 
@@ -205,17 +205,17 @@ replica.fetch.max.bytes  = 4194304   # 4 MiB
 large test record        = 1572864   # 1.5 MiB
 ```
 
-A class-isolating minimized configuration that isolates only this failure class is provided in `experiments/kafka-cluster-min-log-segment.nix`. The corresponding validation run is reproducible with:
+A class-isolating minimized configuration that isolates only this failure class is provided in `experiments/kafka-cluster/kafka-cluster-min-log-segment.nix`. The corresponding validation run is reproducible with:
 
 ```bash
 python3 -m topotestix.cli orchestrator run kafka-cluster \
   --seed 1 \
   --name kafka-cluster-min-log-segment \
   --project-root . \
-  --config-target experiments/kafka-cluster-min-log-segment.nix
+  --config-target experiments/kafka-cluster/kafka-cluster-min-log-segment.nix
 ```
 
-The run is stored in `.topotestix/runs/20260615-173157-kafka-cluster-seed-1-kafka-cluster-min-log-segment` and confirms 10/11 passing checks and a single failure of `kafka-large-message-on-kafka1` with `RecordBatchTooLargeException`.
+The run was stored in `.topotestix/runs/20260615-173157-kafka-cluster-seed-1-kafka-cluster-min-log-segment` and confirmed 10/11 passing checks and a single failure of `kafka-large-message-on-kafka1` with `RecordBatchTooLargeException`.
 
 This second class is the more interesting empirical finding of the Kafka case study, for two reasons. First, it shows that the surfaced violation is not a "fix the obvious size limit" issue: a system operator who only knew about `message.max.bytes` would have raised it to 4 MiB and would still have observed the failure. Second, it shows that TopoTestix can expose non-obvious configuration interactions across related but distinct settings.
 
@@ -349,11 +349,11 @@ The strong correlation between the failure and the configured backend quota is s
 
 Crucially, in every failing run the cluster passes the first 11 properties: the cluster is healthy from all three nodes, key/value roundtrips work, there is exactly one leader, the lease TTL expires correctly, and the cluster remains healthy after a 20-second delay. Only the 12th property, the quota write-burst, fails. This is exactly the "system looks healthy, only fails under a realistic workload" pattern that **RQ2** asks for.
 
-The per-seed CSV for this sweep is available as part of `experiments/etcd-cluster-v2-sweep-1-50-20260616-summary.txt`, and the per-seed outcomes are listed in the per-seed table in `experiments/etcd-cluster-v2-sweep-1-50-20260616.md`.
+The per-seed CSV for this sweep is available as part of `experiments/etcd-cluster/etcd-cluster-v2-sweep-1-50-20260616-summary.txt`, and the per-seed outcomes are listed in the per-seed table in `experiments/etcd-cluster/etcd-cluster-v2-sweep-1-50-20260616.md`.
 
 ### 6.3.5 Shrinking Results
 
-Two representative v2 failures were shrunk: seed 3 and seed 40. Both seeds failed in the original sweep with the `quota-backend-too-small-for-write-burst` class. The shrink logs are stored in `experiments/etcd-cluster-v2-shrink-seed-3.log` and `experiments/etcd-cluster-v2-shrink-seed-40.log`.
+Two representative v2 failures were shrunk: seed 3 and seed 40. Both seeds failed in the original sweep with the `quota-backend-too-small-for-write-burst` class. The shrink logs are stored in `experiments/etcd-cluster/etcd-cluster-v2-shrink-seed-3.log` and `experiments/etcd-cluster/etcd-cluster-v2-shrink-seed-40.log`.
 
 Both seeds shrink to the same minimal configuration, listed in Table 6.8. The shrinking works cleanly: the minimized runs are still post-start property failures, not Nix/build/startup failures, and the structured report records exactly one failed check, `etcd-quota-write-burst-etcd1`, with the `mvcc: database space exceeded` error message.
 
@@ -387,7 +387,7 @@ failed check: etcd-quota-write-burst-etcd1
 failure message contains: etcdserver: mvcc: database space exceeded
 ```
 
-The minimized configurations are reproducible with the same orchestrator command and the same `--topology-choices` and `--config-choices` flags, listed in `experiments/etcd-cluster-v2-shrinking.md`.
+The minimized configurations are reproducible with the same orchestrator command and the same `--topology-choices` and `--config-choices` flags, listed in `experiments/etcd-cluster/etcd-cluster-v2-shrinking.md`.
 
 ### 6.3.6 Discussion
 
@@ -533,7 +533,7 @@ The Kafka case study therefore uses validated class-isolating minimized configur
 
 ### 6.5.3 Reproducibility
 
-Both case-study sweeps are reproducible end-to-end with the orchestrator commands listed in Sections 6.2 and 6.3. Every per-seed run is stored in `.topotestix/runs/<timestamp>-<target>-seed-<n>-<name>`, and the aggregated summary is stored under `experiments/`. The class-isolating minimized configurations are stored as standalone Nix files (`experiments/kafka-cluster-min-message-max.nix`, `experiments/kafka-cluster-min-log-segment.nix`) and are reproducible with the same orchestrator command and a different `--config-target`. The etcd minimized configurations are reproducible with the same orchestrator command and explicit `--topology-choices` and `--config-choices` flags.
+Both case-study sweeps are reproducible end-to-end with the orchestrator commands listed in Sections 6.2 and 6.3. Every per-seed run was stored in `.topotestix/runs/<timestamp>-<target>-seed-<n>-<name>`, and the aggregated summary is stored under `experiments/`. Per-run directories are local, gitignored artifacts: the retained evidence for the Kafka and etcd case studies is the committed sweep summaries and run logs under `experiments/`, while the full per-run payloads of the RabbitMQ case study are retained under `.topotestix/runs-thesis-redesign/`. The class-isolating minimized configurations are stored as standalone Nix files (`experiments/kafka-cluster/kafka-cluster-min-message-max.nix`, `experiments/kafka-cluster/kafka-cluster-min-log-segment.nix`) and are reproducible with the same orchestrator command and a different `--config-target`. The etcd minimized configurations are reproducible with the same orchestrator command and explicit `--topology-choices` and `--config-choices` flags.
 
 A single re-execution of the sweeps therefore reproduces the thesis results bit-for-bit, given the same Nix store. The use of Nix-based test derivations is the key enabler of this reproducibility: the cluster configuration is captured in Nix expressions, the test script is captured in Python source, and the per-run outputs are captured as Nix build outputs.
 

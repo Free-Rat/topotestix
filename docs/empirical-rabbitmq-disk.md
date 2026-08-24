@@ -178,18 +178,20 @@ the trigger property is deliberately lenient on threshold and evidence,
 precisely because the whole point of the disk case study is that
 RabbitMQ's disk-alarm is timer-driven and propagates with latency.
 
-### Shrinker limitation (pre-existing)
+### Shrinker limitation
 
 The `disk_free_limit.absolute` key in `services.rabbitmq.configItems`
-contains dots. `lib/shrinker.nix:getValueByPath` uses
-`lib.splitString "." pathStr` to navigate, so the path
-`.services.rabbitmq.configItems.disk_free_limit.absolute` breaks: the
-shrinker tries to walk
+contains dots. When the sweep below was executed, `lib/shrinker.nix`
+navigated paths with `lib.splitString "." pathStr`, so the path
+`.services.rabbitmq.configItems.disk_free_limit.absolute` broke: the
+shrinker tried to walk
 `services → rabbitmq → configItems → disk_free_limit → absolute`, and
-`disk_free_limit` (without `.absolute`) does not exist as a key. The
-fuzzer still varies the dimension correctly across runs; only
-choice-based shrinking of this dimension is blocked. The other four
-config dimensions shrink correctly.
+`disk_free_limit` (without `.absolute`) did not exist as a key. Commit
+`c0807fe` ("Support expected failures and dotted shrink paths") added
+progressive key joining for literal dotted attribute names, so
+choice-based shrinking of this dimension is supported as of this
+writing. The fuzzer varied the dimension correctly across runs
+throughout; the other four config dimensions always shrank correctly.
 
 ## Development history: from fixed sleeps to polling
 
@@ -201,7 +203,7 @@ cleanly.
 
 ### Naive fixed-sleep version
 
-The first driver (preserved as `targets/rabbitmq-disk/test-script.py.bak`)
+The first driver (replaced in place; not retained in git)
 used two fixed sleeps: 5 s after `fallocate` before reading the alarm,
 and 10 s after `rm` before reading it again. It also published after the
 fill (not before), so the "no message loss" and "no phantom messages"
@@ -211,13 +213,15 @@ blocked.
 This version produced intermittent failures:
 
 - **seed 2** — `alarm-triggers` ("free space (150MB) fell below limit
-  (190MB)") and `no-phantom-messages` ("500 confirmed publishes but 501
-  found").
+  (190MB)") and `no-phantom-messages` ("1 confirmed publishes, but 5
+  messages found after drain").
 - **seed 5** — same two properties ("free space (150MB) fell below limit
   (190MB)"; "0 confirmed but 4 found").
 - **seed 6** — `alarm-triggers` ("free space (10MB) fell below 50MB").
-- **8 debug re-runs of seed 1** (`disk-rewrite-test{2..8}`) — 6 failed,
-  splitting between `alarm-triggers` (4), `alarm-clears` (3), and a
+- **7 numbered debug re-runs of seed 1** (`disk-rewrite-test{2..8}`,
+  after an initial unnumbered attempt that was interrupted before any
+  check was recorded) — 6 failed,
+  splitting between `alarm-triggers` (3), `alarm-clears` (3), and a
   single `no-phantom-messages`:
 
 | Re-run | Status | Failing checks |
@@ -411,13 +415,14 @@ not to this baseline.
    alarm on a blocked publish. The bug-relevant signal (message loss /
    phantom messages) is asserted independently and strictly, so the
    correctness floor is not weakened by this.
-4. The `disk_free_limit.absolute` shrinker limitation is identical to
+4. The `disk_free_limit.absolute` shrinker limitation was identical to
    the `vm_memory_high_watermark.relative` issue documented in
-   `docs/empirical-rabbitmq-memory.md`: both keys contain dots and
-   `lib/shrinker.nix:getValueByPath` cannot navigate them. The fuzzer
-   still varies the dimension correctly across runs; only choice-based
-   shrinking is blocked on these axes. Both fixes belong to
-   `lib/shrinker.nix` and would apply project-wide.
+   `docs/empirical-rabbitmq-memory.md`: both keys contain dots and, at
+   sweep time, `lib/shrinker.nix` could not navigate them. The fuzzer
+   varied the dimensions correctly across runs throughout; commit
+   `c0807fe` ("Support expected failures and dotted shrink paths")
+   subsequently added progressive key joining to `lib/shrinker.nix`,
+   resolving both axes project-wide.
 5. The `rabbitmq-disk` target establishes the disk-pressure baseline
    against which later crash-consistency and DNS axes from the
    RabbitMQ deep-sweep plan are contrasted. It demonstrates the
@@ -447,10 +452,12 @@ not to this baseline.
   evidence — or record both facts separately in the results JSON so a
   downstream analysis can distinguish them.
 - **`disk_free_limit.absolute` shrinker limitation.** Same root cause as
-  the memory-target shrinker bug. Fixing `lib/shrinker.nix` to honor
-  quoted path segments (or extending `lib/orchestrate.nix` to allow
-  per-key string overrides for `attrsOf` configItems) would unblock
-  choice-based shrinking on this axis. Independent of the disk target,
+  the memory-target shrinker bug. This was resolved while this case
+  study was being written up: commit `c0807fe` ("Support expected
+  failures and dotted shrink paths") added progressive key joining for
+  literal dotted attribute names in `lib/shrinker.nix`, unblocking
+  choice-based shrinking on this axis. The underlying lesson — quoted
+  path segments vs. nested attributes collide on the command line —
   applies project-wide.
 - **No topology-axis exploration.** All 50 runs use the same 3-node,
   single-VLAN topology. The disk target deliberately fixes topology to
@@ -458,10 +465,11 @@ not to this baseline.
   crash injection (e.g., one node filled + one node partitioned) is the
   natural next axis but requires a new target that lifts the topology
   pin.
-- **Remove the stale `.bak` driver.** `targets/rabbitmq-disk/test-script.py.bak`
-  is the obsolete fixed-sleep version. It should be deleted (or moved to
-  a `history/` note) so the target directory reflects only the ship
-  driver.
+- **Remove the stale `.bak` driver.** The obsolete fixed-sleep driver
+  was replaced in place and never committed under
+  `targets/rabbitmq-disk/test-script.py.bak`; no such file exists in the
+  repository, so nothing needs deleting — this bullet is retained only to
+  close out the original recommendation.
 
 ## Artifacts
 

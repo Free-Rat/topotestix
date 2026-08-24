@@ -221,7 +221,7 @@ One-shot sweep (50 seeds, 2 concurrent runs):
 
 ```bash
 topotestix orchestrator sweep rabbitmq-dns \
-    --seeds 1 50 --jobs 2 --name dns-sweep-50
+    --seeds 1..50 --jobs 2 --name dns-sweep-50
 ```
 
 Single-seed run (e.g. seed 1):
@@ -245,15 +245,24 @@ topotestix orchestrator run rabbitmq-dns \
   during the `rabbit2`/`rabbit3` `join_cluster` attempts) are the *expected*
   detector signal, not defects: they are the observable evidence that the
   broken resolver failed to let `rabbit2`/`rabbit3` reach the seed
-  `rabbit@rabbit1` for the join. In the full-driver-stderr runs (12 of the 50:
-  seeds {2,3,4,5,6,7,8,9,10,13,16,28}), each broken-mode run shows 4
-  `erpc,noconnection` lines (one per joining node, error line + warning line)
-  and each valid-mode run shows 0.
-- NixOS bakes the target's `networking.extraHosts` into `/etc/hosts` at boot *on
-  top of* the harness baseline. The harness baseline (from
-  `testing/network.nix`) only adds each node's own self-loopback entry
-  (`127.0.0.2 rabbitN`, for that node's own `N`) plus the standard
-  `127.0.0.1 localhost` / `::1 localhost` lines — it never maps *peer* names.
+   `rabbit@rabbit1` for the join. In the full-driver-stderr runs (12 of the 50:
+   seeds {2,3,4,5,6,7,8,9,10,13,16,28}), each broken-mode run shows six
+   noconnection-bearing log lines — per joining node (`rabbit2`, `rabbit3`),
+   one `[error]` line and one `[warning]` line containing the literal token
+   `erpc,noconnection` (4 lines), plus one aborted-feature-flags-check line
+   rendered in Erlang syntax as `{erpc, :noconnection}` (2 lines) — while each
+   valid-mode run shows none.
+- Peer-name resolution is driven entirely by the target fragment. nixpkgs'
+  testing harness would normally emit peer entries into
+  `networking.extraHosts` itself (`nixos/lib/testing/network.nix` maps every
+  reachable peer IP to its host name), but topotestix's merge step
+  (`lib/merge.nix`) applies the fuzzed config/topology fragments with
+  `mkForce`, *replacing* that generated value with the selected mode fragment.
+  What survives of the baseline comes from nixpkgs' plain NixOS module set
+  (`nixos/modules/config/networking.nix`): the standard `127.0.0.1 localhost`
+  / `::1 localhost` lines plus each node's own self-loopback entry
+  (`127.0.0.2 rabbitN`, for that node's own `N`) — it never maps *peer*
+  names.
   So the booted `/etc/hosts` is `localhost baseline + own self-loopback + the
   selected fragment`, and peer-name resolution is driven entirely by the
   fragment. In verified ground truth (seed 4, missing-seed), rabbit2's and
@@ -263,6 +272,7 @@ topotestix orchestrator run rabbitmq-dns \
   reads the mode label back out of that file, which is why the mode label in
   the fragment doubles as the driver's observable state.
 - A small subset of the 50 runs (12, seeds 2–10, 13, 16, 28) rebuilt the NixOS
-  system images and carry full driver logs in `stderr.log`; the rest are
-  cache hits with a 263-byte `stderr.log`. Both sets resolve to identical
+  system images and carry full driver logs in `stderr.log`; the rest are cache
+  hits with a stub `stderr.log` containing no driver output (263 bytes; seeds
+  1 and 32 carry short nix build-plan stubs instead). Both sets resolve to identical
   `/etc/hosts` state for a given seed, verified against the Nix store.

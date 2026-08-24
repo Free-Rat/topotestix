@@ -2,7 +2,7 @@
 
 > This audit describes the pre-redesign implementation. The repository was
 > subsequently changed according to its recommendations. Current target status
-> and initial smoke observations are in `docs/rabbitmq/thesis-targets.md`.
+> and the final cell matrix are in `docs/rabbitmq/thesis-targets.md`.
 
 Date: 2026-08-21
 Baseline revision: `ae46abe923b9d6b892fe6cbbc4a4195a951907b6`
@@ -254,7 +254,7 @@ counterexample contract"), with evidence under
 `.topotestix/runs-thesis-redesign/`:
 
 - **Exact repository revision**: every retained run dir carries `run.json`
-  with `gitHead`, `artifacts`, and `reproduceCommand`; eleven thesis runs
+  with `gitHead`, `artifacts`, and `reproduceCommand`; ten thesis runs
   exist on `998cae1`, the four `phase3-disk-*` run dirs (positive-v2,
   counterexample, counterexample-min ×2) are on `761b053`, the two
   identical-cell counterexample reproductions (repA, repB) are on `70a59ad`

@@ -96,23 +96,23 @@ Better alternatives:
 The finished Kafka case study is documented in:
 
 ```text
-experiments/kafka-cluster-case-study.md
+experiments/kafka-cluster/kafka-cluster-case-study.md
 ```
 
 The fixed sweep result is documented in:
 
 ```text
-experiments/kafka-cluster-sweep-1-50-fixed-20260613.md
-experiments/kafka-cluster-sweep-1-50-fixed-20260613-summary.json
-experiments/kafka-cluster-sweep-1-50-fixed-20260613-summary.txt
-experiments/kafka-cluster-sweep-1-50-fixed-20260613.log
+experiments/kafka-cluster/kafka-cluster-sweep-1-50-fixed-20260613.md
+experiments/kafka-cluster/kafka-cluster-sweep-1-50-fixed-20260613-summary.json
+experiments/kafka-cluster/kafka-cluster-sweep-1-50-fixed-20260613-summary.txt
+experiments/kafka-cluster/kafka-cluster-sweep-1-50-fixed-20260613.log
 ```
 
 The minimized/class-isolating repro configs are:
 
 ```text
-experiments/kafka-cluster-min-message-max.nix
-experiments/kafka-cluster-min-log-segment.nix
+experiments/kafka-cluster/kafka-cluster-min-message-max.nix
+experiments/kafka-cluster/kafka-cluster-min-log-segment.nix
 ```
 
 Aggregate result:
