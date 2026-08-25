@@ -1,0 +1,57 @@
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+{
+  "passed": false,
+  "report": [
+    {
+      "message": "WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.\nCreated topic topotestix_large.\nWarning: --producer-property is deprecated and will be removed in a future version. Use --command-property instead.\n[2026-08-24 12:40:03,291] ERROR Error when sending message to topic topotestix_large with key: null, value: 1572864 bytes with error: (org.apache.kafka.clients.producer.internals.ErrorLoggingCallback)\norg.apache.kafka.common.errors.RecordTooLargeException: The request included a message larger than the max message size the server will accept.\nThe consumer rebalance protocol (KIP-848) is production-ready! Set group.protocol=consumer to try it out. See https://kafka.apache.org/documentation/#consumer_rebalance_protocol\n[2026-08-24 12:40:26,093] ERROR Error processing message, terminating consumer process:  (org.apache.kafka.tools.consumer.ConsoleConsumer)\norg.apache.kafka.common.errors.TimeoutException\nProcessed a total of 0 messages\nlarge message roundtrip consumed too few bytes: expected_at_least=1572864 actual=114\n",
+      "name": "kafka-large-message-on-kafka1",
+      "status": "failed"
+    },
+    {
+      "name": "kafka-multi-topic-on-kafka1",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-still-up-kafka1",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-still-up-kafka2",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-still-up-kafka3",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-roundtrip-on-kafka1",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-roundtrip-on-kafka2",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-roundtrip-on-kafka3",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-topic-visible-from-kafka1",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-topic-visible-from-kafka2",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-topic-visible-from-kafka3",
+      "status": "passed"
+    }
+  ],
+  "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-123925-kafka-cluster-seed-9-kafka-probe-dotted-override-20260824"
+}

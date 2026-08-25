@@ -1,0 +1,244 @@
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+{
+  "avgRunTime": 189.254,
+  "classifications": {
+    "failed": 37,
+    "passed": 513
+  },
+  "completed": 50,
+  "failed": 37,
+  "failures": [
+    {
+      "elapsed": 194.47058206994552,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-151208-kafka-cluster-seed-1-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 1
+    },
+    {
+      "elapsed": 198.53762638091575,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-152131-kafka-cluster-seed-4-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 4
+    },
+    {
+      "elapsed": 201.51794756704476,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-152450-kafka-cluster-seed-5-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 5
+    },
+    {
+      "elapsed": 201.4962396249175,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-153119-kafka-cluster-seed-7-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 7
+    },
+    {
+      "elapsed": 196.3976600120077,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-153440-kafka-cluster-seed-8-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 8
+    },
+    {
+      "elapsed": 190.96368864295073,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-153757-kafka-cluster-seed-9-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 9
+    },
+    {
+      "elapsed": 201.22621965198778,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-154108-kafka-cluster-seed-10-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 10
+    },
+    {
+      "elapsed": 193.36763920495287,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-154429-kafka-cluster-seed-11-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 11
+    },
+    {
+      "elapsed": 194.64234104193747,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-154742-kafka-cluster-seed-12-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 12
+    },
+    {
+      "elapsed": 198.3613836830482,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-155057-kafka-cluster-seed-13-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 13
+    },
+    {
+      "elapsed": 217.9322441050317,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-155415-kafka-cluster-seed-14-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 14
+    },
+    {
+      "elapsed": 194.21972541091964,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-155753-kafka-cluster-seed-15-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 15
+    },
+    {
+      "elapsed": 192.52768743690103,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-160107-kafka-cluster-seed-16-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 16
+    },
+    {
+      "elapsed": 191.2366545139812,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-160420-kafka-cluster-seed-17-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 17
+    },
+    {
+      "elapsed": 194.72386276104953,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-160731-kafka-cluster-seed-18-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 18
+    },
+    {
+      "elapsed": 196.58018167398404,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-161046-kafka-cluster-seed-19-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 19
+    },
+    {
+      "elapsed": 191.8505144539522,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-161402-kafka-cluster-seed-20-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 20
+    },
+    {
+      "elapsed": 193.25237513997126,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-162009-kafka-cluster-seed-22-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 22
+    },
+    {
+      "elapsed": 192.73025074601173,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-162322-kafka-cluster-seed-23-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 23
+    },
+    {
+      "elapsed": 191.74128562107217,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-163821-kafka-cluster-seed-28-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 28
+    },
+    {
+      "elapsed": 190.89687177399173,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-164721-kafka-cluster-seed-31-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 31
+    },
+    {
+      "elapsed": 189.31820237403736,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-165032-kafka-cluster-seed-32-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 32
+    },
+    {
+      "elapsed": 189.93517708103172,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-165341-kafka-cluster-seed-33-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 33
+    },
+    {
+      "elapsed": 194.5100065920269,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-165651-kafka-cluster-seed-34-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 34
+    },
+    {
+      "elapsed": 199.3029915409861,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-170006-kafka-cluster-seed-35-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 35
+    },
+    {
+      "elapsed": 189.21353144198656,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-170325-kafka-cluster-seed-36-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 36
+    },
+    {
+      "elapsed": 189.54163235099986,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-170634-kafka-cluster-seed-37-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 37
+    },
+    {
+      "elapsed": 189.17741715104785,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-171529-kafka-cluster-seed-40-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 40
+    },
+    {
+      "elapsed": 188.5059582159156,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-171838-kafka-cluster-seed-41-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 41
+    },
+    {
+      "elapsed": 188.5500946471002,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-172439-kafka-cluster-seed-43-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 43
+    },
+    {
+      "elapsed": 188.1521187600447,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-172747-kafka-cluster-seed-44-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 44
+    },
+    {
+      "elapsed": 189.57412772101816,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-173055-kafka-cluster-seed-45-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 45
+    },
+    {
+      "elapsed": 189.50707340904046,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-173405-kafka-cluster-seed-46-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 46
+    },
+    {
+      "elapsed": 189.26888685906306,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-173714-kafka-cluster-seed-47-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 47
+    },
+    {
+      "elapsed": 188.59712514700368,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-174024-kafka-cluster-seed-48-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 48
+    },
+    {
+      "elapsed": 188.56827536807396,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-174332-kafka-cluster-seed-49-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 49
+    },
+    {
+      "elapsed": 189.53079314902425,
+      "returncode": 0,
+      "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-174641-kafka-cluster-seed-50-kafka-cluster-sweep-1-50-rerun-20260824",
+      "seed": 50
+    }
+  ],
+  "jobs": 1,
+  "skipped": 0,
+  "target": "kafka-cluster",
+  "total": 50,
+  "totalTime": 9462.714
+}

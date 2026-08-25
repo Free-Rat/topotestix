@@ -1,0 +1,34 @@
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+Final topology choices:
+{
+  ".kafkaVlans": 0,
+  ".roles.kafka": 0
+}
+Final config choices:
+{
+  "kafka": {
+    ".services.apache-kafka.jvmOptions": 0,
+    ".services.apache-kafka.settings.auto.create.topics.enable": 0,
+    ".services.apache-kafka.settings.default.replication.factor": 0,
+    ".services.apache-kafka.settings.log.retention.hours": 0,
+    ".services.apache-kafka.settings.log.segment.bytes": 0,
+    ".services.apache-kafka.settings.message.max.bytes": 0,
+    ".services.apache-kafka.settings.min.insync.replicas": 0,
+    ".services.apache-kafka.settings.num.io.threads": 0,
+    ".services.apache-kafka.settings.num.network.threads": 0,
+    ".services.apache-kafka.settings.offsets.topic.replication.factor": 0,
+    ".services.apache-kafka.settings.replica.fetch.max.bytes": 0,
+    ".services.apache-kafka.settings.transaction.state.log.min.isr": 0,
+    ".services.apache-kafka.settings.transaction.state.log.replication.factor": 0,
+    ".services.apache-kafka.settings.unclean.leader.election.enable": 0,
+    ".virtualisation.diskSize": 0,
+    ".virtualisation.memorySize": 0
+  }
+}
+Reproduce with:
+topotestix orchestrator run kafka-cluster --seed 13 --name kafka-shrink-seed13-rerun-20260824 --project-root /home/freerat/projects/topotestix --topology-target /home/freerat/projects/topotestix/targets/kafka-cluster/topology.nix --config-target /home/freerat/projects/topotestix/targets/kafka-cluster/config.nix --base-module /home/freerat/projects/topotestix/targets/kafka-cluster/module.nix --test-script /home/freerat/projects/topotestix/targets/kafka-cluster/test-script.py --properties /home/freerat/projects/topotestix/targets/kafka-cluster/properties.nix --topology-choices '{".kafkaVlans": 0, ".roles.kafka": 0}' --config-choices '{"kafka": {".services.apache-kafka.jvmOptions": 0, ".services.apache-kafka.settings.auto.create.topics.enable": 0, ".services.apache-kafka.settings.default.replication.factor": 0, ".services.apache-kafka.settings.log.retention.hours": 0, ".services.apache-kafka.settings.log.segment.bytes": 0, ".services.apache-kafka.settings.message.max.bytes": 0, ".services.apache-kafka.settings.min.insync.replicas": 0, ".services.apache-kafka.settings.num.io.threads": 0, ".services.apache-kafka.settings.num.network.threads": 0, ".services.apache-kafka.settings.offsets.topic.replication.factor": 0, ".services.apache-kafka.settings.replica.fetch.max.bytes": 0, ".services.apache-kafka.settings.transaction.state.log.min.isr": 0, ".services.apache-kafka.settings.transaction.state.log.replication.factor": 0, ".services.apache-kafka.settings.unclean.leader.election.enable": 0, ".virtualisation.diskSize": 0, ".virtualisation.memorySize": 0}}'

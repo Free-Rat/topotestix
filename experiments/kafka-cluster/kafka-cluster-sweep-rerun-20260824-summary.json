@@ -1,0 +1,1376 @@
+[
+  {
+    "autoCreate": true,
+    "heap": [
+      "-Xms256m",
+      "-Xmx512m"
+    ],
+    "logSegmentBytes": 16777216,
+    "memory": 2048,
+    "messageMax": 1048576,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 2097152,
+    "rf": 3,
+    "runSeed": 1,
+    "unclean": false,
+    "status": "fail",
+    "category": "broker-message-max-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-151208-kafka-cluster-seed-1-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms256m",
+      "-Xmx512m"
+    ],
+    "logSegmentBytes": 16777216,
+    "memory": 4096,
+    "messageMax": 4194304,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 1048576,
+    "rf": 3,
+    "runSeed": 2,
+    "unclean": true,
+    "status": "pass",
+    "category": "pass",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-151522-kafka-cluster-seed-2-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 0,
+      "passed": 11,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms512m",
+      "-Xmx1024m"
+    ],
+    "logSegmentBytes": 16777216,
+    "memory": 2048,
+    "messageMax": 2097152,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 2097152,
+    "rf": 3,
+    "runSeed": 3,
+    "unclean": false,
+    "status": "pass",
+    "category": "pass",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-151826-kafka-cluster-seed-3-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 0,
+      "passed": 11,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": true,
+    "heap": [
+      "-Xms1024m",
+      "-Xmx1536m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 2048,
+    "messageMax": 4194304,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 1048576,
+    "rf": 1,
+    "runSeed": 4,
+    "unclean": false,
+    "status": "fail",
+    "category": "log-segment-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-152131-kafka-cluster-seed-4-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms256m",
+      "-Xmx512m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 2048,
+    "messageMax": 1048576,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 2097152,
+    "rf": 1,
+    "runSeed": 5,
+    "unclean": true,
+    "status": "fail",
+    "category": "broker-message-max-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-152450-kafka-cluster-seed-5-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": true,
+    "heap": [
+      "-Xms512m",
+      "-Xmx1024m"
+    ],
+    "logSegmentBytes": 16777216,
+    "memory": 2048,
+    "messageMax": 2097152,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 2097152,
+    "rf": 1,
+    "runSeed": 6,
+    "unclean": false,
+    "status": "pass",
+    "category": "pass",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-152811-kafka-cluster-seed-6-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 0,
+      "passed": 11,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": true,
+    "heap": [
+      "-Xms1024m",
+      "-Xmx1536m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 4096,
+    "messageMax": 2097152,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 1048576,
+    "rf": 1,
+    "runSeed": 7,
+    "unclean": false,
+    "status": "fail",
+    "category": "log-segment-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-153119-kafka-cluster-seed-7-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms1024m",
+      "-Xmx1536m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 4096,
+    "messageMax": 2097152,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 1048576,
+    "rf": 3,
+    "runSeed": 8,
+    "unclean": false,
+    "status": "fail",
+    "category": "log-segment-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-153440-kafka-cluster-seed-8-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms256m",
+      "-Xmx512m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 3072,
+    "messageMax": 4194304,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 4194304,
+    "rf": 3,
+    "runSeed": 9,
+    "unclean": true,
+    "status": "fail",
+    "category": "log-segment-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-153757-kafka-cluster-seed-9-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": true,
+    "heap": [
+      "-Xms256m",
+      "-Xmx512m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 4096,
+    "messageMax": 2097152,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 1048576,
+    "rf": 3,
+    "runSeed": 10,
+    "unclean": true,
+    "status": "fail",
+    "category": "log-segment-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-154108-kafka-cluster-seed-10-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms512m",
+      "-Xmx1024m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 2048,
+    "messageMax": 1048576,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 1048576,
+    "rf": 1,
+    "runSeed": 11,
+    "unclean": true,
+    "status": "fail",
+    "category": "broker-message-max-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-154429-kafka-cluster-seed-11-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms256m",
+      "-Xmx512m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 3072,
+    "messageMax": 1048576,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 2097152,
+    "rf": 1,
+    "runSeed": 12,
+    "unclean": true,
+    "status": "fail",
+    "category": "broker-message-max-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-154742-kafka-cluster-seed-12-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms512m",
+      "-Xmx1024m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 3072,
+    "messageMax": 1048576,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 2097152,
+    "rf": 3,
+    "runSeed": 13,
+    "unclean": false,
+    "status": "fail",
+    "category": "broker-message-max-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-155057-kafka-cluster-seed-13-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms256m",
+      "-Xmx512m"
+    ],
+    "logSegmentBytes": 16777216,
+    "memory": 2048,
+    "messageMax": 1048576,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 4194304,
+    "rf": 1,
+    "runSeed": 14,
+    "unclean": true,
+    "status": "fail",
+    "category": "broker-message-max-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-155415-kafka-cluster-seed-14-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms256m",
+      "-Xmx512m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 4096,
+    "messageMax": 2097152,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 1048576,
+    "rf": 3,
+    "runSeed": 15,
+    "unclean": true,
+    "status": "fail",
+    "category": "log-segment-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-155753-kafka-cluster-seed-15-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": true,
+    "heap": [
+      "-Xms256m",
+      "-Xmx512m"
+    ],
+    "logSegmentBytes": 16777216,
+    "memory": 3072,
+    "messageMax": 1048576,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 1048576,
+    "rf": 3,
+    "runSeed": 16,
+    "unclean": true,
+    "status": "fail",
+    "category": "broker-message-max-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-160107-kafka-cluster-seed-16-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": true,
+    "heap": [
+      "-Xms256m",
+      "-Xmx512m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 3072,
+    "messageMax": 2097152,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 4194304,
+    "rf": 3,
+    "runSeed": 17,
+    "unclean": true,
+    "status": "fail",
+    "category": "log-segment-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-160420-kafka-cluster-seed-17-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms256m",
+      "-Xmx512m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 4096,
+    "messageMax": 2097152,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 4194304,
+    "rf": 3,
+    "runSeed": 18,
+    "unclean": true,
+    "status": "fail",
+    "category": "log-segment-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-160731-kafka-cluster-seed-18-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms256m",
+      "-Xmx512m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 2048,
+    "messageMax": 2097152,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 4194304,
+    "rf": 3,
+    "runSeed": 19,
+    "unclean": false,
+    "status": "fail",
+    "category": "log-segment-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-161046-kafka-cluster-seed-19-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": true,
+    "heap": [
+      "-Xms1024m",
+      "-Xmx1536m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 2048,
+    "messageMax": 1048576,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 4194304,
+    "rf": 3,
+    "runSeed": 20,
+    "unclean": false,
+    "status": "fail",
+    "category": "broker-message-max-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-161402-kafka-cluster-seed-20-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms512m",
+      "-Xmx1024m"
+    ],
+    "logSegmentBytes": 16777216,
+    "memory": 3072,
+    "messageMax": 2097152,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 1048576,
+    "rf": 1,
+    "runSeed": 21,
+    "unclean": true,
+    "status": "pass",
+    "category": "pass",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-161714-kafka-cluster-seed-21-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 0,
+      "passed": 11,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms1024m",
+      "-Xmx1536m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 3072,
+    "messageMax": 4194304,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 1048576,
+    "rf": 3,
+    "runSeed": 22,
+    "unclean": false,
+    "status": "fail",
+    "category": "log-segment-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-162009-kafka-cluster-seed-22-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms1024m",
+      "-Xmx1536m"
+    ],
+    "logSegmentBytes": 16777216,
+    "memory": 4096,
+    "messageMax": 1048576,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 4194304,
+    "rf": 1,
+    "runSeed": 23,
+    "unclean": true,
+    "status": "fail",
+    "category": "broker-message-max-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-162322-kafka-cluster-seed-23-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms1024m",
+      "-Xmx1536m"
+    ],
+    "logSegmentBytes": 16777216,
+    "memory": 4096,
+    "messageMax": 2097152,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 2097152,
+    "rf": 1,
+    "runSeed": 24,
+    "unclean": true,
+    "status": "pass",
+    "category": "pass",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-162635-kafka-cluster-seed-24-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 0,
+      "passed": 11,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms512m",
+      "-Xmx1024m"
+    ],
+    "logSegmentBytes": 16777216,
+    "memory": 2048,
+    "messageMax": 2097152,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 2097152,
+    "rf": 1,
+    "runSeed": 25,
+    "unclean": false,
+    "status": "pass",
+    "category": "pass",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-162930-kafka-cluster-seed-25-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 0,
+      "passed": 11,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": true,
+    "heap": [
+      "-Xms1024m",
+      "-Xmx1536m"
+    ],
+    "logSegmentBytes": 16777216,
+    "memory": 3072,
+    "messageMax": 4194304,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 4194304,
+    "rf": 3,
+    "runSeed": 26,
+    "unclean": true,
+    "status": "pass",
+    "category": "pass",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-163227-kafka-cluster-seed-26-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 0,
+      "passed": 11,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": true,
+    "heap": [
+      "-Xms512m",
+      "-Xmx1024m"
+    ],
+    "logSegmentBytes": 16777216,
+    "memory": 3072,
+    "messageMax": 4194304,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 2097152,
+    "rf": 1,
+    "runSeed": 27,
+    "unclean": true,
+    "status": "pass",
+    "category": "pass",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-163522-kafka-cluster-seed-27-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 0,
+      "passed": 11,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms1024m",
+      "-Xmx1536m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 2048,
+    "messageMax": 4194304,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 2097152,
+    "rf": 3,
+    "runSeed": 28,
+    "unclean": true,
+    "status": "fail",
+    "category": "log-segment-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-163821-kafka-cluster-seed-28-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": true,
+    "heap": [
+      "-Xms256m",
+      "-Xmx512m"
+    ],
+    "logSegmentBytes": 16777216,
+    "memory": 4096,
+    "messageMax": 4194304,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 2097152,
+    "rf": 3,
+    "runSeed": 29,
+    "unclean": false,
+    "status": "pass",
+    "category": "pass",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-164133-kafka-cluster-seed-29-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 0,
+      "passed": 11,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms1024m",
+      "-Xmx1536m"
+    ],
+    "logSegmentBytes": 16777216,
+    "memory": 2048,
+    "messageMax": 2097152,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 1048576,
+    "rf": 3,
+    "runSeed": 30,
+    "unclean": false,
+    "status": "pass",
+    "category": "pass",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-164428-kafka-cluster-seed-30-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 0,
+      "passed": 11,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms1024m",
+      "-Xmx1536m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 4096,
+    "messageMax": 1048576,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 4194304,
+    "rf": 1,
+    "runSeed": 31,
+    "unclean": false,
+    "status": "fail",
+    "category": "broker-message-max-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-164721-kafka-cluster-seed-31-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms1024m",
+      "-Xmx1536m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 2048,
+    "messageMax": 2097152,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 2097152,
+    "rf": 3,
+    "runSeed": 32,
+    "unclean": true,
+    "status": "fail",
+    "category": "log-segment-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-165032-kafka-cluster-seed-32-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": true,
+    "heap": [
+      "-Xms256m",
+      "-Xmx512m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 2048,
+    "messageMax": 1048576,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 4194304,
+    "rf": 1,
+    "runSeed": 33,
+    "unclean": false,
+    "status": "fail",
+    "category": "broker-message-max-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-165341-kafka-cluster-seed-33-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms256m",
+      "-Xmx512m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 2048,
+    "messageMax": 2097152,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 2097152,
+    "rf": 3,
+    "runSeed": 34,
+    "unclean": true,
+    "status": "fail",
+    "category": "log-segment-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-165651-kafka-cluster-seed-34-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms1024m",
+      "-Xmx1536m"
+    ],
+    "logSegmentBytes": 16777216,
+    "memory": 4096,
+    "messageMax": 1048576,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 1048576,
+    "rf": 1,
+    "runSeed": 35,
+    "unclean": false,
+    "status": "fail",
+    "category": "broker-message-max-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-170006-kafka-cluster-seed-35-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": true,
+    "heap": [
+      "-Xms512m",
+      "-Xmx1024m"
+    ],
+    "logSegmentBytes": 16777216,
+    "memory": 4096,
+    "messageMax": 1048576,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 2097152,
+    "rf": 1,
+    "runSeed": 36,
+    "unclean": false,
+    "status": "fail",
+    "category": "broker-message-max-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-170325-kafka-cluster-seed-36-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": true,
+    "heap": [
+      "-Xms1024m",
+      "-Xmx1536m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 4096,
+    "messageMax": 4194304,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 4194304,
+    "rf": 3,
+    "runSeed": 37,
+    "unclean": true,
+    "status": "fail",
+    "category": "log-segment-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-170634-kafka-cluster-seed-37-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": true,
+    "heap": [
+      "-Xms256m",
+      "-Xmx512m"
+    ],
+    "logSegmentBytes": 16777216,
+    "memory": 2048,
+    "messageMax": 2097152,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 4194304,
+    "rf": 3,
+    "runSeed": 38,
+    "unclean": false,
+    "status": "pass",
+    "category": "pass",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-170944-kafka-cluster-seed-38-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 0,
+      "passed": 11,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": true,
+    "heap": [
+      "-Xms512m",
+      "-Xmx1024m"
+    ],
+    "logSegmentBytes": 16777216,
+    "memory": 3072,
+    "messageMax": 4194304,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 2097152,
+    "rf": 3,
+    "runSeed": 39,
+    "unclean": true,
+    "status": "pass",
+    "category": "pass",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-171235-kafka-cluster-seed-39-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 0,
+      "passed": 11,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms256m",
+      "-Xmx512m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 2048,
+    "messageMax": 1048576,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 4194304,
+    "rf": 1,
+    "runSeed": 40,
+    "unclean": true,
+    "status": "fail",
+    "category": "broker-message-max-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-171529-kafka-cluster-seed-40-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": true,
+    "heap": [
+      "-Xms1024m",
+      "-Xmx1536m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 2048,
+    "messageMax": 4194304,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 1048576,
+    "rf": 1,
+    "runSeed": 41,
+    "unclean": true,
+    "status": "fail",
+    "category": "log-segment-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-171838-kafka-cluster-seed-41-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms1024m",
+      "-Xmx1536m"
+    ],
+    "logSegmentBytes": 16777216,
+    "memory": 2048,
+    "messageMax": 2097152,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 4194304,
+    "rf": 3,
+    "runSeed": 42,
+    "unclean": false,
+    "status": "pass",
+    "category": "pass",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-172147-kafka-cluster-seed-42-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 0,
+      "passed": 11,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms512m",
+      "-Xmx1024m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 4096,
+    "messageMax": 1048576,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 1048576,
+    "rf": 1,
+    "runSeed": 43,
+    "unclean": false,
+    "status": "fail",
+    "category": "broker-message-max-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-172439-kafka-cluster-seed-43-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms1024m",
+      "-Xmx1536m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 4096,
+    "messageMax": 1048576,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 4194304,
+    "rf": 1,
+    "runSeed": 44,
+    "unclean": false,
+    "status": "fail",
+    "category": "broker-message-max-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-172747-kafka-cluster-seed-44-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": true,
+    "heap": [
+      "-Xms512m",
+      "-Xmx1024m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 3072,
+    "messageMax": 4194304,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 4194304,
+    "rf": 3,
+    "runSeed": 45,
+    "unclean": false,
+    "status": "fail",
+    "category": "log-segment-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-173055-kafka-cluster-seed-45-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms512m",
+      "-Xmx1024m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 4096,
+    "messageMax": 1048576,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 1048576,
+    "rf": 1,
+    "runSeed": 46,
+    "unclean": false,
+    "status": "fail",
+    "category": "broker-message-max-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-173405-kafka-cluster-seed-46-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms512m",
+      "-Xmx1024m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 2048,
+    "messageMax": 2097152,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 2,
+    "replicaFetchMax": 2097152,
+    "rf": 1,
+    "runSeed": 47,
+    "unclean": false,
+    "status": "fail",
+    "category": "log-segment-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-173714-kafka-cluster-seed-47-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": true,
+    "heap": [
+      "-Xms1024m",
+      "-Xmx1536m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 3072,
+    "messageMax": 4194304,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 2097152,
+    "rf": 1,
+    "runSeed": 48,
+    "unclean": true,
+    "status": "fail",
+    "category": "log-segment-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-174024-kafka-cluster-seed-48-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": true,
+    "heap": [
+      "-Xms512m",
+      "-Xmx1024m"
+    ],
+    "logSegmentBytes": 16777216,
+    "memory": 4096,
+    "messageMax": 1048576,
+    "minIsr": 1,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 1048576,
+    "rf": 1,
+    "runSeed": 49,
+    "unclean": true,
+    "status": "fail",
+    "category": "broker-message-max-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-174332-kafka-cluster-seed-49-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  },
+  {
+    "autoCreate": false,
+    "heap": [
+      "-Xms256m",
+      "-Xmx512m"
+    ],
+    "logSegmentBytes": 1048576,
+    "memory": 4096,
+    "messageMax": 2097152,
+    "minIsr": 2,
+    "transactionStateLogMinIsr": 1,
+    "replicaFetchMax": 2097152,
+    "rf": 1,
+    "runSeed": 50,
+    "unclean": true,
+    "status": "fail",
+    "category": "log-segment-too-small",
+    "runDir": "/home/freerat/projects/topotestix/.topotestix/runs/20260824-174641-kafka-cluster-seed-50-kafka-cluster-sweep-1-50-rerun-20260824",
+    "failedProperties": [
+      "kafka-large-message-on-kafka1"
+    ],
+    "gitHead": "8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c",
+    "summaryCounts": {
+      "failed": 1,
+      "passed": 10,
+      "total": 11
+    }
+  }
+]

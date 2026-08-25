@@ -177,22 +177,34 @@ apply = target: fuzzed: choices_override:
   applyOverrides target fuzzed choices_override;
 ```
 
-The implementation re-walks the target, and for each path present in `choices_override`, uses the specified index instead of the hash-based one. For paths not in `choices_override`, it uses the values from `fuzzed` (preserving the fuzzer's original choices).
+The implementation folds `setValueByPath` over the override map: for each path present in `choices_override`, it validates that the path addresses a non-empty choice list and that the index is in range (`valueAtChecked`, which throws on a non-list, an empty list, or an out-of-range index), then uses the specified index instead of the hash-based one. For paths not in `choices_override`, the values from `fuzzed` are kept unchanged.
+
+### Dotted attribute names
+
+Target specs legitimately contain attribute names with embedded dots (e.g. Kafka's `"message.max.bytes"`, RabbitMQ's `"disk_free_limit.absolute"`), so a naive dot-split of a choice path can land on a key that does not exist. Since commit `c0807fe` (2026-08-21), path resolution uses **progressive join**: at each level, the resolver tries progressively longer dot-joined key candidates (first the single next part, then the next two joined by a dot, and so on). If exactly one candidate matches, it is consumed; if more than one length would match — i.e. a nested attribute name and a dotted one genuinely overlap — resolution throws an ambiguity error rather than silently picking one; if none match, the path is reported as missing. The same machinery backs `getValueByPath`, `setValueByPath`, and `valueAt`. This is what makes an override like `.services.apache-kafka.settings.log.segment.bytes = 0` address the Nix attribute `"log.segment.bytes"` and reach the NixOS module end-to-end.
 
 ### `choicePaths`
 
-Walks the target attribute set depth-first, collecting all paths where the value is a list:
+Walks the target attribute set depth-first, collecting all paths where the value is a list. Empty choice lists are rejected outright (there is no index to shrink toward), functions are called with `{ lib; }` and recursed into (matching `combinators.resolve`), and the result is returned in deterministic sorted order. Post-`c0807fe`, `choicePaths` also rejects ambiguity up front: if a target mixes nested and dotted attribute names such that two paths collapse to the same string, it throws instead of returning a duplicate key:
 
 ```nix
 choicePaths = target:
-  collectPaths "" target;
+  let paths = lib.naturalSort (collectChoicePaths "" target);
+  in
+  if builtins.length paths != builtins.length (lib.unique paths) then
+    builtins.throw "shrinker.choicePaths: nested and dotted attribute names produce an ambiguous path"
+  else paths;
 
-collectPaths = prefix: value:
-  if builtins.isList value then [ prefix ]
+collectChoicePaths = prefix: value:
+  if builtins.isList value then
+    if value == [] then
+      builtins.throw "shrinker.choicePaths: empty choice list at ${prefix}"
+    else
+      [ prefix ]
   else if builtins.isAttrs value then
-    lib.concatMap (n: collectPaths "${prefix}.${n}" value.${n}) (builtins.attrNames value)
+    lib.concatLists (lib.mapAttrsToList (n: v: collectChoicePaths "${prefix}.${n}" v) value)
   else if builtins.isFunction value then
-    collectPaths prefix (value { inherit lib; })
+    collectChoicePaths prefix (value { inherit lib; })
   else [];
 ```
 
@@ -296,6 +308,10 @@ def shrink(master_seed, args):
     print(f"Minimal config overrides: {config_overrides}")
 ```
 
+### Kept-candidate semantics
+
+A candidate replaces the current choices only when the rebuilt run still fails. Whether a run counts as failed is decided by `report_passed(report)` in `topotestix/reports.py`, which accepts exactly the statuses in `ACCEPTED_STATUSES = {"passed", "expected_failure"}`. Since `c0807fe` (2026-08-21), a check registered through the runner's `_check_expected` records `expected_failure`, so designed negative checks count as passes for shrinking purposes — and an expected failure that unexpectedly passes counts as a failure. Runs whose reports predate this change contain only `passed`/`failed`, so their outcomes are unchanged under the current definitions.
+
 ### Reproduction
 
 Shrunk cases are reproduced with overrides, not just a seed:
@@ -343,6 +359,18 @@ nix eval --impure --json --expr '
 | Fuzzer returns `{ result, choices }` | Choices alongside values | Python needs indices to drive shrinking; choices map is compact (integers) and avoids re-serializing Nix values. |
 | Choices are target-relative path strings (e.g. `".virtualisation.memorySize"`) | Dot-separated paths with a leading dot | The seed is used only in the hash key, so fuzzer choices are directly usable with `shrinker.apply`. |
 | Per-dimension independent shrinking | Each dimension shrunk separately | Topology, then each role config. Preserves independence between dimensions. |
+
+---
+
+## Post-Rewrite Status (validated 2026-08-24)
+
+Commit `c0807fe` (2026-08-21) rewrote dotted-key resolution (progressive join, ambiguity rejection in `choicePaths`) and added expected-failure handling (`ACCEPTED_STATUSES` in `report_passed`). The rewrite was validated on 2026-08-24 at HEAD `8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c`, every rerun run recording its `gitHead`:
+
+- **Dotted-key overrides work end-to-end.** A seed-9 Kafka probe forcing `.services.apache-kafka.settings.log.segment.bytes = 0` and `.services.apache-kafka.settings.message.max.bytes = 0` builds cleanly and reaches the NixOS module; the designed failure is observed (`kafka-large-message-on-kafka1`, `RecordTooLargeException`). `.topotestix/runs/20260824-123925-kafka-cluster-seed-9-kafka-probe-dotted-override-20260824`. (The pre-rewrite attempt had died in a build error.)
+- **Seed 13: clean reduction preserving the failure class.** All 16 config choice indices reduced to 0, `RecordTooLargeException` preserved in the minimized run. `.topotestix/runs/20260824-132314-kafka-cluster-seed-13-kafka-shrink-seed13-rerun-20260824`.
+- **Seed 9: clean reduction but class collapse — known limitation.** Mechanical shrinking is clean post-fix, yet the fully minimized run fails with `RecordTooLargeException` where the un-shrunk run fails with `RecordBatchTooLargeException`: the generic shrinker preserves "this run fails", not "this run fails with this exception class". `.topotestix/runs/20260824-141305-kafka-cluster-seed-9-kafka-shrink-seed9-rerun-20260824`.
+
+The remaining gap is therefore failure-class preservation only; a class-aware shrinker is future work.
 
 ---
 

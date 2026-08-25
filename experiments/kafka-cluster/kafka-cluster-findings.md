@@ -229,6 +229,8 @@ Fix:
 - TopoTestix still marks the run failed from `report.json` via `report_passed(report)`.
 - Infrastructure failures outside `_check()` still fail the VM derivation.
 
+This fix landed as commit `ca2530d` (2026-06-15). As of commit `c0807fe` (2026-08-21), `report_passed` accepts exactly the statuses in `ACCEPTED_STATUSES = {passed, expected_failure}`, so designed expected failures count as passes; the June runs in this document contain only passed/failed statuses, so all counts here are identical under the current definitions.
+
 Validation run:
 
 ```bash
@@ -269,6 +271,56 @@ Result: 13 passed, 37 failed. The failures split into two production-relevant co
 
 These are configuration/workload compatibility bugs, not Kafka implementation bugs. They are nevertheless thesis-useful because Kafka starts and normal small-message properties pass; failure appears only under a large-payload data-plane property.
 
+Provenance note (added 2026-08-24): the June sweep artifacts above predate per-run git-provenance recording and do not embed a commit hash, so their provenance is unverifiable after the fact. Their numbers are unchanged; the rerun below supersedes them as citable evidence.
+
+## 2026-08-24 rerun at HEAD `8ff5f96f`
+
+The dotted-key override probe (whose June attempt had died in a build error), both Kafka shrinks (seeds 13 and 9), and the full 50-seed sweep were re-executed on 2026-08-24 at `8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c` with a clean tracked tree. Every rerun `run.json` records this `gitHead` plus an artifact manifest (`998cae1`). Raw notes: `experiments/kafka-cluster/kafka-cluster-shrink-rerun-20260824.md`.
+
+### Probe: dotted-key overrides build and take effect
+
+Run dir:
+
+```text
+.topotestix/runs/20260824-123925-kafka-cluster-seed-9-kafka-probe-dotted-override-20260824
+```
+
+Overrides `.services.apache-kafka.settings.log.segment.bytes = 0` and `.services.apache-kafka.settings.message.max.bytes = 0` built cleanly and reached the NixOS module — no June-style build error. The failure is the designed one: only `kafka-large-message-on-kafka1` fails, with `RecordTooLargeException`; summary 10 passed / 1 failed / 11 total. (A killed earlier launch left an orphan dir `20260824-123640-…` without a `run.json`; it is unused.)
+
+### Shrink seed 13: clean reduction, class preserved
+
+Final run dir:
+
+```text
+.topotestix/runs/20260824-132314-kafka-cluster-seed-13-kafka-shrink-seed13-rerun-20260824
+```
+
+1 initial verification + 11 candidate evaluations, all kept; minimal config = all 16 config choice indices at 0 ⇒ `message.max.bytes` resolves to 1 MiB. Failure class PRESERVED: final run still fails `kafka-large-message-on-kafka1` with `RecordTooLargeException`; summary 10/1/11.
+
+### Shrink seed 9: mechanically clean reduction, class collapses
+
+Final run dir:
+
+```text
+.topotestix/runs/20260824-141305-kafka-cluster-seed-9-kafka-shrink-seed9-rerun-20260824
+```
+
+1 initial + 12 candidate evaluations; minimal config all-zero indices as in June. Initial run fails with `RecordBatchTooLargeException`; the fully minimized run fails with `RecordTooLargeException`. Verdict at HEAD `8ff5f96f`: mechanical shrinking is now clean post-fix (post-start property failure, 10/1/11, no build/startup errors), but the class-preservation limitation is confirmed on current code — exactly as recorded for June.
+
+### Sweep rerun: exact match to June
+
+50 seeds, sequential, same parallelism/store as the June invocation:
+
+| Outcome | Rerun (2026-08-24) | June (2026-06-13) |
+|---|---|---|
+| Passed / failed seeds | 13 / 37 | 13 / 37 |
+| Categories | 19 log-segment-too-small, 18 broker-message-max-too-small | identical |
+| Per-seed flips vs June | none (status + category + failed properties identical, 50/50) | — |
+| Property-level classifications | `{failed: 37, passed: 513}` | not emitted in June format |
+| Wall time | 2 h 37 m (avg ≈189 s/seed) | ≈3.6 h |
+
+All failures remain post-start data-plane failures of `kafka-large-message-on-kafka1`; no startup/OOM/build failures occurred. Machine-readable summaries (June schema, derived from the new per-run payloads): `experiments/kafka-cluster/kafka-cluster-sweep-rerun-20260824-summary.{json,txt}`. Because the old artifacts contain only passed/failed statuses, their numbers are identical under HEAD definitions; the rerun adds recorded provenance and the new `classifications` field.
+
 ## Proposed Kafka direction for the thesis sweep
 
 Keep the new payload-size stress dimensions and large-message property. They are more thesis-useful than the earlier too-small JVM heap variants because they create failures after the distributed system has started.
@@ -305,4 +357,16 @@ Known payload-size property failure:
 ```bash
 python3 -m topotestix.cli orchestrator run kafka-cluster --seed 13 --project-root .
 # run dir: .topotestix/runs/20260613-153958-kafka-cluster-seed-13-kafka-cluster-seed-13
+```
+
+2026-08-24 rerun minimizations (HEAD `8ff5f96f`, from the "Reproduce with:" blocks in `rerun-shrink-seed-{13,9}.log`; the same commands with `--seed 9` reproduce the seed-9 collapse):
+
+```bash
+python3 -m topotestix.cli orchestrator run kafka-cluster \
+  --seed 13 \
+  --name kafka-shrink-seed13-rerun-20260824 \
+  --project-root . \
+  --topology-choices '{".kafkaVlans": 0, ".roles.kafka": 0}' \
+  --config-choices '{"kafka": {".services.apache-kafka.jvmOptions": 0, ".services.apache-kafka.settings.auto.create.topics.enable": 0, ".services.apache-kafka.settings.default.replication.factor": 0, ".services.apache-kafka.settings.log.retention.hours": 0, ".services.apache-kafka.settings.log.segment.bytes": 0, ".services.apache-kafka.settings.message.max.bytes": 0, ".services.apache-kafka.settings.min.insync.replicas": 0, ".services.apache-kafka.settings.num.io.threads": 0, ".services.apache-kafka.settings.num.network.threads": 0, ".services.apache-kafka.settings.offsets.topic.replication.factor": 0, ".services.apache-kafka.settings.replica.fetch.max.bytes": 0, ".services.apache-kafka.settings.transaction.state.log.min.isr": 0, ".services.apache-kafka.settings.transaction.state.log.replication.factor": 0, ".services.apache-kafka.settings.unclean.leader.election.enable": 0, ".virtualisation.diskSize": 0, ".virtualisation.memorySize": 0}}'
+# final run dir: .topotestix/runs/20260824-132314-kafka-cluster-seed-13-kafka-shrink-seed13-rerun-20260824
 ```

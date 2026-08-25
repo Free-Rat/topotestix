@@ -144,6 +144,30 @@ failure message contains: etcdserver: mvcc: database space exceeded
 
 Unlike the Kafka shrinking case, the generic shrinker worked cleanly for etcd v2: the minimized result is still a post-start property failure, not a Nix/build/startup failure.
 
+### 2026-08-24 rerun on the rewritten shrinker
+
+Both shrinks were re-executed on 2026-08-24 at commit `8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c` — recorded as `gitHead` in every rerun `run.json` (a capability added in `998cae1`, so unlike the June runs these are machine-verifiable) — exercising the rewritten shrinker (`c0807fe`, 2026-08-21). The results are identical to the 2026-06-16 documentation above for both seeds: same final choice maps, same resolved minimal configuration (`memorySize=1024`, `diskSize=2048`, heartbeat `"100"`, election `"1250"`, snapshot `"10000"`, quota `"2097152"`), same single failing check `etcd-quota-write-burst-etcd1` containing `mvcc: database space exceeded`, and the same counts of 11 passed / 1 failed / 12 total.
+
+Representative rerun run directories:
+
+```text
+.topotestix/runs/20260824-142121-etcd-cluster-seed-3-etcd-shrink-seed3-rerun-20260824
+.topotestix/runs/20260824-144914-etcd-cluster-seed-40-etcd-shrink-seed40-rerun-20260824
+```
+
+Logs: `experiments/etcd-cluster/rerun-shrink-seed-3-c0807fe.log` and `experiments/etcd-cluster/rerun-shrink-seed-40-c0807fe.log`. This empirically confirms the logic-equivalence of the `c0807fe` rewrite for these single-segment setting names (no dotted-key ambiguity arises in this target); it does not claim anything about targets beyond it.
+
+Minimized runs are reproducible with the current target layout (`targets/etcd-cluster/topology.nix`, `targets/etcd-cluster/config.nix`). Note that the "Reproduce with:" blocks embedded in the June shrink logs reference pre-reorg paths (`targets/topology/etcd-cluster.nix`, `targets/config/etcd-cluster.nix`) that no longer exist; use the current-layout form instead:
+
+```bash
+python3 -m topotestix.cli orchestrator run etcd-cluster \
+  --seed 3 \
+  --project-root . \
+  --topology-choices '{".etcdVlans": 0, ".roles.etcd": 0}' \
+  --config-choices '{"etcd": {".services.etcd.extraConf.ELECTION_TIMEOUT": 0, ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0, ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0, ".services.etcd.extraConf.SNAPSHOT_COUNT": 0, ".virtualisation.diskSize": 0, ".virtualisation.memorySize": 0}}'
+# identical command with --seed 40 reproduces the seed-40 minimum
+```
+
 ## Artifacts
 
 Detailed experiment files:
@@ -157,6 +181,8 @@ experiments/etcd-cluster/etcd-cluster-v2-sweep-1-50-20260616-summary.json
 experiments/etcd-cluster/etcd-cluster-v2-sweep-1-50-20260616-summary.txt
 experiments/etcd-cluster/etcd-cluster-v2-shrink-seed-3.log
 experiments/etcd-cluster/etcd-cluster-v2-shrink-seed-40.log
+experiments/etcd-cluster/rerun-shrink-seed-3-c0807fe.log
+experiments/etcd-cluster/rerun-shrink-seed-40-c0807fe.log
 ```
 
 Representative minimized run directories:

@@ -1,0 +1,24 @@
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+Final topology choices:
+{
+  ".etcdVlans": 0,
+  ".roles.etcd": 0
+}
+Final config choices:
+{
+  "etcd": {
+    ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+    ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+    ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+    ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+    ".virtualisation.diskSize": 0,
+    ".virtualisation.memorySize": 0
+  }
+}
+Reproduce with:
+topotestix orchestrator run etcd-cluster --seed 40 --name etcd-shrink-seed40-rerun-20260824 --project-root /home/freerat/projects/topotestix --topology-target /home/freerat/projects/topotestix/targets/etcd-cluster/topology.nix --config-target /home/freerat/projects/topotestix/targets/etcd-cluster/config.nix --base-module /home/freerat/projects/topotestix/targets/etcd-cluster/module.nix --test-script /home/freerat/projects/topotestix/targets/etcd-cluster/test-script.py --properties /home/freerat/projects/topotestix/targets/etcd-cluster/properties.nix --topology-choices '{".etcdVlans": 0, ".roles.etcd": 0}' --config-choices '{"etcd": {".services.etcd.extraConf.ELECTION_TIMEOUT": 0, ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0, ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0, ".services.etcd.extraConf.SNAPSHOT_COUNT": 0, ".virtualisation.diskSize": 0, ".virtualisation.memorySize": 0}}'

@@ -130,6 +130,68 @@ Failure classes:
 | Broker max-message limit too small | 18 | `RecordTooLargeException` |
 | Log segment size too small | 19 | `RecordBatchTooLargeException` |
 
+Provenance note (added 2026-08-24): the June artifacts above were produced before the repository recorded per-run git provenance and do not carry a verifiable commit hash. Their numbers are unchanged, but as citable evidence they are superseded-in-provenance by the rerun below.
+
+## 2026-08-24 rerun at HEAD `8ff5f96f`
+
+All reruns on this page were executed on 2026-08-24 at commit `8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c`. This HEAD includes the shrinker rewrite `c0807fe` (2026-08-21; dotted-key choice-path support and expected-failure handling) and `998cae1` (2026-08-22; per-run `gitHead` plus artifact manifest in `run.json`). Every rerun run directory records this `gitHead`, so these results are machine-verifiable from the run store in a way the June artifacts are not.
+
+### Sweep rerun: identical aggregate, zero per-seed flips
+
+The 50-seed sweep was re-executed sequentially with the same parallelism and store layout as June:
+
+| Outcome | Count |
+|---|---:|
+| Passed | 13 |
+| Failed | 37 |
+| Total | 50 |
+
+Failure classes are identical to June:
+
+| Class | Count | Exception |
+|---|---:|---|
+| Broker max-message limit too small | 18 | `RecordTooLargeException` |
+| Log segment size too small | 19 | `RecordBatchTooLargeException` |
+
+There were zero per-seed flips against the June summary: seed status, category, and failed-property set match on all 50 seeds. Every failure remains a post-start data-plane failure of `kafka-large-message-on-kafka1`; the property-level classifications emitted by the rerun are `{failed: 37, passed: 513}`. Average wall time was ≈189 s/seed (2 h 37 m total). Machine-readable summaries:
+
+```text
+experiments/kafka-cluster/kafka-cluster-sweep-rerun-20260824-summary.json
+experiments/kafka-cluster/kafka-cluster-sweep-rerun-20260824-summary.txt
+```
+
+The old artifacts record only passed/failed counts, so their totals are numerically identical under the current status definitions (`report_passed` now also accepts `expected_failure`, a status June runs never used); the rerun supersedes them because its provenance is recorded.
+
+### Dotted-key config overrides reach the NixOS module
+
+The June forced-override attempt had died in a Nix build error before any property ran. At HEAD, a seed-9 probe that forces both dotted broker settings to index 0 builds cleanly and takes effect end-to-end:
+
+```text
+.topotestix/runs/20260824-123925-kafka-cluster-seed-9-kafka-probe-dotted-override-20260824
+```
+
+Overrides applied: `.services.apache-kafka.settings.log.segment.bytes = 0` and `.services.apache-kafka.settings.message.max.bytes = 0` (both resolve to 1 MiB). The run fails by design and only by design: the single failing check is `kafka-large-message-on-kafka1` with `RecordTooLargeException`; summary 10 passed / 1 failed / 11 total. (An earlier aborted launch left an incomplete sibling directory without a `run.json`; it is not evidence and was left untouched.)
+
+### Shrink seed 13: clean reduction, failure class preserved
+
+Final minimized-validation run:
+
+```text
+.topotestix/runs/20260824-132314-kafka-cluster-seed-13-kafka-shrink-seed13-rerun-20260824
+```
+
+The shrinker evaluated 11 candidates and kept every reduction; the minimal config sets all 16 config choice indices to 0, which resolves `message.max.bytes` to its simplest value (1 MiB). The minimized run still fails with the original class — `RecordTooLargeException` on `kafka-large-message-on-kafka1`; summary 10 passed / 1 failed / 11 total.
+
+### Shrink seed 9: clean reduction, failure class collapses (known limitation)
+
+Final minimized-validation run:
+
+```text
+.topotestix/runs/20260824-141305-kafka-cluster-seed-9-kafka-shrink-seed9-rerun-20260824
+```
+
+12 candidates were evaluated; the minimal config again sets every choice index to 0. The initial un-shrunk seed-9 run fails with `RecordBatchTooLargeException` (the log-segment class), while the fully minimized run fails with `RecordTooLargeException` (the broker-max class): the shrinker reduces the failure into the other size-limit class. Verdict for the current code: the mechanical shrink itself is now clean (post-start property failure, no Nix/build/startup errors — confirming the dotted-key fix end-to-end), but the class-preservation limitation stands. Class-isolating minimized configurations therefore remain the right vehicle for reproducing each Kafka failure class on demand.
+
 ## Empirical claim supported by this result
 
 The Kafka experiment supports the following claim:
