@@ -1,3 +1,5 @@
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Free-Rat/topotestix/ci.yml?style=for-the-badge&logo=nixos)
+
 # TopoTestix
 
 Environment-aware property-based testing framework for distributed systems, built on Nix and NixOS.
