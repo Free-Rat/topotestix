@@ -52,6 +52,7 @@ def generate_nix_expr(
     report_node: str = "",
     topology_choices: Optional[dict] = None,
     config_choices: Optional[dict] = None,
+    repetition_token: Optional[str] = None,
 ) -> str:
     abs_topology_target = resolve_path(topology_target_path, project_root)
     abs_config_target = resolve_path(config_target_path, project_root)
@@ -84,6 +85,7 @@ orchestrate {{
   reportNode = {nix_string(report_node) if report_node else "null"};
   topologyChoices = {nix_json(topology_choices or {})};
   configChoices = {nix_json(config_choices or {})};
+  repetitionToken = {nix_string(repetition_token) if repetition_token else "null"};
 }}"""
 
 
@@ -220,6 +222,7 @@ def run_once(
     runs_dir: Optional[str] = None,
     topology_choices: Optional[dict] = None,
     config_choices: Optional[dict] = None,
+    repetition_token: Optional[str] = None,
 ) -> tuple[bool, list[dict], str, object]:
     store = RunStore(runs_dir or default_runs_dir(project_root))
     run = store.create_run(target.name, seed, name)
@@ -240,6 +243,7 @@ def run_once(
         report_node=target.report_node,
         topology_choices=topology_choices,
         config_choices=config_choices,
+        repetition_token=repetition_token,
     )
 
     store.write_json(run_dir, "target.json", target.as_dict())
@@ -279,6 +283,7 @@ def run_once(
         "target": target.name,
         "seed": seed,
         "name": name,
+        "repetitionToken": repetition_token,
         "status": status,
         "startedAt": started_at,
         "finishedAt": utc_now(),
@@ -288,7 +293,13 @@ def run_once(
         "artifacts": artifacts,
         "summary": report_summary(report),
         "reproduceCommand": reproduce_command(
-            project_root, target, seed, name, topology_choices or {}, config_choices or {}
+            project_root,
+            target,
+            seed,
+            name,
+            topology_choices or {},
+            config_choices or {},
+            repetition_token,
         ),
     }
     store.write_json(run_dir, "run.json", meta)
@@ -539,6 +550,7 @@ def reproduce_command(
     name: str,
     topology_choices: dict,
     config_choices: dict,
+    repetition_token: Optional[str] = None,
 ) -> str:
     parts = [
         "topotestix",
@@ -551,6 +563,10 @@ def reproduce_command(
         name,
         "--project-root",
         project_root,
+    ]
+    if repetition_token:
+        parts += ["--repetition-token", repetition_token]
+    parts += [
         "--topology-target",
         target.topology_target,
         "--config-target",
@@ -680,6 +696,7 @@ def cmd_run(args, project_root: str) -> int:
         runs_dir=args.output_dir,
         topology_choices=args.topology_choices,
         config_choices=args.config_choices,
+        repetition_token=getattr(args, "repetition_token", None),
     )
     if args.json:
         print(
@@ -712,10 +729,18 @@ def cmd_shrink(args, project_root: str) -> int:
     topology_choices = inputs["topologyChoices"]
     config_choices = inputs["configChoices"]
     name = args.name or f"{target.name}-shrink-{seed}"
+    token = getattr(args, "repetition_token", None)
 
     _verbose("Verifying initial failure before shrinking...")
     passed, _report, _run_dir, _result = run_once(
-        project_root, target, seed, name, args.output_dir, topology_choices, config_choices
+        project_root,
+        target,
+        seed,
+        name,
+        args.output_dir,
+        topology_choices,
+        config_choices,
+        repetition_token=token,
     )
     if passed:
         print("Initial seed passed; nothing to shrink.", file=sys.stderr)
@@ -727,7 +752,14 @@ def cmd_shrink(args, project_root: str) -> int:
         for path, next_index, candidate in candidate_choice_maps(topology_choices):
             _verbose(f"Trying topology shrink {path} -> {next_index}")
             passed, _report, _run_dir, _result = run_once(
-                project_root, target, seed, name, args.output_dir, candidate, config_choices
+                project_root,
+                target,
+                seed,
+                name,
+                args.output_dir,
+                candidate,
+                config_choices,
+                repetition_token=token,
             )
             if not passed:
                 topology_choices = candidate
@@ -751,6 +783,7 @@ def cmd_shrink(args, project_root: str) -> int:
                     args.output_dir,
                     topology_choices,
                     candidate_config_choices,
+                    repetition_token=token,
                 )
                 if not passed:
                     config_choices = candidate_config_choices
@@ -765,7 +798,11 @@ def cmd_shrink(args, project_root: str) -> int:
     print("Final config choices:")
     print(json.dumps(config_choices, indent=2, sort_keys=True))
     print("Reproduce with:")
-    print(reproduce_command(project_root, target, seed, name, topology_choices, config_choices))
+    print(
+        reproduce_command(
+            project_root, target, seed, name, topology_choices, config_choices, token
+        )
+    )
     return 0
 
 

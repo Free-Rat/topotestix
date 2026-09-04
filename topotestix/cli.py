@@ -44,6 +44,17 @@ def _configure_logging(args: argparse.Namespace) -> None:
         logging.basicConfig(level=logging.WARNING)
 
 
+def add_repetition_token(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument(
+        "--repetition-token",
+        default=None,
+        help="Opaque token appended to the NixOS-test derivation name. A new "
+        "value forces a genuinely fresh VM execution instead of a Nix cache "
+        "replay; it is excluded from the resolved SUT configuration, so "
+        "repetitions of one cell stay identical. Recorded in run.json.",
+    )
+
+
 def add_run_common(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--project-root", default=argparse.SUPPRESS, help="Project root directory")
     parser.add_argument("--output-dir", default=None, help="Run store directory")
@@ -85,6 +96,7 @@ def build_parser() -> argparse.ArgumentParser:
         default={},
     )
     add_run_common(run)
+    add_repetition_token(run)
     add_common_target_overrides(run)
 
     fuzz = orch_sub.add_parser("fuzz", help="Evaluate config fuzz target for one seed")
@@ -97,6 +109,7 @@ def build_parser() -> argparse.ArgumentParser:
     shrink.add_argument("target")
     shrink.add_argument("seed", type=int)
     add_run_common(shrink)
+    add_repetition_token(shrink)
     add_common_target_overrides(shrink)
 
     sweep = orch_sub.add_parser("sweep", help="Run a range of seeds")

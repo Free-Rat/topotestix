@@ -70,6 +70,7 @@ in
                 , reportNode ? null
                 , topologyChoices ? {}
                 , configChoices ? {}
+                , repetitionToken ? null  # forces a fresh VM run; excluded from SUT identity
                 }:
     let
       # Step 1: Fuzz the topology target to get a topology-map
@@ -123,6 +124,6 @@ in
     runnerMod.run {
       nodeConfigs = finalNodeConfigs;
       inherit testScript properties name;
-      inherit reportNode;
+      inherit reportNode repetitionToken;
     };
 }

@@ -10,6 +10,7 @@ from topotestix.orchestrator import (
     generate_nix_expr,
     generate_shrink_inputs_expr,
     parse_json_object,
+    reproduce_command,
 )
 from topotestix.runner import compose_script_expr, properties_expr
 from topotestix.targets import Target
@@ -65,6 +66,40 @@ class OrchestratorRenderingTests(unittest.TestCase):
         self.assertIn("topologyChoices = (builtins.fromJSON", expr)
         self.assertIn("configChoices = (builtins.fromJSON", expr)
         self.assertIn("builtins.toPath", expr)
+
+    def test_repetition_token_rendered_when_set_and_null_otherwise(self):
+        project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        kwargs = dict(
+            seed=1,
+            topology_target_path="targets/nginx/topology.nix",
+            config_target_path="targets/nginx/config.nix",
+            base_module_path="targets/nginx/module.nix",
+            test_script_path="targets/nginx/test-script.py",
+            properties_path="targets/nginx/properties.nix",
+            name="nginx-smoke",
+            project_root=project_root,
+        )
+        self.assertIn("repetitionToken = null;", generate_nix_expr(**kwargs))
+        self.assertIn(
+            'repetitionToken = "c20260904-abcdef";',
+            generate_nix_expr(**kwargs, repetition_token="c20260904-abcdef"),
+        )
+
+    def test_reproduce_command_includes_repetition_token_only_when_set(self):
+        target = Target(
+            name="etcd-cluster",
+            description="",
+            topology_target="targets/etcd-cluster/topology.nix",
+            config_target="targets/etcd-cluster/config.nix",
+            base_module="targets/etcd-cluster/module.nix",
+            test_script="targets/etcd-cluster/test-script.py",
+            properties="targets/etcd-cluster/properties.nix",
+            report_node="etcd1",
+        )
+        without = reproduce_command("/root", target, 3, "r", {}, {})
+        self.assertNotIn("--repetition-token", without)
+        with_token = reproduce_command("/root", target, 3, "r", {}, {}, "c20260904-abcdef")
+        self.assertIn("--repetition-token c20260904-abcdef", with_token)
 
     def test_generated_fuzz_expression_uses_safe_seed_and_path(self):
         project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

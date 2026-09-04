@@ -96,7 +96,14 @@ in
 {
   inherit composeTestScript;
 
-  run = { nodeConfigs, testScript, properties ? [], name, reportNode ? null }:
+  # repetitionToken: an opaque string that, when non-null, is appended to the
+  # NixOS-test derivation name.  It changes the derivation's output path (and
+  # thus its input hash), so `nix build` cannot substitute a cached result and
+  # the VM test genuinely re-executes.  It is deliberately NOT part of the
+  # fuzzer/shrinker inputs, so the resolved SUT configuration is identical
+  # across repetitions — the token perturbs execution identity only, never
+  # cell identity.  null (the default) reproduces the pre-token behaviour.
+  run = { nodeConfigs, testScript, properties ? [], name, reportNode ? null, repetitionToken ? null }:
     let
       effectiveReportNode =
         if reportNode != null
@@ -108,9 +115,14 @@ in
         reportNode = effectiveReportNode;
       };
 
+      effectiveName =
+        if repetitionToken == null || repetitionToken == ""
+        then name
+        else "${name}-${repetitionToken}";
+
     in
     testers.runNixOSTest {
-      inherit name;
+      name = effectiveName;
       nodes = nodeConfigs;
       testScript = fullTestScript;
     };
