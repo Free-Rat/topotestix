@@ -49,6 +49,16 @@
     reportNode = "etcd1";
   };
 
+  etcd-cluster-v1 = {
+    description = "[thesis] Three-node etcd Raft cluster target (v1 startup-timing config space)";
+    topologyTarget = ./etcd-cluster/topology.nix;
+    configTarget = ./etcd-cluster-v1/config.nix;
+    baseModule = ./etcd-cluster/module.nix;
+    testScript = ./etcd-cluster/test-script.py;
+    properties = ./etcd-cluster-v1/properties.nix;
+    reportNode = "etcd1";
+  };
+
   rabbitmq-cluster = {
     description = "Three-node RabbitMQ quorum queue baseline target";
     topologyTarget = ./rabbitmq-cluster/topology.nix;
