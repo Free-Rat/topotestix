@@ -29,6 +29,16 @@
     reportNode = "kafka1";
   };
 
+  kafka-topology = {
+    description = "[thesis] Kafka topology, placement, and failure-domain contract";
+    topologyTarget = ./kafka-topology/topology.nix;
+    configTarget = ./kafka-topology/config.nix;
+    baseModule = ./kafka-topology/module.nix;
+    testScript = ./kafka-topology/test-script.py;
+    properties = ./kafka-topology/properties.nix;
+    reportNode = "client1";
+  };
+
   etcd-cluster = {
     description = "Three-node etcd Raft cluster target";
     topologyTarget = ./etcd-cluster/topology.nix;

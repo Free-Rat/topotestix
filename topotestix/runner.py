@@ -1,7 +1,7 @@
 import json
 import os
 
-from .nix import eval_json, eval_raw, nix_path, nix_string, resolve_path
+from .nix import eval_json, eval_raw, nix_path, nix_string, project_nixpkgs_expr, resolve_path
 from .reports import read_report_path
 from .run_store import RunStore, default_runs_dir
 from .targets import get_target
@@ -13,7 +13,7 @@ def compose_script_expr(project_root: str, target_name: str) -> str:
         raise ValueError(f"target {target_name!r} must define reportNode for runner compose-script")
     abs_runner = resolve_path("lib/runner.nix", project_root)
     return f"""let
-  nixpkgs = builtins.getFlake "nixpkgs";
+  nixpkgs = {project_nixpkgs_expr(project_root)};
   pkgs = nixpkgs.legacyPackages.x86_64-linux;
   lib = pkgs.lib;
   runner = import {nix_path(abs_runner)} {{ inherit pkgs lib; testers = pkgs.testers; }};
@@ -30,7 +30,7 @@ runner.composeTestScript {{
 def properties_expr(project_root: str, target_name: str) -> str:
     target = get_target(project_root, target_name)
     return f"""let
-  nixpkgs = builtins.getFlake "nixpkgs";
+  nixpkgs = {project_nixpkgs_expr(project_root)};
   lib = nixpkgs.lib;
   propertiesMod = import {nix_path(target.properties)} {{ inherit lib; }};
 in

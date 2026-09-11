@@ -23,11 +23,27 @@ def nix_json(value) -> str:
     return f"(builtins.fromJSON {nix_string(json.dumps(value, sort_keys=True))})"
 
 
+def project_nixpkgs_expr(project_root: str) -> str:
+    flake_root = resolve_path(".", project_root)
+    allowed_paths = [
+        flake_root,
+        os.path.join(flake_root, "flake.nix"),
+        os.path.join(flake_root, "flake.lock"),
+    ]
+    allowed_paths_expr = "[ " + " ".join(nix_string(path) for path in allowed_paths) + " ]"
+    return f"""(builtins.getFlake (builtins.unsafeDiscardStringContext (toString (builtins.path {{
+  path = {nix_path(flake_root)};
+  name = "topotestix-locked-flake";
+  filter = path: _: builtins.elem (toString path) {allowed_paths_expr};
+}})))).inputs.nixpkgs"""
+
+
 def nix_base_command(command: str) -> list[str]:
     return [
         "nix",
         command,
         "--impure",
+        "--no-update-lock-file",
         "--extra-experimental-features",
         "nix-command flakes",
     ]
@@ -55,7 +71,9 @@ def eval_raw(nix_expr: str) -> str:
     return result.stdout
 
 
-def build_test(nix_expr: str, output_link: str, expr_path: Optional[str] = None) -> subprocess.CompletedProcess:
+def build_test(
+    nix_expr: str, output_link: str, expr_path: Optional[str] = None
+) -> subprocess.CompletedProcess:
     if expr_path:
         with open(expr_path, "w") as f:
             f.write(nix_expr)

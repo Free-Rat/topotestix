@@ -191,7 +191,19 @@ Python generates a temp `.nix` file containing a `let ... in` expression that im
 
 ```nix
 let
-  nixpkgs = builtins.getFlake "nixpkgs";
+  flakeRoot = "/abs/path/to/topotestix";
+  flakeSource = builtins.path {
+    path = builtins.toPath flakeRoot;
+    name = "topotestix-locked-flake";
+    filter = path: _: builtins.elem (toString path) [
+      flakeRoot
+      "${flakeRoot}/flake.nix"
+      "${flakeRoot}/flake.lock"
+    ];
+  };
+  nixpkgs = (builtins.getFlake (
+    builtins.unsafeDiscardStringContext (toString flakeSource)
+  )).inputs.nixpkgs;
   pkgs = nixpkgs.legacyPackages.x86_64-linux;
   lib = pkgs.lib;
 
@@ -211,7 +223,7 @@ orchestrate {
 }
 ```
 
-Python resolves all paths to absolute, generates this file to a temp location, and runs `nix build --impure --file tempfile.nix -o result-link`.
+Python resolves all paths to absolute, creates an explicitly filtered flake source containing only `flake.nix` and `flake.lock`, obtains Nixpkgs from that source's locked input, generates this file to a temp location, and runs `nix build --impure --no-update-lock-file --file tempfile.nix -o result-link`. Runtime evaluation therefore follows `flake.lock` rather than the caller's `nixpkgs` registry entry, without copying the project working tree or run artifacts into the Nix store.
 
 ## Shrinking (Phase 4)
 

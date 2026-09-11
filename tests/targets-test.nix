@@ -24,4 +24,12 @@ in
       && targets ? rabbitmq-failure-domain;
     expected = true;
   };
+
+  testThesisKafkaTopologyTargetRegistered = {
+    expr =
+      targets ? kafka-topology
+      && builtins.pathExists ../targets/kafka-topology/KafkaTopologyWorkload.java
+      && builtins.pathExists ../targets/kafka-topology/oracle.py;
+    expected = true;
+  };
 }

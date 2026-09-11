@@ -27,3 +27,12 @@ in
 (import ./shrinker-test.nix { inherit lib; fuzzer = fuzzer; shrinker = shrinker; expand-topology = expandTopology; })
 //
 (import ./targets-test.nix { inherit lib; })
+//
+(import ./kafka-topology-test.nix {
+  inherit
+    lib
+    fuzzer
+    shrinker
+    expandTopology
+    ;
+})

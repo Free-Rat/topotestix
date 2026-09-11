@@ -72,6 +72,7 @@ class CliTests(unittest.TestCase):
         self.assertIn("topologyChoices = fuzzedTopology.choices;", expr)
         self.assertIn("roleFuzz", expr)
         self.assertIn("expandTopology", expr)
+        self.assertIn("nixpkgsRevision = nixpkgs.sourceInfo.rev or null;", expr)
 
     def test_sweep_events_reports_failures(self):
         target = Target(

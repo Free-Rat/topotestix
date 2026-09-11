@@ -10,7 +10,15 @@ from concurrent.futures import FIRST_COMPLETED, Future, ThreadPoolExecutor, wait
 from typing import Iterator, Optional
 
 from .events import Event, event
-from .nix import build_test, eval_json, nix_json, nix_path, nix_string, resolve_path
+from .nix import (
+    build_test,
+    eval_json,
+    nix_json,
+    nix_path,
+    nix_string,
+    project_nixpkgs_expr,
+    resolve_path,
+)
 from .reports import parse_report, report_passed, report_summary
 from .run_store import (
     RunStore,
@@ -53,11 +61,14 @@ def generate_nix_expr(
     abs_orchestrate = resolve_path("lib/orchestrate.nix", project_root)
 
     return f"""let
-  nixpkgs = builtins.getFlake "nixpkgs";
+  nixpkgs = {project_nixpkgs_expr(project_root)};
   pkgs = nixpkgs.legacyPackages.x86_64-linux;
   lib = pkgs.lib;
 
-  orchestrate = (import {nix_path(abs_orchestrate)} {{ inherit pkgs lib; testers = pkgs.testers; }}).orchestrate;
+  orchestrate = (import {nix_path(abs_orchestrate)} {{
+    inherit pkgs lib;
+    testers = pkgs.testers;
+  }}).orchestrate;
 
   topologyTarget = import {nix_path(abs_topology_target)} {{ inherit lib; }};
   configTarget = import {nix_path(abs_config_target)} {{ inherit lib; }};
@@ -85,7 +96,7 @@ def generate_shrink_inputs_expr(
     abs_shrinker = resolve_path("lib/shrinker.nix", project_root)
 
     return f"""let
-  nixpkgs = builtins.getFlake "nixpkgs";
+  nixpkgs = {project_nixpkgs_expr(project_root)};
   pkgs = nixpkgs.legacyPackages.x86_64-linux;
   lib = pkgs.lib;
 
@@ -116,7 +127,7 @@ def generate_fuzz_expr(seed: str, target_path: str, project_root: str) -> str:
     abs_fuzzer = resolve_path("lib/fuzzer.nix", project_root)
 
     return f"""let
-  nixpkgs = builtins.getFlake "nixpkgs";
+  nixpkgs = {project_nixpkgs_expr(project_root)};
   pkgs = nixpkgs.legacyPackages.x86_64-linux;
   lib = pkgs.lib;
 
@@ -144,7 +155,7 @@ def generate_inspect_expr(
     abs_expand_topology = resolve_path("lib/expand-topology.nix", project_root)
 
     return f"""let
-  nixpkgs = builtins.getFlake "nixpkgs";
+  nixpkgs = {project_nixpkgs_expr(project_root)};
   pkgs = nixpkgs.legacyPackages.x86_64-linux;
   lib = pkgs.lib;
 
@@ -169,7 +180,8 @@ def generate_inspect_expr(
       name = roleName;
       value = {{
         seed = roleSeed;
-        result = shrinker.apply configTarget fuzzedRole.result (configOverrides.${{roleName}} or {{}});
+        result = shrinker.apply configTarget fuzzedRole.result
+          (configOverrides.${{roleName}} or {{}});
         choices = fuzzedRole.choices;
       }};
     }}
@@ -180,6 +192,10 @@ in
   topologyChoices = fuzzedTopology.choices;
   nodeRoles = expansion.nodeRoles;
   nodeConfigs = expansion.nodeConfigs;
+  environment = {{
+    nixpkgsRevision = nixpkgs.sourceInfo.rev or null;
+    nixpkgsOutPath = toString nixpkgs.outPath;
+  }};
 }}"""
 
 
