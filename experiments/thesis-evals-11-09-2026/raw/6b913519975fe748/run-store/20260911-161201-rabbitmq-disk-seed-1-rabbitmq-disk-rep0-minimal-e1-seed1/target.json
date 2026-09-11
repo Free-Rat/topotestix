@@ -1,0 +1,10 @@
+{
+  "baseModule": "targets/rabbitmq-disk/module.nix",
+  "configTarget": "targets/rabbitmq-disk/config.nix",
+  "description": "[thesis] RabbitMQ disk-capacity and confirmation contract",
+  "name": "rabbitmq-disk",
+  "properties": "targets/rabbitmq-disk/properties.nix",
+  "reportNode": "rabbit1",
+  "testScript": "targets/rabbitmq-disk/test-script.py",
+  "topologyTarget": "targets/rabbitmq-disk/topology.nix"
+}

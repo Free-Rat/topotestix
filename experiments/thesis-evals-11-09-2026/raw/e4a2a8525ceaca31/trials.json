@@ -1,0 +1,13 @@
+[
+  {
+    "dir": "20260911-014342-kafka-cluster-seed-46-kafka-sweep-rep1-seed46",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/rhs9schapaj7bzbwnnzbl5bhhg6rs7br-nixos-test-driver-kafka-sweep-rep1-seed46-c20260910-6335ae.drv'...",
+      "building '/nix/store/2likk1b5s10jbps4a13zk0s3irasrsyz-vm-test-run-kafka-sweep-rep1-seed46-c20260910-6335ae.drv'..."
+    ],
+    "name": "kafka-sweep-rep1-seed46",
+    "status": "failed"
+  }
+]

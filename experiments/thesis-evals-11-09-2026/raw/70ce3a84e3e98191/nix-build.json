@@ -1,0 +1,11 @@
+{
+  "execution": "fresh",
+  "markers": [
+    "these 2 derivations will be built:",
+    "building '/nix/store/wkkrakv2fw97znnkc7fhziplzsj4lg0c-nixos-test-driver-etcd-v1-sweep-rep1-seed22-c20260910-6335ae.drv'...",
+    "building '/nix/store/wp34zdlviaky6gr2lhkj3fp6ff8rc3dj-vm-test-run-etcd-v1-sweep-rep1-seed22-c20260910-6335ae.drv'..."
+  ],
+  "note": "",
+  "source": "run-store-log",
+  "wall_s": 87.735
+}

@@ -1,0 +1,13 @@
+[
+  {
+    "dir": "20260910-060316-rabbitmq-crash-seed-1-rabbitmq-crash-rep0-retune-leader-e0-seed1",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/j18wlrb9aba89c4rzc8x4lla1s18xs7c-nixos-test-driver-rabbitmq-crash-rep0-retune-leader-e0-seed1-c20260909-c1ce16.drv'...",
+      "building '/nix/store/gpwsb4cjqnrclshrd3vm6byq47h3d1vv-vm-test-run-rabbitmq-crash-rep0-retune-leader-e0-seed1-c20260909-c1ce16.drv'..."
+    ],
+    "name": "rabbitmq-crash-rep0-retune-leader-e0-seed1",
+    "status": "passed"
+  }
+]

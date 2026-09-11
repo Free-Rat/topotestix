@@ -1,0 +1,67 @@
+{
+  "collisions": [
+    {
+      "hash": "422728efcb5a71a4df0aab3db21ea25d605bff9a3660bcafab6f131dffc2faa0",
+      "seeds": [
+        17,
+        44
+      ]
+    },
+    {
+      "hash": "42f8b5c9afc1e050cffdbe3043213bad44af2c383a3aecc38eab2ac523f1b2a6",
+      "seeds": [
+        31,
+        32
+      ]
+    },
+    {
+      "hash": "4ca0109afa4c106e0dc66fdb05a4123e800ef659fc9bb1cff2e1116556e522b8",
+      "seeds": [
+        10,
+        47
+      ]
+    },
+    {
+      "hash": "7b82850dabb171b35db74641abf7adb52dad7749705478d196348109003a9614",
+      "seeds": [
+        9,
+        11
+      ]
+    },
+    {
+      "hash": "9da607795afb9b77b15334b29d6a7ad30896d30a8fa34765d7ff31aa961577fb",
+      "seeds": [
+        2,
+        27,
+        35,
+        36
+      ]
+    },
+    {
+      "hash": "a957973e99d5eeb3613d36f14efec0d397f688e833202d0f0aa2b90b57da40ac",
+      "seeds": [
+        8,
+        15
+      ]
+    },
+    {
+      "hash": "bec14bf4cab0586a00e0d27b7d976c803fb66014d19e79385d759b9b2aae0253",
+      "seeds": [
+        6,
+        14
+      ]
+    },
+    {
+      "hash": "ef4700e5e008259da08ec02634edbdf8956a6e23f86d852fbe4b03e4b3fbf759",
+      "seeds": [
+        22,
+        23
+      ]
+    }
+  ],
+  "duplicate_rate": "0.2",
+  "seeds": 50,
+  "space_size": 96,
+  "target": "etcd-cluster",
+  "unique_resolved": 40
+}

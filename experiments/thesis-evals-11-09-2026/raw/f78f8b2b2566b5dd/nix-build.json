@@ -1,0 +1,11 @@
+{
+  "execution": "fresh",
+  "markers": [
+    "these 2 derivations will be built:",
+    "building '/nix/store/hl6135d1z1n0w2206zp2vb96kcmph0lj-nixos-test-driver-rabbitmq-faildom-rep0-colocated-e1-seed1-c20260910-6335ae.drv'...",
+    "building '/nix/store/di92i143snd16cwb8pksg660xshc9pk1-vm-test-run-rabbitmq-faildom-rep0-colocated-e1-seed1-c20260910-6335ae.drv'..."
+  ],
+  "note": "",
+  "source": "run-store-log",
+  "wall_s": 95.378
+}

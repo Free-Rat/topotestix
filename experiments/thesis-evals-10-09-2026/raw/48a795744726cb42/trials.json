@@ -1,0 +1,13 @@
+[
+  {
+    "dir": "20260910-055244-rabbitmq-disk-seed-1-rabbitmq-disk-rep0-positive-e1-seed1",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/v07w02g5n2n1297352vi8b5134f2z73z-nixos-test-driver-rabbitmq-disk-rep0-positive-e1-seed1-c20260909-c1ce16.drv'...",
+      "building '/nix/store/9x457qgfgby2a0dzf9vvjd7b6jw6n7c1-vm-test-run-rabbitmq-disk-rep0-positive-e1-seed1-c20260909-c1ce16.drv'..."
+    ],
+    "name": "rabbitmq-disk-rep0-positive-e1-seed1",
+    "status": "passed"
+  }
+]

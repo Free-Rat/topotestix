@@ -1,0 +1,28 @@
+{
+  "execution": "fresh",
+  "markers": [
+    "these 27 derivations will be built:",
+    "building '/nix/store/956rj4n2w06bg6f4cyinx43y4cd28izl-unit-etcd.service.drv'...",
+    "building '/nix/store/anpgpgdxyxihdgk92dqkdnyfc1hja0gr-unit-etcd.service.drv'...",
+    "building '/nix/store/sx2nzvkmls3pbh0brgfaf6v5r55my98n-unit-etcd.service.drv'...",
+    "building '/nix/store/a4bn3ag5mr6n60ly3s166brfqbphzdqq-system-units.drv'...",
+    "building '/nix/store/i1cd0491jfwfhcqn3n65p1di8k3l3af6-system-units.drv'...",
+    "building '/nix/store/i7jdpv4pdc4y6h8i9ljafhphswh6hvp5-system-units.drv'...",
+    "building '/nix/store/041n80hws62j72ghw73bbp3djam2zc0y-etc.drv'...",
+    "building '/nix/store/0njz9y5mh1jn8dyrhr155g53h7p5crl7-etc.drv'...",
+    "building '/nix/store/rc49vxwmrz80xi6yacsyq9jzsqdf4azc-etc.drv'...",
+    "building '/nix/store/ksmcwawzmrm63gx3xm2j58sjjjga1fkj-activate.drv'...",
+    "building '/nix/store/0i7lligkm7ln73g5p8llm8zmjl50k7m2-nixos-system-etcd1-test.drv'...",
+    "building '/nix/store/5f1ha476c80axkracdn86d3kwh9vwh8d-activate.drv'...",
+    "building '/nix/store/m15f7sw82kgdfb82a4pyxkl4k76xiski-activate.drv'...",
+    "building '/nix/store/j4c15kbdn0yx55j8jydzi2mabk60ca77-closure-info.drv'...",
+    "building '/nix/store/9njyp6x06qiw26v77mrkhwc2ldphzbd5-nixos-system-etcd3-test.drv'...",
+    "building '/nix/store/xyf7d0wsmm1hdn99i0y2wg9cmm30pk6x-nixos-system-etcd2-test.drv'...",
+    "building '/nix/store/8ix98yqzklhmv470d05dh6d1j5r6m3rw-run-nixos-vm.drv'...",
+    "building '/nix/store/776dkjrdrnbj9ivic6z64lg1cs240bnj-closure-info.drv'...",
+    "building '/nix/store/ficifvncp8xck6p60h84xhrcy5v65q9g-closure-info.drv'..."
+  ],
+  "note": "",
+  "source": "run-store-log",
+  "wall_s": 93.688
+}

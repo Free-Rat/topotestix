@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "report": [
+    {
+      "name": "rabbitmq-failure-domain-exact-recovery",
+      "status": "passed"
+    },
+    {
+      "name": "rabbitmq-failure-domain-retains-quorum-availability",
+      "status": "passed"
+    }
+  ],
+  "runDir": "experiments/thesis-evals-11-09-2026/raw/7f65948408bf3c75.partial/run-store/20260911-162726-rabbitmq-failure-domain-seed-1-rabbitmq-faildom-rep0-spread-e0-seed1"
+}

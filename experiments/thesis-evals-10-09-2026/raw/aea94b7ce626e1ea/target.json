@@ -1,0 +1,10 @@
+{
+  "baseModule": "targets/rabbitmq-failure-domain/module.nix",
+  "configTarget": "targets/rabbitmq-failure-domain/config.nix",
+  "description": "[thesis] RabbitMQ replica failure-domain placement contract",
+  "name": "rabbitmq-failure-domain",
+  "properties": "targets/rabbitmq-failure-domain/properties.nix",
+  "reportNode": "rabbit1",
+  "testScript": "targets/rabbitmq-failure-domain/test-script.py",
+  "topologyTarget": "targets/rabbitmq-failure-domain/topology.nix"
+}

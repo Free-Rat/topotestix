@@ -11,3 +11,18 @@ __pycache__/
 
 # Local TopoTestix run store
 .topotestix/
+
+# Thesis-eval reproduction: raw per-unit VM/nix console logs and in-progress
+# staging dirs are large (~340 MB/campaign) and fully regenerable. The distilled
+# analysis/verification/resolution artifacts and all *.json/*.csv evidence
+# under experiments/thesis-evals-*/ are kept; only *.log files under raw/ are
+# excluded (unit-level stdout/stderr.log and per-trial run-store logs alike).
+#
+# analyze.py does read those logs (test-suite counts, the etcd v1 startup error
+# message), so each unit also carries a COMMITTED log-digest.json — a bounded
+# projection of its logs (runner.write_log_digest) that collect.py falls back
+# to when the *.log files are absent. That is what keeps analysis a function of
+# what raw/ holds in git. Regenerate it with `--phase digest` after any run
+# whose logs were produced outside run_unit.
+experiments/thesis-evals-*/raw/**/*.log
+experiments/thesis-evals-*/**/*.partial/

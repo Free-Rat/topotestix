@@ -1,0 +1,12 @@
+dimension,resolved_value,count
+rabbit:.environment.etc.topotestix-crash-delay.text,"""10""",23
+rabbit:.environment.etc.topotestix-crash-delay.text,"""2""",27
+rabbit:.environment.etc.topotestix-crash-publish-count.text,"""20""",22
+rabbit:.environment.etc.topotestix-crash-publish-count.text,"""50""",28
+rabbit:.environment.etc.topotestix-crash-target-role.text,"""follower""",26
+rabbit:.environment.etc.topotestix-crash-target-role.text,"""leader""",24
+rabbit:.environment.etc.topotestix-crash-timing.text,"""after_publish""",13
+rabbit:.environment.etc.topotestix-crash-timing.text,"""before_publish""",18
+rabbit:.environment.etc.topotestix-crash-timing.text,"""during_publish""",19
+topology:.rabbitVlans,[1],50
+topology:.roles.rabbit,3,50

@@ -1,0 +1,29 @@
+{
+  "execution": "fresh",
+  "exit_code": 1,
+  "input_hash": "dc097fb389f2bfad2f98e82cade0d62fc58d380d5362e988157c8ca0ca5f5bbf",
+  "state": "done",
+  "unit": {
+    "base_module": null,
+    "config_choices": null,
+    "config_target": "experiments/kafka-cluster/kafka-cluster-min-message-max.nix",
+    "entry_hash": "082c192a78b4946d615a9da1f22c5fcbc5459618726aef27465728efd1533001",
+    "entry_id": "kafka-min-configs",
+    "execution_index": 0,
+    "id": "24c717a7bb7badcf",
+    "kind": "run",
+    "produces": [
+      "kafka-min-configs"
+    ],
+    "properties": null,
+    "repetition_index": 0,
+    "repetition_token": "c20260910-6335ae",
+    "run_name": "kafka-min-configs-rep0-min-message-max-e0-seed1",
+    "seed": 1,
+    "target": "kafka-cluster",
+    "test_script": null,
+    "topology_choices": null,
+    "topology_target": null,
+    "variant_name": "min-message-max"
+  }
+}

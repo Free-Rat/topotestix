@@ -1,0 +1,55 @@
+{
+  "passed": false,
+  "report": [
+    {
+      "name": "etcd-cluster-healthy-from-etcd1",
+      "status": "passed"
+    },
+    {
+      "name": "etcd-cluster-healthy-from-etcd2",
+      "status": "passed"
+    },
+    {
+      "name": "etcd-cluster-healthy-from-etcd3",
+      "status": "passed"
+    },
+    {
+      "name": "etcd-kv-roundtrip-etcd1-to-etcd2",
+      "status": "passed"
+    },
+    {
+      "name": "etcd-kv-roundtrip-etcd1-to-etcd3",
+      "status": "passed"
+    },
+    {
+      "name": "etcd-kv-roundtrip-etcd2-to-etcd1",
+      "status": "passed"
+    },
+    {
+      "name": "etcd-single-leader-from-etcd1",
+      "status": "passed"
+    },
+    {
+      "name": "etcd-lease-ttl-expiry-etcd1",
+      "status": "passed"
+    },
+    {
+      "name": "etcd-still-up-etcd1",
+      "status": "passed"
+    },
+    {
+      "name": "etcd-still-up-etcd2",
+      "status": "passed"
+    },
+    {
+      "name": "etcd-still-up-etcd3",
+      "status": "passed"
+    },
+    {
+      "message": "Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:48.917231Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:48.958606Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:48.997690Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:49.038049Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:49.081508Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:49.126052Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:49.175019Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:49.218638Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:49.265815Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:49.308840Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:49.347488Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:49.399582Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:49.440912Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:49.482860Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:49.525007Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:49.564909Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:49.614308Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:49.663224Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:49.706259Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:49.748242Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:49.798430Z\",\"caller\":\"flags/flag.go:94\",\"msg\":\"unrecognized environment variable\",\"environment-variable\":\"ETCDCTL_API=3\"}\n{\"level\":\"warn\",\"ts\":\"2026-09-10T04:52:49.831321Z\",\"logger\":\"etcd-client\",\"caller\":\"v3@v3.6.14/retry_interceptor.go:68\",\"msg\":\"retrying of unary invoker failed\",\"target\":\"etcd-endpoints://0x3248ff16fc20/etcd1:2379\",\"peer\":\"Peer{Addr: '[2001:db8:1::3]:2379', LocalAddr: '[2001:db8:1::1]:36934', AuthInfo: 'insecure'}\",\"method\":\"/etcdserverpb.KV/Put\",\"attempt\":0,\"error\":\"rpc error: code = ResourceExhausted desc = etcdserver: mvcc: database space exceeded\"}\nError: etcdserver: mvcc: database space exceeded\n",
+      "name": "etcd-quota-write-burst-etcd1",
+      "status": "failed"
+    }
+  ],
+  "runDir": "experiments/thesis-evals-10-09-2026/raw/ee4fa358c87f3cbe.partial/run-store/20260910-045122-etcd-cluster-seed-42-etcd-v2-sweep-rep0-seed42"
+}

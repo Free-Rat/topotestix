@@ -1,0 +1,13 @@
+[
+  {
+    "dir": "20260910-060316-rabbitmq-crash-seed-1-rabbitmq-crash-rep0-follower-repA-e0-seed1",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/21accx7lc531pqhdqff8qbsfdbxwjvsg-nixos-test-driver-rabbitmq-crash-rep0-follower-repA-e0-seed1-c20260909-c1ce16.drv'...",
+      "building '/nix/store/l0l6v70gzz1yzfy6p1gfbmvfniab2qld-vm-test-run-rabbitmq-crash-rep0-follower-repA-e0-seed1-c20260909-c1ce16.drv'..."
+    ],
+    "name": "rabbitmq-crash-rep0-follower-repA-e0-seed1",
+    "status": "passed"
+  }
+]

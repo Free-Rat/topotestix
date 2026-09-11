@@ -1,0 +1,20 @@
+{
+  "artifacts": [],
+  "finishedAt": "2026-09-10T05:26:43.826009+00:00",
+  "gitHead": "f25ec56d6ae7a390ada52c7814c82d0c7def0df4",
+  "id": "20260910-052513-etcd-cluster-seed-1-etcd-v2-exhaustive-rep0-cell021",
+  "name": "etcd-v2-exhaustive-rep0-cell021",
+  "repetitionToken": "c20260909-c1ce16",
+  "reproduceCommand": "topotestix orchestrator run etcd-cluster --seed 1 --name etcd-v2-exhaustive-rep0-cell021 --project-root /home/freerat/projects/topotestix --repetition-token c20260909-c1ce16 --topology-target /home/freerat/projects/topotestix/targets/etcd-cluster/topology.nix --config-target /home/freerat/projects/topotestix/targets/etcd-cluster/config.nix --base-module /home/freerat/projects/topotestix/targets/etcd-cluster/module.nix --test-script /home/freerat/projects/topotestix/targets/etcd-cluster/test-script.py --properties /home/freerat/projects/topotestix/targets/etcd-cluster/properties.nix --topology-choices '{\".etcdVlans\": 0, \".roles.etcd\": 0}' --config-choices '{\"etcd\": {\".services.etcd.extraConf.ELECTION_TIMEOUT\": 1, \".services.etcd.extraConf.HEARTBEAT_INTERVAL\": 1, \".services.etcd.extraConf.QUOTA_BACKEND_BYTES\": 0, \".services.etcd.extraConf.SNAPSHOT_COUNT\": 1, \".virtualisation.diskSize\": 0, \".virtualisation.memorySize\": 0}}'",
+  "resultPath": "experiments/thesis-evals-10-09-2026/raw/5fcfc289461b3e3f.partial/run-store/20260910-052513-etcd-cluster-seed-1-etcd-v2-exhaustive-rep0-cell021/result",
+  "runDir": "experiments/thesis-evals-10-09-2026/raw/5fcfc289461b3e3f.partial/run-store/20260910-052513-etcd-cluster-seed-1-etcd-v2-exhaustive-rep0-cell021",
+  "seed": 1,
+  "startedAt": "2026-09-10T05:25:13.257019+00:00",
+  "status": "failed",
+  "summary": {
+    "failed": 1,
+    "passed": 11,
+    "total": 12
+  },
+  "target": "etcd-cluster"
+}

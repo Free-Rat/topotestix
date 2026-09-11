@@ -1,0 +1,29 @@
+{
+  "execution": "fresh",
+  "exit_code": 0,
+  "input_hash": "4289458f46f1cb242b8886dfcf30ed4824e1b05a8f2ad9db7d8dd8536084de65",
+  "state": "done",
+  "unit": {
+    "base_module": "targets/rabbitmq-disk/module.nix",
+    "config_choices": null,
+    "config_target": "targets/rabbitmq-disk/config.nix",
+    "entry_hash": "59e3524b4d959564dcea39b31a35a6949a6ae39586f202270bdf53ef21e49603",
+    "entry_id": "rabbitmq-disk-serial",
+    "execution_index": 1,
+    "id": "98d30b3f4b78e005",
+    "kind": "run",
+    "produces": [
+      "parallelism"
+    ],
+    "properties": "targets/rabbitmq-disk/properties.nix",
+    "repetition_index": 0,
+    "repetition_token": "c20260910-6335ae",
+    "run_name": "rabbitmq-disk-serial-rep0-positive-e1-seed1",
+    "seed": 1,
+    "target": "rabbitmq-disk",
+    "test_script": "targets/rabbitmq-disk/test-script.py",
+    "topology_choices": null,
+    "topology_target": "targets/rabbitmq-disk/topology.nix",
+    "variant_name": "positive"
+  }
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "dir": "20260910-050655-etcd-cluster-seed-1-etcd-v2-exhaustive-rep0-cell081",
+    "execution": "fresh",
+    "markers": [
+      "these 27 derivations will be built:",
+      "building '/nix/store/0n8g941hh28k3n1vcckfz4bs6x8gbb88-unit-etcd.service.drv'...",
+      "building '/nix/store/di33pmpjq2cxn19b9xcyyw4myxqdypy0-unit-etcd.service.drv'...",
+      "building '/nix/store/iyzh8adakfxzqrdagdrpff16sbshqmsv-unit-etcd.service.drv'...",
+      "building '/nix/store/ylibfhvfys866yd4l2slg2m91h4wdpvx-system-units.drv'...",
+      "building '/nix/store/pj4il3qybsd9fdxpkdwi6kp75ahydfn8-system-units.drv'...",
+      "building '/nix/store/bqm5b0d8xg9wln0pf460yb9krvxhgd1j-system-units.drv'...",
+      "building '/nix/store/wrvykyyfnsfga605cqnsq8c87mk9shhb-etc.drv'...",
+      "building '/nix/store/fiwnkikvpqy0946kaa3cdsdg7c53xb90-etc.drv'...",
+      "building '/nix/store/lwdkb7rvlynvlzyykyb3gh0rkb4f2hqg-etc.drv'...",
+      "building '/nix/store/l3c8l0dijswdmkcjxvy7mpb5i28kahsx-activate.drv'...",
+      "building '/nix/store/2md3pqbkr86gxzn993idy26ay15fm3sk-activate.drv'...",
+      "building '/nix/store/94r7pmzqyyszhmvzphinmfxp03gpk24g-activate.drv'...",
+      "building '/nix/store/9r19dmpdjkylgkxdg7yw8622ah9814jp-nixos-system-etcd2-test.drv'...",
+      "building '/nix/store/2m82r8gfrh7plhs74q634i304zizjqi7-nixos-system-etcd1-test.drv'...",
+      "building '/nix/store/4i87mzj0cz067n31y59dgmrqx823y1af-nixos-system-etcd3-test.drv'...",
+      "building '/nix/store/b280a4f1krlkz6lq94ss745yrfw1jr1v-closure-info.drv'...",
+      "building '/nix/store/2q5zmjy1wbfnja793p3sb5ahqyqgn1sh-closure-info.drv'...",
+      "building '/nix/store/7z1qsg7fas0dk77idvz70y3pqqzf7im8-closure-info.drv'...",
+      "building '/nix/store/scg5klf4ks25fb22w3x84z1yic1mk7df-run-nixos-vm.drv'..."
+    ],
+    "name": "etcd-v2-exhaustive-rep0-cell081",
+    "status": "failed"
+  }
+]

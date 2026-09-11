@@ -2,6 +2,7 @@ import argparse
 import json
 import logging
 import os
+import re
 import sys
 from typing import Optional
 
@@ -44,9 +45,24 @@ def _configure_logging(args: argparse.Namespace) -> None:
         logging.basicConfig(level=logging.WARNING)
 
 
+# The token becomes part of a Nix derivation name ("<name>-<token>"), which
+# only accepts these characters; reject anything else up front rather than
+# letting nix fail mid-run and have it recorded as a test failure.
+_REPETITION_TOKEN_RE = re.compile(r"^[A-Za-z0-9+._?=-]+$")
+
+
+def _repetition_token(value: str) -> str:
+    if not _REPETITION_TOKEN_RE.match(value):
+        raise argparse.ArgumentTypeError(
+            f"invalid repetition token {value!r}: use only letters, digits and +-._?="
+        )
+    return value
+
+
 def add_repetition_token(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--repetition-token",
+        type=_repetition_token,
         default=None,
         help="Opaque token appended to the NixOS-test derivation name. A new "
         "value forces a genuinely fresh VM execution instead of a Nix cache "

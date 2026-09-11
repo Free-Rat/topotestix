@@ -1,0 +1,16 @@
+{
+  "configChoices": {
+    "etcd": {
+      ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+      ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+      ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+      ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+      ".virtualisation.diskSize": 1,
+      ".virtualisation.memorySize": 1
+    }
+  },
+  "topologyChoices": {
+    ".etcdVlans": 0,
+    ".roles.etcd": 0
+  }
+}

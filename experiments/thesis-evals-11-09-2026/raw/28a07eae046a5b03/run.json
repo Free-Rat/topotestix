@@ -1,0 +1,22 @@
+{
+  "artifacts": [
+    "disk-results.json"
+  ],
+  "finishedAt": "2026-09-11T16:09:59.576773+00:00",
+  "gitHead": "f25ec56d6ae7a390ada52c7814c82d0c7def0df4",
+  "id": "20260911-160822-rabbitmq-disk-seed-1-rabbitmq-disk-rep0-minimal-e0-seed1",
+  "name": "rabbitmq-disk-rep0-minimal-e0-seed1",
+  "repetitionToken": "c20260910-6335ae",
+  "reproduceCommand": "topotestix orchestrator run rabbitmq-disk --seed 1 --name rabbitmq-disk-rep0-minimal-e0-seed1 --project-root /home/freerat/projects/topotestix --repetition-token c20260910-6335ae --topology-target targets/rabbitmq-disk/topology.nix --config-target targets/rabbitmq-disk/config.nix --base-module targets/rabbitmq-disk/module.nix --test-script targets/rabbitmq-disk/test-script.py --properties targets/rabbitmq-disk/properties.nix --config-choices '{\"rabbit\": {\".environment.etc.topotestix-disk-backlog-rate.text\": 0, \".environment.etc.topotestix-disk-capacity-safety-factor-milli.text\": 0, \".environment.etc.topotestix-disk-confirm-timeout-ms.text\": 0, \".environment.etc.topotestix-disk-consumer-outage-seconds.text\": 0, \".environment.etc.topotestix-disk-initial-free-mb.text\": 2, \".environment.etc.topotestix-disk-message-size.text\": 0, \".services.rabbitmq.configItems.disk_free_limit.absolute\": 2, \".virtualisation.diskSize\": 0}}'",
+  "resultPath": "experiments/thesis-evals-11-09-2026/raw/28a07eae046a5b03.partial/run-store/20260911-160822-rabbitmq-disk-seed-1-rabbitmq-disk-rep0-minimal-e0-seed1/result",
+  "runDir": "experiments/thesis-evals-11-09-2026/raw/28a07eae046a5b03.partial/run-store/20260911-160822-rabbitmq-disk-seed-1-rabbitmq-disk-rep0-minimal-e0-seed1",
+  "seed": 1,
+  "startedAt": "2026-09-11T16:08:22.668990+00:00",
+  "status": "failed",
+  "summary": {
+    "failed": 1,
+    "passed": 4,
+    "total": 5
+  },
+  "target": "rabbitmq-disk"
+}

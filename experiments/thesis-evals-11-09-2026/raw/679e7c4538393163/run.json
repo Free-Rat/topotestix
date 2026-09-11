@@ -1,0 +1,20 @@
+{
+  "artifacts": [],
+  "finishedAt": "2026-09-10T22:56:17.471060+00:00",
+  "gitHead": "f25ec56d6ae7a390ada52c7814c82d0c7def0df4",
+  "id": "20260910-225312-kafka-cluster-seed-34-kafka-sweep-rep0-seed34",
+  "name": "kafka-sweep-rep0-seed34",
+  "repetitionToken": "c20260910-6335ae",
+  "reproduceCommand": "topotestix orchestrator run kafka-cluster --seed 34 --name kafka-sweep-rep0-seed34 --project-root /home/freerat/projects/topotestix --repetition-token c20260910-6335ae --topology-target /home/freerat/projects/topotestix/targets/kafka-cluster/topology.nix --config-target /home/freerat/projects/topotestix/targets/kafka-cluster/config.nix --base-module /home/freerat/projects/topotestix/targets/kafka-cluster/module.nix --test-script /home/freerat/projects/topotestix/targets/kafka-cluster/test-script.py --properties /home/freerat/projects/topotestix/targets/kafka-cluster/properties.nix",
+  "resultPath": "experiments/thesis-evals-11-09-2026/raw/679e7c4538393163.partial/run-store/20260910-225312-kafka-cluster-seed-34-kafka-sweep-rep0-seed34/result",
+  "runDir": "experiments/thesis-evals-11-09-2026/raw/679e7c4538393163.partial/run-store/20260910-225312-kafka-cluster-seed-34-kafka-sweep-rep0-seed34",
+  "seed": 34,
+  "startedAt": "2026-09-10T22:53:12.083556+00:00",
+  "status": "failed",
+  "summary": {
+    "failed": 1,
+    "passed": 10,
+    "total": 11
+  },
+  "target": "kafka-cluster"
+}

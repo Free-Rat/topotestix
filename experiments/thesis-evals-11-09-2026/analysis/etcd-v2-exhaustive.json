@@ -1,0 +1,1460 @@
+{
+  "cells": 96,
+  "cells_by_quota_bytes": {
+    "2097152": 32,
+    "67108864": 32,
+    "8388608": 32
+  },
+  "failed": 32,
+  "failures_by_quota_bytes": {
+    "2097152": 32
+  },
+  "failures_by_quota_index": {
+    "0": 32
+  },
+  "no_property_verdict": 0,
+  "no_property_verdict_cells": [],
+  "passed": 64,
+  "per_cell": [
+    {
+      "cell": "cell000",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell001",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell002",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell003",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell004",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell005",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell006",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell007",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell008",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell009",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell010",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell011",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell012",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell013",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell014",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell015",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell016",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell017",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell018",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell019",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell020",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell021",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell022",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell023",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell024",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell025",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell026",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell027",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell028",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell029",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell030",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell031",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell032",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell033",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell034",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell035",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell036",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell037",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell038",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell039",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell040",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell041",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell042",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell043",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell044",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell045",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell046",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell047",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 0
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell048",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell049",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell050",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell051",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell052",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell053",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell054",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell055",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell056",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell057",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell058",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell059",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell060",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell061",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell062",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell063",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell064",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell065",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell066",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell067",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell068",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell069",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell070",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell071",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell072",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell073",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell074",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell075",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell076",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell077",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell078",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell079",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell080",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell081",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell082",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell083",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell084",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell085",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell086",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell087",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell088",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell089",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell090",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell091",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell092",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    },
+    {
+      "cell": "cell093",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "property-failed",
+      "quota_backend_bytes": 2097152,
+      "status": "failed"
+    },
+    {
+      "cell": "cell094",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 8388608,
+      "status": "passed"
+    },
+    {
+      "cell": "cell095",
+      "checks_total": 12,
+      "config": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 1,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "outcome": "passed",
+      "quota_backend_bytes": 67108864,
+      "status": "passed"
+    }
+  ]
+}

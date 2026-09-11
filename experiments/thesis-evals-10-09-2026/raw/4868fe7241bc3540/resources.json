@@ -1,0 +1,9 @@
+{
+  "attribution": "process-tree-descendants",
+  "attribution_caveat": "QEMU/build workers spawned by the nix daemon may not appear in the sampled tree; peak RSS and CPU seconds can undercount.",
+  "cpu_seconds": 7.08,
+  "method": "proc",
+  "n_samples": 187,
+  "peak_rss_bytes": 1086251008,
+  "sample_interval_s": 0.5
+}

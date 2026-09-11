@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "report": [
+    {
+      "name": "kafka-large-message-on-kafka1",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-multi-topic-on-kafka1",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-still-up-kafka1",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-still-up-kafka2",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-still-up-kafka3",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-roundtrip-on-kafka1",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-roundtrip-on-kafka2",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-roundtrip-on-kafka3",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-topic-visible-from-kafka1",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-topic-visible-from-kafka2",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-topic-visible-from-kafka3",
+      "status": "passed"
+    }
+  ],
+  "runDir": "experiments/thesis-evals-10-09-2026/raw/a1dc3c58525e54bd.partial/run-store/20260910-000418-kafka-cluster-seed-21-kafka-sweep-rep0-seed21"
+}

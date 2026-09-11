@@ -1,0 +1,71 @@
+{
+  "nodeConfigs": {
+    "etcd1": {
+      "virtualisation": {
+        "vlans": [
+          1
+        ]
+      }
+    },
+    "etcd2": {
+      "virtualisation": {
+        "vlans": [
+          1
+        ]
+      }
+    },
+    "etcd3": {
+      "virtualisation": {
+        "vlans": [
+          1
+        ]
+      }
+    }
+  },
+  "nodeRoles": {
+    "etcd1": "etcd",
+    "etcd2": "etcd",
+    "etcd3": "etcd"
+  },
+  "roleFuzz": {
+    "etcd": {
+      "choices": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 1,
+        ".virtualisation.memorySize": 1
+      },
+      "result": {
+        "services": {
+          "etcd": {
+            "extraConf": {
+              "ELECTION_TIMEOUT": "2500",
+              "HEARTBEAT_INTERVAL": "100",
+              "QUOTA_BACKEND_BYTES": "8388608",
+              "SNAPSHOT_COUNT": "10000"
+            }
+          }
+        },
+        "virtualisation": {
+          "diskSize": 4096,
+          "memorySize": 2048
+        }
+      },
+      "seed": "2"
+    }
+  },
+  "topology": {
+    "etcdVlans": [
+      1
+    ],
+    "roles": {
+      "etcd": 3
+    }
+  },
+  "topologyChoices": {
+    ".etcdVlans": 0,
+    ".roles.etcd": 0
+  }
+}

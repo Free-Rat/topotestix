@@ -1,0 +1,8 @@
+variant,execution_index,seed,status,checks_passed,checks_total,failing_checks,ambiguous_count,alarm_samples,recovered_count,strict_sufficient,naive_sufficient,nominal_free_target_mb,disk_free_limit_mb,planned_messages,message_size_kib,confirm_timeout_ms,safety_factor_milli
+cell-x,0,1,failed,4,5,rabbitmq-disk-capacity-confirmation-contract,200,14,23,False,True,100,190,200,16,1000,1500
+cell-x,1,1,failed,4,5,rabbitmq-disk-capacity-confirmation-contract,200,14,23,False,True,100,190,200,16,1000,1500
+cell-x,2,1,failed,4,5,rabbitmq-disk-capacity-confirmation-contract,200,14,23,False,True,100,190,200,16,1000,1500
+minimal,0,1,failed,4,5,rabbitmq-disk-capacity-confirmation-contract,20,17,20,False,True,100,190,20,1,1000,1000
+minimal,1,1,failed,4,5,rabbitmq-disk-capacity-confirmation-contract,20,17,20,False,True,100,190,20,1,1000,1000
+positive,0,1,passed,5,5,,0,0,50,True,True,500,47,50,16,3000,1500
+positive,1,1,passed,5,5,,0,0,50,True,True,500,47,50,16,3000,1500

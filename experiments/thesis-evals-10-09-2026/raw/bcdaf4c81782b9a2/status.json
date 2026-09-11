@@ -1,0 +1,30 @@
+{
+  "execution": "fresh",
+  "exit_code": 1,
+  "input_hash": "9ee80afe48a45d852dee3ff27a2038d247aa7afe8b0904f19b09cce66b3fc3d1",
+  "state": "done",
+  "unit": {
+    "base_module": null,
+    "config_choices": null,
+    "config_target": null,
+    "entry_hash": "d8be0833da0a14400df7887d2bd38dcef0a716b3dabb702f7ab1c01b441133d0",
+    "entry_id": "etcd-v1-sweep",
+    "execution_index": 0,
+    "id": "bcdaf4c81782b9a2",
+    "kind": "sweep",
+    "produces": [
+      "determinism",
+      "etcd-v1-sweep"
+    ],
+    "properties": null,
+    "repetition_index": 0,
+    "repetition_token": "c20260909-c1ce16",
+    "run_name": "etcd-v1-sweep-rep0-seed49",
+    "seed": 49,
+    "target": "etcd-cluster-v1",
+    "test_script": null,
+    "topology_choices": null,
+    "topology_target": null,
+    "variant_name": null
+  }
+}

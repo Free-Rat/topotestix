@@ -1,0 +1,41 @@
+{
+  "execution": "fresh",
+  "exit_code": 0,
+  "input_hash": "6a09399b033012c36479d88a76eb2c2030191a66ba76559d0ca81275005d4f78",
+  "state": "done",
+  "unit": {
+    "base_module": null,
+    "config_choices": {
+      "etcd": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 1,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      }
+    },
+    "config_target": null,
+    "entry_hash": "1aeb0c7255949759926ee93be1695d5398a10ef5ba899cfce255a080ec510c9b",
+    "entry_id": "etcd-v2-exhaustive",
+    "execution_index": 55,
+    "id": "3da42fd9906770a3",
+    "kind": "exhaustive",
+    "produces": [
+      "etcd-v2-exhaustive"
+    ],
+    "properties": null,
+    "repetition_index": 0,
+    "repetition_token": "c20260909-c1ce16",
+    "run_name": "etcd-v2-exhaustive-rep0-cell055",
+    "seed": null,
+    "target": "etcd-cluster",
+    "test_script": null,
+    "topology_choices": {
+      ".etcdVlans": 0,
+      ".roles.etcd": 0
+    },
+    "topology_target": null,
+    "variant_name": "cell055"
+  }
+}

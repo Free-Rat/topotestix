@@ -1,0 +1,22 @@
+{
+  "artifacts": [
+    "failure-domain-results.json"
+  ],
+  "finishedAt": "2026-09-11T16:28:37.878097+00:00",
+  "gitHead": "f25ec56d6ae7a390ada52c7814c82d0c7def0df4",
+  "id": "20260911-162726-rabbitmq-failure-domain-seed-1-rabbitmq-faildom-rep0-spread-e0-seed1",
+  "name": "rabbitmq-faildom-rep0-spread-e0-seed1",
+  "repetitionToken": "c20260910-6335ae",
+  "reproduceCommand": "topotestix orchestrator run rabbitmq-failure-domain --seed 1 --name rabbitmq-faildom-rep0-spread-e0-seed1 --project-root /home/freerat/projects/topotestix --repetition-token c20260910-6335ae --topology-target targets/rabbitmq-failure-domain/topology.nix --config-target targets/rabbitmq-failure-domain/config.nix --base-module targets/rabbitmq-failure-domain/module.nix --test-script targets/rabbitmq-failure-domain/test-script.py --properties targets/rabbitmq-failure-domain/properties.nix --config-choices '{\"rabbit\": {\".environment.etc.topotestix-failure-domain-placement.json.text\": 0}}'",
+  "resultPath": "experiments/thesis-evals-11-09-2026/raw/7f65948408bf3c75.partial/run-store/20260911-162726-rabbitmq-failure-domain-seed-1-rabbitmq-faildom-rep0-spread-e0-seed1/result",
+  "runDir": "experiments/thesis-evals-11-09-2026/raw/7f65948408bf3c75.partial/run-store/20260911-162726-rabbitmq-failure-domain-seed-1-rabbitmq-faildom-rep0-spread-e0-seed1",
+  "seed": 1,
+  "startedAt": "2026-09-11T16:27:26.346898+00:00",
+  "status": "passed",
+  "summary": {
+    "failed": 0,
+    "passed": 2,
+    "total": 2
+  },
+  "target": "rabbitmq-failure-domain"
+}

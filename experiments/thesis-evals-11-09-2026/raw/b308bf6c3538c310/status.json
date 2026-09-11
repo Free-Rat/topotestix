@@ -1,0 +1,36 @@
+{
+  "execution": "fresh",
+  "exit_code": 0,
+  "input_hash": "409e101dd963a07e2bb08077a8f4ec4bf2229e1543e61ddc7e1988f2b7c01b16",
+  "state": "done",
+  "unit": {
+    "base_module": "targets/rabbitmq-crash/module.nix",
+    "config_choices": {
+      "rabbit": {
+        ".environment.etc.topotestix-crash-delay.text": 1,
+        ".environment.etc.topotestix-crash-publish-count.text": 1,
+        ".environment.etc.topotestix-crash-target-role.text": 1,
+        ".environment.etc.topotestix-crash-timing.text": 1
+      }
+    },
+    "config_target": "targets/rabbitmq-crash/config.nix",
+    "entry_hash": "e51a1ce4e901c1359fbda8e2bd51c6d141fcaeae368756e6895f0c4248513bca",
+    "entry_id": "rabbitmq-crash",
+    "execution_index": 0,
+    "id": "b308bf6c3538c310",
+    "kind": "run",
+    "produces": [
+      "rabbitmq-crash-cells"
+    ],
+    "properties": "targets/rabbitmq-crash/properties.nix",
+    "repetition_index": 0,
+    "repetition_token": "c20260910-6335ae",
+    "run_name": "rabbitmq-crash-rep0-retune-leader-e0-seed1",
+    "seed": 1,
+    "target": "rabbitmq-crash",
+    "test_script": "targets/rabbitmq-crash/test-script.py",
+    "topology_choices": null,
+    "topology_target": "targets/rabbitmq-crash/topology.nix",
+    "variant_name": "retune-leader"
+  }
+}

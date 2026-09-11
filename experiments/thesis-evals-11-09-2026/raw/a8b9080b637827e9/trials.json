@@ -1,0 +1,24 @@
+[
+  {
+    "dir": "20260911-134050-etcd-cluster-seed-3-etcd-v2-shrink-rep0-seed3",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/c7cqdcy7cnyfz7x8jx7dkf1yd0wqm1ny-nixos-test-driver-etcd-v2-shrink-rep0-seed3-c20260910-6335ae.drv'...",
+      "building '/nix/store/wgnrwlpysj6qfpd053sxynwb3vqvvnz6-vm-test-run-etcd-v2-shrink-rep0-seed3-c20260910-6335ae.drv'..."
+    ],
+    "name": "etcd-v2-shrink-rep0-seed3",
+    "status": "failed"
+  },
+  {
+    "dir": "20260911-134221-etcd-cluster-seed-3-etcd-v2-shrink-rep0-seed3",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/bvy41lyss7s7qg5g8kgq4kk3sfgqg45a-nixos-test-driver-etcd-v2-shrink-rep0-seed3-c20260910-6335ae.drv'...",
+      "building '/nix/store/275ln4zsp5x0p1qan8gf49rfq2g2cj6z-vm-test-run-etcd-v2-shrink-rep0-seed3-c20260910-6335ae.drv'..."
+    ],
+    "name": "etcd-v2-shrink-rep0-seed3",
+    "status": "failed"
+  }
+]

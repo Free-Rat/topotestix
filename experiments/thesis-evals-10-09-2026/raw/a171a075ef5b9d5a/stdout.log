@@ -1,0 +1,51 @@
+{
+  "passed": false,
+  "report": [
+    {
+      "message": "WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.\nCreated topic topotestix_large.\nWarning: --producer-property is deprecated and will be removed in a future version. Use --command-property instead.\n[2026-09-10 00:04:10,088] ERROR Error when sending message to topic topotestix_large with key: null, value: 1572864 bytes with error: (org.apache.kafka.clients.producer.internals.ErrorLoggingCallback)\norg.apache.kafka.common.errors.RecordBatchTooLargeException: The request included message batch larger than the configured segment size on the server.\nThe consumer rebalance protocol (KIP-848) is production-ready! Set group.protocol=consumer to try it out. See https://kafka.apache.org/documentation/#consumer_rebalance_protocol\n[2026-09-10 00:04:32,617] ERROR Error processing message, terminating consumer process:  (org.apache.kafka.tools.consumer.ConsoleConsumer)\norg.apache.kafka.common.errors.TimeoutException\nProcessed a total of 0 messages\nlarge message roundtrip consumed too few bytes: expected_at_least=1572864 actual=114\n",
+      "name": "kafka-large-message-on-kafka1",
+      "status": "failed"
+    },
+    {
+      "name": "kafka-multi-topic-on-kafka1",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-still-up-kafka1",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-still-up-kafka2",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-still-up-kafka3",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-roundtrip-on-kafka1",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-roundtrip-on-kafka2",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-roundtrip-on-kafka3",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-topic-visible-from-kafka1",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-topic-visible-from-kafka2",
+      "status": "passed"
+    },
+    {
+      "name": "kafka-topic-visible-from-kafka3",
+      "status": "passed"
+    }
+  ],
+  "runDir": "experiments/thesis-evals-10-09-2026/raw/a171a075ef5b9d5a.partial/run-store/20260910-000336-kafka-cluster-seed-41-kafka-sweep-rep1-seed41"
+}

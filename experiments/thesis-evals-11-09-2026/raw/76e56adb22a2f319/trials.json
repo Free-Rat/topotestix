@@ -1,0 +1,13 @@
+[
+  {
+    "dir": "20260911-072328-etcd-cluster-v1-seed-8-etcd-v1-sweep-rep1-seed8",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/4nw9ah38j3ibr10ja64dfzd40133p2sr-nixos-test-driver-etcd-v1-sweep-rep1-seed8-c20260910-6335ae.drv'...",
+      "building '/nix/store/fv59qh44and1dpnyj6cswcmp55idspxl-vm-test-run-etcd-v1-sweep-rep1-seed8-c20260910-6335ae.drv'..."
+    ],
+    "name": "etcd-v1-sweep-rep1-seed8",
+    "status": "passed"
+  }
+]

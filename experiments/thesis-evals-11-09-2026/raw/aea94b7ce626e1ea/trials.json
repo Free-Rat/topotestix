@@ -1,0 +1,13 @@
+[
+  {
+    "dir": "20260911-162838-rabbitmq-failure-domain-seed-1-rabbitmq-faildom-rep0-colocated-e0-seed1",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/1clfwjk4xai08sss368zhb6ygwf8h1w7-nixos-test-driver-rabbitmq-faildom-rep0-colocated-e0-seed1-c20260910-6335ae.drv'...",
+      "building '/nix/store/nz2vbg6l9zkp1h2vw74nwfj2ns0j7d6q-vm-test-run-rabbitmq-faildom-rep0-colocated-e0-seed1-c20260910-6335ae.drv'..."
+    ],
+    "name": "rabbitmq-faildom-rep0-colocated-e0-seed1",
+    "status": "failed"
+  }
+]

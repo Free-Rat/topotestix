@@ -1,0 +1,20 @@
+{
+  "artifacts": [],
+  "finishedAt": "2026-09-10T00:56:10.975983+00:00",
+  "gitHead": "f25ec56d6ae7a390ada52c7814c82d0c7def0df4",
+  "id": "20260910-005303-kafka-cluster-seed-9-kafka-shrink-rep0-seed9",
+  "name": "kafka-shrink-rep0-seed9",
+  "repetitionToken": "c20260909-c1ce16",
+  "reproduceCommand": "topotestix orchestrator run kafka-cluster --seed 9 --name kafka-shrink-rep0-seed9 --project-root /home/freerat/projects/topotestix --repetition-token c20260909-c1ce16 --topology-target /home/freerat/projects/topotestix/targets/kafka-cluster/topology.nix --config-target /home/freerat/projects/topotestix/targets/kafka-cluster/config.nix --base-module /home/freerat/projects/topotestix/targets/kafka-cluster/module.nix --test-script /home/freerat/projects/topotestix/targets/kafka-cluster/test-script.py --properties /home/freerat/projects/topotestix/targets/kafka-cluster/properties.nix --topology-choices '{\".kafkaVlans\": 0, \".roles.kafka\": 0}' --config-choices '{\"kafka\": {\".services.apache-kafka.jvmOptions\": 0, \".services.apache-kafka.settings.auto.create.topics.enable\": 0, \".services.apache-kafka.settings.default.replication.factor\": 0, \".services.apache-kafka.settings.log.retention.hours\": 0, \".services.apache-kafka.settings.log.segment.bytes\": 0, \".services.apache-kafka.settings.message.max.bytes\": 2, \".services.apache-kafka.settings.min.insync.replicas\": 1, \".services.apache-kafka.settings.num.io.threads\": 0, \".services.apache-kafka.settings.num.network.threads\": 0, \".services.apache-kafka.settings.offsets.topic.replication.factor\": 1, \".services.apache-kafka.settings.replica.fetch.max.bytes\": 2, \".services.apache-kafka.settings.transaction.state.log.min.isr\": 1, \".services.apache-kafka.settings.transaction.state.log.replication.factor\": 0, \".services.apache-kafka.settings.unclean.leader.election.enable\": 1, \".virtualisation.diskSize\": 1, \".virtualisation.memorySize\": 1}}'",
+  "resultPath": "experiments/thesis-evals-10-09-2026/raw/5f08fb8960ce963c.partial/run-store/20260910-005303-kafka-cluster-seed-9-kafka-shrink-rep0-seed9/result",
+  "runDir": "experiments/thesis-evals-10-09-2026/raw/5f08fb8960ce963c.partial/run-store/20260910-005303-kafka-cluster-seed-9-kafka-shrink-rep0-seed9",
+  "seed": 9,
+  "startedAt": "2026-09-10T00:53:03.824158+00:00",
+  "status": "failed",
+  "summary": {
+    "failed": 1,
+    "passed": 10,
+    "total": 11
+  },
+  "target": "kafka-cluster"
+}

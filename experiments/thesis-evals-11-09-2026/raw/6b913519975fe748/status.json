@@ -1,0 +1,40 @@
+{
+  "execution": "fresh",
+  "exit_code": 1,
+  "input_hash": "6a08ae17a8220b1f7fb92028083a84651035ec83dd92aea0f3f6381e279d32ea",
+  "state": "done",
+  "unit": {
+    "base_module": "targets/rabbitmq-disk/module.nix",
+    "config_choices": {
+      "rabbit": {
+        ".environment.etc.topotestix-disk-backlog-rate.text": 0,
+        ".environment.etc.topotestix-disk-capacity-safety-factor-milli.text": 0,
+        ".environment.etc.topotestix-disk-confirm-timeout-ms.text": 0,
+        ".environment.etc.topotestix-disk-consumer-outage-seconds.text": 0,
+        ".environment.etc.topotestix-disk-initial-free-mb.text": 2,
+        ".environment.etc.topotestix-disk-message-size.text": 0,
+        ".services.rabbitmq.configItems.disk_free_limit.absolute": 2,
+        ".virtualisation.diskSize": 0
+      }
+    },
+    "config_target": "targets/rabbitmq-disk/config.nix",
+    "entry_hash": "500e294abc191c814e96aaa109d2f78e8d4fac4d33e648eaae9cf2363303f34d",
+    "entry_id": "rabbitmq-disk",
+    "execution_index": 1,
+    "id": "6b913519975fe748",
+    "kind": "run",
+    "produces": [
+      "rabbitmq-disk-cells"
+    ],
+    "properties": "targets/rabbitmq-disk/properties.nix",
+    "repetition_index": 0,
+    "repetition_token": "c20260910-6335ae",
+    "run_name": "rabbitmq-disk-rep0-minimal-e1-seed1",
+    "seed": 1,
+    "target": "rabbitmq-disk",
+    "test_script": "targets/rabbitmq-disk/test-script.py",
+    "topology_choices": null,
+    "topology_target": "targets/rabbitmq-disk/topology.nix",
+    "variant_name": "minimal"
+  }
+}

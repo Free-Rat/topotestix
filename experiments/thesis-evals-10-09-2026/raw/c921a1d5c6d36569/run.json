@@ -1,0 +1,22 @@
+{
+  "artifacts": [
+    "crash-results.json"
+  ],
+  "finishedAt": "2026-09-10T06:05:00.409711+00:00",
+  "gitHead": "f25ec56d6ae7a390ada52c7814c82d0c7def0df4",
+  "id": "20260910-060327-rabbitmq-crash-seed-1-rabbitmq-crash-rep0-leader-e0-seed1",
+  "name": "rabbitmq-crash-rep0-leader-e0-seed1",
+  "repetitionToken": "c20260909-c1ce16",
+  "reproduceCommand": "topotestix orchestrator run rabbitmq-crash --seed 1 --name rabbitmq-crash-rep0-leader-e0-seed1 --project-root /home/freerat/projects/topotestix --repetition-token c20260909-c1ce16 --topology-target targets/rabbitmq-crash/topology.nix --config-target targets/rabbitmq-crash/config.nix --base-module targets/rabbitmq-crash/module.nix --test-script targets/rabbitmq-crash/test-script.py --properties targets/rabbitmq-crash/properties.nix --config-choices '{\"rabbit\": {\".environment.etc.topotestix-crash-target-role.text\": 1}}'",
+  "resultPath": "experiments/thesis-evals-10-09-2026/raw/c921a1d5c6d36569.partial/run-store/20260910-060327-rabbitmq-crash-seed-1-rabbitmq-crash-rep0-leader-e0-seed1/result",
+  "runDir": "experiments/thesis-evals-10-09-2026/raw/c921a1d5c6d36569.partial/run-store/20260910-060327-rabbitmq-crash-seed-1-rabbitmq-crash-rep0-leader-e0-seed1",
+  "seed": 1,
+  "startedAt": "2026-09-10T06:03:27.403400+00:00",
+  "status": "passed",
+  "summary": {
+    "failed": 0,
+    "passed": 3,
+    "total": 3
+  },
+  "target": "rabbitmq-crash"
+}

@@ -1,0 +1,22 @@
+{
+  "artifacts": [
+    "failure-domain-results.json"
+  ],
+  "finishedAt": "2026-09-10T06:01:43.127820+00:00",
+  "gitHead": "f25ec56d6ae7a390ada52c7814c82d0c7def0df4",
+  "id": "20260910-060003-rabbitmq-failure-domain-seed-1-rabbitmq-faildom-rep0-colocated-e0-seed1",
+  "name": "rabbitmq-faildom-rep0-colocated-e0-seed1",
+  "repetitionToken": "c20260909-c1ce16",
+  "reproduceCommand": "topotestix orchestrator run rabbitmq-failure-domain --seed 1 --name rabbitmq-faildom-rep0-colocated-e0-seed1 --project-root /home/freerat/projects/topotestix --repetition-token c20260909-c1ce16 --topology-target targets/rabbitmq-failure-domain/topology.nix --config-target targets/rabbitmq-failure-domain/config.nix --base-module targets/rabbitmq-failure-domain/module.nix --test-script targets/rabbitmq-failure-domain/test-script.py --properties targets/rabbitmq-failure-domain/properties.nix --config-choices '{\"rabbit\": {\".environment.etc.topotestix-failure-domain-placement.json.text\": 1}}'",
+  "resultPath": "experiments/thesis-evals-10-09-2026/raw/aea94b7ce626e1ea.partial/run-store/20260910-060003-rabbitmq-failure-domain-seed-1-rabbitmq-faildom-rep0-colocated-e0-seed1/result",
+  "runDir": "experiments/thesis-evals-10-09-2026/raw/aea94b7ce626e1ea.partial/run-store/20260910-060003-rabbitmq-failure-domain-seed-1-rabbitmq-faildom-rep0-colocated-e0-seed1",
+  "seed": 1,
+  "startedAt": "2026-09-10T06:00:03.685063+00:00",
+  "status": "failed",
+  "summary": {
+    "failed": 1,
+    "passed": 1,
+    "total": 2
+  },
+  "target": "rabbitmq-failure-domain"
+}

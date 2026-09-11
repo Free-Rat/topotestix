@@ -1,0 +1,11 @@
+{
+  "execution": "fresh",
+  "markers": [
+    "these 2 derivations will be built:",
+    "building '/nix/store/hby0yqq47wlzryx8gqfr5ki1izz11a6j-nixos-test-driver-rabbitmq-disk-serial-rep0-minimal-e0-seed1-c20260910-6335ae.drv'...",
+    "building '/nix/store/l9g92wwy4cdjcccjcp81vhl0wb4mh5m6-vm-test-run-rabbitmq-disk-serial-rep0-minimal-e0-seed1-c20260910-6335ae.drv'..."
+  ],
+  "note": "",
+  "source": "run-store-log",
+  "wall_s": 98.285
+}

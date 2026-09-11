@@ -1,0 +1,956 @@
+{
+  "schema_version": 1,
+  "run_id": "f3c2b57d0c644550b7d368d39b8566ce",
+  "contract": {
+    "volume_placement": "independent-vm-root-volumes",
+    "initial_free_target_mb": 500,
+    "disk_free_limit_mb": 47,
+    "backlog_rate": 25,
+    "consumer_outage_seconds": 2,
+    "planned_messages": 50,
+    "message_size": 16384,
+    "confirm_timeout_ms": 3000,
+    "capacity_safety_factor_milli": 1500,
+    "required_free_bytes": 51228800,
+    "naive_required_free_bytes": 1228800,
+    "capacity_sufficient": true,
+    "naive_capacity_sufficient": true
+  },
+  "operations": [
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000000",
+      "sequence": 0,
+      "attempt_wall_ns": 1789020727695640502,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020727756419735,
+      "latency_ms": 60.778
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000001",
+      "sequence": 1,
+      "attempt_wall_ns": 1789020727756625348,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020727768008080,
+      "latency_ms": 11.382
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000002",
+      "sequence": 2,
+      "attempt_wall_ns": 1789020727768025959,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020727782845161,
+      "latency_ms": 14.819
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000003",
+      "sequence": 3,
+      "attempt_wall_ns": 1789020727782862202,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020727806689253,
+      "latency_ms": 23.828
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000004",
+      "sequence": 4,
+      "attempt_wall_ns": 1789020727806814129,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020727820688518,
+      "latency_ms": 13.874
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000005",
+      "sequence": 5,
+      "attempt_wall_ns": 1789020727820705559,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020727834487758,
+      "latency_ms": 13.782
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000006",
+      "sequence": 6,
+      "attempt_wall_ns": 1789020727834504240,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020727849494134,
+      "latency_ms": 14.993
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000007",
+      "sequence": 7,
+      "attempt_wall_ns": 1789020727849523747,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020727867706784,
+      "latency_ms": 18.182
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000008",
+      "sequence": 8,
+      "attempt_wall_ns": 1789020727867730810,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020727878977211,
+      "latency_ms": 11.243
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000009",
+      "sequence": 9,
+      "attempt_wall_ns": 1789020727878993414,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020727892080832,
+      "latency_ms": 13.087
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000010",
+      "sequence": 10,
+      "attempt_wall_ns": 1789020727892096756,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020727907994028,
+      "latency_ms": 15.897
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000011",
+      "sequence": 11,
+      "attempt_wall_ns": 1789020727908012466,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020727921456912,
+      "latency_ms": 13.447
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000012",
+      "sequence": 12,
+      "attempt_wall_ns": 1789020727921481217,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020727933127948,
+      "latency_ms": 11.643
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000013",
+      "sequence": 13,
+      "attempt_wall_ns": 1789020727933144151,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020727948755353,
+      "latency_ms": 15.614
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000014",
+      "sequence": 14,
+      "attempt_wall_ns": 1789020727948778541,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020727965688511,
+      "latency_ms": 16.907
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000015",
+      "sequence": 15,
+      "attempt_wall_ns": 1789020727965704994,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020727979016741,
+      "latency_ms": 13.312
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000016",
+      "sequence": 16,
+      "attempt_wall_ns": 1789020727979033503,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020727992775753,
+      "latency_ms": 13.745
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000017",
+      "sequence": 17,
+      "attempt_wall_ns": 1789020727992800337,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728005373722,
+      "latency_ms": 12.57
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000018",
+      "sequence": 18,
+      "attempt_wall_ns": 1789020728005389926,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728020435972,
+      "latency_ms": 15.064
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000019",
+      "sequence": 19,
+      "attempt_wall_ns": 1789020728020470893,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728031789929,
+      "latency_ms": 11.322
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000020",
+      "sequence": 20,
+      "attempt_wall_ns": 1789020728031813954,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728050580306,
+      "latency_ms": 18.763
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000021",
+      "sequence": 21,
+      "attempt_wall_ns": 1789020728050633106,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728061736193,
+      "latency_ms": 11.102
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000022",
+      "sequence": 22,
+      "attempt_wall_ns": 1789020728061752955,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728077755268,
+      "latency_ms": 16.002
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000023",
+      "sequence": 23,
+      "attempt_wall_ns": 1789020728077771751,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728089901225,
+      "latency_ms": 12.13
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000024",
+      "sequence": 24,
+      "attempt_wall_ns": 1789020728089919384,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728103731475,
+      "latency_ms": 13.81
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000025",
+      "sequence": 25,
+      "attempt_wall_ns": 1789020728103747678,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728115153317,
+      "latency_ms": 11.405
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000026",
+      "sequence": 26,
+      "attempt_wall_ns": 1789020728115169520,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728129260697,
+      "latency_ms": 14.091
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000027",
+      "sequence": 27,
+      "attempt_wall_ns": 1789020728129277459,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728142456508,
+      "latency_ms": 13.197
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000028",
+      "sequence": 28,
+      "attempt_wall_ns": 1789020728142492546,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728153005335,
+      "latency_ms": 10.512
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000029",
+      "sequence": 29,
+      "attempt_wall_ns": 1789020728153022376,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728167165514,
+      "latency_ms": 14.143
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000030",
+      "sequence": 30,
+      "attempt_wall_ns": 1789020728167182556,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728183508094,
+      "latency_ms": 16.32
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000031",
+      "sequence": 31,
+      "attempt_wall_ns": 1789020728183524577,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728195078280,
+      "latency_ms": 11.554
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000032",
+      "sequence": 32,
+      "attempt_wall_ns": 1789020728195095321,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728206093926,
+      "latency_ms": 10.998
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000033",
+      "sequence": 33,
+      "attempt_wall_ns": 1789020728206110688,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728221033255,
+      "latency_ms": 14.922
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000034",
+      "sequence": 34,
+      "attempt_wall_ns": 1789020728221049737,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728240153003,
+      "latency_ms": 19.103
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000035",
+      "sequence": 35,
+      "attempt_wall_ns": 1789020728240170044,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728251703912,
+      "latency_ms": 11.533
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000036",
+      "sequence": 36,
+      "attempt_wall_ns": 1789020728251720116,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728265036613,
+      "latency_ms": 13.316
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000037",
+      "sequence": 37,
+      "attempt_wall_ns": 1789020728265052816,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728277169998,
+      "latency_ms": 12.117
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000038",
+      "sequence": 38,
+      "attempt_wall_ns": 1789020728277187319,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728291841975,
+      "latency_ms": 14.64
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000039",
+      "sequence": 39,
+      "attempt_wall_ns": 1789020728291858457,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728305518014,
+      "latency_ms": 13.659
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000040",
+      "sequence": 40,
+      "attempt_wall_ns": 1789020728305534218,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728321877077,
+      "latency_ms": 16.343
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000041",
+      "sequence": 41,
+      "attempt_wall_ns": 1789020728321894118,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728331638653,
+      "latency_ms": 9.745
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000042",
+      "sequence": 42,
+      "attempt_wall_ns": 1789020728331657650,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728347051505,
+      "latency_ms": 15.396
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000043",
+      "sequence": 43,
+      "attempt_wall_ns": 1789020728347075810,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728360916117,
+      "latency_ms": 13.837
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000044",
+      "sequence": 44,
+      "attempt_wall_ns": 1789020728360935114,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728379764043,
+      "latency_ms": 18.828
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000045",
+      "sequence": 45,
+      "attempt_wall_ns": 1789020728379782481,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728389259663,
+      "latency_ms": 9.477
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000046",
+      "sequence": 46,
+      "attempt_wall_ns": 1789020728389277822,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728405900326,
+      "latency_ms": 16.622
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000047",
+      "sequence": 47,
+      "attempt_wall_ns": 1789020728405917646,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728419758512,
+      "latency_ms": 13.843
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000048",
+      "sequence": 48,
+      "attempt_wall_ns": 1789020728419783096,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728430339465,
+      "latency_ms": 10.554
+    },
+    {
+      "op_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000049",
+      "sequence": 49,
+      "attempt_wall_ns": 1789020728430373548,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020728443065943,
+      "latency_ms": 12.692
+    }
+  ],
+  "telemetry": [
+    {
+      "wall_ns": 1789020722565115587,
+      "phase": "before_fill",
+      "node": "rabbit1",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4122378240,
+      "fs_available_bytes": 3890855936,
+      "rabbit_disk_free_bytes": 3890933760,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789020722785513993,
+      "phase": "before_fill",
+      "node": "rabbit2",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4122361856,
+      "fs_available_bytes": 3890839552,
+      "rabbit_disk_free_bytes": 3890855936,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789020723003131061,
+      "phase": "before_fill",
+      "node": "rabbit3",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4122361856,
+      "fs_available_bytes": 3890839552,
+      "rabbit_disk_free_bytes": 3890933760,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789020728177729721,
+      "phase": "after_fill",
+      "node": "rabbit1",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 755396608,
+      "fs_available_bytes": 523874304,
+      "rabbit_disk_free_bytes": 3890876416,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789020728253212167,
+      "phase": "after_fill",
+      "node": "rabbit2",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 755380224,
+      "fs_available_bytes": 523857920,
+      "rabbit_disk_free_bytes": 3890855936,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789020728331331366,
+      "phase": "after_fill",
+      "node": "rabbit3",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 755380224,
+      "fs_available_bytes": 523857920,
+      "rabbit_disk_free_bytes": 3890933760,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789020729321120633,
+      "phase": "after_publish",
+      "node": "rabbit1",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 754561024,
+      "fs_available_bytes": 523038720,
+      "rabbit_disk_free_bytes": 3890876416,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789020729402977183,
+      "phase": "after_publish",
+      "node": "rabbit2",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 754544640,
+      "fs_available_bytes": 523022336,
+      "rabbit_disk_free_bytes": 3890855936,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789020729481315581,
+      "phase": "after_publish",
+      "node": "rabbit3",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 754544640,
+      "fs_available_bytes": 523022336,
+      "rabbit_disk_free_bytes": 523857920,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789020729595335960,
+      "phase": "recovery_poll",
+      "node": "rabbit1",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4121542656,
+      "fs_available_bytes": 3890020352,
+      "rabbit_disk_free_bytes": 3890876416,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789020729670096743,
+      "phase": "recovery_poll",
+      "node": "rabbit2",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4121526272,
+      "fs_available_bytes": 3890003968,
+      "rabbit_disk_free_bytes": 3890855936,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789020729745551307,
+      "phase": "recovery_poll",
+      "node": "rabbit3",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4121526272,
+      "fs_available_bytes": 3890003968,
+      "rabbit_disk_free_bytes": 523857920,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789020733188584757,
+      "phase": "after_recovery",
+      "node": "rabbit1",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4121513984,
+      "fs_available_bytes": 3889991680,
+      "rabbit_disk_free_bytes": 523874304,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789020733267624978,
+      "phase": "after_recovery",
+      "node": "rabbit2",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4121497600,
+      "fs_available_bytes": 3889975296,
+      "rabbit_disk_free_bytes": 523857920,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789020733346849228,
+      "phase": "after_recovery",
+      "node": "rabbit3",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4121497600,
+      "fs_available_bytes": 3889975296,
+      "rabbit_disk_free_bytes": 523857920,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    }
+  ],
+  "recovered": [
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000000",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000000",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000001",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000001",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000002",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000002",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000003",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000003",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000004",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000004",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000005",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000005",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000006",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000006",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000007",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000007",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000008",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000008",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000009",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000009",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000010",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000010",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000011",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000011",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000012",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000012",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000013",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000013",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000014",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000014",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000015",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000015",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000016",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000016",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000017",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000017",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000018",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000018",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000019",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000019",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000020",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000020",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000021",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000021",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000022",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000022",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000023",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000023",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000024",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000024",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000025",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000025",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000026",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000026",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000027",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000027",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000028",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000028",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000029",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000029",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000030",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000030",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000031",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000031",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000032",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000032",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000033",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000033",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000034",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000034",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000035",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000035",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000036",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000036",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000037",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000037",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000038",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000038",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000039",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000039",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000040",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000040",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000041",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000041",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000042",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000042",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000043",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000043",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000044",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000044",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000045",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000045",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000046",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000046",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000047",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000047",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000048",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000048",
+      "redelivered": false
+    },
+    {
+      "message_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000049",
+      "body_id": "f3c2b57d0c644550b7d368d39b8566ce/backlog/00000049",
+      "redelivered": false
+    }
+  ],
+  "queue_before": {
+    "name": "topotestix_disk_capacity",
+    "type": "quorum",
+    "leader": "rabbit@rabbit1",
+    "members": [
+      "rabbit@rabbit1",
+      "rabbit@rabbit2",
+      "rabbit@rabbit3"
+    ],
+    "online": [
+      "rabbit@rabbit1",
+      "rabbit@rabbit2",
+      "rabbit@rabbit3"
+    ],
+    "state": "running"
+  }
+}

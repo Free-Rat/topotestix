@@ -1,0 +1,8 @@
+{
+  "configChoices": {
+    "rabbit": {
+      ".environment.etc.topotestix-crash-target-role.text": 1
+    }
+  },
+  "topologyChoices": {}
+}

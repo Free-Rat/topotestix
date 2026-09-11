@@ -1,0 +1,29 @@
+{
+  "execution": "fresh",
+  "exit_code": 1,
+  "input_hash": "a7ce8517956f2acfa49837f7c58f0f837fd6a543ef6e479aee094eb69257a8ad",
+  "state": "done",
+  "unit": {
+    "base_module": null,
+    "config_choices": null,
+    "config_target": "experiments/kafka-cluster/kafka-cluster-min-log-segment.nix",
+    "entry_hash": "082c192a78b4946d615a9da1f22c5fcbc5459618726aef27465728efd1533001",
+    "entry_id": "kafka-min-configs",
+    "execution_index": 0,
+    "id": "c8613467e122a7b5",
+    "kind": "run",
+    "produces": [
+      "kafka-min-configs"
+    ],
+    "properties": null,
+    "repetition_index": 0,
+    "repetition_token": "c20260909-c1ce16",
+    "run_name": "kafka-min-configs-rep0-min-log-segment-e0-seed1",
+    "seed": 1,
+    "target": "kafka-cluster",
+    "test_script": null,
+    "topology_choices": null,
+    "topology_target": null,
+    "variant_name": "min-log-segment"
+  }
+}

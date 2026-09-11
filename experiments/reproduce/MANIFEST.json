@@ -1,0 +1,490 @@
+{
+  "entries": [
+    {
+      "id": "kafka-sweep",
+      "kind": "sweep",
+      "notes": "13 pass / 37 fail; classes 18 broker-message-max + 19 log-segment; rep1 = fresh determinism re-run (thesis k-30 zero-flip).",
+      "produces": [
+        "kafka-sweep",
+        "kafka-crosstab",
+        "determinism"
+      ],
+      "repetitions": 2,
+      "seeds": "1..50",
+      "target": "kafka-cluster"
+    },
+    {
+      "id": "kafka-shrink",
+      "kind": "shrink",
+      "notes": "Seed 13 keeps RecordTooLargeException; seed 9 collapses RecordBatchTooLargeException -> RecordTooLargeException (thesis 6.5.2 limitation). Deviation from draft: repetitions 1 (plan determinism covers sweeps; shrink claims verified from the fresh execution + minimal map).",
+      "produces": [
+        "kafka-shrink"
+      ],
+      "repetitions": 1,
+      "seeds": [
+        9,
+        13
+      ],
+      "target": "kafka-cluster"
+    },
+    {
+      "id": "kafka-min-configs",
+      "kind": "run",
+      "notes": "Class-isolating minimized configs via --config-target override; each expect 10 pass + 1 fail (RecordTooLargeException / RecordBatchTooLargeException).",
+      "produces": [
+        "kafka-min-configs"
+      ],
+      "repetitions": 1,
+      "seeds": [
+        1
+      ],
+      "target": "kafka-cluster",
+      "variants": [
+        {
+          "config_target": "experiments/kafka-cluster/kafka-cluster-min-message-max.nix",
+          "name": "min-message-max"
+        },
+        {
+          "config_target": "experiments/kafka-cluster/kafka-cluster-min-log-segment.nix",
+          "name": "min-log-segment"
+        }
+      ]
+    },
+    {
+      "id": "etcd-v1-sweep",
+      "kind": "sweep",
+      "notes": "39 pass / 11 fail; failing seeds 5,7,20,21,25,29,30,34,38,42,49; class invalid-etcd-election-timeout-heartbeat-ratio. Target is the staged reconstruction; per-seed equivalence to the 20260616 summary verified.",
+      "produces": [
+        "etcd-v1-sweep",
+        "determinism"
+      ],
+      "repetitions": 2,
+      "seeds": "1..50",
+      "target": "etcd-cluster-v1"
+    },
+    {
+      "id": "etcd-v2-sweep",
+      "kind": "sweep",
+      "notes": "37 pass / 13 fail; failing seeds 3,6,12,13,14,28,33,34,38,40,41,42,43; quota correlation 2MiB 0/13, 8MiB 20/0, 64MiB 17/0.",
+      "produces": [
+        "etcd-v2-sweep",
+        "etcd-v2-quota-correlation",
+        "determinism"
+      ],
+      "repetitions": 2,
+      "seeds": "1..50",
+      "target": "etcd-cluster"
+    },
+    {
+      "id": "etcd-v2-shrink",
+      "kind": "shrink",
+      "notes": "Both seeds converge to identical minimal map (1024 MiB mem, 2048 MiB disk, hb 100, election 1250, snapshot 10000, quota 2MiB); expect 11/1/12.",
+      "produces": [
+        "etcd-v2-shrink"
+      ],
+      "repetitions": 1,
+      "seeds": [
+        3,
+        40
+      ],
+      "target": "etcd-cluster"
+    },
+    {
+      "exhaustive_dims": [
+        {
+          "n": 2,
+          "path": ".virtualisation.memorySize"
+        },
+        {
+          "n": 2,
+          "path": ".virtualisation.diskSize"
+        },
+        {
+          "n": 2,
+          "path": ".services.etcd.extraConf.HEARTBEAT_INTERVAL"
+        },
+        {
+          "n": 2,
+          "path": ".services.etcd.extraConf.ELECTION_TIMEOUT"
+        },
+        {
+          "n": 2,
+          "path": ".services.etcd.extraConf.SNAPSHOT_COUNT"
+        },
+        {
+          "n": 3,
+          "path": ".services.etcd.extraConf.QUOTA_BACKEND_BYTES"
+        }
+      ],
+      "exhaustive_role": "etcd",
+      "id": "etcd-v2-exhaustive",
+      "kind": "exhaustive",
+      "notes": "96 forced cells (TODO EXPERIMENT in 06-evaluation.typ:227); expected 32 fails (all QUOTA idx0 = 2 MiB, extending the quota split at 06-evaluation.typ:221 to the full space: 32 cells per quota value) / 64 passes; checked by claim e2-15.",
+      "produces": [
+        "etcd-v2-exhaustive"
+      ],
+      "repetitions": 1,
+      "seeds": null,
+      "target": "etcd-cluster",
+      "topology_choices": {
+        ".etcdVlans": 0,
+        ".roles.etcd": 0
+      }
+    },
+    {
+      "id": "rabbitmq-disk",
+      "kind": "run",
+      "notes": "Positive control (no forced config; seed-1 fuzz draw) x2; Cell X x3 (recover counts 22/22/23 historically, range); minimal cell x2.",
+      "produces": [
+        "rabbitmq-disk-cells"
+      ],
+      "repetitions": 1,
+      "seeds": [
+        1
+      ],
+      "target": "rabbitmq-disk",
+      "variants": [
+        {
+          "base_module": "targets/rabbitmq-disk/module.nix",
+          "config_target": "targets/rabbitmq-disk/config.nix",
+          "executions": 2,
+          "name": "positive",
+          "properties": "targets/rabbitmq-disk/properties.nix",
+          "test_script": "targets/rabbitmq-disk/test-script.py",
+          "topology_target": "targets/rabbitmq-disk/topology.nix"
+        },
+        {
+          "base_module": "targets/rabbitmq-disk/module.nix",
+          "config_choices": {
+            "rabbit": {
+              ".environment.etc.topotestix-disk-backlog-rate.text": 1,
+              ".environment.etc.topotestix-disk-capacity-safety-factor-milli.text": 1,
+              ".environment.etc.topotestix-disk-confirm-timeout-ms.text": 0,
+              ".environment.etc.topotestix-disk-consumer-outage-seconds.text": 1,
+              ".environment.etc.topotestix-disk-initial-free-mb.text": 2,
+              ".environment.etc.topotestix-disk-message-size.text": 2,
+              ".services.rabbitmq.configItems.disk_free_limit.absolute": 2,
+              ".virtualisation.diskSize": 1
+            }
+          },
+          "config_target": "targets/rabbitmq-disk/config.nix",
+          "executions": 3,
+          "name": "cell-x",
+          "properties": "targets/rabbitmq-disk/properties.nix",
+          "test_script": "targets/rabbitmq-disk/test-script.py",
+          "topology_target": "targets/rabbitmq-disk/topology.nix"
+        },
+        {
+          "base_module": "targets/rabbitmq-disk/module.nix",
+          "config_choices": {
+            "rabbit": {
+              ".environment.etc.topotestix-disk-backlog-rate.text": 0,
+              ".environment.etc.topotestix-disk-capacity-safety-factor-milli.text": 0,
+              ".environment.etc.topotestix-disk-confirm-timeout-ms.text": 0,
+              ".environment.etc.topotestix-disk-consumer-outage-seconds.text": 0,
+              ".environment.etc.topotestix-disk-initial-free-mb.text": 2,
+              ".environment.etc.topotestix-disk-message-size.text": 0,
+              ".services.rabbitmq.configItems.disk_free_limit.absolute": 2,
+              ".virtualisation.diskSize": 0
+            }
+          },
+          "config_target": "targets/rabbitmq-disk/config.nix",
+          "executions": 2,
+          "name": "minimal",
+          "properties": "targets/rabbitmq-disk/properties.nix",
+          "test_script": "targets/rabbitmq-disk/test-script.py",
+          "topology_target": "targets/rabbitmq-disk/topology.nix"
+        }
+      ]
+    },
+    {
+      "id": "rabbitmq-faildom",
+      "kind": "run",
+      "notes": "Spread: pass 2/2, 11/11 exactly-once. Colocated: recovery passes 11/11, availability contract fails (OuterCommandTimeout).",
+      "produces": [
+        "rabbitmq-faildom-cells"
+      ],
+      "repetitions": 1,
+      "seeds": [
+        1
+      ],
+      "target": "rabbitmq-failure-domain",
+      "variants": [
+        {
+          "base_module": "targets/rabbitmq-failure-domain/module.nix",
+          "config_choices": {
+            "rabbit": {
+              ".environment.etc.topotestix-failure-domain-placement.json.text": 0
+            }
+          },
+          "config_target": "targets/rabbitmq-failure-domain/config.nix",
+          "name": "spread",
+          "properties": "targets/rabbitmq-failure-domain/properties.nix",
+          "test_script": "targets/rabbitmq-failure-domain/test-script.py",
+          "topology_target": "targets/rabbitmq-failure-domain/topology.nix"
+        },
+        {
+          "base_module": "targets/rabbitmq-failure-domain/module.nix",
+          "config_choices": {
+            "rabbit": {
+              ".environment.etc.topotestix-failure-domain-placement.json.text": 1
+            }
+          },
+          "config_target": "targets/rabbitmq-failure-domain/config.nix",
+          "executions": 2,
+          "name": "colocated",
+          "properties": "targets/rabbitmq-failure-domain/properties.nix",
+          "test_script": "targets/rabbitmq-failure-domain/test-script.py",
+          "topology_target": "targets/rabbitmq-failure-domain/topology.nix"
+        }
+      ]
+    },
+    {
+      "id": "rabbitmq-crash",
+      "kind": "run",
+      "notes": "6 cells; follower and follower-repB share the identical unforced seed-1 map (thesis appendix rows r-20/r-21). All expect pass 3/3, 50/50 confirmed, 0 ambiguous.",
+      "produces": [
+        "rabbitmq-crash-cells"
+      ],
+      "repetitions": 1,
+      "seeds": [
+        1
+      ],
+      "target": "rabbitmq-crash",
+      "variants": [
+        {
+          "base_module": "targets/rabbitmq-crash/module.nix",
+          "config_target": "targets/rabbitmq-crash/config.nix",
+          "name": "follower-repA",
+          "properties": "targets/rabbitmq-crash/properties.nix",
+          "test_script": "targets/rabbitmq-crash/test-script.py",
+          "topology_target": "targets/rabbitmq-crash/topology.nix"
+        },
+        {
+          "base_module": "targets/rabbitmq-crash/module.nix",
+          "config_target": "targets/rabbitmq-crash/config.nix",
+          "name": "follower-repB",
+          "properties": "targets/rabbitmq-crash/properties.nix",
+          "test_script": "targets/rabbitmq-crash/test-script.py",
+          "topology_target": "targets/rabbitmq-crash/topology.nix"
+        },
+        {
+          "base_module": "targets/rabbitmq-crash/module.nix",
+          "config_choices": {
+            "rabbit": {
+              ".environment.etc.topotestix-crash-target-role.text": 1
+            }
+          },
+          "config_target": "targets/rabbitmq-crash/config.nix",
+          "name": "leader",
+          "properties": "targets/rabbitmq-crash/properties.nix",
+          "test_script": "targets/rabbitmq-crash/test-script.py",
+          "topology_target": "targets/rabbitmq-crash/topology.nix"
+        },
+        {
+          "base_module": "targets/rabbitmq-crash/module.nix",
+          "config_choices": {
+            "rabbit": {
+              ".environment.etc.topotestix-crash-timing.text": 1
+            }
+          },
+          "config_target": "targets/rabbitmq-crash/config.nix",
+          "name": "during-publish",
+          "properties": "targets/rabbitmq-crash/properties.nix",
+          "test_script": "targets/rabbitmq-crash/test-script.py",
+          "topology_target": "targets/rabbitmq-crash/topology.nix"
+        },
+        {
+          "base_module": "targets/rabbitmq-crash/module.nix",
+          "config_choices": {
+            "rabbit": {
+              ".environment.etc.topotestix-crash-delay.text": 1,
+              ".environment.etc.topotestix-crash-publish-count.text": 1,
+              ".environment.etc.topotestix-crash-target-role.text": 0,
+              ".environment.etc.topotestix-crash-timing.text": 1
+            }
+          },
+          "config_target": "targets/rabbitmq-crash/config.nix",
+          "name": "retune-follower",
+          "properties": "targets/rabbitmq-crash/properties.nix",
+          "test_script": "targets/rabbitmq-crash/test-script.py",
+          "topology_target": "targets/rabbitmq-crash/topology.nix"
+        },
+        {
+          "base_module": "targets/rabbitmq-crash/module.nix",
+          "config_choices": {
+            "rabbit": {
+              ".environment.etc.topotestix-crash-delay.text": 1,
+              ".environment.etc.topotestix-crash-publish-count.text": 1,
+              ".environment.etc.topotestix-crash-target-role.text": 1,
+              ".environment.etc.topotestix-crash-timing.text": 1
+            }
+          },
+          "config_target": "targets/rabbitmq-crash/config.nix",
+          "name": "retune-leader",
+          "properties": "targets/rabbitmq-crash/properties.nix",
+          "test_script": "targets/rabbitmq-crash/test-script.py",
+          "topology_target": "targets/rabbitmq-crash/topology.nix"
+        }
+      ]
+    },
+    {
+      "id": "rabbitmq-disk-serial",
+      "jobs": 1,
+      "kind": "run",
+      "notes": "Parallelism probe: same disk cells executed strictly serially (jobs=1) for analysis/parallelism.json speedup comparison.",
+      "produces": [
+        "parallelism"
+      ],
+      "repetitions": 1,
+      "seeds": [
+        1
+      ],
+      "target": "rabbitmq-disk",
+      "variants": [
+        {
+          "base_module": "targets/rabbitmq-disk/module.nix",
+          "config_target": "targets/rabbitmq-disk/config.nix",
+          "executions": 2,
+          "name": "positive",
+          "properties": "targets/rabbitmq-disk/properties.nix",
+          "test_script": "targets/rabbitmq-disk/test-script.py",
+          "topology_target": "targets/rabbitmq-disk/topology.nix"
+        },
+        {
+          "base_module": "targets/rabbitmq-disk/module.nix",
+          "config_choices": {
+            "rabbit": {
+              ".environment.etc.topotestix-disk-backlog-rate.text": 1,
+              ".environment.etc.topotestix-disk-capacity-safety-factor-milli.text": 1,
+              ".environment.etc.topotestix-disk-confirm-timeout-ms.text": 0,
+              ".environment.etc.topotestix-disk-consumer-outage-seconds.text": 1,
+              ".environment.etc.topotestix-disk-initial-free-mb.text": 2,
+              ".environment.etc.topotestix-disk-message-size.text": 2,
+              ".services.rabbitmq.configItems.disk_free_limit.absolute": 2,
+              ".virtualisation.diskSize": 1
+            }
+          },
+          "config_target": "targets/rabbitmq-disk/config.nix",
+          "name": "cell-x",
+          "properties": "targets/rabbitmq-disk/properties.nix",
+          "test_script": "targets/rabbitmq-disk/test-script.py",
+          "topology_target": "targets/rabbitmq-disk/topology.nix"
+        },
+        {
+          "base_module": "targets/rabbitmq-disk/module.nix",
+          "config_choices": {
+            "rabbit": {
+              ".environment.etc.topotestix-disk-backlog-rate.text": 0,
+              ".environment.etc.topotestix-disk-capacity-safety-factor-milli.text": 0,
+              ".environment.etc.topotestix-disk-confirm-timeout-ms.text": 0,
+              ".environment.etc.topotestix-disk-consumer-outage-seconds.text": 0,
+              ".environment.etc.topotestix-disk-initial-free-mb.text": 2,
+              ".environment.etc.topotestix-disk-message-size.text": 0,
+              ".services.rabbitmq.configItems.disk_free_limit.absolute": 2,
+              ".virtualisation.diskSize": 0
+            }
+          },
+          "config_target": "targets/rabbitmq-disk/config.nix",
+          "name": "minimal",
+          "properties": "targets/rabbitmq-disk/properties.nix",
+          "test_script": "targets/rabbitmq-disk/test-script.py",
+          "topology_target": "targets/rabbitmq-disk/topology.nix"
+        }
+      ]
+    },
+    {
+      "id": "resolution-kafka-cluster",
+      "kind": "fuzz_only",
+      "notes": "Pure per-seed resolution (topology + config) for uniqueness/marginals/pairwise.",
+      "produces": [
+        "resolution"
+      ],
+      "repetitions": 1,
+      "seeds": "1..50",
+      "target": "kafka-cluster"
+    },
+    {
+      "id": "resolution-etcd-cluster",
+      "kind": "fuzz_only",
+      "notes": "etcd v2 resolution space (96 cells, 50 sampled).",
+      "produces": [
+        "resolution"
+      ],
+      "repetitions": 1,
+      "seeds": "1..50",
+      "target": "etcd-cluster"
+    },
+    {
+      "id": "resolution-etcd-cluster-v1",
+      "kind": "fuzz_only",
+      "notes": "etcd v1 reconstructed space.",
+      "produces": [
+        "resolution"
+      ],
+      "repetitions": 1,
+      "seeds": "1..50",
+      "target": "etcd-cluster-v1"
+    },
+    {
+      "id": "resolution-rabbitmq-disk",
+      "kind": "fuzz_only",
+      "notes": "What a seed sweep would resolve to (thesis runs designed cells instead).",
+      "produces": [
+        "resolution"
+      ],
+      "repetitions": 1,
+      "seeds": "1..50",
+      "target": "rabbitmq-disk"
+    },
+    {
+      "id": "resolution-rabbitmq-failure-domain",
+      "kind": "fuzz_only",
+      "notes": "4-cell space fully coverable by 50 seeds.",
+      "produces": [
+        "resolution"
+      ],
+      "repetitions": 1,
+      "seeds": "1..50",
+      "target": "rabbitmq-failure-domain"
+    },
+    {
+      "id": "resolution-rabbitmq-crash",
+      "kind": "fuzz_only",
+      "notes": "24-cell space fully coverable by 50 seeds.",
+      "produces": [
+        "resolution"
+      ],
+      "repetitions": 1,
+      "seeds": "1..50",
+      "target": "rabbitmq-crash"
+    },
+    {
+      "id": "test-suites",
+      "kind": "test_suites",
+      "notes": "Python unittest (expect 57) + nix-unit (expect 114).",
+      "produces": [
+        "test-suites"
+      ],
+      "repetitions": 1,
+      "seeds": null,
+      "target": null,
+      "variants": [
+        {
+          "executions": 1,
+          "name": "python"
+        },
+        {
+          "executions": 1,
+          "name": "nix"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "derived_from": "study/repro-discovery/manifest-draft.json",
+    "description": "Thesis evaluation reproduction campaign - single source of truth",
+    "freshness_rule": "distinct --name per unit forces a fresh nix drv (verified in 0d-cost-probe.md)",
+    "seed_rule": "sweep seed s -> topology fuzzer seed s, config fuzzer seed s+1+roleIndex (lib/orchestrate.nix:96)"
+  }
+}

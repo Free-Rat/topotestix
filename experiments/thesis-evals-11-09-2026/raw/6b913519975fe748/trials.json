@@ -1,0 +1,13 @@
+[
+  {
+    "dir": "20260911-161201-rabbitmq-disk-seed-1-rabbitmq-disk-rep0-minimal-e1-seed1",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/jddbv916scnhp6aw1axpkzclns525wpz-nixos-test-driver-rabbitmq-disk-rep0-minimal-e1-seed1-c20260910-6335ae.drv'...",
+      "building '/nix/store/bxahir2jagv8872pkvb0c135qbldfhgr-vm-test-run-rabbitmq-disk-rep0-minimal-e1-seed1-c20260910-6335ae.drv'..."
+    ],
+    "name": "rabbitmq-disk-rep0-minimal-e1-seed1",
+    "status": "failed"
+  }
+]

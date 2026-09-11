@@ -1,0 +1,17 @@
+{
+  "etcd-v1-sweep": {
+    "flips": 0,
+    "present": true,
+    "seed_diffs": []
+  },
+  "etcd-v2-sweep": {
+    "flips": 0,
+    "present": true,
+    "seed_diffs": []
+  },
+  "kafka-sweep": {
+    "flips": 0,
+    "present": true,
+    "seed_diffs": []
+  }
+}

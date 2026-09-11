@@ -1,0 +1,33 @@
+{
+  "execution": "fresh",
+  "exit_code": 1,
+  "input_hash": "3a0cd3bf4c1c00e97f03aa47f7ffdc6e8019e466e5b2f0c4e7ff8b82ff16a153",
+  "state": "done",
+  "unit": {
+    "base_module": "targets/rabbitmq-failure-domain/module.nix",
+    "config_choices": {
+      "rabbit": {
+        ".environment.etc.topotestix-failure-domain-placement.json.text": 1
+      }
+    },
+    "config_target": "targets/rabbitmq-failure-domain/config.nix",
+    "entry_hash": "f799cfd39683050d2278f8d3c9809e65aab52160d76e11e2a7bdc296a0e0834d",
+    "entry_id": "rabbitmq-faildom",
+    "execution_index": 1,
+    "id": "f78f8b2b2566b5dd",
+    "kind": "run",
+    "produces": [
+      "rabbitmq-faildom-cells"
+    ],
+    "properties": "targets/rabbitmq-failure-domain/properties.nix",
+    "repetition_index": 0,
+    "repetition_token": "c20260909-c1ce16",
+    "run_name": "rabbitmq-faildom-rep0-colocated-e1-seed1",
+    "seed": 1,
+    "target": "rabbitmq-failure-domain",
+    "test_script": "targets/rabbitmq-failure-domain/test-script.py",
+    "topology_choices": null,
+    "topology_target": "targets/rabbitmq-failure-domain/topology.nix",
+    "variant_name": "colocated"
+  }
+}

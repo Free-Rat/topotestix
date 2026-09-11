@@ -1,0 +1,11 @@
+{
+  "execution": "fresh",
+  "markers": [
+    "these 2 derivations will be built:",
+    "building '/nix/store/7r8dc4f66ksny7ybz8fx4afmzd1a4f21-nixos-test-driver-kafka-min-configs-rep0-min-log-segment-e0-seed1-c20260909-c1ce16.drv'...",
+    "building '/nix/store/3jmjsa0yp1j1qx129dxf93sfdxdz23gg-vm-test-run-kafka-min-configs-rep0-min-log-segment-e0-seed1-c20260909-c1ce16.drv'..."
+  ],
+  "note": "",
+  "source": "run-store-log",
+  "wall_s": 187.696
+}

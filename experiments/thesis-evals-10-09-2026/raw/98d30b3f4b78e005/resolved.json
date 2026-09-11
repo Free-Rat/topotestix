@@ -1,0 +1,91 @@
+{
+  "nodeConfigs": {
+    "rabbit1": {
+      "virtualisation": {
+        "vlans": [
+          1
+        ]
+      }
+    },
+    "rabbit2": {
+      "virtualisation": {
+        "vlans": [
+          1
+        ]
+      }
+    },
+    "rabbit3": {
+      "virtualisation": {
+        "vlans": [
+          1
+        ]
+      }
+    }
+  },
+  "nodeRoles": {
+    "rabbit1": "rabbit",
+    "rabbit2": "rabbit",
+    "rabbit3": "rabbit"
+  },
+  "roleFuzz": {
+    "rabbit": {
+      "choices": {
+        ".environment.etc.topotestix-disk-backlog-rate.text": 1,
+        ".environment.etc.topotestix-disk-capacity-safety-factor-milli.text": 1,
+        ".environment.etc.topotestix-disk-confirm-timeout-ms.text": 1,
+        ".environment.etc.topotestix-disk-consumer-outage-seconds.text": 0,
+        ".environment.etc.topotestix-disk-initial-free-mb.text": 0,
+        ".environment.etc.topotestix-disk-message-size.text": 2,
+        ".services.rabbitmq.configItems.disk_free_limit.absolute": 0,
+        ".virtualisation.diskSize": 1
+      },
+      "result": {
+        "environment": {
+          "etc": {
+            "topotestix-disk-backlog-rate": {
+              "text": "25"
+            },
+            "topotestix-disk-capacity-safety-factor-milli": {
+              "text": "1500"
+            },
+            "topotestix-disk-confirm-timeout-ms": {
+              "text": "3000"
+            },
+            "topotestix-disk-consumer-outage-seconds": {
+              "text": "2"
+            },
+            "topotestix-disk-initial-free-mb": {
+              "text": "500"
+            },
+            "topotestix-disk-message-size": {
+              "text": "16384"
+            }
+          }
+        },
+        "services": {
+          "rabbitmq": {
+            "configItems": {
+              "disk_free_limit.absolute": "50MB"
+            }
+          }
+        },
+        "virtualisation": {
+          "diskSize": 4096
+        }
+      },
+      "seed": "2"
+    }
+  },
+  "topology": {
+    "rabbitVlans": [
+      1
+    ],
+    "roles": {
+      "rabbit": 3
+    }
+  },
+  "topologyChoices": {
+    ".rabbitVlans": 0,
+    ".roles.rabbit": 0
+  }
+}

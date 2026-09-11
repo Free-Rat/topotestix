@@ -1,0 +1,9 @@
+group,units,seeds,fresh,cache_replay,wall_total_s,compute_hours,peak_rss_max_bytes,space_size
+etcd-cluster,198,50,204,0,18508.8,0.394564,1088978944,96
+etcd-cluster-v1,100,50,100,0,26850.3,0.198956,1086943232,64
+kafka-cluster,104,50,127,0,23237.1,0.209111,1096753152,746496
+rabbitmq-crash,6,1,6,0,546.031,0.0118722,1098366976,24
+rabbitmq-disk,7,1,7,0,1142.69,0.013875,1099071488,864
+rabbitmq-disk-serial,4,1,4,0,501.501,0.00793333,1099063296,864
+rabbitmq-faildom,3,1,3,0,263.348,0.00592778,1097990144,4
+test-suites,2,0,0,0,2.186,0.000191667,27123712,

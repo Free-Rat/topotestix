@@ -1,0 +1,385 @@
+{
+  "failed": 37,
+  "failure_classes": {
+    "broker-message-max-too-small": 18,
+    "log-segment-too-small": 19
+  },
+  "passed": 13,
+  "per_seed": [
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "broker-message-max-too-small",
+      "seed": 1,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 2,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 3,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "log-segment-too-small",
+      "seed": 4,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "broker-message-max-too-small",
+      "seed": 5,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 6,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "log-segment-too-small",
+      "seed": 7,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "log-segment-too-small",
+      "seed": 8,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "log-segment-too-small",
+      "seed": 9,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "log-segment-too-small",
+      "seed": 10,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "broker-message-max-too-small",
+      "seed": 11,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "broker-message-max-too-small",
+      "seed": 12,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "broker-message-max-too-small",
+      "seed": 13,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "broker-message-max-too-small",
+      "seed": 14,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "log-segment-too-small",
+      "seed": 15,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "broker-message-max-too-small",
+      "seed": 16,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "log-segment-too-small",
+      "seed": 17,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "log-segment-too-small",
+      "seed": 18,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "log-segment-too-small",
+      "seed": 19,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "broker-message-max-too-small",
+      "seed": 20,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 21,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "log-segment-too-small",
+      "seed": 22,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "broker-message-max-too-small",
+      "seed": 23,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 24,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 25,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 26,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 27,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "log-segment-too-small",
+      "seed": 28,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 29,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 30,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "broker-message-max-too-small",
+      "seed": 31,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "log-segment-too-small",
+      "seed": 32,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "broker-message-max-too-small",
+      "seed": 33,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "log-segment-too-small",
+      "seed": 34,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "broker-message-max-too-small",
+      "seed": 35,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "broker-message-max-too-small",
+      "seed": 36,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "log-segment-too-small",
+      "seed": 37,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 38,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 39,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "broker-message-max-too-small",
+      "seed": 40,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "log-segment-too-small",
+      "seed": 41,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 42,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "broker-message-max-too-small",
+      "seed": 43,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "broker-message-max-too-small",
+      "seed": 44,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "log-segment-too-small",
+      "seed": 45,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "broker-message-max-too-small",
+      "seed": 46,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "log-segment-too-small",
+      "seed": 47,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "log-segment-too-small",
+      "seed": 48,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "broker-message-max-too-small",
+      "seed": 49,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [
+        "kafka-large-message-on-kafka1"
+      ],
+      "failure_class": "log-segment-too-small",
+      "seed": 50,
+      "status": "failed"
+    }
+  ],
+  "seeds_run": 50
+}

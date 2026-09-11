@@ -1,0 +1,31 @@
+{
+  "note": "Bounded projection of the *.log files, which are gitignored (too large for git) but are read by analyze.py. collect.py falls back to this document when the logs are absent.",
+  "streams": {
+    "stderr": {
+      "kept_lines": 12,
+      "lines": [
+        "warning: Git tree '/home/freerat/projects/topotestix' is dirty",
+        "warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user",
+        "warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user",
+        "warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user",
+        "warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user",
+        "warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user",
+        "warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user",
+        "...........................................................",
+        "----------------------------------------------------------------------",
+        "Ran 59 tests in 0.898s",
+        "",
+        "OK"
+      ],
+      "total_lines": 12,
+      "truncated": false
+    },
+    "stdout": {
+      "kept_lines": 0,
+      "lines": [],
+      "total_lines": 0,
+      "truncated": false
+    }
+  },
+  "version": 1
+}

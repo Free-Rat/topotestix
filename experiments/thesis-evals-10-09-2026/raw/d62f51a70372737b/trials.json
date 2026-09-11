@@ -1,0 +1,13 @@
+[
+  {
+    "dir": "20260910-002901-kafka-cluster-seed-13-kafka-sweep-rep1-seed13",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/5kn8i27rg5m393hisfmmgxpf8ysfdscw-nixos-test-driver-kafka-sweep-rep1-seed13-c20260909-c1ce16.drv'...",
+      "building '/nix/store/4g3776jb89kpnid56hyfbmv7ysk4j27v-vm-test-run-kafka-sweep-rep1-seed13-c20260909-c1ce16.drv'..."
+    ],
+    "name": "kafka-sweep-rep1-seed13",
+    "status": "failed"
+  }
+]

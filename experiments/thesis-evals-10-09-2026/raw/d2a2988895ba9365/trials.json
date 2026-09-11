@@ -1,0 +1,13 @@
+[
+  {
+    "dir": "20260910-054619-etcd-cluster-seed-1-etcd-v2-exhaustive-rep0-cell071",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/rdhcnyc0sdl9sanhxsv1skp1as6jjr2c-nixos-test-driver-etcd-v2-exhaustive-rep0-cell071-c20260909-c1ce16.drv'...",
+      "building '/nix/store/kyhkbfj5pb4ic1rwd4ji38qfrm9hx18w-vm-test-run-etcd-v2-exhaustive-rep0-cell071-c20260909-c1ce16.drv'..."
+    ],
+    "name": "etcd-v2-exhaustive-rep0-cell071",
+    "status": "passed"
+  }
+]

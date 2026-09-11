@@ -1,0 +1,956 @@
+{
+  "schema_version": 1,
+  "run_id": "0d02ac47f429401a93bd8d2283e5d1f9",
+  "contract": {
+    "volume_placement": "independent-vm-root-volumes",
+    "initial_free_target_mb": 500,
+    "disk_free_limit_mb": 47,
+    "backlog_rate": 25,
+    "consumer_outage_seconds": 2,
+    "planned_messages": 50,
+    "message_size": 16384,
+    "confirm_timeout_ms": 3000,
+    "capacity_safety_factor_milli": 1500,
+    "required_free_bytes": 51228800,
+    "naive_required_free_bytes": 1228800,
+    "capacity_sufficient": true,
+    "naive_capacity_sufficient": true
+  },
+  "operations": [
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000000",
+      "sequence": 0,
+      "attempt_wall_ns": 1789145284938572216,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145284993716375,
+      "latency_ms": 55.146
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000001",
+      "sequence": 1,
+      "attempt_wall_ns": 1789145284993855219,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285010322675,
+      "latency_ms": 16.464
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000002",
+      "sequence": 2,
+      "attempt_wall_ns": 1789145285010339996,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285024478665,
+      "latency_ms": 14.138
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000003",
+      "sequence": 3,
+      "attempt_wall_ns": 1789145285024494868,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285057268027,
+      "latency_ms": 32.773
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000004",
+      "sequence": 4,
+      "attempt_wall_ns": 1789145285057284510,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285072019344,
+      "latency_ms": 14.738
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000005",
+      "sequence": 5,
+      "attempt_wall_ns": 1789145285072043928,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285084915117,
+      "latency_ms": 12.871
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000006",
+      "sequence": 6,
+      "attempt_wall_ns": 1789145285084939421,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285098838115,
+      "latency_ms": 13.895
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000007",
+      "sequence": 7,
+      "attempt_wall_ns": 1789145285098854318,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285119133432,
+      "latency_ms": 20.279
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000008",
+      "sequence": 8,
+      "attempt_wall_ns": 1789145285119152150,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285138171327,
+      "latency_ms": 19.018
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000009",
+      "sequence": 9,
+      "attempt_wall_ns": 1789145285138188368,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285147157105,
+      "latency_ms": 8.968
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000010",
+      "sequence": 10,
+      "attempt_wall_ns": 1789145285147174705,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285162534200,
+      "latency_ms": 15.358
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000011",
+      "sequence": 11,
+      "attempt_wall_ns": 1789145285162552917,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285175174633,
+      "latency_ms": 12.621
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000012",
+      "sequence": 12,
+      "attempt_wall_ns": 1789145285175193630,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285193682013,
+      "latency_ms": 18.488
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000013",
+      "sequence": 13,
+      "attempt_wall_ns": 1789145285193698775,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285203549468,
+      "latency_ms": 9.851
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000014",
+      "sequence": 14,
+      "attempt_wall_ns": 1789145285203582992,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285218827388,
+      "latency_ms": 15.244
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000015",
+      "sequence": 15,
+      "attempt_wall_ns": 1789145285218843870,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285232091364,
+      "latency_ms": 13.266
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000016",
+      "sequence": 16,
+      "attempt_wall_ns": 1789145285232128240,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285245467366,
+      "latency_ms": 13.339
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000017",
+      "sequence": 17,
+      "attempt_wall_ns": 1789145285245486921,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285258686364,
+      "latency_ms": 13.05
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000018",
+      "sequence": 18,
+      "attempt_wall_ns": 1789145285258702288,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285275047382,
+      "latency_ms": 16.345
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000019",
+      "sequence": 19,
+      "attempt_wall_ns": 1789145285275063865,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285295253023,
+      "latency_ms": 20.192
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000020",
+      "sequence": 20,
+      "attempt_wall_ns": 1789145285295277327,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285306160834,
+      "latency_ms": 10.883
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000021",
+      "sequence": 21,
+      "attempt_wall_ns": 1789145285306185138,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285323576455,
+      "latency_ms": 17.388
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000022",
+      "sequence": 22,
+      "attempt_wall_ns": 1789145285323592658,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285344455645,
+      "latency_ms": 20.866
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000023",
+      "sequence": 23,
+      "attempt_wall_ns": 1789145285344479670,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285359481577,
+      "latency_ms": 14.999
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000024",
+      "sequence": 24,
+      "attempt_wall_ns": 1789145285359497501,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285375209833,
+      "latency_ms": 15.715
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000025",
+      "sequence": 25,
+      "attempt_wall_ns": 1789145285375234138,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285387348247,
+      "latency_ms": 12.128
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000026",
+      "sequence": 26,
+      "attempt_wall_ns": 1789145285387381771,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285406133875,
+      "latency_ms": 18.738
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000027",
+      "sequence": 27,
+      "attempt_wall_ns": 1789145285406150357,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285416528771,
+      "latency_ms": 10.378
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000028",
+      "sequence": 28,
+      "attempt_wall_ns": 1789145285416544975,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285431090678,
+      "latency_ms": 14.545
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000029",
+      "sequence": 29,
+      "attempt_wall_ns": 1789145285431106881,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285444107975,
+      "latency_ms": 13.001
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000030",
+      "sequence": 30,
+      "attempt_wall_ns": 1789145285444142337,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285460563698,
+      "latency_ms": 16.423
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000031",
+      "sequence": 31,
+      "attempt_wall_ns": 1789145285460587723,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285473290455,
+      "latency_ms": 12.699
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000032",
+      "sequence": 32,
+      "attempt_wall_ns": 1789145285473306658,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285487324641,
+      "latency_ms": 14.017
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000033",
+      "sequence": 33,
+      "attempt_wall_ns": 1789145285487340844,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285498969137,
+      "latency_ms": 11.628
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000034",
+      "sequence": 34,
+      "attempt_wall_ns": 1789145285498986179,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285515313673,
+      "latency_ms": 16.327
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000035",
+      "sequence": 35,
+      "attempt_wall_ns": 1789145285515329876,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285534204621,
+      "latency_ms": 18.875
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000036",
+      "sequence": 36,
+      "attempt_wall_ns": 1789145285534221663,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285546487188,
+      "latency_ms": 12.265
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000037",
+      "sequence": 37,
+      "attempt_wall_ns": 1789145285546503391,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285559907329,
+      "latency_ms": 13.406
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000038",
+      "sequence": 38,
+      "attempt_wall_ns": 1789145285559936104,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285578597694,
+      "latency_ms": 18.659
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000039",
+      "sequence": 39,
+      "attempt_wall_ns": 1789145285578666138,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285596758382,
+      "latency_ms": 18.092
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000040",
+      "sequence": 40,
+      "attempt_wall_ns": 1789145285596774864,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285609561126,
+      "latency_ms": 12.786
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000041",
+      "sequence": 41,
+      "attempt_wall_ns": 1789145285609577609,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285626761916,
+      "latency_ms": 17.185
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000042",
+      "sequence": 42,
+      "attempt_wall_ns": 1789145285626934563,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285648932331,
+      "latency_ms": 21.997
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000043",
+      "sequence": 43,
+      "attempt_wall_ns": 1789145285648948534,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285663317400,
+      "latency_ms": 14.369
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000044",
+      "sequence": 44,
+      "attempt_wall_ns": 1789145285663333323,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285676043039,
+      "latency_ms": 12.709
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000045",
+      "sequence": 45,
+      "attempt_wall_ns": 1789145285676059242,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285693202762,
+      "latency_ms": 17.144
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000046",
+      "sequence": 46,
+      "attempt_wall_ns": 1789145285693224553,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285714894066,
+      "latency_ms": 21.669
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000047",
+      "sequence": 47,
+      "attempt_wall_ns": 1789145285714931781,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285726051630,
+      "latency_ms": 11.119
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000048",
+      "sequence": 48,
+      "attempt_wall_ns": 1789145285726067833,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285740226057,
+      "latency_ms": 14.158
+    },
+    {
+      "op_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000049",
+      "sequence": 49,
+      "attempt_wall_ns": 1789145285740242819,
+      "outcome": "confirmed",
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789145285752752230,
+      "latency_ms": 12.509
+    }
+  ],
+  "telemetry": [
+    {
+      "wall_ns": 1789145279951304155,
+      "phase": "before_fill",
+      "node": "rabbit1",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4122378240,
+      "fs_available_bytes": 3890855936,
+      "rabbit_disk_free_bytes": 3890876416,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789145280183761129,
+      "phase": "before_fill",
+      "node": "rabbit2",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4122361856,
+      "fs_available_bytes": 3890839552,
+      "rabbit_disk_free_bytes": 3890855936,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789145280409005229,
+      "phase": "before_fill",
+      "node": "rabbit3",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4122365952,
+      "fs_available_bytes": 3890843648,
+      "rabbit_disk_free_bytes": 3890937856,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789145285590471065,
+      "phase": "after_fill",
+      "node": "rabbit1",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 755396608,
+      "fs_available_bytes": 523874304,
+      "rabbit_disk_free_bytes": 3890876416,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789145285671592866,
+      "phase": "after_fill",
+      "node": "rabbit2",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 755380224,
+      "fs_available_bytes": 523857920,
+      "rabbit_disk_free_bytes": 3890855936,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789145285751786943,
+      "phase": "after_fill",
+      "node": "rabbit3",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 755384320,
+      "fs_available_bytes": 523862016,
+      "rabbit_disk_free_bytes": 3890937856,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789145286811862027,
+      "phase": "after_publish",
+      "node": "rabbit1",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 754561024,
+      "fs_available_bytes": 523038720,
+      "rabbit_disk_free_bytes": 3890876416,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789145286891836216,
+      "phase": "after_publish",
+      "node": "rabbit2",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 754544640,
+      "fs_available_bytes": 523022336,
+      "rabbit_disk_free_bytes": 3890855936,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789145286971708021,
+      "phase": "after_publish",
+      "node": "rabbit3",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 754548736,
+      "fs_available_bytes": 523026432,
+      "rabbit_disk_free_bytes": 523862016,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789145287086395588,
+      "phase": "recovery_poll",
+      "node": "rabbit1",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4121542656,
+      "fs_available_bytes": 3890020352,
+      "rabbit_disk_free_bytes": 3890876416,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789145287162853902,
+      "phase": "recovery_poll",
+      "node": "rabbit2",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4121526272,
+      "fs_available_bytes": 3890003968,
+      "rabbit_disk_free_bytes": 3890855936,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789145287237770686,
+      "phase": "recovery_poll",
+      "node": "rabbit3",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4121530368,
+      "fs_available_bytes": 3890008064,
+      "rabbit_disk_free_bytes": 523862016,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789145290750842575,
+      "phase": "after_recovery",
+      "node": "rabbit1",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4121513984,
+      "fs_available_bytes": 3889991680,
+      "rabbit_disk_free_bytes": 523874304,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789145290831561340,
+      "phase": "after_recovery",
+      "node": "rabbit2",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4121497600,
+      "fs_available_bytes": 3889975296,
+      "rabbit_disk_free_bytes": 523857920,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789145290911401133,
+      "phase": "after_recovery",
+      "node": "rabbit3",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4121501696,
+      "fs_available_bytes": 3889979392,
+      "rabbit_disk_free_bytes": 523862016,
+      "rabbit_disk_free_limit_bytes": 50000000,
+      "disk_free_alarm": false
+    }
+  ],
+  "recovered": [
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000000",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000000",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000001",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000001",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000002",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000002",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000003",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000003",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000004",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000004",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000005",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000005",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000006",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000006",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000007",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000007",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000008",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000008",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000009",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000009",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000010",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000010",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000011",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000011",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000012",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000012",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000013",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000013",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000014",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000014",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000015",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000015",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000016",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000016",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000017",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000017",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000018",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000018",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000019",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000019",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000020",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000020",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000021",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000021",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000022",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000022",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000023",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000023",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000024",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000024",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000025",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000025",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000026",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000026",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000027",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000027",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000028",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000028",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000029",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000029",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000030",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000030",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000031",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000031",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000032",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000032",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000033",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000033",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000034",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000034",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000035",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000035",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000036",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000036",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000037",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000037",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000038",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000038",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000039",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000039",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000040",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000040",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000041",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000041",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000042",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000042",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000043",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000043",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000044",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000044",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000045",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000045",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000046",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000046",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000047",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000047",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000048",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000048",
+      "redelivered": false
+    },
+    {
+      "message_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000049",
+      "body_id": "0d02ac47f429401a93bd8d2283e5d1f9/backlog/00000049",
+      "redelivered": false
+    }
+  ],
+  "queue_before": {
+    "name": "topotestix_disk_capacity",
+    "type": "quorum",
+    "leader": "rabbit@rabbit1",
+    "members": [
+      "rabbit@rabbit1",
+      "rabbit@rabbit2",
+      "rabbit@rabbit3"
+    ],
+    "online": [
+      "rabbit@rabbit1",
+      "rabbit@rabbit2",
+      "rabbit@rabbit3"
+    ],
+    "state": "running"
+  }
+}

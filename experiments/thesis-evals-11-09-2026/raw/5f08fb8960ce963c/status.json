@@ -1,0 +1,29 @@
+{
+  "execution": "fresh",
+  "exit_code": 0,
+  "input_hash": "9cada6e48add8b1fe6c6bcb822cf95f171ec0c5de419c2ffc6f725bfb6c7f059",
+  "state": "done",
+  "unit": {
+    "base_module": null,
+    "config_choices": null,
+    "config_target": null,
+    "entry_hash": "3e53a43a6a8af5dcd9d9d231003eb91ff054d6b00a37c0898008edf698e41b8b",
+    "entry_id": "kafka-shrink",
+    "execution_index": 0,
+    "id": "5f08fb8960ce963c",
+    "kind": "shrink",
+    "produces": [
+      "kafka-shrink"
+    ],
+    "properties": null,
+    "repetition_index": 0,
+    "repetition_token": "c20260910-6335ae",
+    "run_name": "kafka-shrink-rep0-seed9",
+    "seed": 9,
+    "target": "kafka-cluster",
+    "test_script": null,
+    "topology_choices": null,
+    "topology_target": null,
+    "variant_name": null
+  }
+}

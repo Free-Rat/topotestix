@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "report": [
+    {
+      "name": "rabbitmq-crash-confirmed-recovered-exactly-once",
+      "status": "passed"
+    },
+    {
+      "name": "rabbitmq-crash-fault-was-abrupt-and-role-accurate",
+      "status": "passed"
+    },
+    {
+      "name": "rabbitmq-crash-queue-and-cluster-recover",
+      "status": "passed"
+    }
+  ],
+  "runDir": "experiments/thesis-evals-10-09-2026/raw/c921a1d5c6d36569.partial/run-store/20260910-060327-rabbitmq-crash-seed-1-rabbitmq-crash-rep0-leader-e0-seed1"
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "name": "rabbitmq-failure-domain-exact-recovery",
+    "status": "passed"
+  },
+  {
+    "message": "declared one-domain tolerance was violated: placement={'rabbit1': 'zone-a', 'rabbit2': 'zone-a', 'rabbit3': 'zone-b'}; failed_domain=zone-a; surviving_nodes=['rabbit3']; probe={'op_id': 'f0ecd9d8059c4d54bba4bc45cdbd2a29/domain-probe', 'outcome': 'ambiguous', 'exception_type': 'OuterCommandTimeout', 'exception_message': 'publish did not complete within the test-driver budget'}",
+    "name": "rabbitmq-failure-domain-retains-quorum-availability",
+    "status": "failed"
+  }
+]

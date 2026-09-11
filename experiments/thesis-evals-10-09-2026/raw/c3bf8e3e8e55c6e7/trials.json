@@ -1,0 +1,20 @@
+[
+  {
+    "dir": "20260910-054144-etcd-cluster-seed-1-etcd-v2-exhaustive-rep0-cell003",
+    "execution": "fresh",
+    "markers": [
+      "these 9 derivations will be built:",
+      "building '/nix/store/457jkwm1ffqx7kw02bsi49qjg30idq9z-run-nixos-vm.drv'...",
+      "building '/nix/store/bxv3w3z57g9dgp46i6dsiyd4jcg1243r-run-nixos-vm.drv'...",
+      "building '/nix/store/k9i2xzw635mfcv693c73sddrsj4pqbh2-run-nixos-vm.drv'...",
+      "building '/nix/store/gxi3j2wqqpscpyddkr00ji21z4z01ags-nixos-vm.drv'...",
+      "building '/nix/store/8avd48m6snhvassqhmcjwkg16xf102ln-nixos-vm.drv'...",
+      "building '/nix/store/sm1ini1qjb9bk9g2fjfgpzlwrrxm85dk-nixos-vm.drv'...",
+      "building '/nix/store/ny5cwwy9wrl2lngwmr42mq7n5wkqnn4s-driverConfiguration.json.drv'...",
+      "building '/nix/store/sp338x8z3nd75zky4jjb857ii8rffmna-nixos-test-driver-etcd-v2-exhaustive-rep0-cell003-c20260909-c1ce16.drv'...",
+      "building '/nix/store/jz8w1vl56jj0p9vpfgympf833w5fqwd8-vm-test-run-etcd-v2-exhaustive-rep0-cell003-c20260909-c1ce16.drv'..."
+    ],
+    "name": "etcd-v2-exhaustive-rep0-cell003",
+    "status": "failed"
+  }
+]

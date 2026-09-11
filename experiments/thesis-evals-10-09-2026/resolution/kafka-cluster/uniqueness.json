@@ -1,0 +1,8 @@
+{
+  "collisions": [],
+  "duplicate_rate": "0",
+  "seeds": 50,
+  "space_size": 746496,
+  "target": "kafka-cluster",
+  "unique_resolved": 50
+}

@@ -1,0 +1,10 @@
+{
+  "baseModule": "/home/freerat/projects/topotestix/targets/kafka-cluster/module.nix",
+  "configTarget": "experiments/kafka-cluster/kafka-cluster-min-message-max.nix",
+  "description": "Three-node Kafka KRaft cluster smoke target",
+  "name": "kafka-cluster",
+  "properties": "/home/freerat/projects/topotestix/targets/kafka-cluster/properties.nix",
+  "reportNode": "kafka1",
+  "testScript": "/home/freerat/projects/topotestix/targets/kafka-cluster/test-script.py",
+  "topologyTarget": "/home/freerat/projects/topotestix/targets/kafka-cluster/topology.nix"
+}

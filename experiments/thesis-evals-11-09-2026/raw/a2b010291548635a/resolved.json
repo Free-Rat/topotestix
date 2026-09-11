@@ -1,0 +1,94 @@
+{
+  "nodeConfigs": {
+    "kafka1": {
+      "virtualisation": {
+        "vlans": [
+          1
+        ]
+      }
+    },
+    "kafka2": {
+      "virtualisation": {
+        "vlans": [
+          1
+        ]
+      }
+    },
+    "kafka3": {
+      "virtualisation": {
+        "vlans": [
+          1
+        ]
+      }
+    }
+  },
+  "nodeRoles": {
+    "kafka1": "kafka",
+    "kafka2": "kafka",
+    "kafka3": "kafka"
+  },
+  "roleFuzz": {
+    "kafka": {
+      "choices": {
+        ".services.apache-kafka.jvmOptions": 2,
+        ".services.apache-kafka.settings.auto.create.topics.enable": 1,
+        ".services.apache-kafka.settings.default.replication.factor": 1,
+        ".services.apache-kafka.settings.log.retention.hours": 2,
+        ".services.apache-kafka.settings.log.segment.bytes": 0,
+        ".services.apache-kafka.settings.message.max.bytes": 0,
+        ".services.apache-kafka.settings.min.insync.replicas": 1,
+        ".services.apache-kafka.settings.num.io.threads": 0,
+        ".services.apache-kafka.settings.num.network.threads": 0,
+        ".services.apache-kafka.settings.offsets.topic.replication.factor": 1,
+        ".services.apache-kafka.settings.replica.fetch.max.bytes": 2,
+        ".services.apache-kafka.settings.transaction.state.log.min.isr": 1,
+        ".services.apache-kafka.settings.transaction.state.log.replication.factor": 1,
+        ".services.apache-kafka.settings.unclean.leader.election.enable": 0,
+        ".virtualisation.diskSize": 2,
+        ".virtualisation.memorySize": 0
+      },
+      "result": {
+        "services": {
+          "apache-kafka": {
+            "jvmOptions": [
+              "-Xms1024m",
+              "-Xmx1536m"
+            ],
+            "settings": {
+              "auto.create.topics.enable": true,
+              "default.replication.factor": 3,
+              "log.retention.hours": 168,
+              "log.segment.bytes": 1048576,
+              "message.max.bytes": 1048576,
+              "min.insync.replicas": 2,
+              "num.io.threads": 4,
+              "num.network.threads": 2,
+              "offsets.topic.replication.factor": 3,
+              "replica.fetch.max.bytes": 4194304,
+              "transaction.state.log.min.isr": 2,
+              "transaction.state.log.replication.factor": 3,
+              "unclean.leader.election.enable": false
+            }
+          }
+        },
+        "virtualisation": {
+          "diskSize": 8192,
+          "memorySize": 2048
+        }
+      },
+      "seed": "21"
+    }
+  },
+  "topology": {
+    "kafkaVlans": [
+      1
+    ],
+    "roles": {
+      "kafka": 3
+    }
+  },
+  "topologyChoices": {
+    ".kafkaVlans": 0,
+    ".roles.kafka": 0
+  }
+}

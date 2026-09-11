@@ -1,0 +1,60 @@
+{
+  "campaign_token": "c20260909-c1ce16",
+  "manifest_sha256": "f8159777f6afceaf86d61cec3265b64b573c5432b6b1b5ccc2822f9592a2db13",
+  "provenance": {
+    "framework": {
+      "dirty": true,
+      "dirty_files": [
+        ".gitignore",
+        "experiments/campaign-10-09-2026.log",
+        "experiments/reproduce/",
+        "experiments/thesis-evals-07-09-2026/",
+        "study/",
+        "tests/test_reproduce_analyze.py",
+        "tests/test_reproduce_collect.py",
+        "tests/test_reproduce_env.py",
+        "tests/test_reproduce_main.py",
+        "tests/test_reproduce_report.py",
+        "tests/test_reproduce_resolve.py",
+        "tests/test_reproduce_runner.py",
+        "tests/test_reproduce_verify.py",
+        "thesis-eval-reproduction-plan.md"
+      ],
+      "rev": "f25ec56d6ae7a390ada52c7814c82d0c7def0df4"
+    },
+    "host": {
+      "available_ram_bytes": 23420903424,
+      "cpu_count": 24,
+      "hostname": "malenia",
+      "kernel": "6.18.49",
+      "method": "proc",
+      "python": "3.13.12",
+      "total_ram_bytes": 32714813440
+    },
+    "manifest": {
+      "path": "experiments/reproduce/MANIFEST.json",
+      "sha256": "f8159777f6afceaf86d61cec3265b64b573c5432b6b1b5ccc2822f9592a2db13"
+    },
+    "nix": {
+      "error": null,
+      "nixpkgs_rev": "9317bef0ef5af9381902543e219a3c12d45cf5f6",
+      "version": "nix (Nix) 2.34.8"
+    },
+    "python": {
+      "executable": "/nix/store/0r6k8xa2kgqyp3r4v2w7yrb80ma2iawm-python3-3.13.12/bin/python3",
+      "version": "3.13.12"
+    },
+    "thesis": {
+      "dirty": true,
+      "dirty_files": [
+        "slr/compare_screen.py",
+        "slr/screen_page.py",
+        "thesis/thesis.pdf",
+        "study/repro-discovery/",
+        "thesis/topotestix"
+      ],
+      "rev": "e5b1db43a0e79b463329c1b0502fb864aedece7f"
+    },
+    "written_at": "2026-09-09T23:02:24.469451+00:00"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "finished_epoch": 1789020798.919812,
+  "started_epoch": 1789020798.39487,
+  "started_monotonic_relative": 224695.632389,
+  "timed_out": false,
+  "timeout_s": 3600,
+  "wall_s": 0.525
+}

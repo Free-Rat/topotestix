@@ -1,0 +1,11 @@
+{
+  "execution": "fresh",
+  "markers": [
+    "these 2 derivations will be built:",
+    "building '/nix/store/br93ih7y2513n7zj1w7sfiaa485lvmw4-nixos-test-driver-rabbitmq-crash-rep0-retune-follower-e0-seed1-c20260909-c1ce16.drv'...",
+    "building '/nix/store/g6dnmwwgdq05wna375cjr09i0hc234an-vm-test-run-rabbitmq-crash-rep0-retune-follower-e0-seed1-c20260909-c1ce16.drv'..."
+  ],
+  "note": "",
+  "source": "run-store-log",
+  "wall_s": 93.329
+}

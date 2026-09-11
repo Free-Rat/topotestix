@@ -1,0 +1,103 @@
+{
+  "collisions": [
+    {
+      "hash": "12e95912a80c7b59a953f0e1f2fceb0f97aea2be734b8807de5d095100fcd668",
+      "seeds": [
+        12,
+        26
+      ]
+    },
+    {
+      "hash": "1e3aba3ca1d5227d3ef21adaf1d345e328669841a246566254e895d9ae8e527a",
+      "seeds": [
+        2,
+        27,
+        35
+      ]
+    },
+    {
+      "hash": "34b6ad741e8105b936e1d020451760fd006d8aaaafb837ea35374e5085589e3f",
+      "seeds": [
+        13,
+        24
+      ]
+    },
+    {
+      "hash": "4ca0109afa4c106e0dc66fdb05a4123e800ef659fc9bb1cff2e1116556e522b8",
+      "seeds": [
+        10,
+        17,
+        44,
+        47
+      ]
+    },
+    {
+      "hash": "4df91bb73dc65914828af832632feadcb22e0f8357d6708fe507034c2013694f",
+      "seeds": [
+        22,
+        23
+      ]
+    },
+    {
+      "hash": "5ce723a5095974d818e8ee9f3c3e1ca4c3509f59e9167ef068ffeebe950cf0e0",
+      "seeds": [
+        20,
+        25
+      ]
+    },
+    {
+      "hash": "60f8faa5802acd965fcc2f699e8f579aebd565dff1450e7f607402516c9142d8",
+      "seeds": [
+        42,
+        49
+      ]
+    },
+    {
+      "hash": "6c47906f6aad2402674dc8ff414b2ed91639a0123294cd61f5a35201842cfb75",
+      "seeds": [
+        18,
+        37
+      ]
+    },
+    {
+      "hash": "7b82850dabb171b35db74641abf7adb52dad7749705478d196348109003a9614",
+      "seeds": [
+        11,
+        33
+      ]
+    },
+    {
+      "hash": "874018e66aa84dd35eb12f3826b83cf6734f1258106f91486c742787d6471f8f",
+      "seeds": [
+        7,
+        30
+      ]
+    },
+    {
+      "hash": "9da607795afb9b77b15334b29d6a7ad30896d30a8fa34765d7ff31aa961577fb",
+      "seeds": [
+        28,
+        36
+      ]
+    },
+    {
+      "hash": "f4a6206401539b84405f84e24ac0a6ef6f70f1981fc158cc99d15e12ca7fdd5f",
+      "seeds": [
+        8,
+        15
+      ]
+    },
+    {
+      "hash": "f6f659b060e6c6716f1a7ad135add3b5eb5540ac7dff71cc28325c2bf535fdc8",
+      "seeds": [
+        31,
+        32
+      ]
+    }
+  ],
+  "duplicate_rate": "0.32",
+  "seeds": 50,
+  "space_size": 64,
+  "target": "etcd-cluster-v1",
+  "unique_resolved": 34
+}

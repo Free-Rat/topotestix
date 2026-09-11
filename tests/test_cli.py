@@ -32,6 +32,21 @@ class CliTests(unittest.TestCase):
 
         self.assertEqual(args.project_root, "/repo")
 
+    def test_repetition_token_accepts_derivation_name_characters(self):
+        args = build_parser().parse_args(
+            ["orchestrator", "run", "kafka", "--repetition-token", "c20260910-a1b2.c3+x=y?"]
+        )
+
+        self.assertEqual(args.repetition_token, "c20260910-a1b2.c3+x=y?")
+
+    def test_repetition_token_rejects_characters_nix_names_forbid(self):
+        for bad in ("2026/09/10", "run 1", "a:b"):
+            for sub in ("run", "shrink"):
+                argv = ["orchestrator", sub, "kafka"] + (["3"] if sub == "shrink" else [])
+                with self.subTest(token=bad, command=sub), patch("sys.stderr"):
+                    with self.assertRaises(SystemExit):
+                        build_parser().parse_args(argv + ["--repetition-token", bad])
+
     def test_seed_range_parses_inclusive_range(self):
         self.assertEqual(parse_seed_range("2..4"), [2, 3, 4])
 

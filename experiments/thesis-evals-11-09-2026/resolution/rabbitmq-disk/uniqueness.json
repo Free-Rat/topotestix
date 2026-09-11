@@ -1,0 +1,16 @@
+{
+  "collisions": [
+    {
+      "hash": "e1eb2f8a5194c527dba309973d27ee42248ccf3ac47f2ab5a1fdf8b31862f2d7",
+      "seeds": [
+        4,
+        42
+      ]
+    }
+  ],
+  "duplicate_rate": "0.02",
+  "seeds": 50,
+  "space_size": 864,
+  "target": "rabbitmq-disk",
+  "unique_resolved": 49
+}

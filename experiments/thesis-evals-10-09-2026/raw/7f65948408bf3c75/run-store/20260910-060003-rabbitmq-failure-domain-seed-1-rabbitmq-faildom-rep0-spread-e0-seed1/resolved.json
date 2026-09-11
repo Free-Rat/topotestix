@@ -1,0 +1,67 @@
+{
+  "nodeConfigs": {
+    "rabbit1": {
+      "virtualisation": {
+        "vlans": [
+          1
+        ]
+      }
+    },
+    "rabbit2": {
+      "virtualisation": {
+        "vlans": [
+          1
+        ]
+      }
+    },
+    "rabbit3": {
+      "virtualisation": {
+        "vlans": [
+          1
+        ]
+      }
+    }
+  },
+  "nodeRoles": {
+    "rabbit1": "rabbit",
+    "rabbit2": "rabbit",
+    "rabbit3": "rabbit"
+  },
+  "roleFuzz": {
+    "rabbit": {
+      "choices": {
+        ".environment.etc.topotestix-domain-confirm-timeout-ms.text": 0,
+        ".environment.etc.topotestix-failed-domain.text": 0,
+        ".environment.etc.topotestix-failure-domain-placement.json.text": 1
+      },
+      "result": {
+        "environment": {
+          "etc": {
+            "topotestix-domain-confirm-timeout-ms": {
+              "text": "2000"
+            },
+            "topotestix-failed-domain": {
+              "text": "zone-a"
+            },
+            "topotestix-failure-domain-placement.json": {
+              "text": "{\"rabbit1\":\"zone-a\",\"rabbit2\":\"zone-b\",\"rabbit3\":\"zone-c\"}"
+            }
+          }
+        }
+      },
+      "seed": "2"
+    }
+  },
+  "topology": {
+    "rabbitVlans": [
+      1
+    ],
+    "roles": {
+      "rabbit": 3
+    }
+  },
+  "topologyChoices": {
+    ".rabbitVlans": 0,
+    ".roles.rabbit": 0
+  }
+}

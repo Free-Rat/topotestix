@@ -1,0 +1,18 @@
+{
+  "execution": "fresh",
+  "markers": [
+    "these 9 derivations will be built:",
+    "building '/nix/store/6i4lyyj12r98grw2wd2gn4bqdyl23jqd-run-nixos-vm.drv'...",
+    "building '/nix/store/iv3pm06v2jpa4zh7s7anv4gi5i3gx0xl-run-nixos-vm.drv'...",
+    "building '/nix/store/lg2xg6jvil2za17zxwrzsnyw21zd3bdk-run-nixos-vm.drv'...",
+    "building '/nix/store/5qpky2biczww8m5qq0f6lmj45vgwmw18-nixos-vm.drv'...",
+    "building '/nix/store/f6rg96awqrz5mkz03kh7ypdr0ghv073f-nixos-vm.drv'...",
+    "building '/nix/store/nyivsxrv4hkraib024kp2qlqasz147i2-nixos-vm.drv'...",
+    "building '/nix/store/s12q40zinj7r9qmwkgq9n4s7xd5g8flc-driverConfiguration.json.drv'...",
+    "building '/nix/store/9ss4jpzzlsr2a2cvhhvmqc7bzzcm9ii9-nixos-test-driver-etcd-v2-exhaustive-rep0-cell086-c20260909-c1ce16.drv'...",
+    "building '/nix/store/bp66g90lbz1pfny8kj4h2pzdijah13di-vm-test-run-etcd-v2-exhaustive-rep0-cell086-c20260909-c1ce16.drv'..."
+  ],
+  "note": "",
+  "source": "run-store-log",
+  "wall_s": 91.104
+}

@@ -1,0 +1,29 @@
+{
+  "execution": "fresh",
+  "exit_code": 0,
+  "input_hash": "f233ed9d6154acb6cc5d2b0396ad6a179352df30d3a015b938af7c764426a167",
+  "state": "done",
+  "unit": {
+    "base_module": null,
+    "config_choices": null,
+    "config_target": null,
+    "entry_hash": "d08501ee3dcd070bafb0a0e8d0aa5a157b9b99f89a4924552fd3d27e9ef7351b",
+    "entry_id": "etcd-v2-shrink",
+    "execution_index": 0,
+    "id": "8a83c6226ca5b275",
+    "kind": "shrink",
+    "produces": [
+      "etcd-v2-shrink"
+    ],
+    "properties": null,
+    "repetition_index": 0,
+    "repetition_token": "c20260910-6335ae",
+    "run_name": "etcd-v2-shrink-rep0-seed40",
+    "seed": 40,
+    "target": "etcd-cluster",
+    "test_script": null,
+    "topology_choices": null,
+    "topology_target": null,
+    "variant_name": null
+  }
+}

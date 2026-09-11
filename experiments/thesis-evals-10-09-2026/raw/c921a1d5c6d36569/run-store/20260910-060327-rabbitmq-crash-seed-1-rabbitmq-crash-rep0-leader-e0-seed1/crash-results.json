@@ -1,0 +1,770 @@
+{
+  "schema_version": 1,
+  "run_id": "06ca5c120d834e29b977846d886ab4c3",
+  "crash_timing": "before_publish",
+  "target_role": "leader",
+  "target_node": "rabbit1",
+  "client_node": "rabbit2",
+  "restart_delay": 10,
+  "queue_before": {
+    "name": "topotestix_crash_durability",
+    "type": "quorum",
+    "leader": "rabbit@rabbit1",
+    "members": [
+      "rabbit@rabbit1",
+      "rabbit@rabbit2",
+      "rabbit@rabbit3"
+    ],
+    "online": [
+      "rabbit@rabbit1",
+      "rabbit@rabbit2",
+      "rabbit@rabbit3"
+    ],
+    "state": "running"
+  },
+  "queue_after": {
+    "name": "topotestix_crash_durability",
+    "type": "quorum",
+    "leader": "rabbit@rabbit3",
+    "members": [
+      "rabbit@rabbit1",
+      "rabbit@rabbit2",
+      "rabbit@rabbit3"
+    ],
+    "online": [
+      "rabbit@rabbit1",
+      "rabbit@rabbit2",
+      "rabbit@rabbit3"
+    ],
+    "state": "running"
+  },
+  "service_before": {
+    "ActiveState": "active",
+    "SubState": "running",
+    "Restart": "no",
+    "MainPID": "610",
+    "KillMode": "control-group"
+  },
+  "service_after": {
+    "ActiveState": "active",
+    "SubState": "running",
+    "Restart": "no",
+    "MainPID": "899",
+    "KillMode": "control-group"
+  },
+  "rejoined_cluster": [
+    "rabbit1",
+    "rabbit2",
+    "rabbit3"
+  ],
+  "mnesia_before_restart": "/var/lib/rabbitmq/mnesia:\ntotal 24\ndrwxr-x--- 4 rabbitmq rabbitmq 4096 Sep 10 06:03 .\ndrwx------ 3 rabbitmq rabbitmq 4096 Sep 10 06:03 ..\ndrwxr-x--- 5 rabbitmq rabbitmq 4096 Sep 10 06:03 rabbit@rabbit1\n-rw-r----- 1 rabbitmq rabbitmq  693 Sep 10 06:03 rabbit@rabbit1-feature_flags\n-rw-r----- 1 rabbitmq rabbitmq    3 Sep 10 06:03 rabbit@rabbit1.pid\ndrwxr-x--- 2 rabbitmq rabbitmq 4096 Sep 10 06:03 rabbit@rabbit1-plugins-expand\n\n/var/lib/rabbitmq/mnesia/rabbit@rabbit1:\ntotal 24\ndrwxr-x--- 5 rabbitmq rabbitmq 4096 Sep 10 06:03 .\ndrwxr-x--- 4 rabbitmq rabbitmq 4096 Sep 10 06:03 ..\ndrwxr-x--- 3 rabbitmq rabbitmq 4096 Sep 10 06:03 coordination\ndrwxr-x--- 3 rabbitmq rabbitmq 4096 Sep 10 06:03 msg_stores\ndrwxr-x--- 3 rabbitmq rabbitmq 4096 Sep 10 06:03 quorum\n-rw-r----- 1 rabbitmq rabbitmq    3 Sep 10 06:03 rabbit_serial\n\n/var/lib/rabbitmq/mnesia/rabbit@rabbit1/coordination:\ntotal 12\ndrwxr-x--- 3 rabbitmq rabbitmq 4096 Sep 10 06:03 .\ndrwxr-x--- 5 rabbitmq rabbitmq 4096 Sep 10 06:03 ..\ndrwxr-x--- 3 rabbitmq rabbitmq 4096 Sep 10 06:03 rabbit@rabbit1\n\n/var/lib/rabbitmq/mnesia/rabbit@rabbit1/coordination/rabbit@rabbit1:\ntotal 156\ndrwxr-x--- 3 rabbitmq rabbitmq   4096 Sep 10 06:03 .\ndrwxr-x--- 3 rabbitmq rabbitmq   4096 Sep 10 06:03 ..\n-rw-r----- 1 rabbitmq rabbitmq 126369 Sep 10 06:04 0000000000000001.wal\n-rw-r----- 1 rabbitmq rabbitmq   5520 Sep 10 06:04 meta.dets\n-rw-r----- 1 rabbitmq rabbitmq   5905 Sep 10 06:03 names.dets\ndrwxr-x--- 4 rabbitmq rabbitmq   4096 Sep 10 06:03 RABBITASW2WNS12D5V\n-rw-r----- 1 rabbitmq rabbitmq      0 Sep 10 06:03 segment_name_upgrade_marker\n\n/var/lib/rabbitmq/mnesia/rabbit@rabbit1/coordination/rabbit@rabbit1/RABBITASW2WNS12D5V:\ntotal 20\ndrwxr-x--- 4 rabbitmq rabbitmq 4096 Sep 10 06:03 .\ndrwxr-x--- 3 rabbitmq rabbitmq 4096 Sep 10 06:03 ..\ndrwxr-x--- 2 rabbitmq rabbitmq 4096 Sep 10 06:03 checkpoints\n-rw-r----- 1 rabbitmq rabbitmq  584 Sep 10 06:03 config\ndrwxr-x--- 2 rabbitmq rabbitmq 4096 Sep 10 06:03 snapshots\n\n/var/lib/rabbitmq/mnesia/rabbit@rabbit1/coordination/rabbit@rabbit1/RABBITASW2WNS12D5V/checkpoints:\ntotal 8\ndrwxr-x--- 2 rabbitmq rabbitmq 4096 Sep 10 06:03 .\ndrwxr-x--- 4 rabbitmq rabbitmq 4096 Sep 10 06:03 ..\n\n/var/lib/rabbitmq/mnesia/rabbit@rabbit1/coordination/rabbit@rabbit1/RABBITASW2WNS12D5V/snapshots:\ntotal 8\ndrwxr-x--- 2 rabbitmq rabbitmq 4096 Sep 10 06:03 .\ndrwxr-x--- 4 rabbitmq rabbitmq 4096 Sep 10 06:03 ..\n\n/var/lib/rabbitmq/mnesia/rabbit@rabbit1/msg_stores:\ntotal 12\ndrwxr-x--- 3 rabbitmq rabbitmq 4096 Sep 10 06:03 .\ndrwxr-x--- 5 rabbitmq rabbitmq 4096 Sep 10 06:03 ..\ndrwxr-x--- 3 rabbitmq rabbitmq 4096 Sep 10 06:03 vhosts\n\n/var/lib/rabbitmq/mnesia/rabbit@rabbit1/msg_stores/vhosts:\ntotal 12\ndrwxr-x--- 3 rabbitmq rabbitmq 4096 Sep 10 06:03 .\ndrwxr-x--- 3 rabbitmq rabbitmq 4096 Sep 10 06:03 ..\ndrwxr-x--- 4 rabbitmq rabbitmq 4096 Sep 10 06:03 628WB79CIFDYO9LJI6DKMI09L\n\n/var/lib/rabbitmq/mnesia/rabbit@rabbit1/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L:\ntotal 32\ndrwxr-x--- 4 rabbitmq rabbitmq 4096 Sep 10 06:03 .\ndrwxr-x--- 3 rabbitmq rabbitmq 4096 Sep 10 06:03 ..\n-rw-r----- 1 rabbitmq rabbitmq   83 Sep 10 06:03 .config\ndrwxr-x--- 2 rabbitmq rabbitmq 4096 Sep 10 06:03 msg_store_persistent\ndrwxr-x--- 2 rabbitmq rabbitmq 4096 Sep 10 06:03 msg_store_transient\n-rw-r----- 1 rabbitmq rabbitmq 5464 Sep 10 06:03 recovery.dets\n-rw-r----- 1 rabbitmq rabbitmq    1 Sep 10 06:03 .vhost\n\n/var/lib/rabbitmq/mnesia/rabbit@rabbit1/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent:\ntotal 8\ndrwxr-x--- 2 rabbitmq rabbitmq 4096 Sep 10 06:03 .\ndrwxr-x--- 4 rabbitmq rabbitmq 4096 Sep 10 06:03 ..\n-rw-r----- 1 rabbitmq rabbitmq    0 Sep 10 06:03 0.rdq\n\n/var/lib/rabbitmq/mnesia/rabbit@rabbit1/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_transient:\ntotal 8\ndrwxr-x--- 2 rabbitmq rabbitmq 4096 Sep 10 06:03 .\ndrwxr-x--- 4 rabbitmq rabbitmq 4096 Sep 10 06:03 ..\n-rw-r----- 1 rabbitmq rabbitmq    0 Sep 10 06:03 0.rdq\n\n/var/lib/rabbitmq/mnesia/rabbit@rabbit1/quorum:\ntotal 12\ndrwxr-x--- 3 rabbitmq rabbitmq 4096 Sep 10 06:03 .\ndrwxr-x--- 5 rabbitmq rabbitmq 4096 Sep 10 06:03 ..\ndrwxr-x--- 3 rabbitmq rabbitmq 4096 Sep 10 06:04 rabbit@rabbit1\n\n/var/lib/rabbitmq/mnesia/rabbit@rabbit1/quorum/rabbit@rabbit1:\ntotal 32\ndrwxr-x--- 3 rabbitmq rabbitmq 4096 Sep 10 06:04 .\ndrwxr-x--- 3 rabbitmq rabbitmq 4096 Sep 10 06:03 ..\n-rw-r----- 1 rabbitmq rabbitmq  758 Sep 10 06:04 0000000000000001.wal\ndrwxr-x--- 4 rabbitmq rabbitmq 4096 Sep 10 06:04 2F_TOPY678VRMEC0PP\n-rw-r----- 1 rabbitmq rabbitmq 5934 Sep 10 06:04 meta.dets\n-rw-r----- 1 rabbitmq rabbitmq 5903 Sep 10 06:04 names.dets\n-rw-r----- 1 rabbitmq rabbitmq    0 Sep 10 06:03 segment_name_upgrade_marker\n\n/var/lib/rabbitmq/mnesia/rabbit@rabbit1/quorum/rabbit@rabbit1/2F_TOPY678VRMEC0PP:\ntotal 20\ndrwxr-x--- 4 rabbitmq rabbitmq 4096 Sep 10 06:04 .\ndrwxr-x--- 3 rabbitmq rabbitmq 4096 Sep 10 06:04 ..\ndrwxr-x--- 2 rabbitmq rabbitmq 4096 Sep 10 06:04 checkpoints\n-rw-r----- 1 rabbitmq rabbitmq 1742 Sep 10 06:04 config\ndrwxr-x--- 2 rabbitmq rabbitmq 4096 Sep 10 06:04 snapshots\n\n/var/lib/rabbitmq/mnesia/rabbit@rabbit1/quorum/rabbit@rabbit1/2F_TOPY678VRMEC0PP/checkpoints:\ntotal 8\ndrwxr-x--- 2 rabbitmq rabbitmq 4096 Sep 10 06:04 .\ndrwxr-x--- 4 rabbitmq rabbitmq 4096 Sep 10 06:04 ..\n\n/var/lib/rabbitmq/mnesia/rabbit@rabbit1/quorum/rabbit@rabbit1/2F_TOPY678VRMEC0PP/snapshots:\ntotal 8\ndrwxr-x--- 2 rabbitmq rabbitmq 4096 Sep 10 06:04 .\ndrwxr-x--- 4 rabbitmq rabbitmq 4096 Sep 10 06:04 ..\n\n/var/lib/rabbitmq/mnesia/rabbit@rabbit1-plugins-expand:\ntotal 8\ndrwxr-x--- 2 rabbitmq rabbitmq 4096 Sep 10 06:03 .\ndrwxr-x--- 4 rabbitmq rabbitmq 4096 Sep 10 06:03 ..\n",
+  "diagnostics_after_start": {
+    "status_head": "Status of node rabbit@rabbit1 ...\nRuntime\n\nOS PID: 899\nOS: Linux\nUptime (seconds): 9\nIs under maintenance?: false\nRabbitMQ version: 4.2.5\nRabbitMQ release series support status: see https://www.rabbitmq.com/release-information\nNode name: rabbit@rabbit1\nErlang configuration: Erlang/OTP 27 [erts-15.2.7.13] [source] [64-bit] [smp:1:1] [ds:1:1:10] [async-threads:1] [jit:ns]\nCrypto library: OpenSSL 3.6.3 9 Jun 2026\nErlang processes: 370 used, 1048576 limit\nScheduler run queue: 1\nCluster heartbeat timeout (net_ticktime): 60\n\nPlugins\n\nEnabled plugin file: /nix/store/7qml86vq7mslj0jvvkncjc1zwr1zyql1-enabled_plugins\nEnabled plugins:\n\n * rabbitmq_management\n * rabbitmq_management_agent\n * rabbitmq_web_dispatch\n * amqp_client\n * cowboy\n * oauth2_client\n * jose\n\nData directory\n\nNode data directory: /var/lib/rabbitmq/mnesia/rabbit@rabbit1\nRaft data directory: /var/lib/rabbitmq/mnesia/rabbit@rabbit1/quorum/rabbit@rabbit1\n\nConfig files\n\n * /nix/store/jzbb7z7gmdlpn2cms37q07pryw132g42-rabbitmq.conf\n\nLog file(s)\n\n",
+    "start_type": "start_type unavailable: command `su -s /bin/sh rabbitmq -c 'rabbitmq-diagnostics start_type 2>&1'` failed (exit code 64)"
+  },
+  "cluster_status_after_recovery": "Cluster status of node rabbit@rabbit1 ...\nBasics\n\nCluster name: topotestix-rabbitmq-crash\nTotal CPU cores available cluster-wide: 3\n\nCluster Tags\n\n(none)\n\nDisk Nodes\n\nrabbit@rabbit1\nrabbit@rabbit2\nrabbit@rabbit3\n\nRunning Nodes\n\nrabbit@rabbit1\nrabbit@rabbit2\nrabbit@rabbit3\n\nVersions\n\nrabbit@rabbit1: RabbitMQ 4.2.5 on Erlang 27.3.4.17\nrabbit@rabbit2: RabbitMQ 4.2.5 on Erlang 27.3.4.17\nrabbit@rabbit3: RabbitMQ 4.2.5 on Erlang 27.3.4.17\n\nCPU Cores\n\nNode: rabbit@rabbit1, available CPU cores: 1\nNode: rabbit@rabbit2, available CPU cores: 1\nNode: rabbit@rabbit3, available CPU cores: 1\n\nMaintenance status\n\nNode: rabbit@rabbit1, status: not under maintenance\nNode: rabbit@rabbit2, status: not under maintenance\nNode: rabbit@rabbit3, status: not under maintenance\n\nAlarms\n\n(none)\n\nNetwork Partitions\n\n(none)\n\nListeners\n\nNode: rabbit@rabbit1, interface: 127.0.0.1, port: 15672, protocol: http, purpose: HTTP API\nNode: rabbit@rabbit1, interface: [::], port: 25672, protocol: clustering, purpose: inter-node and CLI tool communication\nNode: rabbit@rabbit1, interface: 127.0.0.1, port: 5672, protocol: amqp, purpose: AMQP 0-9-1 and AMQP 1.0\nNode: rabbit@rabbit2, interface: 127.0.0.1, port: 15672, protocol: http, purpose: HTTP API\nNode: rabbit@rabbit2, interface: [::], port: 25672, protocol: clustering, purpose: inter-node and CLI tool communication\nNode: rabbit@rabbit2, interface: 127.0.0.1, port: 5672, protocol: amqp, purpose: AMQP 0-9-1 and AMQP 1.0\nNode: rabbit@rabbit3, interface: 127.0.0.1, port: 15672, protocol: http, purpose: HTTP API\nNode: rabbit@rabbit3, interface: [::], port: 25672, protocol: clustering, purpose: inter-node and CLI tool communication\nNode: rabbit@rabbit3, interface: 127.0.0.1, port: 5672, protocol: amqp, purpose: AMQP 0-9-1 and AMQP 1.0\n\nFeature flags\n\nFlag: classic_mirrored_queue_version, state: enabled\nFlag: classic_queue_type_delivery_support, state: enabled\nFlag: detailed_queues_endpoint, state: enabled\nFlag: direct_exchange_routing_v2, state: enabled\nFlag: drop_unroutable_metric, state: enabled\nFlag: empty_basic_get_metric, state: enabled\nFlag: feature_flags_v2, state: enabled\nFlag: implicit_default_bindings, state: enabled\nFlag: khepri_db, state: enabled\nFlag: listener_records_in_ets, state: enabled\nFlag: maintenance_mode_status, state: enabled\nFlag: message_containers, state: enabled\nFlag: message_containers_deaths_v2, state: enabled\nFlag: quorum_queue, state: enabled\nFlag: quorum_queue_non_voters, state: enabled\nFlag: rabbit_exchange_type_local_random, state: enabled\nFlag: rabbitmq_4.0.0, state: enabled\nFlag: rabbitmq_4.1.0, state: enabled\nFlag: rabbitmq_4.2.0, state: enabled\nFlag: restart_streams, state: enabled\nFlag: stream_filtering, state: enabled\nFlag: stream_queue, state: enabled\nFlag: stream_sac_coordinator_unblock_group, state: enabled\nFlag: stream_single_active_consumer, state: enabled\nFlag: stream_update_config_command, state: enabled\nFlag: tracking_records_in_ets, state: enabled\nFlag: user_limits, state: enabled\nFlag: virtual_host_metadata, state: enabled\n",
+  "operations": [
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000000",
+      "sequence": 0,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020279627875184,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020279690804411
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000001",
+      "sequence": 1,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020279855966463,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020279895303586
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000002",
+      "sequence": 2,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020280057483416,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020280099352704
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000003",
+      "sequence": 3,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020280266856674,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020280306788565
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000004",
+      "sequence": 4,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020280470203189,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020280517698611
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000005",
+      "sequence": 5,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020280685614924,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020280719406649
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000006",
+      "sequence": 6,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020280887789782,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020280923802459
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000007",
+      "sequence": 7,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020281090143712,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020281130930460
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000008",
+      "sequence": 8,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020281297922075,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020281341163884
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000009",
+      "sequence": 9,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020281507171575,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020281539565077
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000010",
+      "sequence": 10,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020281706001314,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020281745570868
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000011",
+      "sequence": 11,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020281920935894,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020281962990401
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000012",
+      "sequence": 12,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020282126059450,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020282166843684
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000013",
+      "sequence": 13,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020282344301433,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020282378806936
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000014",
+      "sequence": 14,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020282542390296,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020282581331000
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000015",
+      "sequence": 15,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020282748971580,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020282785507787
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000016",
+      "sequence": 16,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020282957284647,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020282997011484
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000017",
+      "sequence": 17,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020283156816990,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020283201322926
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000018",
+      "sequence": 18,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020283371139201,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020283410698419
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000019",
+      "sequence": 19,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020283575814097,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020283616894458
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000020",
+      "sequence": 20,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020283784917210,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020283824802167
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000021",
+      "sequence": 21,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020283985599140,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020284020202979
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000022",
+      "sequence": 22,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020284188515991,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020284229498294
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000023",
+      "sequence": 23,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020284397129376,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020284435383400
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000024",
+      "sequence": 24,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020284602604653,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020284645803998
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000025",
+      "sequence": 25,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020284808759066,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020284853022793
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000026",
+      "sequence": 26,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020285019690623,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020285056654818
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000027",
+      "sequence": 27,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020285229648313,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020285267554248
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000028",
+      "sequence": 28,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020285436558689,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020285481063228
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000029",
+      "sequence": 29,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020285639493978,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020285685784778
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000030",
+      "sequence": 30,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020285855599936,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020285902037123
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000031",
+      "sequence": 31,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020286071543582,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020286109209263
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000032",
+      "sequence": 32,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020286269201106,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020286308512247
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000033",
+      "sequence": 33,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020286478900104,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020286538809953
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000034",
+      "sequence": 34,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020286702517351,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020286742820239
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000035",
+      "sequence": 35,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020286908190418,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020286942645077
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000036",
+      "sequence": 36,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020287115116438,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020287154219453
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000037",
+      "sequence": 37,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020287323065214,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020287366334400
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000038",
+      "sequence": 38,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020287547895465,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020287588814911
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000039",
+      "sequence": 39,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020287752983542,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020287798187052
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000040",
+      "sequence": 40,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020287962468546,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020288003128742
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000041",
+      "sequence": 41,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020288173631417,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020288216649175
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000042",
+      "sequence": 42,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020288383975190,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020288417799880
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000043",
+      "sequence": 43,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020288584418263,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020288624589011
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000044",
+      "sequence": 44,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020288787156041,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020288827757291
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000045",
+      "sequence": 45,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020288993914721,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020289032081024
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000046",
+      "sequence": 46,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020289196294633,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020289234113685
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000047",
+      "sequence": 47,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020289402583141,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020289439065432
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000048",
+      "sequence": 48,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020289604999929,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020289644616696
+    },
+    {
+      "op_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000049",
+      "sequence": 49,
+      "outcome": "confirmed",
+      "attempt_wall_ns": 1789020289814003866,
+      "exception_type": null,
+      "exception_message": null,
+      "finish_wall_ns": 1789020289850923363
+    }
+  ],
+  "recovered": [
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000000",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000000",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000001",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000001",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000002",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000002",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000003",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000003",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000004",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000004",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000005",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000005",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000006",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000006",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000007",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000007",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000008",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000008",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000009",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000009",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000010",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000010",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000011",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000011",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000012",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000012",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000013",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000013",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000014",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000014",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000015",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000015",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000016",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000016",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000017",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000017",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000018",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000018",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000019",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000019",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000020",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000020",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000021",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000021",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000022",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000022",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000023",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000023",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000024",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000024",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000025",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000025",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000026",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000026",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000027",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000027",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000028",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000028",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000029",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000029",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000030",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000030",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000031",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000031",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000032",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000032",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000033",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000033",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000034",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000034",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000035",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000035",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000036",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000036",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000037",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000037",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000038",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000038",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000039",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000039",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000040",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000040",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000041",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000041",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000042",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000042",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000043",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000043",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000044",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000044",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000045",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000045",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000046",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000046",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000047",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000047",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000048",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000048",
+      "redelivered": false
+    },
+    {
+      "message_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000049",
+      "body_id": "06ca5c120d834e29b977846d886ab4c3/publish/00000049",
+      "redelivered": false
+    }
+  ]
+}

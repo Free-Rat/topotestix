@@ -1,0 +1,10 @@
+{
+  "baseModule": "/home/freerat/projects/topotestix/targets/etcd-cluster/module.nix",
+  "configTarget": "/home/freerat/projects/topotestix/targets/etcd-cluster/config.nix",
+  "description": "Three-node etcd Raft cluster target",
+  "name": "etcd-cluster",
+  "properties": "/home/freerat/projects/topotestix/targets/etcd-cluster/properties.nix",
+  "reportNode": "etcd1",
+  "testScript": "/home/freerat/projects/topotestix/targets/etcd-cluster/test-script.py",
+  "topologyTarget": "/home/freerat/projects/topotestix/targets/etcd-cluster/topology.nix"
+}

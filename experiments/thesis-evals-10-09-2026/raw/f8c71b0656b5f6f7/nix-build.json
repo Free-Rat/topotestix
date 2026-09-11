@@ -1,0 +1,11 @@
+{
+  "execution": "fresh",
+  "markers": [
+    "these 2 derivations will be built:",
+    "building '/nix/store/sjfw0jsg9bx4492yfknbl876zf8s7z51-nixos-test-driver-kafka-shrink-rep0-seed13-c20260909-c1ce16.drv'...",
+    "building '/nix/store/20b0lcch1h1w8riqmd0p3nqlk11qifk2-vm-test-run-kafka-shrink-rep0-seed13-c20260909-c1ce16.drv'..."
+  ],
+  "note": "",
+  "source": "run-store-log",
+  "wall_s": 2252.834
+}

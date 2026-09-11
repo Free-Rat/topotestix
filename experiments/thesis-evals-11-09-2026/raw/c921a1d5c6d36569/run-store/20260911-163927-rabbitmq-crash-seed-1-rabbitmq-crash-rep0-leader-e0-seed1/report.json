@@ -1,0 +1,14 @@
+[
+  {
+    "name": "rabbitmq-crash-confirmed-recovered-exactly-once",
+    "status": "passed"
+  },
+  {
+    "name": "rabbitmq-crash-fault-was-abrupt-and-role-accurate",
+    "status": "passed"
+  },
+  {
+    "name": "rabbitmq-crash-queue-and-cluster-recover",
+    "status": "passed"
+  }
+]

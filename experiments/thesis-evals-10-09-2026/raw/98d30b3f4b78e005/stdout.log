@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "report": [
+    {
+      "name": "rabbitmq-disk-recovers-healthy",
+      "status": "passed"
+    },
+    {
+      "name": "rabbitmq-disk-capacity-confirmation-contract",
+      "status": "passed"
+    },
+    {
+      "name": "rabbitmq-disk-confirmed-recovered-exactly-once",
+      "status": "passed"
+    },
+    {
+      "name": "rabbitmq-disk-exact-operation-history",
+      "status": "passed"
+    },
+    {
+      "name": "rabbitmq-disk-no-unexplained-messages",
+      "status": "passed"
+    }
+  ],
+  "runDir": "experiments/thesis-evals-10-09-2026/raw/98d30b3f4b78e005.partial/run-store/20260910-061114-rabbitmq-disk-seed-1-rabbitmq-disk-serial-rep0-positive-e1-seed1"
+}

@@ -1,0 +1,26 @@
+{
+  "configChoices": {
+    "kafka": {
+      ".services.apache-kafka.jvmOptions": 0,
+      ".services.apache-kafka.settings.auto.create.topics.enable": 0,
+      ".services.apache-kafka.settings.default.replication.factor": 0,
+      ".services.apache-kafka.settings.log.retention.hours": 0,
+      ".services.apache-kafka.settings.log.segment.bytes": 0,
+      ".services.apache-kafka.settings.message.max.bytes": 0,
+      ".services.apache-kafka.settings.min.insync.replicas": 0,
+      ".services.apache-kafka.settings.num.io.threads": 0,
+      ".services.apache-kafka.settings.num.network.threads": 0,
+      ".services.apache-kafka.settings.offsets.topic.replication.factor": 0,
+      ".services.apache-kafka.settings.replica.fetch.max.bytes": 0,
+      ".services.apache-kafka.settings.transaction.state.log.min.isr": 0,
+      ".services.apache-kafka.settings.transaction.state.log.replication.factor": 0,
+      ".services.apache-kafka.settings.unclean.leader.election.enable": 0,
+      ".virtualisation.diskSize": 0,
+      ".virtualisation.memorySize": 0
+    }
+  },
+  "topologyChoices": {
+    ".kafkaVlans": 0,
+    ".roles.kafka": 0
+  }
+}

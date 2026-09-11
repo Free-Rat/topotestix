@@ -1,0 +1,10 @@
+[
+  {
+    "name": "rabbitmq-failure-domain-exact-recovery",
+    "status": "passed"
+  },
+  {
+    "name": "rabbitmq-failure-domain-retains-quorum-availability",
+    "status": "passed"
+  }
+]

@@ -1,0 +1,199 @@
+{
+  "seeds": {
+    "13": {
+      "class_preserved": true,
+      "final_config": {
+        "roles_kafka": 3,
+        "settings": {
+          "auto.create.topics.enable": false,
+          "default.replication.factor": 1,
+          "log.retention.hours": 1,
+          "log.segment.bytes": 1048576,
+          "message.max.bytes": 1048576,
+          "min.insync.replicas": 1,
+          "num.io.threads": 4,
+          "num.network.threads": 2,
+          "offsets.topic.replication.factor": 1,
+          "replica.fetch.max.bytes": 1048576,
+          "transaction.state.log.min.isr": 1,
+          "transaction.state.log.replication.factor": 1,
+          "unclean.leader.election.enable": false
+        },
+        "virtualisation": {
+          "diskSize": 2048,
+          "memorySize": 2048
+        }
+      },
+      "original_class": "broker-message-max-too-small",
+      "shrunk_status": "failed",
+      "trials": {
+        "count": 12,
+        "executions": {
+          "fresh": 12
+        },
+        "trials": [
+          {
+            "execution": "fresh",
+            "index": 0,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 1,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 2,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 3,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 4,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 5,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 6,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 7,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 8,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 9,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 10,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 11,
+            "status": "failed"
+          }
+        ]
+      }
+    },
+    "9": {
+      "class_preserved": false,
+      "final_config": {
+        "roles_kafka": 3,
+        "settings": {
+          "auto.create.topics.enable": false,
+          "default.replication.factor": 1,
+          "log.retention.hours": 1,
+          "log.segment.bytes": 1048576,
+          "message.max.bytes": 1048576,
+          "min.insync.replicas": 1,
+          "num.io.threads": 4,
+          "num.network.threads": 2,
+          "offsets.topic.replication.factor": 1,
+          "replica.fetch.max.bytes": 1048576,
+          "transaction.state.log.min.isr": 1,
+          "transaction.state.log.replication.factor": 1,
+          "unclean.leader.election.enable": false
+        },
+        "virtualisation": {
+          "diskSize": 2048,
+          "memorySize": 2048
+        }
+      },
+      "original_class": "log-segment-too-small",
+      "shrunk_status": "failed",
+      "trials": {
+        "count": 13,
+        "executions": {
+          "fresh": 13
+        },
+        "trials": [
+          {
+            "execution": "fresh",
+            "index": 0,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 1,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 2,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 3,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 4,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 5,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 6,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 7,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 8,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 9,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 10,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 11,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 12,
+            "status": "failed"
+          }
+        ]
+      }
+    }
+  }
+}

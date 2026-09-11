@@ -1,0 +1,29 @@
+{
+  "execution": "unknown",
+  "exit_code": 0,
+  "input_hash": "729e04ae2ef23b529746abe805606d3eab4a7318463b8a1bd0cf9b60ceb6fafc",
+  "state": "done",
+  "unit": {
+    "base_module": null,
+    "config_choices": null,
+    "config_target": null,
+    "entry_hash": "3c862d5c8fbb43fe9bbabb6647c1948bfef1913625b23f175b2cfbeec8a9d495",
+    "entry_id": "test-suites",
+    "execution_index": 0,
+    "id": "bc234da7dc74cd12",
+    "kind": "test_suites",
+    "produces": [
+      "test-suites"
+    ],
+    "properties": null,
+    "repetition_index": 0,
+    "repetition_token": "c20260910-6335ae",
+    "run_name": "test-suites-rep0-nix",
+    "seed": null,
+    "target": null,
+    "test_script": null,
+    "topology_choices": null,
+    "topology_target": null,
+    "variant_name": "nix"
+  }
+}

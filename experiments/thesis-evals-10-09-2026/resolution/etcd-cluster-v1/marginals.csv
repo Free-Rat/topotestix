@@ -1,0 +1,15 @@
+dimension,resolved_value,count
+etcd:.services.etcd.extraConf.ELECTION_TIMEOUT,"""1000""",24
+etcd:.services.etcd.extraConf.ELECTION_TIMEOUT,"""2500""",26
+etcd:.services.etcd.extraConf.HEARTBEAT_INTERVAL,"""100""",23
+etcd:.services.etcd.extraConf.HEARTBEAT_INTERVAL,"""250""",27
+etcd:.services.etcd.extraConf.QUOTA_BACKEND_BYTES,"""16777216""",25
+etcd:.services.etcd.extraConf.QUOTA_BACKEND_BYTES,"""67108864""",25
+etcd:.services.etcd.extraConf.SNAPSHOT_COUNT,"""10000""",24
+etcd:.services.etcd.extraConf.SNAPSHOT_COUNT,"""100000""",26
+etcd:.virtualisation.diskSize,2048,25
+etcd:.virtualisation.diskSize,4096,25
+etcd:.virtualisation.memorySize,1024,19
+etcd:.virtualisation.memorySize,2048,31
+topology:.etcdVlans,[1],50
+topology:.roles.etcd,3,50

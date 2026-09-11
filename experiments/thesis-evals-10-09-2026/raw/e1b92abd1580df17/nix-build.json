@@ -1,0 +1,11 @@
+{
+  "execution": "fresh",
+  "markers": [
+    "these 2 derivations will be built:",
+    "building '/nix/store/q9v3bc48sw7542prydssh2af2p2fj8zk-nixos-test-driver-kafka-sweep-rep0-seed14-c20260909-c1ce16.drv'...",
+    "building '/nix/store/8xbf6qjdyl9a54iagh6axjxpn5a5wpwh-vm-test-run-kafka-sweep-rep0-seed14-c20260909-c1ce16.drv'..."
+  ],
+  "note": "",
+  "source": "run-store-log",
+  "wall_s": 187.372
+}
