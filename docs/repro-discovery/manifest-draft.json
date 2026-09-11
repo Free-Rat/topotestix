@@ -1,0 +1,356 @@
+[
+  {
+    "id": "kafka-sweep",
+    "kind": "sweep",
+    "target": "kafka-cluster",
+    "seeds": "1..50",
+    "choices": null,
+    "repetitions": 2,
+    "produces": ["kafka-sweep", "kafka-crosstab", "kafka-shrink"],
+    "how": "June sweep (thesis table): `nix develop -c python3 -m topotestix.cli orchestrator sweep kafka-cluster --seeds 1..50 --project-root .` (sequential, default store .topotestix/runs/, run name pattern kafka-cluster-seed-N). 2026-08-24 rerun (the provenance-anchored execution, gitHead 8ff5f96f4a43d04f8bb6fdf305c911384adbcd0c): same sweep command plus `--name kafka-cluster-sweep-1-50-rerun-20260824 --json`. Expected: 13 pass / 37 fail, all failures on kafka-large-message-on-kafka1; classes 19 log-segment-too-small (RecordBatchTooLargeException) + 18 broker-message-max-too-small (RecordTooLargeException); zero per-seed flips between June and rerun. The original pre-fix 20260613 sweep (50/50 fail) is a property-design artifact, NOT thesis evidence; the 'fixed' 20260613 sweep (13/37) IS the thesis sweep.",
+    "sources": [
+      "experiments/kafka-cluster/kafka-cluster-sweep-1-50-fixed-20260613.md",
+      "experiments/kafka-cluster/kafka-cluster-sweep-1-50-fixed-20260613-summary.json",
+      "experiments/kafka-cluster/kafka-cluster-sweep-rerun-20260824-summary.json",
+      "experiments/kafka-cluster/kafka-cluster-shrink-rerun-20260824.md",
+      "experiments/kafka-cluster/rerun-poll-20260824.sh",
+      "experiments/kafka-cluster/rerun-sweep-summarize-20260824.py",
+      "docs/thesis-chapter-6-evaluation.md",
+      ".topotestix/runs/20260824-151208-kafka-cluster-seed-1-kafka-cluster-sweep-1-50-rerun-20260824/run.json"
+    ],
+    "notes": "16 fuzzable dims, 746,496 configs (Table 6.1). Seed derivation: master seed s → topology fuzzer seed s; config fuzzer seed = s+1+roleIndex (role 'kafka' idx 0 ⇒ s+1) per lib/orchestrate.nix:96. Rerun proved value-identical to June (one field-mapping quirk: June 'minIsr' column drew from min.insync.replicas). Repetition 2 = the planned determinism re-run; repetition 1 evidence already exists (kafka-cluster-sweep-rerun-20260824-summary.json)."
+  },
+  {
+    "id": "kafka-shrink",
+    "kind": "shrink",
+    "target": "kafka-cluster",
+    "seeds": [9, 13],
+    "choices": {
+      "topology": {".kafkaVlans": 0, ".roles.kafka": 0},
+      "config": {
+        "kafka": {
+          ".services.apache-kafka.jvmOptions": 0,
+          ".services.apache-kafka.settings.auto.create.topics.enable": 0,
+          ".services.apache-kafka.settings.default.replication.factor": 0,
+          ".services.apache-kafka.settings.log.retention.hours": 0,
+          ".services.apache-kafka.settings.log.segment.bytes": 0,
+          ".services.apache-kafka.settings.message.max.bytes": 0,
+          ".services.apache-kafka.settings.min.insync.replicas": 0,
+          ".services.apache-kafka.settings.num.io.threads": 0,
+          ".services.apache-kafka.settings.num.network.threads": 0,
+          ".services.apache-kafka.settings.offsets.topic.replication.factor": 0,
+          ".services.apache-kafka.settings.replica.fetch.max.bytes": 0,
+          ".services.apache-kafka.settings.transaction.state.log.min.isr": 0,
+          ".services.apache-kafka.settings.transaction.state.log.replication.factor": 0,
+          ".services.apache-kafka.settings.unclean.leader.election.enable": 0,
+          ".virtualisation.diskSize": 0,
+          ".virtualisation.memorySize": 0
+        }
+      }
+    },
+    "repetitions": 2,
+    "produces": ["kafka-shrink"],
+    "how": "Invoke: `nix develop -c python3 -m topotestix.cli orchestrator shrink kafka-cluster <seed> --name kafka-shrink-seed<seed>-rerun-20260824 --json`. The map above is the final all-index-0 minimal choice map both seeds converge to. Expected: seed 13 keeps class RecordTooLargeException (10/1/11); seed 9 mechanically shrinks clean but COLLAPSES RecordBatchTooLargeException → RecordTooLargeException (documented limitation). Both shrinks already re-executed 2026-08-24 (repetition 2 exists): final runs .topotestix/runs/20260824-132314-kafka-cluster-seed-13-kafka-shrink-seed13-rerun-20260824 and 20260824-141305-kafka-cluster-seed-9-kafka-shrink-seed9-rerun-20260824.",
+    "sources": [
+      "experiments/kafka-cluster/rerun-shrink-seed-9.log",
+      "experiments/kafka-cluster/rerun-shrink-seed-13.log",
+      "experiments/kafka-cluster/kafka-cluster-shrink-rerun-20260824.md",
+      "experiments/kafka-cluster/kafka-cluster-shrink-seed-9.log",
+      "experiments/kafka-cluster/kafka-cluster-shrink-seed-13.log",
+      ".topotestix/runs/20260824-141305-kafka-cluster-seed-9-kafka-shrink-seed9-rerun-20260824/run.json",
+      "docs/thesis-chapter-6-evaluation.md"
+    ],
+    "notes": "Thesis 6.2.7/6.5.2: shrinker rewrite c0807fe fixed dotted-key ambiguity; remaining gap is class preservation only. Seed 9 = log-segment class representative, seed 13 = broker-max class representative."
+  },
+  {
+    "id": "kafka-min-configs",
+    "kind": "run",
+    "target": "kafka-cluster",
+    "seeds": [1],
+    "choices": null,
+    "repetitions": 1,
+    "produces": ["kafka-shrink"],
+    "how": "Two runs, target-file override (NOT copied into targets/; --config-target points at the experiments/ file directly):\n1) `nix develop -c python3 -m topotestix.cli orchestrator run kafka-cluster --seed 1 --name kafka-cluster-min-message-max --project-root . --config-target experiments/kafka-cluster/kafka-cluster-min-message-max.nix`\n2) `... --seed 1 --name kafka-cluster-min-log-segment --config-target experiments/kafka-cluster/kafka-cluster-min-log-segment.nix`\nEach .nix fixes all 16 dims to singletons (baseline: 2048 MiB mem/disk, -Xms256m/-Xmx512m, all RF/minIsr/minISR=1, unclean=false, auto-create=false, retention 1h, network 2, io 4, replica.fetch 4 MiB); only the failure-causing dim stays minimal-but-forced: message-max file has message.max.bytes=[1048576] with log.segment.bytes=[16777216]; log-segment file has log.segment.bytes=[1048576] with message.max.bytes=[4194304]. Expected outcome each: 10/11 checks pass, exactly kafka-large-message-on-kafka1 fails, with RecordTooLargeException (file 1) / RecordBatchTooLargeException (file 2).",
+    "sources": [
+      "experiments/kafka-cluster/kafka-cluster-min-message-max.nix",
+      "experiments/kafka-cluster/kafka-cluster-min-log-segment.nix",
+      "docs/thesis-chapter-6-evaluation.md (6.2.5, 6.2.6)",
+      "topotestix/cli.py (--config-target override flag)"
+    ],
+    "notes": "Original validation runs: .topotestix/runs/20260615-172715-kafka-cluster-seed-1-kafka-cluster-min-message-max and 20260615-173157-...-min-log-segment (June; pre-provenance store). These are the thesis's class-isolating minimized repros (RQ3-partial for Kafka)."
+  },
+  {
+    "id": "etcd-v1-sweep",
+    "kind": "sweep",
+    "target": "etcd-cluster-v1",
+    "seeds": "1..50",
+    "choices": null,
+    "repetitions": 1,
+    "produces": ["etcd-v1-sweep"],
+    "how": "June command (run when the working-tree etcd target was still v1, pre-consolidation): `python3 -m topotestix.cli orchestrator sweep etcd-cluster --seeds 1..50 --project-root .` — executed in two parts after a 3-hour harness timeout killed the first attempt after seed 37 (continuation covered seeds 38..50). Reproduction today: register targets/etcd-cluster-v1 (currently staged, untracked) as a full target and run `orchestrator sweep etcd-cluster-v1 --seeds 1..50`. Expected: 39 pass / 11 fail; failed seeds 5,7,20,21,25,29,30,34,38,42,49; single class invalid-etcd-election-timeout-heartbeat-ratio, all 0/0 property reports, evidence 'election-timeout=1000 is less than 5 * heartbeat-interval=250'.",
+    "sources": [
+      "targets/etcd-cluster-v1/config.nix",
+      "targets/etcd-cluster-v1/properties.nix",
+      "experiments/etcd-cluster/etcd-cluster-sweep-1-50-20260616-summary.json",
+      "experiments/etcd-cluster/etcd-cluster-sweep-1-50-20260616.md",
+      "experiments/etcd-cluster/etcd-cluster-notes.md",
+      "experiments/etcd-cluster/etcd-cluster-sweep-1-50-20260615.log",
+      "experiments/etcd-cluster/etcd-cluster-sweep-38-50-20260616.log",
+      "docs/thesis-chapter-6-evaluation.md (6.3.3)",
+      "lib/orchestrate.nix"
+    ],
+    "notes": "VERIFIED (this session, nix eval --impure on lib/fuzzer.nix over targets/etcd-cluster-v1/config.nix): sweep seed s ↔ config fuzzer seed s+1; fuzzer seeds 2/26/50 reproduce summary per-seed configs of sweep seeds 1/25/49 exactly (mem 2048; disk 4096/2048/4096; hb 100/250/250; election 1000/1000/1000; snapshot 10000/100000/10000; quota 16777216/16777216/67108864). GAP: original v1 config.nix was never committed (etcd target first appears committed already as v2 in 2037a66, 2026-06-19; v1 sweep ran 06-15/16 against an uncommitted tree); targets/etcd-cluster-v1 is a staged reconstruction and contains ONLY config.nix + properties.nix (v1 11-check suite) — reproduction needs topology/module/test-script, assumed identical to targets/etcd-cluster (v2) and to be validated by the spot-check above. Original run dirs 20260615-211934-etcd-cluster-seed-N are no longer retained for most seeds."
+  },
+  {
+    "id": "etcd-v2-sweep",
+    "kind": "sweep",
+    "target": "etcd-cluster",
+    "seeds": "1..50",
+    "choices": null,
+    "repetitions": 2,
+    "produces": ["etcd-v2-sweep", "etcd-v2-quota-correlation", "etcd-v2-shrink"],
+    "how": "June command (docs §6.3.4): `nix develop -c python3 -m topotestix.cli orchestrator sweep etcd-cluster --seeds 1..50 --project-root .` — executed in two console parts (seeds 1..25, then 26..50; default run-name pattern etcd-cluster-seed-N). Expected: 37 pass / 13 fail; failed seeds 3,6,12,13,14,28,33,34,38,40,41,42,43; single class quota-backend-too-small-for-write-burst on etcd-quota-write-burst-etcd1 (11/1/12 every failing run); quota correlation 2 MiB→0/13 fail, 8 MiB→20/0 pass, 64 MiB→17/0 pass.",
+    "sources": [
+      "experiments/etcd-cluster/etcd-cluster-v2-sweep-1-50-20260616.md",
+      "experiments/etcd-cluster/etcd-cluster-v2-sweep-1-50-20260616-summary.json",
+      "experiments/etcd-cluster/etcd-cluster-v2-sweep-1-25-20260616.log",
+      "experiments/etcd-cluster/etcd-cluster-v2-sweep-26-50-20260616.log",
+      "targets/etcd-cluster/config.nix",
+      "targets/etcd-cluster/topology.nix",
+      "docs/thesis-chapter-6-evaluation.md (6.3.4)",
+      "docs/empirical-etcd-cluster.md"
+    ],
+    "notes": "6 fuzzable dims (2*2*2*2*2*3=96 cells), 50 sampled. Sweep seed s ↔ fuzzer seed s+1 (same rule, verified on v1 analogue). Repetition 2 (determinism re-run) has NOT been executed yet — June store dirs were not kept for v2; this is new compute. June artifacts predate gitHead recording (gitHead null in summary)."
+  },
+  {
+    "id": "etcd-v2-shrink",
+    "kind": "shrink",
+    "target": "etcd-cluster",
+    "seeds": [3, 40],
+    "choices": {
+      "topology": {".etcdVlans": 0, ".roles.etcd": 0},
+      "config": {
+        "etcd": {
+          ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+          ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+          ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+          ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+          ".virtualisation.diskSize": 0,
+          ".virtualisation.memorySize": 0
+        }
+      }
+    },
+    "repetitions": 2,
+    "produces": ["etcd-v2-shrink"],
+    "how": "Invoke: `nix develop -c python3 -m topotestix.cli orchestrator shrink etcd-cluster <seed> --name etcd-shrink-seed<seed>-rerun-20260824 --json`. Both seeds converge to the identical minimal map above (resolved: roles.etcd=3, etcdVlans=[1], memorySize=1024, diskSize=2048, HEARTBEAT 100, ELECTION 1250, SNAPSHOT 10000, QUOTA 2097152). Validated minimized runs are reproducible with the same orchestrator run + these forced flags (see reproduceCommand in .topotestix/runs/20260824-142121-etcd-cluster-seed-3-etcd-shrink-seed3-rerun-20260824/run.json). Expected: 11 passed / 1 failed / 12 total, failed check etcd-quota-write-burst-etcd1, message 'etcdserver: mvcc: database space exceeded'.",
+    "sources": [
+      "experiments/etcd-cluster/etcd-cluster-v2-shrinking.md",
+      "experiments/etcd-cluster/etcd-cluster-v2-shrink-seed-3.log",
+      "experiments/etcd-cluster/etcd-cluster-v2-shrink-seed-40.log",
+      "experiments/etcd-cluster/rerun-shrink-seed-3-c0807fe.log",
+      "experiments/etcd-cluster/rerun-shrink-seed-40-c0807fe.log",
+      ".topotestix/runs/20260824-142121-etcd-cluster-seed-3-etcd-shrink-seed3-rerun-20260824/run.json",
+      ".topotestix/runs/20260824-144914-etcd-cluster-seed-40-etcd-shrink-seed40-rerun-20260824/run.json",
+      "docs/thesis-chapter-6-evaluation.md (6.3.5, 6.5.2)"
+    ],
+    "notes": "Repetitions 2 already exist and match: June 2026-06-16 (runs 20260616-142216-...-shrink-3, 20260616-143326-...-shrink-40) and 2026-08-24 reruns at HEAD 8ff5f96f (same final choices, same 11/1/12). The forced-choice validation runs are the direct reproduction targets (deterministic; seed value only enters via role seed s+1 but is fully overridden)."
+  },
+  {
+    "id": "etcd-v2-exhaustive",
+    "kind": "exhaustive",
+    "target": "etcd-cluster",
+    "seeds": 96,
+    "choices": {
+      "topology": {".etcdVlans": 0, ".roles.etcd": 0},
+      "config": {
+        "etcd": {
+          ".services.etcd.extraConf.ELECTION_TIMEOUT": "i in {0,1} (1250/2500)",
+          ".services.etcd.extraConf.HEARTBEAT_INTERVAL": "i in {0,1} (100/250)",
+          ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": "i in {0,1,2} (2097152/8388608/67108864)",
+          ".services.etcd.extraConf.SNAPSHOT_COUNT": "i in {0,1} (10000/100000)",
+          ".virtualisation.diskSize": "i in {0,1} (2048/4096)",
+          ".virtualisation.memorySize": "i in {0,1} (1024/2048)"
+        }
+      }
+    },
+    "repetitions": 1,
+    "produces": ["etcd-v2-exhaustive"],
+    "how": "NOT YET EXECUTED — the thesis (06-evaluation.typ, @sec:etcd-shrinking, 'TODO EXPERIMENT') states exhaustive enumeration 'is feasible and planned ... has not been executed in this draft'; no exhaustive data exists anywhere in topotestix or master-thesis (grep confirmed: only thesis-eval-reproduction-plan.md mentions it). How to generate the 96-cell list: fix topology-choices to {\".etcdVlans\":0, \".roles.etcd\":0} and iterate the full index product of the 6 config dims — product of [0,1]×[0,1]×[0,1]×[0,1]×[0,1]×[0,1,2] = 96 combos of (memorySize, diskSize, HEARTBEAT_INTERVAL, ELECTION_TIMEOUT, SNAPSHOT_COUNT, QUOTA_BACKEND_BYTES) — and for each run `orchestrator run etcd-cluster --seed 1 --name etcd-v2-exhaustive-<nnn> --project-root . --topology-choices '{\".etcdVlans\":0,\".roles.etcd\":0}' --config-choices '{\"etcd\":{\".<path>\": <idx>, ...}}'`. A fixed seed is safe: every dimension is forced, so resolution is seed-independent (role fuzz choices are overridden after fuzzing per lib/orchestrate.nix shrinker-apply step).",
+    "sources": [
+      "/home/freerat/projects/master-thesis/thesis/put-thesis/chapters/06-evaluation.typ (line 227 TODO EXPERIMENT)",
+      "thesis-eval-reproduction-plan.md (§7 etcd-v2-exhaustive entry)",
+      "targets/etcd-cluster/config.nix",
+      "targets/etcd-cluster/topology.nix",
+      "lib/orchestrate.nix",
+      "lib/shrinker.nix (choice-override semantics)"
+    ],
+    "notes": "Index order per dimension is the candidate-list order in targets/etcd-cluster/config.nix (verified: v1 spot-check + etcd minimal run resolved QUOTA index 0 → 2097152). Expected coverage: all 13 QUOTA=2MiB-index-0 cells fail, all 64 remaining cells pass (per the sweep's deterministic correlation)."
+  },
+  {
+    "id": "rabbitmq-disk",
+    "kind": "run",
+    "target": "rabbitmq-disk",
+    "seeds": [1],
+    "choices": {
+      "positive-control (phase2-disk-positive + phase3-disk-positive-v2, NO --config-choices; seed-1 fuzz resolution)": {
+        ".environment.etc.topotestix-disk-backlog-rate.text": 1,
+        ".environment.etc.topotestix-disk-capacity-safety-factor-milli.text": 1,
+        ".environment.etc.topotestix-disk-confirm-timeout-ms.text": 1,
+        ".environment.etc.topotestix-disk-consumer-outage-seconds.text": 0,
+        ".environment.etc.topotestix-disk-initial-free-mb.text": 0,
+        ".environment.etc.topotestix-disk-message-size.text": 2,
+        ".services.rabbitmq.configItems.disk_free_limit.absolute": 0,
+        ".virtualisation.diskSize": 1
+      },
+      "cell-X (phase3-disk-counterexample + repA + repB)": {
+        ".environment.etc.topotestix-disk-backlog-rate.text": 1,
+        ".environment.etc.topotestix-disk-capacity-safety-factor-milli.text": 1,
+        ".environment.etc.topotestix-disk-confirm-timeout-ms.text": 0,
+        ".environment.etc.topotestix-disk-consumer-outage-seconds.text": 1,
+        ".environment.etc.topotestix-disk-initial-free-mb.text": 2,
+        ".environment.etc.topotestix-disk-message-size.text": 2,
+        ".services.rabbitmq.configItems.disk_free_limit.absolute": 2,
+        ".virtualisation.diskSize": 1
+      },
+      "minimal-cell (phase3-disk-counterexample-min, 2 executions)": {
+        ".environment.etc.topotestix-disk-backlog-rate.text": 0,
+        ".environment.etc.topotestix-disk-capacity-safety-factor-milli.text": 0,
+        ".environment.etc.topotestix-disk-confirm-timeout-ms.text": 0,
+        ".environment.etc.topotestix-disk-consumer-outage-seconds.text": 0,
+        ".environment.etc.topotestix-disk-initial-free-mb.text": 2,
+        ".environment.etc.topotestix-disk-message-size.text": 0,
+        ".services.rabbitmq.configItems.disk_free_limit.absolute": 2,
+        ".virtualisation.diskSize": 0
+      }
+    },
+    "repetitions": 1,
+    "produces": ["rabbitmq-disk-cells"],
+    "how": "Template (from reproduceCommand): `topotestix orchestrator run rabbitmq-disk --seed 1 --name <cell-name> --project-root /home/freerat/projects/topotestix --topology-target targets/rabbitmq-disk/topology.nix --config-target targets/rabbitmq-disk/config.nix --base-module targets/rabbitmq-disk/module.nix --test-script targets/rabbitmq-disk/test-script.py --properties targets/rabbitmq-disk/properties.nix [--config-choices '<map>']` (prefix with `nix develop -c python3 -m`). Cells: positive control ×2 (183835 gitHead 998cae1 default-resolution; 224837 gitHead 761b053 identical invocation) → pass 5/5, 50/50 confirmed, 0 alarm samples; Cell X ×3 (225112 @761b053, repA 104643 @70a59ad, repB 105452 @70a59ad) → exactly one property fails (capacity-confirmation contract), 200/200 ambiguous, 14 alarm samples, 22/23 recovered; minimal cell ×2 (231356 and 001413, both @761b053, identical map) → 20/20 ambiguous, 16 alarm samples, one contract fails.",
+    "sources": [
+      ".topotestix/runs-thesis-redesign/20260822-183835-rabbitmq-disk-seed-1-phase2-disk-positive/run.json",
+      ".topotestix/runs-thesis-redesign/20260822-224837-rabbitmq-disk-seed-1-phase3-disk-positive-v2/run.json",
+      ".topotestix/runs-thesis-redesign/20260822-225112-rabbitmq-disk-seed-1-phase3-disk-counterexample/run.json",
+      ".topotestix/runs-thesis-redesign/20260823-104643-rabbitmq-disk-seed-1-phase3-disk-counterexample-repA/run.json",
+      ".topotestix/runs-thesis-redesign/20260823-105452-rabbitmq-disk-seed-1-phase3-disk-counterexample-repB/run.json",
+      ".topotestix/runs-thesis-redesign/20260822-231356-rabbitmq-disk-seed-1-phase3-disk-counterexample-min/run.json",
+      ".topotestix/runs-thesis-redesign/20260823-001413-rabbitmq-disk-seed-1-phase3-disk-counterexample-min/run.json",
+      "targets/rabbitmq-disk/config.nix",
+      "docs/thesis-chapter-6-evaluation.md (6.4.3, Table 6.9)",
+      "docs/empirical-rabbitmq-disk.md"
+    ],
+    "notes": "8 dims, 864 cells (Table 6.1). Index order = candidate order in config.nix: diskSize[2048,4096], disk_free_limit[50,100,200MB], initial-free[500,250,100], backlog-rate[10,25], outage[2,8], msg-size[1024,4096,16384], confirm-timeout[1000,3000], safety-factor[1000,1500]. Resolved values for all maps above were read from each run's resolved.json/choices.json. Positive control's map is the un-forced seed-1 fuzz draw (role fuzzer seed 2); role seed rule master+1+roleIndex (rabbit idx 0)."
+  },
+  {
+    "id": "rabbitmq-faildom",
+    "kind": "run",
+    "target": "rabbitmq-failure-domain",
+    "seeds": [1],
+    "choices": {
+      "spread (phase2-faildom-spread)": {
+        ".environment.etc.topotestix-failure-domain-placement.json.text": 0
+      },
+      "colocated (phase2-faildom-colocA / -colocB)": {
+        ".environment.etc.topotestix-failure-domain-placement.json.text": 1
+      }
+    },
+    "repetitions": 1,
+    "produces": ["rabbitmq-faildom-cells"],
+    "how": "Same orchestrator run template with --config-choices as above (all other dims unforced → seed-1 resolution: confirm-timeout 2000 ms idx0, failed-domain zone-a idx0; resolved placement idx0 = rabbit1/zone-a, rabbit2/zone-b, rabbit3/zone-c; idx1 = rabbit1/zone-a, rabbit2/zone-a, rabbit3/zone-b). Expected: spread → pass 2/2, 11/11 exactly-once, probe confirmed; colocated → recovery property PASSES (11/11, probe ambiguous), availability contract FAILS with surviving single replica + OuterCommandTimeout evidence. Runs: 20260822-190647 (spread, 998cae1), 20260822-190921 (colocA, 998cae1), 20260822-191139 (colocB, 998cae1); earlier pair 20260821-125706/-125835 (colocated, pre-baseline, 0/2 first attempt).",
+    "sources": [
+      ".topotestix/runs-thesis-redesign/20260822-190647-rabbitmq-failure-domain-seed-1-phase2-faildom-spread/run.json",
+      ".topotestix/runs-thesis-redesign/20260822-190647-rabbitmq-failure-domain-seed-1-phase2-faildom-spread/resolved.json",
+      ".topotestix/runs-thesis-redesign/20260822-190921-rabbitmq-failure-domain-seed-1-phase2-faildom-colocA/run.json",
+      ".topotestix/runs-thesis-redesign/20260822-191139-rabbitmq-failure-domain-seed-1-phase2-faildom-colocB/run.json",
+      "targets/rabbitmq-failure-domain/config.nix",
+      "targets/rabbitmq-failure-domain/topology.nix",
+      "docs/thesis-chapter-6-evaluation.md (6.4.4, Table 6.10)",
+      "docs/empirical-rabbitmq-partition.md"
+    ],
+    "notes": "Minimal by construction: spread vs colocated differ in exactly one dimension (choices.json verified). 2 designed cells ×3 dims = 4-cell space. confirm-timeout stays at fuzz default idx0 (2000 ms) in all retained cells."
+  },
+  {
+    "id": "rabbitmq-crash",
+    "kind": "run",
+    "target": "rabbitmq-crash",
+    "seeds": [1],
+    "choices": {
+      "follower repA + repB (NO --config-choices; seed-1 fuzz default)": {
+        ".environment.etc.topotestix-crash-delay.text": 1,
+        ".environment.etc.topotestix-crash-publish-count.text": 1,
+        ".environment.etc.topotestix-crash-target-role.text": 0,
+        ".environment.etc.topotestix-crash-timing.text": 0
+      },
+      "leader (phase2-crash-leader)": {
+        ".environment.etc.topotestix-crash-target-role.text": 1
+      },
+      "during-publish follower (phase2-crash-during)": {
+        ".environment.etc.topotestix-crash-timing.text": 1
+      },
+      "during retune follower (phase3-crash-during-retune)": {
+        ".environment.etc.topotestix-crash-delay.text": 1,
+        ".environment.etc.topotestix-crash-publish-count.text": 1,
+        ".environment.etc.topotestix-crash-target-role.text": 0,
+        ".environment.etc.topotestix-crash-timing.text": 1
+      },
+      "during retune leader (phase3-crash-during-retune-2)": {
+        ".environment.etc.topotestix-crash-delay.text": 1,
+        ".environment.etc.topotestix-crash-publish-count.text": 1,
+        ".environment.etc.topotestix-crash-target-role.text": 1,
+        ".environment.etc.topotestix-crash-timing.text": 1
+      }
+    },
+    "repetitions": 1,
+    "produces": ["rabbitmq-crash-cells"],
+    "how": "Same orchestrator run template with --config-choices (or none for the follower default cell). Expected: ALL cells pass 3/3 with 50/50 confirmed, 0 ambiguous; follower kill leader stays rabbit1→rabbit1, leader kill migrates rabbit1→rabbit2. Six cited executions over 6 cells, with the follower cell run twice (repA 175757, repB 180022) and the during-retune cell run twice (follower 202330, leader 202536). Runs at gitHead 998cae1. Unforced dims in the leader/during cells resolve to seed-1 defaults: delay 10 s (idx1), publish count 50 (idx1).",
+    "sources": [
+      ".topotestix/runs-thesis-redesign/20260822-175757-rabbitmq-crash-seed-1-phase2-crash-follower-repA/run.json",
+      ".topotestix/runs-thesis-redesign/20260822-175757-rabbitmq-crash-seed-1-phase2-crash-follower-repA/resolved.json",
+      ".topotestix/runs-thesis-redesign/20260822-180022-rabbitmq-crash-seed-1-phase2-crash-follower-repB/run.json",
+      ".topotestix/runs-thesis-redesign/20260822-185806-rabbitmq-crash-seed-1-phase2-crash-leader/run.json",
+      ".topotestix/runs-thesis-redesign/20260822-190037-rabbitmq-crash-seed-1-phase2-crash-during/run.json",
+      ".topotestix/runs-thesis-redesign/20260822-202330-rabbitmq-crash-seed-1-phase3-crash-during-retune/run.json",
+      ".topotestix/runs-thesis-redesign/20260822-202536-rabbitmq-crash-seed-1-phase3-crash-during-retune-2/run.json",
+      ".topotestix/runs-thesis-redesign/20260822-202536-rabbitmq-crash-seed-1-phase3-crash-during-retune-2/choices.json",
+      "targets/rabbitmq-crash/config.nix",
+      "docs/thesis-chapter-6-evaluation.md (6.4.5, Table 6.11)",
+      "docs/empirical-rabbitmq-crash.md"
+    ],
+    "notes": "4 dims, 24-cell space. timing candidates [before_publish,during_publish,after_publish] (idx0/1/2), role [follower,leader], delay [2,10]s, publish [20,50]. Resolved role/delay/publish defaults for unforced cells read from resolved.json (role fuzzer seed '2'). IMPORTANT quirk discovered: run-dir resolved.json's roleFuzz.rabbit.choices shows the PRE-override fuzz map while the forced overrides live in choices.json (configChoices) — reproduceCommand in run.json is the authoritative forced map. Driver defect fix cd06a3c (cluster-aware restart) precedes all cited runs."
+  },
+  {
+    "id": "resolution-sweep",
+    "kind": "fuzz-only",
+    "target": ["kafka-cluster", "etcd-cluster", "rabbitmq-disk", "rabbitmq-failure-domain", "rabbitmq-crash"],
+    "seeds": "1..50",
+    "choices": null,
+    "repetitions": 1,
+    "produces": ["resolution/uniqueness", "resolution/marginals", "resolution/pairwise-coverage", "execution-accounting"],
+    "how": "`nix develop -c python3 -m topotestix.cli orchestrator fuzz <target> --seed <N> --project-root .` per seed (eval_json → generate_fuzz_expr; pure nix eval, no build/VM). cmd_fuzz resolves the per-role CONFIG target only; the topology draw needs the analogous fuzzer call over <target>/topology.nix (as done manually in this discovery via `nix eval --impure --json --expr '(import lib/fuzzer.nix {lib}).fuzzer { seed = \"<s>\"; target = import <target>/topology.nix {...}; }.result'`). Topology seed = master seed; per-role config seed = master+1+roleIndex.",
+    "sources": [
+      "topotestix/cli.py (orchestrator fuzz subparser, cmd_fuzz)",
+      "topotestix/orchestrator.py:681-685",
+      "lib/orchestrate.nix (seed-derivation rule, lines 14-16, 96)",
+      "lib/fuzzer.nix",
+      "thesis-eval-reproduction-plan.md (§4 uniqueness/marginals/pairwise)",
+      "targets/default.nix"
+    ],
+    "notes": "RabbitMQ targets are run as forced cells in the thesis but the fuzz-only sweep records what a seed sweep WOULD resolve to (needed for marginals/pairwise). Note rabbitmq-failure-domain has near-trivial space (placement 2 × timeout 2; failed-domain fixed) and rabbitmq-crash 24 cells — full exhaustion possible in fuzz-only mode at zero VM cost."
+  },
+  {
+    "id": "test-suites",
+    "kind": "run",
+    "target": "framework",
+    "seeds": null,
+    "choices": null,
+    "repetitions": 1,
+    "produces": ["execution-accounting", "verification/VERIFICATION_REPORT.md"],
+    "how": "Python: `nix develop -c python3 -m unittest discover -s tests -p 'test_*.py'` → verified this session: 'Ran 57 tests ... OK'. Nix: `nix develop -c nix-unit --eval-store <tmp> --expr 'import ./tests { lib = (import <nixpkgs> {}).lib; }'` → verified this session: '114/114 successful'. Aggregate equivalent: `nix flake check` (checks.runTests in flake.nix runs both). Thesis claim: Python 57 / Nix 114 — both exact.",
+    "sources": [
+      "flake.nix (checks.runTests, runtest alias)",
+      "tests/default.nix",
+      "tests/ (test_cli.py, test_orchestrator.py, test_reports.py, test_run_store.py, test_sweep.py + 8 *.nix suites)",
+      "docs/thesis-chapter-6-evaluation.md (6.6 Reliability)"
+    ],
+    "notes": "Test files: test_cli.py, test_orchestrator.py, test_reports.py, test_run_store.py, test_sweep.py (Python); combinators/fuzzer/expand-topology/merge/runner/orchestrate/shrinker/targets-test.nix (Nix)."
+  }
+]

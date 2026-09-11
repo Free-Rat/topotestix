@@ -482,7 +482,7 @@
     }
   ],
   "meta": {
-    "derived_from": "study/repro-discovery/manifest-draft.json",
+    "derived_from": "docs/repro-discovery/manifest-draft.json",
     "description": "Thesis evaluation reproduction campaign - single source of truth",
     "freshness_rule": "distinct --name per unit forces a fresh nix drv (verified in 0d-cost-probe.md)",
     "seed_rule": "sweep seed s -> topology fuzzer seed s, config fuzzer seed s+1+roleIndex (lib/orchestrate.nix:96)"

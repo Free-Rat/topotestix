@@ -1,0 +1,92 @@
+claim_id,location,statement,expected_value,tolerance
+k-01,06-evaluation.typ:98 (@sec:evaluation-kafka sweep results),Kafka 50-seed sweep pass/fail split,13 of 50 pass / 37 of 50 fail,exact
+k-02,06-evaluation.typ:98 (@sec:evaluation-kafka),All 37 failures concentrated in single check kafka-large-message-on-kafka1 (other 10 checks already passed whenever reached),37 failures all in kafka-large-message-on-kafka1,exact
+k-03,06-evaluation.typ:103-106 (@tab:kafka-classes),Kafka failure-class counts over 50 seeds,message.max.bytes too small: 18 (RecordTooLargeException); log.segment.bytes too small: 19 (RecordBatchTooLargeException); Pass: 13,exact
+k-04,06-evaluation.typ:118 (@tab:kafka-crosstab),Crosstab cell (message.max.bytes=1MiB,replica.fetch.max.bytes=1MiB,log.segment.bytes=1MiB): pass/broker-max/log-segment,0/3/0,exact
+k-05,06-evaluation.typ:119 (@tab:kafka-crosstab),Crosstab cell (1MiB,1MiB,16MiB): pass/broker-max/log-segment,0/3/0,exact
+k-06,06-evaluation.typ:120 (@tab:kafka-crosstab),Crosstab cell (1MiB,2MiB,1MiB): pass/broker-max/log-segment,0/3/0,exact
+k-07,06-evaluation.typ:121 (@tab:kafka-crosstab),Crosstab cell (1MiB,2MiB,16MiB): pass/broker-max/log-segment,0/2/0,exact
+k-08,06-evaluation.typ:122 (@tab:kafka-crosstab),Crosstab cell (1MiB,4MiB,1MiB): pass/broker-max/log-segment,0/5/0,exact
+k-09,06-evaluation.typ:123 (@tab:kafka-crosstab),Crosstab cell (1MiB,4MiB,16MiB): pass/broker-max/log-segment,0/2/0,exact
+k-10,06-evaluation.typ:124 (@tab:kafka-crosstab),Crosstab cell (2MiB,1MiB,1MiB): pass/broker-max/log-segment,0/0/4,exact
+k-11,06-evaluation.typ:125 (@tab:kafka-crosstab),Crosstab cell (2MiB,1MiB,16MiB): pass/broker-max/log-segment,2/0/0,exact
+k-12,06-evaluation.typ:126 (@tab:kafka-crosstab),Crosstab cell (2MiB,2MiB,1MiB): pass/broker-max/log-segment,0/0/4,exact
+k-13,06-evaluation.typ:127 (@tab:kafka-crosstab),Crosstab cell (2MiB,2MiB,16MiB): pass/broker-max/log-segment,4/0/0,exact
+k-14,06-evaluation.typ:128 (@tab:kafka-crosstab),Crosstab cell (2MiB,4MiB,1MiB): pass/broker-max/log-segment,0/0/3,exact
+k-15,06-evaluation.typ:129 (@tab:kafka-crosstab),Crosstab cell (2MiB,4MiB,16MiB): pass/broker-max/log-segment,2/0/0,exact
+k-16,06-evaluation.typ:130 (@tab:kafka-crosstab),Crosstab cell (4MiB,1MiB,1MiB): pass/broker-max/log-segment,0/0/3,exact
+k-17,06-evaluation.typ:131 (@tab:kafka-crosstab),Crosstab cell (4MiB,1MiB,16MiB): pass/broker-max/log-segment,1/0/0,exact
+k-18,06-evaluation.typ:132 (@tab:kafka-crosstab),Crosstab cell (4MiB,2MiB,1MiB): pass/broker-max/log-segment,0/0/2,exact
+k-19,06-evaluation.typ:133 (@tab:kafka-crosstab),Crosstab cell (4MiB,2MiB,16MiB): pass/broker-max/log-segment,3/0/0,exact
+k-20,06-evaluation.typ:134 (@tab:kafka-crosstab),Crosstab cell (4MiB,4MiB,1MiB): pass/broker-max/log-segment,0/0/3,exact
+k-21,06-evaluation.typ:135 (@tab:kafka-crosstab),Crosstab cell (4MiB,4MiB,16MiB): pass/broker-max/log-segment,1/0/0,exact
+k-22,06-evaluation.typ:140 (@sec:evaluation-kafka),Broker-max class occurs exactly when message.max.bytes=1MiB (independent of other size options),broker-max iff message.max.bytes=1MiB,exact
+k-23,06-evaluation.typ:140 (@sec:evaluation-kafka),Log-segment class occurs exactly when log.segment.bytes=1MiB,log-segment iff log.segment.bytes=1MiB,exact
+k-24,06-evaluation.typ:146 (@sec:kafka-class1),Representative seed for RecordTooLargeException class,seed 13,exact
+k-25,06-evaluation.typ:153 (@sec:kafka-class1),Class-isolating minimized config kafka-cluster-min-message-max.nix validation: 10 checks pass + 1 RecordTooLargeException failure,10 pass / 1 fail,exact
+k-26,06-evaluation.typ:157 (@sec:kafka-class2),Representative seed for RecordBatchTooLargeException class,seed 9,exact
+k-27,06-evaluation.typ:164 (@sec:kafka-class2),Class-isolating minimized config kafka-cluster-min-log-segment.nix validation: 10 checks pass + 1 RecordBatchTooLargeException failure,10 pass / 1 fail,exact
+k-28,06-evaluation.typ:170 (@sec:kafka-shrink-limits),Unconstrained shrink of seed 9 collapses RecordBatchTooLargeException into RecordTooLargeException (failure-class not preserved),minimized seed-9 fails with RecordTooLargeException,exact
+k-29,06-evaluation.typ:76 (@sec:evaluation-kafka),Kafka fuzzable space product and sample size,746496 configurations of which 50 sampled,exact
+k-30,06-evaluation.typ:357 (@sec:evaluation-reproducibility),Full second execution of Kafka sweep at evaluated revision reproduced every per-seed outcome,zero flips across all 50 seeds,exact
+k-31,08-conclusions.typ:9 (@chap:conclusion),Conclusions restate Kafka sweep aggregate,50-seed sweep with 37 failing configurations in one large-message property split into two deterministic classes,exact
+e1-01,06-evaluation.typ:197 (@sec:evaluation-etcd v1 sweep),etcd v1 sweep pass/fail split,39 pass / 11 fail of 50 seeds,exact
+e1-02,06-evaluation.typ:197 (@sec:evaluation-etcd v1 sweep),etcd v1 failing seeds (list),seeds 5,7,20,21,25,29,30,34,38,42,49,exact
+e1-03,06-evaluation.typ:197 (@sec:evaluation-etcd v1 sweep),etcd v1 failure class and property report,class invalid-etcd-election-timeout-heartbeat-ratio with empty 0/0 property report (failure pre-property-suite),exact
+e1-04,06-evaluation.typ:191-195 (@sec:evaluation-etcd v1 sweep),v1 trigger configuration and error message,heartbeat-interval=250ms with election-timeout=1000ms; error 'election-timeout should be at least 5x heartbeat-interval',exact
+e2-01,06-evaluation.typ:203 (@sec:evaluation-etcd v2 sweep),etcd v2 sweep pass/fail split,37 pass / 13 fail of 50 runs,exact
+e2-02,06-evaluation.typ:203 (@sec:evaluation-etcd v2 sweep),etcd v2 failing seeds (list),seeds 3,6,12,13,14,28,33,34,38,40,41,42,43,exact
+e2-03,06-evaluation.typ:203 (@sec:evaluation-etcd v2 sweep),etcd v2 failure class and failing check,all 13 in class quota-backend-too-small-for-write-burst; failed check is last one etcd-quota-write-burst-etcd1,exact
+e2-04,06-evaluation.typ:205-207 (@sec:evaluation-etcd v2 sweep),etcd v2 representative error message,etcdserver: mvcc: database space exceeded,exact
+e2-05,06-evaluation.typ:214 (@tab:etcd-quota-correlation),Quota correlation cell QUOTA_BACKEND_BYTES=2MiB (2097152): Passed/Failed/Total,0/13/13,exact
+e2-06,06-evaluation.typ:215 (@tab:etcd-quota-correlation),Quota correlation cell QUOTA_BACKEND_BYTES=8MiB (8388608): Passed/Failed/Total,20/0/20,exact
+e2-07,06-evaluation.typ:216 (@tab:etcd-quota-correlation),Quota correlation cell QUOTA_BACKEND_BYTES=64MiB (67108864): Passed/Failed/Total,17/0/17,exact
+e2-08,06-evaluation.typ:221 (@sec:evaluation-etcd v2 sweep),Deterministic quota split: every 2MiB run fails; every 8MiB and 64MiB run passes,2MiB: 13/13 fail; 8MiB: 0/20 fail; 64MiB: 0/17 fail,exact
+e2-09,06-evaluation.typ:221 (@sec:evaluation-etcd v2 sweep),In every failing v2 run the first eleven properties pass before the quota burst fails,11 of 12 checks pass in every failing run,exact
+e2-10,06-evaluation.typ:187 (@sec:evaluation-etcd),etcd v2 space size and sample,6 options product 96 configurations of which 50 sampled,exact
+e2-11,06-evaluation.typ:225 (@sec:etcd-shrinking),Both representative v2 failures (seeds 3 and 40) reduce to same minimal config,seeds 3 and 40 shrink to identical minimal configuration,exact
+e2-12,06-evaluation.typ:225 (@sec:etcd-shrinking),etcd shrink minimal configuration values,3 etcd nodes on one VLAN; memory 1024 MiB; disk 2048 MiB; heartbeat 100 ms; election timeout 1250 ms; snapshot count 10000; QUOTA_BACKEND_BYTES=2097152 (2 MiB),exact
+e2-13,06-evaluation.typ:225 (@sec:etcd-shrinking),Rerun of both shrinks reproduces identical result: same choice maps; same single failing check; same summary counts,11 passed / 1 failed / 12 total,exact
+e2-14,06-evaluation.typ:357 (@sec:evaluation-reproducibility),Both etcd shrinks reproduced minimal configurations identically at evaluated revision,identical final choice maps and resolved values,exact
+e2-15,06-evaluation.typ:227 (@sec:etcd-shrinking todo:EXPERIMENT),Planned exhaustive baseline for the 96-cell etcd v2 space: enumerating every cell (the sweep samples 50) executes all 96 and extends the sampled quota split of 06-evaluation.typ:221 to the full space; with 3 quota values over 96 cells each value covers 32 cells so the 2 MiB cells fail and the 8 MiB and 64 MiB cells pass,96 cells executed; 32 fail all at QUOTA_BACKEND_BYTES=2097152 (2 MiB); 64 pass,exact
+r-01,06-evaluation.typ:267 (@sec:evaluation-rabbitmq-disk),Disk positive control run passes all five properties with all confirms and no alarm,5/5 properties pass; 50/50 publishes confirmed; 0 alarm samples (run 20260822-183835-...-seed-1-phase2-disk-positive, rev 998cae1),exact
+r-02,06-evaluation.typ:271 (@sec:evaluation-rabbitmq-disk),Cell X configuration,nominal free-space target 100 MB (recorded post-fill approx 104.5 MB); alarm threshold 200 MB; 200 messages of 16 KiB; 1 s confirm timeout; 1.5x safety factor,range
+r-03,06-evaluation.typ:273 (@sec:evaluation-rabbitmq-disk),Cell X model disagreement fires the contract,naive_capacity_sufficient=true (approx 104.5 MB > approx 4.69 MB naive req) while capacity_sufficient=false (104.5 MB < approx 204.69 MB strict req),range
+r-04,06-evaluation.typ:274 (@sec:evaluation-rabbitmq-disk),Cell X alarm and publish outcomes,disk_free alarm activates during publish (14 alarm samples); all 200 publish attempts ambiguous with ConnectionBlockedTimeout,exact
+r-05,06-evaluation.typ:275 (@sec:evaluation-rabbitmq-disk),Cell X durably applied unconfirmed messages,22 of the unconfirmed messages were durably applied by the broker,range
+r-06,06-evaluation.typ:276 (@sec:evaluation-rabbitmq-disk),Cell X property outcome: exactly one property fails,exactly one property fails: rabbitmq-disk-capacity-confirmation-contract; other four (incl. recovery and consistency) pass,exact
+r-07,06-evaluation.typ:277 (@sec:evaluation-rabbitmq-disk),Two further identical-cell reproductions of Cell X reproduce the signature with different recovered counts,22 and 23 recovered messages respectively,range
+r-08,06-evaluation.typ:289-290 (@tab:rabbitmq-disk-cells),Disk positive-control rows: strict-suff true; naive-suff true; 50/50 confirmed; 0 alarm samples; verdict,pass 5/5 (both rows incl. rerun),exact
+r-09,06-evaluation.typ:291 (@tab:rabbitmq-disk-cells),Cell X row: strict-suff false; naive-suff true; 200/200 ambiguous; 14 alarm samples,fails capacity contract only,exact
+r-10,06-evaluation.typ:292-293 (@tab:rabbitmq-disk-cells),Cell X reproduction rows 1 and 2: same signature with recovered counts,22 recovered (repro 1); 23 recovered (repro 2),range
+r-11,06-evaluation.typ:294 (@tab:rabbitmq-disk-cells),Disk minimal cell (nominal 100 MB / 200 MB limit / 20 x 1 KiB; other dimensions at minimum): 20/20 ambiguous and 16 alarm samples,fails capacity contract only,exact
+r-12,06-evaluation.typ:342 (@sec:evaluation-rabbitmq-shrink),Disk minimal cell reproduces same single-contract failure with payload roughly 160x smaller; duplicated run (20260822-231356) same verdict,20/20 ambiguous; 16 alarm samples,exact
+r-13,06-evaluation.typ:313 (@sec:evaluation-rabbitmq-failure-domain),Spread placement positive control: zone-a failure keeps quorum; probe confirmed; verdict,pass 2/2 (two properties); 11/11 tracked operations recover exactly once (run 20260822-190647-...-phase2-faildom-spread; rev 998cae1),exact
+r-14,06-evaluation.typ:315 (@sec:evaluation-rabbitmq-failure-domain),Colocated placement: availability contract fails while exact-recovery passes,colocated: rabbitmq-failure-domain-exact-recovery passes (11/11 exactly once incl. ambiguous probe); rabbitmq-failure-domain-retains-quorum-availability fails with OuterCommandTimeout evidence,exact
+r-15,06-evaluation.typ:322 (@tab:rabbitmq-faildom-cells),Spread cell: zone-a; 2 of 3 surviving replicas; probe confirmed,pass 2/2; 11/11 exactly once,exact
+r-16,06-evaluation.typ:323 (@tab:rabbitmq-faildom-cells),Colocated cell: zone-a; 1 of 3 surviving; probe ambiguous (OuterCommandTimeout),fails availability contract; recovery passes,exact
+r-17,06-evaluation.typ:324 (@tab:rabbitmq-faildom-cells),Colocated reproduction 2: zone-a; 1 of 3 surviving; probe ambiguous,same verdict as colocated,exact
+r-18,06-evaluation.typ:333 (@sec:evaluation-rabbitmq-crash),All evaluated crash cells pass 3/3 with exact-once recovery and zero ambiguous operations,all cells pass 3/3; every confirmed persistent publish survived one SIGKILL; zero ambiguous operations,exact
+r-19,06-evaluation.typ:333 (@sec:evaluation-rabbitmq-crash),Ambiguous-operation path not exercised by any crash cell on this stack,0 ambiguous operations across all crash cells (negative observation),exact
+r-20,appendix.typ:138 (@tab:rabbitmq-crash-cells),Crash cell follower reproduction A: rabbit2 killed; 50/50 confirmed; 0 ambiguous; leader rabbit1->rabbit1,pass 3/3,exact
+r-21,appendix.typ:139 (@tab:rabbitmq-crash-cells),Crash cell follower reproduction B: rabbit2 killed; 50/50 confirmed; 0 ambiguous; leader rabbit1->rabbit1,pass 3/3,exact
+r-22,appendix.typ:140 (@tab:rabbitmq-crash-cells),Crash cell leader: rabbit1 killed; 50/50 confirmed; 0 ambiguous; leader migrates rabbit1->rabbit2,pass 3/3,exact
+r-23,appendix.typ:141 (@tab:rabbitmq-crash-cells),Crash cell during-publish follower: rabbit2 killed; 50/50 confirmed; 0 ambiguous; leader rabbit1->rabbit1,pass 3/3,exact
+r-24,appendix.typ:142 (@tab:rabbitmq-crash-cells),Crash cell during-publish retune follower 10 s delay: rabbit2 killed; 50/50 confirmed; 0 ambiguous,pass 3/3,exact
+r-25,appendix.typ:143 (@tab:rabbitmq-crash-cells),Crash cell during-publish retune leader 10 s delay: rabbit1 killed; 50/50 confirmed; 0 ambiguous; leader rabbit1->rabbit2,pass 3/3,exact
+r-26,appendix.typ:148 (@sec:crash-cells),Crash cell execution counts: two cells doubly executed (before-publish follower A+B; resolved during-publish follower),rest of cells single execution (existence claims only),exact
+r-27,08-conclusions.typ:9 (@chap:conclusion),Conclusions restate etcd quota split and RabbitMQ counterexample pattern,13 etcd failures in single quota class with deterministic split by QUOTA_BACKEND_BYTES; reproduced RabbitMQ counterexamples on designed cells,exact
+c-01,06-evaluation.typ:33 (@tab:eval-config-spaces),Config-space row kafka-cluster: topology 3 brokers; fuzzable options; total combinations; per-run checks,16 options; 746496 combinations; 11 checks,exact
+c-02,06-evaluation.typ:34 (@tab:eval-config-spaces),Config-space row etcd-cluster (v2): topology 3 nodes 1 vlan; options; combinations; checks,6 options; 96 combinations; 12 checks,exact
+c-03,06-evaluation.typ:35 (@tab:eval-config-spaces),Config-space row rabbitmq (disk / failure-domain / crash): options; combinations; checks,8/3/4 options; 864/4/24 combinations; 5/2/3 checks,exact
+c-04,06-evaluation.typ:73-76 (@sec:evaluation-kafka),Kafka per-dimension value counts imply product 746496 (16 dims: 3x3x3x2x2x2x2x2x2x2x3x2x3x3x2x2),product of per-dimension value counts = 746496,exact
+t-01,06-evaluation.typ:359 (@sec:evaluation-reproducibility),Python unit-test suite passes at evaluated revisions,57 tests,exact
+t-02,06-evaluation.typ:359 (@sec:evaluation-reproducibility),Nix unit-test suite passes at evaluated revisions,114 tests,exact
+m-01,07-discussion.typ:91 (@sec:scalability-discussion),RabbitMQ baseline visited all cells of its conservative configuration space,all 32 cells visited (informational; historical),informational
+m-02,07-discussion.typ:91 (@sec:scalability-discussion),Historical disk report covered critical joint cells over fill-target/disk-free-limit axes,all 9 cells of the critical joint within a 162-cell space,informational
+m-03,07-discussion.typ:91 (@sec:scalability-discussion),Historical crash report coverage across timing/node/restart-delay axes,22 of 24 cells,informational
+m-04,06-evaluation.typ:5 (@chap:evaluation),All three targets are three-node/three-broker clusters on a single private network,3-node Kafka; 3-node etcd; 3-broker RabbitMQ,informational
+m-05,06-evaluation.typ:183 (@sec:evaluation-etcd),Quota write-burst workload size,80 distinct 64 KiB values (approx 5 MiB total),informational
+m-06,06-evaluation.typ:86 (@sec:evaluation-kafka),Large-message property payload,1.5 MiB record with acks=all to 3-partition RF-3 topic; consumer must receive at least 1.5 MiB,informational
+m-07,07-discussion.typ:91 (@sec:scalability-discussion),RabbitMQ baseline historical total,500/500 runs passing all 15 checks (cache-reuse caveat),informational
+m-08,06-evaluation.typ:379 (@sec:evaluation-summary),Summary restates both sweep aggregates and zero-flip rerun,Kafka 13/37 of 50 with zero per-seed flips on re-execution; etcd v2 37/13 all quota class,exact

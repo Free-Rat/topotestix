@@ -15,7 +15,7 @@ Phases (pass individually with `--phase <name>`):
                  after any out-of-band run so the committed tree keeps the
                  log-derived evidence.
   - `analyze`  — rebuild `analysis/` from `raw/` + `resolution/` (pure).
-  - `verify`   — score `study/repro-discovery/claims.csv` against `analysis/`
+  - `verify`   — score `experiments/reproduce/claims.csv` against `analysis/`
                  and write `verification/claims-matrix.csv` (pure).
   - `report`   — write `verification/VERIFICATION_REPORT.md` + this README.
 

@@ -25,7 +25,7 @@ from experiments.reproduce import analyze, collect, env, manifest, models, repor
 from experiments.reproduce import runner as runner_mod
 from experiments.reproduce.models import Unit, parse_seeds
 
-# Wall-clock estimates (seconds per unit) from study/repro-discovery/0d-cost-probe.md
+# Wall-clock estimates (seconds per unit) from docs/repro-discovery/0d-cost-probe.md
 PER_UNIT_S = {"kafka": 214.0, "etcd": 98.0, "rabbitmq": 83.0, "shrink-loop": 1800.0}
 # Per-run unique disk: the VM closure (linux/qemu ~4-5 GiB) is shared in the
 # nix store; a new vm-test-run drv's own closure is small (driver + etc
@@ -314,7 +314,7 @@ def phase_verify(args) -> dict:
 def verify_run(args, data):
     from experiments.reproduce import verify
 
-    claims = args.claims or str(Path(args.project_root) / "study/repro-discovery/claims.csv")
+    claims = args.claims or str(Path(args.project_root) / "experiments/reproduce/claims.csv")
     return verify.run(Path(args.out), data, claims)
 
 
@@ -368,7 +368,7 @@ def main(argv=None) -> int:
     p.add_argument("--out", default="experiments/thesis-evals-20260904")
     p.add_argument("--manifest", default="experiments/reproduce/MANIFEST.json")
     p.add_argument(
-        "--claims", default=None, help="claims.csv path (default study/repro-discovery/claims.csv)"
+        "--claims", default=None, help="claims.csv path (default experiments/reproduce/claims.csv)"
     )
     p.add_argument("--project-root", default=".")
     p.add_argument("--only", default=None, help="comma-separated manifest entry ids")

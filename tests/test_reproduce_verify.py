@@ -25,7 +25,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from experiments.reproduce.verify import run as verify_run
 
 REPO = Path(__file__).resolve().parent.parent
-CLAIMS_CSV = REPO / "study" / "repro-discovery" / "claims.csv"
+CLAIMS_CSV = REPO / "experiments" / "reproduce" / "claims.csv"
 
 KAFKA_CHECK = "kafka-large-message-on-kafka1"
 ETCD_V2_CHECK = "etcd-quota-write-burst-etcd1"
@@ -56,7 +56,7 @@ CROSSTAB = {
     (4, 4, 16): (1, 0, 0),
 }
 
-# Claim rows copied verbatim from study/repro-discovery/claims.csv.
+# Claim rows copied verbatim from experiments/reproduce/claims.csv.
 SUBSET_CLAIMS = [
     (
         "k-01",
