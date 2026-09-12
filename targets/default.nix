@@ -39,6 +39,16 @@
     reportNode = "client1";
   };
 
+  kafka-rack-links = {
+    description = "Kafka KRaft across three racks joined by fuzzed link VLANs, with link cuts";
+    topologyTarget = ./kafka-rack-links/topology.nix;
+    configTarget = ./kafka-rack-links/config.nix;
+    baseModule = ./kafka-rack-links/module.nix;
+    testScript = ./kafka-rack-links/test-script.py;
+    properties = ./kafka-rack-links/properties.nix;
+    reportNode = "client1";
+  };
+
   etcd-cluster = {
     description = "Three-node etcd Raft cluster target";
     topologyTarget = ./etcd-cluster/topology.nix;
