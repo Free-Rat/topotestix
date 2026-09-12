@@ -1,0 +1,845 @@
+{
+  "d2": {
+    "cut_changes_nothing_seeds": [],
+    "cut_removes_link_seeds": [
+      11,
+      12,
+      28,
+      29
+    ],
+    "demonstration_minimum_met": false,
+    "graph_classes": [
+      "all isolated",
+      "one link"
+    ],
+    "materialized_in_all_verdict_runs": true,
+    "null_minimum_met": false,
+    "predictions_hold": true,
+    "verdict_seeds": 4
+  },
+  "d3": [],
+  "executions": [
+    {
+      "cell": {
+        "cut": "12",
+        "node_vlans": {
+          "racka1": [
+            11,
+            20,
+            31
+          ],
+          "racka2": [
+            11,
+            20,
+            31
+          ],
+          "rackb1": [
+            12,
+            20,
+            32
+          ],
+          "rackb2": [
+            12,
+            20,
+            32
+          ],
+          "rackc1": [
+            12,
+            20,
+            33
+          ],
+          "rackc2": [
+            12,
+            20,
+            33
+          ]
+        },
+        "placement": "concentrated",
+        "rack_links": {
+          "rack-a": [
+            11
+          ],
+          "rack-b": [
+            12
+          ],
+          "rack-c": [
+            12
+          ]
+        }
+      },
+      "checks": {
+        "kafka-rack-links-cluster-recovers": "failed",
+        "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+        "kafka-rack-links-cut-accurate": "failed",
+        "kafka-rack-links-execution-completed": "failed",
+        "kafka-rack-links-materialized": "passed",
+        "kafka-rack-links-runtime-versions-pinned": "passed"
+      },
+      "control": false,
+      "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.\n[2026-09-12 13:03:05,142] ERROR org.apache.kafka.common.errors.InvalidReplicaAssignmentException: The manual partition assignment includes broker 1, but no such broker is registered.\n (org.apache.kafka.tools.TopicCommand)\n",
+      "duration_seconds": 162.0,
+      "formed": false,
+      "key": "seed-1-rep-1",
+      "outcome": "precondition_failure",
+      "prediction": {
+        "cut": "12",
+        "cut_removes_link": true,
+        "formation": "impossible",
+        "graph_class": "all isolated",
+        "links_during_cut": [],
+        "links_present": [
+          12
+        ],
+        "placement": "concentrated",
+        "rack_links": {
+          "rack-a": [
+            11
+          ],
+          "rack-b": [
+            12
+          ],
+          "rack-c": [
+            12
+          ]
+        },
+        "seed": 1
+      },
+      "repetition": 1,
+      "resolution_matches_plan": true,
+      "run_dir": "runs/20260912-130026-kafka-rack-links-seed-1-kafka-rack-links-seed-1-rep-1",
+      "seed": 1,
+      "signature": null
+    },
+    {
+      "cell": {
+        "cut": "10,11,12",
+        "node_vlans": {
+          "racka1": [
+            10,
+            11,
+            20,
+            31
+          ],
+          "racka2": [
+            10,
+            11,
+            20,
+            31
+          ],
+          "rackb1": [
+            10,
+            20,
+            32
+          ],
+          "rackb2": [
+            10,
+            20,
+            32
+          ],
+          "rackc1": [
+            11,
+            12,
+            20,
+            33
+          ],
+          "rackc2": [
+            11,
+            12,
+            20,
+            33
+          ]
+        },
+        "placement": "spread",
+        "rack_links": {
+          "rack-a": [
+            10,
+            11
+          ],
+          "rack-b": [
+            10
+          ],
+          "rack-c": [
+            11,
+            12
+          ]
+        }
+      },
+      "checks": {
+        "kafka-rack-links-cluster-recovers": "passed",
+        "kafka-rack-links-confirmed-records-recovered-exactly-once": "passed",
+        "kafka-rack-links-cut-accurate": "passed",
+        "kafka-rack-links-execution-completed": "passed",
+        "kafka-rack-links-materialized": "passed",
+        "kafka-rack-links-runtime-versions-pinned": "passed"
+      },
+      "control": false,
+      "duration_seconds": 176.6,
+      "formed": true,
+      "key": "seed-11-rep-1",
+      "observations": {
+        "candidate_transitions": 2,
+        "controller_epochs": [
+          1,
+          3
+        ],
+        "controller_leaders_seen_by_nodes_during_cut": [
+          -1,
+          1
+        ],
+        "cut_seconds": 60.0,
+        "isr_during_cut": [
+          3,
+          3
+        ],
+        "isr_pre_cut": [
+          1,
+          3,
+          5
+        ],
+        "partition_leaders_during_cut": [
+          1
+        ],
+        "prevote_transitions": 74,
+        "sampling": {
+          "cut": {
+            "executed": 41,
+            "planned": 42,
+            "successful": 37
+          },
+          "lead": {
+            "executed": 7,
+            "planned": 7,
+            "successful": 6
+          },
+          "tail": {
+            "executed": 21,
+            "planned": 21,
+            "successful": 21
+          }
+        },
+        "stream": {
+          "after": {
+            "confirmed": 31
+          },
+          "before": {
+            "ambiguous": 1,
+            "confirmed": 8
+          },
+          "during": {
+            "ambiguous": 60
+          }
+        },
+        "topic_truncation_lines": 4,
+        "unfenced_at_start": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "outcome": "pass",
+      "prediction": {
+        "cut": "10,11,12",
+        "cut_removes_link": true,
+        "formation": "election",
+        "graph_class": "all isolated",
+        "links_during_cut": [],
+        "links_present": [
+          10,
+          11
+        ],
+        "placement": "spread",
+        "rack_links": {
+          "rack-a": [
+            10,
+            11
+          ],
+          "rack-b": [
+            10
+          ],
+          "rack-c": [
+            11,
+            12
+          ]
+        },
+        "seed": 11
+      },
+      "repetition": 1,
+      "resolution_matches_plan": true,
+      "run_dir": "runs/20260912-130026-kafka-rack-links-seed-11-kafka-rack-links-seed-11-rep-1",
+      "seed": 11,
+      "signature": null
+    },
+    {
+      "cell": {
+        "cut": "10,12",
+        "node_vlans": {
+          "racka1": [
+            10,
+            11,
+            20,
+            31
+          ],
+          "racka2": [
+            10,
+            11,
+            20,
+            31
+          ],
+          "rackb1": [
+            10,
+            12,
+            20,
+            32
+          ],
+          "rackb2": [
+            10,
+            12,
+            20,
+            32
+          ],
+          "rackc1": [
+            11,
+            12,
+            20,
+            33
+          ],
+          "rackc2": [
+            11,
+            12,
+            20,
+            33
+          ]
+        },
+        "placement": "spread",
+        "rack_links": {
+          "rack-a": [
+            10,
+            11
+          ],
+          "rack-b": [
+            10,
+            12
+          ],
+          "rack-c": [
+            11,
+            12
+          ]
+        }
+      },
+      "checks": {
+        "kafka-rack-links-cluster-recovers": "passed",
+        "kafka-rack-links-confirmed-records-recovered-exactly-once": "passed",
+        "kafka-rack-links-cut-accurate": "passed",
+        "kafka-rack-links-execution-completed": "passed",
+        "kafka-rack-links-materialized": "passed",
+        "kafka-rack-links-runtime-versions-pinned": "passed"
+      },
+      "control": false,
+      "duration_seconds": 176.0,
+      "formed": true,
+      "key": "seed-28-rep-1",
+      "observations": {
+        "candidate_transitions": 1,
+        "controller_epochs": [
+          1
+        ],
+        "controller_leaders_seen_by_nodes_during_cut": [
+          1
+        ],
+        "cut_seconds": 60.0,
+        "isr_during_cut": [
+          2,
+          3
+        ],
+        "isr_pre_cut": [
+          1,
+          3,
+          5
+        ],
+        "partition_leaders_during_cut": [
+          1
+        ],
+        "prevote_transitions": 18,
+        "sampling": {
+          "cut": {
+            "executed": 41,
+            "planned": 42,
+            "successful": 39
+          },
+          "lead": {
+            "executed": 7,
+            "planned": 7,
+            "successful": 6
+          },
+          "tail": {
+            "executed": 21,
+            "planned": 21,
+            "successful": 21
+          }
+        },
+        "stream": {
+          "after": {
+            "confirmed": 31
+          },
+          "before": {
+            "ambiguous": 1,
+            "confirmed": 8
+          },
+          "during": {
+            "ambiguous": 8,
+            "confirmed": 52
+          }
+        },
+        "topic_truncation_lines": 4,
+        "unfenced_at_start": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "outcome": "pass",
+      "prediction": {
+        "cut": "10,12",
+        "cut_removes_link": true,
+        "formation": "certain",
+        "graph_class": "one link",
+        "links_during_cut": [
+          11
+        ],
+        "links_present": [
+          10,
+          11,
+          12
+        ],
+        "placement": "spread",
+        "rack_links": {
+          "rack-a": [
+            10,
+            11
+          ],
+          "rack-b": [
+            10,
+            12
+          ],
+          "rack-c": [
+            11,
+            12
+          ]
+        },
+        "seed": 28
+      },
+      "repetition": 1,
+      "resolution_matches_plan": true,
+      "run_dir": "runs/20260912-130323-kafka-rack-links-seed-28-kafka-rack-links-seed-28-rep-1",
+      "seed": 28,
+      "signature": null
+    },
+    {
+      "cell": {
+        "cut": "12",
+        "node_vlans": {
+          "racka1": [
+            10,
+            11,
+            20,
+            31
+          ],
+          "racka2": [
+            10,
+            11,
+            20,
+            31
+          ],
+          "rackb1": [
+            10,
+            12,
+            20,
+            32
+          ],
+          "rackb2": [
+            10,
+            12,
+            20,
+            32
+          ],
+          "rackc1": [
+            12,
+            20,
+            33
+          ],
+          "rackc2": [
+            12,
+            20,
+            33
+          ]
+        },
+        "placement": "concentrated",
+        "rack_links": {
+          "rack-a": [
+            10,
+            11
+          ],
+          "rack-b": [
+            10,
+            12
+          ],
+          "rack-c": [
+            12
+          ]
+        }
+      },
+      "checks": {
+        "kafka-rack-links-cluster-recovers": "passed",
+        "kafka-rack-links-confirmed-records-recovered-exactly-once": "passed",
+        "kafka-rack-links-cut-accurate": "passed",
+        "kafka-rack-links-execution-completed": "passed",
+        "kafka-rack-links-materialized": "passed",
+        "kafka-rack-links-runtime-versions-pinned": "passed"
+      },
+      "control": false,
+      "duration_seconds": 287.1,
+      "formed": true,
+      "key": "seed-12-rep-1",
+      "observations": {
+        "candidate_transitions": 1,
+        "controller_epochs": [
+          1
+        ],
+        "controller_leaders_seen_by_nodes_during_cut": [
+          1
+        ],
+        "cut_seconds": 60.0,
+        "isr_during_cut": [
+          3,
+          3
+        ],
+        "isr_pre_cut": [
+          1,
+          2,
+          3
+        ],
+        "partition_leaders_during_cut": [
+          1
+        ],
+        "prevote_transitions": 18,
+        "sampling": {
+          "cut": {
+            "executed": 42,
+            "planned": 42,
+            "successful": 30
+          },
+          "lead": {
+            "executed": 5,
+            "planned": 7,
+            "successful": 5
+          },
+          "tail": {
+            "executed": 19,
+            "planned": 21,
+            "successful": 15
+          }
+        },
+        "stream": {
+          "after": {
+            "confirmed": 32
+          },
+          "before": {
+            "confirmed": 8
+          },
+          "during": {
+            "confirmed": 60
+          }
+        },
+        "topic_truncation_lines": 4,
+        "unfenced_at_start": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "outcome": "pass",
+      "prediction": {
+        "cut": "12",
+        "cut_removes_link": true,
+        "formation": "election",
+        "graph_class": "one link",
+        "links_during_cut": [
+          10
+        ],
+        "links_present": [
+          10,
+          12
+        ],
+        "placement": "concentrated",
+        "rack_links": {
+          "rack-a": [
+            10,
+            11
+          ],
+          "rack-b": [
+            10,
+            12
+          ],
+          "rack-c": [
+            12
+          ]
+        },
+        "seed": 12
+      },
+      "repetition": 1,
+      "resolution_matches_plan": true,
+      "run_dir": "runs/20260912-130308-kafka-rack-links-seed-12-kafka-rack-links-seed-12-rep-1",
+      "seed": 12,
+      "signature": null
+    },
+    {
+      "cell": {
+        "cut": "10,11",
+        "node_vlans": {
+          "racka1": [
+            10,
+            11,
+            20,
+            31
+          ],
+          "racka2": [
+            10,
+            11,
+            20,
+            31
+          ],
+          "rackb1": [
+            10,
+            12,
+            20,
+            32
+          ],
+          "rackb2": [
+            10,
+            12,
+            20,
+            32
+          ],
+          "rackc1": [
+            11,
+            12,
+            20,
+            33
+          ],
+          "rackc2": [
+            11,
+            12,
+            20,
+            33
+          ]
+        },
+        "placement": "spread",
+        "rack_links": {
+          "rack-a": [
+            10,
+            11
+          ],
+          "rack-b": [
+            10,
+            12
+          ],
+          "rack-c": [
+            11,
+            12
+          ]
+        }
+      },
+      "checks": {
+        "kafka-rack-links-cluster-recovers": "passed",
+        "kafka-rack-links-confirmed-records-recovered-exactly-once": "passed",
+        "kafka-rack-links-cut-accurate": "passed",
+        "kafka-rack-links-execution-completed": "passed",
+        "kafka-rack-links-materialized": "passed",
+        "kafka-rack-links-runtime-versions-pinned": "passed"
+      },
+      "control": false,
+      "duration_seconds": 173.2,
+      "formed": true,
+      "key": "seed-29-rep-1",
+      "observations": {
+        "candidate_transitions": 3,
+        "controller_epochs": [
+          1,
+          2
+        ],
+        "controller_leaders_seen_by_nodes_during_cut": [
+          -1,
+          5
+        ],
+        "cut_seconds": 60.0,
+        "isr_during_cut": [
+          2,
+          3
+        ],
+        "isr_pre_cut": [
+          1,
+          3,
+          5
+        ],
+        "partition_leaders_during_cut": [
+          3
+        ],
+        "prevote_transitions": 41,
+        "sampling": {
+          "cut": {
+            "executed": 41,
+            "planned": 42,
+            "successful": 38
+          },
+          "lead": {
+            "executed": 7,
+            "planned": 7,
+            "successful": 6
+          },
+          "tail": {
+            "executed": 21,
+            "planned": 21,
+            "successful": 21
+          }
+        },
+        "stream": {
+          "after": {
+            "confirmed": 32
+          },
+          "before": {
+            "confirmed": 8
+          },
+          "during": {
+            "ambiguous": 10,
+            "confirmed": 50
+          }
+        },
+        "topic_truncation_lines": 6,
+        "unfenced_at_start": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "outcome": "pass",
+      "prediction": {
+        "cut": "10,11",
+        "cut_removes_link": true,
+        "formation": "certain",
+        "graph_class": "one link",
+        "links_during_cut": [
+          12
+        ],
+        "links_present": [
+          10,
+          11,
+          12
+        ],
+        "placement": "spread",
+        "rack_links": {
+          "rack-a": [
+            10,
+            11
+          ],
+          "rack-b": [
+            10,
+            12
+          ],
+          "rack-c": [
+            11,
+            12
+          ]
+        },
+        "seed": 29
+      },
+      "repetition": 1,
+      "resolution_matches_plan": true,
+      "run_dir": "runs/20260912-130619-kafka-rack-links-seed-29-kafka-rack-links-seed-29-rep-1",
+      "seed": 29,
+      "signature": null
+    }
+  ],
+  "min_mem_available_mib": 6945,
+  "seeds": [
+    {
+      "cut_removes_link": true,
+      "executions": 1,
+      "formation_prediction": "impossible",
+      "formed_executions": 0,
+      "graph_class": "all isolated",
+      "outcomes": {
+        "precondition_failure": 1
+      },
+      "prediction_consistent": true,
+      "resolution_matches_plan": true,
+      "seed": 1,
+      "verdict_executions": 0
+    },
+    {
+      "cut_removes_link": true,
+      "executions": 1,
+      "formation_prediction": "election",
+      "formed_executions": 1,
+      "graph_class": "all isolated",
+      "outcomes": {
+        "pass": 1
+      },
+      "prediction_consistent": true,
+      "resolution_matches_plan": true,
+      "seed": 11,
+      "verdict_executions": 1
+    },
+    {
+      "cut_removes_link": true,
+      "executions": 1,
+      "formation_prediction": "election",
+      "formed_executions": 1,
+      "graph_class": "one link",
+      "outcomes": {
+        "pass": 1
+      },
+      "prediction_consistent": true,
+      "resolution_matches_plan": true,
+      "seed": 12,
+      "verdict_executions": 1
+    },
+    {
+      "cut_removes_link": true,
+      "executions": 1,
+      "formation_prediction": "certain",
+      "formed_executions": 1,
+      "graph_class": "one link",
+      "outcomes": {
+        "pass": 1
+      },
+      "prediction_consistent": true,
+      "resolution_matches_plan": true,
+      "seed": 28,
+      "verdict_executions": 1
+    },
+    {
+      "cut_removes_link": true,
+      "executions": 1,
+      "formation_prediction": "certain",
+      "formed_executions": 1,
+      "graph_class": "one link",
+      "outcomes": {
+        "pass": 1
+      },
+      "prediction_consistent": true,
+      "resolution_matches_plan": true,
+      "seed": 29,
+      "verdict_executions": 1
+    }
+  ]
+}

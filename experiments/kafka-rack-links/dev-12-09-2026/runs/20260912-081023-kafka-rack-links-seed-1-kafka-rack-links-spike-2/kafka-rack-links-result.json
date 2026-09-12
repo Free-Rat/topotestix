@@ -1,0 +1,1051 @@
+{
+  "artifact_errors": [],
+  "broker_views_during": {
+    "racka1": {
+      "quorum": {
+        "leader_epoch": 1,
+        "leader_id": 1,
+        "raw": "ClusterId:              4L6g3nShT-eMCtK--X86sw\nLeaderId:               1\nLeaderEpoch:            1\nHighWatermark:          195\nMaxFollowerLag:         140\nMaxFollowerLagTimeMs:   68894\nCurrentVoters:          [{\"id\": 1, \"endpoints\": [\"CONTROLLER://racka1-link:9093\"]}, {\"id\": 2, \"endpoints\": [\"CONTROLLER://rackb1-link:9093\"]}, {\"id\": 3, \"endpoints\": [\"CONTROLLER://rackc1-link:9093\"]}]\nCurrentObservers:       []",
+        "status": 0
+      },
+      "topic": {
+        "isr": [
+          1,
+          3
+        ],
+        "leader": 1,
+        "raw": "Topic: topotestix-rack-links-203f93efd8c6\tPartition: 0\tLeader: 1\tReplicas: 1,2,3\tIsr: 1,3\tElr: \tLastKnownElr:",
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "rackb1": {
+      "quorum": {
+        "leader_epoch": 1,
+        "leader_id": 1,
+        "raw": "ClusterId:              4L6g3nShT-eMCtK--X86sw\nLeaderId:               1\nLeaderEpoch:            1\nHighWatermark:          206\nMaxFollowerLag:         151\nMaxFollowerLagTimeMs:   74078\nCurrentVoters:          [{\"id\": 1, \"endpoints\": [\"CONTROLLER://racka1-link:9093\"]}, {\"id\": 2, \"endpoints\": [\"CONTROLLER://rackb1-link:9093\"]}, {\"id\": 3, \"endpoints\": [\"CONTROLLER://rackc1-link:9093\"]}]\nCurrentObservers:       []",
+        "status": 0
+      },
+      "topic": {
+        "isr": [
+          1,
+          3
+        ],
+        "leader": 1,
+        "raw": "Topic: topotestix-rack-links-203f93efd8c6\tPartition: 0\tLeader: 1\tReplicas: 1,2,3\tIsr: 1,3\tElr: \tLastKnownElr:",
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "rackc1": {
+      "quorum": {
+        "leader_epoch": 1,
+        "leader_id": 1,
+        "raw": "ClusterId:              4L6g3nShT-eMCtK--X86sw\nLeaderId:               1\nLeaderEpoch:            1\nHighWatermark:          216\nMaxFollowerLag:         161\nMaxFollowerLagTimeMs:   79297\nCurrentVoters:          [{\"id\": 1, \"endpoints\": [\"CONTROLLER://racka1-link:9093\"]}, {\"id\": 2, \"endpoints\": [\"CONTROLLER://rackb1-link:9093\"]}, {\"id\": 3, \"endpoints\": [\"CONTROLLER://rackc1-link:9093\"]}]\nCurrentObservers:       []",
+        "status": 0
+      },
+      "topic": {
+        "isr": [
+          1,
+          3
+        ],
+        "leader": 1,
+        "raw": "Topic: topotestix-rack-links-203f93efd8c6\tPartition: 0\tLeader: 1\tReplicas: 1,2,3\tIsr: 1,3\tElr: \tLastKnownElr:",
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  "classification": "completed",
+  "configuration": {
+    "baseline_count": 20,
+    "cut": "10",
+    "cut_vlans": [
+      10
+    ],
+    "cut_window_seconds": 60,
+    "min_isr": 2,
+    "probe_timeout_ms": 5000,
+    "replication_factor": 3
+  },
+  "connections_before": {
+    "racka1": "Recv-Q Send-Q Local Address:Port  Peer Address:Port \n0      0       192.168.10.2:9093  192.168.10.2:57446\n0      0       192.168.10.2:9093  192.168.10.2:46710\n0      0       192.168.11.2:9093  192.168.11.4:60214\n0      0       192.168.10.2:57404 192.168.10.2:9093 \n0      0       192.168.10.2:57446 192.168.10.2:9093 \n0      0       192.168.10.2:57458 192.168.10.2:9093 \n0      0       192.168.11.2:9093  192.168.11.4:53336\n0      0       192.168.10.2:9093  192.168.10.3:34434\n0      0       192.168.11.2:56248 192.168.11.4:9093 \n0      0       192.168.10.2:9093  192.168.10.2:57458\n0      0       192.168.10.2:9094  192.168.10.3:53918\n0      0       192.168.10.2:9093  192.168.10.3:34444\n0      0       192.168.11.2:9093  192.168.11.4:53350\n0      0       192.168.10.2:46710 192.168.10.2:9093 \n0      0       192.168.10.2:9093  192.168.10.2:57404\n0      0       192.168.10.2:9093  192.168.10.3:34446\n0      0       192.168.10.2:60880 192.168.10.3:9093 \n0      0       192.168.11.2:9094  192.168.11.4:50776\n0      0       192.168.11.2:9093  192.168.11.4:53306\n0      0       192.168.10.2:9093  192.168.10.3:34398",
+    "rackb1": "Recv-Q Send-Q Local Address:Port  Peer Address:Port \n0      0       192.168.12.3:9093  192.168.12.4:39092\n0      0       192.168.10.3:53918 192.168.10.2:9094 \n0      0       192.168.10.3:9093  192.168.10.2:60880\n0      0       192.168.10.3:34398 192.168.10.2:9093 \n0      0       192.168.10.3:34434 192.168.10.2:9093 \n0      0       192.168.10.3:34444 192.168.10.2:9093 \n0      0       192.168.10.3:34446 192.168.10.2:9093 \n0      0       192.168.12.3:45076 192.168.12.4:9093 \n0      0       192.168.10.3:9093  192.168.10.3:37010\n0      0       192.168.10.3:37010 192.168.10.3:9093",
+    "rackc1": "Recv-Q Send-Q Local Address:Port  Peer Address:Port \n0      0       192.168.12.4:39092 192.168.12.3:9093 \n0      0       192.168.11.4:51680 192.168.11.4:9093 \n0      0       192.168.11.4:50776 192.168.11.2:9094 \n0      0       192.168.11.4:9093  192.168.11.4:51680\n0      0       192.168.11.4:53306 192.168.11.2:9093 \n0      0       192.168.11.4:53336 192.168.11.2:9093 \n0      0       192.168.11.4:53350 192.168.11.2:9093 \n0      0       192.168.11.4:9093  192.168.11.2:56248\n0      0       192.168.12.4:9093  192.168.12.3:45076\n0      0       192.168.11.4:60214 192.168.11.2:9093"
+  },
+  "connections_during": {
+    "racka1": "Recv-Q Send-Q Local Address:Port  Peer Address:Port \n0      0       192.168.10.2:9093  192.168.10.2:57446\n0      0       192.168.10.2:9093  192.168.10.2:46710\n0      0       192.168.11.2:9093  192.168.11.4:60214\n0      0       192.168.10.2:57404 192.168.10.2:9093 \n0      0       192.168.10.2:57446 192.168.10.2:9093 \n0      0       192.168.10.2:57458 192.168.10.2:9093 \n0      0       192.168.11.2:9093  192.168.11.4:53336\n0      0       192.168.10.2:9093  192.168.10.3:34434\n0      0       192.168.11.2:56248 192.168.11.4:9093 \n0      0       192.168.10.2:9093  192.168.10.2:57458\n0      76      192.168.10.2:9094  192.168.10.3:53918\n0      0       192.168.10.2:9093  192.168.10.3:34444\n0      0       192.168.11.2:9093  192.168.11.4:53350\n0      0       192.168.10.2:46710 192.168.10.2:9093 \n0      0       192.168.10.2:9093  192.168.10.2:57404\n0      0       192.168.10.2:9093  192.168.10.3:34446\n0      0       192.168.11.2:9094  192.168.11.4:50776\n0      0       192.168.11.2:9093  192.168.11.4:53306\n0      184     192.168.10.2:9093  192.168.10.3:34398",
+    "rackb1": "Recv-Q Send-Q Local Address:Port  Peer Address:Port \n0      0       192.168.12.3:9093  192.168.12.4:39092\n0      0       192.168.10.3:9093  192.168.10.2:60880\n0      0       192.168.10.3:34444 192.168.10.2:9093 \n0      0       192.168.10.3:34446 192.168.10.2:9093 \n0      0       192.168.12.3:45076 192.168.12.4:9093 \n0      0       192.168.10.3:9093  192.168.10.3:37010\n0      0       192.168.10.3:37010 192.168.10.3:9093",
+    "rackc1": "Recv-Q Send-Q Local Address:Port  Peer Address:Port \n0      0       192.168.12.4:39092 192.168.12.3:9093 \n0      0       192.168.11.4:51680 192.168.11.4:9093 \n0      0       192.168.11.4:50776 192.168.11.2:9094 \n0      0       192.168.11.4:9093  192.168.11.4:51680\n0      0       192.168.11.4:53306 192.168.11.2:9093 \n0      0       192.168.11.4:53336 192.168.11.2:9093 \n0      0       192.168.11.4:53350 192.168.11.2:9093 \n0      0       192.168.11.4:9093  192.168.11.2:56248\n0      0       192.168.12.4:9093  192.168.12.3:45076\n0      0       192.168.11.4:60214 192.168.11.2:9093"
+  },
+  "durability": {
+    "ambiguous_recovered": [
+      "203f93efd8c64a6e9aa28275f49121e2/probe-00/0000"
+    ],
+    "complete_read": true,
+    "confirmed_count": 28,
+    "duplicated": [],
+    "end_offset": 29,
+    "missing": [],
+    "unknown": []
+  },
+  "error": null,
+  "finished_wall_ns": 1789200756583589357,
+  "network": {
+    "cut_nics": [
+      {
+        "nic": "virtio-net-pci.1",
+        "node": "racka1",
+        "vlan": 10
+      },
+      {
+        "nic": "virtio-net-pci.1",
+        "node": "rackb1",
+        "vlan": 10
+      }
+    ],
+    "cut_restored_wall_ns": 1789200749203683429,
+    "cut_started_wall_ns": 1789200667245822250,
+    "monitor_info": {
+      "racka1": "i\u001b[K\u001b[Din\u001b[K\u001b[D\u001b[Dinf\u001b[K\u001b[D\u001b[D\u001b[Dinfo\u001b[K\u001b[D\u001b[D\u001b[D\u001b[Dinfo \u001b[K\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dinfo n\u001b[K\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dinfo ne\u001b[K\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dinfo net\u001b[K\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dinfo netw\u001b[K\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dinfo netwo\u001b[K\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dinfo networ\u001b[K\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dinfo network\u001b[K\r\nvirtio-net-pci.0: index=0,type=nic,model=virtio-net-pci,macaddr=52:54:00:12:34:56\r\n \\ user.0: index=0,type=user,net=10.0.2.0,restrict=off\r\nvirtio-net-pci.1: index=0,type=nic,model=virtio-net-pci,macaddr=52:54:00:12:0a:02\r\n \\ vlan1: index=0,type=vde,sock=/build/vde10.ctl,fd=16\r\nvirtio-net-pci.2: index=0,type=nic,model=virtio-net-pci,macaddr=52:54:00:12:0b:02\r\n \\ vlan2: index=0,type=vde,sock=/build/vde11.ctl,fd=18\r\nvirtio-net-pci.3: index=0,type=nic,model=virtio-net-pci,macaddr=52:54:00:12:14:02\r\n \\ vlan3: index=0,type=vde,sock=/build/vde20.ctl,fd=20\r\n(qemu) ",
+      "rackb1": "i\u001b[K\u001b[Din\u001b[K\u001b[D\u001b[Dinf\u001b[K\u001b[D\u001b[D\u001b[Dinfo\u001b[K\u001b[D\u001b[D\u001b[D\u001b[Dinfo \u001b[K\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dinfo n\u001b[K\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dinfo ne\u001b[K\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dinfo net\u001b[K\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dinfo netw\u001b[K\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dinfo netwo\u001b[K\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dinfo networ\u001b[K\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dinfo network\u001b[K\r\nvirtio-net-pci.0: index=0,type=nic,model=virtio-net-pci,macaddr=52:54:00:12:34:56\r\n \\ user.0: index=0,type=user,net=10.0.2.0,restrict=off\r\nvirtio-net-pci.1: index=0,type=nic,model=virtio-net-pci,macaddr=52:54:00:12:0a:03\r\n \\ vlan1: index=0,type=vde,sock=/build/vde10.ctl,fd=16\r\nvirtio-net-pci.2: index=0,type=nic,model=virtio-net-pci,macaddr=52:54:00:12:0c:03\r\n \\ vlan2: index=0,type=vde,sock=/build/vde12.ctl,fd=18\r\nvirtio-net-pci.3: index=0,type=nic,model=virtio-net-pci,macaddr=52:54:00:12:14:03\r\n \\ vlan3: index=0,type=vde,sock=/build/vde20.ctl,fd=20\r\n(qemu) ",
+      "rackc1": "i\u001b[K\u001b[Din\u001b[K\u001b[D\u001b[Dinf\u001b[K\u001b[D\u001b[D\u001b[Dinfo\u001b[K\u001b[D\u001b[D\u001b[D\u001b[Dinfo \u001b[K\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dinfo n\u001b[K\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dinfo ne\u001b[K\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dinfo net\u001b[K\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dinfo netw\u001b[K\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dinfo netwo\u001b[K\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dinfo networ\u001b[K\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dinfo network\u001b[K\r\nvirtio-net-pci.0: index=0,type=nic,model=virtio-net-pci,macaddr=52:54:00:12:34:56\r\n \\ user.0: index=0,type=user,net=10.0.2.0,restrict=off\r\nvirtio-net-pci.1: index=0,type=nic,model=virtio-net-pci,macaddr=52:54:00:12:0b:04\r\n \\ vlan1: index=0,type=vde,sock=/build/vde11.ctl,fd=16\r\nvirtio-net-pci.2: index=0,type=nic,model=virtio-net-pci,macaddr=52:54:00:12:0c:04\r\n \\ vlan2: index=0,type=vde,sock=/build/vde12.ctl,fd=18\r\nvirtio-net-pci.3: index=0,type=nic,model=virtio-net-pci,macaddr=52:54:00:12:14:04\r\n \\ vlan3: index=0,type=vde,sock=/build/vde20.ctl,fd=20\r\n(qemu) "
+    },
+    "nics": {
+      "racka1": {
+        "10": "virtio-net-pci.1",
+        "11": "virtio-net-pci.2",
+        "20": "virtio-net-pci.3",
+        "52": "virtio-net-pci.0"
+      },
+      "rackb1": {
+        "10": "virtio-net-pci.1",
+        "12": "virtio-net-pci.2",
+        "20": "virtio-net-pci.3",
+        "52": "virtio-net-pci.0"
+      },
+      "rackc1": {
+        "11": "virtio-net-pci.1",
+        "12": "virtio-net-pci.2",
+        "20": "virtio-net-pci.3",
+        "52": "virtio-net-pci.0"
+      }
+    }
+  },
+  "quorum_before": {
+    "leader_epoch": 1,
+    "leader_id": 1,
+    "raw": "ClusterId:              4L6g3nShT-eMCtK--X86sw\nLeaderId:               1\nLeaderEpoch:            1\nHighWatermark:          34\nMaxFollowerLag:         0\nMaxFollowerLagTimeMs:   0\nCurrentVoters:          [{\"id\": 1, \"endpoints\": [\"CONTROLLER://racka1-link:9093\"]}, {\"id\": 2, \"endpoints\": [\"CONTROLLER://rackb1-link:9093\"]}, {\"id\": 3, \"endpoints\": [\"CONTROLLER://rackc1-link:9093\"]}]\nCurrentObservers:       []",
+    "status": 0
+  },
+  "run_id": "203f93efd8c64a6e9aa28275f49121e2",
+  "schema_version": 1,
+  "started_wall_ns": 1789200635098822060,
+  "timeline": [
+    {
+      "probe": {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-203f93efd8c6-0:5003 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789200673420000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-00/0000",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789200667945000000
+      },
+      "quorum": {
+        "leader_epoch": 1,
+        "leader_id": 1,
+        "raw": "ClusterId:              4L6g3nShT-eMCtK--X86sw\nLeaderId:               1\nLeaderEpoch:            1\nHighWatermark:          82\nMaxFollowerLag:         27\nMaxFollowerLagTimeMs:   12069\nCurrentVoters:          [{\"id\": 1, \"endpoints\": [\"CONTROLLER://racka1-link:9093\"]}, {\"id\": 2, \"endpoints\": [\"CONTROLLER://rackb1-link:9093\"]}, {\"id\": 3, \"endpoints\": [\"CONTROLLER://rackc1-link:9093\"]}]\nCurrentObservers:       []",
+        "status": 0
+      },
+      "t_s": 0.0,
+      "topic": {
+        "isr": [
+          1,
+          3
+        ],
+        "leader": 1,
+        "raw": "Topic: topotestix-rack-links-203f93efd8c6\tPartition: 0\tLeader: 1\tReplicas: 1,2,3\tIsr: 1,3\tElr: \tLastKnownElr:",
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "probe": {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200680543000000,
+        "invoked": true,
+        "offset": 21,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-01/0000",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200680050000000
+      },
+      "quorum": {
+        "leader_epoch": 1,
+        "leader_id": 1,
+        "raw": "ClusterId:              4L6g3nShT-eMCtK--X86sw\nLeaderId:               1\nLeaderEpoch:            1\nHighWatermark:          95\nMaxFollowerLag:         40\nMaxFollowerLagTimeMs:   18843\nCurrentVoters:          [{\"id\": 1, \"endpoints\": [\"CONTROLLER://racka1-link:9093\"]}, {\"id\": 2, \"endpoints\": [\"CONTROLLER://rackb1-link:9093\"]}, {\"id\": 3, \"endpoints\": [\"CONTROLLER://rackc1-link:9093\"]}]\nCurrentObservers:       []",
+        "status": 0
+      },
+      "t_s": 12.1,
+      "topic": {
+        "isr": [
+          1,
+          3
+        ],
+        "leader": 1,
+        "raw": "Topic: topotestix-rack-links-203f93efd8c6\tPartition: 0\tLeader: 1\tReplicas: 1,2,3\tIsr: 1,3\tElr: \tLastKnownElr:",
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "probe": {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200687266000000,
+        "invoked": true,
+        "offset": 22,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-02/0000",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200686793000000
+      },
+      "quorum": {
+        "leader_epoch": 1,
+        "leader_id": 1,
+        "raw": "ClusterId:              4L6g3nShT-eMCtK--X86sw\nLeaderId:               1\nLeaderEpoch:            1\nHighWatermark:          109\nMaxFollowerLag:         54\nMaxFollowerLagTimeMs:   25638\nCurrentVoters:          [{\"id\": 1, \"endpoints\": [\"CONTROLLER://racka1-link:9093\"]}, {\"id\": 2, \"endpoints\": [\"CONTROLLER://rackb1-link:9093\"]}, {\"id\": 3, \"endpoints\": [\"CONTROLLER://rackc1-link:9093\"]}]\nCurrentObservers:       []",
+        "status": 0
+      },
+      "t_s": 18.9,
+      "topic": {
+        "isr": [
+          1,
+          3
+        ],
+        "leader": 1,
+        "raw": "Topic: topotestix-rack-links-203f93efd8c6\tPartition: 0\tLeader: 1\tReplicas: 1,2,3\tIsr: 1,3\tElr: \tLastKnownElr:",
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "probe": {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200694066000000,
+        "invoked": true,
+        "offset": 23,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-03/0000",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200693592000000
+      },
+      "quorum": {
+        "leader_epoch": 1,
+        "leader_id": 1,
+        "raw": "ClusterId:              4L6g3nShT-eMCtK--X86sw\nLeaderId:               1\nLeaderEpoch:            1\nHighWatermark:          122\nMaxFollowerLag:         67\nMaxFollowerLagTimeMs:   32391\nCurrentVoters:          [{\"id\": 1, \"endpoints\": [\"CONTROLLER://racka1-link:9093\"]}, {\"id\": 2, \"endpoints\": [\"CONTROLLER://rackb1-link:9093\"]}, {\"id\": 3, \"endpoints\": [\"CONTROLLER://rackc1-link:9093\"]}]\nCurrentObservers:       []",
+        "status": 0
+      },
+      "t_s": 25.7,
+      "topic": {
+        "isr": [
+          1,
+          3
+        ],
+        "leader": 1,
+        "raw": "Topic: topotestix-rack-links-203f93efd8c6\tPartition: 0\tLeader: 1\tReplicas: 1,2,3\tIsr: 1,3\tElr: \tLastKnownElr:",
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "probe": {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200700856000000,
+        "invoked": true,
+        "offset": 24,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-04/0000",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200700353000000
+      },
+      "quorum": {
+        "leader_epoch": 1,
+        "leader_id": 1,
+        "raw": "ClusterId:              4L6g3nShT-eMCtK--X86sw\nLeaderId:               1\nLeaderEpoch:            1\nHighWatermark:          136\nMaxFollowerLag:         81\nMaxFollowerLagTimeMs:   39145\nCurrentVoters:          [{\"id\": 1, \"endpoints\": [\"CONTROLLER://racka1-link:9093\"]}, {\"id\": 2, \"endpoints\": [\"CONTROLLER://rackb1-link:9093\"]}, {\"id\": 3, \"endpoints\": [\"CONTROLLER://rackc1-link:9093\"]}]\nCurrentObservers:       []",
+        "status": 0
+      },
+      "t_s": 32.4,
+      "topic": {
+        "isr": [
+          1,
+          3
+        ],
+        "leader": 1,
+        "raw": "Topic: topotestix-rack-links-203f93efd8c6\tPartition: 0\tLeader: 1\tReplicas: 1,2,3\tIsr: 1,3\tElr: \tLastKnownElr:",
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "probe": {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200707628000000,
+        "invoked": true,
+        "offset": 25,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-05/0000",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200707114000000
+      },
+      "quorum": {
+        "leader_epoch": 1,
+        "leader_id": 1,
+        "raw": "ClusterId:              4L6g3nShT-eMCtK--X86sw\nLeaderId:               1\nLeaderEpoch:            1\nHighWatermark:          149\nMaxFollowerLag:         94\nMaxFollowerLagTimeMs:   45922\nCurrentVoters:          [{\"id\": 1, \"endpoints\": [\"CONTROLLER://racka1-link:9093\"]}, {\"id\": 2, \"endpoints\": [\"CONTROLLER://rackb1-link:9093\"]}, {\"id\": 3, \"endpoints\": [\"CONTROLLER://rackc1-link:9093\"]}]\nCurrentObservers:       []",
+        "status": 0
+      },
+      "t_s": 39.2,
+      "topic": {
+        "isr": [
+          1,
+          3
+        ],
+        "leader": 1,
+        "raw": "Topic: topotestix-rack-links-203f93efd8c6\tPartition: 0\tLeader: 1\tReplicas: 1,2,3\tIsr: 1,3\tElr: \tLastKnownElr:",
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "probe": {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200714426000000,
+        "invoked": true,
+        "offset": 26,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-06/0000",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200713881000000
+      },
+      "quorum": {
+        "leader_epoch": 1,
+        "leader_id": 1,
+        "raw": "ClusterId:              4L6g3nShT-eMCtK--X86sw\nLeaderId:               1\nLeaderEpoch:            1\nHighWatermark:          163\nMaxFollowerLag:         108\nMaxFollowerLagTimeMs:   52743\nCurrentVoters:          [{\"id\": 1, \"endpoints\": [\"CONTROLLER://racka1-link:9093\"]}, {\"id\": 2, \"endpoints\": [\"CONTROLLER://rackb1-link:9093\"]}, {\"id\": 3, \"endpoints\": [\"CONTROLLER://rackc1-link:9093\"]}]\nCurrentObservers:       []",
+        "status": 0
+      },
+      "t_s": 45.9,
+      "topic": {
+        "isr": [
+          1,
+          3
+        ],
+        "leader": 1,
+        "raw": "Topic: topotestix-rack-links-203f93efd8c6\tPartition: 0\tLeader: 1\tReplicas: 1,2,3\tIsr: 1,3\tElr: \tLastKnownElr:",
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "probe": {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200721238000000,
+        "invoked": true,
+        "offset": 27,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-07/0000",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200720748000000
+      },
+      "quorum": {
+        "leader_epoch": 1,
+        "leader_id": 1,
+        "raw": "ClusterId:              4L6g3nShT-eMCtK--X86sw\nLeaderId:               1\nLeaderEpoch:            1\nHighWatermark:          177\nMaxFollowerLag:         122\nMaxFollowerLagTimeMs:   59540\nCurrentVoters:          [{\"id\": 1, \"endpoints\": [\"CONTROLLER://racka1-link:9093\"]}, {\"id\": 2, \"endpoints\": [\"CONTROLLER://rackb1-link:9093\"]}, {\"id\": 3, \"endpoints\": [\"CONTROLLER://rackc1-link:9093\"]}]\nCurrentObservers:       []",
+        "status": 0
+      },
+      "t_s": 52.8,
+      "topic": {
+        "isr": [
+          1,
+          3
+        ],
+        "leader": 1,
+        "raw": "Topic: topotestix-rack-links-203f93efd8c6\tPartition: 0\tLeader: 1\tReplicas: 1,2,3\tIsr: 1,3\tElr: \tLastKnownElr:",
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "probe": {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200727998000000,
+        "invoked": true,
+        "offset": 28,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-08/0000",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200727496000000
+      },
+      "quorum": {
+        "leader_epoch": 1,
+        "leader_id": 1,
+        "raw": "ClusterId:              4L6g3nShT-eMCtK--X86sw\nLeaderId:               1\nLeaderEpoch:            1\nHighWatermark:          190\nMaxFollowerLag:         135\nMaxFollowerLagTimeMs:   66304\nCurrentVoters:          [{\"id\": 1, \"endpoints\": [\"CONTROLLER://racka1-link:9093\"]}, {\"id\": 2, \"endpoints\": [\"CONTROLLER://rackb1-link:9093\"]}, {\"id\": 3, \"endpoints\": [\"CONTROLLER://rackc1-link:9093\"]}]\nCurrentObservers:       []",
+        "status": 0
+      },
+      "t_s": 59.6,
+      "topic": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "raw": "Topic: topotestix-rack-links-203f93efd8c6\tPartition: 0\tLeader: 1\tReplicas: 1,2,3\tIsr: 1,2,3\tElr: \tLastKnownElr:",
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  ],
+  "topic": {
+    "after": {
+      "isr": [
+        1,
+        2,
+        3
+      ],
+      "leader": 1,
+      "raw": "Topic: topotestix-rack-links-203f93efd8c6\tPartition: 0\tLeader: 1\tReplicas: 1,2,3\tIsr: 1,2,3\tElr: \tLastKnownElr:",
+      "replicas": [
+        1,
+        2,
+        3
+      ]
+    },
+    "before": {
+      "isr": [
+        1,
+        2,
+        3
+      ],
+      "leader": 1,
+      "raw": "Topic: topotestix-rack-links-203f93efd8c6\tPartition: 0\tLeader: 1\tReplicas: 1,2,3\tIsr: 1,2,3\tElr: \tLastKnownElr:",
+      "replicas": [
+        1,
+        2,
+        3
+      ]
+    },
+    "name": "topotestix-rack-links-203f93efd8c6"
+  },
+  "topology": {
+    "bootstrap_servers": [
+      "192.168.20.2:9095",
+      "192.168.20.3:9095",
+      "192.168.20.4:9095"
+    ],
+    "brokers": {
+      "racka1": {
+        "hosts_file": "127.0.0.1 localhost\n192.168.10.2 racka1\n192.168.10.2 racka1-link\n192.168.10.3 rackb1-link\n192.168.11.4 rackc1-link\n",
+        "peer_broker_port_reachable": {
+          "rackb1": true,
+          "rackc1": true
+        },
+        "resolved_link_names": {
+          "racka1": "192.168.10.2",
+          "rackb1": "192.168.10.3",
+          "rackc1": "192.168.11.4"
+        },
+        "vlans": [
+          10,
+          11,
+          20
+        ]
+      },
+      "rackb1": {
+        "hosts_file": "127.0.0.1 localhost\n192.168.10.3 rackb1\n192.168.10.2 racka1-link\n192.168.10.3 rackb1-link\n192.168.12.4 rackc1-link\n",
+        "peer_broker_port_reachable": {
+          "racka1": true,
+          "rackc1": true
+        },
+        "resolved_link_names": {
+          "racka1": "192.168.10.2",
+          "rackb1": "192.168.10.3",
+          "rackc1": "192.168.12.4"
+        },
+        "vlans": [
+          10,
+          12,
+          20
+        ]
+      },
+      "rackc1": {
+        "hosts_file": "127.0.0.1 localhost\n192.168.11.4 rackc1\n192.168.11.2 racka1-link\n192.168.12.3 rackb1-link\n192.168.11.4 rackc1-link\n",
+        "peer_broker_port_reachable": {
+          "racka1": true,
+          "rackb1": true
+        },
+        "resolved_link_names": {
+          "racka1": "192.168.11.2",
+          "rackb1": "192.168.12.3",
+          "rackc1": "192.168.11.4"
+        },
+        "vlans": [
+          11,
+          12,
+          20
+        ]
+      }
+    },
+    "links_present": [
+      10,
+      11,
+      12
+    ],
+    "reachability_matches_links": true
+  },
+  "workload": {
+    "baseline": [
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200666654000000,
+        "invoked": true,
+        "offset": 0,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0000",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200665941000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200666678000000,
+        "invoked": true,
+        "offset": 1,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0001",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200666667000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200666687000000,
+        "invoked": true,
+        "offset": 2,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0002",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200666678000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200666697000000,
+        "invoked": true,
+        "offset": 3,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0003",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200666687000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200666705000000,
+        "invoked": true,
+        "offset": 4,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0004",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200666697000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200666713000000,
+        "invoked": true,
+        "offset": 5,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0005",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200666705000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200666721000000,
+        "invoked": true,
+        "offset": 6,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0006",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200666713000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200666729000000,
+        "invoked": true,
+        "offset": 7,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0007",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200666721000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200666737000000,
+        "invoked": true,
+        "offset": 8,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0008",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200666730000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200666744000000,
+        "invoked": true,
+        "offset": 9,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0009",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200666737000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200666752000000,
+        "invoked": true,
+        "offset": 10,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0010",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200666744000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200666762000000,
+        "invoked": true,
+        "offset": 11,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0011",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200666752000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200666774000000,
+        "invoked": true,
+        "offset": 12,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0012",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200666763000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200666783000000,
+        "invoked": true,
+        "offset": 13,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0013",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200666774000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200666793000000,
+        "invoked": true,
+        "offset": 14,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0014",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200666783000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200666801000000,
+        "invoked": true,
+        "offset": 15,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0015",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200666793000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200666812000000,
+        "invoked": true,
+        "offset": 16,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0016",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200666801000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200666819000000,
+        "invoked": true,
+        "offset": 17,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0017",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200666812000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200666826000000,
+        "invoked": true,
+        "offset": 18,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0018",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200666819000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200666834000000,
+        "invoked": true,
+        "offset": 19,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0019",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200666826000000
+      }
+    ],
+    "probes": [
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-203f93efd8c6-0:5003 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789200673420000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-00/0000",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789200667945000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200680543000000,
+        "invoked": true,
+        "offset": 21,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-01/0000",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200680050000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200687266000000,
+        "invoked": true,
+        "offset": 22,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-02/0000",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200686793000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200694066000000,
+        "invoked": true,
+        "offset": 23,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-03/0000",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200693592000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200700856000000,
+        "invoked": true,
+        "offset": 24,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-04/0000",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200700353000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200707628000000,
+        "invoked": true,
+        "offset": 25,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-05/0000",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200707114000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200714426000000,
+        "invoked": true,
+        "offset": 26,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-06/0000",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200713881000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200721238000000,
+        "invoked": true,
+        "offset": 27,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-07/0000",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200720748000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789200727998000000,
+        "invoked": true,
+        "offset": 28,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-08/0000",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789200727496000000
+      }
+    ],
+    "recovered": [
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0000",
+        "offset": 0,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0000",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0001",
+        "offset": 1,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0001",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0002",
+        "offset": 2,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0002",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0003",
+        "offset": 3,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0003",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0004",
+        "offset": 4,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0004",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0005",
+        "offset": 5,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0005",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0006",
+        "offset": 6,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0006",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0007",
+        "offset": 7,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0007",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0008",
+        "offset": 8,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0008",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0009",
+        "offset": 9,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0009",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0010",
+        "offset": 10,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0010",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0011",
+        "offset": 11,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0011",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0012",
+        "offset": 12,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0012",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0013",
+        "offset": 13,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0013",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0014",
+        "offset": 14,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0014",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0015",
+        "offset": 15,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0015",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0016",
+        "offset": 16,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0016",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0017",
+        "offset": 17,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0017",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0018",
+        "offset": 18,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0018",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0019",
+        "offset": 19,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/baseline/0019",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/probe-00/0000",
+        "offset": 20,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-00/0000",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/probe-01/0000",
+        "offset": 21,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-01/0000",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/probe-02/0000",
+        "offset": 22,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-02/0000",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/probe-03/0000",
+        "offset": 23,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-03/0000",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/probe-04/0000",
+        "offset": 24,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-04/0000",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/probe-05/0000",
+        "offset": 25,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-05/0000",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/probe-06/0000",
+        "offset": 26,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-06/0000",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/probe-07/0000",
+        "offset": 27,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-07/0000",
+        "partition": 0
+      },
+      {
+        "key_id": "203f93efd8c64a6e9aa28275f49121e2/probe-08/0000",
+        "offset": 28,
+        "op_id": "203f93efd8c64a6e9aa28275f49121e2/probe-08/0000",
+        "partition": 0
+      }
+    ]
+  }
+}

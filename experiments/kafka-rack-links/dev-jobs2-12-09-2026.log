@@ -1,0 +1,17 @@
+warning: Git tree '/home/freerat/projects/topotestix' is dirty
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+[1/5] seed-1-rep-1 (MemAvailable 21560 MiB)
+[2/5] seed-11-rep-1 (MemAvailable 21560 MiB)
+    seed-1-rep-1 exit=1 162.0s run_dir=runs/20260912-130026-kafka-rack-links-seed-1-kafka-rack-links-seed-1-rep-1
+[3/5] seed-12-rep-1 (MemAvailable 14078 MiB)
+    seed-11-rep-1 exit=0 176.6s run_dir=runs/20260912-130026-kafka-rack-links-seed-11-kafka-rack-links-seed-11-rep-1
+[4/5] seed-28-rep-1 (MemAvailable 17373 MiB)
+    seed-28-rep-1 exit=0 176.0s run_dir=runs/20260912-130323-kafka-rack-links-seed-28-kafka-rack-links-seed-28-rep-1
+[5/5] seed-29-rep-1 (MemAvailable 14573 MiB)
+    seed-12-rep-1 exit=0 287.1s run_dir=runs/20260912-130308-kafka-rack-links-seed-12-kafka-rack-links-seed-12-rep-1
+    seed-29-rep-1 exit=0 173.2s run_dir=runs/20260912-130619-kafka-rack-links-seed-29-kafka-rack-links-seed-29-rep-1

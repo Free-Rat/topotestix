@@ -1,0 +1,17 @@
+warning: Git tree '/home/freerat/projects/topotestix' is dirty
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+Running kafka-rack-links seed=1
+
+============================================================
+ TopoTestix Results
+ Seed: 1
+ Name: kafka-rack-links-dev-3
+============================================================
+
+ VM test FAILED (build error)
+ Run dir: experiments/kafka-rack-links/dev-12-09-2026/runs/20260912-083856-kafka-rack-links-seed-1-kafka-rack-links-dev-3

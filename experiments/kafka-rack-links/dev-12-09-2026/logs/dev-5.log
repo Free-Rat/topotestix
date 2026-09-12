@@ -1,0 +1,24 @@
+warning: Git tree '/home/freerat/projects/topotestix' is dirty
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+Running kafka-rack-links seed=1
+
+============================================================
+ TopoTestix Results
+ Seed: 1
+ Name: kafka-rack-links-dev-5
+============================================================
+  PASS  kafka-rack-links-execution-completed
+  PASS  kafka-rack-links-materialized
+  PASS  kafka-rack-links-cut-accurate
+  PASS  kafka-rack-links-confirmed-records-recovered-exactly-once
+  PASS  kafka-rack-links-cluster-recovers
+  PASS  kafka-rack-links-runtime-versions-pinned
+
+ Overall: PASSED
+ Run dir: experiments/kafka-rack-links/dev-12-09-2026/runs/20260912-125543-kafka-rack-links-seed-1-kafka-rack-links-dev-5
+============================================================

@@ -1,0 +1,12 @@
+{
+  "configChoices": {
+    "client": {
+      ".environment.etc.topotestix-kafka-cut.text": 1
+    }
+  },
+  "topologyChoices": {
+    ".rackaVlans": 0,
+    ".rackbVlans": 0,
+    ".rackcVlans": 0
+  }
+}

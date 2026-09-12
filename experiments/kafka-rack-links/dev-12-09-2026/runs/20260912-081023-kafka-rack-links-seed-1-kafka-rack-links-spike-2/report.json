@@ -1,0 +1,10 @@
+[
+  {
+    "name": "kafka-rack-links-execution-completed",
+    "status": "passed"
+  },
+  {
+    "name": "kafka-rack-links-confirmed-records-recovered-exactly-once",
+    "status": "passed"
+  }
+]

@@ -1,0 +1,17 @@
+Running kafka-rack-links seed=3
+
+============================================================
+ TopoTestix Results
+ Seed: 3
+ Name: kafka-rack-links-seed-3-rep-1
+============================================================
+  PASS  kafka-rack-links-execution-completed
+  PASS  kafka-rack-links-materialized
+  PASS  kafka-rack-links-cut-accurate
+  PASS  kafka-rack-links-confirmed-records-recovered-exactly-once
+  PASS  kafka-rack-links-cluster-recovers
+  PASS  kafka-rack-links-runtime-versions-pinned
+
+ Overall: PASSED
+ Run dir: /home/freerat/projects/topotestix/experiments/kafka-rack-links/dev-cutcheck-12-09-2026/runs/20260912-152558-kafka-rack-links-seed-3-kafka-rack-links-seed-3-rep-1
+============================================================

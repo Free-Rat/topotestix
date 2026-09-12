@@ -1,0 +1,31 @@
+{
+  "artifacts": [
+    "baseline.jsonl",
+    "kafka-rack-links-result.json",
+    "racka1-apache-kafka.log",
+    "racka2-apache-kafka.log",
+    "rackb1-apache-kafka.log",
+    "rackb2-apache-kafka.log",
+    "rackc1-apache-kafka.log",
+    "rackc2-apache-kafka.log",
+    "recovered.jsonl",
+    "stream.jsonl"
+  ],
+  "finishedAt": "2026-09-12T08:43:34.527391+00:00",
+  "gitHead": "7fbcfa58d0cb9198ef4a86f1b5c9a3bc6906b639",
+  "id": "20260912-084058-kafka-rack-links-seed-1-kafka-rack-links-dev-4",
+  "name": "kafka-rack-links-dev-4",
+  "repetitionToken": "dev-4",
+  "reproduceCommand": "topotestix orchestrator run kafka-rack-links --seed 1 --name kafka-rack-links-dev-4 --project-root /home/freerat/projects/topotestix --repetition-token dev-4 --topology-target /home/freerat/projects/topotestix/targets/kafka-rack-links/topology.nix --config-target /home/freerat/projects/topotestix/targets/kafka-rack-links/config.nix --base-module /home/freerat/projects/topotestix/targets/kafka-rack-links/module.nix --test-script /home/freerat/projects/topotestix/targets/kafka-rack-links/test-script.py --properties /home/freerat/projects/topotestix/targets/kafka-rack-links/properties.nix --topology-choices '{\".rackaVlans\": 0, \".rackbVlans\": 0, \".rackcVlans\": 0}' --config-choices '{\"client\": {\".environment.etc.topotestix-kafka-cut.text\": 1, \".environment.etc.topotestix-kafka-placement.json.text\": 0}}'",
+  "resultPath": "experiments/kafka-rack-links/dev-12-09-2026/runs/20260912-084058-kafka-rack-links-seed-1-kafka-rack-links-dev-4/result",
+  "runDir": "experiments/kafka-rack-links/dev-12-09-2026/runs/20260912-084058-kafka-rack-links-seed-1-kafka-rack-links-dev-4",
+  "seed": 1,
+  "startedAt": "2026-09-12T08:40:58.568240+00:00",
+  "status": "passed",
+  "summary": {
+    "failed": 0,
+    "passed": 5,
+    "total": 5
+  },
+  "target": "kafka-rack-links"
+}

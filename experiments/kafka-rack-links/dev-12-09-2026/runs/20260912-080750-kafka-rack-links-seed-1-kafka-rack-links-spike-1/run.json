@@ -1,0 +1,20 @@
+{
+  "artifacts": [],
+  "finishedAt": "2026-09-12T08:07:51.162569+00:00",
+  "gitHead": "7fbcfa58d0cb9198ef4a86f1b5c9a3bc6906b639",
+  "id": "20260912-080750-kafka-rack-links-seed-1-kafka-rack-links-spike-1",
+  "name": "kafka-rack-links-spike-1",
+  "repetitionToken": "spike-1",
+  "reproduceCommand": "topotestix orchestrator run kafka-rack-links --seed 1 --name kafka-rack-links-spike-1 --project-root /home/freerat/projects/topotestix --repetition-token spike-1 --topology-target /home/freerat/projects/topotestix/targets/kafka-rack-links/topology.nix --config-target /home/freerat/projects/topotestix/targets/kafka-rack-links/config.nix --base-module /home/freerat/projects/topotestix/targets/kafka-rack-links/module.nix --test-script /home/freerat/projects/topotestix/targets/kafka-rack-links/test-script.py --properties /home/freerat/projects/topotestix/targets/kafka-rack-links/properties.nix --topology-choices '{\".rackaVlans\": 0, \".rackbVlans\": 0, \".rackcVlans\": 0}' --config-choices '{\"client\": {\".environment.etc.topotestix-kafka-cut.text\": 1}}'",
+  "resultPath": "experiments/kafka-rack-links/dev-12-09-2026/runs/20260912-080750-kafka-rack-links-seed-1-kafka-rack-links-spike-1/result",
+  "runDir": "experiments/kafka-rack-links/dev-12-09-2026/runs/20260912-080750-kafka-rack-links-seed-1-kafka-rack-links-spike-1",
+  "seed": 1,
+  "startedAt": "2026-09-12T08:07:50.342700+00:00",
+  "status": "failed",
+  "summary": {
+    "failed": 0,
+    "passed": 0,
+    "total": 0
+  },
+  "target": "kafka-rack-links"
+}

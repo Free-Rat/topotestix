@@ -1,0 +1,14 @@
+warning: Git tree '/home/freerat/projects/topotestix' is dirty
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+[1/3] seed-28-rep-1 (MemAvailable 21371 MiB)
+[2/3] seed-3-rep-1 (MemAvailable 21371 MiB)
+    seed-28-rep-1 exit=0 181.9s run_dir=runs/20260912-152558-kafka-rack-links-seed-28-kafka-rack-links-seed-28-rep-1
+[3/3] seed-2-rep-1 (MemAvailable 14267 MiB)
+    seed-3-rep-1 exit=0 287.6s run_dir=runs/20260912-152558-kafka-rack-links-seed-3-kafka-rack-links-seed-3-rep-1
+    seed-2-rep-1 exit=0 283.0s run_dir=runs/20260912-152900-kafka-rack-links-seed-2-kafka-rack-links-seed-2-rep-1
+exit=0
