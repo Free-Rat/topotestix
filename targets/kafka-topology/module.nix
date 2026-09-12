@@ -59,6 +59,10 @@ in
   virtualisation.memorySize = if isBroker then 2048 else 1024;
   virtualisation.diskSize = if isBroker then 4096 else 2048;
   networking.firewall.enable = false;
+  # Keep every VM on its declared VLANs only: otherwise QEMU's user-mode NIC
+  # (eth0) receives a DHCP default route that makes the other client plane
+  # routable from client1.
+  networking.useDHCP = false;
 
   services.apache-kafka = lib.mkIf isBroker {
     enable = true;

@@ -217,13 +217,13 @@ def check_runtime_versions(results):
     require_completed(results)
     versions = results["versions"]
     errors = []
-    if "4.2.0" not in versions["kafka"]:
+    if not re.match(r"4\.2\.0\b", versions["kafka"]):
         errors.append("kafka=" + versions["kafka"])
     if versions["kafka_package"] != "apache-kafka-2.13-4.2.0":
         errors.append("kafka_package=" + versions["kafka_package"])
     if "apache-kafka-2.13-4.2.0" not in versions["kafka_store_path"]:
         errors.append("kafka_store_path=" + versions["kafka_store_path"])
-    if "17" not in versions["java"]:
+    if not re.search(r'version "17[."]', versions["java"]):
         errors.append("java=" + versions["java"])
     if errors:
         raise AssertionError("runtime version gate failed: " + "; ".join(errors))

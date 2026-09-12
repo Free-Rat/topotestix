@@ -1,12 +1,13 @@
 # NixOS test-driver machine objects are injected into the composed script.
 # ruff: noqa: F821
-import base64
-import json
-import re
+# json comes from the runner preamble and re from the inlined oracle setup.
+import os
 import shlex
+import tempfile
 import time
 import traceback
 import uuid
+from typing import Any, cast
 
 
 class PreconditionFailure(Exception):
@@ -50,7 +51,7 @@ OBSERVATION_DELAY_SECONDS = 35
 
 run_id = uuid.uuid4().hex
 topic = "topotestix-topology-" + run_id[:12]
-result = {
+result = cast(dict[str, Any], {
     "schema_version": 1,
     "run_id": run_id,
     "classification": "harness_failure",
@@ -77,8 +78,11 @@ result = {
     "topology": {
         "brokers": {},
         "client_addresses": [],
+        "client_routes": None,
         "selected_route_status": None,
+        "selected_route": None,
         "opposite_route_status": None,
+        "opposite_route": None,
         "bootstrap_servers": [],
         "placement_manifests": {},
         "intervention_manifests": {},
@@ -130,7 +134,7 @@ result = {
     },
     "artifact_errors": [],
     "started_wall_ns": time.time_ns(),
-}
+})
 
 
 def execute_checked(machine, command, timeout=90):
@@ -161,7 +165,7 @@ def run_producer(prefix, count, history_path, timeout_ms):
             str(timeout_ms),
         ]
     )
-    status, output = client1.execute(command, timeout=timeout_ms / 1000 + 20)
+    status, output = client1.execute(command, timeout=timeout_ms // 1000 + 20)
     return status, output, read_json_lines(client1, history_path)
 
 
@@ -353,12 +357,13 @@ def persist_result():
             result["artifact_errors"].append({"artifact": path, "error": str(exception)})
 
     result["finished_wall_ns"] = time.time_ns()
-    encoded = base64.b64encode(json.dumps(result, indent=2, sort_keys=True).encode("utf-8")).decode(
-        "ascii"
-    )
-    client1.succeed(
-        "printf %s " + shlex.quote(encoded) + " | base64 -d > /tmp/kafka-topology-result.json"
-    )
+    # The payload exceeds the kernel's per-argument limit, so it travels through
+    # the shared directory instead of the shell command line.
+    with tempfile.TemporaryDirectory() as host_dir:
+        host_path = os.path.join(host_dir, "kafka-topology-result.json")
+        with open(host_path, "w", encoding="utf-8") as handle:
+            json.dump(result, handle, indent=2, sort_keys=True)
+        client1.copy_from_host(host_path, "/tmp/kafka-topology-result.json")
     client1.copy_from_machine("/tmp/kafka-topology-result.json")
 
 
@@ -426,10 +431,17 @@ try:
         f"192.168.{client_vlan}.{suffix}:{listener_port}" for suffix in ADDRESS_SUFFIXES.values()
     ]
     result["topology"]["bootstrap_servers"] = bootstrap_servers
-    selected_status, _ = client1.execute("ip route get " + shlex.quote(f"192.168.{client_vlan}.2"))
-    opposite_status, _ = client1.execute("ip route get " + shlex.quote(opposite_address))
+    result["topology"]["client_routes"] = client1.succeed("ip -4 route show").strip()
+    selected_status, selected_route = client1.execute(
+        "ip route get " + shlex.quote(f"192.168.{client_vlan}.2") + " 2>&1"
+    )
+    opposite_status, opposite_route = client1.execute(
+        "ip route get " + shlex.quote(opposite_address) + " 2>&1"
+    )
     result["topology"]["selected_route_status"] = selected_status
+    result["topology"]["selected_route"] = selected_route.strip()
     result["topology"]["opposite_route_status"] = opposite_status
+    result["topology"]["opposite_route"] = opposite_route.strip()
     if selected_status != 0 or opposite_status == 0:
         raise PreconditionFailure(
             "client routing does not isolate the selected plane: selected_status="
@@ -674,4 +686,9 @@ except Exception as exception:
         "traceback": traceback.format_exc(),
     }
 finally:
-    persist_result()
+    # A persistence failure must not abort the script: the appended properties
+    # then fail on the missing payload and report.json is still written.
+    try:
+        persist_result()
+    except Exception:
+        print("kafka-topology result payload was not persisted:\n" + traceback.format_exc())

@@ -1,23 +1,17 @@
 { lib }:
 
-let
-  oracleSource = builtins.toJSON (builtins.readFile ./oracle.py);
-in
 {
   kafka_topology_contracts = {
     name = "kafka-topology-contracts";
-    setup = ''
-exec(
-    compile(
-        ${oracleSource},
-        "kafka-topology-oracle.py",
-        "exec",
-    ),
-    globals(),
-)
+    # The oracle is inlined verbatim so the NixOS test driver type-checks it
+    # together with the rest of the composed script.
+    setup = builtins.readFile ./oracle.py + ''
 
 def load_kafka_topology_result():
-    return json.loads(client1.succeed("cat /tmp/kafka-topology-result.json"))
+    # Read the copy the test script already placed in $out; reading the large
+    # payload back through the serial console is not reliable.
+    with open(client1.out_dir / "kafka-topology-result.json", encoding="utf-8") as handle:
+        return json.load(handle)
 
 def check_kafka_topology_completed():
     require_completed(load_kafka_topology_result())

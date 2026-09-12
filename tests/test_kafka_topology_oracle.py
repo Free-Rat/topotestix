@@ -177,6 +177,16 @@ class KafkaTopologyOracleTests(unittest.TestCase):
             result["intervention"]["service_after_recovery"][name]["main_pid"] += 100
         ORACLE.check_intervention_accurate(result)
 
+    def test_version_gate_rejects_lookalike_versions(self):
+        for field, value in [
+            ("java", 'openjdk version "21.0.17" 2026-10-17'),
+            ("kafka", "14.2.0 (Commit:abc)"),
+        ]:
+            result = valid_result()
+            result["versions"][field] = value
+            with self.assertRaisesRegex(AssertionError, field + "="):
+                ORACLE.check_runtime_versions(result)
+
     def test_probe_confirmation_mismatch_fails(self):
         result = valid_result()
         result["oracle"]["expected_probe_confirmation"] = False
