@@ -19,7 +19,10 @@ and nothing is overridden. `control` runs a seed with the cut forced to
 "none"; it is the only forced choice the protocol allows. Units start in
 repetition-major order, at most --jobs at a time, and a unit starts next to a
 running one only when the host has enough available memory. The ledger is
-append-only; `run` and `control` skip units that already have an entry.
+append-only; `run` and `control` skip units that already have an entry, and
+refuse to start while the code that shapes a run differs from the committed
+revision (--allow-dirty for development runs). Each ledger entry records the
+revision it ran on.
 """
 
 import argparse
@@ -57,12 +60,24 @@ GATES = [
     "kafka-rack-links-execution-completed",
     "kafka-rack-links-materialized",
     "kafka-rack-links-cut-accurate",
-    "kafka-rack-links-cluster-recovers",
+    "kafka-rack-links-runtime-versions-pinned",
 ]
-# Payloads from schema version 2 on also carry the runtime version gate.
-VERSION_GATE = "kafka-rack-links-runtime-versions-pinned"
 DURABILITY = "kafka-rack-links-confirmed-records-recovered-exactly-once"
+RECOVERY = "kafka-rack-links-cluster-recovers"
+CONTRACTS = {RECOVERY: "recovery", DURABILITY: "durability"}
 VERDICTS = {"pass", "contract_violation"}
+# The payload schema the gates and contracts above are defined for.
+SCHEMA_VERSION = 3
+# Code that shapes a run; a campaign runs only on a committed revision of it.
+SOURCE_PATHS = [
+    "targets/kafka-rack-links",
+    "targets/default.nix",
+    "experiments/kafka-rack-links/campaign.py",
+    "lib",
+    "topotestix",
+    "flake.nix",
+    "flake.lock",
+]
 # A unit starts next to a running one only above this much available memory.
 MIN_AVAILABLE_KIB = 12 * 1024 * 1024
 
@@ -299,7 +314,23 @@ def run_command(unit, out_dir, campaign):
     return command
 
 
-def run_unit(unit, out_dir, campaign, jobs, available_kib):
+def source_state():
+    """The committed revision and any uncommitted change to the code that shapes a run."""
+
+    def git(*arguments):
+        return subprocess.run(
+            ["git", *arguments], cwd=PROJECT_ROOT, capture_output=True, text=True, check=True
+        ).stdout
+
+    return {
+        "commit": git("rev-parse", "HEAD").strip(),
+        "changed": git(
+            "status", "--porcelain", "--untracked-files=all", "--", *SOURCE_PATHS
+        ).splitlines(),
+    }
+
+
+def run_unit(unit, out_dir, campaign, jobs, available_kib, source):
     key = unit_key(unit)
     command = run_command(unit, out_dir, campaign)
     log_path = os.path.join(out_dir, "logs", key + ".log")
@@ -316,6 +347,7 @@ def run_unit(unit, out_dir, campaign, jobs, available_kib):
         "key": key,
         "command": command,
         "jobs": jobs,
+        "source": {"commit": source["commit"], "dirty": bool(source["changed"])},
         "mem_available_kib_at_start": available_kib,
         "started": started,
         "finished": datetime.now(timezone.utc).isoformat(),
@@ -326,7 +358,7 @@ def run_unit(unit, out_dir, campaign, jobs, available_kib):
     }
 
 
-def execute_units(planned, out_dir, campaign, jobs):
+def execute_units(planned, out_dir, campaign, jobs, source):
     """Run units at most `jobs` at a time; only this thread writes the ledger."""
     ledger_path = os.path.join(out_dir, "ledger.jsonl")
     memory_log = MemoryLog(os.path.join(out_dir, "host-memory.jsonl"))
@@ -348,7 +380,7 @@ def execute_units(planned, out_dir, campaign, jobs):
                         f" (MemAvailable {available // 1024} MiB)",
                         flush=True,
                     )
-                    future = pool.submit(run_unit, unit, out_dir, campaign, jobs, available)
+                    future = pool.submit(run_unit, unit, out_dir, campaign, jobs, available, source)
                     running[future] = unit
                 done, _ = wait(list(running), timeout=10, return_when=FIRST_COMPLETED)
                 for future in done:
@@ -373,26 +405,31 @@ def prepare(out_dir):
     return out_dir, done
 
 
-def cmd_run(args):
+def execute_command(args, control):
+    source = source_state()
+    if source["changed"] and not args.allow_dirty:
+        print(
+            "uncommitted changes to code that shapes a run (commit them, or pass"
+            " --allow-dirty for a development run):\n  " + "\n  ".join(source["changed"]),
+            file=sys.stderr,
+        )
+        return 2
     out_dir, done = prepare(args.out)
     campaign = args.campaign or os.path.basename(out_dir)
     planned = [
         unit
-        for unit in units(parse_seeds(args.seeds), args.repetitions)
+        for unit in units(parse_seeds(args.seeds), args.repetitions, control=control)
         if unit_key(unit) not in done
     ]
-    return execute_units(planned, out_dir, campaign, args.jobs)
+    return execute_units(planned, out_dir, campaign, args.jobs, source)
+
+
+def cmd_run(args):
+    return execute_command(args, control=False)
 
 
 def cmd_control(args):
-    out_dir, done = prepare(args.out)
-    campaign = args.campaign or os.path.basename(out_dir)
-    planned = [
-        unit
-        for unit in units(parse_seeds(args.seeds), args.repetitions, control=True)
-        if unit_key(unit) not in done
-    ]
-    return execute_units(planned, out_dir, campaign, args.jobs)
+    return execute_command(args, control=True)
 
 
 # ---------------------------------------------------------------------------
@@ -427,8 +464,26 @@ def resolved_cell(resolved):
     }
 
 
-def durability_kinds(payload):
+def recovery_kinds(payload):
+    """Mirror of oracle.recovery_failures."""
+    before = payload["topic"]["pre_cut"]
+    after = payload["topic"].get("after") or {}
     workload = payload["workload"]
+    kinds = []
+    if after.get("leader") not in after.get("replicas", []) or not set(before["isr"]) <= set(
+        after.get("isr", [])
+    ):
+        kinds.append("not_recovered")
+    if workload.get("end_offset") is None or not workload.get("complete_read"):
+        kinds.append("unreadable")
+    return kinds
+
+
+def durability_kinds(payload):
+    """Durability violation kinds; the contract can only be judged on a complete read."""
+    workload = payload["workload"]
+    if not workload.get("complete_read"):
+        return []
     produced = workload["baseline"] + workload["stream"]
     produced_ids = {event["op_id"] for event in produced}
     confirmed = {event["op_id"] for event in produced if event["outcome"] == "confirmed"}
@@ -505,6 +560,7 @@ def observations(payload):
         ),
         "unfenced_at_start": payload["topology"]["unfenced_at_start"],
         "isr_pre_cut": (payload["topic"].get("pre_cut") or {}).get("isr"),
+        "recovery_waited_s": (payload.get("recovery") or {}).get("waited_s"),
         "cut_seconds": round((restored - started) / 1e9, 1) if started and restored else None,
         "sampling": completeness if counters else None,
     }
@@ -537,10 +593,19 @@ def classify(entry, out_dir):
         ),
         "formed": None,
         "signature": None,
+        "violated_contracts": [],
+        "source": entry.get("source"),
     }
     if payload is None:
         row["outcome"] = "infrastructure_or_harness_failure"
         row["detail"] = "no kafka-rack-links-result.json (exit " + str(entry["exit_status"]) + ")"
+        return row
+    if payload.get("schema_version") != SCHEMA_VERSION:
+        row["outcome"] = "harness_failure"
+        row["detail"] = (
+            f"payload schema_version {payload.get('schema_version')}; the gates and contracts"
+            f" are defined for schema_version {SCHEMA_VERSION}"
+        )
         return row
     row["formed"] = payload["classification"] != "precondition_failure"
     if payload["classification"] != "completed":
@@ -556,22 +621,30 @@ def classify(entry, out_dir):
         row["outcome"] = "harness_failure"
         row["detail"] = "materialized VLANs differ from resolved.json: " + str(materialized)
         return row
-    gates = GATES + ([VERSION_GATE] if payload.get("schema_version", 1) >= 2 else [])
-    failed_gates = [name for name in gates if checks.get(name) != "passed"]
+    failed_gates = [name for name in GATES if checks.get(name) != "passed"]
     if failed_gates:
         row["outcome"] = "harness_failure"
         row["detail"] = "failed gates: " + ", ".join(failed_gates)
         return row
     row["observations"] = observations(payload)
-    if checks.get(DURABILITY) == "passed":
+    recovery = recovery_kinds(payload)
+    # Without a complete read the durability contract cannot be judged; the
+    # recovery contract already reports the unreadable partition.
+    violated = [
+        label
+        for name, label in CONTRACTS.items()
+        if checks.get(name) != "passed" and not (name == DURABILITY and "unreadable" in recovery)
+    ]
+    if not violated:
         row["outcome"] = "pass"
     else:
         row["outcome"] = "contract_violation"
+        row["violated_contracts"] = violated
         links = payload["topology"]["links_present"]
         row["signature"] = {
             "links_during_cut": sorted(set(links) - set(payload["configuration"]["cut_vlans"])),
             "placement": payload["configuration"]["placement"],
-            "kinds": durability_kinds(payload),
+            "kinds": recovery + durability_kinds(payload),
         }
     return row
 
@@ -644,6 +717,20 @@ def evaluate_d2(summaries, rows):
         and len(nothing) >= 3
         and predictions,
         "null_minimum_met": len(removes) >= 10,
+    }
+
+
+def source_summary(rows):
+    """Which revisions the units ran on; campaign evidence needs one clean revision."""
+    sources = [row.get("source") for row in rows]
+    commits = sorted({source["commit"] for source in sources if source})
+    dirty = sum(bool(source and source["dirty"]) for source in sources)
+    unrecorded = sum(source is None for source in sources)
+    return {
+        "commits": commits,
+        "dirty_units": dirty,
+        "unrecorded_units": unrecorded,
+        "single_clean_revision": bool(rows) and len(commits) == 1 and not dirty and not unrecorded,
     }
 
 
@@ -742,7 +829,12 @@ def execution_line(row):
             ),
             cut=cell["cut"] + (" (forced)" if row["control"] else ""),
             placement=cell["placement"],
-            outcome=row["outcome"],
+            outcome=row["outcome"]
+            + (
+                f" ({', '.join(row['violated_contracts'])})"
+                if row.get("violated_contracts")
+                else ""
+            ),
             before=stream_cell(seen["stream"]["before"]) if seen else "-",
             during=stream_cell(seen["stream"]["during"]) if seen else "-",
             after=stream_cell(seen["stream"]["after"]) if seen else "-",
@@ -765,11 +857,13 @@ def cmd_summarize(args):
     summaries = seed_summaries(rows)
     d2 = evaluate_d2(summaries, rows)
     d3 = evaluate_d3(rows)
+    provenance = source_summary(rows)
     report = {
         "executions": rows,
         "seeds": summaries,
         "d2": d2,
         "d3": d3,
+        "source": provenance,
         "min_mem_available_mib": min_available_mib(out_dir),
     }
     with open(os.path.join(out_dir, "summary.json"), "w", encoding="utf-8") as handle:
@@ -832,6 +926,11 @@ def cmd_summarize(args):
             )
             or "none"
         ),
+        "- Source revisions: "
+        + (", ".join(provenance["commits"]) or "not recorded")
+        + f"; units on uncommitted code: {provenance['dirty_units']};"
+        f" units without a recorded revision: {provenance['unrecorded_units']};"
+        f" single clean revision: {'yes' if provenance['single_clean_revision'] else 'NO'}",
         f"- Lowest host MemAvailable during the campaign: "
         f"{report['min_mem_available_mib'] if report['min_mem_available_mib'] is not None else '-'}"
         " MiB",
@@ -862,6 +961,11 @@ def main():
         command.add_argument("--jobs", type=int, default=1)
         command.add_argument(
             "--campaign", default=None, help="Repetition-token prefix (default: out dir name)"
+        )
+        command.add_argument(
+            "--allow-dirty",
+            action="store_true",
+            help="Run on uncommitted code (development only; recorded in the ledger)",
         )
     for name in ["summarize", "manifest"]:
         sub.add_parser(name).add_argument("--out", required=True)
