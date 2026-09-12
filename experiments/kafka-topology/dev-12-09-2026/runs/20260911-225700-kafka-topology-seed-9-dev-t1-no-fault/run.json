@@ -1,0 +1,27 @@
+{
+  "artifacts": [
+    "kafka-topology-result.json",
+    "kafka1-apache-kafka.log",
+    "kafka2-apache-kafka.log",
+    "kafka3-apache-kafka.log",
+    "kafka4-apache-kafka.log",
+    "kafka5-apache-kafka.log"
+  ],
+  "finishedAt": "2026-09-11T22:57:37.296617+00:00",
+  "gitHead": "7fbcfa58d0cb9198ef4a86f1b5c9a3bc6906b639",
+  "id": "20260911-225700-kafka-topology-seed-9-dev-t1-no-fault",
+  "name": "dev-t1-no-fault",
+  "repetitionToken": "dev4",
+  "reproduceCommand": "topotestix orchestrator run kafka-topology --seed 9 --name dev-t1-no-fault --project-root /home/freerat/projects/topotestix --repetition-token dev4 --topology-target /home/freerat/projects/topotestix/targets/kafka-topology/topology.nix --config-target /home/freerat/projects/topotestix/targets/kafka-topology/config.nix --base-module /home/freerat/projects/topotestix/targets/kafka-topology/module.nix --test-script /home/freerat/projects/topotestix/targets/kafka-topology/test-script.py --properties /home/freerat/projects/topotestix/targets/kafka-topology/properties.nix --config-choices '{\"kafka\": {\".environment.etc.topotestix-kafka-intervention.text\": 0}}'",
+  "resultPath": "/home/freerat/.claude/jobs/242a4fcd/tmp/runs/20260911-225700-kafka-topology-seed-9-dev-t1-no-fault/result",
+  "runDir": "/home/freerat/.claude/jobs/242a4fcd/tmp/runs/20260911-225700-kafka-topology-seed-9-dev-t1-no-fault",
+  "seed": 9,
+  "startedAt": "2026-09-11T22:57:00.187790+00:00",
+  "status": "failed",
+  "summary": {
+    "failed": 7,
+    "passed": 0,
+    "total": 7
+  },
+  "target": "kafka-topology"
+}

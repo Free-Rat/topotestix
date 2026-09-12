@@ -1,0 +1,8 @@
+{
+  "configChoices": {
+    "kafka": {
+      ".environment.etc.topotestix-kafka-intervention.text": 0
+    }
+  },
+  "topologyChoices": {}
+}

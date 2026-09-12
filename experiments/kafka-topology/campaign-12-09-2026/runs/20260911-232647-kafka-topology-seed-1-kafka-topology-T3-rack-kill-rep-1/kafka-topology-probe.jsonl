@@ -1,0 +1,1 @@
+{"op_id":"12c47798ae7642ab984431b573c0fc5c/probe/0000","invoked":true,"outcome":"ambiguous","started_wall_ns":1789169313290000000,"finished_wall_ns":1789169314673000000,"partition":null,"offset":null,"exception_type":"org.apache.kafka.common.errors.NotEnoughReplicasException","exception_message":"Messages are rejected since there are fewer in-sync replicas than required."}

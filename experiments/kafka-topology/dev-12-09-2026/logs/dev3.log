@@ -1,0 +1,127 @@
+warning: Git tree '/home/freerat/projects/topotestix' is dirty
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+these 11 derivations will be built:
+  /nix/store/kndafn4vhj5an0cgxw7lwy057iy1553z-etc-topotestix-kafka-intervention.drv
+  /nix/store/cjv3axlablv1ryf93y6yjp40nv1139hs-etc.drv
+  /nix/store/9iknbk18xk4kc5mk0x9j1sql1gmv4my6-activate.drv
+  /nix/store/143fz8s36bqn8avpyi3nc0y6qk9b90ww-nixos-system-client1-test.drv
+  /nix/store/h5s8w0paks477w1i7i7vp19x98bki5x3-closure-info.drv
+  /nix/store/fkw2yf12vy9wykdx1f73dpkaaq5z6mpx-run-nixos-vm.drv
+  /nix/store/hf6hg9ln43g6gsj636j1j4ppd95rp4xi-nixos-vm.drv
+  /nix/store/xj6bj4xmhhj1lsz5lvnqb0l72d2fxi55-test-script.drv
+  /nix/store/5gnkk4d9h3dqy8wypcgkas134ccwmg79-driverConfiguration.json.drv
+  /nix/store/lww1yrgk86yp4sjvav46m8gg4d80r6al-nixos-test-driver-dev-t1-no-fault-dev3.drv
+  /nix/store/b57161vna2dyvhycagnn9xxyxavpxg6w-vm-test-run-dev-t1-no-fault-dev3.drv
+building '/nix/store/xj6bj4xmhhj1lsz5lvnqb0l72d2fxi55-test-script.drv'...
+building '/nix/store/kndafn4vhj5an0cgxw7lwy057iy1553z-etc-topotestix-kafka-intervention.drv'...
+building '/nix/store/cjv3axlablv1ryf93y6yjp40nv1139hs-etc.drv'...
+building '/nix/store/9iknbk18xk4kc5mk0x9j1sql1gmv4my6-activate.drv'...
+building '/nix/store/143fz8s36bqn8avpyi3nc0y6qk9b90ww-nixos-system-client1-test.drv'...
+building '/nix/store/h5s8w0paks477w1i7i7vp19x98bki5x3-closure-info.drv'...
+closure-info> structuredAttrs is enabled
+building '/nix/store/fkw2yf12vy9wykdx1f73dpkaaq5z6mpx-run-nixos-vm.drv'...
+building '/nix/store/hf6hg9ln43g6gsj636j1j4ppd95rp4xi-nixos-vm.drv'...
+building '/nix/store/5gnkk4d9h3dqy8wypcgkas134ccwmg79-driverConfiguration.json.drv'...
+building '/nix/store/lww1yrgk86yp4sjvav46m8gg4d80r6al-nixos-test-driver-dev-t1-no-fault-dev3.drv'...
+nixos-test-driver-dev-t1-no-fault-dev3> Running type check (enable/disable: config.skipTypeCheck)
+nixos-test-driver-dev-t1-no-fault-dev3> See https://nixos.org/manual/nixos/stable/#test-opt-skipTypeCheck
+nixos-test-driver-dev-t1-no-fault-dev3> All checks passed!
+nixos-test-driver-dev-t1-no-fault-dev3> Linting test script (enable/disable: config.skipLint)
+nixos-test-driver-dev-t1-no-fault-dev3> See https://nixos.org/manual/nixos/stable/#test-opt-skipLint
+nixos-test-driver-dev-t1-no-fault-dev3> F811 [*] Redefinition of unused `json` from line 141
+nixos-test-driver-dev-t1-no-fault-dev3>    --> testScriptWithTypes:543:8
+nixos-test-driver-dev-t1-no-fault-dev3>     |
+nixos-test-driver-dev-t1-no-fault-dev3> 541 | # NixOS test-driver machine objects are injected into the composed script.
+nixos-test-driver-dev-t1-no-fault-dev3> 542 | # ruff: noqa: F821
+nixos-test-driver-dev-t1-no-fault-dev3> 543 | import json
+nixos-test-driver-dev-t1-no-fault-dev3>     |        ^^^^ `json` redefined here
+nixos-test-driver-dev-t1-no-fault-dev3> 544 | import os
+nixos-test-driver-dev-t1-no-fault-dev3> 545 | import re
+nixos-test-driver-dev-t1-no-fault-dev3>     |
+nixos-test-driver-dev-t1-no-fault-dev3>    ::: testScriptWithTypes:141:8
+nixos-test-driver-dev-t1-no-fault-dev3>     |
+nixos-test-driver-dev-t1-no-fault-dev3> 139 | kafka4 = create_fake_qemu_machine()
+nixos-test-driver-dev-t1-no-fault-dev3> 140 | kafka5 = create_fake_qemu_machine()
+nixos-test-driver-dev-t1-no-fault-dev3> 141 | import json
+nixos-test-driver-dev-t1-no-fault-dev3>     |        ---- previous definition of `json` here
+nixos-test-driver-dev-t1-no-fault-dev3> 142 | import base64
+nixos-test-driver-dev-t1-no-fault-dev3>     |
+nixos-test-driver-dev-t1-no-fault-dev3> help: Remove definition: `json`
+nixos-test-driver-dev-t1-no-fault-dev3> 
+nixos-test-driver-dev-t1-no-fault-dev3> F811 [*] Redefinition of unused `re` from line 187
+nixos-test-driver-dev-t1-no-fault-dev3>    --> testScriptWithTypes:545:8
+nixos-test-driver-dev-t1-no-fault-dev3>     |
+nixos-test-driver-dev-t1-no-fault-dev3> 543 | import json
+nixos-test-driver-dev-t1-no-fault-dev3> 544 | import os
+nixos-test-driver-dev-t1-no-fault-dev3> 545 | import re
+nixos-test-driver-dev-t1-no-fault-dev3>     |        ^^ `re` redefined here
+nixos-test-driver-dev-t1-no-fault-dev3> 546 | import shlex
+nixos-test-driver-dev-t1-no-fault-dev3> 547 | import tempfile
+nixos-test-driver-dev-t1-no-fault-dev3>     |
+nixos-test-driver-dev-t1-no-fault-dev3>    ::: testScriptWithTypes:187:8
+nixos-test-driver-dev-t1-no-fault-dev3>     |
+nixos-test-driver-dev-t1-no-fault-dev3> 185 |             _report.append({"name": name, "status": "passed"})
+nixos-test-driver-dev-t1-no-fault-dev3> 186 |
+nixos-test-driver-dev-t1-no-fault-dev3> 187 | import re
+nixos-test-driver-dev-t1-no-fault-dev3>     |        -- previous definition of `re` here
+nixos-test-driver-dev-t1-no-fault-dev3> 188 | from collections import Counter
+nixos-test-driver-dev-t1-no-fault-dev3>     |
+nixos-test-driver-dev-t1-no-fault-dev3> help: Remove definition: `re`
+nixos-test-driver-dev-t1-no-fault-dev3> 
+nixos-test-driver-dev-t1-no-fault-dev3> Found 2 errors.
+nixos-test-driver-dev-t1-no-fault-dev3> [*] 2 fixable with the `--fix` option.
+error: Cannot build '/nix/store/lww1yrgk86yp4sjvav46m8gg4d80r6al-nixos-test-driver-dev-t1-no-fault-dev3.drv'.
+       Reason: builder failed with exit code 1.
+       Output paths:
+         /nix/store/j7av7lcwjrgzbzay660l31khnsf1d0k5-nixos-test-driver-dev-t1-no-fault-dev3
+       Last 25 log lines:
+       >     |
+       > help: Remove definition: `json`
+       >
+       > F811 [*] Redefinition of unused `re` from line 187
+       >    --> testScriptWithTypes:545:8
+       >     |
+       > 543 | import json
+       > 544 | import os
+       > 545 | import re
+       >     |        ^^ `re` redefined here
+       > 546 | import shlex
+       > 547 | import tempfile
+       >     |
+       >    ::: testScriptWithTypes:187:8
+       >     |
+       > 185 |             _report.append({"name": name, "status": "passed"})
+       > 186 |
+       > 187 | import re
+       >     |        -- previous definition of `re` here
+       > 188 | from collections import Counter
+       >     |
+       > help: Remove definition: `re`
+       >
+       > Found 2 errors.
+       > [*] 2 fixable with the `--fix` option.
+       For full logs, run:
+         nix log /nix/store/lww1yrgk86yp4sjvav46m8gg4d80r6al-nixos-test-driver-dev-t1-no-fault-dev3.drv
+error: Cannot build '/nix/store/b57161vna2dyvhycagnn9xxyxavpxg6w-vm-test-run-dev-t1-no-fault-dev3.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/rrkh29x8nw6089a0wsbhxc4n43a77b45-vm-test-run-dev-t1-no-fault-dev3
+
+Running kafka-topology seed=9
+
+============================================================
+ TopoTestix Results
+ Seed: 9
+ Name: dev-t1-no-fault
+============================================================
+
+ VM test FAILED (build error)
+ Run dir: /home/freerat/.claude/jobs/242a4fcd/tmp/runs/20260911-225521-kafka-topology-seed-9-dev-t1-no-fault
+exit=1

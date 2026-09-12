@@ -1,0 +1,2528 @@
+[
+  {
+    "cell": "T1",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 120.2,
+    "group": "no-fault",
+    "key": "T1-no-fault-rep-1",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 1,
+    "resolved": {
+      "client_plane": "shared",
+      "intervention": "no-fault",
+      "placement": "spread"
+    },
+    "run_dir": "runs/20260911-230931-kafka-topology-seed-9-kafka-topology-T1-no-fault-rep-1",
+    "seed": 9,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "during": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T1",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 130.8,
+    "group": "leader-kill",
+    "key": "T1-leader-kill-rep-1",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 1,
+    "resolved": {
+      "client_plane": "shared",
+      "intervention": "leader-kill",
+      "placement": "spread"
+    },
+    "run_dir": "runs/20260911-231131-kafka-topology-seed-9-kafka-topology-T1-leader-kill-rep-1",
+    "seed": 9,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "during": {
+        "isr": [
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T1",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 133.4,
+    "group": "rack-kill",
+    "key": "T1-rack-kill-rep-1",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 1,
+    "resolved": {
+      "client_plane": "shared",
+      "intervention": "rack-kill",
+      "placement": "spread"
+    },
+    "run_dir": "runs/20260911-231342-kafka-topology-seed-9-kafka-topology-T1-rack-kill-rep-1",
+    "seed": 9,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "during": {
+        "isr": [
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T2",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 123.9,
+    "group": "no-fault",
+    "key": "T2-no-fault-rep-1",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 1,
+    "resolved": {
+      "client_plane": "separated",
+      "intervention": "no-fault",
+      "placement": "spread"
+    },
+    "run_dir": "runs/20260911-231555-kafka-topology-seed-3-kafka-topology-T2-no-fault-rep-1",
+    "seed": 3,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "during": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T2",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 133.2,
+    "group": "leader-kill",
+    "key": "T2-leader-kill-rep-1",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 1,
+    "resolved": {
+      "client_plane": "separated",
+      "intervention": "leader-kill",
+      "placement": "spread"
+    },
+    "run_dir": "runs/20260911-231759-kafka-topology-seed-3-kafka-topology-T2-leader-kill-rep-1",
+    "seed": 3,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "during": {
+        "isr": [
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T2",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 137.3,
+    "group": "rack-kill",
+    "key": "T2-rack-kill-rep-1",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 1,
+    "resolved": {
+      "client_plane": "separated",
+      "intervention": "rack-kill",
+      "placement": "spread"
+    },
+    "run_dir": "runs/20260911-232013-kafka-topology-seed-3-kafka-topology-T2-rack-kill-rep-1",
+    "seed": 3,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "during": {
+        "isr": [
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T3",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 122.9,
+    "group": "no-fault",
+    "key": "T3-no-fault-rep-1",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 1,
+    "resolved": {
+      "client_plane": "shared",
+      "intervention": "no-fault",
+      "placement": "concentrated"
+    },
+    "run_dir": "runs/20260911-232230-kafka-topology-seed-1-kafka-topology-T3-no-fault-rep-1",
+    "seed": 1,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "during": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T3",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 134.0,
+    "group": "leader-kill",
+    "key": "T3-leader-kill-rep-1",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 1,
+    "resolved": {
+      "client_plane": "shared",
+      "intervention": "leader-kill",
+      "placement": "concentrated"
+    },
+    "run_dir": "runs/20260911-232433-kafka-topology-seed-1-kafka-topology-T3-leader-kill-rep-1",
+    "seed": 1,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 2,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "during": {
+        "isr": [
+          2,
+          3
+        ],
+        "leader": 2,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T3",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 137.8,
+    "group": "rack-kill",
+    "key": "T3-rack-kill-rep-1",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": "org.apache.kafka.common.errors.NotEnoughReplicasException",
+      "expected_confirmation": false,
+      "outcome": "ambiguous"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 1,
+    "resolved": {
+      "client_plane": "shared",
+      "intervention": "rack-kill",
+      "placement": "concentrated"
+    },
+    "run_dir": "runs/20260911-232647-kafka-topology-seed-1-kafka-topology-T3-rack-kill-rep-1",
+    "seed": 1,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "during": {
+        "isr": [
+          3
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T4",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 122.8,
+    "group": "no-fault",
+    "key": "T4-no-fault-rep-1",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 1,
+    "resolved": {
+      "client_plane": "separated",
+      "intervention": "no-fault",
+      "placement": "concentrated"
+    },
+    "run_dir": "runs/20260911-232905-kafka-topology-seed-2-kafka-topology-T4-no-fault-rep-1",
+    "seed": 2,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "during": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T4",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 132.8,
+    "group": "leader-kill",
+    "key": "T4-leader-kill-rep-1",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 1,
+    "resolved": {
+      "client_plane": "separated",
+      "intervention": "leader-kill",
+      "placement": "concentrated"
+    },
+    "run_dir": "runs/20260911-233107-kafka-topology-seed-2-kafka-topology-T4-leader-kill-rep-1",
+    "seed": 2,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 2,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "during": {
+        "isr": [
+          2,
+          3
+        ],
+        "leader": 2,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T4",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 134.5,
+    "group": "rack-kill",
+    "key": "T4-rack-kill-rep-1",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": "org.apache.kafka.common.errors.NotEnoughReplicasException",
+      "expected_confirmation": false,
+      "outcome": "ambiguous"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 1,
+    "resolved": {
+      "client_plane": "separated",
+      "intervention": "rack-kill",
+      "placement": "concentrated"
+    },
+    "run_dir": "runs/20260911-233320-kafka-topology-seed-2-kafka-topology-T4-rack-kill-rep-1",
+    "seed": 2,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "during": {
+        "isr": [
+          3
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T1",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 119.6,
+    "group": "no-fault",
+    "key": "T1-no-fault-rep-2",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 2,
+    "resolved": {
+      "client_plane": "shared",
+      "intervention": "no-fault",
+      "placement": "spread"
+    },
+    "run_dir": "runs/20260911-233535-kafka-topology-seed-9-kafka-topology-T1-no-fault-rep-2",
+    "seed": 9,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "during": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T1",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 130.5,
+    "group": "leader-kill",
+    "key": "T1-leader-kill-rep-2",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 2,
+    "resolved": {
+      "client_plane": "shared",
+      "intervention": "leader-kill",
+      "placement": "spread"
+    },
+    "run_dir": "runs/20260911-233734-kafka-topology-seed-9-kafka-topology-T1-leader-kill-rep-2",
+    "seed": 9,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "during": {
+        "isr": [
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T1",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 132.6,
+    "group": "rack-kill",
+    "key": "T1-rack-kill-rep-2",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 2,
+    "resolved": {
+      "client_plane": "shared",
+      "intervention": "rack-kill",
+      "placement": "spread"
+    },
+    "run_dir": "runs/20260911-233945-kafka-topology-seed-9-kafka-topology-T1-rack-kill-rep-2",
+    "seed": 9,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "during": {
+        "isr": [
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T2",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 119.6,
+    "group": "no-fault",
+    "key": "T2-no-fault-rep-2",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 2,
+    "resolved": {
+      "client_plane": "separated",
+      "intervention": "no-fault",
+      "placement": "spread"
+    },
+    "run_dir": "runs/20260911-234157-kafka-topology-seed-3-kafka-topology-T2-no-fault-rep-2",
+    "seed": 3,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "during": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T2",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 130.5,
+    "group": "leader-kill",
+    "key": "T2-leader-kill-rep-2",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 2,
+    "resolved": {
+      "client_plane": "separated",
+      "intervention": "leader-kill",
+      "placement": "spread"
+    },
+    "run_dir": "runs/20260911-234357-kafka-topology-seed-3-kafka-topology-T2-leader-kill-rep-2",
+    "seed": 3,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "during": {
+        "isr": [
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T2",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 133.4,
+    "group": "rack-kill",
+    "key": "T2-rack-kill-rep-2",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 2,
+    "resolved": {
+      "client_plane": "separated",
+      "intervention": "rack-kill",
+      "placement": "spread"
+    },
+    "run_dir": "runs/20260911-234607-kafka-topology-seed-3-kafka-topology-T2-rack-kill-rep-2",
+    "seed": 3,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "during": {
+        "isr": [
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T3",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 118.9,
+    "group": "no-fault",
+    "key": "T3-no-fault-rep-2",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 2,
+    "resolved": {
+      "client_plane": "shared",
+      "intervention": "no-fault",
+      "placement": "concentrated"
+    },
+    "run_dir": "runs/20260911-234821-kafka-topology-seed-1-kafka-topology-T3-no-fault-rep-2",
+    "seed": 1,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "during": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T3",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 130.6,
+    "group": "leader-kill",
+    "key": "T3-leader-kill-rep-2",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 2,
+    "resolved": {
+      "client_plane": "shared",
+      "intervention": "leader-kill",
+      "placement": "concentrated"
+    },
+    "run_dir": "runs/20260911-235020-kafka-topology-seed-1-kafka-topology-T3-leader-kill-rep-2",
+    "seed": 1,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 2,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "during": {
+        "isr": [
+          2,
+          3
+        ],
+        "leader": 2,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T3",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 134.7,
+    "group": "rack-kill",
+    "key": "T3-rack-kill-rep-2",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": "org.apache.kafka.common.errors.NotEnoughReplicasException",
+      "expected_confirmation": false,
+      "outcome": "ambiguous"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 2,
+    "resolved": {
+      "client_plane": "shared",
+      "intervention": "rack-kill",
+      "placement": "concentrated"
+    },
+    "run_dir": "runs/20260911-235230-kafka-topology-seed-1-kafka-topology-T3-rack-kill-rep-2",
+    "seed": 1,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "during": {
+        "isr": [
+          3
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T4",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 119.9,
+    "group": "no-fault",
+    "key": "T4-no-fault-rep-2",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 2,
+    "resolved": {
+      "client_plane": "separated",
+      "intervention": "no-fault",
+      "placement": "concentrated"
+    },
+    "run_dir": "runs/20260911-235445-kafka-topology-seed-2-kafka-topology-T4-no-fault-rep-2",
+    "seed": 2,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "during": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T4",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 130.3,
+    "group": "leader-kill",
+    "key": "T4-leader-kill-rep-2",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 2,
+    "resolved": {
+      "client_plane": "separated",
+      "intervention": "leader-kill",
+      "placement": "concentrated"
+    },
+    "run_dir": "runs/20260911-235645-kafka-topology-seed-2-kafka-topology-T4-leader-kill-rep-2",
+    "seed": 2,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 2,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "during": {
+        "isr": [
+          2,
+          3
+        ],
+        "leader": 2,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T4",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 133.8,
+    "group": "rack-kill",
+    "key": "T4-rack-kill-rep-2",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": "org.apache.kafka.common.errors.NotEnoughReplicasException",
+      "expected_confirmation": false,
+      "outcome": "ambiguous"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 2,
+    "resolved": {
+      "client_plane": "separated",
+      "intervention": "rack-kill",
+      "placement": "concentrated"
+    },
+    "run_dir": "runs/20260911-235855-kafka-topology-seed-2-kafka-topology-T4-rack-kill-rep-2",
+    "seed": 2,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "during": {
+        "isr": [
+          3
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T1",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 119.9,
+    "group": "no-fault",
+    "key": "T1-no-fault-rep-3",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 3,
+    "resolved": {
+      "client_plane": "shared",
+      "intervention": "no-fault",
+      "placement": "spread"
+    },
+    "run_dir": "runs/20260912-000109-kafka-topology-seed-9-kafka-topology-T1-no-fault-rep-3",
+    "seed": 9,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "during": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T1",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 129.9,
+    "group": "leader-kill",
+    "key": "T1-leader-kill-rep-3",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 3,
+    "resolved": {
+      "client_plane": "shared",
+      "intervention": "leader-kill",
+      "placement": "spread"
+    },
+    "run_dir": "runs/20260912-000309-kafka-topology-seed-9-kafka-topology-T1-leader-kill-rep-3",
+    "seed": 9,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "during": {
+        "isr": [
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T1",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 132.4,
+    "group": "rack-kill",
+    "key": "T1-rack-kill-rep-3",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 3,
+    "resolved": {
+      "client_plane": "shared",
+      "intervention": "rack-kill",
+      "placement": "spread"
+    },
+    "run_dir": "runs/20260912-000519-kafka-topology-seed-9-kafka-topology-T1-rack-kill-rep-3",
+    "seed": 9,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "during": {
+        "isr": [
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T2",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 119.7,
+    "group": "no-fault",
+    "key": "T2-no-fault-rep-3",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 3,
+    "resolved": {
+      "client_plane": "separated",
+      "intervention": "no-fault",
+      "placement": "spread"
+    },
+    "run_dir": "runs/20260912-000731-kafka-topology-seed-3-kafka-topology-T2-no-fault-rep-3",
+    "seed": 3,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "during": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T2",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 130.0,
+    "group": "leader-kill",
+    "key": "T2-leader-kill-rep-3",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 3,
+    "resolved": {
+      "client_plane": "separated",
+      "intervention": "leader-kill",
+      "placement": "spread"
+    },
+    "run_dir": "runs/20260912-000931-kafka-topology-seed-3-kafka-topology-T2-leader-kill-rep-3",
+    "seed": 3,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "during": {
+        "isr": [
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T2",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 132.7,
+    "group": "rack-kill",
+    "key": "T2-rack-kill-rep-3",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 3,
+    "resolved": {
+      "client_plane": "separated",
+      "intervention": "rack-kill",
+      "placement": "spread"
+    },
+    "run_dir": "runs/20260912-001141-kafka-topology-seed-3-kafka-topology-T2-rack-kill-rep-3",
+    "seed": 3,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      },
+      "during": {
+        "isr": [
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T3",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 119.4,
+    "group": "no-fault",
+    "key": "T3-no-fault-rep-3",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 3,
+    "resolved": {
+      "client_plane": "shared",
+      "intervention": "no-fault",
+      "placement": "concentrated"
+    },
+    "run_dir": "runs/20260912-001354-kafka-topology-seed-1-kafka-topology-T3-no-fault-rep-3",
+    "seed": 1,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "during": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T3",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 130.7,
+    "group": "leader-kill",
+    "key": "T3-leader-kill-rep-3",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 3,
+    "resolved": {
+      "client_plane": "shared",
+      "intervention": "leader-kill",
+      "placement": "concentrated"
+    },
+    "run_dir": "runs/20260912-001553-kafka-topology-seed-1-kafka-topology-T3-leader-kill-rep-3",
+    "seed": 1,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 2,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "during": {
+        "isr": [
+          2,
+          3
+        ],
+        "leader": 2,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T3",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 134.2,
+    "group": "rack-kill",
+    "key": "T3-rack-kill-rep-3",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": "org.apache.kafka.common.errors.NotEnoughReplicasException",
+      "expected_confirmation": false,
+      "outcome": "ambiguous"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 3,
+    "resolved": {
+      "client_plane": "shared",
+      "intervention": "rack-kill",
+      "placement": "concentrated"
+    },
+    "run_dir": "runs/20260912-001804-kafka-topology-seed-1-kafka-topology-T3-rack-kill-rep-3",
+    "seed": 1,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "during": {
+        "isr": [
+          3
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T4",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 121.0,
+    "group": "no-fault",
+    "key": "T4-no-fault-rep-3",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 3,
+    "resolved": {
+      "client_plane": "separated",
+      "intervention": "no-fault",
+      "placement": "concentrated"
+    },
+    "run_dir": "runs/20260912-002018-kafka-topology-seed-2-kafka-topology-T4-no-fault-rep-3",
+    "seed": 2,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "during": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T4",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 130.9,
+    "group": "leader-kill",
+    "key": "T4-leader-kill-rep-3",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": null,
+      "expected_confirmation": true,
+      "outcome": "confirmed"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 3,
+    "resolved": {
+      "client_plane": "separated",
+      "intervention": "leader-kill",
+      "placement": "concentrated"
+    },
+    "run_dir": "runs/20260912-002219-kafka-topology-seed-2-kafka-topology-T4-leader-kill-rep-3",
+    "seed": 2,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 2,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "during": {
+        "isr": [
+          2,
+          3
+        ],
+        "leader": 2,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "cell": "T4",
+    "checks": {
+      "kafka-topology-cluster-recovers": "passed",
+      "kafka-topology-execution-completed": "passed",
+      "kafka-topology-intervention-accurate": "passed",
+      "kafka-topology-materialized": "passed",
+      "kafka-topology-prefault-acknowledged-records-recovered-exactly-once": "passed",
+      "kafka-topology-probe-confirmation-matches-oracle": "passed",
+      "kafka-topology-runtime-versions-pinned": "passed"
+    },
+    "duration_seconds": 134.4,
+    "group": "rack-kill",
+    "key": "T4-rack-kill-rep-3",
+    "outcome": "pass",
+    "probe": {
+      "exception_type": "org.apache.kafka.common.errors.NotEnoughReplicasException",
+      "expected_confirmation": false,
+      "outcome": "ambiguous"
+    },
+    "probe_matches_oracle": true,
+    "repetition": 3,
+    "resolved": {
+      "client_plane": "separated",
+      "intervention": "rack-kill",
+      "placement": "concentrated"
+    },
+    "run_dir": "runs/20260912-002430-kafka-topology-seed-2-kafka-topology-T4-rack-kill-rep-3",
+    "seed": 2,
+    "topic": {
+      "after": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "before": {
+        "isr": [
+          1,
+          2,
+          3
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      },
+      "during": {
+        "isr": [
+          3
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,18 @@
+Running kafka-topology seed=1
+
+============================================================
+ TopoTestix Results
+ Seed: 1
+ Name: kafka-topology-T3-rack-kill-rep-1
+============================================================
+  PASS  kafka-topology-execution-completed
+  PASS  kafka-topology-materialized
+  PASS  kafka-topology-intervention-accurate
+  PASS  kafka-topology-probe-confirmation-matches-oracle
+  PASS  kafka-topology-runtime-versions-pinned
+  PASS  kafka-topology-prefault-acknowledged-records-recovered-exactly-once
+  PASS  kafka-topology-cluster-recovers
+
+ Overall: PASSED
+ Run dir: /home/freerat/projects/topotestix/experiments/kafka-topology/campaign-12-09-2026/runs/20260911-232647-kafka-topology-seed-1-kafka-topology-T3-rack-kill-rep-1
+============================================================

@@ -1,0 +1,10 @@
+{
+  "baseModule": "/home/freerat/projects/topotestix/targets/kafka-topology/module.nix",
+  "configTarget": "/home/freerat/projects/topotestix/targets/kafka-topology/config.nix",
+  "description": "[thesis] Kafka topology, placement, and failure-domain contract",
+  "name": "kafka-topology",
+  "properties": "/home/freerat/projects/topotestix/targets/kafka-topology/properties.nix",
+  "reportNode": "client1",
+  "testScript": "/home/freerat/projects/topotestix/targets/kafka-topology/test-script.py",
+  "topologyTarget": "/home/freerat/projects/topotestix/targets/kafka-topology/topology.nix"
+}

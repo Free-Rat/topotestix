@@ -1,0 +1,18 @@
+Running kafka-topology seed=9
+
+============================================================
+ TopoTestix Results
+ Seed: 9
+ Name: kafka-topology-T1-leader-kill-rep-1
+============================================================
+  PASS  kafka-topology-execution-completed
+  PASS  kafka-topology-materialized
+  PASS  kafka-topology-intervention-accurate
+  PASS  kafka-topology-probe-confirmation-matches-oracle
+  PASS  kafka-topology-runtime-versions-pinned
+  PASS  kafka-topology-prefault-acknowledged-records-recovered-exactly-once
+  FAIL  kafka-topology-cluster-recovers: Expecting property name enclosed in double quotes: line 284 column 7 (char 123021)
+
+ Overall: FAILED
+ Run dir: /home/freerat/projects/topotestix/experiments/kafka-topology/campaign-12-09-2026/runs/20260911-230615-kafka-topology-seed-9-kafka-topology-T1-leader-kill-rep-1
+============================================================

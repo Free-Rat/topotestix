@@ -1,0 +1,113 @@
+warning: Git tree '/home/freerat/projects/topotestix' is dirty
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+these 4 derivations will be built:
+  /nix/store/crlc1ql1d1dh692p78qp38ly4mhwikia-test-script.drv
+  /nix/store/8pg8zk7y5dbc4gn9yqnyqv8hnj75ah5c-driverConfiguration.json.drv
+  /nix/store/ngs79h91mi0lsnl69nrjx9knimd1wwf3-nixos-test-driver-dev-t1-no-fault-dev2.drv
+  /nix/store/wg9y0skzwhmb0qdwsr52x4slvnkwvdxf-vm-test-run-dev-t1-no-fault-dev2.drv
+building '/nix/store/crlc1ql1d1dh692p78qp38ly4mhwikia-test-script.drv'...
+building '/nix/store/8pg8zk7y5dbc4gn9yqnyqv8hnj75ah5c-driverConfiguration.json.drv'...
+building '/nix/store/ngs79h91mi0lsnl69nrjx9knimd1wwf3-nixos-test-driver-dev-t1-no-fault-dev2.drv'...
+nixos-test-driver-dev-t1-no-fault-dev2> Running type check (enable/disable: config.skipTypeCheck)
+nixos-test-driver-dev-t1-no-fault-dev2> See https://nixos.org/manual/nixos/stable/#test-opt-skipTypeCheck
+nixos-test-driver-dev-t1-no-fault-dev2> error[invalid-assignment]: Invalid subscript assignment with key of type `Literal["intervention"]` and value of type `str` on object of type `dict[str, None | int | dict[str, str | int]]`
+nixos-test-driver-dev-t1-no-fault-dev2>    --> testScriptWithTypes:946:5
+nixos-test-driver-dev-t1-no-fault-dev2>     |
+nixos-test-driver-dev-t1-no-fault-dev2> 946 |     result["configuration"]["intervention"] = intervention
+nixos-test-driver-dev-t1-no-fault-dev2>     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^------------
+nixos-test-driver-dev-t1-no-fault-dev2>     |                                               |
+nixos-test-driver-dev-t1-no-fault-dev2>     |                                               Expected value of type `None | int | dict[str, str | int]`, got `str`
+nixos-test-driver-dev-t1-no-fault-dev2>     |
+nixos-test-driver-dev-t1-no-fault-dev2> 
+nixos-test-driver-dev-t1-no-fault-dev2> error[invalid-assignment]: Invalid subscript assignment with key of type `Literal["client_plane"]` and value of type `Literal["shared", "separated"]` on object of type `dict[str, None | int | dict[str, str | int]]`
+nixos-test-driver-dev-t1-no-fault-dev2>    --> testScriptWithTypes:966:5
+nixos-test-driver-dev-t1-no-fault-dev2>     |
+nixos-test-driver-dev-t1-no-fault-dev2> 966 |     result["configuration"]["client_plane"] = client_plane
+nixos-test-driver-dev-t1-no-fault-dev2>     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^------------
+nixos-test-driver-dev-t1-no-fault-dev2>     |                                               |
+nixos-test-driver-dev-t1-no-fault-dev2>     |                                               Expected value of type `None | int | dict[str, str | int]`, got `Literal["shared", "separated"]`
+nixos-test-driver-dev-t1-no-fault-dev2>     |
+nixos-test-driver-dev-t1-no-fault-dev2> 
+nixos-test-driver-dev-t1-no-fault-dev2> error[invalid-assignment]: Invalid subscript assignment with key of type `Literal["selected_route_status"]` and value of type `int` on object of type `dict[str, dict[Unknown, Unknown] | list[Unknown] | None | bool]`
+nixos-test-driver-dev-t1-no-fault-dev2>    --> testScriptWithTypes:974:5
+nixos-test-driver-dev-t1-no-fault-dev2>     |
+nixos-test-driver-dev-t1-no-fault-dev2> 974 |     result["topology"]["selected_route_status"] = selected_status
+nixos-test-driver-dev-t1-no-fault-dev2>     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^---------------
+nixos-test-driver-dev-t1-no-fault-dev2>     |                                                   |
+nixos-test-driver-dev-t1-no-fault-dev2>     |                                                   Expected value of type `dict[Unknown, Unknown] | list[Unknown] | None | bool`, got `int`
+nixos-test-driver-dev-t1-no-fault-dev2>     |
+nixos-test-driver-dev-t1-no-fault-dev2> 
+nixos-test-driver-dev-t1-no-fault-dev2> error[invalid-assignment]: Invalid subscript assignment with key of type `Literal["opposite_route_status"]` and value of type `int` on object of type `dict[str, dict[Unknown, Unknown] | list[Unknown] | None | bool]`
+nixos-test-driver-dev-t1-no-fault-dev2>    --> testScriptWithTypes:975:5
+nixos-test-driver-dev-t1-no-fault-dev2>     |
+nixos-test-driver-dev-t1-no-fault-dev2> 975 |     result["topology"]["opposite_route_status"] = opposite_status
+nixos-test-driver-dev-t1-no-fault-dev2>     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^---------------
+nixos-test-driver-dev-t1-no-fault-dev2>     |                                                   |
+nixos-test-driver-dev-t1-no-fault-dev2>     |                                                   Expected value of type `dict[Unknown, Unknown] | list[Unknown] | None | bool`, got `int`
+nixos-test-driver-dev-t1-no-fault-dev2>     |
+nixos-test-driver-dev-t1-no-fault-dev2> 
+nixos-test-driver-dev-t1-no-fault-dev2> error[invalid-assignment]: Invalid subscript assignment with key of type `Literal["expected_probe_confirmation"]` and value of type `bool` on object of type `dict[str, None | str]`
+nixos-test-driver-dev-t1-no-fault-dev2>     --> testScriptWithTypes:1141:5
+nixos-test-driver-dev-t1-no-fault-dev2>      |
+nixos-test-driver-dev-t1-no-fault-dev2> 1141 |     result["oracle"]["expected_probe_confirmation"] = expected_probe_confirmation
+nixos-test-driver-dev-t1-no-fault-dev2>      |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^---------------------------
+nixos-test-driver-dev-t1-no-fault-dev2>      |                                                       |
+nixos-test-driver-dev-t1-no-fault-dev2>      |                                                       Expected value of type `None | str`, got `bool`
+nixos-test-driver-dev-t1-no-fault-dev2>      |
+nixos-test-driver-dev-t1-no-fault-dev2> 
+nixos-test-driver-dev-t1-no-fault-dev2> Found 5 diagnostics
+error: Cannot build '/nix/store/ngs79h91mi0lsnl69nrjx9knimd1wwf3-nixos-test-driver-dev-t1-no-fault-dev2.drv'.
+       Reason: builder failed with exit code 1.
+       Output paths:
+         /nix/store/skmxfccfjb516w9xcfclbc49mfipv660-nixos-test-driver-dev-t1-no-fault-dev2
+       Last 25 log lines:
+       > 974 |     result["topology"]["selected_route_status"] = selected_status
+       >     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^---------------
+       >     |                                                   |
+       >     |                                                   Expected value of type `dict[Unknown, Unknown] | list[Unknown] | None | bool`, got `int`
+       >     |
+       >
+       > error[invalid-assignment]: Invalid subscript assignment with key of type `Literal["opposite_route_status"]` and value of type `int` on object of type `dict[str, dict[Unknown, Unknown] | list[Unknown] | None | bool]`
+       >    --> testScriptWithTypes:975:5
+       >     |
+       > 975 |     result["topology"]["opposite_route_status"] = opposite_status
+       >     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^---------------
+       >     |                                                   |
+       >     |                                                   Expected value of type `dict[Unknown, Unknown] | list[Unknown] | None | bool`, got `int`
+       >     |
+       >
+       > error[invalid-assignment]: Invalid subscript assignment with key of type `Literal["expected_probe_confirmation"]` and value of type `bool` on object of type `dict[str, None | str]`
+       >     --> testScriptWithTypes:1141:5
+       >      |
+       > 1141 |     result["oracle"]["expected_probe_confirmation"] = expected_probe_confirmation
+       >      |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^---------------------------
+       >      |                                                       |
+       >      |                                                       Expected value of type `None | str`, got `bool`
+       >      |
+       >
+       > Found 5 diagnostics
+       For full logs, run:
+         nix log /nix/store/ngs79h91mi0lsnl69nrjx9knimd1wwf3-nixos-test-driver-dev-t1-no-fault-dev2.drv
+error: Cannot build '/nix/store/wg9y0skzwhmb0qdwsr52x4slvnkwvdxf-vm-test-run-dev-t1-no-fault-dev2.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/wni327mrl40zhzb26cscy3ajs0gwk35f-vm-test-run-dev-t1-no-fault-dev2
+
+Running kafka-topology seed=1
+
+============================================================
+ TopoTestix Results
+ Seed: 1
+ Name: dev-t1-no-fault
+============================================================
+
+ VM test FAILED (build error)
+ Run dir: /home/freerat/.claude/jobs/242a4fcd/tmp/runs/20260911-225419-kafka-topology-seed-1-dev-t1-no-fault
+exit=1

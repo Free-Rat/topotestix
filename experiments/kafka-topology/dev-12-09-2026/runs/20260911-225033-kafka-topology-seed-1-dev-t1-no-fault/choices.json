@@ -1,0 +1,11 @@
+{
+  "configChoices": {
+    "kafka": {
+      ".environment.etc.topotestix-kafka-intervention.text": 0,
+      ".environment.etc.topotestix-kafka-placement.json.text": 0
+    }
+  },
+  "topologyChoices": {
+    ".clientVlans": 0
+  }
+}

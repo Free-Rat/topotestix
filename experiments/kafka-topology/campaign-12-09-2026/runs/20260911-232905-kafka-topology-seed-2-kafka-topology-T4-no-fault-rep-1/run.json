@@ -1,0 +1,32 @@
+{
+  "artifacts": [
+    "kafka-api-versions",
+    "kafka-topology-baseline.jsonl",
+    "kafka-topology-post-recovery.jsonl",
+    "kafka-topology-probe.jsonl",
+    "kafka-topology-recovered.jsonl",
+    "kafka-topology-result.json",
+    "kafka1-apache-kafka.log",
+    "kafka2-apache-kafka.log",
+    "kafka3-apache-kafka.log",
+    "kafka4-apache-kafka.log",
+    "kafka5-apache-kafka.log"
+  ],
+  "finishedAt": "2026-09-11T23:31:07.746528+00:00",
+  "gitHead": "7fbcfa58d0cb9198ef4a86f1b5c9a3bc6906b639",
+  "id": "20260911-232905-kafka-topology-seed-2-kafka-topology-T4-no-fault-rep-1",
+  "name": "kafka-topology-T4-no-fault-rep-1",
+  "repetitionToken": "campaign-12-09-2026-T4-no-fault-rep-1",
+  "reproduceCommand": "topotestix orchestrator run kafka-topology --seed 2 --name kafka-topology-T4-no-fault-rep-1 --project-root /home/freerat/projects/topotestix --repetition-token campaign-12-09-2026-T4-no-fault-rep-1 --topology-target /home/freerat/projects/topotestix/targets/kafka-topology/topology.nix --config-target /home/freerat/projects/topotestix/targets/kafka-topology/config.nix --base-module /home/freerat/projects/topotestix/targets/kafka-topology/module.nix --test-script /home/freerat/projects/topotestix/targets/kafka-topology/test-script.py --properties /home/freerat/projects/topotestix/targets/kafka-topology/properties.nix --config-choices '{\"kafka\": {\".environment.etc.topotestix-kafka-intervention.text\": 0}}'",
+  "resultPath": "/home/freerat/projects/topotestix/experiments/kafka-topology/campaign-12-09-2026/runs/20260911-232905-kafka-topology-seed-2-kafka-topology-T4-no-fault-rep-1/result",
+  "runDir": "/home/freerat/projects/topotestix/experiments/kafka-topology/campaign-12-09-2026/runs/20260911-232905-kafka-topology-seed-2-kafka-topology-T4-no-fault-rep-1",
+  "seed": 2,
+  "startedAt": "2026-09-11T23:29:05.040308+00:00",
+  "status": "passed",
+  "summary": {
+    "failed": 0,
+    "passed": 7,
+    "total": 7
+  },
+  "target": "kafka-topology"
+}

@@ -1,0 +1,26 @@
+warning: Git tree '/home/freerat/projects/topotestix' is dirty
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+Running kafka-topology seed=9
+
+============================================================
+ TopoTestix Results
+ Seed: 9
+ Name: dev-t1-no-fault
+============================================================
+  FAIL  kafka-topology-execution-completed: execution did not reach a contract verdict: classification=precondition_failure; error=client routing does not isolate the selected plane: selected_status=0; opposite_status=0
+  FAIL  kafka-topology-materialized: execution did not reach a contract verdict: classification=precondition_failure; error=client routing does not isolate the selected plane: selected_status=0; opposite_status=0
+  FAIL  kafka-topology-intervention-accurate: execution did not reach a contract verdict: classification=precondition_failure; error=client routing does not isolate the selected plane: selected_status=0; opposite_status=0
+  FAIL  kafka-topology-probe-confirmation-matches-oracle: execution did not reach a contract verdict: classification=precondition_failure; error=client routing does not isolate the selected plane: selected_status=0; opposite_status=0
+  FAIL  kafka-topology-runtime-versions-pinned: execution did not reach a contract verdict: classification=precondition_failure; error=client routing does not isolate the selected plane: selected_status=0; opposite_status=0
+  FAIL  kafka-topology-prefault-acknowledged-records-recovered-exactly-once: execution did not reach a contract verdict: classification=precondition_failure; error=client routing does not isolate the selected plane: selected_status=0; opposite_status=0
+  FAIL  kafka-topology-cluster-recovers: execution did not reach a contract verdict: classification=precondition_failure; error=client routing does not isolate the selected plane: selected_status=0; opposite_status=0
+
+ Overall: FAILED
+ Run dir: /home/freerat/.claude/jobs/242a4fcd/tmp/runs/20260911-225700-kafka-topology-seed-9-dev-t1-no-fault
+============================================================
+exit=1

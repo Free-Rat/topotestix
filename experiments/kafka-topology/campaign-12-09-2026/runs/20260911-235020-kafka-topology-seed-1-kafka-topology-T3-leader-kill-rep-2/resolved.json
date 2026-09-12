@@ -1,0 +1,122 @@
+{
+  "environment": {
+    "nixpkgsOutPath": "/nix/store/0lkxgksfvwcdsyrxj90ddc7f4kl1k8nr-source",
+    "nixpkgsRevision": "cb2938ebeac96284932dbe6a2fb611d3b77743a5"
+  },
+  "nodeConfigs": {
+    "client1": {
+      "virtualisation": {
+        "vlans": [
+          10
+        ]
+      }
+    },
+    "kafka1": {
+      "virtualisation": {
+        "vlans": [
+          10,
+          20
+        ]
+      }
+    },
+    "kafka2": {
+      "virtualisation": {
+        "vlans": [
+          10,
+          20
+        ]
+      }
+    },
+    "kafka3": {
+      "virtualisation": {
+        "vlans": [
+          10,
+          20
+        ]
+      }
+    },
+    "kafka4": {
+      "virtualisation": {
+        "vlans": [
+          10,
+          20
+        ]
+      }
+    },
+    "kafka5": {
+      "virtualisation": {
+        "vlans": [
+          10,
+          20
+        ]
+      }
+    }
+  },
+  "nodeRoles": {
+    "client1": "client",
+    "kafka1": "kafka",
+    "kafka2": "kafka",
+    "kafka3": "kafka",
+    "kafka4": "kafka",
+    "kafka5": "kafka"
+  },
+  "roleFuzz": {
+    "client": {
+      "choices": {
+        ".environment.etc.topotestix-kafka-intervention.text": 1,
+        ".environment.etc.topotestix-kafka-placement.json.text": 1
+      },
+      "result": {
+        "environment": {
+          "etc": {
+            "topotestix-kafka-intervention": {
+              "text": "leader-kill"
+            },
+            "topotestix-kafka-placement.json": {
+              "text": "{\"profile\":\"concentrated\",\"replicas\":[1,2,3],\"failed_rack\":\"rack-a\"}"
+            }
+          }
+        }
+      },
+      "seed": "2"
+    },
+    "kafka": {
+      "choices": {
+        ".environment.etc.topotestix-kafka-intervention.text": 0,
+        ".environment.etc.topotestix-kafka-placement.json.text": 1
+      },
+      "result": {
+        "environment": {
+          "etc": {
+            "topotestix-kafka-intervention": {
+              "text": "leader-kill"
+            },
+            "topotestix-kafka-placement.json": {
+              "text": "{\"profile\":\"concentrated\",\"replicas\":[1,2,3],\"failed_rack\":\"rack-a\"}"
+            }
+          }
+        }
+      },
+      "seed": "3"
+    }
+  },
+  "topology": {
+    "clientVlans": [
+      10
+    ],
+    "kafkaVlans": [
+      10,
+      20
+    ],
+    "roles": {
+      "client": 1,
+      "kafka": 5
+    }
+  },
+  "topologyChoices": {
+    ".clientVlans": 0,
+    ".kafkaVlans": 0,
+    ".roles.client": 0,
+    ".roles.kafka": 0
+  }
+}

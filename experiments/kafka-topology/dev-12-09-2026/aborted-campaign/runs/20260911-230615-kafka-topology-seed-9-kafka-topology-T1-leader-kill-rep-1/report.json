@@ -1,0 +1,31 @@
+[
+  {
+    "name": "kafka-topology-execution-completed",
+    "status": "passed"
+  },
+  {
+    "name": "kafka-topology-materialized",
+    "status": "passed"
+  },
+  {
+    "name": "kafka-topology-intervention-accurate",
+    "status": "passed"
+  },
+  {
+    "name": "kafka-topology-probe-confirmation-matches-oracle",
+    "status": "passed"
+  },
+  {
+    "name": "kafka-topology-runtime-versions-pinned",
+    "status": "passed"
+  },
+  {
+    "name": "kafka-topology-prefault-acknowledged-records-recovered-exactly-once",
+    "status": "passed"
+  },
+  {
+    "message": "Expecting property name enclosed in double quotes: line 284 column 7 (char 123021)",
+    "name": "kafka-topology-cluster-recovers",
+    "status": "failed"
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "artifacts": [
+    "kafka-api-versions",
+    "kafka-topology-baseline.jsonl",
+    "kafka-topology-post-recovery.jsonl",
+    "kafka-topology-probe.jsonl",
+    "kafka-topology-recovered.jsonl",
+    "kafka-topology-result.json",
+    "kafka1-apache-kafka.log",
+    "kafka2-apache-kafka.log",
+    "kafka3-apache-kafka.log",
+    "kafka4-apache-kafka.log",
+    "kafka5-apache-kafka.log"
+  ],
+  "finishedAt": "2026-09-11T23:04:02.189886+00:00",
+  "gitHead": "7fbcfa58d0cb9198ef4a86f1b5c9a3bc6906b639",
+  "id": "20260911-230143-kafka-topology-seed-2-dev-t4-rack-kill",
+  "name": "dev-t4-rack-kill",
+  "repetitionToken": "dev6",
+  "reproduceCommand": "topotestix orchestrator run kafka-topology --seed 2 --name dev-t4-rack-kill --project-root /home/freerat/projects/topotestix --repetition-token dev6 --topology-target /home/freerat/projects/topotestix/targets/kafka-topology/topology.nix --config-target /home/freerat/projects/topotestix/targets/kafka-topology/config.nix --base-module /home/freerat/projects/topotestix/targets/kafka-topology/module.nix --test-script /home/freerat/projects/topotestix/targets/kafka-topology/test-script.py --properties /home/freerat/projects/topotestix/targets/kafka-topology/properties.nix --config-choices '{\"kafka\": {\".environment.etc.topotestix-kafka-intervention.text\": 2}}'",
+  "resultPath": "/home/freerat/.claude/jobs/242a4fcd/tmp/runs/20260911-230143-kafka-topology-seed-2-dev-t4-rack-kill/result",
+  "runDir": "/home/freerat/.claude/jobs/242a4fcd/tmp/runs/20260911-230143-kafka-topology-seed-2-dev-t4-rack-kill",
+  "seed": 2,
+  "startedAt": "2026-09-11T23:01:43.492789+00:00",
+  "status": "passed",
+  "summary": {
+    "failed": 0,
+    "passed": 7,
+    "total": 7
+  },
+  "target": "kafka-topology"
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "message": "execution did not reach a contract verdict: classification=precondition_failure; error=client routing does not isolate the selected plane: selected_status=0; opposite_status=0",
+    "name": "kafka-topology-execution-completed",
+    "status": "failed"
+  },
+  {
+    "message": "execution did not reach a contract verdict: classification=precondition_failure; error=client routing does not isolate the selected plane: selected_status=0; opposite_status=0",
+    "name": "kafka-topology-materialized",
+    "status": "failed"
+  },
+  {
+    "message": "execution did not reach a contract verdict: classification=precondition_failure; error=client routing does not isolate the selected plane: selected_status=0; opposite_status=0",
+    "name": "kafka-topology-intervention-accurate",
+    "status": "failed"
+  },
+  {
+    "message": "execution did not reach a contract verdict: classification=precondition_failure; error=client routing does not isolate the selected plane: selected_status=0; opposite_status=0",
+    "name": "kafka-topology-probe-confirmation-matches-oracle",
+    "status": "failed"
+  },
+  {
+    "message": "execution did not reach a contract verdict: classification=precondition_failure; error=client routing does not isolate the selected plane: selected_status=0; opposite_status=0",
+    "name": "kafka-topology-runtime-versions-pinned",
+    "status": "failed"
+  },
+  {
+    "message": "execution did not reach a contract verdict: classification=precondition_failure; error=client routing does not isolate the selected plane: selected_status=0; opposite_status=0",
+    "name": "kafka-topology-prefault-acknowledged-records-recovered-exactly-once",
+    "status": "failed"
+  },
+  {
+    "message": "execution did not reach a contract verdict: classification=precondition_failure; error=client routing does not isolate the selected plane: selected_status=0; opposite_status=0",
+    "name": "kafka-topology-cluster-recovers",
+    "status": "failed"
+  }
+]
