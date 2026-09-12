@@ -1,0 +1,22 @@
+[
+  {
+    "name": "kafka-rack-links-execution-completed",
+    "status": "passed"
+  },
+  {
+    "name": "kafka-rack-links-materialized",
+    "status": "passed"
+  },
+  {
+    "name": "kafka-rack-links-cut-accurate",
+    "status": "passed"
+  },
+  {
+    "name": "kafka-rack-links-confirmed-records-recovered-exactly-once",
+    "status": "passed"
+  },
+  {
+    "name": "kafka-rack-links-cluster-recovers",
+    "status": "passed"
+  }
+]

@@ -1,0 +1,3241 @@
+[
+  {
+    "cell": {
+      "cut": "12",
+      "links_present": [
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          11
+        ],
+        "rack-b": [
+          12
+        ],
+        "rack-c": [
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.\n",
+    "duration_seconds": 157.5,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-084349-kafka-rack-links-seed-1-kafka-rack-links-seed-1",
+    "seed": 1
+  },
+  {
+    "cell": {
+      "cut": "none",
+      "links_present": [
+        10
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          10
+        ],
+        "rack-b": [
+          10
+        ],
+        "rack-c": [
+          11
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "passed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "passed",
+      "kafka-rack-links-cut-accurate": "passed",
+      "kafka-rack-links-execution-completed": "passed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "duration_seconds": 274.4,
+    "observations": {
+      "candidate_transitions": 1,
+      "controller_epochs": [
+        1
+      ],
+      "isr_during_cut": [
+        3,
+        3
+      ],
+      "isr_pre_cut": [
+        1,
+        2,
+        3
+      ],
+      "partition_leaders_during_cut": [
+        1
+      ],
+      "prevote_transitions": 40,
+      "stream": {
+        "after": {
+          "confirmed": 21
+        },
+        "before": {
+          "confirmed": 17
+        },
+        "during": {
+          "confirmed": 62
+        }
+      },
+      "topic_truncation_lines": 4,
+      "unfenced_at_start": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "outcome": "pass",
+    "run_dir": "runs/20260912-084627-kafka-rack-links-seed-2-kafka-rack-links-seed-2",
+    "seed": 2
+  },
+  {
+    "cell": {
+      "cut": "11,12",
+      "links_present": [
+        10
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          10
+        ],
+        "rack-b": [
+          10
+        ],
+        "rack-c": [
+          11
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "passed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "passed",
+      "kafka-rack-links-cut-accurate": "passed",
+      "kafka-rack-links-execution-completed": "passed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "duration_seconds": 272.9,
+    "observations": {
+      "candidate_transitions": 1,
+      "controller_epochs": [
+        1
+      ],
+      "isr_during_cut": [
+        3,
+        3
+      ],
+      "isr_pre_cut": [
+        1,
+        2,
+        3
+      ],
+      "partition_leaders_during_cut": [
+        1
+      ],
+      "prevote_transitions": 39,
+      "stream": {
+        "after": {
+          "confirmed": 21
+        },
+        "before": {
+          "confirmed": 17
+        },
+        "during": {
+          "confirmed": 62
+        }
+      },
+      "topic_truncation_lines": 4,
+      "unfenced_at_start": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "outcome": "pass",
+    "run_dir": "runs/20260912-085101-kafka-rack-links-seed-3-kafka-rack-links-seed-3",
+    "seed": 3
+  },
+  {
+    "cell": {
+      "cut": "10,12",
+      "links_present": [
+        11,
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "spread",
+      "rack_links": {
+        "rack-a": [
+          10,
+          11
+        ],
+        "rack-b": [
+          12
+        ],
+        "rack-c": [
+          11,
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 3, but no such broker is registered.\n",
+    "duration_seconds": 156.3,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-085534-kafka-rack-links-seed-4-kafka-rack-links-seed-4",
+    "seed": 4
+  },
+  {
+    "cell": {
+      "cut": "10,11",
+      "links_present": [
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          20,
+          31
+        ],
+        "rackb1": [
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          10
+        ],
+        "rack-b": [
+          12
+        ],
+        "rack-c": [
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.\n",
+    "duration_seconds": 155.5,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-085810-kafka-rack-links-seed-5-kafka-rack-links-seed-5",
+    "seed": 5
+  },
+  {
+    "cell": {
+      "cut": "10,12",
+      "links_present": [
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          20,
+          31
+        ],
+        "rackb1": [
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          10
+        ],
+        "rack-b": [
+          12
+        ],
+        "rack-c": [
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.\n",
+    "duration_seconds": 155.0,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-090046-kafka-rack-links-seed-6-kafka-rack-links-seed-6",
+    "seed": 6
+  },
+  {
+    "cell": {
+      "cut": "11",
+      "links_present": [
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          11
+        ],
+        "rack-b": [
+          10,
+          12
+        ],
+        "rack-c": [
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.\n",
+    "duration_seconds": 154.2,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-090321-kafka-rack-links-seed-7-kafka-rack-links-seed-7",
+    "seed": 7
+  },
+  {
+    "cell": {
+      "cut": "none",
+      "links_present": [
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          11
+        ],
+        "rack-b": [
+          10,
+          12
+        ],
+        "rack-c": [
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.\n",
+    "duration_seconds": 154.7,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-090555-kafka-rack-links-seed-8-kafka-rack-links-seed-8",
+    "seed": 8
+  },
+  {
+    "cell": {
+      "cut": "12",
+      "links_present": [
+        10,
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "spread",
+      "rack_links": {
+        "rack-a": [
+          10
+        ],
+        "rack-b": [
+          10,
+          12
+        ],
+        "rack-c": [
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 5, but no such broker is registered.\n",
+    "duration_seconds": 155.0,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-090830-kafka-rack-links-seed-9-kafka-rack-links-seed-9",
+    "seed": 9
+  },
+  {
+    "cell": {
+      "cut": "11,12",
+      "links_present": [
+        11
+      ],
+      "node_vlans": {
+        "racka1": [
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          20,
+          33
+        ]
+      },
+      "placement": "spread",
+      "rack_links": {
+        "rack-a": [
+          11
+        ],
+        "rack-b": [
+          10,
+          12
+        ],
+        "rack-c": [
+          11
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 3, but no such broker is registered.\n",
+    "duration_seconds": 155.3,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-091105-kafka-rack-links-seed-10-kafka-rack-links-seed-10",
+    "seed": 10
+  },
+  {
+    "cell": {
+      "cut": "10,11,12",
+      "links_present": [
+        10,
+        11
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "spread",
+      "rack_links": {
+        "rack-a": [
+          10,
+          11
+        ],
+        "rack-b": [
+          10
+        ],
+        "rack-c": [
+          11,
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "passed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "passed",
+      "kafka-rack-links-cut-accurate": "passed",
+      "kafka-rack-links-execution-completed": "passed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "duration_seconds": 163.3,
+    "observations": {
+      "candidate_transitions": 2,
+      "controller_epochs": [
+        1,
+        3
+      ],
+      "isr_during_cut": [
+        3,
+        3
+      ],
+      "isr_pre_cut": [
+        1,
+        3,
+        5
+      ],
+      "partition_leaders_during_cut": [
+        1
+      ],
+      "prevote_transitions": 75,
+      "stream": {
+        "after": {
+          "confirmed": 20
+        },
+        "before": {
+          "ambiguous": 1,
+          "confirmed": 16
+        },
+        "during": {
+          "ambiguous": 59,
+          "confirmed": 4
+        }
+      },
+      "topic_truncation_lines": 4,
+      "unfenced_at_start": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "outcome": "pass",
+    "run_dir": "runs/20260912-091340-kafka-rack-links-seed-11-kafka-rack-links-seed-11",
+    "seed": 11
+  },
+  {
+    "cell": {
+      "cut": "12",
+      "links_present": [
+        10,
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          10,
+          11
+        ],
+        "rack-b": [
+          10,
+          12
+        ],
+        "rack-c": [
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "passed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "passed",
+      "kafka-rack-links-cut-accurate": "passed",
+      "kafka-rack-links-execution-completed": "passed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "duration_seconds": 170.7,
+    "observations": {
+      "candidate_transitions": 1,
+      "controller_epochs": [
+        1
+      ],
+      "isr_during_cut": [
+        3,
+        3
+      ],
+      "isr_pre_cut": [
+        1,
+        2,
+        3
+      ],
+      "partition_leaders_during_cut": [
+        1
+      ],
+      "prevote_transitions": 28,
+      "stream": {
+        "after": {},
+        "before": {
+          "confirmed": 16
+        },
+        "during": {
+          "confirmed": 84
+        }
+      },
+      "topic_truncation_lines": 4,
+      "unfenced_at_start": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "outcome": "pass",
+    "run_dir": "runs/20260912-091624-kafka-rack-links-seed-12-kafka-rack-links-seed-12",
+    "seed": 12
+  },
+  {
+    "cell": {
+      "cut": "11,12",
+      "links_present": [
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "spread",
+      "rack_links": {
+        "rack-a": [
+          10,
+          11
+        ],
+        "rack-b": [
+          12
+        ],
+        "rack-c": [
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.\n",
+    "duration_seconds": 153.7,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-091914-kafka-rack-links-seed-13-kafka-rack-links-seed-13",
+    "seed": 13
+  },
+  {
+    "cell": {
+      "cut": "10,12",
+      "links_present": [
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          20,
+          31
+        ],
+        "rackb1": [
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          10
+        ],
+        "rack-b": [
+          12
+        ],
+        "rack-c": [
+          11,
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.\n",
+    "duration_seconds": 155.5,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-092148-kafka-rack-links-seed-14-kafka-rack-links-seed-14",
+    "seed": 14
+  },
+  {
+    "cell": {
+      "cut": "10",
+      "links_present": [
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          20,
+          31
+        ],
+        "rackb1": [
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "spread",
+      "rack_links": {
+        "rack-a": [
+          10
+        ],
+        "rack-b": [
+          12
+        ],
+        "rack-c": [
+          11,
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.\n",
+    "duration_seconds": 155.6,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-092424-kafka-rack-links-seed-15-kafka-rack-links-seed-15",
+    "seed": 15
+  },
+  {
+    "cell": {
+      "cut": "10,12",
+      "links_present": [
+        11,
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "spread",
+      "rack_links": {
+        "rack-a": [
+          11
+        ],
+        "rack-b": [
+          10,
+          12
+        ],
+        "rack-c": [
+          11,
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 3, but no such broker is registered.\n",
+    "duration_seconds": 151.9,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-092659-kafka-rack-links-seed-16-kafka-rack-links-seed-16",
+    "seed": 16
+  },
+  {
+    "cell": {
+      "cut": "10",
+      "links_present": [
+        10,
+        11
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          10,
+          11
+        ],
+        "rack-b": [
+          10,
+          12
+        ],
+        "rack-c": [
+          11
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "passed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "passed",
+      "kafka-rack-links-cut-accurate": "passed",
+      "kafka-rack-links-execution-completed": "passed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "duration_seconds": 162.2,
+    "observations": {
+      "candidate_transitions": 1,
+      "controller_epochs": [
+        1
+      ],
+      "isr_during_cut": null,
+      "isr_pre_cut": [
+        1,
+        2,
+        3
+      ],
+      "partition_leaders_during_cut": [],
+      "prevote_transitions": 19,
+      "stream": {
+        "after": {
+          "confirmed": 20
+        },
+        "before": {
+          "ambiguous": 1,
+          "confirmed": 16
+        },
+        "during": {
+          "ambiguous": 3,
+          "confirmed": 60
+        }
+      },
+      "topic_truncation_lines": 4,
+      "unfenced_at_start": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "outcome": "pass",
+    "run_dir": "runs/20260912-092931-kafka-rack-links-seed-17-kafka-rack-links-seed-17",
+    "seed": 17
+  },
+  {
+    "cell": {
+      "cut": "11",
+      "links_present": [
+        10,
+        11
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          10,
+          11
+        ],
+        "rack-b": [
+          10
+        ],
+        "rack-c": [
+          11
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 3, but no such broker is registered.\n",
+    "duration_seconds": 151.0,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-093213-kafka-rack-links-seed-18-kafka-rack-links-seed-18",
+    "seed": 18
+  },
+  {
+    "cell": {
+      "cut": "11,12",
+      "links_present": [
+        10,
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          10,
+          11
+        ],
+        "rack-b": [
+          10,
+          12
+        ],
+        "rack-c": [
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "passed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "passed",
+      "kafka-rack-links-cut-accurate": "passed",
+      "kafka-rack-links-execution-completed": "passed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "duration_seconds": 270.4,
+    "observations": {
+      "candidate_transitions": 1,
+      "controller_epochs": [
+        1
+      ],
+      "isr_during_cut": [
+        3,
+        3
+      ],
+      "isr_pre_cut": [
+        1,
+        2,
+        3
+      ],
+      "partition_leaders_during_cut": [
+        1
+      ],
+      "prevote_transitions": 19,
+      "stream": {
+        "after": {
+          "confirmed": 20
+        },
+        "before": {
+          "confirmed": 17
+        },
+        "during": {
+          "confirmed": 63
+        }
+      },
+      "topic_truncation_lines": 4,
+      "unfenced_at_start": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "outcome": "pass",
+    "run_dir": "runs/20260912-093444-kafka-rack-links-seed-19-kafka-rack-links-seed-19",
+    "seed": 19
+  },
+  {
+    "cell": {
+      "cut": "10",
+      "links_present": [
+        11,
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "spread",
+      "rack_links": {
+        "rack-a": [
+          11
+        ],
+        "rack-b": [
+          12
+        ],
+        "rack-c": [
+          11,
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "passed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "passed",
+      "kafka-rack-links-cut-accurate": "passed",
+      "kafka-rack-links-execution-completed": "passed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "duration_seconds": 194.0,
+    "observations": {
+      "candidate_transitions": 1,
+      "controller_epochs": [
+        1
+      ],
+      "isr_during_cut": [
+        2,
+        2
+      ],
+      "isr_pre_cut": [
+        1,
+        5
+      ],
+      "partition_leaders_during_cut": [
+        1
+      ],
+      "prevote_transitions": 1,
+      "stream": {
+        "after": {
+          "confirmed": 21
+        },
+        "before": {
+          "confirmed": 16
+        },
+        "during": {
+          "confirmed": 63
+        }
+      },
+      "topic_truncation_lines": 4,
+      "unfenced_at_start": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "outcome": "pass",
+    "run_dir": "runs/20260912-093915-kafka-rack-links-seed-20-kafka-rack-links-seed-20",
+    "seed": 20
+  },
+  {
+    "cell": {
+      "cut": "12",
+      "links_present": [
+        10,
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          10
+        ],
+        "rack-b": [
+          10,
+          12
+        ],
+        "rack-c": [
+          11,
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "passed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "passed",
+      "kafka-rack-links-cut-accurate": "passed",
+      "kafka-rack-links-execution-completed": "passed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "duration_seconds": 274.3,
+    "observations": {
+      "candidate_transitions": 1,
+      "controller_epochs": [
+        1
+      ],
+      "isr_during_cut": [
+        3,
+        3
+      ],
+      "isr_pre_cut": [
+        1,
+        2,
+        3
+      ],
+      "partition_leaders_during_cut": [
+        1
+      ],
+      "prevote_transitions": 19,
+      "stream": {
+        "after": {
+          "confirmed": 21
+        },
+        "before": {
+          "confirmed": 17
+        },
+        "during": {
+          "confirmed": 62
+        }
+      },
+      "topic_truncation_lines": 4,
+      "unfenced_at_start": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "outcome": "pass",
+    "run_dir": "runs/20260912-094229-kafka-rack-links-seed-21-kafka-rack-links-seed-21",
+    "seed": 21
+  },
+  {
+    "cell": {
+      "cut": "10,11,12",
+      "links_present": [
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          10,
+          11
+        ],
+        "rack-b": [
+          12
+        ],
+        "rack-c": [
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.\n",
+    "duration_seconds": 154.8,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-094703-kafka-rack-links-seed-22-kafka-rack-links-seed-22",
+    "seed": 22
+  },
+  {
+    "cell": {
+      "cut": "10,12",
+      "links_present": [
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "spread",
+      "rack_links": {
+        "rack-a": [
+          11
+        ],
+        "rack-b": [
+          12
+        ],
+        "rack-c": [
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.\n",
+    "duration_seconds": 154.5,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-094938-kafka-rack-links-seed-23-kafka-rack-links-seed-23",
+    "seed": 23
+  },
+  {
+    "cell": {
+      "cut": "12",
+      "links_present": [
+        10,
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "spread",
+      "rack_links": {
+        "rack-a": [
+          10
+        ],
+        "rack-b": [
+          10,
+          12
+        ],
+        "rack-c": [
+          11,
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.\n",
+    "duration_seconds": 155.9,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-095212-kafka-rack-links-seed-24-kafka-rack-links-seed-24",
+    "seed": 24
+  },
+  {
+    "cell": {
+      "cut": "12",
+      "links_present": [
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          11
+        ],
+        "rack-b": [
+          10,
+          12
+        ],
+        "rack-c": [
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.\n",
+    "duration_seconds": 154.1,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-095448-kafka-rack-links-seed-25-kafka-rack-links-seed-25",
+    "seed": 25
+  },
+  {
+    "cell": {
+      "cut": "10,12",
+      "links_present": [
+        11
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          10,
+          11
+        ],
+        "rack-b": [
+          12
+        ],
+        "rack-c": [
+          11
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 3, but no such broker is registered.\n",
+    "duration_seconds": 154.4,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-095722-kafka-rack-links-seed-26-kafka-rack-links-seed-26",
+    "seed": 26
+  },
+  {
+    "cell": {
+      "cut": "11,12",
+      "links_present": [
+        11,
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "spread",
+      "rack_links": {
+        "rack-a": [
+          10,
+          11
+        ],
+        "rack-b": [
+          12
+        ],
+        "rack-c": [
+          11,
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "passed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "passed",
+      "kafka-rack-links-cut-accurate": "passed",
+      "kafka-rack-links-execution-completed": "passed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "duration_seconds": 199.3,
+    "observations": {
+      "candidate_transitions": 3,
+      "controller_epochs": [
+        1
+      ],
+      "isr_during_cut": null,
+      "isr_pre_cut": [
+        1,
+        5
+      ],
+      "partition_leaders_during_cut": [],
+      "prevote_transitions": 112,
+      "stream": {
+        "after": {},
+        "before": {
+          "ambiguous": 1,
+          "confirmed": 16
+        },
+        "during": {
+          "ambiguous": 83
+        }
+      },
+      "topic_truncation_lines": 4,
+      "unfenced_at_start": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "outcome": "pass",
+    "run_dir": "runs/20260912-095957-kafka-rack-links-seed-27-kafka-rack-links-seed-27",
+    "seed": 27
+  },
+  {
+    "cell": {
+      "cut": "10,12",
+      "links_present": [
+        10,
+        11,
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "spread",
+      "rack_links": {
+        "rack-a": [
+          10,
+          11
+        ],
+        "rack-b": [
+          10,
+          12
+        ],
+        "rack-c": [
+          11,
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "passed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "passed",
+      "kafka-rack-links-cut-accurate": "passed",
+      "kafka-rack-links-execution-completed": "passed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "duration_seconds": 160.9,
+    "observations": {
+      "candidate_transitions": 1,
+      "controller_epochs": [
+        1
+      ],
+      "isr_during_cut": [
+        2,
+        3
+      ],
+      "isr_pre_cut": [
+        1,
+        3,
+        5
+      ],
+      "partition_leaders_during_cut": [
+        1
+      ],
+      "prevote_transitions": 23,
+      "stream": {
+        "after": {
+          "confirmed": 12
+        },
+        "before": {
+          "ambiguous": 1,
+          "confirmed": 16
+        },
+        "during": {
+          "ambiguous": 3,
+          "confirmed": 68
+        }
+      },
+      "topic_truncation_lines": 4,
+      "unfenced_at_start": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "outcome": "pass",
+    "run_dir": "runs/20260912-100316-kafka-rack-links-seed-28-kafka-rack-links-seed-28",
+    "seed": 28
+  },
+  {
+    "cell": {
+      "cut": "10,11",
+      "links_present": [
+        10,
+        11,
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "spread",
+      "rack_links": {
+        "rack-a": [
+          10,
+          11
+        ],
+        "rack-b": [
+          10,
+          12
+        ],
+        "rack-c": [
+          11,
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "passed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "passed",
+      "kafka-rack-links-cut-accurate": "passed",
+      "kafka-rack-links-execution-completed": "passed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "duration_seconds": 162.0,
+    "observations": {
+      "candidate_transitions": 2,
+      "controller_epochs": [
+        1,
+        2
+      ],
+      "isr_during_cut": [
+        3,
+        3
+      ],
+      "isr_pre_cut": [
+        1,
+        3,
+        5
+      ],
+      "partition_leaders_during_cut": [
+        1
+      ],
+      "prevote_transitions": 41,
+      "stream": {
+        "after": {
+          "confirmed": 20
+        },
+        "before": {
+          "ambiguous": 1,
+          "confirmed": 16
+        },
+        "during": {
+          "ambiguous": 59,
+          "confirmed": 4
+        }
+      },
+      "topic_truncation_lines": 6,
+      "unfenced_at_start": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "outcome": "pass",
+    "run_dir": "runs/20260912-100557-kafka-rack-links-seed-29-kafka-rack-links-seed-29",
+    "seed": 29
+  },
+  {
+    "cell": {
+      "cut": "10,12",
+      "links_present": [
+        11,
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "spread",
+      "rack_links": {
+        "rack-a": [
+          11
+        ],
+        "rack-b": [
+          12
+        ],
+        "rack-c": [
+          11,
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "passed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "passed",
+      "kafka-rack-links-cut-accurate": "passed",
+      "kafka-rack-links-execution-completed": "passed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "duration_seconds": 197.8,
+    "observations": {
+      "candidate_transitions": 2,
+      "controller_epochs": [
+        1
+      ],
+      "isr_during_cut": [
+        2,
+        2
+      ],
+      "isr_pre_cut": [
+        1,
+        5
+      ],
+      "partition_leaders_during_cut": [
+        1
+      ],
+      "prevote_transitions": 22,
+      "stream": {
+        "after": {
+          "confirmed": 17
+        },
+        "before": {
+          "confirmed": 17
+        },
+        "during": {
+          "confirmed": 66
+        }
+      },
+      "topic_truncation_lines": 4,
+      "unfenced_at_start": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "outcome": "pass",
+    "run_dir": "runs/20260912-100839-kafka-rack-links-seed-30-kafka-rack-links-seed-30",
+    "seed": 30
+  },
+  {
+    "cell": {
+      "cut": "10,11,12",
+      "links_present": [
+        10,
+        11
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "spread",
+      "rack_links": {
+        "rack-a": [
+          10,
+          11
+        ],
+        "rack-b": [
+          10
+        ],
+        "rack-c": [
+          11,
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 3, but no such broker is registered.\n",
+    "duration_seconds": 154.6,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-101157-kafka-rack-links-seed-31-kafka-rack-links-seed-31",
+    "seed": 31
+  },
+  {
+    "cell": {
+      "cut": "10,11",
+      "links_present": [
+        11,
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          10,
+          11
+        ],
+        "rack-b": [
+          12
+        ],
+        "rack-c": [
+          11,
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.\n",
+    "duration_seconds": 155.1,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-101432-kafka-rack-links-seed-32-kafka-rack-links-seed-32",
+    "seed": 32
+  },
+  {
+    "cell": {
+      "cut": "12",
+      "links_present": [
+        11
+      ],
+      "node_vlans": {
+        "racka1": [
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          11
+        ],
+        "rack-b": [
+          12
+        ],
+        "rack-c": [
+          11
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 3, but no such broker is registered.\n",
+    "duration_seconds": 154.7,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-101707-kafka-rack-links-seed-33-kafka-rack-links-seed-33",
+    "seed": 33
+  },
+  {
+    "cell": {
+      "cut": "10",
+      "links_present": [
+        11
+      ],
+      "node_vlans": {
+        "racka1": [
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          11
+        ],
+        "rack-b": [
+          10,
+          12
+        ],
+        "rack-c": [
+          11
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 3, but no such broker is registered.\n",
+    "duration_seconds": 155.3,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-101941-kafka-rack-links-seed-34-kafka-rack-links-seed-34",
+    "seed": 34
+  },
+  {
+    "cell": {
+      "cut": "10,12",
+      "links_present": [
+        10,
+        11
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          10,
+          11
+        ],
+        "rack-b": [
+          10,
+          12
+        ],
+        "rack-c": [
+          11
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "passed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "passed",
+      "kafka-rack-links-cut-accurate": "passed",
+      "kafka-rack-links-execution-completed": "passed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "duration_seconds": 162.4,
+    "observations": {
+      "candidate_transitions": 2,
+      "controller_epochs": [
+        2
+      ],
+      "isr_during_cut": [
+        2,
+        2
+      ],
+      "isr_pre_cut": [
+        1,
+        2,
+        3
+      ],
+      "partition_leaders_during_cut": [
+        1
+      ],
+      "prevote_transitions": 25,
+      "stream": {
+        "after": {
+          "confirmed": 13
+        },
+        "before": {
+          "confirmed": 16
+        },
+        "during": {
+          "ambiguous": 4,
+          "confirmed": 67
+        }
+      },
+      "topic_truncation_lines": 4,
+      "unfenced_at_start": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "outcome": "pass",
+    "run_dir": "runs/20260912-102217-kafka-rack-links-seed-35-kafka-rack-links-seed-35",
+    "seed": 35
+  },
+  {
+    "cell": {
+      "cut": "10",
+      "links_present": [
+        10
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          20,
+          32
+        ],
+        "rackc1": [
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "spread",
+      "rack_links": {
+        "rack-a": [
+          10
+        ],
+        "rack-b": [
+          10
+        ],
+        "rack-c": [
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 5, but no such broker is registered.\n",
+    "duration_seconds": 154.3,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-102459-kafka-rack-links-seed-36-kafka-rack-links-seed-36",
+    "seed": 36
+  },
+  {
+    "cell": {
+      "cut": "10",
+      "links_present": [
+        12
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          20,
+          31
+        ],
+        "rackb1": [
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          12,
+          20,
+          33
+        ],
+        "rackc2": [
+          12,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          10
+        ],
+        "rack-b": [
+          12
+        ],
+        "rack-c": [
+          12
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.\n",
+    "duration_seconds": 153.1,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-102733-kafka-rack-links-seed-37-kafka-rack-links-seed-37",
+    "seed": 37
+  },
+  {
+    "cell": {
+      "cut": "11",
+      "links_present": [
+        10
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          20,
+          33
+        ]
+      },
+      "placement": "concentrated",
+      "rack_links": {
+        "rack-a": [
+          10
+        ],
+        "rack-b": [
+          10
+        ],
+        "rack-c": [
+          11
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "passed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "passed",
+      "kafka-rack-links-cut-accurate": "passed",
+      "kafka-rack-links-execution-completed": "passed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "duration_seconds": 272.2,
+    "observations": {
+      "candidate_transitions": 1,
+      "controller_epochs": [
+        1
+      ],
+      "isr_during_cut": [
+        3,
+        3
+      ],
+      "isr_pre_cut": [
+        1,
+        2,
+        3
+      ],
+      "partition_leaders_during_cut": [
+        1
+      ],
+      "prevote_transitions": 43,
+      "stream": {
+        "after": {
+          "confirmed": 22
+        },
+        "before": {
+          "confirmed": 16
+        },
+        "during": {
+          "confirmed": 62
+        }
+      },
+      "topic_truncation_lines": 4,
+      "unfenced_at_start": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "outcome": "pass",
+    "run_dir": "runs/20260912-103006-kafka-rack-links-seed-38-kafka-rack-links-seed-38",
+    "seed": 38
+  },
+  {
+    "cell": {
+      "cut": "11",
+      "links_present": [
+        11
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          20,
+          33
+        ]
+      },
+      "placement": "spread",
+      "rack_links": {
+        "rack-a": [
+          10,
+          11
+        ],
+        "rack-b": [
+          12
+        ],
+        "rack-c": [
+          11
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 3, but no such broker is registered.\n",
+    "duration_seconds": 156.0,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-103439-kafka-rack-links-seed-39-kafka-rack-links-seed-39",
+    "seed": 39
+  },
+  {
+    "cell": {
+      "cut": "none",
+      "links_present": [
+        10,
+        11
+      ],
+      "node_vlans": {
+        "racka1": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "racka2": [
+          10,
+          11,
+          20,
+          31
+        ],
+        "rackb1": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackb2": [
+          10,
+          12,
+          20,
+          32
+        ],
+        "rackc1": [
+          11,
+          20,
+          33
+        ],
+        "rackc2": [
+          11,
+          20,
+          33
+        ]
+      },
+      "placement": "spread",
+      "rack_links": {
+        "rack-a": [
+          10,
+          11
+        ],
+        "rack-b": [
+          10,
+          12
+        ],
+        "rack-c": [
+          11
+        ]
+      }
+    },
+    "checks": {
+      "kafka-rack-links-cluster-recovers": "failed",
+      "kafka-rack-links-confirmed-records-recovered-exactly-once": "failed",
+      "kafka-rack-links-cut-accurate": "failed",
+      "kafka-rack-links-execution-completed": "failed",
+      "kafka-rack-links-materialized": "passed"
+    },
+    "detail": "topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 3, but no such broker is registered.\n",
+    "duration_seconds": 154.7,
+    "outcome": "precondition_failure",
+    "run_dir": "runs/20260912-103715-kafka-rack-links-seed-40-kafka-rack-links-seed-40",
+    "seed": 40
+  }
+]

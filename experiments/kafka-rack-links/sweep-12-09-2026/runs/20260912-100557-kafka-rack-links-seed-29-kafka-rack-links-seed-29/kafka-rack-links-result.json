@@ -1,0 +1,3869 @@
+{
+  "artifact_errors": [],
+  "classification": "completed",
+  "configuration": {
+    "baseline_count": 100,
+    "baseline_timeout_ms": 60000,
+    "cut": "10,11",
+    "cut_vlans": [
+      10,
+      11
+    ],
+    "cut_window_seconds": 60,
+    "lead_seconds": 10,
+    "min_isr": 2,
+    "placement": "spread",
+    "replicas": [
+      1,
+      3,
+      5
+    ],
+    "replication_factor": 3,
+    "stream_interval_ms": 1000,
+    "stream_timeout_ms": 5000,
+    "tail_seconds": 30
+  },
+  "error": null,
+  "finished_wall_ns": 1789207718132214183,
+  "log_digest": {
+    "racka1": {
+      "candidate_transitions": 1,
+      "fenced_records": 2,
+      "leader_transitions": 1,
+      "prevote_transitions": 39,
+      "topic_truncations": [
+        "[ReplicaFetcher replicaId=1, leaderId=3, fetcherId=0] Truncating partition topotestix-rack-links-1cfa9349217d-0 with TruncationState(offset=116, completed=true) due to leader epoch and offset EpochEndOffset(errorCode=0, partition=0, leaderE",
+        "[UnifiedLog partition=topotestix-rack-links-1cfa9349217d-0, dir=/var/lib/apache-kafka/logs] Truncating to offset 116 (org.apache.kafka.storage.internals.log.UnifiedLog)"
+      ]
+    },
+    "racka2": {
+      "candidate_transitions": 0,
+      "fenced_records": 0,
+      "leader_transitions": 0,
+      "prevote_transitions": 0,
+      "topic_truncations": []
+    },
+    "rackb1": {
+      "candidate_transitions": 0,
+      "fenced_records": 2,
+      "leader_transitions": 0,
+      "prevote_transitions": 1,
+      "topic_truncations": [
+        "[ReplicaFetcher replicaId=3, leaderId=1, fetcherId=0] Truncating partition topotestix-rack-links-1cfa9349217d-0 with TruncationState(offset=0, completed=true) due to local high watermark 0 (kafka.server.ReplicaFetcherThread)",
+        "[UnifiedLog partition=topotestix-rack-links-1cfa9349217d-0, dir=/var/lib/apache-kafka/logs] Truncating to 0 has no effect as the largest offset in the log is -1 (org.apache.kafka.storage.internals.log.UnifiedLog)"
+      ]
+    },
+    "rackb2": {
+      "candidate_transitions": 0,
+      "fenced_records": 0,
+      "leader_transitions": 0,
+      "prevote_transitions": 0,
+      "topic_truncations": []
+    },
+    "rackc1": {
+      "candidate_transitions": 1,
+      "fenced_records": 2,
+      "leader_transitions": 1,
+      "prevote_transitions": 1,
+      "topic_truncations": [
+        "[ReplicaFetcher replicaId=5, leaderId=1, fetcherId=0] Truncating partition topotestix-rack-links-1cfa9349217d-0 with TruncationState(offset=0, completed=true) due to local high watermark 0 (kafka.server.ReplicaFetcherThread)",
+        "[UnifiedLog partition=topotestix-rack-links-1cfa9349217d-0, dir=/var/lib/apache-kafka/logs] Truncating to 0 has no effect as the largest offset in the log is -1 (org.apache.kafka.storage.internals.log.UnifiedLog)"
+      ]
+    },
+    "rackc2": {
+      "candidate_transitions": 0,
+      "fenced_records": 0,
+      "leader_transitions": 0,
+      "prevote_transitions": 0,
+      "topic_truncations": []
+    }
+  },
+  "network": {
+    "cut_nics": [
+      {
+        "nic": "virtio-net-pci.1",
+        "node": "racka1",
+        "vlan": 10
+      },
+      {
+        "nic": "virtio-net-pci.1",
+        "node": "racka2",
+        "vlan": 10
+      },
+      {
+        "nic": "virtio-net-pci.1",
+        "node": "rackb1",
+        "vlan": 10
+      },
+      {
+        "nic": "virtio-net-pci.1",
+        "node": "rackb2",
+        "vlan": 10
+      },
+      {
+        "nic": "virtio-net-pci.2",
+        "node": "racka1",
+        "vlan": 11
+      },
+      {
+        "nic": "virtio-net-pci.2",
+        "node": "racka2",
+        "vlan": 11
+      },
+      {
+        "nic": "virtio-net-pci.1",
+        "node": "rackc1",
+        "vlan": 11
+      },
+      {
+        "nic": "virtio-net-pci.1",
+        "node": "rackc2",
+        "vlan": 11
+      }
+    ],
+    "cut_offset_s": 17.2,
+    "cut_restored_wall_ns": 1789207686432976841,
+    "cut_started_wall_ns": 1789207623082710035,
+    "nics": {
+      "racka1": {
+        "10": "virtio-net-pci.1",
+        "11": "virtio-net-pci.2",
+        "20": "virtio-net-pci.3",
+        "31": "virtio-net-pci.4",
+        "52": "virtio-net-pci.0"
+      },
+      "racka2": {
+        "10": "virtio-net-pci.1",
+        "11": "virtio-net-pci.2",
+        "20": "virtio-net-pci.3",
+        "31": "virtio-net-pci.4",
+        "52": "virtio-net-pci.0"
+      },
+      "rackb1": {
+        "10": "virtio-net-pci.1",
+        "12": "virtio-net-pci.2",
+        "20": "virtio-net-pci.3",
+        "32": "virtio-net-pci.4",
+        "52": "virtio-net-pci.0"
+      },
+      "rackb2": {
+        "10": "virtio-net-pci.1",
+        "12": "virtio-net-pci.2",
+        "20": "virtio-net-pci.3",
+        "32": "virtio-net-pci.4",
+        "52": "virtio-net-pci.0"
+      },
+      "rackc1": {
+        "11": "virtio-net-pci.1",
+        "12": "virtio-net-pci.2",
+        "20": "virtio-net-pci.3",
+        "33": "virtio-net-pci.4",
+        "52": "virtio-net-pci.0"
+      },
+      "rackc2": {
+        "11": "virtio-net-pci.1",
+        "12": "virtio-net-pci.2",
+        "20": "virtio-net-pci.3",
+        "33": "virtio-net-pci.4",
+        "52": "virtio-net-pci.0"
+      }
+    },
+    "restore_offset_s": 80.5
+  },
+  "quorum_before": {
+    "high_watermark": 38,
+    "leader_epoch": 1,
+    "leader_id": 1,
+    "status": 0
+  },
+  "run_id": "1cfa9349217d41fca323edea39ad5db8",
+  "samples": [
+    {
+      "phase": "lead",
+      "quorum": {
+        "high_watermark": 80,
+        "leader_epoch": 1,
+        "leader_id": 1,
+        "status": 0
+      },
+      "replication": {
+        "rows": [
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207614569,
+            "last_fetch_ms": 1789207614569,
+            "log_end_offset": 85,
+            "node": 1,
+            "status": "Leader"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207614135,
+            "last_fetch_ms": 1789207614135,
+            "log_end_offset": 85,
+            "node": 3,
+            "status": "Follower"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207614135,
+            "last_fetch_ms": 1789207614135,
+            "log_end_offset": 85,
+            "node": 5,
+            "status": "Follower"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207614134,
+            "last_fetch_ms": 1789207614134,
+            "log_end_offset": 85,
+            "node": 6,
+            "status": "Observer"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207614134,
+            "last_fetch_ms": 1789207614134,
+            "log_end_offset": 85,
+            "node": 2,
+            "status": "Observer"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207614135,
+            "last_fetch_ms": 1789207614135,
+            "log_end_offset": 85,
+            "node": 4,
+            "status": "Observer"
+          }
+        ],
+        "status": 0
+      },
+      "t_s": 0.0,
+      "topic": {
+        "elr": [],
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    },
+    {
+      "phase": "lead",
+      "quorum": {
+        "high_watermark": 96,
+        "leader_epoch": 1,
+        "leader_id": 1,
+        "status": 0
+      },
+      "replication": {
+        "rows": [
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207622396,
+            "last_fetch_ms": 1789207622396,
+            "log_end_offset": 101,
+            "node": 1,
+            "status": "Leader"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207622154,
+            "last_fetch_ms": 1789207622154,
+            "log_end_offset": 101,
+            "node": 3,
+            "status": "Follower"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207622152,
+            "last_fetch_ms": 1789207622152,
+            "log_end_offset": 101,
+            "node": 5,
+            "status": "Follower"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207622151,
+            "last_fetch_ms": 1789207622151,
+            "log_end_offset": 101,
+            "node": 6,
+            "status": "Observer"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207622152,
+            "last_fetch_ms": 1789207622152,
+            "log_end_offset": 101,
+            "node": 2,
+            "status": "Observer"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207622152,
+            "last_fetch_ms": 1789207622152,
+            "log_end_offset": 101,
+            "node": 4,
+            "status": "Observer"
+          }
+        ],
+        "status": 0
+      },
+      "t_s": 9.3,
+      "topic": {
+        "elr": [],
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    },
+    {
+      "phase": "cut",
+      "quorum": {
+        "error": "",
+        "status": 124
+      },
+      "replication": {
+        "error": "",
+        "status": 124
+      },
+      "t_s": 17.2,
+      "topic": {
+        "elr": [],
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 1,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    },
+    {
+      "phase": "tail",
+      "quorum": {
+        "high_watermark": 240,
+        "leader_epoch": 2,
+        "leader_id": 5,
+        "status": 0
+      },
+      "replication": {
+        "rows": [
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207693557,
+            "last_fetch_ms": 1789207693557,
+            "log_end_offset": 246,
+            "node": 5,
+            "status": "Leader"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207693464,
+            "last_fetch_ms": 1789207693464,
+            "log_end_offset": 246,
+            "node": 1,
+            "status": "Follower"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207693463,
+            "last_fetch_ms": 1789207693463,
+            "log_end_offset": 246,
+            "node": 3,
+            "status": "Follower"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207693463,
+            "last_fetch_ms": 1789207693463,
+            "log_end_offset": 246,
+            "node": 6,
+            "status": "Observer"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207693463,
+            "last_fetch_ms": 1789207693463,
+            "log_end_offset": 246,
+            "node": 2,
+            "status": "Observer"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207693463,
+            "last_fetch_ms": 1789207693463,
+            "log_end_offset": 246,
+            "node": 4,
+            "status": "Observer"
+          }
+        ],
+        "status": 0
+      },
+      "t_s": 80.5,
+      "topic": {
+        "elr": [],
+        "isr": [
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    },
+    {
+      "phase": "tail",
+      "quorum": {
+        "high_watermark": 256,
+        "leader_epoch": 2,
+        "leader_id": 5,
+        "status": 0
+      },
+      "replication": {
+        "rows": [
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207701265,
+            "last_fetch_ms": 1789207701265,
+            "log_end_offset": 261,
+            "node": 5,
+            "status": "Leader"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207700965,
+            "last_fetch_ms": 1789207700965,
+            "log_end_offset": 261,
+            "node": 1,
+            "status": "Follower"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207700964,
+            "last_fetch_ms": 1789207700964,
+            "log_end_offset": 261,
+            "node": 3,
+            "status": "Follower"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207700964,
+            "last_fetch_ms": 1789207700964,
+            "log_end_offset": 261,
+            "node": 6,
+            "status": "Observer"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207700964,
+            "last_fetch_ms": 1789207700964,
+            "log_end_offset": 261,
+            "node": 2,
+            "status": "Observer"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207700964,
+            "last_fetch_ms": 1789207700964,
+            "log_end_offset": 261,
+            "node": 4,
+            "status": "Observer"
+          }
+        ],
+        "status": 0
+      },
+      "t_s": 88.5,
+      "topic": {
+        "elr": [],
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    },
+    {
+      "phase": "tail",
+      "quorum": {
+        "high_watermark": 272,
+        "leader_epoch": 2,
+        "leader_id": 5,
+        "status": 0
+      },
+      "replication": {
+        "rows": [
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207709039,
+            "last_fetch_ms": 1789207709039,
+            "log_end_offset": 277,
+            "node": 5,
+            "status": "Leader"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207708975,
+            "last_fetch_ms": 1789207708975,
+            "log_end_offset": 277,
+            "node": 1,
+            "status": "Follower"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207708976,
+            "last_fetch_ms": 1789207708976,
+            "log_end_offset": 277,
+            "node": 3,
+            "status": "Follower"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207708976,
+            "last_fetch_ms": 1789207708976,
+            "log_end_offset": 277,
+            "node": 6,
+            "status": "Observer"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207708975,
+            "last_fetch_ms": 1789207708975,
+            "log_end_offset": 277,
+            "node": 2,
+            "status": "Observer"
+          },
+          {
+            "lag": 0,
+            "last_caught_up_ms": 1789207708975,
+            "last_fetch_ms": 1789207708975,
+            "log_end_offset": 277,
+            "node": 4,
+            "status": "Observer"
+          }
+        ],
+        "status": 0
+      },
+      "t_s": 96.2,
+      "topic": {
+        "elr": [],
+        "isr": [
+          1,
+          3,
+          5
+        ],
+        "leader": 3,
+        "replicas": [
+          1,
+          3,
+          5
+        ]
+      }
+    }
+  ],
+  "schema_version": 1,
+  "started_wall_ns": 1789207569344787538,
+  "topic": {
+    "after": {
+      "elr": [],
+      "isr": [
+        1,
+        3,
+        5
+      ],
+      "leader": 3,
+      "replicas": [
+        1,
+        3,
+        5
+      ]
+    },
+    "name": "topotestix-rack-links-1cfa9349217d",
+    "pre_cut": {
+      "elr": [],
+      "isr": [
+        1,
+        3,
+        5
+      ],
+      "leader": 1,
+      "replicas": [
+        1,
+        3,
+        5
+      ]
+    }
+  },
+  "topology": {
+    "bootstrap_servers": [
+      "192.168.20.2:9095",
+      "192.168.20.3:9095",
+      "192.168.20.4:9095",
+      "192.168.20.5:9095",
+      "192.168.20.6:9095",
+      "192.168.20.7:9095"
+    ],
+    "brokers": {
+      "racka1": {
+        "address_suffix": 2,
+        "broker_id": 1,
+        "hosts_file": "127.0.0.1 localhost\n192.168.31.2 racka1\n192.168.31.2 racka1-link\n192.168.31.3 racka2-link\n192.168.10.4 rackb1-link\n192.168.10.5 rackb2-link\n192.168.11.6 rackc1-link\n192.168.11.7 rackc2-link\n",
+        "link_addresses": {
+          "racka1": "192.168.31.2",
+          "racka2": "192.168.31.3",
+          "rackb1": "192.168.10.4",
+          "rackb2": "192.168.10.5",
+          "rackc1": "192.168.11.6",
+          "rackc2": "192.168.11.7"
+        },
+        "peer_ping": {
+          "racka2": true,
+          "rackb1": true,
+          "rackb2": true,
+          "rackc1": true,
+          "rackc2": true
+        },
+        "rack": "rack-a",
+        "service_active_at_start": true,
+        "vlans": [
+          10,
+          11,
+          20,
+          31
+        ]
+      },
+      "racka2": {
+        "address_suffix": 3,
+        "broker_id": 2,
+        "hosts_file": "127.0.0.1 localhost\n192.168.31.3 racka2\n192.168.31.2 racka1-link\n192.168.31.3 racka2-link\n192.168.10.4 rackb1-link\n192.168.10.5 rackb2-link\n192.168.11.6 rackc1-link\n192.168.11.7 rackc2-link\n",
+        "link_addresses": {
+          "racka1": "192.168.31.2",
+          "racka2": "192.168.31.3",
+          "rackb1": "192.168.10.4",
+          "rackb2": "192.168.10.5",
+          "rackc1": "192.168.11.6",
+          "rackc2": "192.168.11.7"
+        },
+        "peer_ping": {
+          "racka1": true,
+          "rackb1": true,
+          "rackb2": true,
+          "rackc1": true,
+          "rackc2": true
+        },
+        "rack": "rack-a",
+        "service_active_at_start": true,
+        "vlans": [
+          10,
+          11,
+          20,
+          31
+        ]
+      },
+      "rackb1": {
+        "address_suffix": 4,
+        "broker_id": 3,
+        "hosts_file": "127.0.0.1 localhost\n192.168.32.4 rackb1\n192.168.10.2 racka1-link\n192.168.10.3 racka2-link\n192.168.32.4 rackb1-link\n192.168.32.5 rackb2-link\n192.168.12.6 rackc1-link\n192.168.12.7 rackc2-link\n",
+        "link_addresses": {
+          "racka1": "192.168.10.2",
+          "racka2": "192.168.10.3",
+          "rackb1": "192.168.32.4",
+          "rackb2": "192.168.32.5",
+          "rackc1": "192.168.12.6",
+          "rackc2": "192.168.12.7"
+        },
+        "peer_ping": {
+          "racka1": true,
+          "racka2": true,
+          "rackb2": true,
+          "rackc1": true,
+          "rackc2": true
+        },
+        "rack": "rack-b",
+        "service_active_at_start": true,
+        "vlans": [
+          10,
+          12,
+          20,
+          32
+        ]
+      },
+      "rackb2": {
+        "address_suffix": 5,
+        "broker_id": 4,
+        "hosts_file": "127.0.0.1 localhost\n192.168.32.5 rackb2\n192.168.10.2 racka1-link\n192.168.10.3 racka2-link\n192.168.32.4 rackb1-link\n192.168.32.5 rackb2-link\n192.168.12.6 rackc1-link\n192.168.12.7 rackc2-link\n",
+        "link_addresses": {
+          "racka1": "192.168.10.2",
+          "racka2": "192.168.10.3",
+          "rackb1": "192.168.32.4",
+          "rackb2": "192.168.32.5",
+          "rackc1": "192.168.12.6",
+          "rackc2": "192.168.12.7"
+        },
+        "peer_ping": {
+          "racka1": true,
+          "racka2": true,
+          "rackb1": true,
+          "rackc1": true,
+          "rackc2": true
+        },
+        "rack": "rack-b",
+        "service_active_at_start": true,
+        "vlans": [
+          10,
+          12,
+          20,
+          32
+        ]
+      },
+      "rackc1": {
+        "address_suffix": 6,
+        "broker_id": 5,
+        "hosts_file": "127.0.0.1 localhost\n192.168.33.6 rackc1\n192.168.11.2 racka1-link\n192.168.11.3 racka2-link\n192.168.12.4 rackb1-link\n192.168.12.5 rackb2-link\n192.168.33.6 rackc1-link\n192.168.33.7 rackc2-link\n",
+        "link_addresses": {
+          "racka1": "192.168.11.2",
+          "racka2": "192.168.11.3",
+          "rackb1": "192.168.12.4",
+          "rackb2": "192.168.12.5",
+          "rackc1": "192.168.33.6",
+          "rackc2": "192.168.33.7"
+        },
+        "peer_ping": {
+          "racka1": true,
+          "racka2": true,
+          "rackb1": true,
+          "rackb2": true,
+          "rackc2": true
+        },
+        "rack": "rack-c",
+        "service_active_at_start": true,
+        "vlans": [
+          11,
+          12,
+          20,
+          33
+        ]
+      },
+      "rackc2": {
+        "address_suffix": 7,
+        "broker_id": 6,
+        "hosts_file": "127.0.0.1 localhost\n192.168.33.7 rackc2\n192.168.11.2 racka1-link\n192.168.11.3 racka2-link\n192.168.12.4 rackb1-link\n192.168.12.5 rackb2-link\n192.168.33.6 rackc1-link\n192.168.33.7 rackc2-link\n",
+        "link_addresses": {
+          "racka1": "192.168.11.2",
+          "racka2": "192.168.11.3",
+          "rackb1": "192.168.12.4",
+          "rackb2": "192.168.12.5",
+          "rackc1": "192.168.33.6",
+          "rackc2": "192.168.33.7"
+        },
+        "peer_ping": {
+          "racka1": true,
+          "racka2": true,
+          "rackb1": true,
+          "rackb2": true,
+          "rackc1": true
+        },
+        "rack": "rack-c",
+        "service_active_at_start": true,
+        "vlans": [
+          11,
+          12,
+          20,
+          33
+        ]
+      }
+    },
+    "links_present": [
+      10,
+      11,
+      12
+    ],
+    "unfenced_at_start": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "workload": {
+    "baseline": [
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601447000000,
+        "invoked": true,
+        "offset": 0,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0000",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207600671000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601470000000,
+        "invoked": true,
+        "offset": 1,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0001",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601460000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601476000000,
+        "invoked": true,
+        "offset": 2,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0002",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601470000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601484000000,
+        "invoked": true,
+        "offset": 3,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0003",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601477000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601491000000,
+        "invoked": true,
+        "offset": 4,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0004",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601484000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601498000000,
+        "invoked": true,
+        "offset": 5,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0005",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601491000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601506000000,
+        "invoked": true,
+        "offset": 6,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0006",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601498000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601513000000,
+        "invoked": true,
+        "offset": 7,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0007",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601506000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601521000000,
+        "invoked": true,
+        "offset": 8,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0008",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601513000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601528000000,
+        "invoked": true,
+        "offset": 9,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0009",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601521000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601537000000,
+        "invoked": true,
+        "offset": 10,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0010",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601528000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601547000000,
+        "invoked": true,
+        "offset": 11,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0011",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601538000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601553000000,
+        "invoked": true,
+        "offset": 12,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0012",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601547000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601560000000,
+        "invoked": true,
+        "offset": 13,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0013",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601553000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601570000000,
+        "invoked": true,
+        "offset": 14,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0014",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601560000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601577000000,
+        "invoked": true,
+        "offset": 15,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0015",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601570000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601587000000,
+        "invoked": true,
+        "offset": 16,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0016",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601577000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601595000000,
+        "invoked": true,
+        "offset": 17,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0017",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601587000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601602000000,
+        "invoked": true,
+        "offset": 18,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0018",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601595000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601609000000,
+        "invoked": true,
+        "offset": 19,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0019",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601602000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601622000000,
+        "invoked": true,
+        "offset": 20,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0020",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601609000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601630000000,
+        "invoked": true,
+        "offset": 21,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0021",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601623000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601643000000,
+        "invoked": true,
+        "offset": 22,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0022",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601630000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601654000000,
+        "invoked": true,
+        "offset": 23,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0023",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601643000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601660000000,
+        "invoked": true,
+        "offset": 24,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0024",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601654000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601669000000,
+        "invoked": true,
+        "offset": 25,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0025",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601660000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601712000000,
+        "invoked": true,
+        "offset": 26,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0026",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601669000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601720000000,
+        "invoked": true,
+        "offset": 27,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0027",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601713000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601726000000,
+        "invoked": true,
+        "offset": 28,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0028",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601721000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601732000000,
+        "invoked": true,
+        "offset": 29,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0029",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601726000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601738000000,
+        "invoked": true,
+        "offset": 30,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0030",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601732000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601747000000,
+        "invoked": true,
+        "offset": 31,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0031",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601738000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601753000000,
+        "invoked": true,
+        "offset": 32,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0032",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601747000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601761000000,
+        "invoked": true,
+        "offset": 33,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0033",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601753000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601768000000,
+        "invoked": true,
+        "offset": 34,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0034",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601761000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601776000000,
+        "invoked": true,
+        "offset": 35,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0035",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601768000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601785000000,
+        "invoked": true,
+        "offset": 36,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0036",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601776000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601795000000,
+        "invoked": true,
+        "offset": 37,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0037",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601785000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601804000000,
+        "invoked": true,
+        "offset": 38,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0038",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601795000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601814000000,
+        "invoked": true,
+        "offset": 39,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0039",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601805000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601820000000,
+        "invoked": true,
+        "offset": 40,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0040",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601815000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601828000000,
+        "invoked": true,
+        "offset": 41,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0041",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601821000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601837000000,
+        "invoked": true,
+        "offset": 42,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0042",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601828000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601843000000,
+        "invoked": true,
+        "offset": 43,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0043",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601837000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601850000000,
+        "invoked": true,
+        "offset": 44,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0044",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601844000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601855000000,
+        "invoked": true,
+        "offset": 45,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0045",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601850000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601859000000,
+        "invoked": true,
+        "offset": 46,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0046",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601855000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601864000000,
+        "invoked": true,
+        "offset": 47,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0047",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601859000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601868000000,
+        "invoked": true,
+        "offset": 48,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0048",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601864000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601873000000,
+        "invoked": true,
+        "offset": 49,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0049",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601868000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601880000000,
+        "invoked": true,
+        "offset": 50,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0050",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601873000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601890000000,
+        "invoked": true,
+        "offset": 51,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0051",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601881000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601895000000,
+        "invoked": true,
+        "offset": 52,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0052",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601890000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601901000000,
+        "invoked": true,
+        "offset": 53,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0053",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601896000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601909000000,
+        "invoked": true,
+        "offset": 54,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0054",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601901000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601916000000,
+        "invoked": true,
+        "offset": 55,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0055",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601909000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601924000000,
+        "invoked": true,
+        "offset": 56,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0056",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601917000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601930000000,
+        "invoked": true,
+        "offset": 57,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0057",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601924000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601937000000,
+        "invoked": true,
+        "offset": 58,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0058",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601930000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601944000000,
+        "invoked": true,
+        "offset": 59,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0059",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601937000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601950000000,
+        "invoked": true,
+        "offset": 60,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0060",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601945000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601958000000,
+        "invoked": true,
+        "offset": 61,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0061",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601950000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601965000000,
+        "invoked": true,
+        "offset": 62,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0062",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601958000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601977000000,
+        "invoked": true,
+        "offset": 63,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0063",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601966000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601983000000,
+        "invoked": true,
+        "offset": 64,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0064",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601977000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601989000000,
+        "invoked": true,
+        "offset": 65,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0065",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601983000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207601996000000,
+        "invoked": true,
+        "offset": 66,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0066",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601990000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602001000000,
+        "invoked": true,
+        "offset": 67,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0067",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207601996000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602006000000,
+        "invoked": true,
+        "offset": 68,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0068",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602001000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602012000000,
+        "invoked": true,
+        "offset": 69,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0069",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602006000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602016000000,
+        "invoked": true,
+        "offset": 70,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0070",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602012000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602021000000,
+        "invoked": true,
+        "offset": 71,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0071",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602016000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602027000000,
+        "invoked": true,
+        "offset": 72,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0072",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602021000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602031000000,
+        "invoked": true,
+        "offset": 73,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0073",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602027000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602039000000,
+        "invoked": true,
+        "offset": 74,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0074",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602032000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602049000000,
+        "invoked": true,
+        "offset": 75,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0075",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602039000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602059000000,
+        "invoked": true,
+        "offset": 76,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0076",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602049000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602067000000,
+        "invoked": true,
+        "offset": 77,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0077",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602059000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602074000000,
+        "invoked": true,
+        "offset": 78,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0078",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602068000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602081000000,
+        "invoked": true,
+        "offset": 79,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0079",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602074000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602086000000,
+        "invoked": true,
+        "offset": 80,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0080",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602081000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602091000000,
+        "invoked": true,
+        "offset": 81,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0081",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602086000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602096000000,
+        "invoked": true,
+        "offset": 82,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0082",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602091000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602103000000,
+        "invoked": true,
+        "offset": 83,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0083",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602096000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602111000000,
+        "invoked": true,
+        "offset": 84,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0084",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602103000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602126000000,
+        "invoked": true,
+        "offset": 85,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0085",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602111000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602135000000,
+        "invoked": true,
+        "offset": 86,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0086",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602126000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602150000000,
+        "invoked": true,
+        "offset": 87,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0087",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602135000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602157000000,
+        "invoked": true,
+        "offset": 88,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0088",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602150000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602165000000,
+        "invoked": true,
+        "offset": 89,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0089",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602157000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602172000000,
+        "invoked": true,
+        "offset": 90,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0090",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602165000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602177000000,
+        "invoked": true,
+        "offset": 91,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0091",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602172000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602183000000,
+        "invoked": true,
+        "offset": 92,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0092",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602177000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602189000000,
+        "invoked": true,
+        "offset": 93,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0093",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602184000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602195000000,
+        "invoked": true,
+        "offset": 94,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0094",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602189000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602202000000,
+        "invoked": true,
+        "offset": 95,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0095",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602195000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602210000000,
+        "invoked": true,
+        "offset": 96,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0096",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602202000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602216000000,
+        "invoked": true,
+        "offset": 97,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0097",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602210000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602222000000,
+        "invoked": true,
+        "offset": 98,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0098",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602216000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207602229000000,
+        "invoked": true,
+        "offset": 99,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0099",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207602222000000
+      }
+    ],
+    "complete_read": true,
+    "end_offset": 140,
+    "recovered": [
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0000",
+        "offset": 0,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0000",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0001",
+        "offset": 1,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0001",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0002",
+        "offset": 2,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0002",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0003",
+        "offset": 3,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0003",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0004",
+        "offset": 4,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0004",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0005",
+        "offset": 5,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0005",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0006",
+        "offset": 6,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0006",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0007",
+        "offset": 7,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0007",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0008",
+        "offset": 8,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0008",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0009",
+        "offset": 9,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0009",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0010",
+        "offset": 10,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0010",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0011",
+        "offset": 11,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0011",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0012",
+        "offset": 12,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0012",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0013",
+        "offset": 13,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0013",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0014",
+        "offset": 14,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0014",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0015",
+        "offset": 15,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0015",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0016",
+        "offset": 16,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0016",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0017",
+        "offset": 17,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0017",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0018",
+        "offset": 18,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0018",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0019",
+        "offset": 19,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0019",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0020",
+        "offset": 20,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0020",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0021",
+        "offset": 21,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0021",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0022",
+        "offset": 22,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0022",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0023",
+        "offset": 23,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0023",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0024",
+        "offset": 24,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0024",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0025",
+        "offset": 25,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0025",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0026",
+        "offset": 26,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0026",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0027",
+        "offset": 27,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0027",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0028",
+        "offset": 28,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0028",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0029",
+        "offset": 29,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0029",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0030",
+        "offset": 30,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0030",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0031",
+        "offset": 31,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0031",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0032",
+        "offset": 32,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0032",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0033",
+        "offset": 33,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0033",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0034",
+        "offset": 34,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0034",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0035",
+        "offset": 35,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0035",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0036",
+        "offset": 36,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0036",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0037",
+        "offset": 37,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0037",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0038",
+        "offset": 38,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0038",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0039",
+        "offset": 39,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0039",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0040",
+        "offset": 40,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0040",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0041",
+        "offset": 41,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0041",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0042",
+        "offset": 42,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0042",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0043",
+        "offset": 43,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0043",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0044",
+        "offset": 44,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0044",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0045",
+        "offset": 45,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0045",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0046",
+        "offset": 46,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0046",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0047",
+        "offset": 47,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0047",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0048",
+        "offset": 48,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0048",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0049",
+        "offset": 49,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0049",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0050",
+        "offset": 50,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0050",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0051",
+        "offset": 51,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0051",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0052",
+        "offset": 52,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0052",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0053",
+        "offset": 53,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0053",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0054",
+        "offset": 54,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0054",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0055",
+        "offset": 55,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0055",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0056",
+        "offset": 56,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0056",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0057",
+        "offset": 57,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0057",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0058",
+        "offset": 58,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0058",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0059",
+        "offset": 59,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0059",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0060",
+        "offset": 60,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0060",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0061",
+        "offset": 61,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0061",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0062",
+        "offset": 62,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0062",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0063",
+        "offset": 63,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0063",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0064",
+        "offset": 64,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0064",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0065",
+        "offset": 65,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0065",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0066",
+        "offset": 66,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0066",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0067",
+        "offset": 67,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0067",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0068",
+        "offset": 68,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0068",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0069",
+        "offset": 69,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0069",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0070",
+        "offset": 70,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0070",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0071",
+        "offset": 71,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0071",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0072",
+        "offset": 72,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0072",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0073",
+        "offset": 73,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0073",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0074",
+        "offset": 74,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0074",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0075",
+        "offset": 75,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0075",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0076",
+        "offset": 76,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0076",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0077",
+        "offset": 77,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0077",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0078",
+        "offset": 78,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0078",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0079",
+        "offset": 79,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0079",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0080",
+        "offset": 80,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0080",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0081",
+        "offset": 81,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0081",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0082",
+        "offset": 82,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0082",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0083",
+        "offset": 83,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0083",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0084",
+        "offset": 84,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0084",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0085",
+        "offset": 85,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0085",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0086",
+        "offset": 86,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0086",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0087",
+        "offset": 87,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0087",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0088",
+        "offset": 88,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0088",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0089",
+        "offset": 89,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0089",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0090",
+        "offset": 90,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0090",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0091",
+        "offset": 91,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0091",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0092",
+        "offset": 92,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0092",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0093",
+        "offset": 93,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0093",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0094",
+        "offset": 94,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0094",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0095",
+        "offset": 95,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0095",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0096",
+        "offset": 96,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0096",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0097",
+        "offset": 97,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0097",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0098",
+        "offset": 98,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0098",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0099",
+        "offset": 99,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/baseline/0099",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00000",
+        "offset": 100,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00000",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00001",
+        "offset": 101,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00001",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00002",
+        "offset": 102,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00002",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00003",
+        "offset": 103,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00003",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00004",
+        "offset": 104,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00004",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00005",
+        "offset": 105,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00005",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00006",
+        "offset": 106,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00006",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00007",
+        "offset": 107,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00007",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00008",
+        "offset": 108,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00008",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00009",
+        "offset": 109,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00009",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00010",
+        "offset": 110,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00010",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00011",
+        "offset": 111,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00011",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00012",
+        "offset": 112,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00012",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00013",
+        "offset": 113,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00013",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00014",
+        "offset": 114,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00014",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00015",
+        "offset": 115,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00015",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00076",
+        "offset": 116,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00076",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00077",
+        "offset": 117,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00077",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00078",
+        "offset": 118,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00078",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00079",
+        "offset": 119,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00079",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00080",
+        "offset": 120,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00080",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00081",
+        "offset": 121,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00081",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00082",
+        "offset": 122,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00082",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00083",
+        "offset": 123,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00083",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00084",
+        "offset": 124,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00084",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00085",
+        "offset": 125,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00085",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00086",
+        "offset": 126,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00086",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00087",
+        "offset": 127,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00087",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00088",
+        "offset": 128,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00088",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00089",
+        "offset": 129,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00089",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00090",
+        "offset": 130,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00090",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00091",
+        "offset": 131,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00091",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00092",
+        "offset": 132,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00092",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00093",
+        "offset": 133,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00093",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00094",
+        "offset": 134,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00094",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00095",
+        "offset": 135,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00095",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00096",
+        "offset": 136,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00096",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00097",
+        "offset": 137,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00097",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00098",
+        "offset": 138,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00098",
+        "partition": 0
+      },
+      {
+        "key_id": "1cfa9349217d41fca323edea39ad5db8/stream/00099",
+        "offset": 139,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00099",
+        "partition": 0
+      }
+    ],
+    "stream": [
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207608250000000,
+        "invoked": true,
+        "offset": 100,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00000",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207607073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207608275000000,
+        "invoked": true,
+        "offset": 101,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00001",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207608108000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207609080000000,
+        "invoked": true,
+        "offset": 102,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00002",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207609073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207610081000000,
+        "invoked": true,
+        "offset": 103,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00003",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207610073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207611082000000,
+        "invoked": true,
+        "offset": 104,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00004",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207611073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207612088000000,
+        "invoked": true,
+        "offset": 105,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00005",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207612073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207613081000000,
+        "invoked": true,
+        "offset": 106,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00006",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207613073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207614080000000,
+        "invoked": true,
+        "offset": 107,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00007",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207614073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207615082000000,
+        "invoked": true,
+        "offset": 108,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00008",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207615073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207616080000000,
+        "invoked": true,
+        "offset": 109,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00009",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207616073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207617080000000,
+        "invoked": true,
+        "offset": 110,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00010",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207617074000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207618082000000,
+        "invoked": true,
+        "offset": 111,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00011",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207618073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207619082000000,
+        "invoked": true,
+        "offset": 112,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00012",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207619074000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207620083000000,
+        "invoked": true,
+        "offset": 113,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00013",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207620074000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207621081000000,
+        "invoked": true,
+        "offset": 114,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00014",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207621073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207622080000000,
+        "invoked": true,
+        "offset": 115,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00015",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207622073000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207628083000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00016",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207623074000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207629074000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00017",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207624074000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207630077000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00018",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207625073000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207631073000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00019",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207626073000000
+      },
+      {
+        "exception_message": "Expiring 5 record(s) for topotestix-rack-links-1cfa9349217d-0:5001 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207632075000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00020",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207627073000000
+      },
+      {
+        "exception_message": "Expiring 5 record(s) for topotestix-rack-links-1cfa9349217d-0:5001 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207632075000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00021",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207628074000000
+      },
+      {
+        "exception_message": "Expiring 5 record(s) for topotestix-rack-links-1cfa9349217d-0:5001 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207632075000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00022",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207629073000000
+      },
+      {
+        "exception_message": "Expiring 5 record(s) for topotestix-rack-links-1cfa9349217d-0:5001 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207632075000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00023",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207630074000000
+      },
+      {
+        "exception_message": "Expiring 5 record(s) for topotestix-rack-links-1cfa9349217d-0:5001 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207632076000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00024",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207631073000000
+      },
+      {
+        "exception_message": "The broker received an out of order sequence number.",
+        "exception_type": "org.apache.kafka.common.errors.OutOfOrderSequenceException",
+        "finished_wall_ns": 1789207633882000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00025",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207632073000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207638074000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00026",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207633074000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207639074000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00027",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207634073000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207640073000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00028",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207635073000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207641073000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00029",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207636073000000
+      },
+      {
+        "exception_message": "Expiring 5 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207642074000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00030",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207637074000000
+      },
+      {
+        "exception_message": "Expiring 5 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207642074000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00031",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207638074000000
+      },
+      {
+        "exception_message": "Expiring 5 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207642074000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00032",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207639073000000
+      },
+      {
+        "exception_message": "Expiring 5 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207642075000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00033",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207640073000000
+      },
+      {
+        "exception_message": "Expiring 5 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207642075000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00034",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207641073000000
+      },
+      {
+        "exception_message": "The broker received an out of order sequence number.",
+        "exception_type": "org.apache.kafka.common.errors.OutOfOrderSequenceException",
+        "finished_wall_ns": 1789207643877000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00035",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207642073000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207648073000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00036",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207643073000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207649074000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00037",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207644073000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207650073000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00038",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207645073000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207651073000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00039",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207646073000000
+      },
+      {
+        "exception_message": "Expiring 4 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207652074000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00040",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207647074000000
+      },
+      {
+        "exception_message": "Expiring 4 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207652074000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00041",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207648073000000
+      },
+      {
+        "exception_message": "Expiring 4 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207652074000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00042",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207649074000000
+      },
+      {
+        "exception_message": "Expiring 4 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207652074000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00043",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207650073000000
+      },
+      {
+        "exception_message": "The broker received an out of order sequence number.",
+        "exception_type": "org.apache.kafka.common.errors.OutOfOrderSequenceException",
+        "finished_wall_ns": 1789207653844000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00044",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207651073000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207657073000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00045",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207652073000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207658074000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00046",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207653073000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207659073000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00047",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207654073000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207660076000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00048",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207655074000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207661073000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00049",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207656073000000
+      },
+      {
+        "exception_message": "Expiring 4 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207662077000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00050",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207657077000000
+      },
+      {
+        "exception_message": "Expiring 4 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207662077000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00051",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207658074000000
+      },
+      {
+        "exception_message": "Expiring 4 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207662077000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00052",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207659073000000
+      },
+      {
+        "exception_message": "Expiring 4 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207662077000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00053",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207660075000000
+      },
+      {
+        "exception_message": "The broker received an out of order sequence number.",
+        "exception_type": "org.apache.kafka.common.errors.OutOfOrderSequenceException",
+        "finished_wall_ns": 1789207663896000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00054",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207661073000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207667073000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00055",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207662073000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207668074000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00056",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207663074000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207669073000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00057",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207664073000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207670074000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00058",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207665074000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207671073000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00059",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207666073000000
+      },
+      {
+        "exception_message": "Expiring 5 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207672074000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00060",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207667074000000
+      },
+      {
+        "exception_message": "Expiring 5 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207672075000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00061",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207668073000000
+      },
+      {
+        "exception_message": "Expiring 5 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207672075000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00062",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207669073000000
+      },
+      {
+        "exception_message": "Expiring 5 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207672075000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00063",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207670074000000
+      },
+      {
+        "exception_message": "Expiring 5 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207672075000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00064",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207671073000000
+      },
+      {
+        "exception_message": "The broker received an out of order sequence number.",
+        "exception_type": "org.apache.kafka.common.errors.OutOfOrderSequenceException",
+        "finished_wall_ns": 1789207673887000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00065",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207672073000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207678073000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00066",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207673073000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207679074000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00067",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207674074000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207680073000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00068",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207675073000000
+      },
+      {
+        "exception_message": "Expiring 1 record(s) for topotestix-rack-links-1cfa9349217d-0:5000 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207681074000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00069",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207676074000000
+      },
+      {
+        "exception_message": "Expiring 5 record(s) for topotestix-rack-links-1cfa9349217d-0:5001 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207682075000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00070",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207677074000000
+      },
+      {
+        "exception_message": "Expiring 5 record(s) for topotestix-rack-links-1cfa9349217d-0:5001 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207682075000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00071",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207678073000000
+      },
+      {
+        "exception_message": "Expiring 5 record(s) for topotestix-rack-links-1cfa9349217d-0:5001 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207682075000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00072",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207679074000000
+      },
+      {
+        "exception_message": "Expiring 5 record(s) for topotestix-rack-links-1cfa9349217d-0:5001 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207682075000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00073",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207680073000000
+      },
+      {
+        "exception_message": "Expiring 5 record(s) for topotestix-rack-links-1cfa9349217d-0:5001 ms has passed since batch creation",
+        "exception_type": "org.apache.kafka.common.errors.TimeoutException",
+        "finished_wall_ns": 1789207682075000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00074",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207681073000000
+      },
+      {
+        "exception_message": "The broker received an out of order sequence number.",
+        "exception_type": "org.apache.kafka.common.errors.OutOfOrderSequenceException",
+        "finished_wall_ns": 1789207683843000000,
+        "invoked": true,
+        "offset": null,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00075",
+        "outcome": "ambiguous",
+        "partition": null,
+        "started_wall_ns": 1789207682073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207686023000000,
+        "invoked": true,
+        "offset": 116,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00076",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207683074000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207686033000000,
+        "invoked": true,
+        "offset": 117,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00077",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207684073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207686046000000,
+        "invoked": true,
+        "offset": 118,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00078",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207685073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207686084000000,
+        "invoked": true,
+        "offset": 119,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00079",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207686073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207687083000000,
+        "invoked": true,
+        "offset": 120,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00080",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207687074000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207688087000000,
+        "invoked": true,
+        "offset": 121,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00081",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207688073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207689081000000,
+        "invoked": true,
+        "offset": 122,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00082",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207689073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207690081000000,
+        "invoked": true,
+        "offset": 123,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00083",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207690073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207691081000000,
+        "invoked": true,
+        "offset": 124,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00084",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207691073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207692080000000,
+        "invoked": true,
+        "offset": 125,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00085",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207692074000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207693079000000,
+        "invoked": true,
+        "offset": 126,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00086",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207693073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207694083000000,
+        "invoked": true,
+        "offset": 127,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00087",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207694073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207695085000000,
+        "invoked": true,
+        "offset": 128,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00088",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207695074000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207696080000000,
+        "invoked": true,
+        "offset": 129,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00089",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207696073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207697080000000,
+        "invoked": true,
+        "offset": 130,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00090",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207697073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207698082000000,
+        "invoked": true,
+        "offset": 131,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00091",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207698073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207699082000000,
+        "invoked": true,
+        "offset": 132,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00092",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207699074000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207700080000000,
+        "invoked": true,
+        "offset": 133,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00093",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207700073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207701080000000,
+        "invoked": true,
+        "offset": 134,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00094",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207701073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207702082000000,
+        "invoked": true,
+        "offset": 135,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00095",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207702073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207703080000000,
+        "invoked": true,
+        "offset": 136,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00096",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207703074000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207704085000000,
+        "invoked": true,
+        "offset": 137,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00097",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207704073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207705083000000,
+        "invoked": true,
+        "offset": 138,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00098",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207705073000000
+      },
+      {
+        "exception_message": null,
+        "exception_type": null,
+        "finished_wall_ns": 1789207706082000000,
+        "invoked": true,
+        "offset": 139,
+        "op_id": "1cfa9349217d41fca323edea39ad5db8/stream/00099",
+        "outcome": "confirmed",
+        "partition": 0,
+        "started_wall_ns": 1789207706073000000
+      }
+    ],
+    "stream_status": 0
+  }
+}

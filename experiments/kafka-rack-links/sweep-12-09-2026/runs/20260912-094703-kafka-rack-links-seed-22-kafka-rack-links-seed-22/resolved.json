@@ -1,0 +1,195 @@
+{
+  "environment": {
+    "nixpkgsOutPath": "/nix/store/0lkxgksfvwcdsyrxj90ddc7f4kl1k8nr-source",
+    "nixpkgsRevision": "cb2938ebeac96284932dbe6a2fb611d3b77743a5"
+  },
+  "nodeConfigs": {
+    "client1": {
+      "virtualisation": {
+        "vlans": [
+          20
+        ]
+      }
+    },
+    "racka1": {
+      "virtualisation": {
+        "vlans": [
+          10,
+          11,
+          20,
+          31
+        ]
+      }
+    },
+    "racka2": {
+      "virtualisation": {
+        "vlans": [
+          10,
+          11,
+          20,
+          31
+        ]
+      }
+    },
+    "rackb1": {
+      "virtualisation": {
+        "vlans": [
+          12,
+          20,
+          32
+        ]
+      }
+    },
+    "rackb2": {
+      "virtualisation": {
+        "vlans": [
+          12,
+          20,
+          32
+        ]
+      }
+    },
+    "rackc1": {
+      "virtualisation": {
+        "vlans": [
+          12,
+          20,
+          33
+        ]
+      }
+    },
+    "rackc2": {
+      "virtualisation": {
+        "vlans": [
+          12,
+          20,
+          33
+        ]
+      }
+    }
+  },
+  "nodeRoles": {
+    "client1": "client",
+    "racka1": "racka",
+    "racka2": "racka",
+    "rackb1": "rackb",
+    "rackb2": "rackb",
+    "rackc1": "rackc",
+    "rackc2": "rackc"
+  },
+  "roleFuzz": {
+    "client": {
+      "choices": {
+        ".environment.etc.topotestix-kafka-cut.text": 7,
+        ".environment.etc.topotestix-kafka-placement.json.text": 1
+      },
+      "result": {
+        "environment": {
+          "etc": {
+            "topotestix-kafka-cut": {
+              "text": "10,11,12"
+            },
+            "topotestix-kafka-placement.json": {
+              "text": "{\"profile\":\"concentrated\",\"replicas\":[1,2,3]}"
+            }
+          }
+        }
+      },
+      "seed": "23"
+    },
+    "racka": {
+      "choices": {
+        ".environment.etc.topotestix-kafka-cut.text": 5,
+        ".environment.etc.topotestix-kafka-placement.json.text": 0
+      },
+      "result": {
+        "environment": {
+          "etc": {
+            "topotestix-kafka-cut": {
+              "text": "10,12"
+            },
+            "topotestix-kafka-placement.json": {
+              "text": "{\"profile\":\"spread\",\"replicas\":[1,3,5]}"
+            }
+          }
+        }
+      },
+      "seed": "24"
+    },
+    "rackb": {
+      "choices": {
+        ".environment.etc.topotestix-kafka-cut.text": 3,
+        ".environment.etc.topotestix-kafka-placement.json.text": 0
+      },
+      "result": {
+        "environment": {
+          "etc": {
+            "topotestix-kafka-cut": {
+              "text": "12"
+            },
+            "topotestix-kafka-placement.json": {
+              "text": "{\"profile\":\"spread\",\"replicas\":[1,3,5]}"
+            }
+          }
+        }
+      },
+      "seed": "25"
+    },
+    "rackc": {
+      "choices": {
+        ".environment.etc.topotestix-kafka-cut.text": 3,
+        ".environment.etc.topotestix-kafka-placement.json.text": 1
+      },
+      "result": {
+        "environment": {
+          "etc": {
+            "topotestix-kafka-cut": {
+              "text": "12"
+            },
+            "topotestix-kafka-placement.json": {
+              "text": "{\"profile\":\"concentrated\",\"replicas\":[1,2,3]}"
+            }
+          }
+        }
+      },
+      "seed": "26"
+    }
+  },
+  "topology": {
+    "clientVlans": [
+      20
+    ],
+    "rackaVlans": [
+      10,
+      11,
+      20,
+      31
+    ],
+    "rackbVlans": [
+      12,
+      20,
+      32
+    ],
+    "rackcVlans": [
+      12,
+      20,
+      33
+    ],
+    "roles": {
+      "client": 1,
+      "racka": 2,
+      "rackb": 2,
+      "rackc": 2
+    }
+  },
+  "topologyChoices": {
+    ".clientVlans": 0,
+    ".rackaVlans": 0,
+    ".rackbVlans": 2,
+    ".rackcVlans": 2,
+    ".roles.client": 0,
+    ".roles.racka": 0,
+    ".roles.rackb": 0,
+    ".roles.rackc": 0
+  }
+}

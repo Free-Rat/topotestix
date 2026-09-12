@@ -1,0 +1,26 @@
+[
+  {
+    "message": "precondition_failure: topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.\n",
+    "name": "kafka-rack-links-execution-completed",
+    "status": "failed"
+  },
+  {
+    "name": "kafka-rack-links-materialized",
+    "status": "passed"
+  },
+  {
+    "message": "cut window started=None restored=None",
+    "name": "kafka-rack-links-cut-accurate",
+    "status": "failed"
+  },
+  {
+    "message": "precondition_failure: topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.\n",
+    "name": "kafka-rack-links-confirmed-records-recovered-exactly-once",
+    "status": "failed"
+  },
+  {
+    "message": "precondition_failure: topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.\n",
+    "name": "kafka-rack-links-cluster-recovers",
+    "status": "failed"
+  }
+]

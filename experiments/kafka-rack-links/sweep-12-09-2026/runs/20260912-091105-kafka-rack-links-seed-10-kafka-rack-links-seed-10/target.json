@@ -1,0 +1,10 @@
+{
+  "baseModule": "/home/freerat/projects/topotestix/targets/kafka-rack-links/module.nix",
+  "configTarget": "/home/freerat/projects/topotestix/targets/kafka-rack-links/config.nix",
+  "description": "Kafka KRaft across three racks joined by fuzzed link VLANs, with link cuts",
+  "name": "kafka-rack-links",
+  "properties": "/home/freerat/projects/topotestix/targets/kafka-rack-links/properties.nix",
+  "reportNode": "client1",
+  "testScript": "/home/freerat/projects/topotestix/targets/kafka-rack-links/test-script.py",
+  "topologyTarget": "/home/freerat/projects/topotestix/targets/kafka-rack-links/topology.nix"
+}

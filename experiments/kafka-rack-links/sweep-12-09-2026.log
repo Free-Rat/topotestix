@@ -1,0 +1,87 @@
+warning: Git tree '/home/freerat/projects/topotestix' is dirty
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+[1/40] seed 1
+    exit=1 157.5s run_dir=runs/20260912-084349-kafka-rack-links-seed-1-kafka-rack-links-seed-1
+[2/40] seed 2
+    exit=0 274.4s run_dir=runs/20260912-084627-kafka-rack-links-seed-2-kafka-rack-links-seed-2
+[3/40] seed 3
+    exit=0 272.9s run_dir=runs/20260912-085101-kafka-rack-links-seed-3-kafka-rack-links-seed-3
+[4/40] seed 4
+    exit=1 156.3s run_dir=runs/20260912-085534-kafka-rack-links-seed-4-kafka-rack-links-seed-4
+[5/40] seed 5
+    exit=1 155.5s run_dir=runs/20260912-085810-kafka-rack-links-seed-5-kafka-rack-links-seed-5
+[6/40] seed 6
+    exit=1 155.0s run_dir=runs/20260912-090046-kafka-rack-links-seed-6-kafka-rack-links-seed-6
+[7/40] seed 7
+    exit=1 154.2s run_dir=runs/20260912-090321-kafka-rack-links-seed-7-kafka-rack-links-seed-7
+[8/40] seed 8
+    exit=1 154.7s run_dir=runs/20260912-090555-kafka-rack-links-seed-8-kafka-rack-links-seed-8
+[9/40] seed 9
+    exit=1 155.0s run_dir=runs/20260912-090830-kafka-rack-links-seed-9-kafka-rack-links-seed-9
+[10/40] seed 10
+    exit=1 155.3s run_dir=runs/20260912-091105-kafka-rack-links-seed-10-kafka-rack-links-seed-10
+[11/40] seed 11
+    exit=0 163.3s run_dir=runs/20260912-091340-kafka-rack-links-seed-11-kafka-rack-links-seed-11
+[12/40] seed 12
+    exit=0 170.7s run_dir=runs/20260912-091624-kafka-rack-links-seed-12-kafka-rack-links-seed-12
+[13/40] seed 13
+    exit=1 153.7s run_dir=runs/20260912-091914-kafka-rack-links-seed-13-kafka-rack-links-seed-13
+[14/40] seed 14
+    exit=1 155.5s run_dir=runs/20260912-092148-kafka-rack-links-seed-14-kafka-rack-links-seed-14
+[15/40] seed 15
+    exit=1 155.6s run_dir=runs/20260912-092424-kafka-rack-links-seed-15-kafka-rack-links-seed-15
+[16/40] seed 16
+    exit=1 151.9s run_dir=runs/20260912-092659-kafka-rack-links-seed-16-kafka-rack-links-seed-16
+[17/40] seed 17
+    exit=0 162.2s run_dir=runs/20260912-092931-kafka-rack-links-seed-17-kafka-rack-links-seed-17
+[18/40] seed 18
+    exit=1 151.0s run_dir=runs/20260912-093213-kafka-rack-links-seed-18-kafka-rack-links-seed-18
+[19/40] seed 19
+    exit=0 270.4s run_dir=runs/20260912-093444-kafka-rack-links-seed-19-kafka-rack-links-seed-19
+[20/40] seed 20
+    exit=0 194.0s run_dir=runs/20260912-093915-kafka-rack-links-seed-20-kafka-rack-links-seed-20
+[21/40] seed 21
+    exit=0 274.3s run_dir=runs/20260912-094229-kafka-rack-links-seed-21-kafka-rack-links-seed-21
+[22/40] seed 22
+    exit=1 154.8s run_dir=runs/20260912-094703-kafka-rack-links-seed-22-kafka-rack-links-seed-22
+[23/40] seed 23
+    exit=1 154.5s run_dir=runs/20260912-094938-kafka-rack-links-seed-23-kafka-rack-links-seed-23
+[24/40] seed 24
+    exit=1 155.9s run_dir=runs/20260912-095212-kafka-rack-links-seed-24-kafka-rack-links-seed-24
+[25/40] seed 25
+    exit=1 154.1s run_dir=runs/20260912-095448-kafka-rack-links-seed-25-kafka-rack-links-seed-25
+[26/40] seed 26
+    exit=1 154.4s run_dir=runs/20260912-095722-kafka-rack-links-seed-26-kafka-rack-links-seed-26
+[27/40] seed 27
+    exit=0 199.3s run_dir=runs/20260912-095957-kafka-rack-links-seed-27-kafka-rack-links-seed-27
+[28/40] seed 28
+    exit=0 160.9s run_dir=runs/20260912-100316-kafka-rack-links-seed-28-kafka-rack-links-seed-28
+[29/40] seed 29
+    exit=0 162.0s run_dir=runs/20260912-100557-kafka-rack-links-seed-29-kafka-rack-links-seed-29
+[30/40] seed 30
+    exit=0 197.8s run_dir=runs/20260912-100839-kafka-rack-links-seed-30-kafka-rack-links-seed-30
+[31/40] seed 31
+    exit=1 154.6s run_dir=runs/20260912-101157-kafka-rack-links-seed-31-kafka-rack-links-seed-31
+[32/40] seed 32
+    exit=1 155.1s run_dir=runs/20260912-101432-kafka-rack-links-seed-32-kafka-rack-links-seed-32
+[33/40] seed 33
+    exit=1 154.7s run_dir=runs/20260912-101707-kafka-rack-links-seed-33-kafka-rack-links-seed-33
+[34/40] seed 34
+    exit=1 155.3s run_dir=runs/20260912-101941-kafka-rack-links-seed-34-kafka-rack-links-seed-34
+[35/40] seed 35
+    exit=0 162.4s run_dir=runs/20260912-102217-kafka-rack-links-seed-35-kafka-rack-links-seed-35
+[36/40] seed 36
+    exit=1 154.3s run_dir=runs/20260912-102459-kafka-rack-links-seed-36-kafka-rack-links-seed-36
+[37/40] seed 37
+    exit=1 153.1s run_dir=runs/20260912-102733-kafka-rack-links-seed-37-kafka-rack-links-seed-37
+[38/40] seed 38
+    exit=0 272.2s run_dir=runs/20260912-103006-kafka-rack-links-seed-38-kafka-rack-links-seed-38
+[39/40] seed 39
+    exit=1 156.0s run_dir=runs/20260912-103439-kafka-rack-links-seed-39-kafka-rack-links-seed-39
+[40/40] seed 40
+    exit=1 154.7s run_dir=runs/20260912-103715-kafka-rack-links-seed-40-kafka-rack-links-seed-40
