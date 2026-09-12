@@ -1,3 +1,4 @@
+import argparse
 import hashlib
 import importlib.util
 import json
@@ -40,7 +41,9 @@ def resolved_for(seed):
     }
 
 
-def payload_for(seed, classification="completed", violation=False, schema_version=2):
+def payload_for(
+    seed, classification="completed", violation=False, schema_version=3, recovered=True
+):
     cell = CAMPAIGN.resolve_cell(seed)
     resolved = resolved_for(seed)
     brokers = {
@@ -56,9 +59,9 @@ def payload_for(seed, classification="completed", violation=False, schema_versio
         {"op_id": "s/1", "outcome": "ambiguous", "started_wall_ns": 150},
         {"op_id": "s/2", "outcome": "confirmed", "started_wall_ns": 250},
     ]
-    recovered = [{"op_id": event["op_id"]} for event in baseline + stream]
+    recovered_records = [{"op_id": event["op_id"]} for event in baseline + stream]
     if violation:
-        recovered = [record for record in recovered if record["op_id"] != "s/2"]
+        recovered_records = [record for record in recovered_records if record["op_id"] != "s/2"]
     return {
         "schema_version": schema_version,
         "classification": classification,
@@ -73,18 +76,34 @@ def payload_for(seed, classification="completed", violation=False, schema_versio
             "unfenced_at_start": [1, 2, 3, 4, 5, 6],
         },
         "network": {"cut_started_wall_ns": 100, "cut_restored_wall_ns": 200},
-        "topic": {"pre_cut": {"leader": 1, "replicas": [1, 3, 5], "isr": [1, 3, 5]}},
+        "topic": {
+            "pre_cut": {"leader": 1, "replicas": [1, 3, 5], "isr": [1, 3, 5]},
+            "after": {"leader": 1, "replicas": [1, 3, 5], "isr": [1, 3, 5]}
+            if recovered
+            else {"leader": -1, "replicas": [1, 3, 5], "isr": [3]},
+        },
+        "recovery": {"waited_s": 1.0 if recovered else 180.0},
         "samples": {"central": [], "nodes": {}},
         "sampling": {"counters": {}},
         "log_digest": {},
-        "workload": {"baseline": baseline, "stream": stream, "recovered": recovered},
+        "workload": {
+            "baseline": baseline,
+            "stream": stream,
+            "recovered": recovered_records if recovered else [],
+            "end_offset": len(recovered_records) if recovered else None,
+            "complete_read": recovered,
+        },
     }
 
 
-def report_for(violation=False, gates=None):
-    names = gates if gates is not None else CAMPAIGN.GATES + [CAMPAIGN.VERSION_GATE]
+def report_for(violation=False, gates=None, recovered=True):
+    names = gates if gates is not None else CAMPAIGN.GATES
     report = [{"name": name, "status": "passed"} for name in names]
-    report.append({"name": CAMPAIGN.DURABILITY, "status": "failed" if violation else "passed"})
+    report.append({"name": CAMPAIGN.RECOVERY, "status": "passed" if recovered else "failed"})
+    durability_failed = violation or not recovered
+    report.append(
+        {"name": CAMPAIGN.DURABILITY, "status": "failed" if durability_failed else "passed"}
+    )
     return report
 
 
@@ -198,7 +217,7 @@ class ExecutionTests(unittest.TestCase):
         peak = 0
         lock = threading.Lock()
 
-        def fake_run_unit(unit, out_dir, campaign, jobs, available):
+        def fake_run_unit(unit, out_dir, campaign, jobs, available, source):
             nonlocal active, peak
             with lock:
                 active += 1
@@ -220,7 +239,9 @@ class ExecutionTests(unittest.TestCase):
         try:
             with tempfile.TemporaryDirectory() as out_dir:
                 planned = list(CAMPAIGN.units(range(1, count + 1), 1))
-                CAMPAIGN.execute_units(planned, out_dir, "c", jobs)
+                CAMPAIGN.execute_units(
+                    planned, out_dir, "c", jobs, {"commit": "c" * 40, "changed": []}
+                )
                 ledger = CAMPAIGN.read_ledger(os.path.join(out_dir, "ledger.jsonl"))
         finally:
             CAMPAIGN.run_unit, CAMPAIGN.mem_available_kib = originals
@@ -257,21 +278,62 @@ class ClassificationTests(CampaignFixture):
         entry = self.entry(28, "a", resolved_for(28), payload, report_for())
         self.assertEqual(CAMPAIGN.classify(entry, self.out_dir)["outcome"], "harness_failure")
 
-    def test_failed_gate_and_missing_version_gate(self):
+    def test_every_gate_is_required(self):
+        for index, gate in enumerate(CAMPAIGN.GATES):
+            gates = [name for name in CAMPAIGN.GATES if name != gate]
+            entry = self.entry(
+                28, f"g{index}", resolved_for(28), payload_for(28), report_for(gates=gates)
+            )
+            row = CAMPAIGN.classify(entry, self.out_dir)
+            self.assertEqual(row["outcome"], "harness_failure")
+            self.assertIn(gate, row["detail"])
+        self.assertIn("kafka-rack-links-runtime-versions-pinned", CAMPAIGN.GATES)
+        self.assertNotIn(CAMPAIGN.RECOVERY, CAMPAIGN.GATES)
+
+    def test_older_payload_schema_is_not_scored(self):
+        for index, version in enumerate([1, 2, None]):
+            entry = self.entry(
+                28,
+                f"s{index}",
+                resolved_for(28),
+                payload_for(28, schema_version=version),
+                report_for(),
+            )
+            row = CAMPAIGN.classify(entry, self.out_dir)
+            self.assertEqual(row["outcome"], "harness_failure")
+            self.assertIn("schema_version", row["detail"])
+
+    def test_no_recovery_is_a_recovery_contract_violation(self):
         entry = self.entry(
-            28, "a", resolved_for(28), payload_for(28), report_for(gates=CAMPAIGN.GATES)
+            28, "a", resolved_for(28), payload_for(28, recovered=False), report_for(recovered=False)
         )
         row = CAMPAIGN.classify(entry, self.out_dir)
-        self.assertEqual(row["outcome"], "harness_failure")
-        self.assertIn(CAMPAIGN.VERSION_GATE, row["detail"])
-        entry = self.entry(
-            28,
-            "b",
-            resolved_for(28),
-            payload_for(28, schema_version=1),
-            report_for(gates=CAMPAIGN.GATES),
+        self.assertEqual(row["outcome"], "contract_violation")
+        # Without a complete read durability is not judged, so only recovery is violated.
+        self.assertEqual(row["violated_contracts"], ["recovery"])
+        self.assertEqual(row["signature"]["kinds"], ["not_recovered", "unreadable"])
+        self.assertIn("contract_violation (recovery)", CAMPAIGN.execution_line(row))
+
+    def test_recovered_but_unreadable_partition(self):
+        payload = payload_for(28)
+        payload["workload"].update(complete_read=False, recovered=[])
+        report = report_for()
+        for item in report:
+            if item["name"] in (CAMPAIGN.RECOVERY, CAMPAIGN.DURABILITY):
+                item["status"] = "failed"
+        row = CAMPAIGN.classify(
+            self.entry(28, "a", resolved_for(28), payload, report), self.out_dir
         )
-        self.assertEqual(CAMPAIGN.classify(entry, self.out_dir)["outcome"], "pass")
+        self.assertEqual(row["violated_contracts"], ["recovery"])
+        self.assertEqual(row["signature"]["kinds"], ["unreadable"])
+
+    def test_recovered_with_lost_records_violates_durability_only(self):
+        entry = self.entry(
+            28, "a", resolved_for(28), payload_for(28, violation=True), report_for(violation=True)
+        )
+        row = CAMPAIGN.classify(entry, self.out_dir)
+        self.assertEqual(row["violated_contracts"], ["durability"])
+        self.assertEqual(row["signature"]["kinds"], ["missing"])
 
     def test_pass_and_violation_signature(self):
         entry = self.entry(28, "a", resolved_for(28), payload_for(28), report_for())
@@ -344,6 +406,45 @@ class AggregationTests(unittest.TestCase):
             ],
             "exploratory",
         )
+
+
+class ProvenanceTests(unittest.TestCase):
+    def test_source_summary_needs_one_clean_recorded_revision(self):
+        clean = {"commit": "a" * 40, "dirty": False}
+        rows = [{"source": clean}, {"source": dict(clean)}]
+        self.assertTrue(CAMPAIGN.source_summary(rows)["single_clean_revision"])
+        for extra in [
+            {"source": {**clean, "dirty": True}},
+            {"source": None},
+            {"source": {"commit": "b" * 40, "dirty": False}},
+        ]:
+            self.assertFalse(CAMPAIGN.source_summary(rows + [extra])["single_clean_revision"])
+        self.assertFalse(CAMPAIGN.source_summary([])["single_clean_revision"])
+
+    def test_run_refuses_uncommitted_code_unless_allowed(self):
+        original = (CAMPAIGN.source_state, CAMPAIGN.execute_units)
+        calls = []
+        CAMPAIGN.source_state = lambda: {"commit": "c" * 40, "changed": [" M oracle.py"]}
+        CAMPAIGN.execute_units = lambda planned, out_dir, campaign, jobs, source: (
+            calls.append((len(planned), source["commit"])) or 0
+        )
+        try:
+            with tempfile.TemporaryDirectory() as out_dir:
+                args = argparse.Namespace(
+                    out=out_dir,
+                    seeds="41-42",
+                    repetitions=1,
+                    jobs=1,
+                    campaign=None,
+                    allow_dirty=False,
+                )
+                self.assertEqual(CAMPAIGN.cmd_run(args), 2)
+                self.assertEqual(calls, [])
+                args.allow_dirty = True
+                self.assertEqual(CAMPAIGN.cmd_run(args), 0)
+                self.assertEqual(calls, [(2, "c" * 40)])
+        finally:
+            CAMPAIGN.source_state, CAMPAIGN.execute_units = original
 
 
 class ManifestTests(unittest.TestCase):

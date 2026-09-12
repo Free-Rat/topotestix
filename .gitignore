@@ -26,3 +26,14 @@ __pycache__/
 # whose logs were produced outside run_unit.
 experiments/thesis-evals-*/raw/**/*.log
 experiments/thesis-evals-*/**/*.partial/
+
+# Kafka campaign runs: per-run broker journals and VM console logs
+# (~5 MB/run) are large and fully regenerable, so they stay outside git.
+# kafka-rack-links analysis consumes the log_digest inside each run's
+# committed kafka-rack-links-result.json, and a committed logs-manifest.sha256
+# (campaign.py manifest) records a checksum for every excluded file.
+# kafka-topology analysis reads only the committed JSON artifacts, so its run
+# logs are debug-only. The small per-unit console captures under each
+# campaign's logs/ directory are committed.
+experiments/kafka-rack-links/*/runs/**/*.log
+experiments/kafka-topology/**/runs/**/*.log

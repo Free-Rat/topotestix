@@ -224,6 +224,9 @@ public final class KafkaRackLinksWorkload {
         props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "false");
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         props.put(ConsumerConfig.CLIENT_ID_CONFIG, "topotestix-kafka-rack-links-reader");
+        // Bounds each blocking call, so an unreadable partition ends in status 3
+        // before the overall deadline instead of an exception.
+        props.put(ConsumerConfig.DEFAULT_API_TIMEOUT_MS_CONFIG, "10000");
 
         long deadlineNs = System.nanoTime() + TimeUnit.MILLISECONDS.toNanos(timeoutMs);
         boolean complete = false;
@@ -234,17 +237,21 @@ public final class KafkaRackLinksWorkload {
             consumer.assign(List.of(partition));
             consumer.seekToBeginning(List.of(partition));
             while (System.nanoTime() < deadlineNs) {
-                ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(500));
-                for (ConsumerRecord<String, String> record : records.records(partition)) {
-                    if (record.offset() < endOffset) {
-                        writer.write(consumeEvent(record));
-                        writer.newLine();
+                try {
+                    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(500));
+                    for (ConsumerRecord<String, String> record : records.records(partition)) {
+                        if (record.offset() < endOffset) {
+                            writer.write(consumeEvent(record));
+                            writer.newLine();
+                        }
                     }
-                }
-                writer.flush();
-                if (consumer.position(partition) >= endOffset) {
-                    complete = true;
-                    break;
+                    writer.flush();
+                    if (consumer.position(partition) >= endOffset) {
+                        complete = true;
+                        break;
+                    }
+                } catch (org.apache.kafka.common.errors.TimeoutException exception) {
+                    // The partition did not answer in time; retry until the deadline.
                 }
             }
         }

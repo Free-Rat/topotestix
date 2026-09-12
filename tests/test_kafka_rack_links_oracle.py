@@ -48,6 +48,15 @@ def valid_result(rack_links=TRIANGLE, cut="10"):
         node: {str(vlan): f"virtio-net-pci.{index}" for index, vlan in enumerate(vlans[node], 1)}
         for node in ORACLE.BROKERS
     }
+    cut_nics = ORACLE.expected_cut_nics(cut_vlans, vlans)
+    targets = ORACLE.cut_probe_targets(cut_nics, vlans, suffixes)
+
+    def probe(reachable):
+        return [
+            {"node": node, "vlan": vlan, "peer": peer, "address": address, "reachable": reachable}
+            for node, vlan, peer, address in targets
+        ]
+
     baseline = [
         {"op_id": f"run/baseline/{index:04d}", "outcome": "confirmed"} for index in range(100)
     ]
@@ -62,8 +71,21 @@ def valid_result(rack_links=TRIANGLE, cut="10"):
             "nics": nics,
             "cut_nics": [
                 {"node": node, "vlan": vlan, "nic": nics[node][str(vlan)]}
-                for node, vlan in ORACLE.expected_cut_nics(cut_vlans, vlans)
+                for node, vlan in cut_nics
             ],
+            "set_link_replies": [
+                {
+                    "node": node,
+                    "vlan": vlan,
+                    "nic": nics[node][str(vlan)],
+                    "state": state,
+                    "reply": f"set_link {nics[node][str(vlan)]} {state}\r\n(qemu) ",
+                }
+                for state in ["off", "on"]
+                for node, vlan in cut_nics
+            ],
+            "cut_probe": probe(False),
+            "restore_probe": probe(True),
             "cut_started_wall_ns": 1,
             "cut_restored_wall_ns": 2,
         },
@@ -76,6 +98,8 @@ def valid_result(rack_links=TRIANGLE, cut="10"):
             "stream": stream,
             "recovered": [{"op_id": event["op_id"]} for event in baseline + stream],
             "complete_read": True,
+            "read_status": 0,
+            "end_offset": len(baseline + stream),
         },
     }
 
@@ -159,6 +183,68 @@ class KafkaRackLinksOracleTests(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError, "cut window"):
             ORACLE.check_cut_accurate(result)
 
+    def test_cut_probe_targets_cover_every_peer_on_a_cut_vlan(self):
+        vlans = rack_vlans(TRIANGLE)
+        suffixes = {node: broker_id + 1 for node, broker_id in ORACLE.BROKERS.items()}
+        targets = ORACLE.cut_probe_targets([("racka1", 10), ("rackb1", 10)], vlans, suffixes)
+        self.assertEqual(
+            [(node, peer, address) for node, _, peer, address in targets],
+            [
+                ("racka1", "racka2", "192.168.10.3"),
+                ("racka1", "rackb1", "192.168.10.4"),
+                ("racka1", "rackb2", "192.168.10.5"),
+                ("rackb1", "racka1", "192.168.10.2"),
+                ("rackb1", "racka2", "192.168.10.3"),
+                ("rackb1", "rackb2", "192.168.10.5"),
+            ],
+        )
+
+    def test_monitor_error(self):
+        # As QEMU's readline echoes a typed command (recorded in a development run).
+        echo = (
+            "\x1b[D\x1b[Dset_link virtio-net-pci.1 o\x1b[K\x1b[D\x1b[D"
+            "set_link virtio-net-pci.1 of\x1b[K\x1b[D\x1b[Dset_link virtio-net-pci.1 off\x1b[K\r\n"
+        )
+        self.assertIsNone(ORACLE.monitor_error(echo + "(qemu) "))
+        self.assertIsNone(ORACLE.monitor_error(""))
+        self.assertEqual(
+            ORACLE.monitor_error(echo + "Error: Device 'virtio-net-pci.9' not found\r\n(qemu) "),
+            "Error: Device 'virtio-net-pci.9' not found",
+        )
+        self.assertEqual(
+            ORACLE.monitor_error("set_lnk x off\r\nunknown command: 'set_lnk'\r\n(qemu) "),
+            "unknown command: 'set_lnk'",
+        )
+
+    def test_cut_rejects_failed_or_missing_set_link(self):
+        result = valid_result(cut="10,12")
+        result["network"]["set_link_replies"][0]["reply"] += "Error: Device not found\r\n"
+        with self.assertRaisesRegex(AssertionError, "set_link off on .*Error: Device not found"):
+            ORACLE.check_cut_accurate(result)
+        result = valid_result(cut="10,12")
+        result["network"]["set_link_replies"].pop()
+        with self.assertRaisesRegex(AssertionError, "set_link on applied to"):
+            ORACLE.check_cut_accurate(result)
+
+    def test_cut_rejects_link_that_stayed_up_or_did_not_return(self):
+        result = valid_result(cut="10,12")
+        result["network"]["cut_probe"][3]["reachable"] = True
+        with self.assertRaisesRegex(AssertionError, "reachable during the cut"):
+            ORACLE.check_cut_accurate(result)
+        result = valid_result(cut="10,12")
+        result["network"]["restore_probe"][0]["reachable"] = False
+        with self.assertRaisesRegex(AssertionError, "unreachable after restore"):
+            ORACLE.check_cut_accurate(result)
+        result = valid_result(cut="10,12")
+        result["network"]["cut_probe"].pop()
+        with self.assertRaisesRegex(AssertionError, "cut_probe covered"):
+            ORACLE.check_cut_accurate(result)
+
+    def test_cut_none_needs_no_probe(self):
+        result = valid_result(cut="none")
+        self.assertEqual(result["network"]["cut_probe"], [])
+        ORACLE.check_cut_accurate(result)
+
     def test_durability_allows_absent_ambiguous_record(self):
         result = valid_result()
         result["workload"]["recovered"] = [
@@ -204,8 +290,30 @@ class KafkaRackLinksOracleTests(unittest.TestCase):
     def test_recovery_rejects_isr_smaller_than_before_cut(self):
         result = valid_result()
         result["topic"]["after"] = {"leader": 1, "replicas": [1, 3, 5], "isr": [1, 3]}
-        with self.assertRaisesRegex(AssertionError, "lacks pre-cut ISR"):
+        self.assertEqual(ORACLE.recovery_failures(result), ["not_recovered"])
+        with self.assertRaisesRegex(AssertionError, "^not_recovered:"):
             ORACLE.check_cluster_recovered(copy.deepcopy(result))
+
+    def test_recovery_rejects_missing_leader_or_unanswered_topic(self):
+        for after in [
+            {"leader": -1, "replicas": [1, 3, 5], "isr": [1, 3, 5]},
+            {"error": "Timed out waiting for a node assignment"},
+            None,
+        ]:
+            result = valid_result()
+            result["topic"]["after"] = after
+            self.assertEqual(ORACLE.recovery_failures(result), ["not_recovered"])
+
+    def test_recovery_rejects_unreadable_partition(self):
+        result = valid_result()
+        result["workload"].update(complete_read=False, read_status=3)
+        self.assertEqual(ORACLE.recovery_failures(result), ["unreadable"])
+        with self.assertRaisesRegex(AssertionError, "^unreadable:.*read status 3"):
+            ORACLE.check_cluster_recovered(result)
+        result = valid_result()
+        result["topic"]["after"] = {"error": "timeout"}
+        result["workload"].update(end_offset=None, complete_read=False, read_status=None)
+        self.assertEqual(ORACLE.recovery_failures(result), ["not_recovered", "unreadable"])
 
 
 class KafkaRackLinksHelperTests(unittest.TestCase):
@@ -277,9 +385,12 @@ class KafkaRackLinksHelperTests(unittest.TestCase):
             "cut": (10 * second, 70 * second),
             "tail": (70 * second, 100 * second),
         }
-        self.assertEqual(ORACLE.sample_phase(-1, phases), "outside")
-        self.assertEqual(ORACLE.sample_phase(10 * second, phases), "cut")
-        self.assertEqual(ORACLE.sample_phase(100 * second, phases), "outside")
+        self.assertEqual(ORACLE.sample_phase(-1, 0, phases), "outside")
+        self.assertEqual(ORACLE.sample_phase(10 * second, 22 * second, phases), "cut")
+        self.assertEqual(ORACLE.sample_phase(100 * second, 101 * second, phases), "outside")
+        # Started 1 s before the cut and ran 12 s: it observed neither phase alone.
+        self.assertEqual(ORACLE.sample_phase(9 * second, 21 * second, phases), "straddle")
+        self.assertEqual(ORACLE.sample_phase(69 * second, 70 * second, phases), "cut")
         samples = (
             [{"phase": "cut", "successful": True, "killed": False}] * 5
             + [{"phase": "cut", "successful": False, "killed": True}]

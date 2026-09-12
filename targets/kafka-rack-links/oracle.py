@@ -53,6 +53,28 @@ def expected_cut_nics(cut_vlans, vlans):
     return sorted((node, vlan) for vlan in cut_vlans for node in BROKERS if vlan in vlans[node])
 
 
+def cut_probe_targets(cut_nics, vlans, suffixes):
+    """(node, vlan, peer, address): every broker on a cut VLAN pings every other
+    broker on that VLAN at its address there."""
+    return sorted(
+        (node, vlan, peer, f"192.168.{vlan}.{suffixes[peer]}")
+        for node, vlan in cut_nics
+        for peer in BROKERS
+        if peer != node and vlan in vlans[peer]
+    )
+
+
+def monitor_error(reply):
+    """The error text of a QEMU monitor reply, or None when the command succeeded.
+
+    The reply echoes the typed command with terminal escapes and ends with the
+    prompt; HMP reports failures as "Error: ...", or "unknown command" for a
+    command it does not know."""
+    text = re.sub(r"\x1b\[[0-9;?]*[A-Za-z]|\x1b[@-_]", "", reply).replace("(qemu)", "")
+    match = re.search(r"(?im)^.*(\berror\b|unknown command|not found|invalid).*$", text)
+    return match.group(0).strip() if match else None
+
+
 def require_completed(results):
     if results["classification"] != "completed":
         raise AssertionError(str(results["classification"]) + ": " + str(results["error"]))
@@ -120,6 +142,35 @@ def check_cut_accurate(results):
     restored = network["cut_restored_wall_ns"]
     if started is None or restored is None or restored <= started:
         errors.append(f"cut window started={started} restored={restored}")
+    # Every cut NIC was switched off and back on, and QEMU accepted both commands.
+    for state in ["off", "on"]:
+        replies = [reply for reply in network["set_link_replies"] if reply["state"] == state]
+        switched = sorted((reply["node"], reply["vlan"]) for reply in replies)
+        if switched != expected:
+            errors.append(f"set_link {state} applied to {switched}, expected {expected}")
+        for reply in replies:
+            error = monitor_error(reply["reply"])
+            if error:
+                errors.append(f"set_link {state} on {reply['node']} {reply['nic']}: {error}")
+    # The cut took effect: during the cut no broker reaches a peer over a cut
+    # VLAN, and after the restore every one of those peers answers again.
+    suffixes = {name: results["topology"]["brokers"][name]["address_suffix"] for name in BROKERS}
+    targets = cut_probe_targets(expected, vlans, suffixes)
+    for probe, reachable in [("cut_probe", False), ("restore_probe", True)]:
+        rows = network[probe]
+        probed = sorted((row["node"], row["vlan"], row["peer"], row["address"]) for row in rows)
+        if probed != targets:
+            errors.append(f"{probe} covered {len(probed)} pairs, expected {len(targets)}")
+        wrong = [
+            f"{row['node']}->{row['peer']}@{row['vlan']}"
+            for row in rows
+            if row["reachable"] != reachable
+        ]
+        if wrong:
+            state = (
+                "reachable during the cut" if probe == "cut_probe" else "unreachable after restore"
+            )
+            errors.append(f"{state}: {', '.join(wrong)}")
     if errors:
         raise AssertionError("; ".join(errors))
 
@@ -151,14 +202,33 @@ def check_confirmed_records_recovered_exactly_once(results):
         )
 
 
+def recovery_failures(results):
+    """How the cluster failed to recover once the links were back: "not_recovered"
+    (no leader among the replicas, or the ISR lacks a pre-cut member, within the
+    recovery deadline) and "unreadable" (the partition could not be read to its
+    end offset)."""
+    before = results["topic"]["pre_cut"]
+    after = results["topic"]["after"] or {}
+    kinds = []
+    if after.get("leader") not in after.get("replicas", []) or not set(before["isr"]) <= set(
+        after.get("isr", [])
+    ):
+        kinds.append("not_recovered")
+    if results["workload"]["end_offset"] is None or not results["workload"]["complete_read"]:
+        kinds.append("unreadable")
+    return kinds
+
+
 def check_cluster_recovered(results):
     require_completed(results)
-    before = results["topic"]["pre_cut"]
-    after = results["topic"]["after"]
-    if not after or after["leader"] not in after["replicas"]:
-        raise AssertionError("no leader after recovery: " + str(after))
-    if not set(before["isr"]) <= set(after["isr"]):
-        raise AssertionError(f"ISR after recovery {after['isr']} lacks pre-cut ISR {before['isr']}")
+    kinds = recovery_failures(results)
+    if kinds:
+        workload = results["workload"]
+        raise AssertionError(
+            f"{', '.join(kinds)}: pre-cut {results['topic']['pre_cut']}, after recovery"
+            f" {results['topic']['after']}; end offset {workload['end_offset']},"
+            f" read status {workload.get('read_status')}"
+        )
 
 
 def describe_offset_line(topic, output):
@@ -250,11 +320,13 @@ KILLED_STATUS = 137
 SAMPLE_PHASES = ["lead", "cut", "tail"]
 
 
-def sample_phase(at_ns, phases):
+def sample_phase(started_ns, finished_ns, phases):
+    """The phase a sample observed: the one containing it from start to finish.
+    A sample spanning a phase boundary observed neither phase alone."""
     for name in SAMPLE_PHASES:
         start, end = phases[name]
-        if start is not None and end is not None and start <= at_ns < end:
-            return name
+        if start is not None and end is not None and start <= started_ns < end:
+            return name if finished_ns <= end else "straddle"
     return "outside"
 
 

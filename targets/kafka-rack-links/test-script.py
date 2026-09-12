@@ -2,9 +2,10 @@
 # ruff: noqa: F821
 # json comes from the runner preamble; re and the topology, parsing and
 # sampling helpers (BROKERS, RACKS, CLIENT_VLAN, KILLED_STATUS, link_address,
-# links_present, parse_cut, parse_topic_description, parse_quorum_status,
-# parse_jmx_properties, sample_phase, sample_counters, describe_offset_line)
-# come from the inlined oracle setup.
+# links_present, cut_probe_targets, monitor_error, parse_cut,
+# parse_topic_description, parse_quorum_status, parse_jmx_properties,
+# sample_phase, sample_counters, describe_offset_line) come from the inlined
+# oracle setup.
 import os
 import shlex
 import tempfile
@@ -19,6 +20,10 @@ class PreconditionFailure(Exception):
 
 
 class InconclusiveExecution(Exception):
+    pass
+
+
+class CutNotApplied(Exception):
     pass
 
 
@@ -51,6 +56,13 @@ CUT_WINDOW_SECONDS = 60
 TAIL_SECONDS = 30
 FORMATION_TIMEOUT_SECONDS = 120
 RECOVERY_TIMEOUT_SECONDS = 180
+END_OFFSET_TIMEOUT_SECONDS = 30
+READ_TIMEOUT_MS = 60000
+# Exit status of the workload reader that did not reach the end offset in time.
+READ_INCOMPLETE_STATUS = 3
+# Pings per peer: a probe counts a peer reachable if any of them is answered.
+CUT_PROBE_ATTEMPTS = 3
+RESTORE_PROBE_ATTEMPTS = 5
 LOG_PATTERNS = {
     "prevote_transitions": "Completed transition to ProspectiveState",
     "candidate_transitions": "Completed transition to CandidateState",
@@ -60,63 +72,75 @@ LOG_PATTERNS = {
 
 run_id = uuid.uuid4().hex
 topic = "topotestix-rack-links-" + run_id[:12]
-result = cast(dict[str, Any], {
-    "schema_version": 2,
-    "run_id": run_id,
-    "classification": "harness_failure",
-    "error": None,
-    "configuration": {
-        "cut": None,
-        "cut_vlans": [],
-        "placement": None,
-        "replicas": [],
-        "replication_factor": 3,
-        "min_isr": 2,
-        "baseline_count": BASELINE_COUNT,
-        "baseline_timeout_ms": BASELINE_TIMEOUT_MS,
-        "stream_interval_ms": STREAM_INTERVAL_MS,
-        "stream_timeout_ms": STREAM_TIMEOUT_MS,
-        "lead_seconds": LEAD_SECONDS,
-        "cut_window_seconds": CUT_WINDOW_SECONDS,
-        "tail_seconds": TAIL_SECONDS,
+result = cast(
+    dict[str, Any],
+    {
+        "schema_version": 3,
+        "run_id": run_id,
+        "classification": "harness_failure",
+        "error": None,
+        "configuration": {
+            "cut": None,
+            "cut_vlans": [],
+            "placement": None,
+            "replicas": [],
+            "replication_factor": 3,
+            "min_isr": 2,
+            "baseline_count": BASELINE_COUNT,
+            "baseline_timeout_ms": BASELINE_TIMEOUT_MS,
+            "stream_interval_ms": STREAM_INTERVAL_MS,
+            "stream_timeout_ms": STREAM_TIMEOUT_MS,
+            "lead_seconds": LEAD_SECONDS,
+            "cut_window_seconds": CUT_WINDOW_SECONDS,
+            "tail_seconds": TAIL_SECONDS,
+        },
+        "versions": {},
+        "topology": {
+            "brokers": {},
+            "links_present": [],
+            "unfenced_at_start": [],
+            "bootstrap_servers": [],
+        },
+        "network": {
+            "nics": {},
+            "cut_nics": [],
+            "set_link_replies": [],
+            "cut_probe": [],
+            "restore_probe": [],
+            "stream_started_wall_ns": None,
+            "cut_started_wall_ns": None,
+            "cut_restored_wall_ns": None,
+            "stream_finished_wall_ns": None,
+            "cut_offset_s": None,
+            "restore_offset_s": None,
+        },
+        "quorum_before": None,
+        "topic": {"name": topic, "pre_cut": None, "after": None},
+        "recovery": {
+            "timeout_s": RECOVERY_TIMEOUT_SECONDS,
+            "waited_s": None,
+            "end_offset_errors": [],
+        },
+        "samples": {"central": [], "nodes": {}},
+        "sampling": {
+            "period_s": SAMPLE_PERIOD_SECONDS,
+            "call_timeout_s": CALL_TIMEOUT_SECONDS,
+            "counters": {},
+        },
+        "workload": {
+            "baseline": [],
+            "stream": [],
+            "stream_status": None,
+            "recovered": [],
+            "complete_read": False,
+            "read_status": None,
+            "end_offset": None,
+        },
+        "log_digest": {},
+        "artifact_errors": [],
+        "started_wall_ns": time.time_ns(),
     },
-    "versions": {},
-    "topology": {
-        "brokers": {},
-        "links_present": [],
-        "unfenced_at_start": [],
-        "bootstrap_servers": [],
-    },
-    "network": {
-        "nics": {},
-        "cut_nics": [],
-        "stream_started_wall_ns": None,
-        "cut_started_wall_ns": None,
-        "cut_restored_wall_ns": None,
-        "stream_finished_wall_ns": None,
-        "cut_offset_s": None,
-        "restore_offset_s": None,
-    },
-    "quorum_before": None,
-    "topic": {"name": topic, "pre_cut": None, "after": None},
-    "samples": {"central": [], "nodes": {}},
-    "sampling": {
-        "period_s": SAMPLE_PERIOD_SECONDS,
-        "call_timeout_s": CALL_TIMEOUT_SECONDS,
-        "counters": {},
-    },
-    "workload": {
-        "baseline": [],
-        "stream": [],
-        "stream_status": None,
-        "recovered": [],
-        "complete_read": False,
-        "end_offset": None,
-    },
-    "log_digest": {},
-    "artifact_errors": [],
-    "started_wall_ns": time.time_ns(),
-})
+)
 
 
 def bootstrap():
@@ -153,19 +177,27 @@ def describe_topic():
     return parse_topic_description(output)
 
 
-def wait_for_topic(accept, timeout, failure):
+def poll_topic(accept, timeout):
+    """(accepted, last state) after polling the topic until accept(state) or timeout."""
     deadline = time.monotonic() + timeout
     last = None
     while time.monotonic() < deadline:
         try:
             state = describe_topic()
             if accept(state):
-                return state
+                return True, state
             last = state
         except Exception as exception:
             last = {"error": str(exception)[-500:]}
         time.sleep(1)
-    raise failure("topic did not reach the expected state; last=" + repr(last))
+    return False, last
+
+
+def wait_for_topic(accept, timeout, failure):
+    accepted, state = poll_topic(accept, timeout)
+    if not accepted:
+        raise failure("topic did not reach the expected state; last=" + repr(state))
+    return state
 
 
 def quorum_status():
@@ -200,8 +232,56 @@ def nic_map(machine):
 
 
 def set_links(state):
+    # Every NIC is switched even if an earlier command failed, so a restore
+    # after a partial failure still reaches every cut NIC.
+    errors = []
     for entry in result["network"]["cut_nics"]:
-        NODES[entry["node"]].send_monitor_command(f"set_link {entry['nic']} {state}")
+        reply = NODES[entry["node"]].send_monitor_command(f"set_link {entry['nic']} {state}")
+        result["network"]["set_link_replies"].append(
+            {**entry, "state": state, "reply": reply[-500:]}
+        )
+        error = monitor_error(reply)
+        if error:
+            errors.append(f"{entry['node']} {entry['nic']}: {error}")
+    if errors:
+        raise CutNotApplied(f"set_link {state} failed: " + "; ".join(errors))
+
+
+def probe_cut_links(attempts):
+    """Ping every peer on each cut VLAN from every cut NIC's broker (in parallel per broker)."""
+    brokers = result["topology"]["brokers"]
+    targets = cut_probe_targets(
+        [(entry["node"], entry["vlan"]) for entry in result["network"]["cut_nics"]],
+        {name: brokers[name]["vlans"] for name in NODES},
+        {name: brokers[name]["address_suffix"] for name in NODES},
+    )
+    rows = []
+    for name, machine in NODES.items():
+        mine = [target for target in targets if target[0] == name]
+        if not mine:
+            continue
+        script = (
+            f'probe() {{ for _ in $(seq {attempts}); do ping -c 1 -W 1 "$1" >/dev/null 2>&1'
+            ' && { echo "$2=up"; return; }; done; echo "$2=down"; }; '
+            + "".join(
+                f"probe {shlex.quote(address)} {peer}:{vlan} & " for _, vlan, peer, address in mine
+            )
+            + "wait"
+        )
+        states = dict(
+            re.findall(r"^(\w+:\d+)=(up|down)$", machine.succeed(script), flags=re.MULTILINE)
+        )
+        rows += [
+            {
+                "node": name,
+                "vlan": vlan,
+                "peer": peer,
+                "address": address,
+                "reachable": states.get(f"{peer}:{vlan}") == "up",
+            }
+            for _, vlan, peer, address in mine
+        ]
+    return rows
 
 
 def ping_peers(name, addresses):
@@ -267,7 +347,7 @@ def stop_samplers():
 
 def sample_timing(record, phases):
     return {
-        "phase": sample_phase(record["started_wall_ns"], phases),
+        "phase": sample_phase(record["started_wall_ns"], record["finished_wall_ns"], phases),
         "t_s": round(
             (record["started_wall_ns"] - result["network"]["stream_started_wall_ns"]) / 1e9, 1
         ),
@@ -331,16 +411,23 @@ def collect_samples():
 
 def log_digest(machine):
     journal = "journalctl --no-pager --unit apache-kafka.service"
-    digest = cast(dict[str, Any], {
-        key: int(
-            machine.succeed(f"{journal} | grep -cF {shlex.quote(pattern)} || true").strip() or 0
+    digest = cast(
+        dict[str, Any],
+        {
+            key: int(
+                machine.succeed(f"{journal} | grep -cF {shlex.quote(pattern)} || true").strip() or 0
+            )
+            for key, pattern in LOG_PATTERNS.items()
+        },
+    )
+    digest["topic_truncations"] = (
+        machine.succeed(
+            f"{journal} | grep -F {shlex.quote(topic)} | grep -F Truncat"
+            " | sed -E 's/^.*\\] (INFO|WARN) //' | cut -c1-240 | tail -n 20 || true"
         )
-        for key, pattern in LOG_PATTERNS.items()
-    })
-    digest["topic_truncations"] = machine.succeed(
-        f"{journal} | grep -F {shlex.quote(topic)} | grep -F Truncat"
-        " | sed -E 's/^.*\\] (INFO|WARN) //' | cut -c1-240 | tail -n 20 || true"
-    ).strip().splitlines()
+        .strip()
+        .splitlines()
+    )
     return digest
 
 
@@ -388,9 +475,7 @@ try:
     record_versions()
 
     for name, machine in NODES.items():
-        link_addresses = {
-            peer: link_address(name, peer, broker_vlans, suffixes) for peer in NODES
-        }
+        link_addresses = {peer: link_address(name, peer, broker_vlans, suffixes) for peer in NODES}
         hosts = ["127.0.0.1 localhost", f"{link_addresses[name]} {name}"] + [
             f"{address} {peer}-link" for peer, address in link_addresses.items()
         ]
@@ -457,16 +542,18 @@ try:
     wait_for_topic(lambda state: state["leader"] in replicas, 60, PreconditionFailure)
 
     status, output = client1.execute(
-        shell_words([
-            WORKLOAD,
-            "produce",
-            bootstrap(),
-            topic,
-            "/tmp/baseline.jsonl",
-            f"{run_id}/baseline",
-            BASELINE_COUNT,
-            BASELINE_TIMEOUT_MS,
-        ]),
+        shell_words(
+            [
+                WORKLOAD,
+                "produce",
+                bootstrap(),
+                topic,
+                "/tmp/baseline.jsonl",
+                f"{run_id}/baseline",
+                BASELINE_COUNT,
+                BASELINE_TIMEOUT_MS,
+            ]
+        ),
         timeout=BASELINE_TIMEOUT_MS // 1000 + 90,
     )
     result["workload"]["baseline"] = read_json_lines(client1, "/tmp/baseline.jsonl")
@@ -484,17 +571,19 @@ try:
     start_samplers()
     samplers_running = True
     stream_seconds = LEAD_SECONDS + CUT_WINDOW_SECONDS + TAIL_SECONDS
-    stream_command = shell_words([
-        WORKLOAD,
-        "stream",
-        bootstrap(),
-        topic,
-        "/tmp/stream.jsonl",
-        f"{run_id}/stream",
-        stream_seconds * 1000,
-        STREAM_INTERVAL_MS,
-        STREAM_TIMEOUT_MS,
-    ])
+    stream_command = shell_words(
+        [
+            WORKLOAD,
+            "stream",
+            bootstrap(),
+            topic,
+            "/tmp/stream.jsonl",
+            f"{run_id}/stream",
+            stream_seconds * 1000,
+            STREAM_INTERVAL_MS,
+            STREAM_TIMEOUT_MS,
+        ]
+    )
     client1.succeed(
         "systemd-run --unit=kafka-rack-links-stream /bin/sh -c "
         + shlex.quote(stream_command + "; echo $? > /tmp/stream.status")
@@ -510,11 +599,22 @@ try:
     links_cut = True
     set_links("off")
     cut_started = time.monotonic()
+    # A cut that did not take effect must not pass as a run in which Kafka
+    # survived the cut.
+    result["network"]["cut_probe"] = probe_cut_links(CUT_PROBE_ATTEMPTS)
+    reachable = [row for row in result["network"]["cut_probe"] if row["reachable"]]
+    if reachable:
+        raise CutNotApplied("peers reachable over cut VLANs: " + repr(reachable))
     time.sleep(max(0.0, cut_started + CUT_WINDOW_SECONDS - time.monotonic()))
     set_links("on")
     links_cut = False
     result["network"]["cut_restored_wall_ns"] = time.time_ns()
     result["network"]["restore_offset_s"] = round(time.monotonic() - stream_started, 1)
+    # Recovery is judged only against a network that is whole again.
+    result["network"]["restore_probe"] = probe_cut_links(RESTORE_PROBE_ATTEMPTS)
+    unreachable = [row for row in result["network"]["restore_probe"] if not row["reachable"]]
+    if unreachable:
+        raise CutNotApplied("peers unreachable after restore: " + repr(unreachable))
 
     stream_deadline = stream_started + stream_seconds + STREAM_TIMEOUT_MS / 1000 + 60
     while client1.execute("test -f /tmp/stream.status")[0] != 0:
@@ -534,32 +634,53 @@ try:
             "stream workload exited with status " + str(result["workload"]["stream_status"])
         )
 
+    # From here on the links are verified whole again: a cluster that does not
+    # recover, or a partition that cannot be read, is a Kafka outcome that the
+    # cluster-recovers contract judges, not an inconclusive execution.
     pre_cut_isr = set(result["topic"]["pre_cut"]["isr"])
-    result["topic"]["after"] = wait_for_topic(
+    recovery_started = time.monotonic()
+    _, result["topic"]["after"] = poll_topic(
         lambda state: state["leader"] in state["replicas"] and pre_cut_isr <= set(state["isr"]),
         RECOVERY_TIMEOUT_SECONDS,
-        InconclusiveExecution,
     )
+    result["recovery"]["waited_s"] = round(time.monotonic() - recovery_started, 1)
 
-    end_offset = describe_offset_line(
-        topic,
-        client1.succeed(
-            admin("kafka-get-offsets.sh", "--topic " + shlex.quote(topic) + " --time -1")
-        ),
-    )
-    if end_offset is None:
-        raise InconclusiveExecution("cannot establish the end offset")
+    end_offset = None
+    offset_deadline = time.monotonic() + END_OFFSET_TIMEOUT_SECONDS
+    while end_offset is None and time.monotonic() < offset_deadline:
+        status, output = client1.execute(
+            admin("kafka-get-offsets.sh", "--topic " + shlex.quote(topic) + " --time -1"),
+            timeout=30,
+        )
+        end_offset = describe_offset_line(topic, output) if status == 0 else None
+        if end_offset is None:
+            result["recovery"]["end_offset_errors"].append(
+                {"status": status, "output": output[-300:]}
+            )
+            time.sleep(2)
     result["workload"]["end_offset"] = end_offset
-    status, output = client1.execute(
-        shell_words(
-            [WORKLOAD, "consume", bootstrap(), topic, "/tmp/recovered.jsonl", end_offset, 60000]
-        ),
-        timeout=90,
-    )
-    result["workload"]["recovered"] = read_json_lines(client1, "/tmp/recovered.jsonl")
-    result["workload"]["complete_read"] = status == 0
-    if status != 0:
-        raise InconclusiveExecution("complete read did not reach the end offset: " + output[-1000:])
+    if end_offset is not None:
+        status, output = client1.execute(
+            shell_words(
+                [
+                    WORKLOAD,
+                    "consume",
+                    bootstrap(),
+                    topic,
+                    "/tmp/recovered.jsonl",
+                    end_offset,
+                    READ_TIMEOUT_MS,
+                ]
+            ),
+            timeout=READ_TIMEOUT_MS // 1000 + 30,
+        )
+        result["workload"]["read_status"] = status
+        result["workload"]["recovered"] = read_json_lines(client1, "/tmp/recovered.jsonl")
+        result["workload"]["complete_read"] = status == 0
+        # Only the reader's own "end offset not reached" status is a Kafka
+        # outcome; any other failure is the reader's.
+        if status not in (0, READ_INCOMPLETE_STATUS):
+            raise InconclusiveExecution(f"reader exited with status {status}: " + output[-1000:])
     result["classification"] = "completed"
 except PreconditionFailure as exception:
     result["classification"] = "precondition_failure"
@@ -571,15 +692,25 @@ except Exception:
     result["classification"] = "harness_failure"
     result["error"] = traceback.format_exc()
 finally:
+    # Each clean-up step fails on its own, so none of them can keep the result
+    # from being persisted.
+    cleanup = []
+    if links_cut:
+        cleanup.append(("restore links", lambda: set_links("on")))
+    if samplers_running:
+        cleanup.append(("stop samplers", stop_samplers))
+    if not samples_collected and result["network"]["stream_started_wall_ns"]:
+        cleanup.append(("collect samples", collect_samples))
+    for step, action in cleanup:
+        try:
+            action()
+        except Exception:
+            result["artifact_errors"].append(
+                {"artifact": step, "error": traceback.format_exc()[-1500:]}
+            )
     # A persistence failure must not abort the script: the appended properties
     # then fail on the missing payload and report.json is still written.
     try:
-        if links_cut:
-            set_links("on")
-        if samplers_running:
-            stop_samplers()
-        if not samples_collected and result["network"]["stream_started_wall_ns"]:
-            collect_samples()
         persist_result()
     except Exception:
         print("kafka-rack-links result payload was not persisted:\n" + traceback.format_exc())
