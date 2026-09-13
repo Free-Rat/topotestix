@@ -171,7 +171,7 @@ print(json.dumps(operations))
 PY
 """
 publish_status, publish_out = rabbit1.execute(
-    publish_script, timeout=max(60, planned_messages * (confirm_timeout_ms / 1000 + 1))
+    publish_script, timeout=max(60, planned_messages * (confirm_timeout_ms // 1000 + 1))
 )
 if publish_status != 0:
     raise RuntimeError(f"publisher process failed with status {publish_status}: {publish_out}")

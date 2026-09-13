@@ -117,7 +117,7 @@ record["finish_wall_ns"] = time.time_ns()
 print(json.dumps(record))
 PY
 """
-status, output = NODES[probe_node].execute(probe_script, timeout=confirm_timeout_ms / 1000 + 15)
+status, output = NODES[probe_node].execute(probe_script, timeout=confirm_timeout_ms // 1000 + 15)
 if status == 124:
     probe = {
         "op_id": probe_id,

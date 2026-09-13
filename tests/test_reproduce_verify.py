@@ -892,6 +892,30 @@ class VerifyTests(unittest.TestCase):
             )
             self.assertEqual(row["verdict"], want, py)
 
+    def test_t02_passing_larger_nix_suite_is_within_tolerance(self):
+        """Same rule as t-01 for the nix-unit suite: a passing superset of the
+        thesis-era 114 tests is within tolerance; a failing or shrunken suite is
+        still a mismatch."""
+        path = self.tmp / "analysis" / "test-suites.json"
+        base = json.loads(path.read_text(encoding="utf-8"))
+
+        for nix, want in (
+            ({"successful": 120, "total": 120, "ok": True}, "within-tolerance"),
+            ({"successful": 119, "total": 120, "ok": False}, "mismatch"),
+            ({"successful": 113, "total": 113, "ok": True}, "mismatch"),
+            ({"successful": 114, "total": 114, "ok": True}, "match"),
+        ):
+            base["nix"] = nix
+            path.write_text(json.dumps(base), encoding="utf-8")
+            row = next(
+                r
+                for r in verify_run(self.tmp, None, str(self.claims_path))["rows"]
+                if r["claim_id"] == "t-02"
+            )
+            self.assertEqual(row["verdict"], want, nix)
+            if want == "within-tolerance":
+                self.assertIn("6 test(s) added", row["reason"])
+
     # --- nondeterministic detail vs. claimed substance ------------------------
     #
     # Both campaigns showed these two claim pairs swapping verdicts between

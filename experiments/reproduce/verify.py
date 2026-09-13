@@ -1087,6 +1087,7 @@ def _h_c03(claim: Claim, ctx: _Ctx) -> HandlerResult:
 # growing since (e.g. the repetition-token tests), so a larger passing suite
 # is a superset of the claim, not a contradiction of it.
 _THESIS_PY_TESTS = 57
+_THESIS_NIX_TESTS = 114
 
 
 def _h_t01(claim: Claim, ctx: _Ctx) -> HandlerResult:
@@ -1114,8 +1115,18 @@ def _h_t02(claim: Claim, ctx: _Ctx) -> HandlerResult:
     observed = (
         f"nix suite: successful={nix.get('successful')}/{nix.get('total')}, " f"ok={nix.get('ok')}"
     )
-    ok = nix.get("successful") == 114 and nix.get("total") == 114 and nix.get("ok") is True
-    return (MATCH if ok else MISMATCH, observed, "")
+    successful, total = nix.get("successful"), nix.get("total")
+    passes = nix.get("ok") is True and isinstance(total, int) and successful == total
+    if passes and total == _THESIS_NIX_TESTS:
+        return MATCH, observed, ""
+    if passes and total > _THESIS_NIX_TESTS:
+        return (
+            WITHIN,
+            observed,
+            f"suite passes; {total - _THESIS_NIX_TESTS} test(s) added to the framework "
+            f"after the thesis revision (thesis-era count {_THESIS_NIX_TESTS})",
+        )
+    return MISMATCH, observed, ""
 
 
 # --- informational handlers ---------------------------------------------------
