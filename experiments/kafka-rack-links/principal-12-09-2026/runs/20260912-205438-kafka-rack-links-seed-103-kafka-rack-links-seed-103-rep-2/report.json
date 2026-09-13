@@ -1,0 +1,30 @@
+[
+  {
+    "message": "precondition_failure: topic creation rejected: [2026-09-12 20:57:08,061] WARN [AdminClient clientId=adminclient-1] Connection to node -1 (/192.168.20.2:9095) could not be established. Node may not be available. (org.apache.kafka.clients.NetworkClient)\nError while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.\n[2026-09-12 20:57:08,569] ERROR org.apache.kafka.common.errors.InvalidReplicaAssignmentException: The manual partition assignment includes broker 1, but no such broker is registered.\n (org.apache.kafka.tools.TopicCommand)\n",
+    "name": "kafka-rack-links-execution-completed",
+    "status": "failed"
+  },
+  {
+    "name": "kafka-rack-links-materialized",
+    "status": "passed"
+  },
+  {
+    "message": "cut NICs [], expected [('rackb1', 10), ('rackb2', 10)]; cut window started=None restored=None; set_link off applied to [], expected [('rackb1', 10), ('rackb2', 10)]; set_link on applied to [], expected [('rackb1', 10), ('rackb2', 10)]; cut_probe covered 0 pairs, expected 2; restore_probe covered 0 pairs, expected 2",
+    "name": "kafka-rack-links-cut-accurate",
+    "status": "failed"
+  },
+  {
+    "message": "precondition_failure: topic creation rejected: [2026-09-12 20:57:08,061] WARN [AdminClient clientId=adminclient-1] Connection to node -1 (/192.168.20.2:9095) could not be established. Node may not be available. (org.apache.kafka.clients.NetworkClient)\nError while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.\n[2026-09-12 20:57:08,569] ERROR org.apache.kafka.common.errors.InvalidReplicaAssignmentException: The manual partition assignment includes broker 1, but no such broker is registered.\n (org.apache.kafka.tools.TopicCommand)\n",
+    "name": "kafka-rack-links-confirmed-records-recovered-exactly-once",
+    "status": "failed"
+  },
+  {
+    "message": "precondition_failure: topic creation rejected: [2026-09-12 20:57:08,061] WARN [AdminClient clientId=adminclient-1] Connection to node -1 (/192.168.20.2:9095) could not be established. Node may not be available. (org.apache.kafka.clients.NetworkClient)\nError while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.\n[2026-09-12 20:57:08,569] ERROR org.apache.kafka.common.errors.InvalidReplicaAssignmentException: The manual partition assignment includes broker 1, but no such broker is registered.\n (org.apache.kafka.tools.TopicCommand)\n",
+    "name": "kafka-rack-links-cluster-recovers",
+    "status": "failed"
+  },
+  {
+    "name": "kafka-rack-links-runtime-versions-pinned",
+    "status": "passed"
+  }
+]

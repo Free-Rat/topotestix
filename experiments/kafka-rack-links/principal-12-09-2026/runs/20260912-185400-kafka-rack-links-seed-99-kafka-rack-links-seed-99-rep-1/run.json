@@ -1,0 +1,28 @@
+{
+  "artifacts": [
+    "kafka-rack-links-result.json",
+    "racka1-apache-kafka.log",
+    "racka2-apache-kafka.log",
+    "rackb1-apache-kafka.log",
+    "rackb2-apache-kafka.log",
+    "rackc1-apache-kafka.log",
+    "rackc2-apache-kafka.log"
+  ],
+  "finishedAt": "2026-09-12T18:56:37.617367+00:00",
+  "gitHead": "634f463a37ae6c1c0c5c115c79bc84ad53d5a7a5",
+  "id": "20260912-185400-kafka-rack-links-seed-99-kafka-rack-links-seed-99-rep-1",
+  "name": "kafka-rack-links-seed-99-rep-1",
+  "repetitionToken": "principal-12-09-2026-seed-99-rep-1",
+  "reproduceCommand": "topotestix orchestrator run kafka-rack-links --seed 99 --name kafka-rack-links-seed-99-rep-1 --project-root /home/freerat/projects/topotestix --repetition-token principal-12-09-2026-seed-99-rep-1 --topology-target /home/freerat/projects/topotestix/targets/kafka-rack-links/topology.nix --config-target /home/freerat/projects/topotestix/targets/kafka-rack-links/config.nix --base-module /home/freerat/projects/topotestix/targets/kafka-rack-links/module.nix --test-script /home/freerat/projects/topotestix/targets/kafka-rack-links/test-script.py --properties /home/freerat/projects/topotestix/targets/kafka-rack-links/properties.nix",
+  "resultPath": "/home/freerat/projects/topotestix/experiments/kafka-rack-links/principal-12-09-2026/runs/20260912-185400-kafka-rack-links-seed-99-kafka-rack-links-seed-99-rep-1/result",
+  "runDir": "/home/freerat/projects/topotestix/experiments/kafka-rack-links/principal-12-09-2026/runs/20260912-185400-kafka-rack-links-seed-99-kafka-rack-links-seed-99-rep-1",
+  "seed": 99,
+  "startedAt": "2026-09-12T18:54:00.274974+00:00",
+  "status": "failed",
+  "summary": {
+    "failed": 4,
+    "passed": 2,
+    "total": 6
+  },
+  "target": "kafka-rack-links"
+}

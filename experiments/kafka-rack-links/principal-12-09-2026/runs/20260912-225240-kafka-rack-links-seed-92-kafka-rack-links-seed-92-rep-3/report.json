@@ -1,0 +1,30 @@
+[
+  {
+    "message": "precondition_failure: cluster did not form under this topology: unfenced=[]; quorum={'status': 1, 'error': 'Impl.java:155)\\n\\tat org.apache.kafka.tools.MetadataQuorumCommand.handleDescribeStatus(MetadataQuorumCommand.java:252)\\n\\tat org.apache.kafka.tools.MetadataQuorumCommand.execute(MetadataQuorumCommand.java:140)\\n\\tat org.apache.kafka.tools.MetadataQuorumCommand.mainNoExit(MetadataQuorumCommand.java:81)\\n\\tat org.apache.kafka.tools.MetadataQuorumCommand.main(MetadataQuorumCommand.java:76)\\nCaused by: org.apache.kafka.common.errors.TimeoutException: Timed out waiting for a node assignment. Call: listNodes\\n\\n'}",
+    "name": "kafka-rack-links-execution-completed",
+    "status": "failed"
+  },
+  {
+    "name": "kafka-rack-links-materialized",
+    "status": "passed"
+  },
+  {
+    "message": "cut NICs [], expected [('racka1', 11), ('racka2', 11)]; cut window started=None restored=None; set_link off applied to [], expected [('racka1', 11), ('racka2', 11)]; set_link on applied to [], expected [('racka1', 11), ('racka2', 11)]; cut_probe covered 0 pairs, expected 2; restore_probe covered 0 pairs, expected 2",
+    "name": "kafka-rack-links-cut-accurate",
+    "status": "failed"
+  },
+  {
+    "message": "precondition_failure: cluster did not form under this topology: unfenced=[]; quorum={'status': 1, 'error': 'Impl.java:155)\\n\\tat org.apache.kafka.tools.MetadataQuorumCommand.handleDescribeStatus(MetadataQuorumCommand.java:252)\\n\\tat org.apache.kafka.tools.MetadataQuorumCommand.execute(MetadataQuorumCommand.java:140)\\n\\tat org.apache.kafka.tools.MetadataQuorumCommand.mainNoExit(MetadataQuorumCommand.java:81)\\n\\tat org.apache.kafka.tools.MetadataQuorumCommand.main(MetadataQuorumCommand.java:76)\\nCaused by: org.apache.kafka.common.errors.TimeoutException: Timed out waiting for a node assignment. Call: listNodes\\n\\n'}",
+    "name": "kafka-rack-links-confirmed-records-recovered-exactly-once",
+    "status": "failed"
+  },
+  {
+    "message": "precondition_failure: cluster did not form under this topology: unfenced=[]; quorum={'status': 1, 'error': 'Impl.java:155)\\n\\tat org.apache.kafka.tools.MetadataQuorumCommand.handleDescribeStatus(MetadataQuorumCommand.java:252)\\n\\tat org.apache.kafka.tools.MetadataQuorumCommand.execute(MetadataQuorumCommand.java:140)\\n\\tat org.apache.kafka.tools.MetadataQuorumCommand.mainNoExit(MetadataQuorumCommand.java:81)\\n\\tat org.apache.kafka.tools.MetadataQuorumCommand.main(MetadataQuorumCommand.java:76)\\nCaused by: org.apache.kafka.common.errors.TimeoutException: Timed out waiting for a node assignment. Call: listNodes\\n\\n'}",
+    "name": "kafka-rack-links-cluster-recovers",
+    "status": "failed"
+  },
+  {
+    "name": "kafka-rack-links-runtime-versions-pinned",
+    "status": "passed"
+  }
+]

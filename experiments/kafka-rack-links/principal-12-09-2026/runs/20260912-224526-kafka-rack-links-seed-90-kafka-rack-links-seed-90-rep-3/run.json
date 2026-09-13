@@ -1,0 +1,38 @@
+{
+  "artifacts": [
+    "baseline.jsonl",
+    "kafka-rack-links-result.json",
+    "racka1-apache-kafka.log",
+    "racka2-apache-kafka.log",
+    "rackb1-apache-kafka.log",
+    "rackb2-apache-kafka.log",
+    "rackc1-apache-kafka.log",
+    "rackc2-apache-kafka.log",
+    "recovered.jsonl",
+    "samples-central.jsonl",
+    "samples-racka1.jsonl",
+    "samples-racka2.jsonl",
+    "samples-rackb1.jsonl",
+    "samples-rackb2.jsonl",
+    "samples-rackc1.jsonl",
+    "samples-rackc2.jsonl",
+    "stream.jsonl"
+  ],
+  "finishedAt": "2026-09-12T22:50:07.742703+00:00",
+  "gitHead": "634f463a37ae6c1c0c5c115c79bc84ad53d5a7a5",
+  "id": "20260912-224526-kafka-rack-links-seed-90-kafka-rack-links-seed-90-rep-3",
+  "name": "kafka-rack-links-seed-90-rep-3",
+  "repetitionToken": "principal-12-09-2026-seed-90-rep-3",
+  "reproduceCommand": "topotestix orchestrator run kafka-rack-links --seed 90 --name kafka-rack-links-seed-90-rep-3 --project-root /home/freerat/projects/topotestix --repetition-token principal-12-09-2026-seed-90-rep-3 --topology-target /home/freerat/projects/topotestix/targets/kafka-rack-links/topology.nix --config-target /home/freerat/projects/topotestix/targets/kafka-rack-links/config.nix --base-module /home/freerat/projects/topotestix/targets/kafka-rack-links/module.nix --test-script /home/freerat/projects/topotestix/targets/kafka-rack-links/test-script.py --properties /home/freerat/projects/topotestix/targets/kafka-rack-links/properties.nix",
+  "resultPath": "/home/freerat/projects/topotestix/experiments/kafka-rack-links/principal-12-09-2026/runs/20260912-224526-kafka-rack-links-seed-90-kafka-rack-links-seed-90-rep-3/result",
+  "runDir": "/home/freerat/projects/topotestix/experiments/kafka-rack-links/principal-12-09-2026/runs/20260912-224526-kafka-rack-links-seed-90-kafka-rack-links-seed-90-rep-3",
+  "seed": 90,
+  "startedAt": "2026-09-12T22:45:26.846417+00:00",
+  "status": "passed",
+  "summary": {
+    "failed": 0,
+    "passed": 6,
+    "total": 6
+  },
+  "target": "kafka-rack-links"
+}

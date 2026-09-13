@@ -1,0 +1,26 @@
+Running kafka-rack-links seed=43
+
+============================================================
+ TopoTestix Results
+ Seed: 43
+ Name: kafka-rack-links-seed-43-rep-3
+============================================================
+  FAIL  kafka-rack-links-execution-completed: precondition_failure: topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.
+[2026-09-12 21:26:33,239] ERROR org.apache.kafka.common.errors.InvalidReplicaAssignmentException: The manual partition assignment includes broker 1, but no such broker is registered.
+ (org.apache.kafka.tools.TopicCommand)
+
+  PASS  kafka-rack-links-materialized
+  FAIL  kafka-rack-links-cut-accurate: cut NICs [], expected [('rackb1', 12), ('rackb2', 12), ('rackc1', 12), ('rackc2', 12)]; cut window started=None restored=None; set_link off applied to [], expected [('rackb1', 12), ('rackb2', 12), ('rackc1', 12), ('rackc2', 12)]; set_link on applied to [], expected [('rackb1', 12), ('rackb2', 12), ('rackc1', 12), ('rackc2', 12)]; cut_probe covered 0 pairs, expected 12; restore_probe covered 0 pairs, expected 12
+  FAIL  kafka-rack-links-confirmed-records-recovered-exactly-once: precondition_failure: topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.
+[2026-09-12 21:26:33,239] ERROR org.apache.kafka.common.errors.InvalidReplicaAssignmentException: The manual partition assignment includes broker 1, but no such broker is registered.
+ (org.apache.kafka.tools.TopicCommand)
+
+  FAIL  kafka-rack-links-cluster-recovers: precondition_failure: topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 1, but no such broker is registered.
+[2026-09-12 21:26:33,239] ERROR org.apache.kafka.common.errors.InvalidReplicaAssignmentException: The manual partition assignment includes broker 1, but no such broker is registered.
+ (org.apache.kafka.tools.TopicCommand)
+
+  PASS  kafka-rack-links-runtime-versions-pinned
+
+ Overall: FAILED
+ Run dir: /home/freerat/projects/topotestix/experiments/kafka-rack-links/principal-12-09-2026/runs/20260912-212403-kafka-rack-links-seed-43-kafka-rack-links-seed-43-rep-3
+============================================================

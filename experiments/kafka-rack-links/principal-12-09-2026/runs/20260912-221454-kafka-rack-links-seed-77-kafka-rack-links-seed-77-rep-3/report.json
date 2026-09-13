@@ -1,0 +1,30 @@
+[
+  {
+    "message": "precondition_failure: topic creation rejected: [2026-09-12 22:17:23,689] WARN [AdminClient clientId=adminclient-1] Connection to node -6 (/192.168.20.7:9095) could not be established. Node may not be available. (org.apache.kafka.clients.NetworkClient)\nError while executing topic command : The manual partition assignment includes broker 5, but no such broker is registered.\n[2026-09-12 22:17:24,271] ERROR org.apache.kafka.common.errors.InvalidReplicaAssignmentException: The manual partition assignment includes broker 5, but no such broker is registered.\n (org.apache.kafka.tools.TopicCommand)\n",
+    "name": "kafka-rack-links-execution-completed",
+    "status": "failed"
+  },
+  {
+    "name": "kafka-rack-links-materialized",
+    "status": "passed"
+  },
+  {
+    "message": "cut window started=None restored=None",
+    "name": "kafka-rack-links-cut-accurate",
+    "status": "failed"
+  },
+  {
+    "message": "precondition_failure: topic creation rejected: [2026-09-12 22:17:23,689] WARN [AdminClient clientId=adminclient-1] Connection to node -6 (/192.168.20.7:9095) could not be established. Node may not be available. (org.apache.kafka.clients.NetworkClient)\nError while executing topic command : The manual partition assignment includes broker 5, but no such broker is registered.\n[2026-09-12 22:17:24,271] ERROR org.apache.kafka.common.errors.InvalidReplicaAssignmentException: The manual partition assignment includes broker 5, but no such broker is registered.\n (org.apache.kafka.tools.TopicCommand)\n",
+    "name": "kafka-rack-links-confirmed-records-recovered-exactly-once",
+    "status": "failed"
+  },
+  {
+    "message": "precondition_failure: topic creation rejected: [2026-09-12 22:17:23,689] WARN [AdminClient clientId=adminclient-1] Connection to node -6 (/192.168.20.7:9095) could not be established. Node may not be available. (org.apache.kafka.clients.NetworkClient)\nError while executing topic command : The manual partition assignment includes broker 5, but no such broker is registered.\n[2026-09-12 22:17:24,271] ERROR org.apache.kafka.common.errors.InvalidReplicaAssignmentException: The manual partition assignment includes broker 5, but no such broker is registered.\n (org.apache.kafka.tools.TopicCommand)\n",
+    "name": "kafka-rack-links-cluster-recovers",
+    "status": "failed"
+  },
+  {
+    "name": "kafka-rack-links-runtime-versions-pinned",
+    "status": "passed"
+  }
+]

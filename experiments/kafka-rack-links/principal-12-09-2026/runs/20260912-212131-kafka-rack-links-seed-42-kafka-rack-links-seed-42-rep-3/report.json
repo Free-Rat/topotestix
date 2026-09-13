@@ -1,0 +1,30 @@
+[
+  {
+    "message": "precondition_failure: topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 3, but no such broker is registered.\n[2026-09-12 21:24:00,483] ERROR org.apache.kafka.common.errors.InvalidReplicaAssignmentException: The manual partition assignment includes broker 3, but no such broker is registered.\n (org.apache.kafka.tools.TopicCommand)\n",
+    "name": "kafka-rack-links-execution-completed",
+    "status": "failed"
+  },
+  {
+    "name": "kafka-rack-links-materialized",
+    "status": "passed"
+  },
+  {
+    "message": "cut window started=None restored=None",
+    "name": "kafka-rack-links-cut-accurate",
+    "status": "failed"
+  },
+  {
+    "message": "precondition_failure: topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 3, but no such broker is registered.\n[2026-09-12 21:24:00,483] ERROR org.apache.kafka.common.errors.InvalidReplicaAssignmentException: The manual partition assignment includes broker 3, but no such broker is registered.\n (org.apache.kafka.tools.TopicCommand)\n",
+    "name": "kafka-rack-links-confirmed-records-recovered-exactly-once",
+    "status": "failed"
+  },
+  {
+    "message": "precondition_failure: topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 3, but no such broker is registered.\n[2026-09-12 21:24:00,483] ERROR org.apache.kafka.common.errors.InvalidReplicaAssignmentException: The manual partition assignment includes broker 3, but no such broker is registered.\n (org.apache.kafka.tools.TopicCommand)\n",
+    "name": "kafka-rack-links-cluster-recovers",
+    "status": "failed"
+  },
+  {
+    "name": "kafka-rack-links-runtime-versions-pinned",
+    "status": "passed"
+  }
+]

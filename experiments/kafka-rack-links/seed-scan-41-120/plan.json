@@ -1,0 +1,2064 @@
+[
+  {
+    "cut": "11",
+    "cut_removes_link": false,
+    "formation": "certain",
+    "graph_class": "one link",
+    "links_during_cut": [
+      10
+    ],
+    "links_present": [
+      10
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 41
+  },
+  {
+    "cut": "10",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      11
+    ],
+    "links_present": [
+      11
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        11
+      ]
+    },
+    "seed": 42
+  },
+  {
+    "cut": "10,12",
+    "cut_removes_link": true,
+    "formation": "impossible",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 43
+  },
+  {
+    "cut": "10",
+    "cut_removes_link": true,
+    "formation": "election",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      10,
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 44
+  },
+  {
+    "cut": "12",
+    "cut_removes_link": true,
+    "formation": "election",
+    "graph_class": "one link",
+    "links_during_cut": [
+      10
+    ],
+    "links_present": [
+      10,
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 45
+  },
+  {
+    "cut": "10",
+    "cut_removes_link": true,
+    "formation": "election",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      10,
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 46
+  },
+  {
+    "cut": "11,12",
+    "cut_removes_link": false,
+    "formation": "certain",
+    "graph_class": "one link",
+    "links_during_cut": [
+      10
+    ],
+    "links_present": [
+      10
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        11
+      ]
+    },
+    "seed": 47
+  },
+  {
+    "cut": "10,12",
+    "cut_removes_link": true,
+    "formation": "election",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [
+      10,
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 48
+  },
+  {
+    "cut": "11,12",
+    "cut_removes_link": true,
+    "formation": "impossible",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 49
+  },
+  {
+    "cut": "11",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 50
+  },
+  {
+    "cut": "10",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 51
+  },
+  {
+    "cut": "10",
+    "cut_removes_link": false,
+    "formation": "election",
+    "graph_class": "path",
+    "links_during_cut": [
+      11,
+      12
+    ],
+    "links_present": [
+      11,
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 52
+  },
+  {
+    "cut": "10",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      11
+    ],
+    "links_present": [
+      11
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        11
+      ]
+    },
+    "seed": 53
+  },
+  {
+    "cut": "12",
+    "cut_removes_link": false,
+    "formation": "election",
+    "graph_class": "path",
+    "links_during_cut": [
+      10,
+      11
+    ],
+    "links_present": [
+      10,
+      11
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 54
+  },
+  {
+    "cut": "10,11",
+    "cut_removes_link": true,
+    "formation": "impossible",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [
+      10
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        11
+      ]
+    },
+    "seed": 55
+  },
+  {
+    "cut": "10,11",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 56
+  },
+  {
+    "cut": "10",
+    "cut_removes_link": true,
+    "formation": "impossible",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [
+      10
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 57
+  },
+  {
+    "cut": "none",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 58
+  },
+  {
+    "cut": "11,12",
+    "cut_removes_link": true,
+    "formation": "election",
+    "graph_class": "one link",
+    "links_during_cut": [
+      10
+    ],
+    "links_present": [
+      10,
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 59
+  },
+  {
+    "cut": "10,11",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 60
+  },
+  {
+    "cut": "12",
+    "cut_removes_link": true,
+    "formation": "election",
+    "graph_class": "one link",
+    "links_during_cut": [
+      10
+    ],
+    "links_present": [
+      10,
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 61
+  },
+  {
+    "cut": "10,11,12",
+    "cut_removes_link": true,
+    "formation": "election",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [
+      10,
+      11
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        11
+      ]
+    },
+    "seed": 62
+  },
+  {
+    "cut": "none",
+    "cut_removes_link": false,
+    "formation": "election",
+    "graph_class": "path",
+    "links_during_cut": [
+      10,
+      12
+    ],
+    "links_present": [
+      10,
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 63
+  },
+  {
+    "cut": "10,11",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 64
+  },
+  {
+    "cut": "10,11",
+    "cut_removes_link": true,
+    "formation": "impossible",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [
+      11
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        11
+      ]
+    },
+    "seed": 65
+  },
+  {
+    "cut": "none",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 66
+  },
+  {
+    "cut": "10,11",
+    "cut_removes_link": true,
+    "formation": "election",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      11,
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 67
+  },
+  {
+    "cut": "10",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 68
+  },
+  {
+    "cut": "10,12",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      11
+    ],
+    "links_present": [
+      11
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        11
+      ]
+    },
+    "seed": 69
+  },
+  {
+    "cut": "12",
+    "cut_removes_link": true,
+    "formation": "election",
+    "graph_class": "one link",
+    "links_during_cut": [
+      10
+    ],
+    "links_present": [
+      10,
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 70
+  },
+  {
+    "cut": "10,12",
+    "cut_removes_link": true,
+    "formation": "certain",
+    "graph_class": "one link",
+    "links_during_cut": [
+      11
+    ],
+    "links_present": [
+      10,
+      11,
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 71
+  },
+  {
+    "cut": "11",
+    "cut_removes_link": true,
+    "formation": "election",
+    "graph_class": "one link",
+    "links_during_cut": [
+      10
+    ],
+    "links_present": [
+      10,
+      11
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 72
+  },
+  {
+    "cut": "10,12",
+    "cut_removes_link": true,
+    "formation": "impossible",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [
+      10
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 73
+  },
+  {
+    "cut": "11",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 74
+  },
+  {
+    "cut": "10,11",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 75
+  },
+  {
+    "cut": "10,12",
+    "cut_removes_link": true,
+    "formation": "impossible",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 76
+  },
+  {
+    "cut": "none",
+    "cut_removes_link": false,
+    "formation": "election",
+    "graph_class": "path",
+    "links_during_cut": [
+      10,
+      12
+    ],
+    "links_present": [
+      10,
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 77
+  },
+  {
+    "cut": "10,12",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      11
+    ],
+    "links_present": [
+      11
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        11
+      ]
+    },
+    "seed": 78
+  },
+  {
+    "cut": "11,12",
+    "cut_removes_link": true,
+    "formation": "impossible",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 79
+  },
+  {
+    "cut": "10,11",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 80
+  },
+  {
+    "cut": "10,11",
+    "cut_removes_link": true,
+    "formation": "election",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      10,
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 81
+  },
+  {
+    "cut": "10",
+    "cut_removes_link": false,
+    "formation": "election",
+    "graph_class": "path",
+    "links_during_cut": [
+      11,
+      12
+    ],
+    "links_present": [
+      11,
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 82
+  },
+  {
+    "cut": "10",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        11
+      ]
+    },
+    "seed": 83
+  },
+  {
+    "cut": "11,12",
+    "cut_removes_link": true,
+    "formation": "election",
+    "graph_class": "one link",
+    "links_during_cut": [
+      10
+    ],
+    "links_present": [
+      10,
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 84
+  },
+  {
+    "cut": "10,12",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      11
+    ],
+    "links_present": [
+      11
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        11
+      ]
+    },
+    "seed": 85
+  },
+  {
+    "cut": "11",
+    "cut_removes_link": false,
+    "formation": "election",
+    "graph_class": "path",
+    "links_during_cut": [
+      10,
+      12
+    ],
+    "links_present": [
+      10,
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 86
+  },
+  {
+    "cut": "11,12",
+    "cut_removes_link": true,
+    "formation": "impossible",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [
+      11
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        11
+      ]
+    },
+    "seed": 87
+  },
+  {
+    "cut": "11,12",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 88
+  },
+  {
+    "cut": "11",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 89
+  },
+  {
+    "cut": "11",
+    "cut_removes_link": false,
+    "formation": "certain",
+    "graph_class": "one link",
+    "links_during_cut": [
+      10
+    ],
+    "links_present": [
+      10
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        11
+      ]
+    },
+    "seed": 90
+  },
+  {
+    "cut": "10,11",
+    "cut_removes_link": true,
+    "formation": "impossible",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [
+      10
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 91
+  },
+  {
+    "cut": "11",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 92
+  },
+  {
+    "cut": "10,12",
+    "cut_removes_link": true,
+    "formation": "election",
+    "graph_class": "one link",
+    "links_during_cut": [
+      11
+    ],
+    "links_present": [
+      11,
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 93
+  },
+  {
+    "cut": "11,12",
+    "cut_removes_link": false,
+    "formation": "certain",
+    "graph_class": "one link",
+    "links_during_cut": [
+      10
+    ],
+    "links_present": [
+      10
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 94
+  },
+  {
+    "cut": "11",
+    "cut_removes_link": true,
+    "formation": "impossible",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [
+      11
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        11
+      ]
+    },
+    "seed": 95
+  },
+  {
+    "cut": "10,11",
+    "cut_removes_link": true,
+    "formation": "impossible",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [
+      11
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 96
+  },
+  {
+    "cut": "12",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      11
+    ],
+    "links_present": [
+      11
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        11
+      ]
+    },
+    "seed": 97
+  },
+  {
+    "cut": "10,12",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      11
+    ],
+    "links_present": [
+      11
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        11
+      ]
+    },
+    "seed": 98
+  },
+  {
+    "cut": "11,12",
+    "cut_removes_link": true,
+    "formation": "election",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [
+      11,
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 99
+  },
+  {
+    "cut": "10,11",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 100
+  },
+  {
+    "cut": "10,11",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 101
+  },
+  {
+    "cut": "10",
+    "cut_removes_link": true,
+    "formation": "election",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      10,
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 102
+  },
+  {
+    "cut": "10",
+    "cut_removes_link": false,
+    "formation": "election",
+    "graph_class": "path",
+    "links_during_cut": [
+      11,
+      12
+    ],
+    "links_present": [
+      11,
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 103
+  },
+  {
+    "cut": "11",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 104
+  },
+  {
+    "cut": "10",
+    "cut_removes_link": true,
+    "formation": "impossible",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [
+      10
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 105
+  },
+  {
+    "cut": "10,12",
+    "cut_removes_link": true,
+    "formation": "election",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [
+      10,
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 106
+  },
+  {
+    "cut": "11",
+    "cut_removes_link": false,
+    "formation": "election",
+    "graph_class": "path",
+    "links_during_cut": [
+      10,
+      12
+    ],
+    "links_present": [
+      10,
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 107
+  },
+  {
+    "cut": "10,11",
+    "cut_removes_link": true,
+    "formation": "election",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      11,
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 108
+  },
+  {
+    "cut": "none",
+    "cut_removes_link": false,
+    "formation": "election",
+    "graph_class": "path",
+    "links_during_cut": [
+      11,
+      12
+    ],
+    "links_present": [
+      11,
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 109
+  },
+  {
+    "cut": "none",
+    "cut_removes_link": false,
+    "formation": "certain",
+    "graph_class": "triangle",
+    "links_during_cut": [
+      10,
+      11,
+      12
+    ],
+    "links_present": [
+      10,
+      11,
+      12
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 110
+  },
+  {
+    "cut": "none",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 111
+  },
+  {
+    "cut": "12",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      10
+    ],
+    "links_present": [
+      10
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        11
+      ]
+    },
+    "seed": 112
+  },
+  {
+    "cut": "12",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "one link",
+    "links_during_cut": [
+      11
+    ],
+    "links_present": [
+      11
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 113
+  },
+  {
+    "cut": "10,12",
+    "cut_removes_link": true,
+    "formation": "impossible",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 114
+  },
+  {
+    "cut": "none",
+    "cut_removes_link": false,
+    "formation": "certain",
+    "graph_class": "one link",
+    "links_during_cut": [
+      10
+    ],
+    "links_present": [
+      10
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        11
+      ]
+    },
+    "seed": 115
+  },
+  {
+    "cut": "10,11",
+    "cut_removes_link": true,
+    "formation": "election",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      10,
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        12
+      ]
+    },
+    "seed": 116
+  },
+  {
+    "cut": "10",
+    "cut_removes_link": true,
+    "formation": "election",
+    "graph_class": "one link",
+    "links_during_cut": [
+      11
+    ],
+    "links_present": [
+      10,
+      11
+    ],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10,
+        11
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 117
+  },
+  {
+    "cut": "11",
+    "cut_removes_link": true,
+    "formation": "impossible",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [
+      11
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        10
+      ],
+      "rack-c": [
+        11
+      ]
+    },
+    "seed": 118
+  },
+  {
+    "cut": "11",
+    "cut_removes_link": true,
+    "formation": "election",
+    "graph_class": "one link",
+    "links_during_cut": [
+      12
+    ],
+    "links_present": [
+      11,
+      12
+    ],
+    "placement": "concentrated",
+    "rack_links": {
+      "rack-a": [
+        11
+      ],
+      "rack-b": [
+        10,
+        12
+      ],
+      "rack-c": [
+        11,
+        12
+      ]
+    },
+    "seed": 119
+  },
+  {
+    "cut": "10",
+    "cut_removes_link": false,
+    "formation": "impossible",
+    "graph_class": "all isolated",
+    "links_during_cut": [],
+    "links_present": [],
+    "placement": "spread",
+    "rack_links": {
+      "rack-a": [
+        10
+      ],
+      "rack-b": [
+        12
+      ],
+      "rack-c": [
+        11
+      ]
+    },
+    "seed": 120
+  }
+]

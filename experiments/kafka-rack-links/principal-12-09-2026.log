@@ -1,0 +1,856 @@
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+[1/240] seed-41-rep-1 (MemAvailable 20986 MiB)
+[2/240] seed-42-rep-1 (MemAvailable 20986 MiB)
+    seed-42-rep-1 exit=1 156.4s run_dir=runs/20260912-172956-kafka-rack-links-seed-42-kafka-rack-links-seed-42-rep-1
+[3/240] seed-43-rep-1 (MemAvailable 14550 MiB)
+    seed-41-rep-1 exit=0 284.9s run_dir=runs/20260912-172956-kafka-rack-links-seed-41-kafka-rack-links-seed-41-rep-1
+[4/240] seed-44-rep-1 (MemAvailable 14596 MiB)
+    seed-43-rep-1 exit=1 157.3s run_dir=runs/20260912-173232-kafka-rack-links-seed-43-kafka-rack-links-seed-43-rep-1
+[5/240] seed-45-rep-1 (MemAvailable 15460 MiB)
+    seed-45-rep-1 exit=1 159.5s run_dir=runs/20260912-173509-kafka-rack-links-seed-45-kafka-rack-links-seed-45-rep-1
+[6/240] seed-46-rep-1 (MemAvailable 13512 MiB)
+    seed-44-rep-1 exit=0 207.6s run_dir=runs/20260912-173441-kafka-rack-links-seed-44-kafka-rack-links-seed-44-rep-1
+[7/240] seed-47-rep-1 (MemAvailable 16675 MiB)
+    seed-46-rep-1 exit=0 284.1s run_dir=runs/20260912-173749-kafka-rack-links-seed-46-kafka-rack-links-seed-46-rep-1
+[8/240] seed-48-rep-1 (MemAvailable 13959 MiB)
+    seed-47-rep-1 exit=0 284.6s run_dir=runs/20260912-173808-kafka-rack-links-seed-47-kafka-rack-links-seed-47-rep-1
+[9/240] seed-49-rep-1 (MemAvailable 16670 MiB)
+    seed-49-rep-1 exit=1 156.2s run_dir=runs/20260912-174253-kafka-rack-links-seed-49-kafka-rack-links-seed-49-rep-1
+[10/240] seed-50-rep-1 (MemAvailable 13601 MiB)
+    seed-48-rep-1 exit=0 284.0s run_dir=runs/20260912-174233-kafka-rack-links-seed-48-kafka-rack-links-seed-48-rep-1
+[11/240] seed-51-rep-1 (MemAvailable 14278 MiB)
+    seed-50-rep-1 exit=1 157.5s run_dir=runs/20260912-174529-kafka-rack-links-seed-50-kafka-rack-links-seed-50-rep-1
+[12/240] seed-52-rep-1 (MemAvailable 14451 MiB)
+    seed-51-rep-1 exit=1 156.0s run_dir=runs/20260912-174717-kafka-rack-links-seed-51-kafka-rack-links-seed-51-rep-1
+[13/240] seed-53-rep-1 (MemAvailable 13855 MiB)
+    seed-52-rep-1 exit=1 157.4s run_dir=runs/20260912-174807-kafka-rack-links-seed-52-kafka-rack-links-seed-52-rep-1
+[14/240] seed-54-rep-1 (MemAvailable 14118 MiB)
+    seed-53-rep-1 exit=1 157.0s run_dir=runs/20260912-174953-kafka-rack-links-seed-53-kafka-rack-links-seed-53-rep-1
+[15/240] seed-55-rep-1 (MemAvailable 13253 MiB)
+    seed-54-rep-1 exit=0 173.0s run_dir=runs/20260912-175044-kafka-rack-links-seed-54-kafka-rack-links-seed-54-rep-1
+[16/240] seed-56-rep-1 (MemAvailable 14492 MiB)
+    seed-55-rep-1 exit=1 157.4s run_dir=runs/20260912-175230-kafka-rack-links-seed-55-kafka-rack-links-seed-55-rep-1
+[17/240] seed-57-rep-1 (MemAvailable 14402 MiB)
+    seed-56-rep-1 exit=1 156.0s run_dir=runs/20260912-175337-kafka-rack-links-seed-56-kafka-rack-links-seed-56-rep-1
+[18/240] seed-58-rep-1 (MemAvailable 14226 MiB)
+    seed-57-rep-1 exit=1 155.5s run_dir=runs/20260912-175508-kafka-rack-links-seed-57-kafka-rack-links-seed-57-rep-1
+[19/240] seed-59-rep-1 (MemAvailable 13840 MiB)
+    seed-58-rep-1 exit=1 156.0s run_dir=runs/20260912-175613-kafka-rack-links-seed-58-kafka-rack-links-seed-58-rep-1
+[20/240] seed-60-rep-1 (MemAvailable 13218 MiB)
+    seed-59-rep-1 exit=0 173.1s run_dir=runs/20260912-175743-kafka-rack-links-seed-59-kafka-rack-links-seed-59-rep-1
+[21/240] seed-61-rep-1 (MemAvailable 14368 MiB)
+    seed-60-rep-1 exit=1 159.0s run_dir=runs/20260912-175849-kafka-rack-links-seed-60-kafka-rack-links-seed-60-rep-1
+[22/240] seed-62-rep-1 (MemAvailable 13931 MiB)
+    seed-61-rep-1 exit=1 158.1s run_dir=runs/20260912-180036-kafka-rack-links-seed-61-kafka-rack-links-seed-61-rep-1
+[23/240] seed-63-rep-1 (MemAvailable 13234 MiB)
+    seed-62-rep-1 exit=0 174.6s run_dir=runs/20260912-180128-kafka-rack-links-seed-62-kafka-rack-links-seed-62-rep-1
+[24/240] seed-64-rep-1 (MemAvailable 13964 MiB)
+    seed-63-rep-1 exit=0 208.0s run_dir=runs/20260912-180314-kafka-rack-links-seed-63-kafka-rack-links-seed-63-rep-1
+[25/240] seed-65-rep-1 (MemAvailable 14286 MiB)
+    seed-64-rep-1 exit=1 155.0s run_dir=runs/20260912-180423-kafka-rack-links-seed-64-kafka-rack-links-seed-64-rep-1
+[26/240] seed-66-rep-1 (MemAvailable 16874 MiB)
+    seed-65-rep-1 exit=1 156.8s run_dir=runs/20260912-180642-kafka-rack-links-seed-65-kafka-rack-links-seed-65-rep-1
+[27/240] seed-67-rep-1 (MemAvailable 13659 MiB)
+    seed-66-rep-1 exit=1 154.0s run_dir=runs/20260912-180658-kafka-rack-links-seed-66-kafka-rack-links-seed-66-rep-1
+[28/240] seed-68-rep-1 (MemAvailable 17117 MiB)
+    seed-68-rep-1 exit=1 157.8s run_dir=runs/20260912-180932-kafka-rack-links-seed-68-kafka-rack-links-seed-68-rep-1
+[29/240] seed-69-rep-1 (MemAvailable 13146 MiB)
+    seed-67-rep-1 exit=0 205.4s run_dir=runs/20260912-180919-kafka-rack-links-seed-67-kafka-rack-links-seed-67-rep-1
+[30/240] seed-70-rep-1 (MemAvailable 14785 MiB)
+    seed-69-rep-1 exit=1 157.4s run_dir=runs/20260912-181210-kafka-rack-links-seed-69-kafka-rack-links-seed-69-rep-1
+[31/240] seed-71-rep-1 (MemAvailable 14002 MiB)
+    seed-70-rep-1 exit=0 284.3s run_dir=runs/20260912-181244-kafka-rack-links-seed-70-kafka-rack-links-seed-70-rep-1
+[32/240] seed-72-rep-1 (MemAvailable 13509 MiB)
+    seed-71-rep-1 exit=0 171.9s run_dir=runs/20260912-181447-kafka-rack-links-seed-71-kafka-rack-links-seed-71-rep-1
+[33/240] seed-73-rep-1 (MemAvailable 19212 MiB)
+    seed-72-rep-1 exit=1 157.1s run_dir=runs/20260912-181729-kafka-rack-links-seed-72-kafka-rack-links-seed-72-rep-1
+[34/240] seed-74-rep-1 (MemAvailable 14042 MiB)
+    seed-73-rep-1 exit=1 156.2s run_dir=runs/20260912-181739-kafka-rack-links-seed-73-kafka-rack-links-seed-73-rep-1
+[35/240] seed-75-rep-1 (MemAvailable 19121 MiB)
+    seed-74-rep-1 exit=1 157.4s run_dir=runs/20260912-182006-kafka-rack-links-seed-74-kafka-rack-links-seed-74-rep-1
+[36/240] seed-76-rep-1 (MemAvailable 13936 MiB)
+    seed-75-rep-1 exit=1 157.3s run_dir=runs/20260912-182015-kafka-rack-links-seed-75-kafka-rack-links-seed-75-rep-1
+[37/240] seed-77-rep-1 (MemAvailable 18902 MiB)
+    seed-76-rep-1 exit=1 157.0s run_dir=runs/20260912-182243-kafka-rack-links-seed-76-kafka-rack-links-seed-76-rep-1
+[38/240] seed-78-rep-1 (MemAvailable 13967 MiB)
+    seed-77-rep-1 exit=1 158.1s run_dir=runs/20260912-182252-kafka-rack-links-seed-77-kafka-rack-links-seed-77-rep-1
+[39/240] seed-79-rep-1 (MemAvailable 19099 MiB)
+    seed-78-rep-1 exit=1 156.3s run_dir=runs/20260912-182520-kafka-rack-links-seed-78-kafka-rack-links-seed-78-rep-1
+[40/240] seed-80-rep-1 (MemAvailable 13787 MiB)
+    seed-79-rep-1 exit=1 156.6s run_dir=runs/20260912-182531-kafka-rack-links-seed-79-kafka-rack-links-seed-79-rep-1
+[41/240] seed-81-rep-1 (MemAvailable 18867 MiB)
+    seed-80-rep-1 exit=1 157.4s run_dir=runs/20260912-182757-kafka-rack-links-seed-80-kafka-rack-links-seed-80-rep-1
+[42/240] seed-82-rep-1 (MemAvailable 13653 MiB)
+    seed-81-rep-1 exit=1 156.5s run_dir=runs/20260912-182807-kafka-rack-links-seed-81-kafka-rack-links-seed-81-rep-1
+[43/240] seed-83-rep-1 (MemAvailable 18932 MiB)
+    seed-82-rep-1 exit=1 158.5s run_dir=runs/20260912-183034-kafka-rack-links-seed-82-kafka-rack-links-seed-82-rep-1
+[44/240] seed-84-rep-1 (MemAvailable 15110 MiB)
+    seed-83-rep-1 exit=1 161.8s run_dir=runs/20260912-183044-kafka-rack-links-seed-83-kafka-rack-links-seed-83-rep-1
+[45/240] seed-85-rep-1 (MemAvailable 16687 MiB)
+    seed-85-rep-1 exit=1 158.4s run_dir=runs/20260912-183326-kafka-rack-links-seed-85-kafka-rack-links-seed-85-rep-1
+[46/240] seed-86-rep-1 (MemAvailable 12765 MiB)
+    seed-84-rep-1 exit=0 173.7s run_dir=runs/20260912-183312-kafka-rack-links-seed-84-kafka-rack-links-seed-84-rep-1
+[47/240] seed-87-rep-1 (MemAvailable 19547 MiB)
+    seed-86-rep-1 exit=1 156.1s run_dir=runs/20260912-183604-kafka-rack-links-seed-86-kafka-rack-links-seed-86-rep-1
+[48/240] seed-88-rep-1 (MemAvailable 13713 MiB)
+    seed-87-rep-1 exit=1 156.2s run_dir=runs/20260912-183606-kafka-rack-links-seed-87-kafka-rack-links-seed-87-rep-1
+[49/240] seed-89-rep-1 (MemAvailable 19631 MiB)
+    seed-89-rep-1 exit=1 156.8s run_dir=runs/20260912-183842-kafka-rack-links-seed-89-kafka-rack-links-seed-89-rep-1
+[50/240] seed-90-rep-1 (MemAvailable 15024 MiB)
+    seed-88-rep-1 exit=1 161.6s run_dir=runs/20260912-183840-kafka-rack-links-seed-88-kafka-rack-links-seed-88-rep-1
+[51/240] seed-91-rep-1 (MemAvailable 20266 MiB)
+    seed-91-rep-1 exit=1 154.0s run_dir=runs/20260912-184122-kafka-rack-links-seed-91-kafka-rack-links-seed-91-rep-1
+[52/240] seed-92-rep-1 (MemAvailable 13924 MiB)
+    seed-90-rep-1 exit=0 280.8s run_dir=runs/20260912-184119-kafka-rack-links-seed-90-kafka-rack-links-seed-90-rep-1
+[53/240] seed-93-rep-1 (MemAvailable 14461 MiB)
+    seed-92-rep-1 exit=1 161.6s run_dir=runs/20260912-184356-kafka-rack-links-seed-92-kafka-rack-links-seed-92-rep-1
+[54/240] seed-94-rep-1 (MemAvailable 14200 MiB)
+    seed-93-rep-1 exit=1 157.0s run_dir=runs/20260912-184600-kafka-rack-links-seed-93-kafka-rack-links-seed-93-rep-1
+[55/240] seed-95-rep-1 (MemAvailable 13662 MiB)
+    seed-95-rep-1 exit=1 155.8s run_dir=runs/20260912-184837-kafka-rack-links-seed-95-kafka-rack-links-seed-95-rep-1
+[56/240] seed-96-rep-1 (MemAvailable 12759 MiB)
+    seed-94-rep-1 exit=0 285.3s run_dir=runs/20260912-184637-kafka-rack-links-seed-94-kafka-rack-links-seed-94-rep-1
+[57/240] seed-97-rep-1 (MemAvailable 18891 MiB)
+    seed-96-rep-1 exit=1 156.6s run_dir=runs/20260912-185113-kafka-rack-links-seed-96-kafka-rack-links-seed-96-rep-1
+[58/240] seed-98-rep-1 (MemAvailable 13628 MiB)
+    seed-97-rep-1 exit=1 157.1s run_dir=runs/20260912-185123-kafka-rack-links-seed-97-kafka-rack-links-seed-97-rep-1
+[59/240] seed-99-rep-1 (MemAvailable 16325 MiB)
+    seed-98-rep-1 exit=1 152.4s run_dir=runs/20260912-185349-kafka-rack-links-seed-98-kafka-rack-links-seed-98-rep-1
+[60/240] seed-100-rep-1 (MemAvailable 13456 MiB)
+    seed-99-rep-1 exit=1 157.4s run_dir=runs/20260912-185400-kafka-rack-links-seed-99-kafka-rack-links-seed-99-rep-1
+[61/240] seed-101-rep-1 (MemAvailable 16326 MiB)
+    seed-100-rep-1 exit=1 156.6s run_dir=runs/20260912-185622-kafka-rack-links-seed-100-kafka-rack-links-seed-100-rep-1
+[62/240] seed-102-rep-1 (MemAvailable 13658 MiB)
+    seed-101-rep-1 exit=1 156.7s run_dir=runs/20260912-185637-kafka-rack-links-seed-101-kafka-rack-links-seed-101-rep-1
+[63/240] seed-103-rep-1 (MemAvailable 16309 MiB)
+    seed-102-rep-1 exit=1 157.2s run_dir=runs/20260912-185858-kafka-rack-links-seed-102-kafka-rack-links-seed-102-rep-1
+[64/240] seed-104-rep-1 (MemAvailable 13417 MiB)
+    seed-103-rep-1 exit=0 205.3s run_dir=runs/20260912-185914-kafka-rack-links-seed-103-kafka-rack-links-seed-103-rep-1
+[65/240] seed-105-rep-1 (MemAvailable 14971 MiB)
+    seed-104-rep-1 exit=1 159.8s run_dir=runs/20260912-190136-kafka-rack-links-seed-104-kafka-rack-links-seed-104-rep-1
+[66/240] seed-106-rep-1 (MemAvailable 14316 MiB)
+    seed-105-rep-1 exit=1 156.4s run_dir=runs/20260912-190239-kafka-rack-links-seed-105-kafka-rack-links-seed-105-rep-1
+[67/240] seed-107-rep-1 (MemAvailable 13235 MiB)
+    seed-106-rep-1 exit=1 156.5s run_dir=runs/20260912-190415-kafka-rack-links-seed-106-kafka-rack-links-seed-106-rep-1
+[68/240] seed-108-rep-1 (MemAvailable 13601 MiB)
+    seed-108-rep-1 exit=1 156.1s run_dir=runs/20260912-190652-kafka-rack-links-seed-108-kafka-rack-links-seed-108-rep-1
+[69/240] seed-109-rep-1 (MemAvailable 12657 MiB)
+    seed-107-rep-1 exit=0 284.7s run_dir=runs/20260912-190516-kafka-rack-links-seed-107-kafka-rack-links-seed-107-rep-1
+[70/240] seed-110-rep-1 (MemAvailable 15259 MiB)
+    seed-109-rep-1 exit=1 159.7s run_dir=runs/20260912-190928-kafka-rack-links-seed-109-kafka-rack-links-seed-109-rep-1
+[71/240] seed-111-rep-1 (MemAvailable 13151 MiB)
+    seed-110-rep-1 exit=0 173.3s run_dir=runs/20260912-191000-kafka-rack-links-seed-110-kafka-rack-links-seed-110-rep-1
+[72/240] seed-112-rep-1 (MemAvailable 14729 MiB)
+    seed-111-rep-1 exit=1 162.4s run_dir=runs/20260912-191208-kafka-rack-links-seed-111-kafka-rack-links-seed-111-rep-1
+[73/240] seed-113-rep-1 (MemAvailable 14074 MiB)
+    seed-112-rep-1 exit=1 156.1s run_dir=runs/20260912-191254-kafka-rack-links-seed-112-kafka-rack-links-seed-112-rep-1
+[74/240] seed-114-rep-1 (MemAvailable 14152 MiB)
+    seed-113-rep-1 exit=1 154.2s run_dir=runs/20260912-191450-kafka-rack-links-seed-113-kafka-rack-links-seed-113-rep-1
+[75/240] seed-115-rep-1 (MemAvailable 14057 MiB)
+    seed-114-rep-1 exit=1 155.5s run_dir=runs/20260912-191530-kafka-rack-links-seed-114-kafka-rack-links-seed-114-rep-1
+[76/240] seed-116-rep-1 (MemAvailable 14129 MiB)
+    seed-115-rep-1 exit=0 282.5s run_dir=runs/20260912-191724-kafka-rack-links-seed-115-kafka-rack-links-seed-115-rep-1
+[77/240] seed-117-rep-1 (MemAvailable 13580 MiB)
+    seed-116-rep-1 exit=0 281.5s run_dir=runs/20260912-191805-kafka-rack-links-seed-116-kafka-rack-links-seed-116-rep-1
+[78/240] seed-118-rep-1 (MemAvailable 13775 MiB)
+    seed-117-rep-1 exit=0 170.8s run_dir=runs/20260912-192207-kafka-rack-links-seed-117-kafka-rack-links-seed-117-rep-1
+[79/240] seed-119-rep-1 (MemAvailable 14351 MiB)
+    seed-118-rep-1 exit=1 157.4s run_dir=runs/20260912-192247-kafka-rack-links-seed-118-kafka-rack-links-seed-118-rep-1
+[80/240] seed-120-rep-1 (MemAvailable 15998 MiB)
+    seed-119-rep-1 exit=1 156.2s run_dir=runs/20260912-192458-kafka-rack-links-seed-119-kafka-rack-links-seed-119-rep-1
+[81/240] seed-41-rep-2 (MemAvailable 15041 MiB)
+    seed-120-rep-1 exit=1 159.6s run_dir=runs/20260912-192524-kafka-rack-links-seed-120-kafka-rack-links-seed-120-rep-1
+[82/240] seed-42-rep-2 (MemAvailable 14656 MiB)
+    seed-42-rep-2 exit=1 150.5s run_dir=runs/20260912-192804-kafka-rack-links-seed-42-kafka-rack-links-seed-42-rep-2
+[83/240] seed-43-rep-2 (MemAvailable 13158 MiB)
+    seed-41-rep-2 exit=0 279.0s run_dir=runs/20260912-192734-kafka-rack-links-seed-41-kafka-rack-links-seed-41-rep-2
+[84/240] seed-44-rep-2 (MemAvailable 13674 MiB)
+    seed-43-rep-2 exit=1 152.2s run_dir=runs/20260912-193034-kafka-rack-links-seed-43-kafka-rack-links-seed-43-rep-2
+[85/240] seed-45-rep-2 (MemAvailable 13112 MiB)
+    seed-44-rep-2 exit=0 200.8s run_dir=runs/20260912-193213-kafka-rack-links-seed-44-kafka-rack-links-seed-44-rep-2
+[86/240] seed-46-rep-2 (MemAvailable 14264 MiB)
+    seed-45-rep-2 exit=1 153.8s run_dir=runs/20260912-193306-kafka-rack-links-seed-45-kafka-rack-links-seed-45-rep-2
+[87/240] seed-47-rep-2 (MemAvailable 18972 MiB)
+    seed-46-rep-2 exit=0 281.4s run_dir=runs/20260912-193534-kafka-rack-links-seed-46-kafka-rack-links-seed-46-rep-2
+[88/240] seed-48-rep-2 (MemAvailable 13824 MiB)
+    seed-47-rep-2 exit=0 279.5s run_dir=runs/20260912-193540-kafka-rack-links-seed-47-kafka-rack-links-seed-47-rep-2
+[89/240] seed-49-rep-2 (MemAvailable 19664 MiB)
+    seed-49-rep-2 exit=1 153.3s run_dir=runs/20260912-194020-kafka-rack-links-seed-49-kafka-rack-links-seed-49-rep-2
+[90/240] seed-50-rep-2 (MemAvailable 12717 MiB)
+    seed-48-rep-2 exit=0 171.3s run_dir=runs/20260912-194015-kafka-rack-links-seed-48-kafka-rack-links-seed-48-rep-2
+[91/240] seed-51-rep-2 (MemAvailable 16670 MiB)
+    seed-50-rep-2 exit=1 151.0s run_dir=runs/20260912-194253-kafka-rack-links-seed-50-kafka-rack-links-seed-50-rep-2
+[92/240] seed-52-rep-2 (MemAvailable 14063 MiB)
+    seed-51-rep-2 exit=1 151.5s run_dir=runs/20260912-194306-kafka-rack-links-seed-51-kafka-rack-links-seed-51-rep-2
+[93/240] seed-53-rep-2 (MemAvailable 16404 MiB)
+    seed-52-rep-2 exit=1 153.6s run_dir=runs/20260912-194524-kafka-rack-links-seed-52-kafka-rack-links-seed-52-rep-2
+[94/240] seed-54-rep-2 (MemAvailable 13335 MiB)
+    seed-53-rep-2 exit=1 152.8s run_dir=runs/20260912-194538-kafka-rack-links-seed-53-kafka-rack-links-seed-53-rep-2
+[95/240] seed-55-rep-2 (MemAvailable 16514 MiB)
+    seed-55-rep-2 exit=1 153.7s run_dir=runs/20260912-194811-kafka-rack-links-seed-55-kafka-rack-links-seed-55-rep-2
+[96/240] seed-56-rep-2 (MemAvailable 12667 MiB)
+    seed-54-rep-2 exit=0 171.5s run_dir=runs/20260912-194758-kafka-rack-links-seed-54-kafka-rack-links-seed-54-rep-2
+[97/240] seed-57-rep-2 (MemAvailable 19223 MiB)
+    seed-56-rep-2 exit=1 152.5s run_dir=runs/20260912-195044-kafka-rack-links-seed-56-kafka-rack-links-seed-56-rep-2
+[98/240] seed-58-rep-2 (MemAvailable 13793 MiB)
+    seed-57-rep-2 exit=1 152.0s run_dir=runs/20260912-195049-kafka-rack-links-seed-57-kafka-rack-links-seed-57-rep-2
+[99/240] seed-59-rep-2 (MemAvailable 19323 MiB)
+    seed-58-rep-2 exit=1 152.4s run_dir=runs/20260912-195317-kafka-rack-links-seed-58-kafka-rack-links-seed-58-rep-2
+[100/240] seed-60-rep-2 (MemAvailable 13473 MiB)
+    seed-59-rep-2 exit=0 170.5s run_dir=runs/20260912-195321-kafka-rack-links-seed-59-kafka-rack-links-seed-59-rep-2
+[101/240] seed-61-rep-2 (MemAvailable 16392 MiB)
+    seed-60-rep-2 exit=1 152.4s run_dir=runs/20260912-195549-kafka-rack-links-seed-60-kafka-rack-links-seed-60-rep-2
+[102/240] seed-62-rep-2 (MemAvailable 13753 MiB)
+    seed-61-rep-2 exit=1 153.0s run_dir=runs/20260912-195612-kafka-rack-links-seed-61-kafka-rack-links-seed-61-rep-2
+[103/240] seed-63-rep-2 (MemAvailable 16133 MiB)
+    seed-62-rep-2 exit=0 171.2s run_dir=runs/20260912-195822-kafka-rack-links-seed-62-kafka-rack-links-seed-62-rep-2
+[104/240] seed-64-rep-2 (MemAvailable 14083 MiB)
+    seed-63-rep-2 exit=1 153.7s run_dir=runs/20260912-195845-kafka-rack-links-seed-63-kafka-rack-links-seed-63-rep-2
+[105/240] seed-65-rep-2 (MemAvailable 19127 MiB)
+    seed-64-rep-2 exit=1 152.4s run_dir=runs/20260912-200113-kafka-rack-links-seed-64-kafka-rack-links-seed-64-rep-2
+[106/240] seed-66-rep-2 (MemAvailable 14195 MiB)
+    seed-65-rep-2 exit=1 152.0s run_dir=runs/20260912-200119-kafka-rack-links-seed-65-kafka-rack-links-seed-65-rep-2
+[107/240] seed-67-rep-2 (MemAvailable 19359 MiB)
+    seed-66-rep-2 exit=1 152.5s run_dir=runs/20260912-200345-kafka-rack-links-seed-66-kafka-rack-links-seed-66-rep-2
+[108/240] seed-68-rep-2 (MemAvailable 14110 MiB)
+    seed-67-rep-2 exit=1 152.0s run_dir=runs/20260912-200351-kafka-rack-links-seed-67-kafka-rack-links-seed-67-rep-2
+[109/240] seed-69-rep-2 (MemAvailable 19353 MiB)
+    seed-68-rep-2 exit=1 152.0s run_dir=runs/20260912-200618-kafka-rack-links-seed-68-kafka-rack-links-seed-68-rep-2
+[110/240] seed-70-rep-2 (MemAvailable 14159 MiB)
+    seed-69-rep-2 exit=1 152.2s run_dir=runs/20260912-200623-kafka-rack-links-seed-69-kafka-rack-links-seed-69-rep-2
+[111/240] seed-71-rep-2 (MemAvailable 19357 MiB)
+    seed-71-rep-2 exit=0 171.7s run_dir=runs/20260912-200855-kafka-rack-links-seed-71-kafka-rack-links-seed-71-rep-2
+[112/240] seed-72-rep-2 (MemAvailable 13908 MiB)
+    seed-70-rep-2 exit=0 281.5s run_dir=runs/20260912-200850-kafka-rack-links-seed-70-kafka-rack-links-seed-70-rep-2
+[113/240] seed-73-rep-2 (MemAvailable 13494 MiB)
+    seed-72-rep-2 exit=0 170.2s run_dir=runs/20260912-201146-kafka-rack-links-seed-72-kafka-rack-links-seed-72-rep-2
+[114/240] seed-74-rep-2 (MemAvailable 14480 MiB)
+    seed-73-rep-2 exit=1 153.0s run_dir=runs/20260912-201331-kafka-rack-links-seed-73-kafka-rack-links-seed-73-rep-2
+[115/240] seed-75-rep-2 (MemAvailable 14483 MiB)
+    seed-74-rep-2 exit=1 152.0s run_dir=runs/20260912-201437-kafka-rack-links-seed-74-kafka-rack-links-seed-74-rep-2
+[116/240] seed-76-rep-2 (MemAvailable 14458 MiB)
+    seed-75-rep-2 exit=1 151.7s run_dir=runs/20260912-201604-kafka-rack-links-seed-75-kafka-rack-links-seed-75-rep-2
+[117/240] seed-77-rep-2 (MemAvailable 14464 MiB)
+    seed-76-rep-2 exit=1 151.4s run_dir=runs/20260912-201709-kafka-rack-links-seed-76-kafka-rack-links-seed-76-rep-2
+[118/240] seed-78-rep-2 (MemAvailable 14456 MiB)
+    seed-77-rep-2 exit=1 151.5s run_dir=runs/20260912-201836-kafka-rack-links-seed-77-kafka-rack-links-seed-77-rep-2
+[119/240] seed-79-rep-2 (MemAvailable 14491 MiB)
+    seed-78-rep-2 exit=1 151.3s run_dir=runs/20260912-201940-kafka-rack-links-seed-78-kafka-rack-links-seed-78-rep-2
+[120/240] seed-80-rep-2 (MemAvailable 14454 MiB)
+    seed-79-rep-2 exit=1 151.5s run_dir=runs/20260912-202108-kafka-rack-links-seed-79-kafka-rack-links-seed-79-rep-2
+[121/240] seed-81-rep-2 (MemAvailable 14430 MiB)
+    seed-80-rep-2 exit=1 151.1s run_dir=runs/20260912-202211-kafka-rack-links-seed-80-kafka-rack-links-seed-80-rep-2
+[122/240] seed-82-rep-2 (MemAvailable 14453 MiB)
+    seed-81-rep-2 exit=1 153.5s run_dir=runs/20260912-202339-kafka-rack-links-seed-81-kafka-rack-links-seed-81-rep-2
+[123/240] seed-83-rep-2 (MemAvailable 14406 MiB)
+    seed-82-rep-2 exit=1 152.5s run_dir=runs/20260912-202442-kafka-rack-links-seed-82-kafka-rack-links-seed-82-rep-2
+[124/240] seed-84-rep-2 (MemAvailable 15005 MiB)
+    seed-83-rep-2 exit=1 156.4s run_dir=runs/20260912-202613-kafka-rack-links-seed-83-kafka-rack-links-seed-83-rep-2
+[125/240] seed-85-rep-2 (MemAvailable 14124 MiB)
+    seed-85-rep-2 exit=1 150.6s run_dir=runs/20260912-202849-kafka-rack-links-seed-85-kafka-rack-links-seed-85-rep-2
+[126/240] seed-86-rep-2 (MemAvailable 12506 MiB)
+    seed-84-rep-2 exit=0 280.7s run_dir=runs/20260912-202715-kafka-rack-links-seed-84-kafka-rack-links-seed-84-rep-2
+[127/240] seed-87-rep-2 (MemAvailable 13728 MiB)
+    seed-86-rep-2 exit=1 152.3s run_dir=runs/20260912-203120-kafka-rack-links-seed-86-kafka-rack-links-seed-86-rep-2
+[128/240] seed-88-rep-2 (MemAvailable 13973 MiB)
+    seed-87-rep-2 exit=1 151.8s run_dir=runs/20260912-203156-kafka-rack-links-seed-87-kafka-rack-links-seed-87-rep-2
+[129/240] seed-89-rep-2 (MemAvailable 14438 MiB)
+    seed-88-rep-2 exit=1 156.6s run_dir=runs/20260912-203352-kafka-rack-links-seed-88-kafka-rack-links-seed-88-rep-2
+[130/240] seed-90-rep-2 (MemAvailable 13954 MiB)
+    seed-89-rep-2 exit=1 151.7s run_dir=runs/20260912-203428-kafka-rack-links-seed-89-kafka-rack-links-seed-89-rep-2
+[131/240] seed-91-rep-2 (MemAvailable 13431 MiB)
+    seed-91-rep-2 exit=1 154.3s run_dir=runs/20260912-203659-kafka-rack-links-seed-91-kafka-rack-links-seed-91-rep-2
+[132/240] seed-92-rep-2 (MemAvailable 13550 MiB)
+    seed-90-rep-2 exit=0 278.5s run_dir=runs/20260912-203629-kafka-rack-links-seed-90-kafka-rack-links-seed-90-rep-2
+[133/240] seed-93-rep-2 (MemAvailable 14773 MiB)
+    seed-92-rep-2 exit=1 157.0s run_dir=runs/20260912-203934-kafka-rack-links-seed-92-kafka-rack-links-seed-92-rep-2
+[134/240] seed-94-rep-2 (MemAvailable 12376 MiB)
+    seed-93-rep-2 exit=1 152.3s run_dir=runs/20260912-204107-kafka-rack-links-seed-93-kafka-rack-links-seed-93-rep-2
+[135/240] seed-95-rep-2 (MemAvailable 13641 MiB)
+    seed-95-rep-2 exit=1 152.1s run_dir=runs/20260912-204339-kafka-rack-links-seed-95-kafka-rack-links-seed-95-rep-2
+[136/240] seed-96-rep-2 (MemAvailable 13025 MiB)
+    seed-94-rep-2 exit=0 279.5s run_dir=runs/20260912-204211-kafka-rack-links-seed-94-kafka-rack-links-seed-94-rep-2
+[137/240] seed-97-rep-2 (MemAvailable 13581 MiB)
+    seed-96-rep-2 exit=1 152.7s run_dir=runs/20260912-204611-kafka-rack-links-seed-96-kafka-rack-links-seed-96-rep-2
+[138/240] seed-98-rep-2 (MemAvailable 12410 MiB)
+    seed-97-rep-2 exit=1 151.6s run_dir=runs/20260912-204650-kafka-rack-links-seed-97-kafka-rack-links-seed-97-rep-2
+[139/240] seed-99-rep-2 (MemAvailable 13505 MiB)
+    seed-98-rep-2 exit=1 152.7s run_dir=runs/20260912-204844-kafka-rack-links-seed-98-kafka-rack-links-seed-98-rep-2
+[140/240] seed-100-rep-2 (MemAvailable 12493 MiB)
+    seed-99-rep-2 exit=1 154.0s run_dir=runs/20260912-204922-kafka-rack-links-seed-99-kafka-rack-links-seed-99-rep-2
+[141/240] seed-101-rep-2 (MemAvailable 13173 MiB)
+    seed-100-rep-2 exit=1 151.4s run_dir=runs/20260912-205117-kafka-rack-links-seed-100-kafka-rack-links-seed-100-rep-2
+[142/240] seed-102-rep-2 (MemAvailable 12905 MiB)
+    seed-101-rep-2 exit=1 152.3s run_dir=runs/20260912-205156-kafka-rack-links-seed-101-kafka-rack-links-seed-101-rep-2
+[143/240] seed-103-rep-2 (MemAvailable 12915 MiB)
+    seed-102-rep-2 exit=0 201.1s run_dir=runs/20260912-205348-kafka-rack-links-seed-102-kafka-rack-links-seed-102-rep-2
+[144/240] seed-104-rep-2 (MemAvailable 13381 MiB)
+    seed-103-rep-2 exit=1 154.5s run_dir=runs/20260912-205438-kafka-rack-links-seed-103-kafka-rack-links-seed-103-rep-2
+[145/240] seed-105-rep-2 (MemAvailable 19171 MiB)
+    seed-105-rep-2 exit=1 151.3s run_dir=runs/20260912-205712-kafka-rack-links-seed-105-kafka-rack-links-seed-105-rep-2
+[146/240] seed-106-rep-2 (MemAvailable 14172 MiB)
+    seed-104-rep-2 exit=1 156.1s run_dir=runs/20260912-205709-kafka-rack-links-seed-104-kafka-rack-links-seed-104-rep-2
+[147/240] seed-107-rep-2 (MemAvailable 19439 MiB)
+    seed-106-rep-2 exit=1 154.5s run_dir=runs/20260912-205944-kafka-rack-links-seed-106-kafka-rack-links-seed-106-rep-2
+[148/240] seed-108-rep-2 (MemAvailable 12578 MiB)
+    seed-107-rep-2 exit=0 171.7s run_dir=runs/20260912-205946-kafka-rack-links-seed-107-kafka-rack-links-seed-107-rep-2
+[149/240] seed-109-rep-2 (MemAvailable 15669 MiB)
+    seed-108-rep-2 exit=1 154.2s run_dir=runs/20260912-210218-kafka-rack-links-seed-108-kafka-rack-links-seed-108-rep-2
+[150/240] seed-110-rep-2 (MemAvailable 12545 MiB)
+    seed-109-rep-2 exit=0 202.3s run_dir=runs/20260912-210237-kafka-rack-links-seed-109-kafka-rack-links-seed-109-rep-2
+[151/240] seed-111-rep-2 (MemAvailable 12629 MiB)
+    seed-110-rep-2 exit=0 171.2s run_dir=runs/20260912-210452-kafka-rack-links-seed-110-kafka-rack-links-seed-110-rep-2
+[152/240] seed-112-rep-2 (MemAvailable 14169 MiB)
+    seed-111-rep-2 exit=1 158.4s run_dir=runs/20260912-210600-kafka-rack-links-seed-111-kafka-rack-links-seed-111-rep-2
+[153/240] seed-113-rep-2 (MemAvailable 13575 MiB)
+    seed-112-rep-2 exit=1 150.8s run_dir=runs/20260912-210744-kafka-rack-links-seed-112-kafka-rack-links-seed-112-rep-2
+[154/240] seed-114-rep-2 (MemAvailable 13609 MiB)
+    seed-113-rep-2 exit=1 151.5s run_dir=runs/20260912-210838-kafka-rack-links-seed-113-kafka-rack-links-seed-113-rep-2
+[155/240] seed-115-rep-2 (MemAvailable 13578 MiB)
+    seed-114-rep-2 exit=1 151.2s run_dir=runs/20260912-211014-kafka-rack-links-seed-114-kafka-rack-links-seed-114-rep-2
+[156/240] seed-116-rep-2 (MemAvailable 13590 MiB)
+    seed-116-rep-2 exit=0 169.1s run_dir=runs/20260912-211246-kafka-rack-links-seed-116-kafka-rack-links-seed-116-rep-2
+[157/240] seed-117-rep-2 (MemAvailable 13074 MiB)
+    seed-115-rep-2 exit=0 281.4s run_dir=runs/20260912-211109-kafka-rack-links-seed-115-kafka-rack-links-seed-115-rep-2
+[158/240] seed-118-rep-2 (MemAvailable 15513 MiB)
+    seed-117-rep-2 exit=1 152.9s run_dir=runs/20260912-211535-kafka-rack-links-seed-117-kafka-rack-links-seed-117-rep-2
+[159/240] seed-119-rep-2 (MemAvailable 13595 MiB)
+    seed-118-rep-2 exit=1 151.6s run_dir=runs/20260912-211551-kafka-rack-links-seed-118-kafka-rack-links-seed-118-rep-2
+[160/240] seed-120-rep-2 (MemAvailable 15616 MiB)
+    seed-120-rep-2 exit=1 158.4s run_dir=runs/20260912-211822-kafka-rack-links-seed-120-kafka-rack-links-seed-120-rep-2
+[161/240] seed-41-rep-3 (MemAvailable 12367 MiB)
+    seed-119-rep-2 exit=0 203.8s run_dir=runs/20260912-211808-kafka-rack-links-seed-119-kafka-rack-links-seed-119-rep-2
+[162/240] seed-42-rep-3 (MemAvailable 15479 MiB)
+    seed-42-rep-3 exit=1 151.6s run_dir=runs/20260912-212131-kafka-rack-links-seed-42-kafka-rack-links-seed-42-rep-3
+[163/240] seed-43-rep-3 (MemAvailable 12332 MiB)
+    seed-41-rep-3 exit=0 280.0s run_dir=runs/20260912-212111-kafka-rack-links-seed-41-kafka-rack-links-seed-41-rep-3
+[164/240] seed-44-rep-3 (MemAvailable 12988 MiB)
+    seed-43-rep-3 exit=1 153.6s run_dir=runs/20260912-212403-kafka-rack-links-seed-43-kafka-rack-links-seed-43-rep-3
+[165/240] seed-45-rep-3 (MemAvailable 13557 MiB)
+    seed-44-rep-3 exit=1 152.9s run_dir=runs/20260912-212551-kafka-rack-links-seed-44-kafka-rack-links-seed-44-rep-3
+[166/240] seed-46-rep-3 (MemAvailable 12582 MiB)
+    seed-45-rep-3 exit=0 201.9s run_dir=runs/20260912-212637-kafka-rack-links-seed-45-kafka-rack-links-seed-45-rep-3
+[167/240] seed-47-rep-3 (MemAvailable 12712 MiB)
+    seed-46-rep-3 exit=1 153.0s run_dir=runs/20260912-212844-kafka-rack-links-seed-46-kafka-rack-links-seed-46-rep-3
+[168/240] seed-48-rep-3 (MemAvailable 13584 MiB)
+    seed-47-rep-3 exit=0 279.9s run_dir=runs/20260912-212959-kafka-rack-links-seed-47-kafka-rack-links-seed-47-rep-3
+[169/240] seed-49-rep-3 (MemAvailable 12669 MiB)
+    seed-48-rep-3 exit=0 279.8s run_dir=runs/20260912-213117-kafka-rack-links-seed-48-kafka-rack-links-seed-48-rep-3
+[170/240] seed-50-rep-3 (MemAvailable 13310 MiB)
+    seed-49-rep-3 exit=1 153.2s run_dir=runs/20260912-213438-kafka-rack-links-seed-49-kafka-rack-links-seed-49-rep-3
+[171/240] seed-51-rep-3 (MemAvailable 13330 MiB)
+    seed-50-rep-3 exit=1 151.2s run_dir=runs/20260912-213557-kafka-rack-links-seed-50-kafka-rack-links-seed-50-rep-3
+[172/240] seed-52-rep-3 (MemAvailable 12941 MiB)
+    seed-51-rep-3 exit=1 153.1s run_dir=runs/20260912-213712-kafka-rack-links-seed-51-kafka-rack-links-seed-51-rep-3
+[173/240] seed-53-rep-3 (MemAvailable 12761 MiB)
+    seed-52-rep-3 exit=1 152.2s run_dir=runs/20260912-213828-kafka-rack-links-seed-52-kafka-rack-links-seed-52-rep-3
+[174/240] seed-54-rep-3 (MemAvailable 12682 MiB)
+    seed-53-rep-3 exit=1 152.1s run_dir=runs/20260912-213945-kafka-rack-links-seed-53-kafka-rack-links-seed-53-rep-3
+[175/240] seed-55-rep-3 (MemAvailable 12370 MiB)
+    seed-54-rep-3 exit=0 169.0s run_dir=runs/20260912-214100-kafka-rack-links-seed-54-kafka-rack-links-seed-54-rep-3
+[176/240] seed-56-rep-3 (MemAvailable 13154 MiB)
+    seed-55-rep-3 exit=1 153.4s run_dir=runs/20260912-214227-kafka-rack-links-seed-55-kafka-rack-links-seed-55-rep-3
+[177/240] seed-57-rep-3 (MemAvailable 13645 MiB)
+    seed-56-rep-3 exit=1 153.2s run_dir=runs/20260912-214349-kafka-rack-links-seed-56-kafka-rack-links-seed-56-rep-3
+[178/240] seed-58-rep-3 (MemAvailable 13190 MiB)
+    seed-57-rep-3 exit=1 151.4s run_dir=runs/20260912-214500-kafka-rack-links-seed-57-kafka-rack-links-seed-57-rep-3
+[179/240] seed-59-rep-3 (MemAvailable 13052 MiB)
+    seed-58-rep-3 exit=1 152.2s run_dir=runs/20260912-214622-kafka-rack-links-seed-58-kafka-rack-links-seed-58-rep-3
+[180/240] seed-60-rep-3 (MemAvailable 12734 MiB)
+    seed-60-rep-3 exit=1 151.2s run_dir=runs/20260912-214854-kafka-rack-links-seed-60-kafka-rack-links-seed-60-rep-3
+[181/240] seed-61-rep-3 (MemAvailable 12459 MiB)
+    seed-59-rep-3 exit=0 280.2s run_dir=runs/20260912-214732-kafka-rack-links-seed-59-kafka-rack-links-seed-59-rep-3
+[182/240] seed-62-rep-3 (MemAvailable 12614 MiB)
+    seed-61-rep-3 exit=1 154.2s run_dir=runs/20260912-215126-kafka-rack-links-seed-61-kafka-rack-links-seed-61-rep-3
+[183/240] seed-63-rep-3 (MemAvailable 12579 MiB)
+    seed-62-rep-3 exit=0 170.1s run_dir=runs/20260912-215212-kafka-rack-links-seed-62-kafka-rack-links-seed-62-rep-3
+[184/240] seed-64-rep-3 (MemAvailable 12703 MiB)
+    seed-63-rep-3 exit=1 153.4s run_dir=runs/20260912-215400-kafka-rack-links-seed-63-kafka-rack-links-seed-63-rep-3
+[185/240] seed-65-rep-3 (MemAvailable 12824 MiB)
+    seed-64-rep-3 exit=1 151.7s run_dir=runs/20260912-215502-kafka-rack-links-seed-64-kafka-rack-links-seed-64-rep-3
+[186/240] seed-66-rep-3 (MemAvailable 13365 MiB)
+    seed-65-rep-3 exit=1 152.9s run_dir=runs/20260912-215633-kafka-rack-links-seed-65-kafka-rack-links-seed-65-rep-3
+[187/240] seed-67-rep-3 (MemAvailable 13155 MiB)
+    seed-66-rep-3 exit=1 152.5s run_dir=runs/20260912-215734-kafka-rack-links-seed-66-kafka-rack-links-seed-66-rep-3
+[188/240] seed-68-rep-3 (MemAvailable 12847 MiB)
+    seed-67-rep-3 exit=1 152.7s run_dir=runs/20260912-215906-kafka-rack-links-seed-67-kafka-rack-links-seed-67-rep-3
+[189/240] seed-69-rep-3 (MemAvailable 12390 MiB)
+    seed-68-rep-3 exit=1 152.2s run_dir=runs/20260912-220016-kafka-rack-links-seed-68-kafka-rack-links-seed-68-rep-3
+[190/240] seed-70-rep-3 (MemAvailable 12684 MiB)
+    seed-69-rep-3 exit=1 150.7s run_dir=runs/20260912-220139-kafka-rack-links-seed-69-kafka-rack-links-seed-69-rep-3
+[191/240] seed-71-rep-3 (MemAvailable 12715 MiB)
+    seed-71-rep-3 exit=0 169.8s run_dir=runs/20260912-220410-kafka-rack-links-seed-71-kafka-rack-links-seed-71-rep-3
+[192/240] seed-72-rep-3 (MemAvailable 12552 MiB)
+    seed-70-rep-3 exit=0 280.4s run_dir=runs/20260912-220258-kafka-rack-links-seed-70-kafka-rack-links-seed-70-rep-3
+[193/240] seed-73-rep-3 (MemAvailable 16202 MiB)
+    seed-72-rep-3 exit=0 170.1s run_dir=runs/20260912-220659-kafka-rack-links-seed-72-kafka-rack-links-seed-72-rep-3
+[194/240] seed-74-rep-3 (MemAvailable 19575 MiB)
+    seed-73-rep-3 exit=1 152.1s run_dir=runs/20260912-220949-kafka-rack-links-seed-73-kafka-rack-links-seed-73-rep-3
+[195/240] seed-75-rep-3 (MemAvailable 15503 MiB)
+    seed-74-rep-3 exit=1 152.1s run_dir=runs/20260912-220949-kafka-rack-links-seed-74-kafka-rack-links-seed-74-rep-3
+[196/240] seed-76-rep-3 (MemAvailable 19447 MiB)
+    seed-75-rep-3 exit=1 153.1s run_dir=runs/20260912-221221-kafka-rack-links-seed-75-kafka-rack-links-seed-75-rep-3
+[197/240] seed-77-rep-3 (MemAvailable 19186 MiB)
+    seed-76-rep-3 exit=1 152.6s run_dir=runs/20260912-221222-kafka-rack-links-seed-76-kafka-rack-links-seed-76-rep-3
+[198/240] seed-78-rep-3 (MemAvailable 19537 MiB)
+    seed-78-rep-3 exit=1 152.6s run_dir=runs/20260912-221454-kafka-rack-links-seed-78-kafka-rack-links-seed-78-rep-3
+[199/240] seed-79-rep-3 (MemAvailable 12838 MiB)
+    seed-77-rep-3 exit=1 153.4s run_dir=runs/20260912-221454-kafka-rack-links-seed-77-kafka-rack-links-seed-77-rep-3
+[200/240] seed-80-rep-3 (MemAvailable 18865 MiB)
+    seed-79-rep-3 exit=1 151.4s run_dir=runs/20260912-221727-kafka-rack-links-seed-79-kafka-rack-links-seed-79-rep-3
+[201/240] seed-81-rep-3 (MemAvailable 12659 MiB)
+    seed-80-rep-3 exit=1 151.7s run_dir=runs/20260912-221728-kafka-rack-links-seed-80-kafka-rack-links-seed-80-rep-3
+[202/240] seed-82-rep-3 (MemAvailable 18645 MiB)
+    seed-81-rep-3 exit=1 151.8s run_dir=runs/20260912-221958-kafka-rack-links-seed-81-kafka-rack-links-seed-81-rep-3
+[203/240] seed-83-rep-3 (MemAvailable 13223 MiB)
+    seed-82-rep-3 exit=1 152.3s run_dir=runs/20260912-221959-kafka-rack-links-seed-82-kafka-rack-links-seed-82-rep-3
+[204/240] seed-84-rep-3 (MemAvailable 19277 MiB)
+    seed-83-rep-3 exit=1 157.1s run_dir=runs/20260912-222230-kafka-rack-links-seed-83-kafka-rack-links-seed-83-rep-3
+[205/240] seed-85-rep-3 (MemAvailable 13054 MiB)
+=== resumed 2026-09-12T22:27:52Z with --jobs 1 (D11 emergency clause) after the job was stopped for low host memory ===
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+[1/37] seed-84-rep-3 (MemAvailable 19020 MiB)
+    seed-84-rep-3 exit=0 281.2s run_dir=runs/20260912-222752-kafka-rack-links-seed-84-kafka-rack-links-seed-84-rep-3
+[2/37] seed-85-rep-3 (MemAvailable 23379 MiB)
+    seed-85-rep-3 exit=1 152.0s run_dir=runs/20260912-223233-kafka-rack-links-seed-85-kafka-rack-links-seed-85-rep-3
+[3/37] seed-86-rep-3 (MemAvailable 23143 MiB)
+    seed-86-rep-3 exit=1 154.6s run_dir=runs/20260912-223505-kafka-rack-links-seed-86-kafka-rack-links-seed-86-rep-3
+[4/37] seed-87-rep-3 (MemAvailable 22683 MiB)
+    seed-87-rep-3 exit=1 154.3s run_dir=runs/20260912-223740-kafka-rack-links-seed-87-kafka-rack-links-seed-87-rep-3
+[5/37] seed-88-rep-3 (MemAvailable 22733 MiB)
+    seed-88-rep-3 exit=1 158.9s run_dir=runs/20260912-224014-kafka-rack-links-seed-88-kafka-rack-links-seed-88-rep-3
+[6/37] seed-89-rep-3 (MemAvailable 22604 MiB)
+    seed-89-rep-3 exit=1 153.2s run_dir=runs/20260912-224253-kafka-rack-links-seed-89-kafka-rack-links-seed-89-rep-3
+[7/37] seed-90-rep-3 (MemAvailable 22661 MiB)
+    seed-90-rep-3 exit=0 281.0s run_dir=runs/20260912-224526-kafka-rack-links-seed-90-kafka-rack-links-seed-90-rep-3
+[8/37] seed-91-rep-3 (MemAvailable 22640 MiB)
+    seed-91-rep-3 exit=1 152.4s run_dir=runs/20260912-225007-kafka-rack-links-seed-91-kafka-rack-links-seed-91-rep-3
+[9/37] seed-92-rep-3 (MemAvailable 22636 MiB)
+    seed-92-rep-3 exit=1 158.9s run_dir=runs/20260912-225240-kafka-rack-links-seed-92-kafka-rack-links-seed-92-rep-3
+[10/37] seed-93-rep-3 (MemAvailable 22623 MiB)
+    seed-93-rep-3 exit=1 152.9s run_dir=runs/20260912-225519-kafka-rack-links-seed-93-kafka-rack-links-seed-93-rep-3
+[11/37] seed-94-rep-3 (MemAvailable 22612 MiB)
+    seed-94-rep-3 exit=0 280.4s run_dir=runs/20260912-225752-kafka-rack-links-seed-94-kafka-rack-links-seed-94-rep-3
+[12/37] seed-95-rep-3 (MemAvailable 22640 MiB)
+    seed-95-rep-3 exit=1 149.1s run_dir=runs/20260912-230232-kafka-rack-links-seed-95-kafka-rack-links-seed-95-rep-3
+[13/37] seed-96-rep-3 (MemAvailable 22554 MiB)
+    seed-96-rep-3 exit=1 150.6s run_dir=runs/20260912-230501-kafka-rack-links-seed-96-kafka-rack-links-seed-96-rep-3
+[14/37] seed-97-rep-3 (MemAvailable 22531 MiB)
+    seed-97-rep-3 exit=1 150.3s run_dir=runs/20260912-230732-kafka-rack-links-seed-97-kafka-rack-links-seed-97-rep-3
+[15/37] seed-98-rep-3 (MemAvailable 22596 MiB)
+    seed-98-rep-3 exit=1 154.2s run_dir=runs/20260912-231002-kafka-rack-links-seed-98-kafka-rack-links-seed-98-rep-3
+[16/37] seed-99-rep-3 (MemAvailable 22539 MiB)
+    seed-99-rep-3 exit=1 154.8s run_dir=runs/20260912-231236-kafka-rack-links-seed-99-kafka-rack-links-seed-99-rep-3
+[17/37] seed-100-rep-3 (MemAvailable 22569 MiB)
+    seed-100-rep-3 exit=1 152.4s run_dir=runs/20260912-231511-kafka-rack-links-seed-100-kafka-rack-links-seed-100-rep-3
+[18/37] seed-101-rep-3 (MemAvailable 22595 MiB)
+    seed-101-rep-3 exit=1 152.0s run_dir=runs/20260912-231744-kafka-rack-links-seed-101-kafka-rack-links-seed-101-rep-3
+[19/37] seed-102-rep-3 (MemAvailable 22586 MiB)
+    seed-102-rep-3 exit=0 199.2s run_dir=runs/20260912-232016-kafka-rack-links-seed-102-kafka-rack-links-seed-102-rep-3
+[20/37] seed-103-rep-3 (MemAvailable 22613 MiB)
+    seed-103-rep-3 exit=1 154.0s run_dir=runs/20260912-232335-kafka-rack-links-seed-103-kafka-rack-links-seed-103-rep-3
+[21/37] seed-104-rep-3 (MemAvailable 22582 MiB)
+    seed-104-rep-3 exit=1 158.7s run_dir=runs/20260912-232609-kafka-rack-links-seed-104-kafka-rack-links-seed-104-rep-3
+[22/37] seed-105-rep-3 (MemAvailable 22583 MiB)
+    seed-105-rep-3 exit=1 152.4s run_dir=runs/20260912-232848-kafka-rack-links-seed-105-kafka-rack-links-seed-105-rep-3
+[23/37] seed-106-rep-3 (MemAvailable 22900 MiB)
+    seed-106-rep-3 exit=1 153.5s run_dir=runs/20260912-233120-kafka-rack-links-seed-106-kafka-rack-links-seed-106-rep-3
+[24/37] seed-107-rep-3 (MemAvailable 22873 MiB)
+    seed-107-rep-3 exit=0 281.5s run_dir=runs/20260912-233353-kafka-rack-links-seed-107-kafka-rack-links-seed-107-rep-3
+[25/37] seed-108-rep-3 (MemAvailable 22923 MiB)
+    seed-108-rep-3 exit=1 153.1s run_dir=runs/20260912-233835-kafka-rack-links-seed-108-kafka-rack-links-seed-108-rep-3
+[26/37] seed-109-rep-3 (MemAvailable 22884 MiB)
+    seed-109-rep-3 exit=0 199.7s run_dir=runs/20260912-234108-kafka-rack-links-seed-109-kafka-rack-links-seed-109-rep-3
+[27/37] seed-110-rep-3 (MemAvailable 23170 MiB)
+    seed-110-rep-3 exit=0 168.1s run_dir=runs/20260912-234428-kafka-rack-links-seed-110-kafka-rack-links-seed-110-rep-3
+[28/37] seed-111-rep-3 (MemAvailable 23190 MiB)
+    seed-111-rep-3 exit=1 157.1s run_dir=runs/20260912-234716-kafka-rack-links-seed-111-kafka-rack-links-seed-111-rep-3
+[29/37] seed-112-rep-3 (MemAvailable 23170 MiB)
+    seed-112-rep-3 exit=1 151.8s run_dir=runs/20260912-234953-kafka-rack-links-seed-112-kafka-rack-links-seed-112-rep-3
+[30/37] seed-113-rep-3 (MemAvailable 23178 MiB)
+    seed-113-rep-3 exit=1 152.4s run_dir=runs/20260912-235225-kafka-rack-links-seed-113-kafka-rack-links-seed-113-rep-3
+[31/37] seed-114-rep-3 (MemAvailable 23195 MiB)
+    seed-114-rep-3 exit=1 152.9s run_dir=runs/20260912-235457-kafka-rack-links-seed-114-kafka-rack-links-seed-114-rep-3
+[32/37] seed-115-rep-3 (MemAvailable 23195 MiB)
+    seed-115-rep-3 exit=0 279.5s run_dir=runs/20260912-235730-kafka-rack-links-seed-115-kafka-rack-links-seed-115-rep-3
+[33/37] seed-116-rep-3 (MemAvailable 23183 MiB)
+    seed-116-rep-3 exit=0 167.8s run_dir=runs/20260913-000210-kafka-rack-links-seed-116-kafka-rack-links-seed-116-rep-3
+[34/37] seed-117-rep-3 (MemAvailable 23161 MiB)
+    seed-117-rep-3 exit=1 152.6s run_dir=runs/20260913-000457-kafka-rack-links-seed-117-kafka-rack-links-seed-117-rep-3
+[35/37] seed-118-rep-3 (MemAvailable 23198 MiB)
+    seed-118-rep-3 exit=1 152.5s run_dir=runs/20260913-000730-kafka-rack-links-seed-118-kafka-rack-links-seed-118-rep-3
+[36/37] seed-119-rep-3 (MemAvailable 23179 MiB)
+    seed-119-rep-3 exit=1 153.6s run_dir=runs/20260913-001003-kafka-rack-links-seed-119-kafka-rack-links-seed-119-rep-3
+[37/37] seed-120-rep-3 (MemAvailable 23187 MiB)
+    seed-120-rep-3 exit=1 157.3s run_dir=runs/20260913-001236-kafka-rack-links-seed-120-kafka-rack-links-seed-120-rep-3
+campaign exit: rc=0
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+Stream columns count confirmed/ambiguous/failed-before-send writes by phase; 'Cut samples' counts successful/planned samples over all nodes during the cut.
+
+## Executions
+
+| Unit | Links a / b / c | Cut | Placement | Outcome | Stream before | Stream during cut | Stream after | ISR during cut | Controller epochs | Cut (s) | Cut samples | Duration (s) |
+|---|---|---|---|---|---|---|---|---|---|---:|---|---:|
+| seed-42-rep-1 | 11 / 12 / 11 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 156.4 |
+| seed-41-rep-1 | 10 / 10 / 12 | 11 | concentrated | pass | 8/0/0 | 60/0/0 | 32/0/0 | 3-3 | 1 | 60.0 | 25/42 | 284.9 |
+| seed-43-rep-1 | 11 / 12 / 12 | 10,12 | spread | precondition_failure | - | - | - | - | - | - | - | 157.3 |
+| seed-45-rep-1 | 10 / 10,12 / 11,12 | 12 | spread | precondition_failure | - | - | - | - | - | - | - | 159.5 |
+| seed-44-rep-1 | 10 / 10,12 / 12 | 10 | spread | pass | 8/1/0 | 58/2/0 | 31/0/0 | 2-2 | 1 | 60.0 | 34/42 | 207.6 |
+| seed-46-rep-1 | 10 / 10,12 / 12 | 10 | concentrated | pass | 8/1/0 | 5/55/0 | 31/0/0 | 3-3 | 1,3 | 60.0 | 20/42 | 284.1 |
+| seed-47-rep-1 | 10 / 10 / 11 | 11,12 | concentrated | pass | 8/0/0 | 60/0/0 | 32/0/0 | 3-3 | 1 | 60.0 | 25/42 | 284.6 |
+| seed-49-rep-1 | 10 / 12 / 11,12 | 11,12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 156.2 |
+| seed-48-rep-1 | 10 / 10,12 / 11,12 | 10,12 | concentrated | pass | 8/1/0 | 3/57/0 | 31/0/0 | - | 1,3 | 60.0 | 20/42 | 284.0 |
+| seed-50-rep-1 | 10 / 12 / 11,12 | 11 | spread | precondition_failure | - | - | - | - | - | - | - | 157.5 |
+| seed-51-rep-1 | 10,11 / 12 / 12 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 156.0 |
+| seed-52-rep-1 | 11 / 12 / 11,12 | 10 | concentrated | precondition_failure | - | - | - | - | - | - | - | 157.4 |
+| seed-53-rep-1 | 11 / 10,12 / 11 | 10 | concentrated | precondition_failure | - | - | - | - | - | - | - | 157.0 |
+| seed-54-rep-1 | 10,11 / 10 / 11,12 | 12 | spread | pass | 8/0/0 | 60/0/0 | 32/0/0 | 3-3 | 1 | 60.0 | 36/42 | 173.0 |
+| seed-55-rep-1 | 10 / 10,12 / 11 | 10,11 | spread | precondition_failure | - | - | - | - | - | - | - | 157.4 |
+| seed-56-rep-1 | 10,11 / 12 / 12 | 10,11 | spread | precondition_failure | - | - | - | - | - | - | - | 156.0 |
+| seed-57-rep-1 | 10 / 10 / 11,12 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 155.5 |
+| seed-58-rep-1 | 10 / 12 / 11,12 | none | spread | precondition_failure | - | - | - | - | - | - | - | 156.0 |
+| seed-59-rep-1 | 10 / 10,12 / 11,12 | 11,12 | concentrated | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 1 | 60.0 | 35/42 | 173.1 |
+| seed-60-rep-1 | 10,11 / 12 / 12 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 159.0 |
+| seed-61-rep-1 | 10 / 10,12 / 11,12 | 12 | spread | precondition_failure | - | - | - | - | - | - | - | 158.1 |
+| seed-62-rep-1 | 10,11 / 10,12 / 11 | 10,11,12 | spread | pass | 8/1/0 | 4/56/0 | 31/0/0 | - | 1,3 | 60.0 | 31/42 | 174.6 |
+| seed-63-rep-1 | 10,11 / 10,12 / 12 | none | spread | pass | 8/0/0 | 60/0/0 | 32/0/0 | 2-2 | 1 | 60.0 | 35/42 | 208.0 |
+| seed-64-rep-1 | 10,11 / 12 / 12 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 155.0 |
+| seed-65-rep-1 | 11 / 10 / 11 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 156.8 |
+| seed-66-rep-1 | 10,11 / 12 / 12 | none | spread | precondition_failure | - | - | - | - | - | - | - | 154.0 |
+| seed-68-rep-1 | 10 / 12 / 11,12 | 10 | concentrated | precondition_failure | - | - | - | - | - | - | - | 157.8 |
+| seed-67-rep-1 | 11 / 12 / 11,12 | 10,11 | concentrated | pass | 9/0/0 | 60/0/0 | 31/0/0 | - | 1 | 60.0 | 30/42 | 205.4 |
+| seed-69-rep-1 | 10,11 / 12 / 11 | 10,12 | spread | precondition_failure | - | - | - | - | - | - | - | 157.4 |
+| seed-70-rep-1 | 10 / 10,12 / 11,12 | 12 | concentrated | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 1 | 60.0 | 25/42 | 284.3 |
+| seed-71-rep-1 | 10,11 / 10,12 / 11,12 | 10,12 | concentrated | pass | 8/1/0 | 58/2/0 | 31/0/0 | 2-3 | 1 | 60.0 | 35/42 | 171.9 |
+| seed-72-rep-1 | 10,11 / 10 / 11,12 | 11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 157.1 |
+| seed-73-rep-1 | 10 / 10 / 11,12 | 10,12 | spread | precondition_failure | - | - | - | - | - | - | - | 156.2 |
+| seed-74-rep-1 | 11 / 12 / 12 | 11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 157.4 |
+| seed-75-rep-1 | 11 / 12 / 12 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 157.3 |
+| seed-76-rep-1 | 10 / 12 / 11,12 | 10,12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 157.0 |
+| seed-77-rep-1 | 10,11 / 10,12 / 12 | none | spread | precondition_failure | - | - | - | - | - | - | - | 158.1 |
+| seed-78-rep-1 | 10,11 / 12 / 11 | 10,12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 156.3 |
+| seed-79-rep-1 | 10 / 12 / 12 | 11,12 | spread | precondition_failure | - | - | - | - | - | - | - | 156.6 |
+| seed-80-rep-1 | 11 / 12 / 12 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 157.4 |
+| seed-81-rep-1 | 10 / 10,12 / 12 | 10,11 | spread | precondition_failure | - | - | - | - | - | - | - | 156.5 |
+| seed-82-rep-1 | 11 / 10,12 / 11,12 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 158.5 |
+| seed-83-rep-1 | 10 / 12 / 11 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 161.8 |
+| seed-85-rep-1 | 10,11 / 12 / 11 | 10,12 | spread | precondition_failure | - | - | - | - | - | - | - | 158.4 |
+| seed-84-rep-1 | 10 / 10,12 / 12 | 11,12 | concentrated | pass | 8/0/0 | 60/0/0 | 32/0/0 | 3-3 | 1 | 60.0 | 35/42 | 173.7 |
+| seed-86-rep-1 | 10,11 / 10,12 / 12 | 11 | spread | precondition_failure | - | - | - | - | - | - | - | 156.1 |
+| seed-87-rep-1 | 11 / 10 / 11 | 11,12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 156.2 |
+| seed-89-rep-1 | 11 / 12 / 12 | 11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 156.8 |
+| seed-88-rep-1 | 11 / 10 / 12 | 11,12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 161.6 |
+| seed-91-rep-1 | 10 / 10 / 11,12 | 10,11 | spread | precondition_failure | - | - | - | - | - | - | - | 154.0 |
+| seed-90-rep-1 | 10 / 10 / 11 | 11 | concentrated | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 2 | 60.0 | 25/42 | 280.8 |
+| seed-92-rep-1 | 11 / 10 / 12 | 11 | spread | precondition_failure | - | - | - | - | - | - | - | 161.6 |
+| seed-93-rep-1 | 11 / 12 / 11,12 | 10,12 | spread | precondition_failure | - | - | - | - | - | - | - | 157.0 |
+| seed-95-rep-1 | 11 / 12 / 11 | 11 | spread | precondition_failure | - | - | - | - | - | - | - | 155.8 |
+| seed-94-rep-1 | 10,11 / 10 / 12 | 11,12 | concentrated | pass | 8/0/0 | 60/0/0 | 32/0/0 | 3-3 | 1 | 60.0 | 25/42 | 285.3 |
+| seed-96-rep-1 | 11 / 10 / 11,12 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 156.6 |
+| seed-97-rep-1 | 11 / 10 / 11 | 12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 157.1 |
+| seed-98-rep-1 | 10,11 / 12 / 11 | 10,12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.4 |
+| seed-99-rep-1 | 11 / 10,12 / 11,12 | 11,12 | spread | precondition_failure | - | - | - | - | - | - | - | 157.4 |
+| seed-100-rep-1 | 11 / 10,12 / 12 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 156.6 |
+| seed-101-rep-1 | 11 / 10,12 / 12 | 10,11 | spread | precondition_failure | - | - | - | - | - | - | - | 156.7 |
+| seed-102-rep-1 | 10 / 10,12 / 12 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 157.2 |
+| seed-103-rep-1 | 11 / 10,12 / 11,12 | 10 | concentrated | pass | 8/0/0 | 60/0/0 | 32/0/0 | 2-2 | 1 | 60.0 | 39/42 | 205.3 |
+| seed-104-rep-1 | 11 / 10 / 12 | 11 | spread | precondition_failure | - | - | - | - | - | - | - | 159.8 |
+| seed-105-rep-1 | 10,11 / 10 / 12 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 156.4 |
+| seed-106-rep-1 | 10 / 10,12 / 12 | 10,12 | spread | precondition_failure | - | - | - | - | - | - | - | 156.5 |
+| seed-108-rep-1 | 11 / 10,12 / 11,12 | 10,11 | spread | precondition_failure | - | - | - | - | - | - | - | 156.1 |
+| seed-107-rep-1 | 10,11 / 10,12 / 12 | 11 | concentrated | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 1 | 60.0 | 25/42 | 284.7 |
+| seed-109-rep-1 | 11 / 12 / 11,12 | none | spread | precondition_failure | - | - | - | - | - | - | - | 159.7 |
+| seed-110-rep-1 | 10,11 / 10,12 / 11,12 | none | spread | pass | 8/0/0 | 60/0/0 | 32/0/0 | 3-3 | 1 | 60.0 | 35/42 | 173.3 |
+| seed-111-rep-1 | 11 / 10 / 12 | none | spread | precondition_failure | - | - | - | - | - | - | - | 162.4 |
+| seed-112-rep-1 | 10 / 10,12 / 11 | 12 | spread | precondition_failure | - | - | - | - | - | - | - | 156.1 |
+| seed-113-rep-1 | 11 / 10 / 11,12 | 12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 154.2 |
+| seed-114-rep-1 | 10,11 / 12 / 12 | 10,12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 155.5 |
+| seed-115-rep-1 | 10 / 10 / 11 | none | concentrated | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 1 | 60.0 | 25/42 | 282.5 |
+| seed-116-rep-1 | 10 / 10,12 / 12 | 10,11 | concentrated | pass | 8/0/0 | 3/57/0 | 32/0/0 | 3-3 | 1,3 | 60.0 | 20/42 | 281.5 |
+| seed-117-rep-1 | 10,11 / 10 / 11,12 | 10 | spread | pass | 8/0/0 | 52/8/0 | 32/0/0 | 2-2 | 1 | 60.0 | 35/42 | 170.8 |
+| seed-118-rep-1 | 11 / 10 / 11 | 11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 157.4 |
+| seed-119-rep-1 | 11 / 10,12 / 11,12 | 11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 156.2 |
+| seed-120-rep-1 | 10 / 12 / 11 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 159.6 |
+| seed-42-rep-2 | 11 / 12 / 11 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 150.5 |
+| seed-41-rep-2 | 10 / 10 / 12 | 11 | concentrated | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 1 | 60.0 | 25/42 | 279.0 |
+| seed-43-rep-2 | 11 / 12 / 12 | 10,12 | spread | precondition_failure | - | - | - | - | - | - | - | 152.2 |
+| seed-44-rep-2 | 10 / 10,12 / 12 | 10 | spread | pass | 8/0/0 | 0/60/0 | 32/0/0 | 2-2 | 1 | 60.0 | 32/42 | 200.8 |
+| seed-45-rep-2 | 10 / 10,12 / 11,12 | 12 | spread | precondition_failure | - | - | - | - | - | - | - | 153.8 |
+| seed-46-rep-2 | 10 / 10,12 / 12 | 10 | concentrated | pass | 8/1/0 | 5/55/0 | 31/0/0 | - | 1,3 | 60.0 | 20/42 | 281.4 |
+| seed-47-rep-2 | 10 / 10 / 11 | 11,12 | concentrated | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 2 | 60.0 | 25/42 | 279.5 |
+| seed-49-rep-2 | 10 / 12 / 11,12 | 11,12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 153.3 |
+| seed-48-rep-2 | 10 / 10,12 / 11,12 | 10,12 | concentrated | pass | 8/1/0 | 6/54/0 | 31/0/0 | - | 1,3 | 60.0 | 33/42 | 171.3 |
+| seed-50-rep-2 | 10 / 12 / 11,12 | 11 | spread | precondition_failure | - | - | - | - | - | - | - | 151.0 |
+| seed-51-rep-2 | 10,11 / 12 / 12 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 151.5 |
+| seed-52-rep-2 | 11 / 12 / 11,12 | 10 | concentrated | precondition_failure | - | - | - | - | - | - | - | 153.6 |
+| seed-53-rep-2 | 11 / 10,12 / 11 | 10 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.8 |
+| seed-55-rep-2 | 10 / 10,12 / 11 | 10,11 | spread | precondition_failure | - | - | - | - | - | - | - | 153.7 |
+| seed-54-rep-2 | 10,11 / 10 / 11,12 | 12 | spread | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 1 | 60.0 | 35/42 | 171.5 |
+| seed-56-rep-2 | 10,11 / 12 / 12 | 10,11 | spread | precondition_failure | - | - | - | - | - | - | - | 152.5 |
+| seed-57-rep-2 | 10 / 10 / 11,12 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 152.0 |
+| seed-58-rep-2 | 10 / 12 / 11,12 | none | spread | precondition_failure | - | - | - | - | - | - | - | 152.4 |
+| seed-59-rep-2 | 10 / 10,12 / 11,12 | 11,12 | concentrated | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 1 | 60.0 | 31/42 | 170.5 |
+| seed-60-rep-2 | 10,11 / 12 / 12 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.4 |
+| seed-61-rep-2 | 10 / 10,12 / 11,12 | 12 | spread | precondition_failure | - | - | - | - | - | - | - | 153.0 |
+| seed-62-rep-2 | 10,11 / 10,12 / 11 | 10,11,12 | spread | pass | 8/1/0 | 3/57/0 | 31/0/0 | 3-3 | 1,3 | 60.0 | 30/42 | 171.2 |
+| seed-63-rep-2 | 10,11 / 10,12 / 12 | none | spread | precondition_failure | - | - | - | - | - | - | - | 153.7 |
+| seed-64-rep-2 | 10,11 / 12 / 12 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.4 |
+| seed-65-rep-2 | 11 / 10 / 11 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.0 |
+| seed-66-rep-2 | 10,11 / 12 / 12 | none | spread | precondition_failure | - | - | - | - | - | - | - | 152.5 |
+| seed-67-rep-2 | 11 / 12 / 11,12 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.0 |
+| seed-68-rep-2 | 10 / 12 / 11,12 | 10 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.0 |
+| seed-69-rep-2 | 10,11 / 12 / 11 | 10,12 | spread | precondition_failure | - | - | - | - | - | - | - | 152.2 |
+| seed-71-rep-2 | 10,11 / 10,12 / 11,12 | 10,12 | concentrated | pass | 8/0/0 | 51/9/0 | 32/0/0 | 2-2 | 1,3 | 60.0 | 32/42 | 171.7 |
+| seed-70-rep-2 | 10 / 10,12 / 11,12 | 12 | concentrated | pass | 8/0/0 | 60/0/0 | 32/0/0 | 3-3 | 1 | 60.0 | 27/42 | 281.5 |
+| seed-72-rep-2 | 10,11 / 10 / 11,12 | 11 | concentrated | pass | 8/0/0 | 60/0/0 | 32/0/0 | 3-3 | 1 | 60.0 | 33/42 | 170.2 |
+| seed-73-rep-2 | 10 / 10 / 11,12 | 10,12 | spread | precondition_failure | - | - | - | - | - | - | - | 153.0 |
+| seed-74-rep-2 | 11 / 12 / 12 | 11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.0 |
+| seed-75-rep-2 | 11 / 12 / 12 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 151.7 |
+| seed-76-rep-2 | 10 / 12 / 11,12 | 10,12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 151.4 |
+| seed-77-rep-2 | 10,11 / 10,12 / 12 | none | spread | precondition_failure | - | - | - | - | - | - | - | 151.5 |
+| seed-78-rep-2 | 10,11 / 12 / 11 | 10,12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 151.3 |
+| seed-79-rep-2 | 10 / 12 / 12 | 11,12 | spread | precondition_failure | - | - | - | - | - | - | - | 151.5 |
+| seed-80-rep-2 | 11 / 12 / 12 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 151.1 |
+| seed-81-rep-2 | 10 / 10,12 / 12 | 10,11 | spread | precondition_failure | - | - | - | - | - | - | - | 153.5 |
+| seed-82-rep-2 | 11 / 10,12 / 11,12 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 152.5 |
+| seed-83-rep-2 | 10 / 12 / 11 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 156.4 |
+| seed-85-rep-2 | 10,11 / 12 / 11 | 10,12 | spread | precondition_failure | - | - | - | - | - | - | - | 150.6 |
+| seed-84-rep-2 | 10 / 10,12 / 12 | 11,12 | concentrated | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 1 | 60.0 | 25/42 | 280.7 |
+| seed-86-rep-2 | 10,11 / 10,12 / 12 | 11 | spread | precondition_failure | - | - | - | - | - | - | - | 152.3 |
+| seed-87-rep-2 | 11 / 10 / 11 | 11,12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 151.8 |
+| seed-88-rep-2 | 11 / 10 / 12 | 11,12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 156.6 |
+| seed-89-rep-2 | 11 / 12 / 12 | 11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 151.7 |
+| seed-91-rep-2 | 10 / 10 / 11,12 | 10,11 | spread | precondition_failure | - | - | - | - | - | - | - | 154.3 |
+| seed-90-rep-2 | 10 / 10 / 11 | 11 | concentrated | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 1 | 60.0 | 25/42 | 278.5 |
+| seed-92-rep-2 | 11 / 10 / 12 | 11 | spread | precondition_failure | - | - | - | - | - | - | - | 157.0 |
+| seed-93-rep-2 | 11 / 12 / 11,12 | 10,12 | spread | precondition_failure | - | - | - | - | - | - | - | 152.3 |
+| seed-95-rep-2 | 11 / 12 / 11 | 11 | spread | precondition_failure | - | - | - | - | - | - | - | 152.1 |
+| seed-94-rep-2 | 10,11 / 10 / 12 | 11,12 | concentrated | pass | 8/0/0 | 60/0/0 | 32/0/0 | 3-3 | 1 | 60.0 | 26/42 | 279.5 |
+| seed-96-rep-2 | 11 / 10 / 11,12 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.7 |
+| seed-97-rep-2 | 11 / 10 / 11 | 12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 151.6 |
+| seed-98-rep-2 | 10,11 / 12 / 11 | 10,12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.7 |
+| seed-99-rep-2 | 11 / 10,12 / 11,12 | 11,12 | spread | precondition_failure | - | - | - | - | - | - | - | 154.0 |
+| seed-100-rep-2 | 11 / 10,12 / 12 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 151.4 |
+| seed-101-rep-2 | 11 / 10,12 / 12 | 10,11 | spread | precondition_failure | - | - | - | - | - | - | - | 152.3 |
+| seed-102-rep-2 | 10 / 10,12 / 12 | 10 | spread | pass | 8/0/0 | 57/3/0 | 32/0/0 | 2-2 | 1 | 60.0 | 33/42 | 201.1 |
+| seed-103-rep-2 | 11 / 10,12 / 11,12 | 10 | concentrated | precondition_failure | - | - | - | - | - | - | - | 154.5 |
+| seed-105-rep-2 | 10,11 / 10 / 12 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 151.3 |
+| seed-104-rep-2 | 11 / 10 / 12 | 11 | spread | precondition_failure | - | - | - | - | - | - | - | 156.1 |
+| seed-106-rep-2 | 10 / 10,12 / 12 | 10,12 | spread | precondition_failure | - | - | - | - | - | - | - | 154.5 |
+| seed-107-rep-2 | 10,11 / 10,12 / 12 | 11 | concentrated | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 1 | 60.0 | 35/42 | 171.7 |
+| seed-108-rep-2 | 11 / 10,12 / 11,12 | 10,11 | spread | precondition_failure | - | - | - | - | - | - | - | 154.2 |
+| seed-109-rep-2 | 11 / 12 / 11,12 | none | spread | pass | 9/0/0 | 60/0/0 | 31/0/0 | 2-2 | 1 | 60.0 | 35/42 | 202.3 |
+| seed-110-rep-2 | 10,11 / 10,12 / 11,12 | none | spread | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 1 | 60.0 | 35/42 | 171.2 |
+| seed-111-rep-2 | 11 / 10 / 12 | none | spread | precondition_failure | - | - | - | - | - | - | - | 158.4 |
+| seed-112-rep-2 | 10 / 10,12 / 11 | 12 | spread | precondition_failure | - | - | - | - | - | - | - | 150.8 |
+| seed-113-rep-2 | 11 / 10 / 11,12 | 12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 151.5 |
+| seed-114-rep-2 | 10,11 / 12 / 12 | 10,12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 151.2 |
+| seed-116-rep-2 | 10 / 10,12 / 12 | 10,11 | concentrated | pass | 8/1/0 | 3/57/0 | 31/0/0 | 1-1 | 1 | 60.0 | 33/42 | 169.1 |
+| seed-115-rep-2 | 10 / 10 / 11 | none | concentrated | pass | 8/0/0 | 60/0/0 | 32/0/0 | 3-3 | 1 | 60.0 | 25/42 | 281.4 |
+| seed-117-rep-2 | 10,11 / 10 / 11,12 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 152.9 |
+| seed-118-rep-2 | 11 / 10 / 11 | 11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 151.6 |
+| seed-120-rep-2 | 10 / 12 / 11 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 158.4 |
+| seed-119-rep-2 | 11 / 10,12 / 11,12 | 11 | concentrated | pass | 9/0/0 | 60/0/0 | 31/0/0 | 2-2 | 2 | 60.0 | 31/42 | 203.8 |
+| seed-42-rep-3 | 11 / 12 / 11 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 151.6 |
+| seed-41-rep-3 | 10 / 10 / 12 | 11 | concentrated | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 1 | 60.0 | 29/42 | 280.0 |
+| seed-43-rep-3 | 11 / 12 / 12 | 10,12 | spread | precondition_failure | - | - | - | - | - | - | - | 153.6 |
+| seed-44-rep-3 | 10 / 10,12 / 12 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 152.9 |
+| seed-45-rep-3 | 10 / 10,12 / 11,12 | 12 | spread | pass | 9/0/0 | 60/0/0 | 31/0/0 | 2-2 | 1 | 60.0 | 35/42 | 201.9 |
+| seed-46-rep-3 | 10 / 10,12 / 12 | 10 | concentrated | precondition_failure | - | - | - | - | - | - | - | 153.0 |
+| seed-47-rep-3 | 10 / 10 / 11 | 11,12 | concentrated | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 1 | 60.0 | 25/42 | 279.9 |
+| seed-48-rep-3 | 10 / 10,12 / 11,12 | 10,12 | concentrated | pass | 8/0/0 | 3/57/0 | 32/0/0 | - | 1,3 | 60.0 | 20/42 | 279.8 |
+| seed-49-rep-3 | 10 / 12 / 11,12 | 11,12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 153.2 |
+| seed-50-rep-3 | 10 / 12 / 11,12 | 11 | spread | precondition_failure | - | - | - | - | - | - | - | 151.2 |
+| seed-51-rep-3 | 10,11 / 12 / 12 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 153.1 |
+| seed-52-rep-3 | 11 / 12 / 11,12 | 10 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.2 |
+| seed-53-rep-3 | 11 / 10,12 / 11 | 10 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.1 |
+| seed-54-rep-3 | 10,11 / 10 / 11,12 | 12 | spread | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 1 | 60.0 | 35/42 | 169.0 |
+| seed-55-rep-3 | 10 / 10,12 / 11 | 10,11 | spread | precondition_failure | - | - | - | - | - | - | - | 153.4 |
+| seed-56-rep-3 | 10,11 / 12 / 12 | 10,11 | spread | precondition_failure | - | - | - | - | - | - | - | 153.2 |
+| seed-57-rep-3 | 10 / 10 / 11,12 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 151.4 |
+| seed-58-rep-3 | 10 / 12 / 11,12 | none | spread | precondition_failure | - | - | - | - | - | - | - | 152.2 |
+| seed-60-rep-3 | 10,11 / 12 / 12 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 151.2 |
+| seed-59-rep-3 | 10 / 10,12 / 11,12 | 11,12 | concentrated | pass | 8/0/0 | 60/0/0 | 32/0/0 | 3-3 | 1 | 60.0 | 28/42 | 280.2 |
+| seed-61-rep-3 | 10 / 10,12 / 11,12 | 12 | spread | precondition_failure | - | - | - | - | - | - | - | 154.2 |
+| seed-62-rep-3 | 10,11 / 10,12 / 11 | 10,11,12 | spread | pass | 8/0/0 | 1/59/0 | 32/0/0 | 3-3 | 1,3 | 60.0 | 30/42 | 170.1 |
+| seed-63-rep-3 | 10,11 / 10,12 / 12 | none | spread | precondition_failure | - | - | - | - | - | - | - | 153.4 |
+| seed-64-rep-3 | 10,11 / 12 / 12 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 151.7 |
+| seed-65-rep-3 | 11 / 10 / 11 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.9 |
+| seed-66-rep-3 | 10,11 / 12 / 12 | none | spread | precondition_failure | - | - | - | - | - | - | - | 152.5 |
+| seed-67-rep-3 | 11 / 12 / 11,12 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.7 |
+| seed-68-rep-3 | 10 / 12 / 11,12 | 10 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.2 |
+| seed-69-rep-3 | 10,11 / 12 / 11 | 10,12 | spread | precondition_failure | - | - | - | - | - | - | - | 150.7 |
+| seed-71-rep-3 | 10,11 / 10,12 / 11,12 | 10,12 | concentrated | pass | 8/0/0 | 50/10/0 | 32/0/0 | 2-2 | 1,3 | 60.0 | 30/42 | 169.8 |
+| seed-70-rep-3 | 10 / 10,12 / 11,12 | 12 | concentrated | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 1 | 60.0 | 25/42 | 280.4 |
+| seed-72-rep-3 | 10,11 / 10 / 11,12 | 11 | concentrated | pass | 8/0/0 | 60/0/0 | 32/0/0 | 3-3 | 1 | 60.0 | 35/42 | 170.1 |
+| seed-73-rep-3 | 10 / 10 / 11,12 | 10,12 | spread | precondition_failure | - | - | - | - | - | - | - | 152.1 |
+| seed-74-rep-3 | 11 / 12 / 12 | 11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.1 |
+| seed-75-rep-3 | 11 / 12 / 12 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 153.1 |
+| seed-76-rep-3 | 10 / 12 / 11,12 | 10,12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.6 |
+| seed-78-rep-3 | 10,11 / 12 / 11 | 10,12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.6 |
+| seed-77-rep-3 | 10,11 / 10,12 / 12 | none | spread | precondition_failure | - | - | - | - | - | - | - | 153.4 |
+| seed-79-rep-3 | 10 / 12 / 12 | 11,12 | spread | precondition_failure | - | - | - | - | - | - | - | 151.4 |
+| seed-80-rep-3 | 11 / 12 / 12 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 151.7 |
+| seed-81-rep-3 | 10 / 10,12 / 12 | 10,11 | spread | precondition_failure | - | - | - | - | - | - | - | 151.8 |
+| seed-82-rep-3 | 11 / 10,12 / 11,12 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 152.3 |
+| seed-83-rep-3 | 10 / 12 / 11 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 157.1 |
+| seed-84-rep-3 | 10 / 10,12 / 12 | 11,12 | concentrated | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 1 | 60.0 | 25/42 | 281.2 |
+| seed-85-rep-3 | 10,11 / 12 / 11 | 10,12 | spread | precondition_failure | - | - | - | - | - | - | - | 152.0 |
+| seed-86-rep-3 | 10,11 / 10,12 / 12 | 11 | spread | precondition_failure | - | - | - | - | - | - | - | 154.6 |
+| seed-87-rep-3 | 11 / 10 / 11 | 11,12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 154.3 |
+| seed-88-rep-3 | 11 / 10 / 12 | 11,12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 158.9 |
+| seed-89-rep-3 | 11 / 12 / 12 | 11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 153.2 |
+| seed-90-rep-3 | 10 / 10 / 11 | 11 | concentrated | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 1 | 60.0 | 25/42 | 281.0 |
+| seed-91-rep-3 | 10 / 10 / 11,12 | 10,11 | spread | precondition_failure | - | - | - | - | - | - | - | 152.4 |
+| seed-92-rep-3 | 11 / 10 / 12 | 11 | spread | precondition_failure | - | - | - | - | - | - | - | 158.9 |
+| seed-93-rep-3 | 11 / 12 / 11,12 | 10,12 | spread | precondition_failure | - | - | - | - | - | - | - | 152.9 |
+| seed-94-rep-3 | 10,11 / 10 / 12 | 11,12 | concentrated | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 1 | 60.0 | 25/42 | 280.4 |
+| seed-95-rep-3 | 11 / 12 / 11 | 11 | spread | precondition_failure | - | - | - | - | - | - | - | 149.1 |
+| seed-96-rep-3 | 11 / 10 / 11,12 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 150.6 |
+| seed-97-rep-3 | 11 / 10 / 11 | 12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 150.3 |
+| seed-98-rep-3 | 10,11 / 12 / 11 | 10,12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 154.2 |
+| seed-99-rep-3 | 11 / 10,12 / 11,12 | 11,12 | spread | precondition_failure | - | - | - | - | - | - | - | 154.8 |
+| seed-100-rep-3 | 11 / 10,12 / 12 | 10,11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.4 |
+| seed-101-rep-3 | 11 / 10,12 / 12 | 10,11 | spread | precondition_failure | - | - | - | - | - | - | - | 152.0 |
+| seed-102-rep-3 | 10 / 10,12 / 12 | 10 | spread | pass | 8/1/0 | 57/3/0 | 31/0/0 | 2-2 | 1 | 60.0 | 33/42 | 199.2 |
+| seed-103-rep-3 | 11 / 10,12 / 11,12 | 10 | concentrated | precondition_failure | - | - | - | - | - | - | - | 154.0 |
+| seed-104-rep-3 | 11 / 10 / 12 | 11 | spread | precondition_failure | - | - | - | - | - | - | - | 158.7 |
+| seed-105-rep-3 | 10,11 / 10 / 12 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 152.4 |
+| seed-106-rep-3 | 10 / 10,12 / 12 | 10,12 | spread | precondition_failure | - | - | - | - | - | - | - | 153.5 |
+| seed-107-rep-3 | 10,11 / 10,12 / 12 | 11 | concentrated | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 1 | 60.0 | 25/42 | 281.5 |
+| seed-108-rep-3 | 11 / 10,12 / 11,12 | 10,11 | spread | precondition_failure | - | - | - | - | - | - | - | 153.1 |
+| seed-109-rep-3 | 11 / 12 / 11,12 | none | spread | pass | 9/0/0 | 60/0/0 | 31/0/0 | 2-2 | 1 | 60.0 | 39/42 | 199.7 |
+| seed-110-rep-3 | 10,11 / 10,12 / 11,12 | none | spread | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 1 | 60.0 | 35/42 | 168.1 |
+| seed-111-rep-3 | 11 / 10 / 12 | none | spread | precondition_failure | - | - | - | - | - | - | - | 157.1 |
+| seed-112-rep-3 | 10 / 10,12 / 11 | 12 | spread | precondition_failure | - | - | - | - | - | - | - | 151.8 |
+| seed-113-rep-3 | 11 / 10 / 11,12 | 12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.4 |
+| seed-114-rep-3 | 10,11 / 12 / 12 | 10,12 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.9 |
+| seed-115-rep-3 | 10 / 10 / 11 | none | concentrated | pass | 9/0/0 | 60/0/0 | 31/0/0 | 3-3 | 1 | 60.0 | 25/42 | 279.5 |
+| seed-116-rep-3 | 10 / 10,12 / 12 | 10,11 | concentrated | pass | 8/1/0 | 0/60/0 | 31/0/0 | 1-1 | 1 | 60.0 | 33/42 | 167.8 |
+| seed-117-rep-3 | 10,11 / 10 / 11,12 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 152.6 |
+| seed-118-rep-3 | 11 / 10 / 11 | 11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 152.5 |
+| seed-119-rep-3 | 11 / 10,12 / 11,12 | 11 | concentrated | precondition_failure | - | - | - | - | - | - | - | 153.6 |
+| seed-120-rep-3 | 10 / 12 / 11 | 10 | spread | precondition_failure | - | - | - | - | - | - | - | 157.3 |
+
+## Seeds
+
+| Seed | Formation predicted | Formed | Outcomes | Graph during cut | Cut removes a link | Prediction holds | Resolution matches plan |
+|---:|---|---|---|---|---|---|---|
+| 41 | certain | 3/3 | pass 3 | one link | no | yes | yes |
+| 42 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 43 | impossible | 0/3 | precondition_failure 3 | all isolated | yes | yes | yes |
+| 44 | election | 2/3 | pass 2, precondition_failure 1 | one link | yes | yes | yes |
+| 45 | election | 1/3 | pass 1, precondition_failure 2 | one link | yes | yes | yes |
+| 46 | election | 2/3 | pass 2, precondition_failure 1 | one link | yes | yes | yes |
+| 47 | certain | 3/3 | pass 3 | one link | no | yes | yes |
+| 48 | election | 3/3 | pass 3 | all isolated | yes | yes | yes |
+| 49 | impossible | 0/3 | precondition_failure 3 | all isolated | yes | yes | yes |
+| 50 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 51 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 52 | election | 0/3 | precondition_failure 3 | path | no | yes | yes |
+| 53 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 54 | election | 3/3 | pass 3 | path | no | yes | yes |
+| 55 | impossible | 0/3 | precondition_failure 3 | all isolated | yes | yes | yes |
+| 56 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 57 | impossible | 0/3 | precondition_failure 3 | all isolated | yes | yes | yes |
+| 58 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 59 | election | 3/3 | pass 3 | one link | yes | yes | yes |
+| 60 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 61 | election | 0/3 | precondition_failure 3 | one link | yes | yes | yes |
+| 62 | election | 3/3 | pass 3 | all isolated | yes | yes | yes |
+| 63 | election | 1/3 | pass 1, precondition_failure 2 | path | no | yes | yes |
+| 64 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 65 | impossible | 0/3 | precondition_failure 3 | all isolated | yes | yes | yes |
+| 66 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 67 | election | 1/3 | pass 1, precondition_failure 2 | one link | yes | yes | yes |
+| 68 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 69 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 70 | election | 3/3 | pass 3 | one link | yes | yes | yes |
+| 71 | certain | 3/3 | pass 3 | one link | yes | yes | yes |
+| 72 | election | 2/3 | pass 2, precondition_failure 1 | one link | yes | yes | yes |
+| 73 | impossible | 0/3 | precondition_failure 3 | all isolated | yes | yes | yes |
+| 74 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 75 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 76 | impossible | 0/3 | precondition_failure 3 | all isolated | yes | yes | yes |
+| 77 | election | 0/3 | precondition_failure 3 | path | no | yes | yes |
+| 78 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 79 | impossible | 0/3 | precondition_failure 3 | all isolated | yes | yes | yes |
+| 80 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 81 | election | 0/3 | precondition_failure 3 | one link | yes | yes | yes |
+| 82 | election | 0/3 | precondition_failure 3 | path | no | yes | yes |
+| 83 | impossible | 0/3 | precondition_failure 3 | all isolated | no | yes | yes |
+| 84 | election | 3/3 | pass 3 | one link | yes | yes | yes |
+| 85 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 86 | election | 0/3 | precondition_failure 3 | path | no | yes | yes |
+| 87 | impossible | 0/3 | precondition_failure 3 | all isolated | yes | yes | yes |
+| 88 | impossible | 0/3 | precondition_failure 3 | all isolated | no | yes | yes |
+| 89 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 90 | certain | 3/3 | pass 3 | one link | no | yes | yes |
+| 91 | impossible | 0/3 | precondition_failure 3 | all isolated | yes | yes | yes |
+| 92 | impossible | 0/3 | precondition_failure 3 | all isolated | no | yes | yes |
+| 93 | election | 0/3 | precondition_failure 3 | one link | yes | yes | yes |
+| 94 | certain | 3/3 | pass 3 | one link | no | yes | yes |
+| 95 | impossible | 0/3 | precondition_failure 3 | all isolated | yes | yes | yes |
+| 96 | impossible | 0/3 | precondition_failure 3 | all isolated | yes | yes | yes |
+| 97 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 98 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 99 | election | 0/3 | precondition_failure 3 | all isolated | yes | yes | yes |
+| 100 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 101 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 102 | election | 2/3 | pass 2, precondition_failure 1 | one link | yes | yes | yes |
+| 103 | election | 1/3 | pass 1, precondition_failure 2 | path | no | yes | yes |
+| 104 | impossible | 0/3 | precondition_failure 3 | all isolated | no | yes | yes |
+| 105 | impossible | 0/3 | precondition_failure 3 | all isolated | yes | yes | yes |
+| 106 | election | 0/3 | precondition_failure 3 | all isolated | yes | yes | yes |
+| 107 | election | 3/3 | pass 3 | path | no | yes | yes |
+| 108 | election | 0/3 | precondition_failure 3 | one link | yes | yes | yes |
+| 109 | election | 2/3 | pass 2, precondition_failure 1 | path | no | yes | yes |
+| 110 | certain | 3/3 | pass 3 | triangle | no | yes | yes |
+| 111 | impossible | 0/3 | precondition_failure 3 | all isolated | no | yes | yes |
+| 112 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 113 | impossible | 0/3 | precondition_failure 3 | one link | no | yes | yes |
+| 114 | impossible | 0/3 | precondition_failure 3 | all isolated | yes | yes | yes |
+| 115 | certain | 3/3 | pass 3 | one link | no | yes | yes |
+| 116 | election | 3/3 | pass 3 | one link | yes | yes | yes |
+| 117 | election | 1/3 | pass 1, precondition_failure 2 | one link | yes | yes | yes |
+| 118 | impossible | 0/3 | precondition_failure 3 | all isolated | yes | yes | yes |
+| 119 | election | 1/3 | pass 1, precondition_failure 2 | one link | yes | yes | yes |
+| 120 | impossible | 0/3 | precondition_failure 3 | all isolated | no | yes | yes |
+
+## Decision checks
+
+- D2 verdict seeds: 26 (minimum 15)
+- D2 graph classes with a verdict: all isolated, one link, path, triangle (minimum 3 of 4)
+- D2 verdict seeds whose cut removes a link: 15 (minimum 5; null conclusion needs 10)
+- D2 verdict seeds whose cut changes nothing: 11 (minimum 3)
+- D6 predictions hold for every certain and impossible seed: yes
+- Gate 'materialized' passes in every run past formation: yes
+- Demonstration minimum met: yes; null minimum met: yes
+- Contract violations (D3): none
+- Source revisions: 634f463a37ae6c1c0c5c115c79bc84ad53d5a7a5; units on uncommitted code: 0; units without a recorded revision: 0; single clean revision: yes
+- Lowest host MemAvailable during the campaign: 5048 MiB
+
+Outcomes: pass 61, precondition_failure 179
+
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user
+logs-manifest.sha256: 1920 files

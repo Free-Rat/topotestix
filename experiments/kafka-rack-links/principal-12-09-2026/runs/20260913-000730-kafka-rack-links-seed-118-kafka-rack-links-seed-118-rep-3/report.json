@@ -1,0 +1,30 @@
+[
+  {
+    "message": "precondition_failure: topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 3, but no such broker is registered.\n[2026-09-13 00:09:58,579] ERROR org.apache.kafka.common.errors.InvalidReplicaAssignmentException: The manual partition assignment includes broker 3, but no such broker is registered.\n (org.apache.kafka.tools.TopicCommand)\n",
+    "name": "kafka-rack-links-execution-completed",
+    "status": "failed"
+  },
+  {
+    "name": "kafka-rack-links-materialized",
+    "status": "passed"
+  },
+  {
+    "message": "cut NICs [], expected [('racka1', 11), ('racka2', 11), ('rackc1', 11), ('rackc2', 11)]; cut window started=None restored=None; set_link off applied to [], expected [('racka1', 11), ('racka2', 11), ('rackc1', 11), ('rackc2', 11)]; set_link on applied to [], expected [('racka1', 11), ('racka2', 11), ('rackc1', 11), ('rackc2', 11)]; cut_probe covered 0 pairs, expected 12; restore_probe covered 0 pairs, expected 12",
+    "name": "kafka-rack-links-cut-accurate",
+    "status": "failed"
+  },
+  {
+    "message": "precondition_failure: topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 3, but no such broker is registered.\n[2026-09-13 00:09:58,579] ERROR org.apache.kafka.common.errors.InvalidReplicaAssignmentException: The manual partition assignment includes broker 3, but no such broker is registered.\n (org.apache.kafka.tools.TopicCommand)\n",
+    "name": "kafka-rack-links-confirmed-records-recovered-exactly-once",
+    "status": "failed"
+  },
+  {
+    "message": "precondition_failure: topic creation rejected: Error while executing topic command : The manual partition assignment includes broker 3, but no such broker is registered.\n[2026-09-13 00:09:58,579] ERROR org.apache.kafka.common.errors.InvalidReplicaAssignmentException: The manual partition assignment includes broker 3, but no such broker is registered.\n (org.apache.kafka.tools.TopicCommand)\n",
+    "name": "kafka-rack-links-cluster-recovers",
+    "status": "failed"
+  },
+  {
+    "name": "kafka-rack-links-runtime-versions-pinned",
+    "status": "passed"
+  }
+]
