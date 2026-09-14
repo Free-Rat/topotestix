@@ -1,0 +1,13 @@
+[
+  {
+    "dir": "20260914-133558-rabbitmq-disk-seed-1-rabbitmq-disk-rep0-cell-x-e2-seed1",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/x5d938w7blka4cd0fb9g562d57cq7q2l-nixos-test-driver-rabbitmq-disk-rep0-cell-x-e2-seed1-c20260914-14b712.drv'...",
+      "building '/nix/store/62g3hcan6cf4k49nlznnmzf5133rc47j-vm-test-run-rabbitmq-disk-rep0-cell-x-e2-seed1-c20260914-14b712.drv'..."
+    ],
+    "name": "rabbitmq-disk-rep0-cell-x-e2-seed1",
+    "status": "failed"
+  }
+]

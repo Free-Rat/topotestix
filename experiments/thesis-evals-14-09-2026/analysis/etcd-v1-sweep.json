@@ -1,0 +1,321 @@
+{
+  "failed": 11,
+  "failing_seeds": [
+    5,
+    7,
+    20,
+    21,
+    25,
+    29,
+    30,
+    34,
+    38,
+    42,
+    49
+  ],
+  "failure_class": "invalid-etcd-election-timeout-heartbeat-ratio",
+  "passed": 39,
+  "per_seed": [
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 1,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 2,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 3,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 4,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": "invalid-etcd-election-timeout-heartbeat-ratio",
+      "seed": 5,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 6,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": "invalid-etcd-election-timeout-heartbeat-ratio",
+      "seed": 7,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 8,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 9,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 10,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 11,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 12,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 13,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 14,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 15,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 16,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 17,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 18,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 19,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": "invalid-etcd-election-timeout-heartbeat-ratio",
+      "seed": 20,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": "invalid-etcd-election-timeout-heartbeat-ratio",
+      "seed": 21,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 22,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 23,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 24,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": "invalid-etcd-election-timeout-heartbeat-ratio",
+      "seed": 25,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 26,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 27,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 28,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": "invalid-etcd-election-timeout-heartbeat-ratio",
+      "seed": 29,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": "invalid-etcd-election-timeout-heartbeat-ratio",
+      "seed": 30,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 31,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 32,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 33,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": "invalid-etcd-election-timeout-heartbeat-ratio",
+      "seed": 34,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 35,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 36,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 37,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": "invalid-etcd-election-timeout-heartbeat-ratio",
+      "seed": 38,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 39,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 40,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 41,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": "invalid-etcd-election-timeout-heartbeat-ratio",
+      "seed": 42,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 43,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 44,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 45,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 46,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 47,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 48,
+      "status": "passed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": "invalid-etcd-election-timeout-heartbeat-ratio",
+      "seed": 49,
+      "status": "failed"
+    },
+    {
+      "failed_checks": [],
+      "failure_class": null,
+      "seed": 50,
+      "status": "passed"
+    }
+  ],
+  "sample_error_message": "> etcd2 # [  891.986076] etcd[1386]: {\"level\":\"warn\",\"ts\":\"2026-09-14T11:17:46.779958Z\",\"caller\":\"etcdmain/etcd.go:66\",\"msg\":\"failed to verify flags\",\"error\":\"--election-timeout[1000ms] should be at least as 5 times as --heartbeat-interval\u2026"
+}

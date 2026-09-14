@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "run_id": "c8ee63d73020435fb43e96dd546074b5",
+  "placement": {
+    "rabbit1": "zone-a",
+    "rabbit2": "zone-b",
+    "rabbit3": "zone-c"
+  },
+  "failed_domain": "zone-a",
+  "failed_nodes": [
+    "rabbit1"
+  ],
+  "surviving_nodes": [
+    "rabbit2",
+    "rabbit3"
+  ],
+  "expected_available": true,
+  "baseline_ids": [
+    "c8ee63d73020435fb43e96dd546074b5/baseline/0000",
+    "c8ee63d73020435fb43e96dd546074b5/baseline/0001",
+    "c8ee63d73020435fb43e96dd546074b5/baseline/0002",
+    "c8ee63d73020435fb43e96dd546074b5/baseline/0003",
+    "c8ee63d73020435fb43e96dd546074b5/baseline/0004",
+    "c8ee63d73020435fb43e96dd546074b5/baseline/0005",
+    "c8ee63d73020435fb43e96dd546074b5/baseline/0006",
+    "c8ee63d73020435fb43e96dd546074b5/baseline/0007",
+    "c8ee63d73020435fb43e96dd546074b5/baseline/0008",
+    "c8ee63d73020435fb43e96dd546074b5/baseline/0009"
+  ],
+  "probe": {
+    "op_id": "c8ee63d73020435fb43e96dd546074b5/domain-probe",
+    "outcome": "confirmed",
+    "exception_type": null,
+    "exception_message": null,
+    "attempt_wall_ns": 1789393291663173527,
+    "finish_wall_ns": 1789393291726168404
+  },
+  "recovered": [
+    {
+      "message_id": "c8ee63d73020435fb43e96dd546074b5/baseline/0000",
+      "body_id": "c8ee63d73020435fb43e96dd546074b5/baseline/0000"
+    },
+    {
+      "message_id": "c8ee63d73020435fb43e96dd546074b5/baseline/0001",
+      "body_id": "c8ee63d73020435fb43e96dd546074b5/baseline/0001"
+    },
+    {
+      "message_id": "c8ee63d73020435fb43e96dd546074b5/baseline/0002",
+      "body_id": "c8ee63d73020435fb43e96dd546074b5/baseline/0002"
+    },
+    {
+      "message_id": "c8ee63d73020435fb43e96dd546074b5/baseline/0003",
+      "body_id": "c8ee63d73020435fb43e96dd546074b5/baseline/0003"
+    },
+    {
+      "message_id": "c8ee63d73020435fb43e96dd546074b5/baseline/0004",
+      "body_id": "c8ee63d73020435fb43e96dd546074b5/baseline/0004"
+    },
+    {
+      "message_id": "c8ee63d73020435fb43e96dd546074b5/baseline/0005",
+      "body_id": "c8ee63d73020435fb43e96dd546074b5/baseline/0005"
+    },
+    {
+      "message_id": "c8ee63d73020435fb43e96dd546074b5/baseline/0006",
+      "body_id": "c8ee63d73020435fb43e96dd546074b5/baseline/0006"
+    },
+    {
+      "message_id": "c8ee63d73020435fb43e96dd546074b5/baseline/0007",
+      "body_id": "c8ee63d73020435fb43e96dd546074b5/baseline/0007"
+    },
+    {
+      "message_id": "c8ee63d73020435fb43e96dd546074b5/baseline/0008",
+      "body_id": "c8ee63d73020435fb43e96dd546074b5/baseline/0008"
+    },
+    {
+      "message_id": "c8ee63d73020435fb43e96dd546074b5/baseline/0009",
+      "body_id": "c8ee63d73020435fb43e96dd546074b5/baseline/0009"
+    },
+    {
+      "message_id": "c8ee63d73020435fb43e96dd546074b5/domain-probe",
+      "body_id": "c8ee63d73020435fb43e96dd546074b5/domain-probe"
+    }
+  ],
+  "service_pids_before": {
+    "rabbit1": "1044"
+  }
+}

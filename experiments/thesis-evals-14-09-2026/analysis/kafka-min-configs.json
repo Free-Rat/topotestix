@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "min-log-segment": {
+      "exception_class": "log-segment-too-small",
+      "failed": 1,
+      "failed_check": "kafka-large-message-on-kafka1",
+      "passed": 10
+    },
+    "min-message-max": {
+      "exception_class": "broker-message-max-too-small",
+      "failed": 1,
+      "failed_check": "kafka-large-message-on-kafka1",
+      "passed": 10
+    }
+  }
+}

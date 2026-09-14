@@ -1,0 +1,33 @@
+{
+  "execution": "fresh",
+  "exit_code": 0,
+  "input_hash": "8981d2c34e10c0b5b7b3a2fd69ef15bb9f3ec211e9c45eb1b4a7d6b7db760f69",
+  "state": "done",
+  "unit": {
+    "base_module": "targets/rabbitmq-failure-domain/module.nix",
+    "config_choices": {
+      "rabbit": {
+        ".environment.etc.topotestix-failure-domain-placement.json.text": 0
+      }
+    },
+    "config_target": "targets/rabbitmq-failure-domain/config.nix",
+    "entry_hash": "f799cfd39683050d2278f8d3c9809e65aab52160d76e11e2a7bdc296a0e0834d",
+    "entry_id": "rabbitmq-faildom",
+    "execution_index": 0,
+    "id": "17764d91c47732a2",
+    "kind": "run",
+    "produces": [
+      "rabbitmq-faildom-cells"
+    ],
+    "properties": "targets/rabbitmq-failure-domain/properties.nix",
+    "repetition_index": 0,
+    "repetition_token": "c20260914-14b712",
+    "run_name": "rabbitmq-faildom-rep0-spread-e0-seed1",
+    "seed": 1,
+    "target": "rabbitmq-failure-domain",
+    "test_script": "targets/rabbitmq-failure-domain/test-script.py",
+    "topology_choices": null,
+    "topology_target": "targets/rabbitmq-failure-domain/topology.nix",
+    "variant_name": "spread"
+  }
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "rabbitmq-disk-recovers-healthy",
+    "status": "passed"
+  },
+  {
+    "name": "rabbitmq-disk-capacity-confirmation-contract",
+    "status": "passed"
+  },
+  {
+    "name": "rabbitmq-disk-confirmed-recovered-exactly-once",
+    "status": "passed"
+  },
+  {
+    "name": "rabbitmq-disk-exact-operation-history",
+    "status": "passed"
+  },
+  {
+    "name": "rabbitmq-disk-no-unexplained-messages",
+    "status": "passed"
+  }
+]

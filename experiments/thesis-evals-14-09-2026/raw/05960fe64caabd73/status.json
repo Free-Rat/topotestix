@@ -1,0 +1,31 @@
+{
+  "execution": "fresh",
+  "exit_code": 1,
+  "input_hash": "30fb2a075bd9c6b2bc385c80454c71757f9e75dfd836089cc38ab3b5101d50b5",
+  "state": "done",
+  "unit": {
+    "base_module": null,
+    "config_choices": null,
+    "config_target": null,
+    "entry_hash": "4cde6a9b3377169aa775c6a926355985b1b2441070f97103f9f523a7a20e6840",
+    "entry_id": "kafka-sweep",
+    "execution_index": 0,
+    "id": "05960fe64caabd73",
+    "kind": "sweep",
+    "produces": [
+      "determinism",
+      "kafka-crosstab",
+      "kafka-sweep"
+    ],
+    "properties": null,
+    "repetition_index": 0,
+    "repetition_token": "c20260914-14b712",
+    "run_name": "kafka-sweep-rep0-seed18",
+    "seed": 18,
+    "target": "kafka-cluster",
+    "test_script": null,
+    "topology_choices": null,
+    "topology_target": null,
+    "variant_name": null
+  }
+}

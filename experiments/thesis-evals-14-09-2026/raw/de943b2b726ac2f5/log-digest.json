@@ -1,0 +1,49 @@
+{
+  "note": "Bounded projection of the *.log files, which are gitignored (too large for git) but are read by analyze.py. collect.py falls back to this document when the logs are absent.",
+  "streams": {
+    "stderr": {
+      "kept_lines": 13,
+      "lines": [
+        "warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user",
+        "warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user",
+        "warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user",
+        "warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user",
+        "warning: ignoring the client-specified setting 'netrc-file', because it is a restricted setting and you are not a trusted user",
+        "warning: ignoring the client-specified setting 'trusted-public-keys', because it is a restricted setting and you are not a trusted user",
+        ".............................uncommitted changes to code that shapes a run (commit them, or pass --allow-dirty for a development run):",
+        "   M oracle.py",
+        ".....................................................................................................",
+        "----------------------------------------------------------------------",
+        "Ran 130 tests in 1.269s",
+        "",
+        "OK"
+      ],
+      "total_lines": 13,
+      "truncated": false
+    },
+    "stdout": {
+      "kept_lines": 16,
+      "lines": [
+        "[1/4] seed-1-rep-1 (MemAvailable 30720 MiB)",
+        "[2/4] seed-2-rep-1 (MemAvailable 30720 MiB)",
+        "    seed-1-rep-1 exit=0 0.05s run_dir=None",
+        "[3/4] seed-3-rep-1 (MemAvailable 30720 MiB)",
+        "    seed-2-rep-1 exit=0 0.05s run_dir=None",
+        "[4/4] seed-4-rep-1 (MemAvailable 30720 MiB)",
+        "    seed-3-rep-1 exit=0 0.05s run_dir=None",
+        "    seed-4-rep-1 exit=0 0.05s run_dir=None",
+        "[1/4] seed-1-rep-1 (MemAvailable 1 MiB)",
+        "    seed-1-rep-1 exit=0 0.05s run_dir=None",
+        "[2/4] seed-2-rep-1 (MemAvailable 1 MiB)",
+        "    seed-2-rep-1 exit=0 0.05s run_dir=None",
+        "[3/4] seed-3-rep-1 (MemAvailable 1 MiB)",
+        "    seed-3-rep-1 exit=0 0.05s run_dir=None",
+        "[4/4] seed-4-rep-1 (MemAvailable 1 MiB)",
+        "    seed-4-rep-1 exit=0 0.05s run_dir=None"
+      ],
+      "total_lines": 16,
+      "truncated": false
+    }
+  },
+  "version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "measure": "group wall-clock span (max end - min start), not a sum of unit wall times",
+  "note": "speedup left null: the groups run different unit counts (4 serial vs 7 parallel), so their spans are not a like-for-like comparison; throughput_ratio_per_unit compares units-per-second instead.",
+  "parallel": {
+    "clock": "epoch",
+    "group_wall_s": "350.309",
+    "jobs": null,
+    "sum_unit_wall_s": "1185.35",
+    "timed_units": 7,
+    "units": 7
+  },
+  "serial": {
+    "clock": "epoch",
+    "group_wall_s": "501.399",
+    "sum_unit_wall_s": "500.96",
+    "timed_units": 4,
+    "units": 4
+  },
+  "speedup": null,
+  "throughput_ratio_per_unit": "2.50478"
+}

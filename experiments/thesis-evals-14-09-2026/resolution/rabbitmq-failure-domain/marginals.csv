@@ -1,0 +1,8 @@
+dimension,resolved_value,count
+rabbit:.environment.etc.topotestix-domain-confirm-timeout-ms.text,"""2000""",27
+rabbit:.environment.etc.topotestix-domain-confirm-timeout-ms.text,"""5000""",23
+rabbit:.environment.etc.topotestix-failed-domain.text,"""zone-a""",50
+rabbit:.environment.etc.topotestix-failure-domain-placement.json.text,"""{\""rabbit1\"":\""zone-a\"",\""rabbit2\"":\""zone-a\"",\""rabbit3\"":\""zone-b\""}""",28
+rabbit:.environment.etc.topotestix-failure-domain-placement.json.text,"""{\""rabbit1\"":\""zone-a\"",\""rabbit2\"":\""zone-b\"",\""rabbit3\"":\""zone-c\""}""",22
+topology:.rabbitVlans,[1],50
+topology:.roles.rabbit,3,50

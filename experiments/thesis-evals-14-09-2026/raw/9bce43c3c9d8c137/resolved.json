@@ -1,0 +1,75 @@
+{
+  "environment": {
+    "nixpkgsOutPath": "/nix/store/0lkxgksfvwcdsyrxj90ddc7f4kl1k8nr-source",
+    "nixpkgsRevision": "cb2938ebeac96284932dbe6a2fb611d3b77743a5"
+  },
+  "nodeConfigs": {
+    "rabbit1": {
+      "virtualisation": {
+        "vlans": [
+          1
+        ]
+      }
+    },
+    "rabbit2": {
+      "virtualisation": {
+        "vlans": [
+          1
+        ]
+      }
+    },
+    "rabbit3": {
+      "virtualisation": {
+        "vlans": [
+          1
+        ]
+      }
+    }
+  },
+  "nodeRoles": {
+    "rabbit1": "rabbit",
+    "rabbit2": "rabbit",
+    "rabbit3": "rabbit"
+  },
+  "roleFuzz": {
+    "rabbit": {
+      "choices": {
+        ".environment.etc.topotestix-crash-delay.text": 1,
+        ".environment.etc.topotestix-crash-publish-count.text": 1,
+        ".environment.etc.topotestix-crash-target-role.text": 0,
+        ".environment.etc.topotestix-crash-timing.text": 0
+      },
+      "result": {
+        "environment": {
+          "etc": {
+            "topotestix-crash-delay": {
+              "text": "10"
+            },
+            "topotestix-crash-publish-count": {
+              "text": "50"
+            },
+            "topotestix-crash-target-role": {
+              "text": "follower"
+            },
+            "topotestix-crash-timing": {
+              "text": "before_publish"
+            }
+          }
+        }
+      },
+      "seed": "2"
+    }
+  },
+  "topology": {
+    "rabbitVlans": [
+      1
+    ],
+    "roles": {
+      "rabbit": 3
+    }
+  },
+  "topologyChoices": {
+    ".rabbitVlans": 0,
+    ".roles.rabbit": 0
+  }
+}

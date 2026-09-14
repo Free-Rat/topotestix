@@ -1,0 +1,25 @@
+{
+  "finished_epoch": 1789373707.555263,
+  "phase_markers": {
+    "build": {
+      "first_line": 3,
+      "last_line": 78
+    },
+    "nix_eval": null,
+    "test_script": {
+      "first_line": 75,
+      "last_line": 7779
+    },
+    "total_lines": 7789,
+    "vm_boot": {
+      "first_line": 87,
+      "last_line": 6596
+    }
+  },
+  "phase_markers_completeness": "partial",
+  "started_epoch": 1789373510.885806,
+  "started_monotonic_relative": 577408.123326,
+  "timed_out": false,
+  "timeout_s": 3600,
+  "wall_s": 196.669
+}

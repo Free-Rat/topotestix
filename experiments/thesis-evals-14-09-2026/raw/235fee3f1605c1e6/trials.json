@@ -1,0 +1,30 @@
+[
+  {
+    "dir": "20260914-082458-kafka-cluster-seed-35-kafka-sweep-rep0-seed35",
+    "execution": "fresh",
+    "markers": [
+      "these 33 derivations will be built:",
+      "building '/nix/store/44bzgzs89j3cdkpjj2j4mxmwjam666ii-server.properties.drv'...",
+      "building '/nix/store/k2y7wxv93y913ix4sgrk9ic2nf3x9118-server.properties.drv'...",
+      "building '/nix/store/psy4afqw0yv2gyxx3l5nrmr0pxficpxl-server.properties.drv'...",
+      "building '/nix/store/r021xij248syvvc119b4ax7x9qfnkza3-unit-script-apache-kafka-pre-start.drv'...",
+      "building '/nix/store/5s4zlr92dlj0hs32n6h17m6y7xmjlm24-unit-script-apache-kafka-pre-start.drv'...",
+      "building '/nix/store/qlw392pn6f20h23m44jjc74hwsshls16-unit-script-apache-kafka-pre-start.drv'...",
+      "building '/nix/store/ai47lzqv343r7z1zgkvvxm0sd0sb0ip4-unit-apache-kafka.service.drv'...",
+      "building '/nix/store/diyiwp5vd3jrfsydw6galypm5ylkk70w-unit-apache-kafka.service.drv'...",
+      "building '/nix/store/aaq3gm5b89zy0w7mq16fcn66qn3514mr-unit-apache-kafka.service.drv'...",
+      "building '/nix/store/1pgy2zk00zb6b7smcxppkkcn1mbdm7px-system-units.drv'...",
+      "building '/nix/store/fsnr4x7hri509g1g7dlkcr9r88kw11sz-system-units.drv'...",
+      "building '/nix/store/qd7bhib6zys4m1m4pcnbqv2x9aqqxijn-system-units.drv'...",
+      "building '/nix/store/n9x4pwaa6yj7wj3w3zgl9524yhmfz6f5-etc.drv'...",
+      "building '/nix/store/8bmyh4hmyz3yi5my7dacp0gz8rj9r5n5-etc.drv'...",
+      "building '/nix/store/7a1rbl0dhgr6x8b9drh7yk3a40jd4yxi-etc.drv'...",
+      "building '/nix/store/613jvrn93xmh5q20slfpd42y813i8ib4-activate.drv'...",
+      "building '/nix/store/sjr4ia0r5wx5kpjbmadpma559vh2640b-activate.drv'...",
+      "building '/nix/store/hdizsrnpq46fk52hgavby80x4ch176wb-nixos-system-kafka3-test.drv'...",
+      "building '/nix/store/4yy5ni8lxv613yhcmp20lallprc1n1g3-activate.drv'..."
+    ],
+    "name": "kafka-sweep-rep0-seed35",
+    "status": "failed"
+  }
+]

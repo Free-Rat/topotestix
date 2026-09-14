@@ -1,0 +1,29 @@
+{
+  "execution": "unknown",
+  "exit_code": 0,
+  "input_hash": "153a5c2a0903e641bc65ea1ccc8aa55a8f0ac0bc72ffe02928bc2712a9f7fa76",
+  "state": "done",
+  "unit": {
+    "base_module": null,
+    "config_choices": null,
+    "config_target": null,
+    "entry_hash": "3c862d5c8fbb43fe9bbabb6647c1948bfef1913625b23f175b2cfbeec8a9d495",
+    "entry_id": "test-suites",
+    "execution_index": 0,
+    "id": "de943b2b726ac2f5",
+    "kind": "test_suites",
+    "produces": [
+      "test-suites"
+    ],
+    "properties": null,
+    "repetition_index": 0,
+    "repetition_token": "c20260914-14b712",
+    "run_name": "test-suites-rep0-python",
+    "seed": null,
+    "target": null,
+    "test_script": null,
+    "topology_choices": null,
+    "topology_target": null,
+    "variant_name": "python"
+  }
+}

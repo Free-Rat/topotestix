@@ -1,0 +1,89 @@
+{
+  "identical_minimal_config": true,
+  "seeds": {
+    "3": {
+      "failed": 1,
+      "final_config": {
+        "disk_size": 2048,
+        "election_timeout_ms": 1250,
+        "heartbeat_interval_ms": 100,
+        "memory_size": 1024,
+        "quota_backend_bytes": 2097152,
+        "roles_etcd": 3,
+        "snapshot_count": 10000
+      },
+      "passed": 11,
+      "total": 12,
+      "trials": {
+        "count": 2,
+        "executions": {
+          "fresh": 2
+        },
+        "trials": [
+          {
+            "execution": "fresh",
+            "index": 0,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 1,
+            "status": "failed"
+          }
+        ]
+      }
+    },
+    "40": {
+      "failed": 1,
+      "final_config": {
+        "disk_size": 2048,
+        "election_timeout_ms": 1250,
+        "heartbeat_interval_ms": 100,
+        "memory_size": 1024,
+        "quota_backend_bytes": 2097152,
+        "roles_etcd": 3,
+        "snapshot_count": 10000
+      },
+      "passed": 11,
+      "total": 12,
+      "trials": {
+        "count": 6,
+        "executions": {
+          "fresh": 6
+        },
+        "trials": [
+          {
+            "execution": "fresh",
+            "index": 0,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 1,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 2,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 3,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 4,
+            "status": "failed"
+          },
+          {
+            "execution": "fresh",
+            "index": 5,
+            "status": "failed"
+          }
+        ]
+      }
+    }
+  }
+}

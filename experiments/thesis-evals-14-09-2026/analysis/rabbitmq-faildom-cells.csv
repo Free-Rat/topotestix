@@ -1,0 +1,4 @@
+variant,execution_index,placement,status,properties_passed,properties_total,operations_recovered,operations_total,probe_status,failing_checks
+colocated,0,rabbit1=zone-a;rabbit2=zone-a;rabbit3=zone-b,failed,1,2,11,11,ambiguous,rabbitmq-failure-domain-retains-quorum-availability
+colocated,1,rabbit1=zone-a;rabbit2=zone-a;rabbit3=zone-b,failed,1,2,11,11,ambiguous,rabbitmq-failure-domain-retains-quorum-availability
+spread,0,rabbit1=zone-a;rabbit2=zone-b;rabbit3=zone-c,passed,2,2,11,11,confirmed,

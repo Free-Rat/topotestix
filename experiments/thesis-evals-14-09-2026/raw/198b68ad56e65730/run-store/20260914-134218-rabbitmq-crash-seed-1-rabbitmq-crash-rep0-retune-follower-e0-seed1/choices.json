@@ -1,0 +1,11 @@
+{
+  "configChoices": {
+    "rabbit": {
+      ".environment.etc.topotestix-crash-delay.text": 1,
+      ".environment.etc.topotestix-crash-publish-count.text": 1,
+      ".environment.etc.topotestix-crash-target-role.text": 0,
+      ".environment.etc.topotestix-crash-timing.text": 1
+    }
+  },
+  "topologyChoices": {}
+}

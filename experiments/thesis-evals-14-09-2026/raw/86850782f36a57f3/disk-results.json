@@ -1,0 +1,2458 @@
+{
+  "schema_version": 1,
+  "run_id": "105a999950014b0280693b94454e684e",
+  "contract": {
+    "volume_placement": "independent-vm-root-volumes",
+    "initial_free_target_mb": 100,
+    "disk_free_limit_mb": 190,
+    "backlog_rate": 25,
+    "consumer_outage_seconds": 8,
+    "planned_messages": 200,
+    "message_size": 16384,
+    "confirm_timeout_ms": 1000,
+    "capacity_safety_factor_milli": 1500,
+    "required_free_bytes": 204915200,
+    "naive_required_free_bytes": 4915200,
+    "capacity_sufficient": false,
+    "naive_capacity_sufficient": true
+  },
+  "operations": [
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000000",
+      "sequence": 0,
+      "attempt_wall_ns": 1789393013777426315,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393014792569581,
+      "latency_ms": 1015.144
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000001",
+      "sequence": 1,
+      "attempt_wall_ns": 1789393014792709543,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393015804061265,
+      "latency_ms": 1011.351
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000002",
+      "sequence": 2,
+      "attempt_wall_ns": 1789393015804087804,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393016815568872,
+      "latency_ms": 1011.481
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000003",
+      "sequence": 3,
+      "attempt_wall_ns": 1789393016815594853,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393017827011388,
+      "latency_ms": 1011.416
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000004",
+      "sequence": 4,
+      "attempt_wall_ns": 1789393017827036810,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393018839380837,
+      "latency_ms": 1012.344
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000005",
+      "sequence": 5,
+      "attempt_wall_ns": 1789393018839407377,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393019850939568,
+      "latency_ms": 1011.531
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000006",
+      "sequence": 6,
+      "attempt_wall_ns": 1789393019850961359,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393020862027849,
+      "latency_ms": 1011.068
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000007",
+      "sequence": 7,
+      "attempt_wall_ns": 1789393020862053551,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393021873520650,
+      "latency_ms": 1011.467
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000008",
+      "sequence": 8,
+      "attempt_wall_ns": 1789393021873546631,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393022885077147,
+      "latency_ms": 1011.532
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000009",
+      "sequence": 9,
+      "attempt_wall_ns": 1789393022885106201,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393023897012742,
+      "latency_ms": 1011.905
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000010",
+      "sequence": 10,
+      "attempt_wall_ns": 1789393023897036768,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393024908708921,
+      "latency_ms": 1011.674
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000011",
+      "sequence": 11,
+      "attempt_wall_ns": 1789393024908742724,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393025920276592,
+      "latency_ms": 1011.533
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000012",
+      "sequence": 12,
+      "attempt_wall_ns": 1789393025920299500,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393026931899299,
+      "latency_ms": 1011.601
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000013",
+      "sequence": 13,
+      "attempt_wall_ns": 1789393026931925559,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393027943979605,
+      "latency_ms": 1012.053
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000014",
+      "sequence": 14,
+      "attempt_wall_ns": 1789393027944005306,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393028955337473,
+      "latency_ms": 1011.331
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000015",
+      "sequence": 15,
+      "attempt_wall_ns": 1789393028955360660,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393029968016738,
+      "latency_ms": 1012.656
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000016",
+      "sequence": 16,
+      "attempt_wall_ns": 1789393029968040484,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393030979931380,
+      "latency_ms": 1011.891
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000017",
+      "sequence": 17,
+      "attempt_wall_ns": 1789393030979954288,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393031991551293,
+      "latency_ms": 1011.597
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000018",
+      "sequence": 18,
+      "attempt_wall_ns": 1789393031991574760,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393033003874926,
+      "latency_ms": 1012.3
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000019",
+      "sequence": 19,
+      "attempt_wall_ns": 1789393033003902024,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393034015452654,
+      "latency_ms": 1011.55
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000020",
+      "sequence": 20,
+      "attempt_wall_ns": 1789393034015475562,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393035026882040,
+      "latency_ms": 1011.407
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000021",
+      "sequence": 21,
+      "attempt_wall_ns": 1789393035026906903,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393036039180810,
+      "latency_ms": 1012.274
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000022",
+      "sequence": 22,
+      "attempt_wall_ns": 1789393036039250651,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393037051091820,
+      "latency_ms": 1011.841
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000023",
+      "sequence": 23,
+      "attempt_wall_ns": 1789393037051115567,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393038062934387,
+      "latency_ms": 1011.818
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000024",
+      "sequence": 24,
+      "attempt_wall_ns": 1789393038062958133,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393039074866071,
+      "latency_ms": 1011.907
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000025",
+      "sequence": 25,
+      "attempt_wall_ns": 1789393039074889258,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393040086010783,
+      "latency_ms": 1011.122
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000026",
+      "sequence": 26,
+      "attempt_wall_ns": 1789393040086035088,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393041099057972,
+      "latency_ms": 1013.025
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000027",
+      "sequence": 27,
+      "attempt_wall_ns": 1789393041099088982,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393042111370710,
+      "latency_ms": 1012.278
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000028",
+      "sequence": 28,
+      "attempt_wall_ns": 1789393042111394736,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393043123381454,
+      "latency_ms": 1011.987
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000029",
+      "sequence": 29,
+      "attempt_wall_ns": 1789393043123406318,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393044135286599,
+      "latency_ms": 1011.88
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000030",
+      "sequence": 30,
+      "attempt_wall_ns": 1789393044135311183,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393045147268010,
+      "latency_ms": 1011.957
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000031",
+      "sequence": 31,
+      "attempt_wall_ns": 1789393045147292594,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393046159294678,
+      "latency_ms": 1012.002
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000032",
+      "sequence": 32,
+      "attempt_wall_ns": 1789393046159322335,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393047171166298,
+      "latency_ms": 1011.843
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000033",
+      "sequence": 33,
+      "attempt_wall_ns": 1789393047171190323,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393048183905627,
+      "latency_ms": 1012.681
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000034",
+      "sequence": 34,
+      "attempt_wall_ns": 1789393048183931328,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393049196999190,
+      "latency_ms": 1013.068
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000035",
+      "sequence": 35,
+      "attempt_wall_ns": 1789393049197024892,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393050208898468,
+      "latency_ms": 1011.874
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000036",
+      "sequence": 36,
+      "attempt_wall_ns": 1789393050208923331,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393051221044425,
+      "latency_ms": 1012.124
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000037",
+      "sequence": 37,
+      "attempt_wall_ns": 1789393051221076552,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393052233855271,
+      "latency_ms": 1012.776
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000038",
+      "sequence": 38,
+      "attempt_wall_ns": 1789393052233878458,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393053246150967,
+      "latency_ms": 1012.273
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000039",
+      "sequence": 39,
+      "attempt_wall_ns": 1789393053246174993,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393054258933877,
+      "latency_ms": 1012.759
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000040",
+      "sequence": 40,
+      "attempt_wall_ns": 1789393054258957623,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393055271058602,
+      "latency_ms": 1012.101
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000041",
+      "sequence": 41,
+      "attempt_wall_ns": 1789393055271084024,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393056284190438,
+      "latency_ms": 1013.145
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000042",
+      "sequence": 42,
+      "attempt_wall_ns": 1789393056284254134,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393057296112624,
+      "latency_ms": 1011.858
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000043",
+      "sequence": 43,
+      "attempt_wall_ns": 1789393057296136649,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393058308782670,
+      "latency_ms": 1012.646
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000044",
+      "sequence": 44,
+      "attempt_wall_ns": 1789393058308807254,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393059320969973,
+      "latency_ms": 1012.162
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000045",
+      "sequence": 45,
+      "attempt_wall_ns": 1789393059320993440,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393060332908920,
+      "latency_ms": 1011.915
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000046",
+      "sequence": 46,
+      "attempt_wall_ns": 1789393060332932108,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393061345232274,
+      "latency_ms": 1012.3
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000047",
+      "sequence": 47,
+      "attempt_wall_ns": 1789393061345256579,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393062357227933,
+      "latency_ms": 1011.982
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000048",
+      "sequence": 48,
+      "attempt_wall_ns": 1789393062357263412,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393063369302652,
+      "latency_ms": 1012.039
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000049",
+      "sequence": 49,
+      "attempt_wall_ns": 1789393063369327236,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393064381060291,
+      "latency_ms": 1011.733
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000050",
+      "sequence": 50,
+      "attempt_wall_ns": 1789393064381087948,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393065393141715,
+      "latency_ms": 1012.053
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000051",
+      "sequence": 51,
+      "attempt_wall_ns": 1789393065393164064,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393066404046173,
+      "latency_ms": 1010.883
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000052",
+      "sequence": 52,
+      "attempt_wall_ns": 1789393066404069919,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393067415893768,
+      "latency_ms": 1011.823
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000053",
+      "sequence": 53,
+      "attempt_wall_ns": 1789393067415918073,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393068428433630,
+      "latency_ms": 1012.518
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000054",
+      "sequence": 54,
+      "attempt_wall_ns": 1789393068428466316,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393069440103828,
+      "latency_ms": 1011.634
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000055",
+      "sequence": 55,
+      "attempt_wall_ns": 1789393069440127295,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393070452066522,
+      "latency_ms": 1011.942
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000056",
+      "sequence": 56,
+      "attempt_wall_ns": 1789393070452098369,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393071463993456,
+      "latency_ms": 1011.892
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000057",
+      "sequence": 57,
+      "attempt_wall_ns": 1789393071464017482,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393072476159807,
+      "latency_ms": 1012.142
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000058",
+      "sequence": 58,
+      "attempt_wall_ns": 1789393072476183274,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393073488116354,
+      "latency_ms": 1011.933
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000059",
+      "sequence": 59,
+      "attempt_wall_ns": 1789393073488140100,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393074500134641,
+      "latency_ms": 1011.994
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000060",
+      "sequence": 60,
+      "attempt_wall_ns": 1789393074500158667,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393075512077500,
+      "latency_ms": 1011.919
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000061",
+      "sequence": 61,
+      "attempt_wall_ns": 1789393075512103481,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393076524056117,
+      "latency_ms": 1011.952
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000062",
+      "sequence": 62,
+      "attempt_wall_ns": 1789393076524079584,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393077536428081,
+      "latency_ms": 1012.349
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000063",
+      "sequence": 63,
+      "attempt_wall_ns": 1789393077536453224,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393078548517047,
+      "latency_ms": 1012.062
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000064",
+      "sequence": 64,
+      "attempt_wall_ns": 1789393078548540793,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393079560896833,
+      "latency_ms": 1012.356
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000065",
+      "sequence": 65,
+      "attempt_wall_ns": 1789393079560921417,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393080573131348,
+      "latency_ms": 1012.213
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000066",
+      "sequence": 66,
+      "attempt_wall_ns": 1789393080573159285,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393081585088455,
+      "latency_ms": 1011.929
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000067",
+      "sequence": 67,
+      "attempt_wall_ns": 1789393081585115274,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393082598104634,
+      "latency_ms": 1012.989
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000068",
+      "sequence": 68,
+      "attempt_wall_ns": 1789393082598128101,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393083610036318,
+      "latency_ms": 1011.91
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000069",
+      "sequence": 69,
+      "attempt_wall_ns": 1789393083610062858,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393084621678021,
+      "latency_ms": 1011.614
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000070",
+      "sequence": 70,
+      "attempt_wall_ns": 1789393084621700649,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393085632371000,
+      "latency_ms": 1010.67
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000071",
+      "sequence": 71,
+      "attempt_wall_ns": 1789393085632393628,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393086643153655,
+      "latency_ms": 1010.761
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000072",
+      "sequence": 72,
+      "attempt_wall_ns": 1789393086643179357,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393087654799549,
+      "latency_ms": 1011.619
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000073",
+      "sequence": 73,
+      "attempt_wall_ns": 1789393087654821898,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393088665859334,
+      "latency_ms": 1011.038
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000074",
+      "sequence": 74,
+      "attempt_wall_ns": 1789393088665882242,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393089677895780,
+      "latency_ms": 1012.013
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000075",
+      "sequence": 75,
+      "attempt_wall_ns": 1789393089677919526,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393090689961838,
+      "latency_ms": 1012.042
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000076",
+      "sequence": 76,
+      "attempt_wall_ns": 1789393090689985026,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393091702020354,
+      "latency_ms": 1012.035
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000077",
+      "sequence": 77,
+      "attempt_wall_ns": 1789393091702044379,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393092714073003,
+      "latency_ms": 1012.028
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000078",
+      "sequence": 78,
+      "attempt_wall_ns": 1789393092714099822,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393093726568446,
+      "latency_ms": 1012.469
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000079",
+      "sequence": 79,
+      "attempt_wall_ns": 1789393093726592192,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393094738532815,
+      "latency_ms": 1011.941
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000080",
+      "sequence": 80,
+      "attempt_wall_ns": 1789393094738556282,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393095750548588,
+      "latency_ms": 1011.992
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000081",
+      "sequence": 81,
+      "attempt_wall_ns": 1789393095750572614,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393096762933682,
+      "latency_ms": 1012.361
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000082",
+      "sequence": 82,
+      "attempt_wall_ns": 1789393096762957987,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393097775834763,
+      "latency_ms": 1012.876
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000083",
+      "sequence": 83,
+      "attempt_wall_ns": 1789393097775856833,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393098788040783,
+      "latency_ms": 1012.184
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000084",
+      "sequence": 84,
+      "attempt_wall_ns": 1789393098788064529,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393099800153775,
+      "latency_ms": 1012.089
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000085",
+      "sequence": 85,
+      "attempt_wall_ns": 1789393099800178359,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393100812075123,
+      "latency_ms": 1011.897
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000086",
+      "sequence": 86,
+      "attempt_wall_ns": 1789393100812098589,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393101823934451,
+      "latency_ms": 1011.836
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000087",
+      "sequence": 87,
+      "attempt_wall_ns": 1789393101823957918,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393102835761373,
+      "latency_ms": 1011.803
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000088",
+      "sequence": 88,
+      "attempt_wall_ns": 1789393102835785119,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393103847577400,
+      "latency_ms": 1011.792
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000089",
+      "sequence": 89,
+      "attempt_wall_ns": 1789393103847601704,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393104859782582,
+      "latency_ms": 1012.181
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000090",
+      "sequence": 90,
+      "attempt_wall_ns": 1789393104859806887,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393105872028831,
+      "latency_ms": 1012.223
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000091",
+      "sequence": 91,
+      "attempt_wall_ns": 1789393105872054533,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393106884277874,
+      "latency_ms": 1012.223
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000092",
+      "sequence": 92,
+      "attempt_wall_ns": 1789393106884301620,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393107896458472,
+      "latency_ms": 1012.157
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000093",
+      "sequence": 93,
+      "attempt_wall_ns": 1789393107896483336,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393108908866474,
+      "latency_ms": 1012.383
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000094",
+      "sequence": 94,
+      "attempt_wall_ns": 1789393108908889940,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393109921071377,
+      "latency_ms": 1012.181
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000095",
+      "sequence": 95,
+      "attempt_wall_ns": 1789393109921095123,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393110933485245,
+      "latency_ms": 1012.39
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000096",
+      "sequence": 96,
+      "attempt_wall_ns": 1789393110933508991,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393111945449056,
+      "latency_ms": 1011.94
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000097",
+      "sequence": 97,
+      "attempt_wall_ns": 1789393111945472802,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393112957503102,
+      "latency_ms": 1012.03
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000098",
+      "sequence": 98,
+      "attempt_wall_ns": 1789393112957526848,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393113969805224,
+      "latency_ms": 1012.278
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000099",
+      "sequence": 99,
+      "attempt_wall_ns": 1789393113969828690,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393114981747523,
+      "latency_ms": 1011.919
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000100",
+      "sequence": 100,
+      "attempt_wall_ns": 1789393114981772108,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393115993991258,
+      "latency_ms": 1012.219
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000101",
+      "sequence": 101,
+      "attempt_wall_ns": 1789393115994015563,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393117006371602,
+      "latency_ms": 1012.356
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000102",
+      "sequence": 102,
+      "attempt_wall_ns": 1789393117006395628,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393118019263464,
+      "latency_ms": 1012.871
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000103",
+      "sequence": 103,
+      "attempt_wall_ns": 1789393118019295871,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393119031401320,
+      "latency_ms": 1012.105
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000104",
+      "sequence": 104,
+      "attempt_wall_ns": 1789393119031433167,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393120043885309,
+      "latency_ms": 1012.449
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000105",
+      "sequence": 105,
+      "attempt_wall_ns": 1789393120043909055,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393121055864485,
+      "latency_ms": 1011.955
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000106",
+      "sequence": 106,
+      "attempt_wall_ns": 1789393121055889348,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393122068403508,
+      "latency_ms": 1012.514
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000107",
+      "sequence": 107,
+      "attempt_wall_ns": 1789393122068427534,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393123080862633,
+      "latency_ms": 1012.435
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000108",
+      "sequence": 108,
+      "attempt_wall_ns": 1789393123080886659,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393124092982051,
+      "latency_ms": 1012.095
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000109",
+      "sequence": 109,
+      "attempt_wall_ns": 1789393124093006356,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393125105172986,
+      "latency_ms": 1012.167
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000110",
+      "sequence": 110,
+      "attempt_wall_ns": 1789393125105243386,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393126117432365,
+      "latency_ms": 1012.188
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000111",
+      "sequence": 111,
+      "attempt_wall_ns": 1789393126117456670,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393127129968874,
+      "latency_ms": 1012.512
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000112",
+      "sequence": 112,
+      "attempt_wall_ns": 1789393127129992620,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393128142481358,
+      "latency_ms": 1012.489
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000113",
+      "sequence": 113,
+      "attempt_wall_ns": 1789393128142505384,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393129154450477,
+      "latency_ms": 1011.945
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000114",
+      "sequence": 114,
+      "attempt_wall_ns": 1789393129154474502,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393130167045094,
+      "latency_ms": 1012.57
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000115",
+      "sequence": 115,
+      "attempt_wall_ns": 1789393130167069399,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393131179864321,
+      "latency_ms": 1012.794
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000116",
+      "sequence": 116,
+      "attempt_wall_ns": 1789393131179887229,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393132191861377,
+      "latency_ms": 1011.974
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000117",
+      "sequence": 117,
+      "attempt_wall_ns": 1789393132191884564,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393133203634381,
+      "latency_ms": 1011.75
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000118",
+      "sequence": 118,
+      "attempt_wall_ns": 1789393133203658127,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393134216151335,
+      "latency_ms": 1012.496
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000119",
+      "sequence": 119,
+      "attempt_wall_ns": 1789393134216186256,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393135228528606,
+      "latency_ms": 1012.249
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000120",
+      "sequence": 120,
+      "attempt_wall_ns": 1789393135228553191,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393136240391846,
+      "latency_ms": 1011.838
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000121",
+      "sequence": 121,
+      "attempt_wall_ns": 1789393136240415033,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393137254241371,
+      "latency_ms": 1013.826
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000122",
+      "sequence": 122,
+      "attempt_wall_ns": 1789393137254264279,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393138266971760,
+      "latency_ms": 1012.71
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000123",
+      "sequence": 123,
+      "attempt_wall_ns": 1789393138267003049,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393139279252650,
+      "latency_ms": 1012.246
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000124",
+      "sequence": 124,
+      "attempt_wall_ns": 1789393139279276676,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393140291122595,
+      "latency_ms": 1011.845
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000125",
+      "sequence": 125,
+      "attempt_wall_ns": 1789393140291144106,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393141303415218,
+      "latency_ms": 1012.271
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000126",
+      "sequence": 126,
+      "attempt_wall_ns": 1789393141303438685,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393142314923385,
+      "latency_ms": 1011.484
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000127",
+      "sequence": 127,
+      "attempt_wall_ns": 1789393142314946851,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393143327110408,
+      "latency_ms": 1012.163
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000128",
+      "sequence": 128,
+      "attempt_wall_ns": 1789393143327134155,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393144339040137,
+      "latency_ms": 1011.905
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000129",
+      "sequence": 129,
+      "attempt_wall_ns": 1789393144339064442,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393145351468253,
+      "latency_ms": 1012.404
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000130",
+      "sequence": 130,
+      "attempt_wall_ns": 1789393145351491440,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393146363360546,
+      "latency_ms": 1011.869
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000131",
+      "sequence": 131,
+      "attempt_wall_ns": 1789393146363384292,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393147375314020,
+      "latency_ms": 1011.93
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000132",
+      "sequence": 132,
+      "attempt_wall_ns": 1789393147375337767,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393148387380917,
+      "latency_ms": 1012.043
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000133",
+      "sequence": 133,
+      "attempt_wall_ns": 1789393148387403825,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393149399939217,
+      "latency_ms": 1012.535
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000134",
+      "sequence": 134,
+      "attempt_wall_ns": 1789393149399963242,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393150412155015,
+      "latency_ms": 1012.191
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000135",
+      "sequence": 135,
+      "attempt_wall_ns": 1789393150412178203,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393151424340363,
+      "latency_ms": 1012.162
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000136",
+      "sequence": 136,
+      "attempt_wall_ns": 1789393151424363829,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393152436554205,
+      "latency_ms": 1012.19
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000137",
+      "sequence": 137,
+      "attempt_wall_ns": 1789393152436578510,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393153448485610,
+      "latency_ms": 1011.907
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000138",
+      "sequence": 138,
+      "attempt_wall_ns": 1789393153448508797,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393154460244646,
+      "latency_ms": 1011.736
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000139",
+      "sequence": 139,
+      "attempt_wall_ns": 1789393154460269789,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393155472094476,
+      "latency_ms": 1011.825
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000140",
+      "sequence": 140,
+      "attempt_wall_ns": 1789393155472117943,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393156483993754,
+      "latency_ms": 1011.878
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000141",
+      "sequence": 141,
+      "attempt_wall_ns": 1789393156484025322,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393157496426619,
+      "latency_ms": 1012.401
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000142",
+      "sequence": 142,
+      "attempt_wall_ns": 1789393157496457908,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393158508176436,
+      "latency_ms": 1011.715
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000143",
+      "sequence": 143,
+      "attempt_wall_ns": 1789393158508235661,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393159519992742,
+      "latency_ms": 1011.757
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000144",
+      "sequence": 144,
+      "attempt_wall_ns": 1789393159520016488,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393160531964655,
+      "latency_ms": 1011.948
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000145",
+      "sequence": 145,
+      "attempt_wall_ns": 1789393160531988121,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393161544139945,
+      "latency_ms": 1012.155
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000146",
+      "sequence": 146,
+      "attempt_wall_ns": 1789393161544174586,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393162556175832,
+      "latency_ms": 1012.001
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000147",
+      "sequence": 147,
+      "attempt_wall_ns": 1789393162556267464,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393163568820735,
+      "latency_ms": 1012.55
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000148",
+      "sequence": 148,
+      "attempt_wall_ns": 1789393163568843643,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393164581063353,
+      "latency_ms": 1012.22
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000149",
+      "sequence": 149,
+      "attempt_wall_ns": 1789393164581086819,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393165593291722,
+      "latency_ms": 1012.205
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000150",
+      "sequence": 150,
+      "attempt_wall_ns": 1789393165593315748,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393166605230670,
+      "latency_ms": 1011.915
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000151",
+      "sequence": 151,
+      "attempt_wall_ns": 1789393166605255533,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393167617055357,
+      "latency_ms": 1011.8
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000152",
+      "sequence": 152,
+      "attempt_wall_ns": 1789393167617081058,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393168628879485,
+      "latency_ms": 1011.797
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000153",
+      "sequence": 153,
+      "attempt_wall_ns": 1789393168628902114,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393169640637683,
+      "latency_ms": 1011.736
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000154",
+      "sequence": 154,
+      "attempt_wall_ns": 1789393169640660033,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393170651929062,
+      "latency_ms": 1011.269
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000155",
+      "sequence": 155,
+      "attempt_wall_ns": 1789393170651952250,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393171663875273,
+      "latency_ms": 1011.923
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000156",
+      "sequence": 156,
+      "attempt_wall_ns": 1789393171663897064,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393172675753599,
+      "latency_ms": 1011.857
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000157",
+      "sequence": 157,
+      "attempt_wall_ns": 1789393172675776786,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393173687566832,
+      "latency_ms": 1011.79
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000158",
+      "sequence": 158,
+      "attempt_wall_ns": 1789393173687590298,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393174700958198,
+      "latency_ms": 1013.371
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000159",
+      "sequence": 159,
+      "attempt_wall_ns": 1789393174700990884,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393175713347482,
+      "latency_ms": 1012.354
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000160",
+      "sequence": 160,
+      "attempt_wall_ns": 1789393175713371228,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393176725657706,
+      "latency_ms": 1012.286
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000161",
+      "sequence": 161,
+      "attempt_wall_ns": 1789393176725680614,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393177738046711,
+      "latency_ms": 1012.366
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000162",
+      "sequence": 162,
+      "attempt_wall_ns": 1789393177738070457,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393178749902687,
+      "latency_ms": 1011.832
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000163",
+      "sequence": 163,
+      "attempt_wall_ns": 1789393178749925874,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393179762248110,
+      "latency_ms": 1012.322
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000164",
+      "sequence": 164,
+      "attempt_wall_ns": 1789393179762272415,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393180774868429,
+      "latency_ms": 1012.595
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000165",
+      "sequence": 165,
+      "attempt_wall_ns": 1789393180774891617,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393181786826374,
+      "latency_ms": 1011.934
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000166",
+      "sequence": 166,
+      "attempt_wall_ns": 1789393181786849840,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393182798474781,
+      "latency_ms": 1011.625
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000167",
+      "sequence": 167,
+      "attempt_wall_ns": 1789393182798497130,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393183810005018,
+      "latency_ms": 1011.508
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000168",
+      "sequence": 168,
+      "attempt_wall_ns": 1789393183810027646,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393184822582314,
+      "latency_ms": 1012.554
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000169",
+      "sequence": 169,
+      "attempt_wall_ns": 1789393184822605222,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393185834921313,
+      "latency_ms": 1012.316
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000170",
+      "sequence": 170,
+      "attempt_wall_ns": 1789393185834945338,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393186847476539,
+      "latency_ms": 1012.531
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000171",
+      "sequence": 171,
+      "attempt_wall_ns": 1789393186847498609,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393187859707423,
+      "latency_ms": 1012.209
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000172",
+      "sequence": 172,
+      "attempt_wall_ns": 1789393187859736477,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393188871390472,
+      "latency_ms": 1011.657
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000173",
+      "sequence": 173,
+      "attempt_wall_ns": 1789393188871420644,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393189883369928,
+      "latency_ms": 1011.946
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000174",
+      "sequence": 174,
+      "attempt_wall_ns": 1789393189883391718,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393190895003529,
+      "latency_ms": 1011.614
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000175",
+      "sequence": 175,
+      "attempt_wall_ns": 1789393190895030069,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393191906374248,
+      "latency_ms": 1011.341
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000176",
+      "sequence": 176,
+      "attempt_wall_ns": 1789393191906393803,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393192918691735,
+      "latency_ms": 1012.297
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000177",
+      "sequence": 177,
+      "attempt_wall_ns": 1789393192918709335,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393193930288181,
+      "latency_ms": 1011.579
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000178",
+      "sequence": 178,
+      "attempt_wall_ns": 1789393193930308575,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393194941593528,
+      "latency_ms": 1011.285
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000179",
+      "sequence": 179,
+      "attempt_wall_ns": 1789393194941617274,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393195953536387,
+      "latency_ms": 1011.919
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000180",
+      "sequence": 180,
+      "attempt_wall_ns": 1789393195953559295,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393196965140375,
+      "latency_ms": 1011.581
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000181",
+      "sequence": 181,
+      "attempt_wall_ns": 1789393196965163842,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393197977426015,
+      "latency_ms": 1012.262
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000182",
+      "sequence": 182,
+      "attempt_wall_ns": 1789393197977449761,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393198989261597,
+      "latency_ms": 1011.812
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000183",
+      "sequence": 183,
+      "attempt_wall_ns": 1789393198989285902,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393200001087681,
+      "latency_ms": 1011.802
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000184",
+      "sequence": 184,
+      "attempt_wall_ns": 1789393200001111986,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393201013264368,
+      "latency_ms": 1012.152
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000185",
+      "sequence": 185,
+      "attempt_wall_ns": 1789393201013288394,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393202025832446,
+      "latency_ms": 1012.545
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000186",
+      "sequence": 186,
+      "attempt_wall_ns": 1789393202025861500,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393203038917629,
+      "latency_ms": 1013.055
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000187",
+      "sequence": 187,
+      "attempt_wall_ns": 1789393203038941095,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393204050977262,
+      "latency_ms": 1012.036
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000188",
+      "sequence": 188,
+      "attempt_wall_ns": 1789393204051002963,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393205063065390,
+      "latency_ms": 1012.061
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000189",
+      "sequence": 189,
+      "attempt_wall_ns": 1789393205063089136,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393206075607766,
+      "latency_ms": 1012.518
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000190",
+      "sequence": 190,
+      "attempt_wall_ns": 1789393206075631512,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393207087032961,
+      "latency_ms": 1011.401
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000191",
+      "sequence": 191,
+      "attempt_wall_ns": 1789393207087058104,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393208099804696,
+      "latency_ms": 1012.746
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000192",
+      "sequence": 192,
+      "attempt_wall_ns": 1789393208099827325,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393209111576304,
+      "latency_ms": 1011.749
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000193",
+      "sequence": 193,
+      "attempt_wall_ns": 1789393209111600329,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393210123383111,
+      "latency_ms": 1011.782
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000194",
+      "sequence": 194,
+      "attempt_wall_ns": 1789393210123405740,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393211135451405,
+      "latency_ms": 1012.046
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000195",
+      "sequence": 195,
+      "attempt_wall_ns": 1789393211135475989,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393212147248714,
+      "latency_ms": 1011.773
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000196",
+      "sequence": 196,
+      "attempt_wall_ns": 1789393212147273019,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393213159150786,
+      "latency_ms": 1011.877
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000197",
+      "sequence": 197,
+      "attempt_wall_ns": 1789393213159174811,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393214171162368,
+      "latency_ms": 1011.987
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000198",
+      "sequence": 198,
+      "attempt_wall_ns": 1789393214171186114,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393215183039017,
+      "latency_ms": 1011.816
+    },
+    {
+      "op_id": "105a999950014b0280693b94454e684e/backlog/00000199",
+      "sequence": 199,
+      "attempt_wall_ns": 1789393215183063601,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393216197275742,
+      "latency_ms": 1014.212
+    }
+  ],
+  "telemetry": [
+    {
+      "wall_ns": 1789393008493273117,
+      "phase": "before_fill",
+      "node": "rabbit1",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4122411008,
+      "fs_available_bytes": 3890888704,
+      "rabbit_disk_free_bytes": 3890937856,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393008734292507,
+      "phase": "before_fill",
+      "node": "rabbit2",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4122394624,
+      "fs_available_bytes": 3890872320,
+      "rabbit_disk_free_bytes": 3890888704,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393008964128048,
+      "phase": "before_fill",
+      "node": "rabbit3",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4122398720,
+      "fs_available_bytes": 3890876416,
+      "rabbit_disk_free_bytes": 3890970624,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393014147760770,
+      "phase": "after_fill",
+      "node": "rabbit1",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 335998976,
+      "fs_available_bytes": 104476672,
+      "rabbit_disk_free_bytes": 3890937856,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393014223747043,
+      "phase": "after_fill",
+      "node": "rabbit2",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 335982592,
+      "fs_available_bytes": 104460288,
+      "rabbit_disk_free_bytes": 3890888704,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393014301061844,
+      "phase": "after_fill",
+      "node": "rabbit3",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 335986688,
+      "fs_available_bytes": 104464384,
+      "rabbit_disk_free_bytes": 3890970624,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393216960766649,
+      "phase": "after_publish",
+      "node": "rabbit1",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 336003072,
+      "fs_available_bytes": 104480768,
+      "rabbit_disk_free_bytes": 104480768,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393217043007577,
+      "phase": "after_publish",
+      "node": "rabbit2",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 335982592,
+      "fs_available_bytes": 104460288,
+      "rabbit_disk_free_bytes": 104460288,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393217123392124,
+      "phase": "after_publish",
+      "node": "rabbit3",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 335986688,
+      "fs_available_bytes": 104464384,
+      "rabbit_disk_free_bytes": 104464384,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393217240908860,
+      "phase": "recovery_poll",
+      "node": "rabbit1",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4122415104,
+      "fs_available_bytes": 3890892800,
+      "rabbit_disk_free_bytes": 104480768,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393217321328444,
+      "phase": "recovery_poll",
+      "node": "rabbit2",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4122394624,
+      "fs_available_bytes": 3890872320,
+      "rabbit_disk_free_bytes": 104460288,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393217396624874,
+      "phase": "recovery_poll",
+      "node": "rabbit3",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4122398720,
+      "fs_available_bytes": 3890876416,
+      "rabbit_disk_free_bytes": 104464384,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393220484312117,
+      "phase": "recovery_poll",
+      "node": "rabbit1",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4122411008,
+      "fs_available_bytes": 3890888704,
+      "rabbit_disk_free_bytes": 104480768,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393220565419138,
+      "phase": "recovery_poll",
+      "node": "rabbit2",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4122394624,
+      "fs_available_bytes": 3890872320,
+      "rabbit_disk_free_bytes": 104460288,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393220647035437,
+      "phase": "recovery_poll",
+      "node": "rabbit3",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4122398720,
+      "fs_available_bytes": 3890876416,
+      "rabbit_disk_free_bytes": 104464384,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393223730986453,
+      "phase": "recovery_poll",
+      "node": "rabbit1",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4122005504,
+      "fs_available_bytes": 3890483200,
+      "rabbit_disk_free_bytes": 104480768,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393223814948635,
+      "phase": "recovery_poll",
+      "node": "rabbit2",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4121989120,
+      "fs_available_bytes": 3890466816,
+      "rabbit_disk_free_bytes": 104460288,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393223894885881,
+      "phase": "recovery_poll",
+      "node": "rabbit3",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4121993216,
+      "fs_available_bytes": 3890470912,
+      "rabbit_disk_free_bytes": 104464384,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393226986011531,
+      "phase": "recovery_poll",
+      "node": "rabbit1",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4122005504,
+      "fs_available_bytes": 3890483200,
+      "rabbit_disk_free_bytes": 3890888704,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393227066487953,
+      "phase": "recovery_poll",
+      "node": "rabbit2",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4121989120,
+      "fs_available_bytes": 3890466816,
+      "rabbit_disk_free_bytes": 104460288,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393227147609111,
+      "phase": "recovery_poll",
+      "node": "rabbit3",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4121993216,
+      "fs_available_bytes": 3890470912,
+      "rabbit_disk_free_bytes": 3890876416,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393230233866482,
+      "phase": "recovery_poll",
+      "node": "rabbit1",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4122005504,
+      "fs_available_bytes": 3890483200,
+      "rabbit_disk_free_bytes": 3890888704,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393230322397081,
+      "phase": "recovery_poll",
+      "node": "rabbit2",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4121989120,
+      "fs_available_bytes": 3890466816,
+      "rabbit_disk_free_bytes": 3890872320,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393230406578189,
+      "phase": "recovery_poll",
+      "node": "rabbit3",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4121993216,
+      "fs_available_bytes": 3890470912,
+      "rabbit_disk_free_bytes": 3890876416,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393233387285602,
+      "phase": "after_recovery",
+      "node": "rabbit1",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4121985024,
+      "fs_available_bytes": 3890462720,
+      "rabbit_disk_free_bytes": 3890888704,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393233469364221,
+      "phase": "after_recovery",
+      "node": "rabbit2",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4121968640,
+      "fs_available_bytes": 3890446336,
+      "rabbit_disk_free_bytes": 3890872320,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393233552279962,
+      "phase": "after_recovery",
+      "node": "rabbit3",
+      "fs_total_bytes": 4143677440,
+      "fs_free_bytes": 4121972736,
+      "fs_available_bytes": 3890450432,
+      "rabbit_disk_free_bytes": 3890876416,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    }
+  ],
+  "recovered": [
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000187",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000187",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000180",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000180",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000186",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000186",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000178",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000178",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000197",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000197",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000188",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000188",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000189",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000189",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000185",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000185",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000176",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000176",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000191",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000191",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000190",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000190",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000196",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000196",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000181",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000181",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000195",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000195",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000179",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000179",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000194",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000194",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000193",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000193",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000199",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000199",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000184",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000184",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000177",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000177",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000192",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000192",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000198",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000198",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000183",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000183",
+      "redelivered": false
+    },
+    {
+      "message_id": "105a999950014b0280693b94454e684e/backlog/00000182",
+      "body_id": "105a999950014b0280693b94454e684e/backlog/00000182",
+      "redelivered": false
+    }
+  ],
+  "queue_before": {
+    "name": "topotestix_disk_capacity",
+    "type": "quorum",
+    "leader": "rabbit@rabbit1",
+    "members": [
+      "rabbit@rabbit1",
+      "rabbit@rabbit2",
+      "rabbit@rabbit3"
+    ],
+    "online": [
+      "rabbit@rabbit1",
+      "rabbit@rabbit2",
+      "rabbit@rabbit3"
+    ],
+    "state": "running"
+  }
+}

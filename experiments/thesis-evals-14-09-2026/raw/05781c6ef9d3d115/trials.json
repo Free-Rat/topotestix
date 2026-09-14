@@ -1,0 +1,13 @@
+[
+  {
+    "dir": "20260914-134218-rabbitmq-crash-seed-1-rabbitmq-crash-rep0-leader-e0-seed1",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/hxpqjx010ki7mkhvndzanf3jshiig8xc-nixos-test-driver-rabbitmq-crash-rep0-leader-e0-seed1-c20260914-14b712.drv'...",
+      "building '/nix/store/wn7ypfyplkxif82wf562pzma5xa9d5rf-vm-test-run-rabbitmq-crash-rep0-leader-e0-seed1-c20260914-14b712.drv'..."
+    ],
+    "name": "rabbitmq-crash-rep0-leader-e0-seed1",
+    "status": "passed"
+  }
+]

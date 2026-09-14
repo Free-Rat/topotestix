@@ -1,0 +1,7 @@
+variant,execution_index,status,checks_passed,checks_total,confirmed_count,ambiguous_count,leader_before,leader_after,failing_checks
+during-publish,0,passed,3,3,50,0,rabbit1,rabbit1,
+follower-repA,0,passed,3,3,50,0,rabbit1,rabbit1,
+follower-repB,0,passed,3,3,50,0,rabbit1,rabbit1,
+leader,0,passed,3,3,50,0,rabbit1,rabbit3,
+retune-follower,0,passed,3,3,50,0,rabbit1,rabbit1,
+retune-leader,0,passed,3,3,50,0,rabbit1,rabbit3,

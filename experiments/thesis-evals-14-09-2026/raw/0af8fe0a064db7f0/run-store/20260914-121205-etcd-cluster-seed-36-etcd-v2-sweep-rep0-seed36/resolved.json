@@ -1,0 +1,75 @@
+{
+  "environment": {
+    "nixpkgsOutPath": "/nix/store/0lkxgksfvwcdsyrxj90ddc7f4kl1k8nr-source",
+    "nixpkgsRevision": "cb2938ebeac96284932dbe6a2fb611d3b77743a5"
+  },
+  "nodeConfigs": {
+    "etcd1": {
+      "virtualisation": {
+        "vlans": [
+          1
+        ]
+      }
+    },
+    "etcd2": {
+      "virtualisation": {
+        "vlans": [
+          1
+        ]
+      }
+    },
+    "etcd3": {
+      "virtualisation": {
+        "vlans": [
+          1
+        ]
+      }
+    }
+  },
+  "nodeRoles": {
+    "etcd1": "etcd",
+    "etcd2": "etcd",
+    "etcd3": "etcd"
+  },
+  "roleFuzz": {
+    "etcd": {
+      "choices": {
+        ".services.etcd.extraConf.ELECTION_TIMEOUT": 1,
+        ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 1,
+        ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 2,
+        ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+        ".virtualisation.diskSize": 0,
+        ".virtualisation.memorySize": 1
+      },
+      "result": {
+        "services": {
+          "etcd": {
+            "extraConf": {
+              "ELECTION_TIMEOUT": "2500",
+              "HEARTBEAT_INTERVAL": "250",
+              "QUOTA_BACKEND_BYTES": "67108864",
+              "SNAPSHOT_COUNT": "10000"
+            }
+          }
+        },
+        "virtualisation": {
+          "diskSize": 2048,
+          "memorySize": 2048
+        }
+      },
+      "seed": "37"
+    }
+  },
+  "topology": {
+    "etcdVlans": [
+      1
+    ],
+    "roles": {
+      "etcd": 3
+    }
+  },
+  "topologyChoices": {
+    ".etcdVlans": 0,
+    ".roles.etcd": 0
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "configChoices": {
+    "rabbit": {
+      ".environment.etc.topotestix-crash-timing.text": 1
+    }
+  },
+  "topologyChoices": {}
+}

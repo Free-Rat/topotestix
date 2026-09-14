@@ -1,0 +1,29 @@
+{
+  "execution": "fresh",
+  "exit_code": 0,
+  "input_hash": "752c80e7f59c99bd3a22620cdac632af286fcdbf5fe1e2f50f948bcbcc11873e",
+  "state": "done",
+  "unit": {
+    "base_module": "targets/rabbitmq-crash/module.nix",
+    "config_choices": null,
+    "config_target": "targets/rabbitmq-crash/config.nix",
+    "entry_hash": "e51a1ce4e901c1359fbda8e2bd51c6d141fcaeae368756e6895f0c4248513bca",
+    "entry_id": "rabbitmq-crash",
+    "execution_index": 0,
+    "id": "69232a9d412b4f0f",
+    "kind": "run",
+    "produces": [
+      "rabbitmq-crash-cells"
+    ],
+    "properties": "targets/rabbitmq-crash/properties.nix",
+    "repetition_index": 0,
+    "repetition_token": "c20260914-14b712",
+    "run_name": "rabbitmq-crash-rep0-follower-repA-e0-seed1",
+    "seed": 1,
+    "target": "rabbitmq-crash",
+    "test_script": "targets/rabbitmq-crash/test-script.py",
+    "topology_choices": null,
+    "topology_target": "targets/rabbitmq-crash/topology.nix",
+    "variant_name": "follower-repA"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "execution": "fresh",
+  "exit_code": 0,
+  "input_hash": "169358191b580db5fb4a7f4af7da8249f1f85730a53d3839c4fdcf9593e5db8b",
+  "state": "done",
+  "unit": {
+    "base_module": "targets/rabbitmq-crash/module.nix",
+    "config_choices": {
+      "rabbit": {
+        ".environment.etc.topotestix-crash-timing.text": 1
+      }
+    },
+    "config_target": "targets/rabbitmq-crash/config.nix",
+    "entry_hash": "e51a1ce4e901c1359fbda8e2bd51c6d141fcaeae368756e6895f0c4248513bca",
+    "entry_id": "rabbitmq-crash",
+    "execution_index": 0,
+    "id": "ed2742dd6d484c5a",
+    "kind": "run",
+    "produces": [
+      "rabbitmq-crash-cells"
+    ],
+    "properties": "targets/rabbitmq-crash/properties.nix",
+    "repetition_index": 0,
+    "repetition_token": "c20260914-14b712",
+    "run_name": "rabbitmq-crash-rep0-during-publish-e0-seed1",
+    "seed": 1,
+    "target": "rabbitmq-crash",
+    "test_script": "targets/rabbitmq-crash/test-script.py",
+    "topology_choices": null,
+    "topology_target": "targets/rabbitmq-crash/topology.nix",
+    "variant_name": "during-publish"
+  }
+}

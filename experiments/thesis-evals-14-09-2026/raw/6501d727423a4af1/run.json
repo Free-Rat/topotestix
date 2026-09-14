@@ -1,0 +1,20 @@
+{
+  "artifacts": [],
+  "finishedAt": "2026-09-14T10:54:06.411747+00:00",
+  "gitHead": "b0d93bcdd69befbf7b5e55a1176a8f02b01e0d99",
+  "id": "20260914-105238-etcd-cluster-v1-seed-15-etcd-v1-sweep-rep0-seed15",
+  "name": "etcd-v1-sweep-rep0-seed15",
+  "repetitionToken": "c20260914-14b712",
+  "reproduceCommand": "topotestix orchestrator run etcd-cluster-v1 --seed 15 --name etcd-v1-sweep-rep0-seed15 --project-root /home/freerat/projects/topotestix --repetition-token c20260914-14b712 --topology-target /home/freerat/projects/topotestix/targets/etcd-cluster/topology.nix --config-target /home/freerat/projects/topotestix/targets/etcd-cluster-v1/config.nix --base-module /home/freerat/projects/topotestix/targets/etcd-cluster/module.nix --test-script /home/freerat/projects/topotestix/targets/etcd-cluster/test-script.py --properties /home/freerat/projects/topotestix/targets/etcd-cluster-v1/properties.nix",
+  "resultPath": "experiments/thesis-evals-14-09-2026/raw/6501d727423a4af1.partial/run-store/20260914-105238-etcd-cluster-v1-seed-15-etcd-v1-sweep-rep0-seed15/result",
+  "runDir": "experiments/thesis-evals-14-09-2026/raw/6501d727423a4af1.partial/run-store/20260914-105238-etcd-cluster-v1-seed-15-etcd-v1-sweep-rep0-seed15",
+  "seed": 15,
+  "startedAt": "2026-09-14T10:52:38.293268+00:00",
+  "status": "passed",
+  "summary": {
+    "failed": 0,
+    "passed": 11,
+    "total": 11
+  },
+  "target": "etcd-cluster-v1"
+}

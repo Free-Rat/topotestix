@@ -1,0 +1,146 @@
+{
+  "collisions": [
+    {
+      "hash": "0175358cd41a8259a184b2a3252ee299db4cf6ef2ca98b8b1ef16a5598d39003",
+      "seeds": [
+        9,
+        10,
+        14
+      ]
+    },
+    {
+      "hash": "0b88dfb43e0af4021e4d869547e0af8299dadd48c0d1549f7cff94de3e1942ad",
+      "seeds": [
+        2,
+        21
+      ]
+    },
+    {
+      "hash": "17abde22ee112ff72ce5be673ba115b776eb965aeeb40249e0c69802ae6cd728",
+      "seeds": [
+        6,
+        48
+      ]
+    },
+    {
+      "hash": "39f19eeee90993baec4f4fadd70f70ade4eec14acb97ef1bc3ae015b2d9b21e3",
+      "seeds": [
+        26,
+        29,
+        38
+      ]
+    },
+    {
+      "hash": "54b595d3ea6474aa6beb4d4137acb2e38a9b933904d3779cbfa40be6601dc6e2",
+      "seeds": [
+        7,
+        22,
+        34,
+        46
+      ]
+    },
+    {
+      "hash": "570bc229bfc61abdf8edadc7cfbd275097fb810835da0355bde9bd8d4bde50f0",
+      "seeds": [
+        28,
+        41
+      ]
+    },
+    {
+      "hash": "5e103c0ea1dfe483b2d0cb9252cf47d7244507eb3954f6f82d5563bce6192da5",
+      "seeds": [
+        20,
+        43,
+        50
+      ]
+    },
+    {
+      "hash": "643bde13b1d5a1089691b16e5e1722f5066711949e58b989e0a46f380fc808fc",
+      "seeds": [
+        12,
+        17,
+        30,
+        44
+      ]
+    },
+    {
+      "hash": "680146743875fbac31d8688f42830529d72601b7cd6f1894988173a6c7cc101f",
+      "seeds": [
+        32,
+        36
+      ]
+    },
+    {
+      "hash": "90521506f47b50f3c37afd5d1093b13d1c0266821a6e0f8a23806f7aac5424bd",
+      "seeds": [
+        1,
+        13,
+        16,
+        24,
+        42
+      ]
+    },
+    {
+      "hash": "952ccd7e50a6fe3f27e9fb2e1826909387931375546301af7bf7d8d952dbbea8",
+      "seeds": [
+        33,
+        37
+      ]
+    },
+    {
+      "hash": "b06a756ddb47b73a2b770d74c829ab1101c537ae1c9c69b1f9877bfcc85422db",
+      "seeds": [
+        27,
+        35
+      ]
+    },
+    {
+      "hash": "b81a76f3cfd7084921f569ee69cf8561f72fd730cf6f0e8e42b54fcea63c3b39",
+      "seeds": [
+        5,
+        19,
+        45
+      ]
+    },
+    {
+      "hash": "bfe91933bd912dc10ae5e27c438aa36963dc4f6b466e7c2b57069615c97807e2",
+      "seeds": [
+        4,
+        23
+      ]
+    },
+    {
+      "hash": "cf792effaf4bef7a2386d09dee2382ff93d1f6d50e62c82f2e6b62193a254c81",
+      "seeds": [
+        11,
+        39
+      ]
+    },
+    {
+      "hash": "d3caa6829cf75f9cb5736b9747567b9dd449d0c4b029c1cdc9e41728ee2aea8b",
+      "seeds": [
+        15,
+        47
+      ]
+    },
+    {
+      "hash": "e285c2cc0a6c169fdcb627af6b0da3dc9b461ab8bd14414fe29b4608be2ce391",
+      "seeds": [
+        18,
+        25
+      ]
+    },
+    {
+      "hash": "f0cded0b0b031cbf84afe956a6859618e870935e29ecaa748464a7fde7b70bf2",
+      "seeds": [
+        31,
+        40
+      ]
+    }
+  ],
+  "duplicate_rate": "0.58",
+  "seeds": 50,
+  "space_size": 24,
+  "target": "rabbitmq-crash",
+  "unique_resolved": 21
+}

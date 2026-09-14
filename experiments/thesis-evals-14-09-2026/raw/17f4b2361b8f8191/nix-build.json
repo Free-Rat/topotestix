@@ -1,0 +1,28 @@
+{
+  "execution": "fresh",
+  "markers": [
+    "these 33 derivations will be built:",
+    "building '/nix/store/0i6wn6mxmr2yqvdl0avzfz70mlqp5rxy-server.properties.drv'...",
+    "building '/nix/store/f8m7cd52a7nxf9wr85balqkq68mj1j7j-server.properties.drv'...",
+    "building '/nix/store/ir8mxm8aq8cn5fn72420pwzl4i9kvfz4-server.properties.drv'...",
+    "building '/nix/store/cydah8z4mjf4hj9whfn2nlkhk7zsjgah-unit-script-apache-kafka-pre-start.drv'...",
+    "building '/nix/store/qikmi8c3agh5sx9sv5fingifb4limwb4-unit-script-apache-kafka-pre-start.drv'...",
+    "building '/nix/store/ckakmyncmbsqxjqfy2jj9ajimcj902p1-unit-script-apache-kafka-pre-start.drv'...",
+    "building '/nix/store/x9dx396k6lsrbnibmd7bapscivs5vv8z-unit-apache-kafka.service.drv'...",
+    "building '/nix/store/6cmsbi36zrcpis54nibws35bd34y8kmy-unit-apache-kafka.service.drv'...",
+    "building '/nix/store/w5pfa6j1fnr4kqz0jdy46caxqf1f70pk-unit-apache-kafka.service.drv'...",
+    "building '/nix/store/hkyxrxyiwv5m26nxl1sdbzkc6fyqv37x-system-units.drv'...",
+    "building '/nix/store/jm777lm5pj90xa8r38b94rvj3pzkip49-system-units.drv'...",
+    "building '/nix/store/p7qmlv401508hyjw9qxglbxq3sl6l9nm-system-units.drv'...",
+    "building '/nix/store/4d58my23gy2s6p8g75s67jgilamav23l-etc.drv'...",
+    "building '/nix/store/kk1khygmhwg2315jjbxcxp32sx4qznlh-etc.drv'...",
+    "building '/nix/store/ar84jgj44wqdgw8k374ggpiv19gx7lia-etc.drv'...",
+    "building '/nix/store/f2xfmxg32zjjpi7g1fbd6wr2nhikfx1w-activate.drv'...",
+    "building '/nix/store/9kvab44pasr25ghmxqd8apxlq3bcdx8q-activate.drv'...",
+    "building '/nix/store/hbd3bmh797nsv635k1d50p0zz94lbg9h-activate.drv'...",
+    "building '/nix/store/1n18f0pwyinxrn5avw7m1vxljm630323-nixos-system-kafka2-test.drv'..."
+  ],
+  "note": "",
+  "source": "run-store-log",
+  "wall_s": 195.304
+}

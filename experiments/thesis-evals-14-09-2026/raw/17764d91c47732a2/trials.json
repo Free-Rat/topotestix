@@ -1,0 +1,13 @@
+[
+  {
+    "dir": "20260914-134037-rabbitmq-failure-domain-seed-1-rabbitmq-faildom-rep0-spread-e0-seed1",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/dmr6ypbplxnklvp57ayjp0f5r1p5j1a6-nixos-test-driver-rabbitmq-faildom-rep0-spread-e0-seed1-c20260914-14b712.drv'...",
+      "building '/nix/store/gmdshi8y2qmlyvpkdp7kplzr7bb50c2l-vm-test-run-rabbitmq-faildom-rep0-spread-e0-seed1-c20260914-14b712.drv'..."
+    ],
+    "name": "rabbitmq-faildom-rep0-spread-e0-seed1",
+    "status": "passed"
+  }
+]

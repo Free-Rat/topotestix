@@ -1,0 +1,18 @@
+{
+  "exit_code": 0,
+  "final_config_choices": {
+    "etcd": {
+      ".services.etcd.extraConf.ELECTION_TIMEOUT": 0,
+      ".services.etcd.extraConf.HEARTBEAT_INTERVAL": 0,
+      ".services.etcd.extraConf.QUOTA_BACKEND_BYTES": 0,
+      ".services.etcd.extraConf.SNAPSHOT_COUNT": 0,
+      ".virtualisation.diskSize": 0,
+      ".virtualisation.memorySize": 0
+    }
+  },
+  "final_topology_choices": {
+    ".etcdVlans": 0,
+    ".roles.etcd": 0
+  },
+  "reproduce_command": "topotestix orchestrator run etcd-cluster --seed 3 --name etcd-v2-shrink-rep0-seed3 --project-root /home/freerat/projects/topotestix --repetition-token c20260914-14b712 --topology-target /home/freerat/projects/topotestix/targets/etcd-cluster/topology.nix --config-target /home/freerat/projects/topotestix/targets/etcd-cluster/config.nix --base-module /home/freerat/projects/topotestix/targets/etcd-cluster/module.nix --test-script /home/freerat/projects/topotestix/targets/etcd-cluster/test-script.py --properties /home/freerat/projects/topotestix/targets/etcd-cluster/properties.nix --topology-choices '{\".etcdVlans\": 0, \".roles.etcd\": 0}' --config-choices '{\"etcd\": {\".services.etcd.extraConf.ELECTION_TIMEOUT\": 0, \".services.etcd.extraConf.HEARTBEAT_INTERVAL\": 0, \".services.etcd.extraConf.QUOTA_BACKEND_BYTES\": 0, \".services.etcd.extraConf.SNAPSHOT_COUNT\": 0, \".virtualisation.diskSize\": 0, \".virtualisation.memorySize\": 0}}'"
+}

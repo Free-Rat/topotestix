@@ -1,0 +1,13 @@
+[
+  {
+    "dir": "20260914-101145-kafka-cluster-seed-1-kafka-min-configs-rep0-min-message-max-e0-seed1",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/pshf7jlbq1z5lf0855jsmi65k73q5n3p-nixos-test-driver-kafka-min-configs-rep0-min-message-max-e0-seed1-c20260914-14b712.drv'...",
+      "building '/nix/store/5ps87cqjcczm99vnly49l3rq8rwyhbcp-vm-test-run-kafka-min-configs-rep0-min-message-max-e0-seed1-c20260914-14b712.drv'..."
+    ],
+    "name": "kafka-min-configs-rep0-min-message-max-e0-seed1",
+    "status": "failed"
+  }
+]

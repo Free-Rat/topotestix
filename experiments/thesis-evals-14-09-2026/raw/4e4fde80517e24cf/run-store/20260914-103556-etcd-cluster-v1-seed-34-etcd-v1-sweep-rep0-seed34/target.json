@@ -1,0 +1,10 @@
+{
+  "baseModule": "/home/freerat/projects/topotestix/targets/etcd-cluster/module.nix",
+  "configTarget": "/home/freerat/projects/topotestix/targets/etcd-cluster-v1/config.nix",
+  "description": "[thesis] Three-node etcd Raft cluster target (v1 startup-timing config space)",
+  "name": "etcd-cluster-v1",
+  "properties": "/home/freerat/projects/topotestix/targets/etcd-cluster-v1/properties.nix",
+  "reportNode": "etcd1",
+  "testScript": "/home/freerat/projects/topotestix/targets/etcd-cluster/test-script.py",
+  "topologyTarget": "/home/freerat/projects/topotestix/targets/etcd-cluster/topology.nix"
+}

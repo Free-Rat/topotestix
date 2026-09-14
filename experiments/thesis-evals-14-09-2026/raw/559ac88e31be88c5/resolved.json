@@ -1,0 +1,95 @@
+{
+  "environment": {
+    "nixpkgsOutPath": "/nix/store/0lkxgksfvwcdsyrxj90ddc7f4kl1k8nr-source",
+    "nixpkgsRevision": "cb2938ebeac96284932dbe6a2fb611d3b77743a5"
+  },
+  "nodeConfigs": {
+    "rabbit1": {
+      "virtualisation": {
+        "vlans": [
+          1
+        ]
+      }
+    },
+    "rabbit2": {
+      "virtualisation": {
+        "vlans": [
+          1
+        ]
+      }
+    },
+    "rabbit3": {
+      "virtualisation": {
+        "vlans": [
+          1
+        ]
+      }
+    }
+  },
+  "nodeRoles": {
+    "rabbit1": "rabbit",
+    "rabbit2": "rabbit",
+    "rabbit3": "rabbit"
+  },
+  "roleFuzz": {
+    "rabbit": {
+      "choices": {
+        ".environment.etc.topotestix-disk-backlog-rate.text": 1,
+        ".environment.etc.topotestix-disk-capacity-safety-factor-milli.text": 1,
+        ".environment.etc.topotestix-disk-confirm-timeout-ms.text": 1,
+        ".environment.etc.topotestix-disk-consumer-outage-seconds.text": 0,
+        ".environment.etc.topotestix-disk-initial-free-mb.text": 0,
+        ".environment.etc.topotestix-disk-message-size.text": 2,
+        ".services.rabbitmq.configItems.disk_free_limit.absolute": 0,
+        ".virtualisation.diskSize": 1
+      },
+      "result": {
+        "environment": {
+          "etc": {
+            "topotestix-disk-backlog-rate": {
+              "text": "10"
+            },
+            "topotestix-disk-capacity-safety-factor-milli": {
+              "text": "1000"
+            },
+            "topotestix-disk-confirm-timeout-ms": {
+              "text": "1000"
+            },
+            "topotestix-disk-consumer-outage-seconds": {
+              "text": "2"
+            },
+            "topotestix-disk-initial-free-mb": {
+              "text": "100"
+            },
+            "topotestix-disk-message-size": {
+              "text": "1024"
+            }
+          }
+        },
+        "services": {
+          "rabbitmq": {
+            "configItems": {
+              "disk_free_limit.absolute": "200MB"
+            }
+          }
+        },
+        "virtualisation": {
+          "diskSize": 2048
+        }
+      },
+      "seed": "2"
+    }
+  },
+  "topology": {
+    "rabbitVlans": [
+      1
+    ],
+    "roles": {
+      "rabbit": 3
+    }
+  },
+  "topologyChoices": {
+    ".rabbitVlans": 0,
+    ".roles.rabbit": 0
+  }
+}

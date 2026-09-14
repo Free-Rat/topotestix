@@ -1,0 +1,10 @@
+{
+  "baseModule": "targets/rabbitmq-crash/module.nix",
+  "configTarget": "targets/rabbitmq-crash/config.nix",
+  "description": "[thesis] RabbitMQ abrupt broker durability contract",
+  "name": "rabbitmq-crash",
+  "properties": "targets/rabbitmq-crash/properties.nix",
+  "reportNode": "rabbit1",
+  "testScript": "targets/rabbitmq-crash/test-script.py",
+  "topologyTarget": "targets/rabbitmq-crash/topology.nix"
+}

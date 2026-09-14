@@ -1,0 +1,39 @@
+{
+  "campaign_token": "c20260914-14b712",
+  "manifest_sha256": "279d1608948c1af09b67fbc22b9bd4a0109e427950f9ac8c44af0b7f2c02aff2",
+  "provenance": {
+    "framework": {
+      "dirty": false,
+      "dirty_files": [],
+      "rev": "b0d93bcdd69befbf7b5e55a1176a8f02b01e0d99"
+    },
+    "host": {
+      "available_ram_bytes": 23494205440,
+      "cpu_count": 24,
+      "hostname": "malenia",
+      "kernel": "6.18.49",
+      "method": "proc",
+      "python": "3.13.12",
+      "total_ram_bytes": 32714813440
+    },
+    "manifest": {
+      "path": "experiments/reproduce/MANIFEST.json",
+      "sha256": "279d1608948c1af09b67fbc22b9bd4a0109e427950f9ac8c44af0b7f2c02aff2"
+    },
+    "nix": {
+      "error": null,
+      "nixpkgs_rev": "9317bef0ef5af9381902543e219a3c12d45cf5f6",
+      "version": "nix (Nix) 2.34.8"
+    },
+    "python": {
+      "executable": "/nix/store/0r6k8xa2kgqyp3r4v2w7yrb80ma2iawm-python3-3.13.12/bin/python3",
+      "version": "3.13.12"
+    },
+    "thesis": {
+      "dirty": false,
+      "dirty_files": [],
+      "rev": "a5811c146f4943835016dc0c6a38ecda89522cba"
+    },
+    "written_at": "2026-09-14T08:11:50.479869+00:00"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "configChoices": {
+    "rabbit": {
+      ".environment.etc.topotestix-failure-domain-placement.json.text": 1
+    }
+  },
+  "topologyChoices": {}
+}

@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "run_id": "b1d189ceda1d4d05be0962732add9cdb",
+  "placement": {
+    "rabbit1": "zone-a",
+    "rabbit2": "zone-a",
+    "rabbit3": "zone-b"
+  },
+  "failed_domain": "zone-a",
+  "failed_nodes": [
+    "rabbit1",
+    "rabbit2"
+  ],
+  "surviving_nodes": [
+    "rabbit3"
+  ],
+  "expected_available": false,
+  "baseline_ids": [
+    "b1d189ceda1d4d05be0962732add9cdb/baseline/0000",
+    "b1d189ceda1d4d05be0962732add9cdb/baseline/0001",
+    "b1d189ceda1d4d05be0962732add9cdb/baseline/0002",
+    "b1d189ceda1d4d05be0962732add9cdb/baseline/0003",
+    "b1d189ceda1d4d05be0962732add9cdb/baseline/0004",
+    "b1d189ceda1d4d05be0962732add9cdb/baseline/0005",
+    "b1d189ceda1d4d05be0962732add9cdb/baseline/0006",
+    "b1d189ceda1d4d05be0962732add9cdb/baseline/0007",
+    "b1d189ceda1d4d05be0962732add9cdb/baseline/0008",
+    "b1d189ceda1d4d05be0962732add9cdb/baseline/0009"
+  ],
+  "probe": {
+    "op_id": "b1d189ceda1d4d05be0962732add9cdb/domain-probe",
+    "outcome": "ambiguous",
+    "exception_type": "OuterCommandTimeout",
+    "exception_message": "publish did not complete within the test-driver budget"
+  },
+  "recovered": [
+    {
+      "message_id": "b1d189ceda1d4d05be0962732add9cdb/baseline/0000",
+      "body_id": "b1d189ceda1d4d05be0962732add9cdb/baseline/0000"
+    },
+    {
+      "message_id": "b1d189ceda1d4d05be0962732add9cdb/baseline/0001",
+      "body_id": "b1d189ceda1d4d05be0962732add9cdb/baseline/0001"
+    },
+    {
+      "message_id": "b1d189ceda1d4d05be0962732add9cdb/baseline/0002",
+      "body_id": "b1d189ceda1d4d05be0962732add9cdb/baseline/0002"
+    },
+    {
+      "message_id": "b1d189ceda1d4d05be0962732add9cdb/baseline/0003",
+      "body_id": "b1d189ceda1d4d05be0962732add9cdb/baseline/0003"
+    },
+    {
+      "message_id": "b1d189ceda1d4d05be0962732add9cdb/baseline/0004",
+      "body_id": "b1d189ceda1d4d05be0962732add9cdb/baseline/0004"
+    },
+    {
+      "message_id": "b1d189ceda1d4d05be0962732add9cdb/baseline/0005",
+      "body_id": "b1d189ceda1d4d05be0962732add9cdb/baseline/0005"
+    },
+    {
+      "message_id": "b1d189ceda1d4d05be0962732add9cdb/baseline/0006",
+      "body_id": "b1d189ceda1d4d05be0962732add9cdb/baseline/0006"
+    },
+    {
+      "message_id": "b1d189ceda1d4d05be0962732add9cdb/baseline/0007",
+      "body_id": "b1d189ceda1d4d05be0962732add9cdb/baseline/0007"
+    },
+    {
+      "message_id": "b1d189ceda1d4d05be0962732add9cdb/baseline/0008",
+      "body_id": "b1d189ceda1d4d05be0962732add9cdb/baseline/0008"
+    },
+    {
+      "message_id": "b1d189ceda1d4d05be0962732add9cdb/baseline/0009",
+      "body_id": "b1d189ceda1d4d05be0962732add9cdb/baseline/0009"
+    },
+    {
+      "message_id": "b1d189ceda1d4d05be0962732add9cdb/domain-probe",
+      "body_id": "b1d189ceda1d4d05be0962732add9cdb/domain-probe"
+    }
+  ],
+  "service_pids_before": {
+    "rabbit1": "1045",
+    "rabbit2": "1035"
+  }
+}

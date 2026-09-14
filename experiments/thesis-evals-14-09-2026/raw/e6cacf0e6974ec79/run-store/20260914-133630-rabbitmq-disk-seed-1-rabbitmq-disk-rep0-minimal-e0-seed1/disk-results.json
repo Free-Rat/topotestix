@@ -1,0 +1,671 @@
+{
+  "schema_version": 1,
+  "run_id": "b1954e6cd8e440a29299949287e907a6",
+  "contract": {
+    "volume_placement": "independent-vm-root-volumes",
+    "initial_free_target_mb": 100,
+    "disk_free_limit_mb": 190,
+    "backlog_rate": 10,
+    "consumer_outage_seconds": 2,
+    "planned_messages": 20,
+    "message_size": 1024,
+    "confirm_timeout_ms": 1000,
+    "capacity_safety_factor_milli": 1000,
+    "required_free_bytes": 200020480,
+    "naive_required_free_bytes": 20480,
+    "capacity_sufficient": false,
+    "naive_capacity_sufficient": true
+  },
+  "operations": [
+    {
+      "op_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000000",
+      "sequence": 0,
+      "attempt_wall_ns": 1789393043626716100,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393044642645778,
+      "latency_ms": 1015.929
+    },
+    {
+      "op_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000001",
+      "sequence": 1,
+      "attempt_wall_ns": 1789393044642802502,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393045655060484,
+      "latency_ms": 1012.258
+    },
+    {
+      "op_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000002",
+      "sequence": 2,
+      "attempt_wall_ns": 1789393045655083392,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393046667149171,
+      "latency_ms": 1012.066
+    },
+    {
+      "op_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000003",
+      "sequence": 3,
+      "attempt_wall_ns": 1789393046667171800,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393047678767408,
+      "latency_ms": 1011.595
+    },
+    {
+      "op_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000004",
+      "sequence": 4,
+      "attempt_wall_ns": 1789393047678789477,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393048691008628,
+      "latency_ms": 1012.219
+    },
+    {
+      "op_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000005",
+      "sequence": 5,
+      "attempt_wall_ns": 1789393048691031257,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393049703398471,
+      "latency_ms": 1012.367
+    },
+    {
+      "op_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000006",
+      "sequence": 6,
+      "attempt_wall_ns": 1789393049703420820,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393050715429888,
+      "latency_ms": 1012.009
+    },
+    {
+      "op_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000007",
+      "sequence": 7,
+      "attempt_wall_ns": 1789393050715453355,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393051727818334,
+      "latency_ms": 1012.365
+    },
+    {
+      "op_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000008",
+      "sequence": 8,
+      "attempt_wall_ns": 1789393051727888455,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393052739956748,
+      "latency_ms": 1012.068
+    },
+    {
+      "op_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000009",
+      "sequence": 9,
+      "attempt_wall_ns": 1789393052739980215,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393053752405816,
+      "latency_ms": 1012.426
+    },
+    {
+      "op_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000010",
+      "sequence": 10,
+      "attempt_wall_ns": 1789393053752428724,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393054764628878,
+      "latency_ms": 1012.2
+    },
+    {
+      "op_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000011",
+      "sequence": 11,
+      "attempt_wall_ns": 1789393054764651227,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393055776433730,
+      "latency_ms": 1011.782
+    },
+    {
+      "op_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000012",
+      "sequence": 12,
+      "attempt_wall_ns": 1789393055776456079,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393056788309262,
+      "latency_ms": 1011.853
+    },
+    {
+      "op_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000013",
+      "sequence": 13,
+      "attempt_wall_ns": 1789393056788331331,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393057800691841,
+      "latency_ms": 1012.361
+    },
+    {
+      "op_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000014",
+      "sequence": 14,
+      "attempt_wall_ns": 1789393057800714190,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393058813208515,
+      "latency_ms": 1012.497
+    },
+    {
+      "op_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000015",
+      "sequence": 15,
+      "attempt_wall_ns": 1789393058813239525,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393059824992974,
+      "latency_ms": 1011.75
+    },
+    {
+      "op_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000016",
+      "sequence": 16,
+      "attempt_wall_ns": 1789393059825015602,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393060837904950,
+      "latency_ms": 1012.889
+    },
+    {
+      "op_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000017",
+      "sequence": 17,
+      "attempt_wall_ns": 1789393060837927299,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393061850102590,
+      "latency_ms": 1012.176
+    },
+    {
+      "op_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000018",
+      "sequence": 18,
+      "attempt_wall_ns": 1789393061850126056,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393062862490477,
+      "latency_ms": 1012.367
+    },
+    {
+      "op_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000019",
+      "sequence": 19,
+      "attempt_wall_ns": 1789393062862521486,
+      "outcome": "ambiguous",
+      "exception_type": "ConnectionBlockedTimeout",
+      "exception_message": "Blocked connection timeout expired.",
+      "finish_wall_ns": 1789393063874593970,
+      "latency_ms": 1012.069
+    }
+  ],
+  "telemetry": [
+    {
+      "wall_ns": 1789393038935988813,
+      "phase": "before_fill",
+      "node": "rabbit1",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020360192,
+      "fs_available_bytes": 1896210432,
+      "rabbit_disk_free_bytes": 1896288256,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393039161618353,
+      "phase": "before_fill",
+      "node": "rabbit2",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020352000,
+      "fs_available_bytes": 1896202240,
+      "rabbit_disk_free_bytes": 1896198144,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393039384145143,
+      "phase": "before_fill",
+      "node": "rabbit3",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020347904,
+      "fs_available_bytes": 1896198144,
+      "rabbit_disk_free_bytes": 1896288256,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393044565043428,
+      "phase": "after_fill",
+      "node": "rabbit1",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 228339712,
+      "fs_available_bytes": 104189952,
+      "rabbit_disk_free_bytes": 1896230912,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393044646226275,
+      "phase": "after_fill",
+      "node": "rabbit2",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 228331520,
+      "fs_available_bytes": 104181760,
+      "rabbit_disk_free_bytes": 1896198144,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393044728215304,
+      "phase": "after_fill",
+      "node": "rabbit3",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 228327424,
+      "fs_available_bytes": 104177664,
+      "rabbit_disk_free_bytes": 1896288256,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393065213018850,
+      "phase": "after_publish",
+      "node": "rabbit1",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 228339712,
+      "fs_available_bytes": 104189952,
+      "rabbit_disk_free_bytes": 104189952,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393065293308869,
+      "phase": "after_publish",
+      "node": "rabbit2",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 228331520,
+      "fs_available_bytes": 104181760,
+      "rabbit_disk_free_bytes": 104181760,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393065374204709,
+      "phase": "after_publish",
+      "node": "rabbit3",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 228327424,
+      "fs_available_bytes": 104177664,
+      "rabbit_disk_free_bytes": 104177664,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393065490317396,
+      "phase": "recovery_poll",
+      "node": "rabbit1",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020360192,
+      "fs_available_bytes": 1896210432,
+      "rabbit_disk_free_bytes": 104189952,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393065574034192,
+      "phase": "recovery_poll",
+      "node": "rabbit2",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020352000,
+      "fs_available_bytes": 1896202240,
+      "rabbit_disk_free_bytes": 104181760,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393065653032964,
+      "phase": "recovery_poll",
+      "node": "rabbit3",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020347904,
+      "fs_available_bytes": 1896198144,
+      "rabbit_disk_free_bytes": 104177664,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393068738382069,
+      "phase": "recovery_poll",
+      "node": "rabbit1",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020360192,
+      "fs_available_bytes": 1896210432,
+      "rabbit_disk_free_bytes": 104189952,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393068821479626,
+      "phase": "recovery_poll",
+      "node": "rabbit2",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020352000,
+      "fs_available_bytes": 1896202240,
+      "rabbit_disk_free_bytes": 104181760,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393068902851101,
+      "phase": "recovery_poll",
+      "node": "rabbit3",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020347904,
+      "fs_available_bytes": 1896198144,
+      "rabbit_disk_free_bytes": 104177664,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393071985134734,
+      "phase": "recovery_poll",
+      "node": "rabbit1",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020360192,
+      "fs_available_bytes": 1896210432,
+      "rabbit_disk_free_bytes": 104189952,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393072068779904,
+      "phase": "recovery_poll",
+      "node": "rabbit2",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020352000,
+      "fs_available_bytes": 1896202240,
+      "rabbit_disk_free_bytes": 104181760,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393072149814819,
+      "phase": "recovery_poll",
+      "node": "rabbit3",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020347904,
+      "fs_available_bytes": 1896198144,
+      "rabbit_disk_free_bytes": 104177664,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393075232943208,
+      "phase": "recovery_poll",
+      "node": "rabbit1",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020327424,
+      "fs_available_bytes": 1896177664,
+      "rabbit_disk_free_bytes": 104189952,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393075312519298,
+      "phase": "recovery_poll",
+      "node": "rabbit2",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020319232,
+      "fs_available_bytes": 1896169472,
+      "rabbit_disk_free_bytes": 104181760,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393075394699491,
+      "phase": "recovery_poll",
+      "node": "rabbit3",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020315136,
+      "fs_available_bytes": 1896165376,
+      "rabbit_disk_free_bytes": 1896198144,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393078475855227,
+      "phase": "recovery_poll",
+      "node": "rabbit1",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020327424,
+      "fs_available_bytes": 1896177664,
+      "rabbit_disk_free_bytes": 104189952,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393078555938552,
+      "phase": "recovery_poll",
+      "node": "rabbit2",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020319232,
+      "fs_available_bytes": 1896169472,
+      "rabbit_disk_free_bytes": 104181760,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": true
+    },
+    {
+      "wall_ns": 1789393078634769085,
+      "phase": "recovery_poll",
+      "node": "rabbit3",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020315136,
+      "fs_available_bytes": 1896165376,
+      "rabbit_disk_free_bytes": 1896198144,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393081715233175,
+      "phase": "recovery_poll",
+      "node": "rabbit1",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020327424,
+      "fs_available_bytes": 1896177664,
+      "rabbit_disk_free_bytes": 1896210432,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393081795421319,
+      "phase": "recovery_poll",
+      "node": "rabbit2",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020319232,
+      "fs_available_bytes": 1896169472,
+      "rabbit_disk_free_bytes": 1896202240,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393081876586672,
+      "phase": "recovery_poll",
+      "node": "rabbit3",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020315136,
+      "fs_available_bytes": 1896165376,
+      "rabbit_disk_free_bytes": 1896198144,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393084711696879,
+      "phase": "after_recovery",
+      "node": "rabbit1",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020311040,
+      "fs_available_bytes": 1896161280,
+      "rabbit_disk_free_bytes": 1896210432,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393084793203431,
+      "phase": "after_recovery",
+      "node": "rabbit2",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020302848,
+      "fs_available_bytes": 1896153088,
+      "rabbit_disk_free_bytes": 1896202240,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    },
+    {
+      "wall_ns": 1789393084875460450,
+      "phase": "after_recovery",
+      "node": "rabbit3",
+      "fs_total_bytes": 2040373248,
+      "fs_free_bytes": 2020298752,
+      "fs_available_bytes": 1896148992,
+      "rabbit_disk_free_bytes": 1896198144,
+      "rabbit_disk_free_limit_bytes": 200000000,
+      "disk_free_alarm": false
+    }
+  ],
+  "recovered": [
+    {
+      "message_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000003",
+      "body_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000003",
+      "redelivered": false
+    },
+    {
+      "message_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000006",
+      "body_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000006",
+      "redelivered": false
+    },
+    {
+      "message_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000019",
+      "body_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000019",
+      "redelivered": false
+    },
+    {
+      "message_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000008",
+      "body_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000008",
+      "redelivered": false
+    },
+    {
+      "message_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000014",
+      "body_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000014",
+      "redelivered": false
+    },
+    {
+      "message_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000013",
+      "body_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000013",
+      "redelivered": false
+    },
+    {
+      "message_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000015",
+      "body_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000015",
+      "redelivered": false
+    },
+    {
+      "message_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000002",
+      "body_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000002",
+      "redelivered": false
+    },
+    {
+      "message_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000004",
+      "body_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000004",
+      "redelivered": false
+    },
+    {
+      "message_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000001",
+      "body_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000001",
+      "redelivered": false
+    },
+    {
+      "message_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000005",
+      "body_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000005",
+      "redelivered": false
+    },
+    {
+      "message_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000017",
+      "body_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000017",
+      "redelivered": false
+    },
+    {
+      "message_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000007",
+      "body_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000007",
+      "redelivered": false
+    },
+    {
+      "message_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000010",
+      "body_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000010",
+      "redelivered": false
+    },
+    {
+      "message_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000009",
+      "body_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000009",
+      "redelivered": false
+    },
+    {
+      "message_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000018",
+      "body_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000018",
+      "redelivered": false
+    },
+    {
+      "message_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000011",
+      "body_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000011",
+      "redelivered": false
+    },
+    {
+      "message_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000012",
+      "body_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000012",
+      "redelivered": false
+    },
+    {
+      "message_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000000",
+      "body_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000000",
+      "redelivered": false
+    },
+    {
+      "message_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000016",
+      "body_id": "b1954e6cd8e440a29299949287e907a6/backlog/00000016",
+      "redelivered": false
+    }
+  ],
+  "queue_before": {
+    "name": "topotestix_disk_capacity",
+    "type": "quorum",
+    "leader": "rabbit@rabbit1",
+    "members": [
+      "rabbit@rabbit1",
+      "rabbit@rabbit2",
+      "rabbit@rabbit3"
+    ],
+    "online": [
+      "rabbit@rabbit1",
+      "rabbit@rabbit2",
+      "rabbit@rabbit3"
+    ],
+    "state": "running"
+  }
+}

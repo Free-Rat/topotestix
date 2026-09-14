@@ -1,0 +1,168 @@
+[
+  {
+    "dir": "20260914-093108-kafka-cluster-seed-13-kafka-shrink-rep0-seed13",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/76kd0sjn84mz1nhr9pny8f2amhijb6bq-nixos-test-driver-kafka-shrink-rep0-seed13-c20260914-14b712.drv'...",
+      "building '/nix/store/c5xprk8f3f0gblyxxmh68y95xvpvp6yp-vm-test-run-kafka-shrink-rep0-seed13-c20260914-14b712.drv'..."
+    ],
+    "name": "kafka-shrink-rep0-seed13",
+    "status": "failed"
+  },
+  {
+    "dir": "20260914-093416-kafka-cluster-seed-13-kafka-shrink-rep0-seed13",
+    "execution": "fresh",
+    "markers": [
+      "these 27 derivations will be built:",
+      "building '/nix/store/2hh0fkcm2q19g64fn8v6w9p5m861c19k-unit-apache-kafka.service.drv'...",
+      "building '/nix/store/p76mrgsw5nd31v5aqv2nqfglbkzm8c73-unit-apache-kafka.service.drv'...",
+      "building '/nix/store/r8z5rsp3hcn2b4h95s732ff09v1ykm27-unit-apache-kafka.service.drv'...",
+      "building '/nix/store/qxr6gz7p4j19mvzkhqq8djsyiv1k00ms-system-units.drv'...",
+      "building '/nix/store/09kdy2gnm1fy3gn38ra4sbndd25abwsz-system-units.drv'...",
+      "building '/nix/store/ibfyv1dra5m8aj9liqmgicq24372ykzc-system-units.drv'...",
+      "building '/nix/store/s5xf18zpa4p9zvfywxf8avx4nffqjjp8-etc.drv'...",
+      "building '/nix/store/s9qdbgqrpm0gz49wd1n06zgc04vcq0dg-etc.drv'...",
+      "building '/nix/store/miv5y24y7vcwn2837hhiz1m686msr7a0-etc.drv'...",
+      "building '/nix/store/3w8g5mh3y37r1vgxbbbys05gccaw0fzf-activate.drv'...",
+      "building '/nix/store/xz1gyjv53sxk69p940bj181vkd46gnvz-activate.drv'...",
+      "building '/nix/store/cy67sv07vp14hrld5wzkmv8v1q0dyxx7-nixos-system-kafka1-test.drv'...",
+      "building '/nix/store/4shrxx8kwmfih7jfqcv08izdvlm5jzvb-activate.drv'...",
+      "building '/nix/store/y0ar4hsmvhqkgljgfnlfxf17j6y4622z-nixos-system-kafka3-test.drv'...",
+      "building '/nix/store/3i2hskqx67dpqr5jgp03y29pql8dxg67-closure-info.drv'...",
+      "building '/nix/store/wv6xvlhzyfndjbaly43l9mjwzvcb11hq-closure-info.drv'...",
+      "building '/nix/store/dg1n78h0d94a7hj0xa1k5br7bfmgjayh-nixos-system-kafka2-test.drv'...",
+      "building '/nix/store/hw0w7gnsdgk945njknbh80h1wlp3fyn9-run-nixos-vm.drv'...",
+      "building '/nix/store/g6dg2rgdzm2x4wpdd1pbr3vh5gd5jk7s-closure-info.drv'..."
+    ],
+    "name": "kafka-shrink-rep0-seed13",
+    "status": "failed"
+  },
+  {
+    "dir": "20260914-093726-kafka-cluster-seed-13-kafka-shrink-rep0-seed13",
+    "execution": "fresh",
+    "markers": [
+      "these 33 derivations will be built:",
+      "building '/nix/store/3rh3dv4kj2r9wmmcj6czyadsgb1rcrg3-server.properties.drv'...",
+      "building '/nix/store/lfx7v6z81zhh5180kfghj79gnzpy00p3-server.properties.drv'...",
+      "building '/nix/store/my86kynipys8dxibzz22zlbzcz3p2cva-server.properties.drv'...",
+      "building '/nix/store/q7qwlkgz7cpxs7jjlns6k6sx6n27w5fx-unit-script-apache-kafka-pre-start.drv'...",
+      "building '/nix/store/czi30f4qb4c94v5adwqssynlf6dx9yh2-unit-script-apache-kafka-pre-start.drv'...",
+      "building '/nix/store/mjl5qijh29bdf3bfjgiajx0vxfzr0jxy-unit-script-apache-kafka-pre-start.drv'...",
+      "building '/nix/store/mlj7ha8g9s2346w7j6jmpjs4qhdz6j8q-unit-apache-kafka.service.drv'...",
+      "building '/nix/store/x25dad31d958g49xak891fl2fivb6l0n-unit-apache-kafka.service.drv'...",
+      "building '/nix/store/8pql9r5zfrkd30v4hl9llxngr57r6d6z-unit-apache-kafka.service.drv'...",
+      "building '/nix/store/8dc2bri5iwr5pfdkhazzj59y1j3faw3p-system-units.drv'...",
+      "building '/nix/store/587chf4ra1m3bi2d0h1xbg68il3xkwqj-system-units.drv'...",
+      "building '/nix/store/lp6drdyhvwxiylymlxx0q899ld0jfyh3-system-units.drv'...",
+      "building '/nix/store/qplsr76wplyb2bxjl37cmg5vpj2i8klv-etc.drv'...",
+      "building '/nix/store/8hj2qgby6cznpwk205fb4lhfdclajf5r-etc.drv'...",
+      "building '/nix/store/mr67hr8kb42487amk5dhkr9wvw6jhnrw-etc.drv'...",
+      "building '/nix/store/s871g7yz81v17ib9dbsf69cm5ravzcbd-activate.drv'...",
+      "building '/nix/store/gbj7fxs2yd10yxnkar3nr6pbsw2vsn1k-activate.drv'...",
+      "building '/nix/store/1xjr41w825ycdclih12g08r53ilwldfq-activate.drv'...",
+      "building '/nix/store/df00iws7nn24yyi83da5bpac10z4iv6p-nixos-system-kafka2-test.drv'..."
+    ],
+    "name": "kafka-shrink-rep0-seed13",
+    "status": "failed"
+  },
+  {
+    "dir": "20260914-094036-kafka-cluster-seed-13-kafka-shrink-rep0-seed13",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/2yzi4izmhna8m5blvzkx9mzssn60q58j-nixos-test-driver-kafka-shrink-rep0-seed13-c20260914-14b712.drv'...",
+      "building '/nix/store/vr282hyz5nwyqnq3nxfgvpplwys283nm-vm-test-run-kafka-shrink-rep0-seed13-c20260914-14b712.drv'..."
+    ],
+    "name": "kafka-shrink-rep0-seed13",
+    "status": "failed"
+  },
+  {
+    "dir": "20260914-094343-kafka-cluster-seed-13-kafka-shrink-rep0-seed13",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/kishy16fwd7yn6gms8h4hh4gy3w7km8l-nixos-test-driver-kafka-shrink-rep0-seed13-c20260914-14b712.drv'...",
+      "building '/nix/store/qjh9fbgqgvghsblap1xfa2blivy9gsij-vm-test-run-kafka-shrink-rep0-seed13-c20260914-14b712.drv'..."
+    ],
+    "name": "kafka-shrink-rep0-seed13",
+    "status": "failed"
+  },
+  {
+    "dir": "20260914-094650-kafka-cluster-seed-13-kafka-shrink-rep0-seed13",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/8i52dsy8cprxgdljpkzqly29ddh87qmz-nixos-test-driver-kafka-shrink-rep0-seed13-c20260914-14b712.drv'...",
+      "building '/nix/store/ihifcsvvnak31nac7fw0qzisr32d4zw1-vm-test-run-kafka-shrink-rep0-seed13-c20260914-14b712.drv'..."
+    ],
+    "name": "kafka-shrink-rep0-seed13",
+    "status": "failed"
+  },
+  {
+    "dir": "20260914-094957-kafka-cluster-seed-13-kafka-shrink-rep0-seed13",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/fyjpb4jg48r9q3mx3dyr7r119j29x86v-nixos-test-driver-kafka-shrink-rep0-seed13-c20260914-14b712.drv'...",
+      "building '/nix/store/09x4yl9f7ali4cmyw5v7z8f77g7cynz8-vm-test-run-kafka-shrink-rep0-seed13-c20260914-14b712.drv'..."
+    ],
+    "name": "kafka-shrink-rep0-seed13",
+    "status": "failed"
+  },
+  {
+    "dir": "20260914-095304-kafka-cluster-seed-13-kafka-shrink-rep0-seed13",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/3w511mb4q15s62n2ss70gkrddis7z7hd-nixos-test-driver-kafka-shrink-rep0-seed13-c20260914-14b712.drv'...",
+      "building '/nix/store/3cwk63z5l0zg8c5i4p9h5fsvc9kzwmpf-vm-test-run-kafka-shrink-rep0-seed13-c20260914-14b712.drv'..."
+    ],
+    "name": "kafka-shrink-rep0-seed13",
+    "status": "failed"
+  },
+  {
+    "dir": "20260914-095612-kafka-cluster-seed-13-kafka-shrink-rep0-seed13",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/qrjfdx4mk4cx4mgljn6dsbdyxfqz1lsz-nixos-test-driver-kafka-shrink-rep0-seed13-c20260914-14b712.drv'...",
+      "building '/nix/store/dv6r18m0jzzzfv02305iyi5bjmi1s2gs-vm-test-run-kafka-shrink-rep0-seed13-c20260914-14b712.drv'..."
+    ],
+    "name": "kafka-shrink-rep0-seed13",
+    "status": "failed"
+  },
+  {
+    "dir": "20260914-095919-kafka-cluster-seed-13-kafka-shrink-rep0-seed13",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/b6kdlzmwwrzmw19nm4gly2jyw823xyw8-nixos-test-driver-kafka-shrink-rep0-seed13-c20260914-14b712.drv'...",
+      "building '/nix/store/1vxl5gbfvyv3n2wssbdq99hkxbdxkb5p-vm-test-run-kafka-shrink-rep0-seed13-c20260914-14b712.drv'..."
+    ],
+    "name": "kafka-shrink-rep0-seed13",
+    "status": "failed"
+  },
+  {
+    "dir": "20260914-100225-kafka-cluster-seed-13-kafka-shrink-rep0-seed13",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/va24j5jfldjw3bf6ni2kx7avgw8h0zwc-nixos-test-driver-kafka-shrink-rep0-seed13-c20260914-14b712.drv'...",
+      "building '/nix/store/lgmns8hr8x79d9hraswkg68gij6678k2-vm-test-run-kafka-shrink-rep0-seed13-c20260914-14b712.drv'..."
+    ],
+    "name": "kafka-shrink-rep0-seed13",
+    "status": "failed"
+  },
+  {
+    "dir": "20260914-100533-kafka-cluster-seed-13-kafka-shrink-rep0-seed13",
+    "execution": "fresh",
+    "markers": [
+      "these 2 derivations will be built:",
+      "building '/nix/store/xh8nzi51irm1hmgacc797ffx4aihmnfr-nixos-test-driver-kafka-shrink-rep0-seed13-c20260914-14b712.drv'...",
+      "building '/nix/store/s05fkbfb787pmjj3ygl5a4m2nr14mas9-vm-test-run-kafka-shrink-rep0-seed13-c20260914-14b712.drv'..."
+    ],
+    "name": "kafka-shrink-rep0-seed13",
+    "status": "failed"
+  }
+]
