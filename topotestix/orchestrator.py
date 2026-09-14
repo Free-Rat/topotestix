@@ -272,8 +272,8 @@ def run_once(
     store.write_json(run_dir, "report.json", report)
 
     # Materialize evidence artifacts (target results payload, report.json) out
-    # of the `result` store path so the run dir keeps them independently of the
-    # nix store (the store path is not a GC root). Written after the canonical
+    # of the `result` store path so the run dir is self-contained and keeps
+    # them independently of the nix store. Written after the canonical
     # report.json so the canonical copy wins over the read-only 444 store copy.
     artifacts = materialize_result_artifacts(result_link, run_dir)
     passed = build_ok and report_passed(report)

@@ -47,8 +47,9 @@ def materialize_result_artifacts(result_path: str, run_dir: str) -> list[str]:
     The NixOS test driver writes files copied from guests (the target's
     results payload plus report.json) into the test derivation's output
     directory, which is only reachable through the run dir's `result` symlink.
-    That store path is not a GC root, so the artifacts are materialized into
-    the run directory to make retention explicit and immune to `nix-store --gc`.
+    The artifacts are materialized into the run directory to make it
+    self-contained: its evidence survives when the directory is archived,
+    moved, or committed without the Nix store.
 
     Returns the sorted list of copied entry names. A missing `result` store
     path (build failure) yields an empty list. Entries already present in the
