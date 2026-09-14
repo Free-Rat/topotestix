@@ -987,6 +987,38 @@ class VerifyTests(unittest.TestCase):
         self.assertEqual(row12["verdict"], "within-tolerance")
         self.assertIn("first execution: 15 alarms", row12["observed"])
 
+    def test_alarm_samples_within_three_are_within_tolerance(self):
+        for al, want in ((13, "within-tolerance"), (19, "within-tolerance"), (12, "mismatch")):
+            self._edit_csv(
+                "rabbitmq-disk-cells",
+                {"variant": "minimal", "execution_index": "0"},
+                "alarm_samples",
+                al,
+            )
+            self.assertEqual(self._row_for("r-11")["verdict"], want, al)
+
+    def test_cell_x_recovered_range(self):
+        for rec, want in ((22, "match"), (24, "within-tolerance"), (25, "within-tolerance"),
+                          (21, "mismatch"), (26, "mismatch")):
+            self._edit_csv(
+                "rabbitmq-disk-cells",
+                {"variant": "cell-x", "execution_index": "0"},
+                "recovered_count",
+                rec,
+            )
+            self.assertEqual(self._row_for("r-05")["verdict"], want, rec)
+        for got, want in (((22, 23), "match"), ((25, 23), "within-tolerance"),
+                          ((26, 23), "mismatch")):
+            for ei, rec in zip(("1", "2"), got):
+                self._edit_csv(
+                    "rabbitmq-disk-cells",
+                    {"variant": "cell-x", "execution_index": ei},
+                    "recovered_count",
+                    rec,
+                )
+            self.assertEqual(self._row_for("r-07")["verdict"], want, got)
+            self.assertEqual(self._row_for("r-10")["verdict"], want, got)
+
     def test_alarm_samples_far_off_are_still_a_mismatch(self):
         self._edit_csv(
             "rabbitmq-disk-cells",
