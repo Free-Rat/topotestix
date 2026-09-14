@@ -334,7 +334,7 @@ def phase_report(args, summary) -> None:
 
 
 def framework_rev_of(args) -> str:
-    rev_doc = env.git_rev(args.project_root)
+    rev_doc = env.git_rev(args.project_root, args.out)
     return f"{rev_doc.get('rev', 'unknown')}{'-dirty' if rev_doc.get('dirty') else ''}"
 
 
@@ -442,7 +442,7 @@ def main(argv=None) -> int:
         # "all" reaches phase_lock below, which runs the same check.
         for w in env.check_lock(Path(args.out), args.project_root, args.manifest):
             print(f"DRIFT WARNING: {w}", file=sys.stderr)
-    rev_doc = env.git_rev(args.project_root)
+    rev_doc = env.git_rev(args.project_root, args.out)
     framework_rev = f"{rev_doc.get('rev', 'unknown')}{'-dirty' if rev_doc.get('dirty') else ''}"
     units = manifest.expand_all(m, framework_rev)
     units = select_units(units, args.only, args.seeds)

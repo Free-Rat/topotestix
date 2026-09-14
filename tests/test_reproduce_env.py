@@ -100,6 +100,29 @@ class GitRevTest(unittest.TestCase):
         self.assertEqual(info["dirty_files"], [".gitignore", "study/", "new.py", "a.txt"])
 
 
+    def test_campaign_out_dir_does_not_mark_the_tree_dirty(self):
+        porcelain = "?? experiments/thesis-evals-01-01-2027/\n M lib/x.nix\n"
+
+        def rev(exclude, status=porcelain):
+            with unittest.mock.patch.object(env, "_git") as fake_git:
+                fake_git.side_effect = [
+                    SimpleNamespace(returncode=0, stdout="a" * 40 + "\n"),
+                    SimpleNamespace(returncode=0, stdout=status),
+                ]
+                return env.git_rev(REPO_ROOT, exclude)
+
+        out = os.path.join(REPO_ROOT, "experiments", "thesis-evals-01-01-2027")
+        self.assertEqual(rev(out)["dirty_files"], ["lib/x.nix"])
+        self.assertTrue(rev(out)["dirty"])
+        only_out = "?? experiments/thesis-evals-01-01-2027/\n"
+        self.assertFalse(rev(out, only_out)["dirty"])
+        self.assertFalse(rev(out + "/", only_out)["dirty"])
+        # a sibling campaign or an out dir outside the repo excludes nothing
+        self.assertTrue(rev(out + "-other", only_out)["dirty"])
+        self.assertTrue(rev("/nowhere/else", only_out)["dirty"])
+        self.assertTrue(rev(None, only_out)["dirty"])
+
+
 class HostInfoTest(unittest.TestCase):
     def test_fields(self):
         info = env.host_info()

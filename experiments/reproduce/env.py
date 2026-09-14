@@ -78,8 +78,12 @@ def _git(args: List[str], cwd: str, timeout: int = 30) -> Optional[subprocess.Co
         return None
 
 
-def git_rev(project_root: str) -> Dict[str, Any]:
-    """{"rev": sha, "dirty": bool, "dirty_files": [paths]} of the framework repo."""
+def git_rev(project_root: str, exclude: Optional[str] = None) -> Dict[str, Any]:
+    """{"rev": sha, "dirty": bool, "dirty_files": [paths]} of the framework repo.
+
+    ``exclude`` is the campaign's own output directory: its untracked files
+    are the campaign's results, not a change to the framework, so they must
+    not mark the tree dirty (that would re-key every unit id mid-campaign)."""
     rev = None
     dirty = False
     dirty_files: List[str] = []
@@ -89,8 +93,23 @@ def git_rev(project_root: str) -> Dict[str, Any]:
     proc = _git(["status", "--porcelain"], project_root)
     if proc is not None and proc.returncode == 0:
         dirty_files = _porcelain_paths(proc.stdout)
+        own = _repo_relative(project_root, exclude) if exclude else None
+        if own:
+            dirty_files = [
+                p for p in dirty_files if p.rstrip("/") != own and not p.startswith(own + "/")
+            ]
         dirty = bool(dirty_files)
     return {"rev": rev, "dirty": dirty, "dirty_files": dirty_files}
+
+
+def _repo_relative(project_root: str, path: str) -> Optional[str]:
+    """``path`` relative to the repo root in git's form; None when outside it."""
+    try:
+        rel = Path(path).resolve().relative_to(Path(project_root).resolve())
+    except ValueError:
+        return None
+    text = rel.as_posix()
+    return None if text in ("", ".") else text
 
 
 def _porcelain_paths(stdout: str) -> List[str]:
@@ -237,13 +256,14 @@ def build_lock(
     manifest_path: str,
     thesis_path: str = DEFAULT_THESIS_REPO,
     campaign_token: Optional[str] = None,
+    out_dir: Optional[str] = None,
 ) -> Dict[str, Any]:
     """The lock document; ``written_at`` is the harness's only generated timestamp."""
     manifest_sha = file_sha256(manifest_path)
     return {
         "provenance": {
             "written_at": datetime.now(timezone.utc).isoformat(),
-            "framework": git_rev(project_root),
+            "framework": git_rev(project_root, out_dir),
             "nix": nix_info(project_root),
             "python": {"version": platform.python_version(), "executable": sys.executable},
             "host": host_info(),
@@ -267,7 +287,7 @@ def write_lock(
     """Build and atomically write ``MANIFEST.lock.json``; returns the document."""
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
-    lock = build_lock(project_root, manifest_path, thesis_path, campaign_token)
+    lock = build_lock(project_root, manifest_path, thesis_path, campaign_token, str(out))
     atomic_write_json(out / "MANIFEST.lock.json", lock)
     return lock
 
@@ -306,7 +326,7 @@ def check_lock(out_dir: Path, project_root: str, manifest_path: str) -> List[str
         return [f"MANIFEST.lock.json unreadable: {exc}"]
     prov = lock.get("provenance") or {}
     warnings: List[str] = []
-    current_fw = git_rev(project_root)
+    current_fw = git_rev(project_root, str(out_dir))
     locked_fw = prov.get("framework") or {}
     if locked_fw.get("rev") != current_fw.get("rev"):
         warnings.append(
